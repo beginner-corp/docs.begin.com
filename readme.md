@@ -18,4 +18,3 @@ Creating the following two files:
 - `/src/shared/docs/en/foo/bar-meta.json`
 
 Will create a new document available at: `https://docs.begin.com/foo/bar`
-
