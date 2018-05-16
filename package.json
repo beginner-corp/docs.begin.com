@@ -1,0 +1,23 @@
+{
+  "name": "docs.begin.com",
+  "version": "1.0.0",
+  "description": "https://docs.begin.com",
+  "main": "index.js",
+  "scripts": {
+    "create": "ARC_LOCAL=1 AWS_REGION=us-west-1 AWS_PROFILE=personal arc-create",
+    "start": "nodemon --watch src/ -e md,css,js,json,html --exec NODE_ENV=testing arc-sandbox",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Block <hello@ryanblock.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/smallwins/docs.begin.com/issues"
+  },
+  "homepage": "https://github.com/smallwins/docs.begin.com#readme",
+  "dependencies": {
+    "@architect/workflows": "^2.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}

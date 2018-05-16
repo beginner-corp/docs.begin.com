@@ -1,0 +1,8 @@
+{
+  "name": "begin-help-get-index",
+  "dependencies": {
+    "@architect/data": "^2.0.2",
+    "@architect/functions": "^1.8.0",
+    "marked": "^0.3.19"
+  }
+}
