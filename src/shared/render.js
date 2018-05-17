@@ -4,20 +4,20 @@ var exists = fs.existsSync
 var join = require('path').join
 var layout = require('./views/layout')
 
-module.exports = function render (doc, section) {
+module.exports = function render (active) {
 
   // Since this is (theoretically) shared by all routes, check to see if the requested document is in a section, or if it's at the root
   function inSection (doc, section) {
     if (section !== 'undefined') {
-      return join(__dirname, 'docs', 'en', section, `${doc}`)
+      return join(__dirname, 'docs', 'en', section, active.doc)
     } else {
-      return join(__dirname, 'docs', 'en', `${doc}`)
+      return join(__dirname, 'docs', 'en', active.doc)
     }
   }
 
   // Defines the files needed to render a doc
-  var meta_file = inSection(`${doc}`, `${section}`) + '-meta.json'
-  var content_file = inSection(`${doc}`, `${section}`) + '-content.md'
+  var meta_file = inSection(active.doc, active.section) + '-meta.json'
+  var content_file = inSection(active.doc, active.section) + '-content.md'
 
   // Make sure each doc has the required meta and content files
   if (exists(meta_file) && exists(content_file)) {
