@@ -10,9 +10,27 @@
 Documents and views are shared across the site, and are found in `src/shared/docs/{language}/{section name}/{doc name}`
 
 Each doc must possess two files:
-- `{doc name}-content.md` - Markdown of doc's content to be used in `<body>`
-- `{doc name}-meta.json` - JSON of doc's metadata to be used in `<head>`, including `title` and `description`.
+- `{doc name}-content.md` - Markdown of doc's content
+- `{doc name}-meta.json` - JSON of doc's metadata
 
-Thus, to create a new document available at `https://docs.begin.com/foo/bar`, create the following two files:
-- `src/shared/docs/en/foo/bar-content.md`
-- `src/shared/docs/en/foo/bar-meta.json`
+Document names should be dasherized.
+
+Thus, to create a new document available at `https://docs.begin.com/foo/bar-baz`, create the following two files:
+- `src/shared/docs/en/foo/bar-baz-content.md`
+- `src/shared/docs/en/foo/bar-baz-meta.json`
+
+### Document metadata
+
+Each document contains a JSON file used to populate the page, including the following keys:
+- `title` - Used to display the page title (not including the site's name); should be ≤ 40 chars.
+- `description` - A brief description; should be ≤ 300 chars.
+- `github` - GitHub URL of the corresponding markdown doc to be edited
+
+```javascript
+{
+  "title": "How to rate dogs",
+  "description": "An introduction to rating dogs",
+  "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction-content.md"
+}
+```
+
