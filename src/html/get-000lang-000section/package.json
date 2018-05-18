@@ -1,0 +1,7 @@
+{
+  "name": "begin-help-get-000lang-000section",
+  "dependencies": {
+    "@architect/data": "^2.0.2",
+    "@architect/functions": "^1.8.0"
+  }
+}
