@@ -3,11 +3,7 @@ var render = require('@architect/shared/render')
 
 function route(req, res) {
   console.log(JSON.stringify(req, null, 2))
-  let {html, status} = render(`home`)
-  res({
-    status,
-    html,
-  })
+  res({location: '/en/getting-started/introduction'})
 }
 
 exports.handler = arc.html.get(route)
