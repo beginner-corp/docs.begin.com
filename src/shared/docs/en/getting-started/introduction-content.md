@@ -1,5 +1,9 @@
-# Introduction
+Intro text
 
-## This is the intro page
+## What is Begin?
 
-Hi there.
+What is Begin text
+
+## Hello world
+
+Hello world text
