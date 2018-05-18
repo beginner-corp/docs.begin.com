@@ -14,24 +14,12 @@ The below list defines the markdown entities Begin will (and won't) support in o
 
 ✅ Supported
 
-# H1
-# H1 with `inline code`
-# [H1](#) linked
-## H2
-## H2 with `inline code`
-## [H2](#) linked
-### H3
-### H3 with `inline code`
-### [H3](#) linked
-#### H4
-#### H4 with `inline code`
-#### [H4](#) linked
-##### H5
-##### H5 with `inline code`
-##### [H5](#) linked
-###### H6
-###### H6 with `inline code`
-###### [H6](#) linked
+## Document section
+## Document section with `inline code`
+## [Document section](#) linked
+### Document subsection
+### Document subsection with `inline code`
+### [Document subsection](#) linked
 
 Normal copy
 
@@ -88,6 +76,19 @@ Horizontal rules ↓
 
 
 ❌ Not supported
+
+# H1
+# H1 with `inline code`
+# [H1](#) linked
+#### H4
+#### H4 with `inline code`
+#### [H4](#) linked
+##### H5
+##### H5 with `inline code`
+##### [H5](#) linked
+###### H6
+###### H6 with `inline code`
+###### [H6](#) linked
 
 Copy with _italic_, and **_bold italic_** text
 
