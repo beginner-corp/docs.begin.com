@@ -3,7 +3,7 @@ begin-help
 
 @html
 get /
-get /:section/:doc
+get /:lang/:section/:doc
 
 # @static
 # staging begin-docs-staging
