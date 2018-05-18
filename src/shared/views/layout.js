@@ -13,4 +13,3 @@ module.exports = function layout (meta, content) {
   </body>
 </html>
 `
-}
