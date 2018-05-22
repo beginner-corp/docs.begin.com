@@ -7,12 +7,12 @@ var layout = require('./views/layout')
 module.exports = function render (active) {
 
   var doc = active.doc
-  var section = active.section
+  var cat = active.cat
   var lang = active.lang
 
   // Defines the files needed to render a doc
-  var meta_file = join(__dirname, 'docs', lang, section, doc) + '-meta.json'
-  var content_file = join(__dirname, 'docs', lang, section, doc) + '-content.md'
+  var meta_file = join(__dirname, 'docs', lang, cat, doc) + '-meta.json'
+  var content_file = join(__dirname, 'docs', lang, cat, doc) + '-content.md'
 
   // Make sure each doc has the required meta and content files
   if (exists(meta_file) && exists(content_file)) {
