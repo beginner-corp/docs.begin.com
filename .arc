@@ -3,12 +3,12 @@ begin-help
 
 @html
 get /
-get /:lang                      # just here to forward home if any leaf nodes are missing
-get /:lang/:cat            # just here to forward home if any leaf nodes are missing
+# get /:lang                      # just here to forward home if any leaf nodes are missing
+# get /:lang/:cat            # just here to forward home if any leaf nodes are missing
 get /:lang/:cat/:doc
 
 @css
-/docs.css
+/css/app.css
 
 # @static
 # staging begin-docs-staging
