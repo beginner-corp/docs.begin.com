@@ -2,6 +2,6 @@
   "name": "begin-help-get-000lang",
   "dependencies": {
     "@architect/data": "^2.0.2",
-    "@architect/functions": "^1.8.0"
+    "@architect/functions": "^1.8.3"
   }
 }
