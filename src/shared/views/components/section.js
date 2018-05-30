@@ -2,8 +2,9 @@ var classes = 'foo'
 
 module.exports = function getSections(ToC, categoryIndex, docIndex) {
   ToC = ToC || {}
-  categoryIndex = categoryIndex
-  docIndex = docIndex
+
+  var categoryIndex = categoryIndex
+  var docIndex = docIndex
 
   // Loop through the doc's sections array, executing Section() to assemble the section list HTML
   let sectionList = []

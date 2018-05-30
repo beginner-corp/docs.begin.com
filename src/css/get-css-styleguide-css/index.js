@@ -1,6 +1,6 @@
 let arc = require('@architect/functions')
-let postcss = require('postcss');
-let simpleExtend = require('postcss-extend');
+let postcss = require('postcss')
+let simpleExtend = require('postcss-extend')
 // let mitten = require('cssmitten')
 // let config = require('cssmitten/config')
 // let cached = mitten(JSON.stringify(config))
@@ -16,7 +16,7 @@ function inputCss () {
 var outputCss = postcss()
   .use(simpleExtend())
   .process(inputCss())
-  .css;
+  .css
 
 function route(req, res) {
   res({

@@ -4,7 +4,6 @@ var styles = 'header d-flex ai-c fs1 fw-book fg-0 pl0 pl0-lg pr0 pr2-lg bg-p1'
 
 module.exports = function Header (state) {
   state = state || {}
-  var content = state.content
   var classes = state.classes || ''
   classes = styles + ' ' + classes
   return `

@@ -23,7 +23,7 @@ module.exports = function Nav (state, ToC) {
   }
 
   // Now loop through each category's docs, executing Doc() to:
-  //   - Check to see if the document is active, and 
+  //   - Check to see if the document is active, and
   //     - if so, assemble the doc section list HTML
   //   - assemble the doc link HTML
   function getDocs (categoryIndex) {
