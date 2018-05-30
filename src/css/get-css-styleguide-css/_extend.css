@@ -1,0 +1,42 @@
+#doc * {
+  @extend .c-p8;
+  @extend .pb0;
+  @extend .fw-book;
+}
+
+#doc ul li {
+  @extend list-style: none;
+  @extend .pb-2;
+}
+
+#doc ul li::before {
+  content: "• ";
+  color: var(--p20); /* or whatever color you prefer */
+}
+
+#doc h2 {
+  @extend .fs1;
+}
+
+/*
+#doc p {
+  
+}
+
+#doc pre {
+  
+}
+
+#doc code {
+  
+}
+
+#doc img {
+  
+}
+
+#doc table {
+  
+}
+
+*/
