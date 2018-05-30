@@ -2,13 +2,15 @@ var fs = require('fs')
 var read = fs.readFileSync
 var exists = fs.existsSync
 var join = require('path').join
-var layout = require('./views/layout')
+var Layout = require('./views/layout')
 
-module.exports = function render (active) {
+module.exports = function render (state) {
+  state = state || {}
+  var doc = state.doc
+  var cat = state.cat
+  var lang = state.lang
 
-  var doc = active.doc
-  var cat = active.cat
-  var lang = active.lang
+  var ToC = JSON.parse(read(__dirname + '/docs/' + lang + '/ToC.json').toString())
 
   // Defines the files needed to render a doc
   var meta_file = join(__dirname, 'docs', lang, cat, doc) + '-meta.json'
@@ -17,9 +19,9 @@ module.exports = function render (active) {
   // Make sure each doc has the required meta and content files
   if (exists(meta_file) && exists(content_file)) {
     // Good to go
-    var meta = read(meta_file).toString()
+    var meta = JSON.parse(read(meta_file).toString())
     var content = read(content_file).toString()
-    return {html: layout(meta,content)}
+    return {html: Layout(state, meta, content, ToC)}
   } else {
     // Return 404
     var notFound = '404, sorry!'

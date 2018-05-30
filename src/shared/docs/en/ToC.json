@@ -1,0 +1,23 @@
+[
+  {
+    "cat": "getting-started",
+    "catTitle": "Getting Started",
+    "docs": [
+      {
+        "doc": "introduction",
+        "docTitle": "Introduction",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction-content.md",
+        "sections": [
+          {
+            "sectionAnchor": "#what-is-begin-",
+            "sectionName": "What is Begin?"
+          },
+          {
+            "sectionAnchor": "#hello-world",
+            "sectionName": "Hello world"
+          }
+        ]
+      }
+    ]
+  }
+]
