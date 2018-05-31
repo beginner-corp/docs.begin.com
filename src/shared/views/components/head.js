@@ -9,7 +9,7 @@ module.exports = function head (state) {
   <link rel="stylesheet" href="/css/styleguide.css">
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="https://fonts.begin.com/fonts-slate.css">
-  <link rel="stylesheet" href="https://fonts.begin.com/fonts-inconsolata.css">
+  <link rel="stylesheet" href="https://s3.amazonaws.com/begin-fonts/fonts-inconsolata.css">
 </head>
 `
 }

@@ -18,7 +18,7 @@ module.exports = function Layout (state, meta, content, ToC) {
 ${Head(meta)}
 <body>
 ${Symbols}
-<div class="d-static h-100 o-hidden">
+<div class="d-static h-100">
   <div class="d-flex fd-row fg-1">
     ${Header()}
   </div>
@@ -27,7 +27,7 @@ ${Symbols}
       ${Sidebar(state, ToC)}
     </aside>
     <section class="main h-100 fd-c fg-1 pt0" id="doc">
-      <h1 class="fs3">${meta.title}</h1>
+      <h1 class="fs3 mb2">${meta.title}</h1>
       ${md(content)}
     </section>
   </div>

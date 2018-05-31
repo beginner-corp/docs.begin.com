@@ -8,7 +8,7 @@ Copy [with a link](#)
 
 Copy with **bold** text
 
-## Document section with `inline code`
+## Document section with `inline codering`
 
 Copy with **[bold](#)** linked text
 
@@ -18,9 +18,9 @@ Copy with ~~struck through~~ text
 
 Copy with ~~[struck through](#)~~ linked text
 
-Copy with `inline code`
+Copy with `inline codering`
 
-Copy with [`linked inline code`](#)
+Copy with [`linked inline codering`](#)
 
 ```javascript
 function codeblock() {

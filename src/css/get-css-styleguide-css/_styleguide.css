@@ -419,11 +419,11 @@ body {
 .fg-1{flex-grow:1;}
 
 /* MARGIN */
-.m-none{margin:none;}
-.mt-none{margin-top:none;}
-.mr-none{margin-right:none;}
-.mb-none{margin-bottom:none;}
-.ml-none{margin-left:none;}
+.m-none{margin:0;}
+.mt-none{margin-top:0;}
+.mr-none{margin-right:0;}
+.mb-none{margin-bottom:0;}
+.ml-none{margin-left:0;}
 .m-auto{margin-right:auto;margin-left:auto;}
 .mr-auto{margin-right:auto;}
 .ml-auto{margin-left:auto;}
@@ -484,11 +484,11 @@ body {
 .ml-5{margin-left:0.238rem;}
 
 /* PADDING */
-.p-none{padding:none;}
-.pt-none{padding-top:none;}
-.pr-none{padding-right:none;}
-.pb-none{padding-bottom:none;}
-.pl-none{padding-left:none;}
+.p-none{padding:0;}
+.pt-none{padding-top:0;}
+.pr-none{padding-right:0;}
+.pb-none{padding-bottom:0;}
+.pl-none{padding-left:0;}
 .p5{padding:4.209rem;}
 .pt5{padding-top:4.209rem;}
 .pr5{padding-right:4.209rem;}
