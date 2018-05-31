@@ -28,7 +28,7 @@ module.exports = function render (state) {
   }
 
   // Defines the file needed to render a doc
-  var contentFile = join(__dirname, 'docs', lang, cat, doc) + '-content.md'
+  var contentFile = join(__dirname, 'docs', lang, cat, doc) + '.md'
 
   // Make sure each doc has the required meta and content files
   if (exists(contentFile)) {
