@@ -5,16 +5,17 @@
     "docs": [
       {
         "doc": "introduction",
-        "docTitle": "Introduction",
+        "title": "Introduction",
+        "description": "Introduction to Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction-content.md",
         "sections": [
           {
-            "sectionAnchor": "#what-is-begin-",
-            "sectionName": "What is Begin?"
+            "anchor": "#what-is-begin-",
+            "name": "What is Begin?"
           },
           {
-            "sectionAnchor": "#hello-world",
-            "sectionName": "Hello world"
+            "anchor": "#hello-world",
+            "name": "Hello world"
           }
         ]
       }

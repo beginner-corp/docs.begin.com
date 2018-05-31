@@ -17,7 +17,7 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
 
   // Link data
   var href = '/' + state.lang + '/' + cat + '/' + doc + '/'
-  var docTitle = ToC[categoryIndex].docs[docIndex].docTitle
+  var title = ToC[categoryIndex].docs[docIndex].title
 
   // If the document is active, append the active class to highlight it
   var styles = active
@@ -39,11 +39,11 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
 
   return `
     <a
-      alt="${docTitle}"
+      alt="${title}"
       class="${styles}"
       href="${href}"
     >
-      <span class="d-block pt-5 pr-2 pb-5 pl-2">${docTitle}</span>
+      <span class="d-block pt-5 pr-2 pb-5 pl-2">${title}</span>
     </a>${Sections()}
 `
 }

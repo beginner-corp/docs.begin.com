@@ -1,7 +1,7 @@
-module.exports = function head (state) {
-  state = state || {}
-  var title = state.title || 'Begin documentation'
-  var description = state.description || 'Begin documentation'
+module.exports = function head (meta) {
+  meta = meta || {}
+  var title = meta.title || 'Begin documentation'
+  var description = meta.description || 'Begin documentation'
   return `
 <head>
   <title>Begin documentation - ${title}</title>

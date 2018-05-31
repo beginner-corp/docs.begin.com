@@ -13,11 +13,11 @@ module.exports = function getSections(ToC, categoryIndex, docIndex) {
 
   // Assemble the leaf nodes into a list which we're done now I think?
   function Section(ToC, categoryIndex, docIndex, s) {
-    let sectionAnchor = ToC[categoryIndex].docs[docIndex].sections[s].sectionAnchor
-    let sectionName = ToC[categoryIndex].docs[docIndex].sections[s].sectionName
+    let anchor = ToC[categoryIndex].docs[docIndex].sections[s].anchor
+    let name = ToC[categoryIndex].docs[docIndex].sections[s].name
     return `
       <li class="pb-4 pl0">
-        <a href="${sectionAnchor}" class="fw-book c-p20">${sectionName}</a>
+        <a href="${anchor}" class="fw-book c-p20">${name}</a>
       </li>
     `
   }

@@ -12,15 +12,29 @@ module.exports = function render (state) {
 
   var ToC = JSON.parse(read(__dirname + '/docs/' + lang + '/ToC.json').toString())
 
-  // Defines the files needed to render a doc
-  var meta_file = join(__dirname, 'docs', lang, cat, doc) + '-meta.json'
-  var content_file = join(__dirname, 'docs', lang, cat, doc) + '-content.md'
+  function getDocMetadata(ToC) {
+    // Find the active category by cat ID
+    var c = ToC.findIndex(data => data.cat == cat)
+    var activeCat = ToC[c].docs
+    // Find the active doc by doc ID
+    var d = activeCat.findIndex(data => data.doc == doc)
+    var activeDoc = ToC[c].docs[d]
+    // If the active doc is present in the filesystem but not present in the ToC, consider it unpublished and in-progress
+    if (activeDoc == undefined) {
+      return {title: 'Preview of docs/' + lang + '/' + cat + '/' + doc}
+    } else {
+      return activeDoc
+    }
+  }
+
+  // Defines the file needed to render a doc
+  var contentFile = join(__dirname, 'docs', lang, cat, doc) + '-content.md'
 
   // Make sure each doc has the required meta and content files
-  if (exists(meta_file) && exists(content_file)) {
-    // Good to go
-    var meta = JSON.parse(read(meta_file).toString())
-    var content = read(content_file).toString()
+  if (exists(contentFile)) {
+    // Good to go! Get the metadata, content, and send to Layout
+    var meta = getDocMetadata(ToC)
+    var content = read(contentFile).toString()
     return {html: Layout(state, meta, content, ToC)}
   } else {
     // Return 404
