@@ -3,7 +3,7 @@
   "dependencies": {
     "@architect/data": "^2.0.2",
     "@architect/functions": "^1.8.7",
-    "cssmitten": "^1.1.6",
+    "cssmitten": "^1.1.7",
     "postcss-extend": "^1.0.5"
   }
 }
