@@ -37,6 +37,6 @@ Begin currently supports the following:
 - Version control: GitHub
 
 
-## Hello world
+## How Begin works
 
 [coming soon]

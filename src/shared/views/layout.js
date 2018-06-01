@@ -1,3 +1,4 @@
+var DocFooter = require('./components/doc-footer')
 var Head = require('./components/head')
 var Header = require('./components/header')
 var Hamburger = require('./components/button-hamburger')
@@ -40,6 +41,7 @@ ${Symbols}
         <div class="p0" id="doc">
           <h1 class="fs3 mb2 pt0-lg">${meta.title}</h1>
           ${md(content)}
+          ${DocFooter(meta)}
         </div>
       </div>
     </div>

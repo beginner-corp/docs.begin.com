@@ -7,15 +7,33 @@
         "doc": "introduction",
         "title": "Introduction",
         "description": "Introduction to Begin",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction-content.md",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction.md",
+        "nextTitle": "Hello world",
+        "nextLink": "/en/getting-started/hello-world/",
         "sections": [
           {
             "anchor": "#what-is-begin-",
             "name": "What is Begin?"
           },
           {
-            "anchor": "#hello-world",
-            "name": "Hello world"
+            "anchor": "#how-begin-works",
+            "name": "How Begin works"
+          }
+        ]
+      },
+      {
+        "doc": "hello-world",
+        "title": "Hello world",
+        "description": "Building your first app with Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/hello-world.md",
+        "sections": [
+          {
+            "anchor": "#creating-an-account",
+            "name": "Creating an account"
+          },
+          {
+            "anchor": "#your-first-app",
+            "name": "Your first app"
           }
         ]
       }
