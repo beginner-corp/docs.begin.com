@@ -1,5 +1,4 @@
 var Icon = require('./icon')
-var Logo = require('./logo')
 
 module.exports = function HamburgerButton () {
   return `

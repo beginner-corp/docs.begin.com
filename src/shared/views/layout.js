@@ -1,6 +1,5 @@
 var DocFooter = require('./components/doc-footer')
 var Head = require('./components/head')
-var Header = require('./components/header')
 var Hamburger = require('./components/button-hamburger')
 var Logo = require('./components/logo')
 var Sidebar = require('./components/sidebar')
