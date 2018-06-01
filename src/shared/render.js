@@ -21,7 +21,7 @@ module.exports = function render (state) {
     var activeDoc = ToC[c].docs[d]
     // If the active doc is present in the filesystem but not present in the ToC, consider it unpublished and in-progress
     if (activeDoc == undefined) {
-      return {title: 'Preview of docs/' + lang + '/' + cat + '/' + doc}
+      return {title: 'Preview of ' + lang + '/' + cat + '/' + doc + '/'}
     } else {
       return activeDoc
     }
