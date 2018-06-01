@@ -17,7 +17,7 @@ module.exports = function getSections(ToC, categoryIndex, docIndex) {
     let name = ToC[categoryIndex].docs[docIndex].sections[s].name
     return `
       <li class="pb-4 pl0">
-        <a href="${anchor}" class="fw-book c-p20">${name}</a>
+        <a href="${anchor}" class="fw-book c-p20 c-h0 c-a0">${name}</a>
       </li>
     `
   }

@@ -31,6 +31,8 @@
 
 #doc a {
   @extend .c-p3;
+  @extend .c-h0;
+  @extend .c-a0;
 }
 
 #doc a code {
