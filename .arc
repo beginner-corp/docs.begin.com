@@ -8,9 +8,7 @@ get /
 get /:lang/:cat/:doc
 
 @css
-/css/app.css
-/css/styleguide.css
-# @todo would be nice to combine these into a single request, but until that is resolved this is doing a file read
+/css/:page
 
 # @static
 # staging begin-docs-staging
