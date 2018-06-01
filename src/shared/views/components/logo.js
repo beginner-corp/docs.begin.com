@@ -1,5 +1,11 @@
-module.exports = `
-<div class="logo d-flex ai-c">
+var styles = 'logo d-flex ai-c'
+
+module.exports = function Logo (state) {
+  state = state || {}
+  var id = state.id || ''
+
+  return `
+<div class="${styles}" id="${id}">
   <img
     src="https://static.begin.com/web/asset/begin-logo.svg"
     alt="begin logo"
@@ -7,3 +13,4 @@ module.exports = `
   >
 </div>
 `
+}

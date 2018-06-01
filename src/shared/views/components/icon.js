@@ -1,4 +1,5 @@
 var styles = ''
+
 module.exports = function Icon (state) {
   state = state || {}
   var href = state.href || ''
