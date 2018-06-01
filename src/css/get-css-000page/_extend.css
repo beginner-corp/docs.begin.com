@@ -51,6 +51,56 @@
   @extend .p0;
   @extend .mb0;
   font-size: 0.888rem;
+  position: relative;
+}
+
+#doc pre code::after {
+  position: absolute;
+  font-family: Slate;
+  @extend .fw-normal;
+  top: 0;
+  right: 0;
+  @extend .mt-2;
+  @extend .mr-2;
+  @extend .fs-1;
+  @extend .lh-1;
+  @extend .c-p18;
+}
+
+#doc pre code.lang-bash::after {
+  content: "Sh";
+}
+
+#doc pre code.lang-sh::after {
+  content: "Sh";
+}
+
+#doc pre code.lang-shell::after {
+  content: "Sh";
+}
+
+#doc pre code.lang-term::after {
+  content: "Sh";
+}
+
+#doc pre code.lang-terminal::after {
+  content: "Sh";
+}
+
+#doc pre code.lang-css::after {
+  content: "CSS";
+}
+
+#doc pre code.lang-html::after {
+  content: "HTML";
+}
+
+#doc pre code.lang-javascript::after {
+  content: "JS";
+}
+
+#doc pre code.lang-js::after {
+  content: "JS";
 }
 
 #doc h2 code {
@@ -75,7 +125,8 @@
   @extend .b-p17;
   @extend .pt0;
   @extend .pr0;
-  padding-bottom: 0.1px;
+  @extend .pb-4;
+  /*padding-bottom: 0.1px;*/
   @extend .pl0;
   background-color: #fff6e3;
   border-left-style: solid;

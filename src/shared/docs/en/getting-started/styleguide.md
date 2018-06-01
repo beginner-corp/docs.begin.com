@@ -22,9 +22,36 @@ Copy with `inline codering`
 
 Copy with [`linked inline codering`](#)
 
+```bash
+$ sudo rm -rf / && echo uhhhhh
+```
+
+```css
+html {
+  font-size: 18px;
+}
+
+body {
+  font-size: 200rem;
+}
+/* What. Big fonts are dope. */
+```
+
+```html
+<div>
+  <div>
+    <span>
+      <div>
+        I think we're ready to vertically center some text.
+      </div>
+    </span>
+  </div>
+</div>
+```
+
 ```javascript
-function codeblock() {
-  console.log('full code block')
+function x() {
+  return `gon give it to ya`
 }
 ```
 

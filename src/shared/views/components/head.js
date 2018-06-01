@@ -37,8 +37,7 @@ module.exports = function head (meta) {
   <title>Begin documentation - ${title}</title>
   <meta name="description" content="${description}"/>
   <link rel="stylesheet" href="/css/app.css">
-  <link rel="stylesheet" href="https://fonts.begin.com/fonts-slate.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/begin-fonts/fonts-inconsolata.css">
+  <link rel="stylesheet" href="https://fonts.begin.com/fonts.css">
 </head>
 
 
