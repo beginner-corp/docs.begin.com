@@ -53,8 +53,8 @@ body {
 }
 .main {
   background-image: none;
-  background-color: var(--p0);
   transition: transform 0.15s ease-out;
+  min-width: 17.777rem;
 }
 .slide-menu {
   transform: translateX(100%);
@@ -87,9 +87,13 @@ input::placeholder {
   #menu-close {
     display: none;
   }
+  #doc {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
   .sidebar {
-    width:13.333rem;
-    min-width:13.333rem;
+    width:12.222rem;
+    min-width:12.222rem;
   }
   .main {
     position: static;

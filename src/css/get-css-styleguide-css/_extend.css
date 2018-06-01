@@ -1,23 +1,32 @@
 #doc {
   @extend .c-p8;
+  font-size: 1.111rem;
+  max-width: 44.444rem;
 }
 
 #doc * {
   @extend .fw-book;
-  @extend .lh1;
+  line-height: 1.555rem;
+}
+
+#doc h1 {
+  @extend .lh3;
 }
 
 #doc h2 {
-  @extend .fs1;
+  @extend .fs2;
   @extend .mb0;
+  @extend .mt2;
+  @extend .lh3;
 }
 
 #doc h3 {
+  @extend .mt2;
   @extend .mb0;
 }
 
 #doc p {
-  @extend .mb0;
+  @extend .mb-1;
 }
 
 #doc a {
@@ -41,6 +50,7 @@
   @extend .c-p1;
   @extend .p0;
   @extend .mb0;
+  font-size: 0.888rem;
 }
 
 #doc h2 code {
@@ -111,6 +121,26 @@
 
 #doc table {
   @extend .mb0;
+  @extend .w-100;
+  @extend .ta-l;
+  @extend .b;
+  @extend .b-p18;
+  border-collapse: collapse;
+}
+
+#doc table th {
+  @extend .p-1;
+  @extend .fw-normal;
+  @extend .b;
+  @extend .b-p18;
+  border-collapse: collapse;
+}
+
+#doc table td {
+  @extend .p-1;
+  @extend .b;
+  @extend .b-p18;
+  border-collapse: collapse;
 }
 
 #doc hr {
