@@ -36,8 +36,8 @@ module.exports = function head (meta) {
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Begin documentation - ${title}</title>
   <meta name="description" content="${description}"/>
-  <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="https://fonts.begin.com/fonts.css">
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 
 

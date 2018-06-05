@@ -18,7 +18,7 @@ module.exports = function Layout (state, meta, content, ToC) {
 <!DOCTYPE html>
 <html lang="en">
 ${Head(meta)}
-<body>
+<body style="opacity: 0.001;">
 ${Symbols}
 <div class="d-flex-lg d-static h-100 o-hidden">
   <aside class="sidebar fg-0 h-100 p-fixed p-static-lg">
