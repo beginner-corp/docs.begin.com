@@ -48,12 +48,17 @@
   @extend .td-u;
 }
 
-#doc p code, li code {
+#doc p code, li > code {
   @extend .br0;
   @extend .c-p7;
   @extend .bg-p21;
   padding: 0.111rem 0.222rem 0.222rem;
   font-size: 0.888rem;
+}
+
+#doc li > pre {
+  @extend .mt-3;
+  @extend .mb-2;
 }
 
 #doc pre {
@@ -186,6 +191,10 @@
   @extend .mb-none;
 }
 
+#doc li p {
+  margin-bottom: unset;
+}
+
 #doc table {
   @extend .mb0;
   @extend .w-100;
@@ -214,6 +223,10 @@
   height: 1px;
   @extend .bg-p18;
   @extend .mb0;
+}
+
+#footer-hr {
+  @extend .mt3;
 }
 
 
