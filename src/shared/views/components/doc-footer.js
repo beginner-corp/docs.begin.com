@@ -27,7 +27,7 @@ module.exports = function DocFooter (meta) {
   }
 
   return `
-  <hr>
+  <hr id="footer-hr">
   ${Github()}
   ${Next()}
 `
