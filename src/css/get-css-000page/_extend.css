@@ -11,18 +11,27 @@
 
 #doc h1 {
   @extend .lh3;
+  @extend .mb0;
+  @extend .fw-medium;
+}
+
+#doc h2:first-of-type {
+  @extend .mt2;
 }
 
 #doc h2 {
   @extend .fs2;
-  @extend .mb0;
-  @extend .mt2;
+  @extend .mb-3;
+  @extend .mt4;
   @extend .lh3;
+  @extend .fw-medium;
+  /*@extend .c-p5;*/
 }
 
 #doc h3 {
-  @extend .mt2;
-  @extend .mb0;
+  @extend .mt3;
+  @extend .mb-3;
+  /*@extend .fw-medium;*/
 }
 
 #doc p {
@@ -39,7 +48,7 @@
   @extend .td-u;
 }
 
-#doc p code {
+#doc p code, li code {
   @extend .br0;
   @extend .c-p7;
   @extend .bg-p21;
@@ -52,8 +61,13 @@
   @extend .c-p1;
   @extend .p0;
   @extend .mb0;
+  @extend .lh1;
   font-size: 0.888rem;
   position: relative;
+}
+
+#doc pre code {
+  line-height: unset;
 }
 
 #doc pre code::after {
