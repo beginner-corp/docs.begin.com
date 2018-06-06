@@ -1,10 +1,10 @@
 @app
-begin-help
+begin-docs
 
 @html
 get /
-# get /:lang                      # just here to forward home if any leaf nodes are missing
-# get /:lang/:cat            # just here to forward home if any leaf nodes are missing
+# get /:lang            # just here to forward home if any leaf nodes are missing
+# get /:lang/:cat       # just here to forward home if any leaf nodes are missing
 get /:lang/:cat/:doc
 
 @css
@@ -13,3 +13,9 @@ get /:lang/:cat/:doc
 # @static
 # staging begin-docs-staging
 # production begin-docs
+
+@aws
+region us-west-1
+
+@domain
+docs.begin.com
