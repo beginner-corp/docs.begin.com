@@ -16,6 +16,7 @@ get /:lang/:cat/:doc
 
 @aws
 region us-west-1
+profile smallwins
 
 @domain
 docs.begin.com
