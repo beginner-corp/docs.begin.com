@@ -67,6 +67,7 @@
   @extend .p0;
   @extend .mb0;
   @extend .lh1;
+  @extend .o-scroll;
   font-size: 0.888rem;
   position: relative;
 }

@@ -52,7 +52,7 @@ Begin currently supports the following:
 
 Begin, uh, began as a cloud infrastructure framework built help manage the immense complexities associated with orchestrating software releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
 
-That project became known as [Architect](https://arc.codes), which we (Small Wins) partnered with and donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model.
+That project became known as [Architect](https://arc.codes), which we (Small Wins) partnered with and donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model and Apache 2 license.
 
 Architect and Small Wins are committed to building open, inclusive open source communities. If you like Begin, we'd love for you to participate in Architect! (We kindly ask you agree to the [CLA](https://js.foundation/cla), and [JSF](https://js.foundation/community/code-of-conduct) and [Small Wins](https://github.com/smallwins/policy/blob/master/begin-community-code-of-conduct.md) Codes of Conduct.
 
