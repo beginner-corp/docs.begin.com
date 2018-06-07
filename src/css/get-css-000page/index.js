@@ -9,9 +9,10 @@ let config = read(__dirname + '/_config.json').toString()
 let styleguide = cssmitten(config)
 let app = read(__dirname + '/_app.css').toString()
 let extend = read(__dirname + '/_extend.css').toString()
+let prism = read(__dirname + '/_prism.css').toString()
 
 function createCss () {
-  return app + '\n\n' + extend + '\n\n' + styleguide
+  return app + '\n\n' + prism + '\n\n' + extend + '\n\n' + styleguide
 }
 
 var css = postcss()

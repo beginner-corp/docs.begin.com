@@ -75,7 +75,7 @@
   line-height: unset;
 }
 
-#doc pre code::after {
+#doc pre code[class*="language-"]::after {
   position: absolute;
   font-family: Slate;
   @extend .fw-normal;
@@ -88,40 +88,24 @@
   @extend .c-p18;
 }
 
-#doc pre code.lang-bash::after {
-  content: "Sh";
+#doc pre code[class$="-bash"]::after {
+  content: "sh";
 }
 
-#doc pre code.lang-sh::after {
-  content: "Sh";
-}
-
-#doc pre code.lang-shell::after {
-  content: "Sh";
-}
-
-#doc pre code.lang-term::after {
-  content: "Sh";
-}
-
-#doc pre code.lang-terminal::after {
-  content: "Sh";
-}
-
-#doc pre code.lang-css::after {
+#doc pre code[class$="-css"]::after {
   content: "CSS";
 }
 
-#doc pre code.lang-html::after {
+#doc pre code[class$="-html"]::after {
   content: "HTML";
 }
 
-#doc pre code.lang-javascript::after {
+#doc pre code[class$="-js"]::after {
   content: "JS";
 }
 
-#doc pre code.lang-js::after {
-  content: "JS";
+#doc pre code[class$="-http"]::after {
+  content: "HTTP";
 }
 
 #doc h2 code {

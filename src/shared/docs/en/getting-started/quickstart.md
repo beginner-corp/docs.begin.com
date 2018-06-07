@@ -77,7 +77,7 @@ To access your `staging` Hello world app, click the `GET /` route in the left na
 
 Let's take a closer look at the boilerplate Begin added to your project. Without all the standard Node and Git project files (like `package.json` and `.gitignore`) it should look something like this:
 
-```sh
+```bash
 .
 ├── src/
 │   ├── html/
@@ -109,23 +109,23 @@ Functions are grouped under `src` by the kind of `Content-Type` they deliver; ea
 Get started working locally on your app in four easy steps:
 
 1. Clone your app's repo to your local machine:
-```sh
-$ git clone git@github.com:{your GH username}/begin-functions-app.git
+```bash
+git clone git@github.com:{your GH username}/begin-functions-app.git
 ```
 
 - cd to your Begin project directory:
-```sh
-$ cd begin-functions-app
+```bash
+cd begin-functions-app
 ```
 
 - Install npm packages:
-```sh
-$ npm run init
+```bash
+npm run init
 ```
 
 - Start the app locally:
-```sh
-$ npm start
+```bash
+npm start
 ```
 
 That's it, you're up and running locally!
@@ -138,14 +138,14 @@ That's it, you're up and running locally!
   - New routes will be automatically committed to your project; run `git pull` to get the latest changes
 
 - Lint and run tests:
-```sh
-$ npm run lint && npm t
+```bash
+npm run lint && npm t
 ```
 
 - Release to `production` by creating a git tag (aka "Releases" in GitHub) 
-```sh
-$ git tag -a 1.0.1 -m "This release includes 20% more cowbell"
-$ git push origin 1.0.1
+```bash
+git tag -a 1.0.1 -m "This release includes 20% more cowbell"
+git push origin 1.0.1
 ```
 
 > 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/)!
