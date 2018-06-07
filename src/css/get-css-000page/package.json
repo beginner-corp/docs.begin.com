@@ -1,5 +1,5 @@
 {
-  "name": "begin-help-get-css-000page",
+  "name": "begin-docs-get-css-000page",
   "dependencies": {
     "@architect/data": "^2.0.2",
     "@architect/functions": "^1.8.10",
