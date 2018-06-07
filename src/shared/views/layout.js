@@ -2,6 +2,7 @@ var DocFooter = require('./components/doc-footer')
 var Head = require('./components/head')
 var Hamburger = require('./components/button-hamburger')
 var Logo = require('./components/logo')
+var Scripts = require('./js/scripts')
 var Sidebar = require('./components/sidebar')
 var Symbols = require('./components/symbols')
 var md = require('marked')
@@ -46,20 +47,7 @@ ${Symbols}
     </div>
   </section>
 </div>
-${state.scripts || ''}
-<script>
-(function () {
-  var open = document.getElementById('menu-open')
-  var close = document.getElementById('menu-close')
-  var main = document.querySelector('.main')
-  function toggle (e) {
-    e.preventDefault()
-    main.classList.toggle('slide-menu')
-  }
-  open.onclick = toggle
-  close.onclick = toggle
-}())
-</script>
+${Scripts() || ''}
 </body>
 </html>
 `
