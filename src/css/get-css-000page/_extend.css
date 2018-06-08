@@ -68,6 +68,7 @@
   @extend .mb0;
   @extend .lh1;
   @extend .o-scroll;
+  @extend .br0;
   font-size: 0.888rem;
   position: relative;
 }
@@ -105,11 +106,25 @@
   content: "JS";
 }
 
+#doc pre code[class$="-javascript"]::after {
+  content: "JS";
+}
+
 #doc pre code[class$="-http"]::after {
   content: "HTTP";
 }
 
 #doc h2 code {
+  @extend .br0;
+  @extend .c-p7;
+  @extend .bg-p21;
+  @extend .pt-5;
+  @extend .pr-4;
+  @extend .pb-4;
+  @extend .pl-4;
+}
+
+#doc h3 code {
   @extend .br0;
   @extend .c-p7;
   @extend .bg-p21;
@@ -208,6 +223,7 @@
   height: 1px;
   @extend .bg-p18;
   @extend .mb0;
+  @extend .mt3;
 }
 
 #footer-hr {

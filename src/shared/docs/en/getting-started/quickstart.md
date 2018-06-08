@@ -6,14 +6,13 @@ First, let's review what you need to start building with Begin.
 
 
 ### tl;dr
-You'll need:
-- macOS, Windows, Linux
-- Node.js 8.10
+- macOS, Windows, or Linux
+- Node.js 8.10(+)
 - NPM 6.x
 - GitHub account
 
 
-### Platforms: macOS, Windows, Linux
+### Platforms: macOS, Windows, and Linux
 
 Begin supports local development on just about all modern computers, including: macOS, Windows (10+), and Linux.
 
@@ -22,14 +21,14 @@ Begin supports local development on just about all modern computers, including: 
 
 The AWS infrastructure that Begin orchestrates runs solely on Node.js 8.10. (We do indeed have plans to support additional runtimes in the future!)
 
-You can work locally with versions of Node other than 8.10, but don't depend on any features, functionality, or fixes delivered in anything other than 8.10.
+You can work locally with versions of Node other than 8.10, but your app shouldn't depend on any features, functionality, or fixes delivered not available in 8.10.
 
 You can grab [Node latest](https://nodejs.org/en/download/) here, or [v8.10 here](https://nodejs.org/dist/v8.10.0/).
 
 
 ### Package management: NPM 6.x
 
-Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM 5.6.0, so you'll want to make sure to upgrade with: `$ npm install npm@latest -g`
+Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM 5.6.0, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
 
 
 ### Version control: GitHub
@@ -41,7 +40,7 @@ Begin relies on GitHub as both the host of your project's git repository (as wel
 
 To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), and authorize it with GitHub. That's all!
 
-> Begin only requests the permissions it needs to operate with GitHub, and does not concern itself with any of your other repositories.
+> Begin only requests the permissions it needs to work with GitHub, and does not access any of your other repositories.
 
 
 ## Creating an app
@@ -59,9 +58,9 @@ This will spin up your new project repository under `github.com/{your GH usernam
 
 Immediately after Begin is finished setting up your project repo, it will kick off its first deploy to your app's `staging` environment.
 
-Each new build appears on Begin's home screen: **Builds & Deploys**.
-
 By default, each commit to `master` initiates a build; if the build is green, that build is immediately deployed to your app's `staging` environment. No fuss, no muss!
+
+Every new build to `staging` and `master` appears on Begin's home screen: **Builds & Deploys**.
 
 <!-- @todo - link to upcoming environments + deploys doc(s) re. deploying to master -->
 
@@ -75,7 +74,7 @@ To access your `staging` Hello world app, click the `GET /` route in the left na
 
 ## Project structure
 
-Let's take a closer look at the boilerplate Begin added to your project. Without all the standard Node and Git project files (like `package.json` and `.gitignore`) it should look something like this:
+Let's take a closer look at the boilerplate Begin added to your project. Without all the standard Node and Git project files (like `package.json` and `.gitignore`) your project should look something like this:
 
 ```bash
 .
@@ -148,6 +147,6 @@ git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
 
-> 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/)!
+> 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/).
 > 
 > Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating production releases!

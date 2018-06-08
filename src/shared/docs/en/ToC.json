@@ -64,5 +64,59 @@
         ]
       }
     ]
+  },
+  {
+    "cat": "routes-functions",
+    "catTitle": "Routes & Functions",
+    "docs": [
+      {
+        "doc": "creating-new-routes",
+        "title": "Creating new routes",
+        "description": "Creating new routes for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-routes.md",
+        "nextTitle": "HTML Functions",
+        "nextLink": "/en/routes-functions/html-functions/",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#more-about-routes-in-begin",
+            "name": "More about routes in Begin"
+          }
+        ]
+      },
+      {
+        "doc": "html-functions",
+        "title": "HTML Functions",
+        "description": "Building HTML Functions for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/html-functions.md",
+        "//nextTitle": "tk",
+        "//nextLink": "/en/routes-functions/tk/",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#arc-html-get-",
+            "name": "arc.html.get()"
+          },
+          {
+            "anchor": "#html-get-examples",
+            "name": "GET examples"
+          },
+          {
+            "anchor": "#arc-html-post-",
+            "name": "arc.html.post()"
+          },
+          {
+            "anchor": "#html-post-examples",
+            "name": "POST examples"
+          }
+        ]
+      }
+    ]
   }
 ]

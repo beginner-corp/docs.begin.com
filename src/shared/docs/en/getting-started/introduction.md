@@ -16,11 +16,11 @@ Begin enables you to take full advantage of AWS's next-gen cloud infra without t
 
 Some key properties of apps built with Begin:
 
-- **Super fast CI, instantaneous deployment**: go from commit to green build to running code in seconds, not minutes
-- **Nearly infinitely scalable**: native AWS cloud compute means pre-provisioning infra and extensive capacity planning are things of the past
-- **Highly debuggable**: per route isolation reduces the time to find problems and ship fixes
+- **Super fast CI, instantaneous deployment**: go from commit to green build to running code in seconds
+- **Nearly infinitely scalable**: native AWS Lambda-based compute means never having to pre-provision infra or spend time on capacity planning
+- **Highly debuggable**: per route isolation reduces the time required to find problems and ship fixes
 - **Staging isolation**: baked-in fully isolated staging environment is automatically set up right alongside production
-- **Cost-effective**: pay for what you use, not for what you think you may need
+- **Cost-effective**: pay for what you use – not for what you think you may need
 
 
 ### What can you build with Begin?
