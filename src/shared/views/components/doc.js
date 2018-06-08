@@ -1,5 +1,5 @@
 var getSections = require('./section')
-var classes = 'd-table nav-link fw-book fg-0 bg-a5 c-p8 c-h0 c-a0 ml0 mb-3'
+var classes = 'd-table nav-link fw-book fg-0 bg-a5 c-p8 c-h0 c-a0 mb-5'
 
 module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
   state = state || {}

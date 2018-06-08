@@ -33,7 +33,11 @@ module.exports = function Nav (state, ToC) {
     for (d = 0; d < ToC[categoryIndex].docs.length; d++) {
       docsList = docsList + Doc(state, ToC, categoryIndex, d)
     }
-    return docsList
+    return `
+<div id="docs">
+  ${docsList}
+</div>
+`
   }
 
   return getCategories()

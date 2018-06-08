@@ -10,7 +10,7 @@ module.exports = function Sidebar (state, ToC) {
 <div class='d-flex fd-c h-100'>
 
   <header
-    class="header d-flex ai-c fs1 fw-book fg-0 pl0 pl0-lg pr0 pr2-lg bg-p1"
+    class="header d-flex ai-c fs1 fw-book fg-0 bg-p1"
   >
     <a
       id='menu-close'

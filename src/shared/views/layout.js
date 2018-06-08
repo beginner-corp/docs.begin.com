@@ -22,7 +22,7 @@ ${Head(meta)}
 <body style="opacity: 0.001;">
 ${Symbols}
 <div class="d-flex-lg d-static h-100 o-hidden">
-  <aside class="sidebar fg-0 h-100 p-fixed p-static-lg">
+  <aside class="sidebar fg-0 h-100 p-fixed p-static-lg pr0 pl0">
     ${Sidebar(state, ToC)}
   </aside>
   <section class="main h-100 fg-1 p-fixed p-static-lg o-scroll-y">
