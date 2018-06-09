@@ -23,24 +23,9 @@ Some key properties of apps built with Begin:
 - **Cost-effective**: pay for what you use – not for what you think you may need
 
 
-### What can you build with Begin?
+## What Begin does & doesn't do
 
-Within a few certain limitations, just about anything you can build with Node and a database.
-
-Here are just a few ideas:
-
-- Fast, scalable static web sites
-- Powerful database-backed web applications
-- APIs
-- Backends for mobile apps
-- Slack apps
-- Alexa Skills
-
-Begin currently supports the following:
-
-- Runtime: Node 8.10
-- Package management: NPM 6.0.1
-- Version control: GitHub
+[coming soon]
 
 
 ## How Begin works
@@ -50,10 +35,10 @@ Begin currently supports the following:
 
 ## Background & open source governance
 
-Begin, uh, began as a cloud infrastructure framework built help manage the immense complexities associated with orchestrating software releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
+Begin, uh, began as a cloud infrastructure framework built to help manage the immense complexities associated with orchestrating software releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
 
 That project became known as [Architect](https://arc.codes), which we (Small Wins) partnered with and donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model and Apache 2 license.
 
 Architect and Small Wins are committed to building open, inclusive open source communities. If you like Begin, we'd love for you to participate in Architect! (We kindly ask you agree to the [CLA](https://js.foundation/cla), and [JSF](https://js.foundation/community/code-of-conduct) and [Small Wins](https://github.com/smallwins/policy/blob/master/begin-community-code-of-conduct.md) Codes of Conduct.
 
-Apps built with Begin are fully compatible with Architect; should you want to, we are also committed to making it easy to eject your Begin project and move it to your own cloud infrastructure.
+Apps built with Begin are fully compatible with Architect. You can eject your apps from Begin at any time and run them on your own AWS infra, should you want to – and we're committed to making that easy to do.

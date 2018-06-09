@@ -1,9 +1,9 @@
 Alright, let's dive in! Getting started with Begin only takes a few minutes.
 
-## Prerequisites
-
 First, let's review what you need to start building with Begin.
 
+
+## Prerequisites
 
 ### tl;dr
 - macOS, Windows, or Linux

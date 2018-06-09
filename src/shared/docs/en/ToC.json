@@ -82,6 +82,10 @@
             "name": "Overview"
           },
           {
+            "anchor": "#using-url-parameters-to-create-dynamic-paths",
+            "name": "Using URL parameters to create dynamic paths"
+          },
+          {
             "anchor": "#more-about-routes-in-begin",
             "name": "More about routes in Begin"
           }
@@ -104,7 +108,7 @@
             "name": "arc.html.get()"
           },
           {
-            "anchor": "#html-get-examples",
+            "anchor": "#get-examples",
             "name": "GET examples"
           },
           {
@@ -112,7 +116,7 @@
             "name": "arc.html.post()"
           },
           {
-            "anchor": "#html-post-examples",
+            "anchor": "#post-examples",
             "name": "POST examples"
           }
         ]
