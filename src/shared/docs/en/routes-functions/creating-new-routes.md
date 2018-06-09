@@ -20,15 +20,17 @@ After clicking `Add Function`, the following things happen automatically:
 It's possible to build dynamic paths using Express-style URL parameters, like: `GET /shop/:item`
 <!-- @todo - add link: learn more about routes with parameters in our project doc(s) -->
 
-URL parameters are passed to your Function via the Architect API's `req` object, which contains a `params` object.
+URL parameters are passed to your Function via the Architect API's `req.params` object.
 
-For example, the route used to serve this page is `GET /:lang/:cat/:doc`. When a client requests the path `/en/routes-functions/html-functions/`, the Function handling this route has access to the following `req.params` object:
+For example, the route used to serve this page is `GET /:lang/:cat/:doc`. When a client requests the path `/en/routes-functions/creating-new-routes/`, the Function handling this route receives a `req` object containing:
 
 ```js
 {
-  lang: 'en',
-  cat: 'routes-functions',
-  doc: 'html-functions'
+  params: {
+    lang: 'en',
+    cat: 'routes-functions',
+    doc: 'creating-new-routes'
+  }
 }
 ```
 <!-- @todo - expand this section more -->
