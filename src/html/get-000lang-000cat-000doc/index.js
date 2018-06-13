@@ -10,7 +10,7 @@ function route(req, res) {
   let {html, status} = render(state)
   res({
     status,
-    html,
+    html
   })
 }
 
