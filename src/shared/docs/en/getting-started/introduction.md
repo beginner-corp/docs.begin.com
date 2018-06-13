@@ -25,12 +25,44 @@ Some key properties of apps built with Begin:
 
 ## What Begin does & doesn't do
 
-[coming soon]
+### What Begin does
+
+- Provision and orchestrate the next-gen cloud infrastructure needed to stand up a nearly infinitely scalable web application or API
+- Provide fully isolated staging and production environments
+- Manage CI for multiple environments
+- Distribute static assets
+- Deploy builds to `staging` (automatically, if green) and `production` (on-demand)
+- Enable full offline and local development workflows
 
 
-## How Begin works
+### What can you build with Begin?
 
-[coming soon]
+If you can build it with Node and a database, you can build it with Begin. Here are just a few ideas:
+
+- Fast, easily updated static web sites
+- Powerful database-backed web applications
+- APIs
+- Backends for mobile apps
+- Internal tooling
+- Microservices supporting other applications
+- Tools for data processing
+- Slack apps
+- Alexa Skills
+
+
+### What Begin doesn't do
+
+- Store (or cache) your code – your version control system is the source of truth for your code, which is passed to Begin only to build and deploy
+- Operate physical infrastructure – Begin runs on the same AWS infrastructure as apps built on Begin – and increasingly much of the world's software
+- Long-running processes – Begin relies on fast-executing, highly scalable next-gen cloud services; applications that require extreme compute or long-running connections are probably still best suited to non-serverless infrastructure
+
+
+### What shouldn't you build with Begin?
+
+- Streaming video services – at some point in the future Begin might be able to accommodate this kind of use case, but for now processes and connections terminate at 5 minutes
+- MMOs – while the scale required to operate an MMO is entirely possible, again, Begin's compute model is not presently designed for long-lived connections
+- ML training, blockchain computation – if it can compute in 5 minutes or less on reasonably fast iron, Begin can do it – and cost effectively, too. But most ML and blockchain applications we've seen require more than a few minutes' worth of cycles to complete processes
+- Compiled mobile and desktop apps – if you need CI and build distribution for your compiled mobile or desktop app, we suggest services like [BuddyBuild](https://www.buddybuild.com/), [CircleCI](https://circleci.com/), and [TestFlight](https://developer.apple.com/testflight/). But if you need to build your backend and APIs for your mobile app, Begin is here for that!
 
 
 ## Background & open source governance
