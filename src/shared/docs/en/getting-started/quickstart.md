@@ -88,17 +88,19 @@ Let's take a closer look at the boilerplate Begin added to your project. Without
     └── 01-data-test.js
 ```
 
-Begin projects are organized primarily around functions.
+Begin projects are organized primarily around routes (and events, coming soon).
 
-Functions are grouped under `src` by the kind of `Content-Type` they deliver; each function maps to a publicly accessible route, and is executed by its own fully isolated Lambda.
+<!-- @todo - expand this section with references to "routes and events" when we add @events and @scheduled -->
 
-- `src/` - source root folder containing all your project's functions
-  - `html/` - organizing folders that group functions by their `Content-Type`; other function types include `json`, and (coming soon) `css`, `js`, `text`, and `xml`
-    - `get-index/` - function folder, that contains everything needed to respond to HTTP `GET` requests at `/`
-  - `shared/` - a special and magical folder that makes its contents available across all your functions; think: per-project globally installed modules
+The handler for each route is grouped under `src` by the kind of `Content-Type` it delivers; each route maps to a separate, fully isolated, publicly accessible, and independently deployable Lambda cloud function.
+
+- `src/` - source root folder containing all your project's routes
+  - `html/` - organizing folders that group routes by their `Content-Type`; other route types include `json`, and (coming soon) `css`, `js`, `text`, and `xml`
+    - `get-index/` - route folder, contains everything needed to respond to HTTP `GET` requests at `/`
+  - `shared/` - a utility folder that makes its contents available across all your routes; think: per-project globally installed modules
 - `test/` - test root for your app's tests (run locally via `npm run test`)
 
-> ⚠️ While we totally encourage you to add files, subfolders, node modules, etc. to your individual functions, moving or renaming the function folders themselves will break your application.
+> ⚠️ While we totally encourage you to add files, subfolders, node modules, etc. to your individual routes, moving or renaming the route folders themselves will break your application.
 
 <!-- @todo - link to upcoming project structure doc(s) -->
 
@@ -133,7 +135,7 @@ That's it, you're up and running locally!
 
 ### Keep it going
 
-- Create new `HTML` and `JSON` `GET` and `POST` routes by opening Begin, clicking the `Add new function` buttons in the left nav, and following the prompt
+- Create new `HTML` and `JSON` `GET` and `POST` routes by opening Begin, clicking the `Add new route` buttons in the left nav, and following the prompt
   - New routes will be automatically committed to your project; run `git pull` to get the latest changes
 
 - Lint and run tests:
