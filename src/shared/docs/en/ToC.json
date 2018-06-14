@@ -16,8 +16,8 @@
             "name": "What is Begin?"
           },
           {
-            "anchor": "#how-begin-works",
-            "name": "How Begin works"
+            "anchor": "#what-begin-does-doesn-t-do",
+            "name": "What Begin does & doesn't do"
           },
           {
             "anchor": "#background-open-source-governance",
@@ -30,8 +30,8 @@
         "title": "Quickstart",
         "description": "Get started building your first app with Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/quickstart.md",
-        "//nextTitle": "tk",
-        "//nextLink": "/en/getting-started/tk/",
+        "nextTitle": "Creating new routes",
+        "nextLink": "/en/routes-functions/creating-new-routes/",
         "sections": [
           {
             "anchor": "#prerequisites",
@@ -74,8 +74,8 @@
         "title": "Creating new routes",
         "description": "Creating new routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-routes.md",
-        "nextTitle": "HTML Functions",
-        "nextLink": "/en/routes-functions/html-functions/",
+        "nextTitle": "Sessions",
+        "nextLink": "/en/routes-functions/sessions/",
         "sections": [
           {
             "anchor": "#overview",
@@ -92,10 +92,36 @@
         ]
       },
       {
-        "doc": "html-functions",
-        "title": "HTML Functions",
-        "description": "Building HTML Functions for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/html-functions.md",
+        "doc": "sessions",
+        "title": "Sessions",
+        "description": "Using Begin's built-in sessions support",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/sessions.md",
+        "nextTitle": "HTML Routes",
+        "nextLink": "/en/routes-functions/html-routes/",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#how-sessions-work",
+            "name": "How sessions work"
+          },
+          {
+            "anchor": "#caveats",
+            "name": "Caveats"
+          },
+          {
+            "anchor": "#examples",
+            "name": "Examples"
+          }
+        ]
+      },
+      {
+        "doc": "html-routes",
+        "title": "HTML Routes",
+        "description": "Building HTML routes for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/html-routes.md",
         "//nextTitle": "tk",
         "//nextLink": "/en/routes-functions/tk/",
         "sections": [
@@ -104,16 +130,16 @@
             "name": "Overview"
           },
           {
-            "anchor": "#arc-html-get-",
-            "name": "arc.html.get()"
+            "anchor": "#begin-html-get-",
+            "name": "begin.html.get()"
           },
           {
             "anchor": "#get-examples",
             "name": "GET examples"
           },
           {
-            "anchor": "#arc-html-post-",
-            "name": "arc.html.post()"
+            "anchor": "#begin-html-post-",
+            "name": "begin.html.post()"
           },
           {
             "anchor": "#post-examples",
