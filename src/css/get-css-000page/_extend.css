@@ -48,7 +48,7 @@
   @extend .td-u;
 }
 
-#doc p code, li code {
+#doc p code, li > code, a code {
   @extend .br0;
   @extend .c-p7;
   @extend .bg-p21;
