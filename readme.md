@@ -7,34 +7,60 @@
 
 ## Document heirarchy
 
-Documents and views are shared across the site, and are found in `src/shared/docs/{language}/{section name}/{doc name}`
+Documents and views are shared across the site, and are found in `src/shared/docs/{language}/{category}/{doc}`
 
-Each doc must possess two files:
-- `{doc name}-content.md` - Markdown of doc's content
-- `{doc name}-meta.json` - JSON of doc's metadata
+Since categories and document names are used as IDs, category names must be unique within each language, and document names must be unique within each category.
 
-Document names should be dasherized.
+Category IDs match their folder names, and document IDs match their filenames. The filename convention for docs is simply: `{doc}.md`
 
-Thus, to create a new document available at `https://docs.begin.com/foo/bar-baz`, create the following two files:
-- `src/shared/docs/en/foo/bar-baz-content.md`
-- `src/shared/docs/en/foo/bar-baz-meta.json`
+Category and document names should be dasherized.
+
+Thus, to create a new document available at `https://docs.begin.com/foo/bar-baz`, create the following folder and file:
+- `src/shared/docs/en/foo/bar-baz.md`
+
 
 ### Document metadata
 
-Each document contains a JSON file used to populate the page, including the following keys:
-- `title` - Used to display the page title (not including the site's name); should be ≤ 40 chars.
-- `description` - A brief description; should be ≤ 300 chars.
-- `github` - GitHub URL of the corresponding markdown doc to be edited
-- `docSections` - Array of document sections (denoted with `##` in the markdown document); document section objects possess the following two keys:
-  - `docSectionName` - Name of the document section; should match what's in the markdown document
-  - `docSectionAnchor` - Named anchor; should match the output of markdown (note: trailing punctuation is parsed as a trailing dash, i.e. a `docSectionName` of "Hi!" produces a `docSectionAnchor` of "#hi-")
+Each language contains a table of contents JSON file at its root (`ToC.json`) used to populate the nav tree, documents, and metadata.
 
+The following keys are required unless stated otherwise:
 
+- `cat` - Category name (i.e. `getting-started`)
+- `catTitle` - Friendly category title (i.e. `Getting Started`)
+- `docs` - Array containing category's document objects; each document object contains the following keys:
+  - `doc` - Document name (i.e. `introduction`)
+  - `title` - Friendly document title, used to display the page title (not including the site's name); should be ≤ 40 chars (i.e. `An introduction to Begin`)
+  - `description` - A brief description of the document, used in `<meta name="description" content="${description}"/>`; should be ≤ 300 chars.
+  - `github` - GitHub URL of the corresponding markdown file, should someone want to send a pull request
+  - `nextDoc` (optional) - Complete relative path to the next document (i.e. `/en/getting-started/quickstart/`)
+  - `nextTitle` (optional) - Friendly document title of the next document (i.e. `Quickstart`)
+  - `sections` - Array containing document's section objects (should map to only H2s, i.e. `## What is Begin?`); each section object contains the following keys:
+    - `anchor` - Named anchor from the generated markdown (i.e. `#what-is-begin-`, note: trailing punctuation may result in trailing dashes, where `## Hi!` produces an `anchor` of `#hi-`)
+    - `name` - Name of the document section; should match what's in the markdown document
+
+### Example ToC
 
 ```javascript
-{
-  "title": "How to rate dogs",
-  "description": "An introduction to rating dogs",
-  "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction-content.md"
-}
+[
+  {
+    "cat": "dog-rates",
+    "catTitle": "Rating dogs",
+    "docs": [
+      {
+        "doc": "how-to-rate-dogs",
+        "title": "How to rate dogs",
+        "description": "An introduction to rating dogs",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/dog-rates/how-to-rate-dogs.md",
+        "nextDoc": "/en/dog-rates/dog-rating-scales/",
+        "nextTitle": "Dog-rating scales",
+        "sections": [
+          {
+            "anchor": "#they-re-all-good-dogs",
+            "name": "They're all good dogs"
+          }
+        ]
+      }
+    ]
+  }
+]
 ```

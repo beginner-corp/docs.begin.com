@@ -18,6 +18,10 @@ The below list defines the markdown entities Begin will (and won't) support in o
 ## Document section with `inline code`
 ## [Document section](#) linked
 
+### Document subsection
+### Document subsection with `inline code`
+### [Document subsection](#) linked
+
 Normal copy
 
 Copy [with a link](#)
@@ -75,7 +79,6 @@ Horizontal rules ↓
 ❌ Not supported
 
 # H1
-### H2
 #### H4
 ##### H5
 ###### H6
