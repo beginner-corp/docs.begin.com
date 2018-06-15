@@ -8,8 +8,8 @@
         "title": "Introduction",
         "description": "Introduction to Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/introduction.md",
+        "nextDoc": "/en/getting-started/quickstart/",
         "nextTitle": "Quickstart",
-        "nextLink": "/en/getting-started/quickstart/",
         "sections": [
           {
             "anchor": "#what-is-begin-",
@@ -30,8 +30,8 @@
         "title": "Quickstart",
         "description": "Get started building your first app with Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/quickstart.md",
+        "nextDoc": "/en/routes-functions/creating-new-routes/",
         "nextTitle": "Creating new routes",
-        "nextLink": "/en/routes-functions/creating-new-routes/",
         "sections": [
           {
             "anchor": "#prerequisites",
@@ -74,8 +74,8 @@
         "title": "Creating new routes",
         "description": "Creating new routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-routes.md",
+        "nextDoc": "/en/routes-functions/sessions/",
         "nextTitle": "Sessions",
-        "nextLink": "/en/routes-functions/sessions/",
         "sections": [
           {
             "anchor": "#overview",
@@ -96,8 +96,8 @@
         "title": "Sessions",
         "description": "Using Begin's built-in sessions support",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/sessions.md",
+        "nextDoc": "/en/routes-functions/html-routes/",
         "nextTitle": "HTML Routes",
-        "nextLink": "/en/routes-functions/html-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -122,8 +122,8 @@
         "title": "HTML Routes",
         "description": "Building HTML routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/html-routes.md",
+        "nextDoc": "/en/routes-functions/json-routes/",
         "nextTitle": "JSON Routes",
-        "nextLink": "/en/routes-functions/json-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -152,8 +152,8 @@
         "title": "JSON Routes",
         "description": "Building JSON routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/json-routes.md",
+        "nextDoc": "/en/routes-functions/xml-routes/",
         "nextTitle": "XML Routes",
-        "nextLink": "/en/routes-functions/xml-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -166,8 +166,8 @@
         "title": "XML Routes",
         "description": "Building XML routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/xml-routes.md",
+        "nextDoc": "/en/routes-functions/css-routes/",
         "nextTitle": "CSS Routes",
-        "nextLink": "/en/routes-functions/css-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -180,8 +180,8 @@
         "title": "CSS Routes",
         "description": "Building CSS routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/css-routes.md",
+        "nextDoc": "/en/routes-functions/javascript-routes/",
         "nextTitle": "JavaScript Routes",
-        "nextLink": "/en/routes-functions/javascript-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -194,8 +194,8 @@
         "title": "JavaScript Routes",
         "description": "Building JavaScript routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/javascript-routes.md",
+        "nextDoc": "/en/routes-functions/text-routes/",
         "nextTitle": "Text Routes",
-        "nextLink": "/en/routes-functions/text-routes/",
         "sections": [
           {
             "anchor": "#overview",
@@ -208,8 +208,8 @@
         "title": "Text Routes",
         "description": "Building text routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/text-routes.md",
+        "//nextDoc": "",
         "//nextTitle": "",
-        "//nextLink": "",
         "sections": [
           {
             "anchor": "#overview",

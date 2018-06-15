@@ -1,7 +1,7 @@
 module.exports = function DocFooter (meta) {
   meta = meta || {}
   var github = meta.github
-  var nextLink = meta.nextLink
+  var nextDoc = meta.nextDoc
   var nextTitle = meta.nextTitle
 
   // Check for GitHub
@@ -17,9 +17,9 @@ module.exports = function DocFooter (meta) {
 
   // Check for Next
   function Next () {
-    if (nextLink != undefined && nextTitle != undefined) {
+    if (nextDoc != undefined && nextTitle != undefined) {
       return `
-<h2>Next: <a href="${nextLink}">${nextTitle} →</a></h2>
+<h2>Next: <a href="${nextDoc}">${nextTitle} →</a></h2>
   `
     } else {
       return ""
