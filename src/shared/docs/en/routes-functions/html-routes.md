@@ -54,9 +54,9 @@ Returns a JavaScript object with the following keys:
 
 Function that must be invoked; accepts a JavaScript object with the following keys:
 
-- Either `html` or `location`
+- Either `html` or `location` (**required**)
   - `html` - a string containing HTML content
-  - `location` - a URL (either absolute or relative); sets HTTP status to `302` (temporary redirect) without using the `status` key
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports:
   - `400` - Bad Request
@@ -107,35 +107,35 @@ Callback argument to continue execution.
 ### Including the requested path in your response
 
 ```js
-//
+// coming soon, stand by!
 ```
 
 
 ### Evaluating a request's query string
 
 ```js
-//
+// coming soon, stand by!
 ```
 
 
 ### Reading a client's session
 
 ```js
-//
+// coming soon, stand by!
 ```
 
 
 ### Responding with a 404 error
 
 ```js
-//
+// coming soon, stand by!
 ```
 
 
 ### Forwarding a request to another URL
 
 ```js
-//
+// coming soon, stand by!
 ```
 
 ---
@@ -157,16 +157,16 @@ Returns a JavaScript object with the following keys:
 - `path` - path requested (i.e. `/contact`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
-- `body` - 
+- `body` - `POST` body object
 - `params` - object containing path param
-- `session` - object containing session data
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
 
 
 ### `res`
 
 Function that must be invoked; accepts a JavaScript object with the following keys:
 
-- `location` - a URL (either absolute or relative)
+- `location` (**required**) - a URL, either absolute or relative
 - `session` (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports: `400`, `403`, `404`, `406`, `409`, `415`, or `500`
 
@@ -178,4 +178,6 @@ Callback argument to continue execution.
 
 ## `POST` examples
 
-tktk
+```js
+// coming soon, stand by!
+```

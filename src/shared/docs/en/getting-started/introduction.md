@@ -5,9 +5,11 @@ Hello, and welcome! We can't wait to share everything you need to know about Beg
 
 Begin is a **cloud function continuous deployment platform**.
 
-More specifically: Begin orchestrates the provisioning and management of a wide range of next-generation AWS cloud infrastructure.
+More specifically: Begin orchestrates the provisioning and management of a wide range of next-generation cloud infrastructure on AWS.
 
-Once connected to your codebase, Begin automatically takes care of CI and deployment so you can focus on your product – not on infra, tooling, or scaling.
+With Begin, you can create entire serverless apps and sites with full databases, sessions, CI, and local development tools all built right in.
+
+Once connected to your codebase, Begin automatically services your entire CI and deployment pipeline, so you can focus on your product and your customers – not on infra, tooling, or scaling.
 
 
 ### Why build with Begin?
