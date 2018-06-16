@@ -1,12 +1,12 @@
-# `shared/docs`
+## `shared/docs`
 
 Docs! See readme.
 
-# `render.js` + `shared/views`
+## `render.js` + `shared/views`
 
 Renders views.
 
-# Styled markdown support
+## Styled markdown support
 
 The below list defines the markdown entities Begin will (and won't) support in our documentation's CSS.
 
@@ -76,7 +76,7 @@ Horizontal rules ↓
 -----
 
 
-❌ Not supported
+## ❌ Not supported
 
 # H1
 #### H4

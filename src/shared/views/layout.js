@@ -7,9 +7,6 @@ var Sidebar = require('./components/sidebar')
 var Symbols = require('./components/symbols')
 var md = require('marked')
 
-// var script = require('./_script')
-// ${script('menu-toggle')}
-
 module.exports = function Layout (state, meta, content, ToC) {
   state = state || {}
   meta = meta || {}

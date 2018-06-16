@@ -5,7 +5,7 @@
 `npm i && npm start` should get you going!
 
 
-## Document heirarchy
+## Document hierarchy
 
 Documents and views are shared across the site, and are found in `src/shared/docs/{language}/{category}/{doc}`
 
@@ -21,9 +21,9 @@ Thus, to create a new document available at `https://docs.begin.com/foo/bar-baz`
 
 ### Document metadata
 
-Each language contains a table of contents JSON file at its root (`ToC.json`) used to populate the nav tree, documents, and metadata.
+Each language contains a table of contents JSON file at its root (`src/shared/docs/{language}/ToC.json`) used to populate the nav tree, documents, and their metadata.
 
-The following keys are required unless stated otherwise:
+The following keys are required (unless stated otherwise):
 
 - `cat` - Category name (i.e. `getting-started`)
 - `catTitle` - Friendly category title (i.e. `Getting Started`)
