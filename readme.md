@@ -2,40 +2,44 @@
 
 ## Getting started
 
-`npm i && npm start` should get you going!
+Intialize the repo with: `npm i && npx hydrate`
+
+From there: `npm start` should get you going!
 
 
-## Document hierarchy
+## Authoring documents
 
-Documents and views are shared across the site, and are found in `src/shared/docs/{language}/{category}/{doc}`
+Documents are found in `src/shared/docs/{lang}/{cat}/{doc}`
 
-Since categories and document names are used as IDs, category names must be unique within each language, and document names must be unique within each category.
+Category and document names are used as IDs, so as you might expect, category names must be unique within each language, and document names must be unique within each category.
 
-Category IDs match their folder names, and document IDs match their filenames. The filename convention for docs is simply: `{doc}.md`
+Category names are the same as their folder names, and document names are the same as their filenames. The filename convention for a document is simply: `{doc}.md`
 
 Category and document names should be dasherized.
 
 Thus, to create a new document available at `https://docs.begin.com/foo/bar-baz`, create the following folder and file:
 - `src/shared/docs/en/foo/bar-baz.md`
 
+Documents that appear in the file tree but not in the table of contents will be accessible as a preview by directly accessing their URL. (This may be helpful for checking in new docs that may not be ready for public consumption yet.)
 
-### Document metadata
 
-Each language contains a table of contents JSON file at its root (`src/shared/docs/{language}/ToC.json`) used to populate the nav tree, documents, and their metadata.
+## Document metadata
+
+Each language folder contains a table of contents JSON file at its root (`src/shared/docs/{language}/ToC.json`). This ToC file is used to populate the nav tree, documents, and their metadata.
 
 The following keys are required (unless stated otherwise):
 
-- `cat` - Category name (i.e. `getting-started`)
-- `catTitle` - Friendly category title (i.e. `Getting Started`)
+- `cat` - Category name; example: `getting-started`
+- `catTitle` - Friendly category title; example: `Getting Started`
 - `docs` - Array containing category's document objects; each document object contains the following keys:
-  - `doc` - Document name (i.e. `introduction`)
-  - `title` - Friendly document title, used to display the page title (not including the site's name); should be ≤ 40 chars (i.e. `An introduction to Begin`)
-  - `description` - A brief description of the document, used in `<meta name="description" content="${description}"/>`; should be ≤ 300 chars.
+  - `doc` - Document name; example:  `an-introduction-to-cloud-functions`
+  - `title` - Friendly document title, used to display the page title (not including the site's name); should be ≤ 40 chars; sentence casing is preferable; example: `An introduction to cloud functions`
+  - `description` - A brief description of the document display in document metadata (such as `<meta name="description" content="${description}"/>`); should be ≤ 300 chars; example: `An introductory guide to building with cloud functions on Begin`
   - `github` - GitHub URL of the corresponding markdown file, should someone want to send a pull request
-  - `nextDoc` (optional) - Complete relative path to the next document (i.e. `/en/getting-started/quickstart/`)
-  - `nextTitle` (optional) - Friendly document title of the next document (i.e. `Quickstart`)
+  - `nextDoc` (optional) - Complete relative path to the next document; example: `/en/getting-started/quickstart/`
+  - `nextTitle` (optional) - Friendly document title of the next document; example: `Quickstart`
   - `sections` - Array containing document's section objects (should map to only H2s, i.e. `## What is Begin?`); each section object contains the following keys:
-    - `anchor` - Named anchor from the generated markdown (i.e. `#what-is-begin-`, note: trailing punctuation may result in trailing dashes, where `## Hi!` produces an `anchor` of `#hi-`)
+    - `anchor` - Named anchor from the generated markdown; example: `#what-is-begin-` (note: trailing punctuation in the doc may result in trailing dashes in the anchor, i.e. `## Hi!` produces an `anchor` of `#hi-`)
     - `name` - Name of the document section; should match what's in the markdown document
 
 ### Example ToC

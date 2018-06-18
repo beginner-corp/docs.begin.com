@@ -1,18 +1,18 @@
 ## `shared/docs`
 
-Docs! See readme.
+Docs! See [root readme](../../readme.md) for more about authoring docs.
+
 
 ## `render.js` + `shared/views`
 
-Renders views.
+Renders views; `shared/views` contains all components and supporting files needed by renderer.
+
 
 ## Styled markdown support
 
 The below list defines the markdown entities Begin will (and won't) support in our documentation's CSS.
 
----
-
-✅ Supported
+### ✅ Supported
 
 ## Document section
 ## Document section with `inline code`
@@ -76,7 +76,7 @@ Horizontal rules ↓
 -----
 
 
-## ❌ Not supported
+### ❌ Not supported
 
 # H1
 #### H4
