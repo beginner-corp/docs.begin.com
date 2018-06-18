@@ -1,8 +1,6 @@
 :root {
-  --p21:#ffe8f0;/* light-pink */
   --header-height: 3.444rem;
 }
-.bg-p21{background-color:var(--p21);}/* light-pink */
 .nowrap {
   white-space: nowrap;
 }

@@ -1,3 +1,110 @@
 ## Overview
 
-Documentation coming shortly, please stand by!
+Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`DELETE`](#begin-json-delete-), and [`PATCH`](#begin-json-patch-) methods.
+
+Each JSON route (example: `POST /login`) in your app is assigned a folder in your project under `src/json/` (i.e. `src/json/post-login/`).
+
+Within your project, each route can contain and utilize an arbitrary quantity of modules, packages, and other files (so long as the total uncompressed size of that route's folder is ≤5MB).
+<!-- @todo more about cloud function limits doc(s) -->
+
+> Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
+<!-- @todo - Is this strictly true? should we mention the ability to clone arc's functionality if you so desire? ehhhh -->
+
+-----
+<!-- edit the following -->
+
+Let's look at a basic JSON `GET` route:
+
+```js
+// src/json/get-greeting/index.js
+
+var begin = require('@architect/functions')
+
+function route(req, res) {
+  res({
+    json: {
+      greeting: 'Hello world!'
+    }
+  })
+}
+
+exports.handler = begin.json.get(route)
+```
+
+## `begin.json.get()`
+
+Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+## Parameters
+
+### `req`
+
+Returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `GET`)
+- `path` - path requested (i.e. `/about`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - always returns empty object
+- `params` - object containing path param (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
+- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
+- [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res`
+
+Function that must be invoked; accepts a JavaScript object with the following keys:
+
+- Either `json` or `location` (**required**)
+  - `json` - a string containing a JSON object
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `GET` examples
+
+
+### Example `GET` request
+
+```js
+{ method: 'get',
+  path: '/api/hello-world',
+  headers:
+   { host: 'begin.com',
+     connection: 'keep-alive',
+     authorization: 'Bearer 69HGohUjHbUBxejgD' },
+  query: {},
+  body: {},
+  params: { endpoint: 'hello-world' },
+  _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
+  _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
+  csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
+  session: { verified: true }
+}
+```
+
+
+### Example
+
+```js
+// coming soon, stand by!
+```
+
+---
+
+## `begin.json.post()`

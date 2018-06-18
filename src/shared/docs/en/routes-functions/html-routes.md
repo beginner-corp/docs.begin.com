@@ -1,6 +1,6 @@
 ## Overview
 
-Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#arc-html-get-) and [`POST`](#arc-html-post-) methods.
+Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#begin-html-get-) and [`POST`](#begin-html-post-) methods.
 
 Each HTML route (example: `GET /about`) in your app is assigned a folder in your project under `src/html/` (i.e. `src/html/get-about/`).
 
@@ -38,14 +38,14 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 
 Returns a JavaScript object with the following keys:
 
-- `method` - HTTP method (always returns `GET`)
+- `method` - HTTP method (always returns `get`)
 - `path` - path requested (i.e. `/about`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
-- `body` - always returns empty object 
-- `params` - object containing path param
+- `body` - always returns empty object
+- `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
-- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier 
+- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
 - [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
 
@@ -80,9 +80,9 @@ Callback argument to continue execution.
 
 ```js
 { method: 'get',
-  path: '/en/routes-functions/html-functions/',
+  path: '/greetings/hello-world',
   headers:
-   { host: 'docs.begin.com',
+   { host: 'begin.com',
      connection: 'keep-alive',
      'cache-control': 'max-age=0',
      'upgrade-insecure-requests': '1',
@@ -93,9 +93,9 @@ Callback argument to continue execution.
      'accept-language': 'en-US,en;q=0.9',
      cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
      Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
-  query: {},
+  query: { testing: '123' },
   body: {},
-  params: { lang: 'en', cat: 'routes-functions', doc: 'html-functions' },
+  params: { p1: 'greetings', p2: 'hello-world' },
   _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
   _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
   csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
@@ -153,7 +153,7 @@ Unlike `GET` routes, `POST` routes can only call `res` with an object containing
 
 Returns a JavaScript object with the following keys:
 
-- `method` - HTTP method (always returns `POST`)
+- `method` - HTTP method (always returns `post`)
 - `path` - path requested (i.e. `/contact`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
