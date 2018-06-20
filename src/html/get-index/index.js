@@ -1,7 +1,7 @@
 let arc = require('@architect/functions')
 
 function route(req, res) {
-  // console.log(JSON.stringify(req, null, 2))
+  (process.env.NODE_ENV == 'production') ? '' : console.log(req)
   res({
     location: '/en/getting-started/introduction'
   })
