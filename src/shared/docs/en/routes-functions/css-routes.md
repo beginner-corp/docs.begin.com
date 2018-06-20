@@ -1,3 +1,3 @@
 ## Overview
 
-Documentation coming shortly, please stand by!
+Feature & documentation coming shortly, please stand by!
