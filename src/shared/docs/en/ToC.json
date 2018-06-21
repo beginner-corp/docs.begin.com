@@ -234,5 +234,27 @@
         ]
       }
     ]
+  },
+  {
+    "cat": "support",
+    "catTitle": "Support",
+    "docs": [
+      {
+        "doc": "help-support",
+        "title": "Help & support",
+        "description": "Help & support channels for Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/help-support.md",
+        "nextDoc": "/en/support/issues",
+        "nextTitle": "Issues & feature requests"
+      },
+      {
+        "doc": "issues",
+        "title": "Issues & feature requests",
+        "description": "How and where to file issues and feature requests for Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/issues.md",
+        "//nextDoc": "",
+        "//nextTitle": ""
+      }
+    ]
   }
 ]
