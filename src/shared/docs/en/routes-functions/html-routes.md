@@ -10,16 +10,16 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 By default, all Begin apps are provisioned a HTML `GET /` route that cannot be deleted.
 
 > Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
-<!-- @todo - Is this strictly true? should we mention the ability to clone arc's functionality if you so desire? ehhhh -->
 
-Let's look at a basic HTML `GET` route:
+Let's look at the default code Begin uses to provision new HTML `GET` routes:
 
 ```js
-// src/html/get-index/index.js
+// src/html/get-*/index.js
 
-var begin = require('@architect/functions')
+let begin = require('@architect/functions')
 
 function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
   res({
     html: 'Hello world!'
   })
@@ -36,10 +36,10 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 
 ### `req`
 
-Returns a JavaScript object with the following keys:
+`req` returns a JavaScript object with the following keys:
 
 - `method` - HTTP method (always returns `get`)
-- `path` - path requested (i.e. `/about`)
+- `path` - path requested (i.e. `/hello-world`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
 - `body` - always returns empty object
@@ -50,15 +50,15 @@ Returns a JavaScript object with the following keys:
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
 
 
-### `res`
+### `res()`
 
-Function that must be invoked; accepts a JavaScript object with the following keys:
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
 
 - Either `html` or `location` (**required**)
   - `html` - a string containing HTML content
   - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
-- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports:
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
   - `400` - Bad Request
   - `403` - Forbidden
   - `404` - Not Found
@@ -66,6 +66,8 @@ Function that must be invoked; accepts a JavaScript object with the following ke
   - `409` - Conflict
   - `415` - Unsupported Media Type
   - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
 
 
 ### `next` (optional)
@@ -79,23 +81,25 @@ Callback argument to continue execution.
 ### Example `GET` request
 
 ```js
+// Client request made to GET /:greeting
 { method: 'get',
-  path: '/greetings/hello-world',
-  headers:
-   { host: 'begin.com',
-     connection: 'keep-alive',
-     'cache-control': 'max-age=0',
-     'upgrade-insecure-requests': '1',
-     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
-     accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-     dnt: '1',
-     'accept-encoding': 'gzip, deflate, br',
-     'accept-language': 'en-US,en;q=0.9',
-     cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
-     Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
+  path: '/hello-world',
+  headers: {
+    host: 'begin.com',
+    connection: 'keep-alive',
+    'cache-control': 'max-age=0',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+    accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    dnt: '1',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9',
+    cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
+    Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8'
+  },
   query: { testing: '123' },
   body: {},
-  params: { p1: 'greetings', p2: 'hello-world' },
+  params: { greeting: 'hello-world' },
   _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
   _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
   csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
@@ -140,18 +144,36 @@ Callback argument to continue execution.
 
 ---
 
+Now let's take a look at the default code Begin uses to provision new HTML `POST` routes:
+
+```js
+// src/html/post-*/index.js
+
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    location: req._url('/')
+  })
+}
+
+exports.handler = begin.html.post(route)
+```
+
+
 ## `begin.html.post()`
 
 Invoked by the route's `handler`, `begin.html.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
-Unlike `GET` routes, `POST` routes can only call `res` with an object containing a `location` key (and the value of the path to redirect to), and, optionally, a `session` object.
+Unlike `GET` routes, `POST` routes can only call `res()` with an object containing a `location` key (and the value of the path to redirect to), and, optionally, a `session` object.
 
 
 ## Parameters
 
 ### `req`
 
-Returns a JavaScript object with the following keys:
+`req` returns a JavaScript object with the following keys:
 
 - `method` - HTTP method (always returns `post`)
 - `path` - path requested (i.e. `/contact`)
@@ -162,13 +184,22 @@ Returns a JavaScript object with the following keys:
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
 
 
-### `res`
+### `res()`
 
-Function that must be invoked; accepts a JavaScript object with the following keys:
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
 
 - `location` (**required**) - a URL, either absolute or relative
 - `session` (optional) - object containing session data
-- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports: `400`, `403`, `404`, `406`, `409`, `415`, or `500`
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding a `status`, `code`, or `statusCode` property (with one of the seven status codes above) to it.
 
 
 ### `next` (optional)

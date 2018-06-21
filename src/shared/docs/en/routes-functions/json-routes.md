@@ -8,23 +8,18 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 <!-- @todo more about cloud function limits doc(s) -->
 
 > Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
-<!-- @todo - Is this strictly true? should we mention the ability to clone arc's functionality if you so desire? ehhhh -->
 
------
-<!-- edit the following -->
-
-Let's look at a basic JSON `GET` route:
+Let's look at the default code Begin uses to provision new JSON `GET` routes:
 
 ```js
-// src/json/get-greeting/index.js
+// src/json/get-*/index.js
 
-var begin = require('@architect/functions')
+let begin = require('@architect/functions')
 
 function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
   res({
-    json: {
-      greeting: 'Hello world!'
-    }
+    json: {ok: true}
   })
 }
 
@@ -39,29 +34,29 @@ Invoked by the route's `handler`, `begin.json.get()` accepts one or more functio
 
 ### `req`
 
-Returns a JavaScript object with the following keys:
+`req` returns a JavaScript object with the following keys:
 
-- `method` - HTTP method (always returns `GET`)
-- `path` - path requested (i.e. `/about`)
+- `method` - HTTP method (always returns `get`)
+- `path` - path requested (i.e. `/api/hello-world`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
 - `body` - always returns empty object
-- `params` - object containing path param (returned empty unless your route contains params)
+- `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
 - [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
 - [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
 
 
-### `res`
+### `res()`
 
-Function that must be invoked; accepts a JavaScript object with the following keys:
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
 
 - Either `json` or `location` (**required**)
   - `json` - a string containing a JSON object
   - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
-- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports:
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
   - `400` - Bad Request
   - `403` - Forbidden
   - `404` - Not Found
@@ -69,6 +64,8 @@ Function that must be invoked; accepts a JavaScript object with the following ke
   - `409` - Conflict
   - `415` - Unsupported Media Type
   - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
 
 
 ### `next` (optional)
@@ -82,20 +79,21 @@ Callback argument to continue execution.
 ### Example `GET` request
 
 ```js
+// Client request made to GET /api/:endpoint
 { method: 'get',
   path: '/api/hello-world',
-  headers:
-   { host: 'begin.com',
-     connection: 'keep-alive',
-     authorization: 'Bearer 69HGohUjHbUBxejgD' },
+  headers: {
+    host: 'begin.com',
+    connection: 'keep-alive',
+    authorization: 'Bearer 69HGohUjHbUBxejgD'
+  },
   query: {},
   body: {},
   params: { endpoint: 'hello-world' },
   _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
   _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
   csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
-  session: { verified: true }
-}
+  session: { verified: true } }
 ```
 
 
@@ -107,4 +105,97 @@ Callback argument to continue execution.
 
 ---
 
+Now let's take a look at the default code Begin uses to provision new JSON `POST` routes:
+
+```js
+// src/json/post-*/index.js
+
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    json: {ok: true}
+  })
+}
+
+exports.handler = begin.json.post(route)
+```
+
+
 ## `begin.json.post()`
+
+Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `get`)
+- `path` - path requested (i.e. `/api/hello-world`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - always returns empty object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
+- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
+- [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `json` or `location` (**required**)
+  - `json` - a string containing a JSON object
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `POST` examples
+
+
+### Example `POST` request
+
+```js
+{ method: 'post',
+  path: '/api/greetings',
+  headers: {
+    host: 'begin.com',
+    'content-type': 'application/x-www-form-urlencoded',
+    connection: 'keep-alive',
+    accept: '*/*',
+    'accept-language': 'en-us',
+    'accept-encoding': 'gzip, deflate',
+    'content-length': '32',
+    authorization: 'Bearer 69HGohUjHbUBxejgD' },
+  query: {},
+  body: { greeting: 'Hello world!' },
+  params: {},
+  _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
+  _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
+  csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
+  session: {} }
+```
+
+### Example
+
+```js
+// coming soon, stand by!
+```
