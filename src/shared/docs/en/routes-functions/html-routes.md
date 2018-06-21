@@ -9,11 +9,11 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 By default, all Begin apps are provisioned a HTML `GET /` route that cannot be deleted.
 
-> Note: Begin routes do not explicitly require `@architect/functions` but you will lose middleware and session support; Begin routes are just plain AWS Lambda functions otherwise
+> Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 
 ---
 
-Let's look at the default code for a new HTML `GET` routes:
+Let's look at the default code for new HTML `GET` routes:
 
 ```js
 // src/html/get-*/index.js
@@ -46,7 +46,6 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 - `body` - always returns empty object
 - `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions/) - object containing session data
-leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with every request; use `req._verify` to validate the token
 
 ### `res()`
@@ -55,7 +54,7 @@ leak to your clients
 
 - Either `html` or `location` (**required**)
   - `html` - a string containing HTML content
-  - `location` - a URL, either absolute or relative
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
   - `400` - Bad Request
@@ -66,7 +65,7 @@ leak to your clients
   - `415` - Unsupported Media Type
   - `500` - Internal Server Error
 
-`res()` can also be invoked with a instance of `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+`res()` can also be invoked with an instance of `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
 
 
 ### `next` (optional)
@@ -181,6 +180,9 @@ function route(req, res) {
 exports.handler = begin.html.post(route)
 ```
 
+[More on Begin sessions here!](/en/routes-functions/sessions/)
+
+
 ### Responding with a 404 error
 
 ```js
@@ -195,24 +197,6 @@ function route(req, res) {
 exports.handler = begin.html.get(route)
 ```
 
-#### Custom Error Pages
-
-The default error response template can be overridden by adding `error.js` to the lambda function code. `error.js` exports a single default function that accepts an `Error` and returns a non-empty String.
-
-```js
-// src/html/get-index/error.js
-module.exports = function error(err) {
-  return `
-  <!doctype html>
-  <html>
-    <body>
-      <h1>${err.message}</h1>
-      <pre>${err.stack}</pre>
-    </body>
-  </html>
-  `
-}
-```
 
 ### Forwarding a request to another URL
 
@@ -296,4 +280,27 @@ Callback argument to continue execution.
 
 ```js
 // coming soon, stand by!
+```
+
+---
+
+## Custom error pages
+
+Begin's default error response template can be overridden by adding `error.js` to your route's directory in your project (i.e. `src/html/get-index/error.js`).
+
+`error.js` exports a single default function that accepts an `Error` and returns a non-empty String.
+
+```js
+// src/html/get-*/error.js
+module.exports = function error(err) {
+  return `
+<!doctype html>
+<html>
+  <body>
+    <h1>${err.message}</h1>
+    <pre>${err.stack}</pre>
+  </body>
+</html>
+  `
+}
 ```

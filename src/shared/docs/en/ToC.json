@@ -104,12 +104,12 @@
             "name": "Overview"
           },
           {
-            "anchor": "#how-sessions-work",
-            "name": "How sessions work"
+            "anchor": "#writing-to-sessions",
+            "name": "Writing to sessions"
           },
           {
-            "anchor": "#caveats",
-            "name": "Caveats"
+            "anchor": "#more-about-sessions",
+            "name": "More about sessions"
           },
           {
             "anchor": "#examples",
@@ -144,6 +144,10 @@
           {
             "anchor": "#post-examples",
             "name": "POST examples"
+          },
+          {
+            "anchor": "#custom-error-pages",
+            "name": "Custom error pages"
           }
         ]
       },
