@@ -7,7 +7,7 @@ Each JSON route (example: `POST /login`) in your app is assigned a folder in you
 Within your project, each route can contain and utilize an arbitrary quantity of modules, packages, and other files (so long as the total uncompressed size of that route's folder is ≤5MB).
 <!-- @todo more about cloud function limits doc(s) -->
 
-> Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
+> Note: Begin routes do not explicitly require @architect/functions but you will lose middleware and session support; Begin routes are just plain AWS Lambda functions otherwise
 
 ---
 
@@ -44,8 +44,7 @@ Invoked by the route's `handler`, `begin.json.get()` accepts one or more functio
 - `body` - always returns empty object
 - `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
-- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
-- [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
+leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
 
 
@@ -139,9 +138,8 @@ Invoked by the route's `handler`, `begin.json.post()` accepts one or more functi
 - `query` - object containing query string fields & values
 - `body` - always returns empty object
 - `params` - object containing path params (returned empty unless your route contains params)
-- [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
-- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
-- [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
 
 ### `res()`
