@@ -1,44 +1,72 @@
 ## Overview
 
-Begin provides first-class sessions support for all HTTP routes. They're fast, secure, and you get them for free in the Begin API. How convenient!
-
-It's also possible to roll your own sessions for your app, but generally we advise against it.
-
+Begin provides first-class sessions support for all HTTP routes with zero configuration. They're fast, secure, and you get them for free. How convenient!
 
 ## How sessions work
 
-Every request to an HTTP route in a Begin app is tagged to a session.
+All HTTP routes in a Begin app support session state via `req.session`.
 
-If a session doesn't already exist, requests automatically generate and store a new session, which is represented by a unique identifier (`_idx`), secret (`_secret`), and JavaScript object containing session data (`session`).
+```javascript
+let begin = require('@architect/functions')
 
-Responses set an `_idx` cookie, which has been cryptographically signed with the secret. For additional security, Begin cookies are `HttpOnly` and do not support JSON Web Tokens.
+function route(req, res) {
+  // log session state 
+  console.log(req.session)
+  // and render it in a browser
+  let html = `
+    <h1>Session state</h1>
+    <pre>${req.session}</pre>
+  `
+  res({html})
+}
 
-Subsequent requests populate the following keys in your route handlers' `req` object:
+exports.handler = begin.html.get(route)
+```
 
-- `_idx` - client's unsigned session ID
-- `_secret` - client's secret (obvious, but take care not to leak this anywhere in your application!)
-- `session` - JavaScript object containing your client's current session data; can be no larger than 400KB
+Session state can only be written to in a response. Usually during an HTTP redirect.
 
+```javascript
+let begin = require('@architect/functions')
 
-## Caveats
+function addOne(req, res) {
+  let count = (req.session.count || 0) + 1
+  let session = {count}
+  let location = req._url('/')
+  res({session, location})
+}
 
-### Modifying sessions
+exports.handler = begin.html.post(addOne)
+```
 
-While persisted session data can be mutated arbitrarily, sessions cannot be updated atomically per-key. Sessions can only be set or unset.
+Writing to session clobbers previous state. If you want to merge session data you have to explicitly author that behavior in your lambda function code. Keeping state mutations super explicit in your code makes it easier to reason about.
 
+```javascript
+let begin = require('@architect/functions')
 
-### Session duration
+function updateUserName(req, res) {
+  let account = req.session.account
+  account.username = 'Alice'
+  let session = {account}
+  let location = req._url('/')
+  res({session, location})
+}
 
-All sessions are automatically renewed indefinitely with continued use. Unused sessions are expunged after one week of inactivity.
+exports.handler = begin.html.post(updateUserName)
+```
 
+## Further Notes
 
-### Sharing session data
+- `req.session` is just a plain JavaScript object containing the current session data
+- `req.session` can be no larger than 400KB
+- All sessions are automatically renewed indefinitely with continued use
+- Unused sessions are expunged after one week of inactivity
 
-Sessions are not shared between apps. So if you're building multiple Begin apps, even under the same domain, they cannot read each others' sessions at this time.
-
+> 🔍 Session state is maintained via a cookie identifier `_idx` which is cryptographically signed with a secret. Begin cookies are `HttpOnly`.
 
 ## Examples
 
+- Sessions are often used for authentication; implementing an oAuth login with something like Slack or Github is trivial
+- Session state is also useful for passing error messages from a failed POST
 
 ### Example `GET` request
 
@@ -77,7 +105,7 @@ function login(req, res) {
   var isLoggedIn = req.body.email === 'admin' && req.body.password === 'a-secure-password'
   res({
     session: {isLoggedIn},
-    location: '/'
+    location: req._url('/')
   })
 }
 
@@ -96,7 +124,7 @@ function auth(req, res, next) {
   }
   else {
     res({
-      location: '/login'
+      location: req._url('/login')
     }) 
   }
 }
