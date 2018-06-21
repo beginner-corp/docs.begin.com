@@ -8,7 +8,7 @@
     "init": "./scripts/init",
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "start": "nodemon --watch src/ -e md,css,js,json,html --exec NODE_ENV=testing arc-sandbox",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=testing tape test/*-test.js | tap-spec"
   },
   "author": "Ryan Block <hello@ryanblock.com>",
   "license": "Apache-2.0",
@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "dependencies": {
-    "@architect/workflows": "^3.1.9"
+    "@architect/workflows": "^3.1.9",
+    "eslint": "^4.19.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1",
+    "tiny-json-http": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
     "nodemon": "^1.17.5"
   }
 }
