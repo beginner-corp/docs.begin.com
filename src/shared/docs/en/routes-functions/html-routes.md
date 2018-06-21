@@ -9,11 +9,11 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 By default, all Begin apps are provisioned a HTML `GET /` route that cannot be deleted.
 
-> Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
+> Note: Begin routes do not explicitly require `@architect/functions` but you will lose middleware and session support; Begin routes are just plain AWS Lambda functions otherwise
 
 ---
 
-Let's look at the default code Begin uses to provision new HTML `GET` routes:
+Let's look at the default code for a new HTML `GET` routes:
 
 ```js
 // src/html/get-*/index.js
@@ -45,11 +45,9 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 - `query` - object containing query string fields & values
 - `body` - always returns empty object
 - `params` - object containing path params (returned empty unless your route contains params)
-- [`session`](/en/routes-functions/sessions/#how-sessions-work) - object containing session data
-- [`_idx`](/en/routes-functions/sessions/#how-sessions-work) - unique identifier
-- [`_secret`](/en/routes-functions/sessions/#how-sessions-work) - secret used to sign the client's cookie; never allow this to leak to your clients
-- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
-
+- [`session`](/en/routes-functions/sessions/) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with every request; use `req._verify` to validate the token
 
 ### `res()`
 
@@ -57,7 +55,7 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 
 - Either `html` or `location` (**required**)
   - `html` - a string containing HTML content
-  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+  - `location` - a URL, either absolute or relative
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
   - `400` - Bad Request
@@ -68,7 +66,7 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
   - `415` - Unsupported Media Type
   - `500` - Internal Server Error
 
-Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+`res()` can also be invoked with a instance of `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
 
 
 ### `next` (optional)
@@ -112,35 +110,122 @@ Callback argument to continue execution.
 ### Including the requested path in your response
 
 ```js
-// coming soon, stand by!
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  res({
+    html: `<blink>The current path is: ${req.path}</blink>`
+  })
+}
+
+exports.handler = begin.html.get(route)
 ```
 
 
 ### Evaluating a request's query string
 
 ```js
-// coming soon, stand by!
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  let html = `
+  <h1>Change the query string</h1>
+  <ul>
+    <li><a href=${req._url('/?foo=bar')}>foobar</a></li>
+    <li><a href=${req._url('/?foo=bar&hello=world')}>baz</a></li>
+    <li><a href=${req._url('/?foo=buzz')}>buzz</a></li>
+  </ul>
+  <pre>${JSON.stringify(req.query, null, 2)}</pre>
+  `
+  res({html})
+}
+
+exports.handler = begin.html.get(route)
 ```
 
 
 ### Reading a client's session
 
+Read the session:
+
 ```js
-// coming soon, stand by!
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  let html = `
+  <h1>Current Session</h1>
+  <form action=${req._url('/')} method=post>
+    <button>1up</button>
+  </form>
+  <pre>${JSON.stringify(req.session, null, 2)}</pre>
+  `
+  res({html})
+}
+
+exports.handler = begin.html.get(route)
 ```
 
+Write to the session:
+
+```js
+// post /
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  let location = req._url('/')
+  let count = req.session.count || 0
+  count += 1
+  res({location, session:{count}})
+}
+
+exports.handler = begin.html.post(route)
+```
 
 ### Responding with a 404 error
 
 ```js
-// coming soon, stand by!
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  let notFound = Error('not found')
+  notFound.code = 404
+  res(notFound)
+}
+
+exports.handler = begin.html.get(route)
 ```
 
+#### Custom Error Pages
+
+The default error response template can be overridden by adding `error.js` to the lambda function code. `error.js` exports a single default function that accepts an `Error` and returns a non-empty String.
+
+```js
+// src/html/get-index/error.js
+module.exports = function error(err) {
+  return `
+  <!doctype html>
+  <html>
+    <body>
+      <h1>${err.message}</h1>
+      <pre>${err.stack}</pre>
+    </body>
+  </html>
+  `
+}
+```
 
 ### Forwarding a request to another URL
 
 ```js
-// coming soon, stand by!
+let begin = require('@architect/workflows')
+
+function route(req, res) {
+  let notFound = Error('not found')
+  notFound.code = 404
+  res(notFound)
+}
+
+exports.handler = begin.html.get(route)
 ```
 
 ---
@@ -199,7 +284,7 @@ Unlike `GET` routes, `POST` routes can only call `res()` with an object containi
   - `415` - Unsupported Media Type
   - `500` - Internal Server Error
 
-Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding a `status`, `code`, or `statusCode` property (with one of the seven status codes above) to it.
+`res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding a `status`, `code`, or `statusCode` property (with one of the seven status codes above) to it.
 
 
 ### `next` (optional)
