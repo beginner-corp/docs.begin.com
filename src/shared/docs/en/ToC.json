@@ -158,6 +158,22 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#begin-json-get-",
+            "name": "begin.json.get()"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "GET examples"
+          },
+          {
+            "anchor": "#begin-json-post-",
+            "name": "begin.json.post()"
+          },
+          {
+            "anchor": "#post-examples",
+            "name": "POST examples"
           }
         ]
       },

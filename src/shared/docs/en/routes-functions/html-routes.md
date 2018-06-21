@@ -11,11 +11,12 @@ By default, all Begin apps are provisioned a HTML `GET /` route that cannot be d
 
 > Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
 
+---
+
 Let's look at the default code Begin uses to provision new HTML `GET` routes:
 
 ```js
 // src/html/get-*/index.js
-
 let begin = require('@architect/functions')
 
 function route(req, res) {
@@ -148,7 +149,6 @@ Now let's take a look at the default code Begin uses to provision new HTML `POST
 
 ```js
 // src/html/post-*/index.js
-
 let begin = require('@architect/functions')
 
 function route(req, res) {

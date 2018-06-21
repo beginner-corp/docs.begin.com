@@ -1,6 +1,6 @@
 ## Overview
 
-Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`DELETE`](#begin-json-delete-), and [`PATCH`](#begin-json-patch-) methods.
+Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`PATCH`](#begin-json-patch-), and [`DELETE`](#begin-json-delete-) methods.
 
 Each JSON route (example: `POST /login`) in your app is assigned a folder in your project under `src/json/` (i.e. `src/json/post-login/`).
 
@@ -9,11 +9,12 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 > Note: Begin routes require `@architect/functions`; removing this require will cause your route to stop responding
 
+---
+
 Let's look at the default code Begin uses to provision new JSON `GET` routes:
 
 ```js
 // src/json/get-*/index.js
-
 let begin = require('@architect/functions')
 
 function route(req, res) {
@@ -109,7 +110,6 @@ Now let's take a look at the default code Begin uses to provision new JSON `POST
 
 ```js
 // src/json/post-*/index.js
-
 let begin = require('@architect/functions')
 
 function route(req, res) {
@@ -199,3 +199,21 @@ Callback argument to continue execution.
 ```js
 // coming soon, stand by!
 ```
+
+---
+
+## `begin.json.put()`
+
+Feature & documentation coming shortly, please stand by!
+
+---
+
+## `begin.json.patch()`
+
+Feature & documentation coming shortly, please stand by!
+
+---
+
+## `begin.json.delete()`
+
+Feature & documentation coming shortly, please stand by!
