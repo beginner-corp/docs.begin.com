@@ -8,7 +8,7 @@ module.exports = function DocFooter (meta) {
   function Github () {
     if (github != undefined) {
       return `
-<a href="${github}">Edit this page on GitHub</a>
+<a href="${github}" target="_blank">Edit this page on GitHub</a>
   `
     } else {
       return ""
