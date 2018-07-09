@@ -2,8 +2,8 @@
   "name": "begin-docs-get-css-000page",
   "dependencies": {
     "@architect/data": "^2.0.2",
-    "@architect/functions": "^1.8.10",
-    "cssmitten": "^1.1.9",
+    "@architect/functions": "^1.8.11",
+    "cssmitten": "^1.1.12",
     "postcss-extend": "^1.0.5"
   }
 }

@@ -2,7 +2,7 @@
   "name": "begin-docs-get-000lang-000cat-000doc",
   "dependencies": {
     "@architect/data": "^2.0.2",
-    "@architect/functions": "^1.8.10",
+    "@architect/functions": "^1.8.11",
     "marked": "^0.3.19"
   }
 }
