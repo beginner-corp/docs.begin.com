@@ -56,7 +56,7 @@ Invoked by the route's `handler`, `begin.css.get()` accepts one or more function
 `res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
 
 - Either `css` or `location` (**required**)
-  - `css` - a string containing HTML content
+  - `css` - a string containing CSS content
   - `location` - a URL, either absolute or relative; sets HTTP status to `302` without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:

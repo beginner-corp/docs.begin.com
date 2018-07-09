@@ -54,7 +54,7 @@ Invoked by the route's `handler`, `begin.json.get()` accepts one or more functio
 `res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
 
 - Either `json` or `location` (**required**)
-  - `json` - a string containing a JSON object
+  - `json` - a JavaScript object or JSON object
   - `location` - a URL, either absolute or relative; sets HTTP status to `302` without using the `status` key
 - [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
 - `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
@@ -137,7 +137,7 @@ Invoked by the route's `handler`, `begin.json.post()` accepts one or more functi
 - `path` - path requested (i.e. `/api/hello-world`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
-- `body` - always returns empty object
+- `body` - `POST` body object
 - `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions) - object containing session data
 leak to your clients
