@@ -206,6 +206,14 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#begin-css-get-",
+            "name": "begin.css.get()"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "GET examples"
           }
         ]
       },
@@ -220,6 +228,14 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#begin-js-get-",
+            "name": "begin.js.get()"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "GET examples"
           }
         ]
       },
@@ -234,6 +250,14 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#begin-text-get-",
+            "name": "begin.text.get()"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "GET examples"
           }
         ]
       }

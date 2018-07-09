@@ -1,6 +1,6 @@
 ## Overview
 
-Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#begin-html-get-) and [`POST`](#begin-html-post-) methods.
+Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#begin-html-get-) and [`POST`](#begin-html-post-).
 
 Each HTML route (example: `GET /about`) in your app is assigned a folder in your project under `src/html/` (i.e. `src/html/get-about/`).
 
@@ -29,9 +29,11 @@ function route(req, res) {
 exports.handler = begin.html.get(route)
 ```
 
+
 ## `begin.html.get()`
 
 Invoked by the route's `handler`, `begin.html.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
 
 ## Parameters
 
@@ -46,7 +48,8 @@ Invoked by the route's `handler`, `begin.html.get()` accepts one or more functio
 - `body` - always returns empty object
 - `params` - object containing path params (returned empty unless your route contains params)
 - [`session`](/en/routes-functions/sessions/) - object containing session data
-- `csrf` - signed cross-site request forgery token (generated with every request; use `req._verify` to validate the token
+- `csrf` - signed cross-site request forgery token (generated with every request; use `req._verify` to validate the token)
+
 
 ### `res()`
 
@@ -74,7 +77,6 @@ Callback argument to continue execution.
 
 
 ## `GET` examples
-
 
 ### Example `GET` request
 

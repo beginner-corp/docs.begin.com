@@ -1,6 +1,6 @@
 ## Overview
 
-Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`PATCH`](#begin-json-patch-), and [`DELETE`](#begin-json-delete-) methods.
+Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`PATCH`](#begin-json-patch-), and [`DELETE`](#begin-json-delete-).
 
 Each JSON route (example: `POST /login`) in your app is assigned a folder in your project under `src/json/` (i.e. `src/json/post-login/`).
 
@@ -27,9 +27,11 @@ function route(req, res) {
 exports.handler = begin.json.get(route)
 ```
 
+
 ## `begin.json.get()`
 
 Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
 
 ## Parameters
 
@@ -73,7 +75,6 @@ Callback argument to continue execution.
 
 
 ## `GET` examples
-
 
 ### Example `GET` request
 
@@ -125,6 +126,7 @@ exports.handler = begin.json.post(route)
 
 Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
+
 ## Parameters
 
 ### `req`
@@ -140,6 +142,7 @@ Invoked by the route's `handler`, `begin.json.post()` accepts one or more functi
 - [`session`](/en/routes-functions/sessions) - object containing session data
 leak to your clients
 - `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
 
 ### `res()`
 
@@ -160,13 +163,13 @@ leak to your clients
 
 Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
 
+
 ### `next` (optional)
 
 Callback argument to continue execution.
 
 
 ## `POST` examples
-
 
 ### Example `POST` request
 
@@ -189,12 +192,6 @@ Callback argument to continue execution.
   _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
   csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
   session: {} }
-```
-
-### Example
-
-```js
-// coming soon, stand by!
 ```
 
 ---
