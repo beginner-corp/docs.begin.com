@@ -140,19 +140,23 @@ That's it, you're up and running locally!
 
 ### Keep it going
 
-- Create new `HTML` and `JSON` `GET` and `POST` routes by opening Begin, clicking the `Add new route` buttons in the left nav, and following the prompt
-  - New routes will be automatically committed to your project; run `git pull` to get the latest changes
+- Create new `HTML`, `JSON`, `XML`, `JS`, `CSS`, and `text` routes by opening Begin, clicking the `Add new route` buttons in the left nav, and following the prompt
+  - New routes will be automatically committed to your project
+  - Run `git pull && npx hydrate` to continue working locally with your new routes
 
 - Lint and run tests:
 ```bash
 npm run lint && npm t
 ```
 
-- Release to `production` by creating a git tag (aka "Releases" in GitHub)
+- Release to `production` by:
+  - Using the `Deploy to Production` button in the left nav in Begin, or
+  - Creating a git tag, i.e.:
 ```bash
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
+  - Cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
 
 > 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/).
 >
