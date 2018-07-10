@@ -11,6 +11,10 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 ---
 
+## `begin.json.get()`
+
+Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
 Let's look at the default code for new JSON `GET` routes:
 
 ```js
@@ -26,11 +30,6 @@ function route(req, res) {
 
 exports.handler = begin.json.get(route)
 ```
-
-
-## `begin.json.get()`
-
-Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -96,16 +95,13 @@ Callback argument to continue execution.
   session: { verified: true } }
 ```
 
-
-### Example
-
-```js
-// coming soon, stand by!
-```
-
 ---
 
-Now let's take a look at the default code Begin uses to provision new JSON `POST` routes:
+## `begin.json.post()`
+
+Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new JSON `POST` routes:
 
 ```js
 // src/json/post-*/index.js
@@ -122,19 +118,14 @@ exports.handler = begin.json.post(route)
 ```
 
 
-## `begin.json.post()`
-
-Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-
 ## Parameters
 
 ### `req`
 
 `req` returns a JavaScript object with the following keys:
 
-- `method` - HTTP method (always returns `get`)
-- `path` - path requested (i.e. `/api/hello-world`)
+- `method` - HTTP method (always returns `post`)
+- `path` - path requested (i.e. `/api/contact`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
 - `body` - `POST` body object
@@ -198,16 +189,211 @@ Callback argument to continue execution.
 
 ## `begin.json.put()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.json.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new JSON `PUT` routes:
+
+```js
+// src/json/put-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    json: {ok: true}
+  })
+}
+
+exports.handler = begin.json.put(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `put`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `PUT` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `json` or `location` (**required**)
+  - `json` - a string containing a JSON object
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `PUT` examples
+
+```js
+// coming soon, stand by!
+```
 
 ---
 
 ## `begin.json.patch()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.json.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new JSON `PATCH` routes:
+
+```js
+// src/json/patch-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    json: {ok: true}
+  })
+}
+
+exports.handler = begin.json.patch(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `patch`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `PATCH` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `json` or `location` (**required**)
+  - `json` - a string containing a JSON object
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `PATCH` examples
+
+```js
+// coming soon, stand by!
+```
 
 ---
 
 ## `begin.json.delete()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.json.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new JSON `DELETE` routes:
+
+```js
+// src/json/delete-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    json: {ok: true}
+  })
+}
+
+exports.handler = begin.json.delete(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `delete`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `DELETE` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `json` or `location` (**required**)
+  - `json` - a string containing a JSON object
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `DELETE` examples
+
+```js
+// coming soon, stand by!
+```

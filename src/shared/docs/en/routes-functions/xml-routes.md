@@ -11,6 +11,10 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 ---
 
+## `begin.xml.get()`
+
+Invoked by the route's `handler`, `begin.xml.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
 Let's look at the default code for new XML `GET` routes:
 
 ```js
@@ -26,11 +30,6 @@ function route(req, res) {
 
 exports.handler = begin.xml.get(route)
 ```
-
-
-## `begin.xml.get()`
-
-Invoked by the route's `handler`, `begin.xml.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -96,16 +95,13 @@ Callback argument to continue execution.
   session: { verified: true } }
 ```
 
-
-### Example
-
-```js
-// coming soon, stand by!
-```
-
 ---
 
-Now let's take a look at the default code Begin uses to provision new XML `POST` routes:
+## `begin.xml.post()`
+
+Invoked by the route's `handler`, `begin.xml.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new XML `POST` routes:
 
 ```js
 // src/xml/post-*/index.js
@@ -122,11 +118,6 @@ exports.handler = begin.xml.post(route)
 ```
 
 
-## `begin.xml.post()`
-
-Invoked by the route's `handler`, `begin.xml.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-
 ## Parameters
 
 ### `req`
@@ -134,7 +125,7 @@ Invoked by the route's `handler`, `begin.xml.post()` accepts one or more functio
 `req` returns a JavaScript object with the following keys:
 
 - `method` - HTTP method (always returns `post`)
-- `path` - path requested (i.e. `/contact`)
+- `path` - path requested (i.e. `/api/contact`)
 - `headers` - object containing HTTP request headers
 - `query` - object containing query string fields & values
 - `body` - `POST` body object
@@ -198,16 +189,211 @@ Callback argument to continue execution.
 
 ## `begin.xml.put()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.xml.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new XML `PUT` routes:
+
+```js
+// src/xml/put-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    xml: '<app>hello world</app>'
+  })
+}
+
+exports.handler = begin.xml.put(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `put`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `PUT` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `xml` or `location` (**required**)
+  - `xml` - a string containing XML content
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `PUT` examples
+
+```js
+// coming soon, stand by!
+```
 
 ---
 
 ## `begin.xml.patch()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.xml.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new XML `PATCH` routes:
+
+```js
+// src/xml/patch-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    xml: '<app>hello world</app>'
+  })
+}
+
+exports.handler = begin.xml.patch(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `patch`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `PATCH` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `xml` or `location` (**required**)
+  - `xml` - a string containing XML content
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `PATCH` examples
+
+```js
+// coming soon, stand by!
+```
 
 ---
 
 ## `begin.xml.delete()`
 
-Feature & documentation coming shortly, please stand by!
+Invoked by the route's `handler`, `begin.xml.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new XML `DELETE` routes:
+
+```js
+// src/xml/delete-*/index.js
+let begin = require('@architect/functions')
+
+function route(req, res) {
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    xml: '<app>hello world</app>'
+  })
+}
+
+exports.handler = begin.xml.delete(route)
+```
+
+
+## Parameters
+
+### `req`
+
+`req` returns a JavaScript object with the following keys:
+
+- `method` - HTTP method (always returns `delete`)
+- `path` - path requested (i.e. `/api/item`)
+- `headers` - object containing HTTP request headers
+- `query` - object containing query string fields & values
+- `body` - `DELETE` body object
+- `params` - object containing path params (returned empty unless your route contains params)
+- [`session`](/en/routes-functions/sessions) - object containing session data
+leak to your clients
+- `csrf` - signed cross-site request forgery token (generated with all requests, but primarily intended to be used with HTML `POST` routes)
+
+
+### `res()`
+
+`res()` is a function that must be invoked; it accepts a JavaScript object with the following keys:
+
+- Either `xml` or `location` (**required**)
+  - `xml` - a string containing XML content
+  - `location` - a URL, either absolute or relative; sets HTTP status to `302` (temporary redirect) without using the `status` key
+- [`session`](/en/routes-functions/sessions/#how-sessions-work) (optional) - object containing session data
+- `status` (optional) - alternately `code` or `statusCode`, sets HTTP error status code, supports the following values:
+  - `400` - Bad Request
+  - `403` - Forbidden
+  - `404` - Not Found
+  - `406` - Not Acceptable
+  - `409` - Conflict
+  - `415` - Unsupported Media Type
+  - `500` - Internal Server Error
+
+Alternately, `res()` can be invoked with an `Error`. You can also optionally define the `Error` object's HTTP status code by adding to it a `status`, `code`, or `statusCode` property (with one of the seven status codes above).
+
+
+### `next` (optional)
+
+Callback argument to continue execution.
+
+
+## `DELETE` examples
+
+```js
+// coming soon, stand by!
+```

@@ -178,6 +178,30 @@
           {
             "anchor": "#post-examples",
             "name": "POST examples"
+          },
+          {
+            "anchor": "#begin-json-put-",
+            "name": "begin.json.put()"
+          },
+          {
+            "anchor": "#put-examples",
+            "name": "PUT examples"
+          },
+          {
+            "anchor": "#begin-json-patch-",
+            "name": "begin.json.patch()"
+          },
+          {
+            "anchor": "#patch-examples",
+            "name": "PATCH examples"
+          },
+          {
+            "anchor": "#begin-json-delete-",
+            "name": "begin.json.delete()"
+          },
+          {
+            "anchor": "#delete-examples",
+            "name": "DELETE examples"
           }
         ]
       },
@@ -192,6 +216,46 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#begin-xml-get-",
+            "name": "begin.xml.get()"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "GET examples"
+          },
+          {
+            "anchor": "#begin-xml-post-",
+            "name": "begin.xml.post()"
+          },
+          {
+            "anchor": "#post-examples",
+            "name": "POST examples"
+          },
+          {
+            "anchor": "#begin-xml-put-",
+            "name": "begin.xml.put()"
+          },
+          {
+            "anchor": "#put-examples",
+            "name": "PUT examples"
+          },
+          {
+            "anchor": "#begin-xml-patch-",
+            "name": "begin.xml.patch()"
+          },
+          {
+            "anchor": "#patch-examples",
+            "name": "PATCH examples"
+          },
+          {
+            "anchor": "#begin-xml-delete-",
+            "name": "begin.xml.delete()"
+          },
+          {
+            "anchor": "#delete-examples",
+            "name": "DELETE examples"
           }
         ]
       },
