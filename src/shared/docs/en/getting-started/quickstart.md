@@ -137,28 +137,29 @@ npm start
 
 That's it, you're up and running locally!
 
----
 
-### Keep it going
+## Keep it going
+
+### Create new routes
 
 - Create new `HTML`, `JSON`, `XML`, `JS`, `CSS`, and `text` routes by opening Begin, clicking the `Add new route` buttons in the left nav, and following the prompt
   - New routes will be automatically committed to your project
   - Run `git pull && npx hydrate` to continue working locally with your new routes
 
-- Lint and run tests:
+
+### Ship to `production`
+
+- Lint and run tests, of course:
 ```bash
 npm run lint && npm t
 ```
-
 - Release to `production` by:
   - Using the `Deploy to Production` button in the left nav in Begin, or
-  - Creating a git tag, i.e.:
+  - Creating a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging), i.e.:
 ```bash
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
-  - Cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
+  - Or also by cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
 
-> 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/).
->
-> Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating production releases!
+> 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating production releases!
