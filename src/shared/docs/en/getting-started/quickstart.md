@@ -83,6 +83,7 @@ Let's take a closer look at the boilerplate Begin added to your project. Without
 │   │   └── get-index/
 │   │       └── index.js
 │   └── shared/
+│       └── readme.md
 └── test/
     ├── 00-html-test.js
     └── 01-data-test.js
@@ -95,7 +96,7 @@ Begin projects are organized primarily around routes (and events, coming soon).
 The handler for each route is grouped under `src` by the kind of `Content-Type` it delivers; each route maps to a separate, fully isolated, publicly accessible, and independently deployable Lambda cloud function.
 
 - `src/` - source root folder containing all your project's routes
-  - `html/` - organizing folders that group routes by their `Content-Type`; other route types include `json`, and (coming soon) `css`, `js`, `text`, and `xml`
+  - `html/` - organizing folders that group routes by their `Content-Type`; other route types include `json`, `css`, `js`, `text`, and `xml`
     - `get-index/` - route folder, contains everything needed to respond to HTTP `GET` requests at `/`
   - `shared/` - a utility folder that makes its contents available across all your routes; think: per-project globally installed modules
 - `test/` - test root for your app's tests (run locally via `npm run test`)
