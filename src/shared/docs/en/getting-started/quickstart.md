@@ -121,7 +121,12 @@ cd begin-functions-app
 
 - Install npm packages:
 ```bash
-npm run init
+npm install
+```
+
+- Hydrate your app's dependencies
+```bash
+npx hydrate
 ```
 
 - Start the app locally:
@@ -143,12 +148,12 @@ That's it, you're up and running locally!
 npm run lint && npm t
 ```
 
-- Release to `production` by creating a git tag (aka "Releases" in GitHub) 
+- Release to `production` by creating a git tag (aka "Releases" in GitHub)
 ```bash
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
 
 > 👓 Head here to learn more about [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and [GitHub releases](https://help.github.com/articles/about-releases/).
-> 
+>
 > Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating production releases!
