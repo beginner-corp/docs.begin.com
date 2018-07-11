@@ -108,7 +108,7 @@ The handler for each route is grouped under `src` by the kind of `Content-Type` 
 
 ## Working locally
 
-Get started working locally on your app in four easy steps:
+Get started working locally on your app in five easy steps:
 
 1. Clone your app's repo to your local machine:
 ```bash
