@@ -125,7 +125,7 @@ cd begin-functions-app
 npm install
 ```
 
-- Hydrate your app's dependencies
+- Hydrate your app's dependencies:
 ```bash
 npx hydrate
 ```

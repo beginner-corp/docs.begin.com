@@ -332,6 +332,28 @@
     ]
   },
   {
+    "cat": "building-deploying",
+    "catTitle": "Building & deploying",
+    "docs": [
+      {
+        "doc": "builds",
+        "title": "Builds",
+        "description": "Basic overview of the Begin CI/CD build pipeline",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
+        "//nextDoc": "/en/building-deploying/tk",
+        "//nextTitle": "tk"
+      },
+      {
+        "doc": "build-steps",
+        "title": "Build steps",
+        "description": "Detailed information about Begin CI build steps",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
+        "//nextDoc": "/en/building-deploying/tk",
+        "//nextTitle": "tk"
+      }
+    ]
+  },
+  {
     "cat": "support",
     "catTitle": "Support",
     "docs": [
