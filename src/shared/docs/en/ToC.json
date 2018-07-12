@@ -340,8 +340,22 @@
         "title": "Builds",
         "description": "Basic overview of the Begin CI/CD build pipeline",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
-        "//nextDoc": "/en/building-deploying/tk",
-        "//nextTitle": "tk"
+        "nextDoc": "/en/building-deploying/build-steps",
+        "nextTitle": "Build steps",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#build-pipeline",
+            "name": "Build pipeline"
+          },
+          {
+            "anchor": "#environment-variables",
+            "name": "Environment variables"
+          }
+        ]
       },
       {
         "doc": "build-steps",
@@ -349,7 +363,37 @@
         "description": "Detailed information about Begin CI build steps",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
         "//nextDoc": "/en/building-deploying/tk",
-        "//nextTitle": "tk"
+        "//nextTitle": "tk",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#verify",
+            "name": "Verify"
+          },
+          {
+            "anchor": "#install",
+            "name": "Install"
+          },
+          {
+            "anchor": "#build",
+            "name": "Build"
+          },
+          {
+            "anchor": "#lint",
+            "name": "Lint"
+          },
+          {
+            "anchor": "#test",
+            "name": "Test"
+          },
+          {
+            "anchor": "#deploy",
+            "name": "Deploy"
+          }
+        ]
       }
     ]
   },
