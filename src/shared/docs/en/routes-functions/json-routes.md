@@ -1,6 +1,6 @@
 ## Overview
 
-Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#begin-json-get-), [`POST`](#begin-json-post-), [`PUT`](#begin-json-put-), [`PATCH`](#begin-json-patch-), and [`DELETE`](#begin-json-delete-).
+Begin JSON routes respond with HTTP `Content-Type: application/json`, and support routes with [`GET`](#get-routes), [`POST`](#post-routes), [`PUT`](#put-routes), [`PATCH`](#patch-routes), and [`DELETE`](#delete-routes).
 
 Each JSON route (example: `POST /login`) in your app is assigned a folder in your project under `src/json/` (i.e. `src/json/post-login/`).
 
@@ -11,9 +11,7 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 ---
 
-## `begin.json.get()`
-
-Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+## `GET` routes
 
 Let's look at the default code for new JSON `GET` routes:
 
@@ -30,6 +28,11 @@ function route(req, res) {
 
 exports.handler = begin.json.get(route)
 ```
+
+
+## `begin.json.get()`
+
+Invoked by the route's `handler`, `begin.json.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -97,9 +100,7 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.json.post()`
-
-Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+## `POST` routes
 
 Let's take a look at the default code Begin uses to provision new JSON `POST` routes:
 
@@ -116,6 +117,11 @@ function route(req, res) {
 
 exports.handler = begin.json.post(route)
 ```
+
+
+## `begin.json.post()`
+
+Invoked by the route's `handler`, `begin.json.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -187,9 +193,7 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.json.put()`
-
-Invoked by the route's `handler`, `begin.json.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+## `PUT` routes
 
 Let's take a look at the default code Begin uses to provision new JSON `PUT` routes:
 
@@ -206,6 +210,11 @@ function route(req, res) {
 
 exports.handler = begin.json.put(route)
 ```
+
+
+## `begin.json.put()`
+
+Invoked by the route's `handler`, `begin.json.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -258,9 +267,7 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.json.patch()`
-
-Invoked by the route's `handler`, `begin.json.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+## `PATCH` routes
 
 Let's take a look at the default code Begin uses to provision new JSON `PATCH` routes:
 
@@ -277,6 +284,11 @@ function route(req, res) {
 
 exports.handler = begin.json.patch(route)
 ```
+
+
+## `begin.json.patch()`
+
+Invoked by the route's `handler`, `begin.json.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -329,11 +341,7 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.json.delete()`
-
-Invoked by the route's `handler`, `begin.json.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-Let's take a look at the default code Begin uses to provision new JSON `DELETE` routes:
+## `DELETE` routes
 
 ```js
 // src/json/delete-*/index.js
@@ -348,6 +356,13 @@ function route(req, res) {
 
 exports.handler = begin.json.delete(route)
 ```
+
+
+## `begin.json.delete()`
+
+Invoked by the route's `handler`, `begin.json.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+
+Let's take a look at the default code Begin uses to provision new JSON `DELETE` routes:
 
 
 ## Parameters

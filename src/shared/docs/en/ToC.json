@@ -160,16 +160,16 @@
             "name": "Overview"
           },
           {
-            "anchor": "#begin-html-get-",
-            "name": "begin.html.get()"
+            "anchor": "#get-routes",
+            "name": "GET routes"
           },
           {
             "anchor": "#get-examples",
             "name": "GET examples"
           },
           {
-            "anchor": "#begin-html-post-",
-            "name": "begin.html.post()"
+            "anchor": "#post-routes",
+            "name": "POST routes"
           },
           {
             "anchor": "#post-examples",
@@ -194,40 +194,40 @@
             "name": "Overview"
           },
           {
-            "anchor": "#begin-json-get-",
-            "name": "begin.json.get()"
+            "anchor": "#get-routes",
+            "name": "GET routes"
           },
           {
             "anchor": "#get-examples",
             "name": "GET examples"
           },
           {
-            "anchor": "#begin-json-post-",
-            "name": "begin.json.post()"
+            "anchor": "#post-routes",
+            "name": "POST routes"
           },
           {
             "anchor": "#post-examples",
             "name": "POST examples"
           },
           {
-            "anchor": "#begin-json-put-",
-            "name": "begin.json.put()"
+            "anchor": "#put-routes",
+            "name": "PUT routes"
           },
           {
             "anchor": "#put-examples",
             "name": "PUT examples"
           },
           {
-            "anchor": "#begin-json-patch-",
-            "name": "begin.json.patch()"
+            "anchor": "#patch-routes",
+            "name": "PATCH routes"
           },
           {
             "anchor": "#patch-examples",
             "name": "PATCH examples"
           },
           {
-            "anchor": "#begin-json-delete-",
-            "name": "begin.json.delete()"
+            "anchor": "#delete-routes",
+            "name": "DELETE routes"
           },
           {
             "anchor": "#delete-examples",
@@ -248,40 +248,40 @@
             "name": "Overview"
           },
           {
-            "anchor": "#begin-xml-get-",
-            "name": "begin.xml.get()"
+            "anchor": "#get-routes",
+            "name": "GET routes"
           },
           {
             "anchor": "#get-examples",
             "name": "GET examples"
           },
           {
-            "anchor": "#begin-xml-post-",
-            "name": "begin.xml.post()"
+            "anchor": "#post-routes",
+            "name": "POST routes"
           },
           {
             "anchor": "#post-examples",
             "name": "POST examples"
           },
           {
-            "anchor": "#begin-xml-put-",
-            "name": "begin.xml.put()"
+            "anchor": "#put-routes",
+            "name": "PUT routes"
           },
           {
             "anchor": "#put-examples",
             "name": "PUT examples"
           },
           {
-            "anchor": "#begin-xml-patch-",
-            "name": "begin.xml.patch()"
+            "anchor": "#patch-routes",
+            "name": "PATCH routes"
           },
           {
             "anchor": "#patch-examples",
             "name": "PATCH examples"
           },
           {
-            "anchor": "#begin-xml-delete-",
-            "name": "begin.xml.delete()"
+            "anchor": "#delete-routes",
+            "name": "DELETE routes"
           },
           {
             "anchor": "#delete-examples",

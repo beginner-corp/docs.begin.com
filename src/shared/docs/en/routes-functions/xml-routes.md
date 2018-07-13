@@ -1,6 +1,6 @@
 ## Overview
 
-Begin XML routes respond with HTTP `Content-Type: application/xml`, and support routes with [`GET`](#begin-xml-get-), [`POST`](#begin-xml-post-), [`PUT`](#begin-xml-put-), [`PATCH`](#begin-xml-patch-), and [`DELETE`](#begin-xml-delete-).
+Begin XML routes respond with HTTP `Content-Type: application/xml`, and support routes with [`GET`](#get-routes), [`POST`](#post-routes), [`PUT`](#put-routes), [`PATCH`](#patch-routes), and [`DELETE`](#delete-routes).
 
 Each XML route (example: `POST /login`) in your app is assigned a folder in your project under `src/xml/` (i.e. `src/xml/post-login/`).
 
@@ -11,9 +11,7 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 
 ---
 
-## `begin.xml.get()`
-
-Invoked by the route's `handler`, `begin.xml.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+## `GET` routes
 
 Let's look at the default code for new XML `GET` routes:
 
@@ -30,6 +28,11 @@ function route(req, res) {
 
 exports.handler = begin.xml.get(route)
 ```
+
+
+## `begin.xml.get()`
+
+Invoked by the route's `handler`, `begin.xml.get()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -97,11 +100,9 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.xml.post()`
+## `POST` routes
 
-Invoked by the route's `handler`, `begin.xml.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-Let's take a look at the default code Begin uses to provision new XML `POST` routes:
+Let's look at the default code for new XML `POST` routes:
 
 ```js
 // src/xml/post-*/index.js
@@ -116,6 +117,10 @@ function route(req, res) {
 
 exports.handler = begin.xml.post(route)
 ```
+
+## `begin.xml.post()`
+
+Invoked by the route's `handler`, `begin.xml.post()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -187,11 +192,10 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.xml.put()`
+## `PUT` routes
 
-Invoked by the route's `handler`, `begin.xml.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
+Let's look at the default code for new XML `PUT` routes:
 
-Let's take a look at the default code Begin uses to provision new XML `PUT` routes:
 
 ```js
 // src/xml/put-*/index.js
@@ -206,6 +210,11 @@ function route(req, res) {
 
 exports.handler = begin.xml.put(route)
 ```
+
+
+## `begin.xml.put()`
+
+Invoked by the route's `handler`, `begin.xml.put()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -258,11 +267,9 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.xml.patch()`
+## `PATCH` routes
 
-Invoked by the route's `handler`, `begin.xml.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-Let's take a look at the default code Begin uses to provision new XML `PATCH` routes:
+Let's look at the default code for new XML `PATCH` routes:
 
 ```js
 // src/xml/patch-*/index.js
@@ -277,6 +284,11 @@ function route(req, res) {
 
 exports.handler = begin.xml.patch(route)
 ```
+
+
+## `begin.xml.patch()`
+
+Invoked by the route's `handler`, `begin.xml.patch()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters
@@ -329,11 +341,9 @@ Callback argument to continue execution.
 
 ---
 
-## `begin.xml.delete()`
+## `DELETE` routes
 
-Invoked by the route's `handler`, `begin.xml.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
-
-Let's take a look at the default code Begin uses to provision new XML `DELETE` routes:
+Let's look at the default code for new XML `DELETE` routes:
 
 ```js
 // src/xml/delete-*/index.js
@@ -348,6 +358,11 @@ function route(req, res) {
 
 exports.handler = begin.xml.delete(route)
 ```
+
+
+## `begin.xml.delete()`
+
+Invoked by the route's `handler`, `begin.xml.delete()` accepts one or more functions that follow an [Express-style middleware](https://expressjs.com/en/guide/writing-middleware.html) signature: `(req, res, next)`
 
 
 ## Parameters

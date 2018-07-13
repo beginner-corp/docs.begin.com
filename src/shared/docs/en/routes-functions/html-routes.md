@@ -1,6 +1,6 @@
 ## Overview
 
-Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#begin-html-get-) and [`POST`](#begin-html-post-).
+Begin HTML routes respond with HTTP `Content-Type: text/html`, and support routes with [`GET`](#get-routes) and [`POST`](#post-routes).
 
 Each HTML route (example: `GET /about`) in your app is assigned a folder in your project under `src/html/` (i.e. `src/html/get-about/`).
 
@@ -12,6 +12,8 @@ By default, all Begin apps are provisioned a HTML `GET /` route that cannot be d
 > Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 
 ---
+
+## `GET` routes
 
 Let's look at the default code for new HTML `GET` routes:
 
@@ -216,7 +218,9 @@ exports.handler = begin.html.get(route)
 
 ---
 
-Now let's take a look at the default code Begin uses to provision new HTML `POST` routes:
+## `POST` routes
+
+Let's look at the default code for new HTML `POST` routes:
 
 ```js
 // src/html/post-*/index.js
