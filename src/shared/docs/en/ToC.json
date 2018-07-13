@@ -399,7 +399,7 @@
         "doc": "deploying",
         "title": "Deploying",
         "description": "How to deploy your app to Begin",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/deploying.md",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/deploying.md",
         "nextDoc": "/en/support/issues",
         "nextTitle": "Issues & feature requests",
         "sections": [
