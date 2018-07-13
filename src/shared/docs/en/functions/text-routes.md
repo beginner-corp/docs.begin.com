@@ -1,6 +1,6 @@
 ## Overview
 
-Begin text routes respond with HTTP `Content-Type: text/plain`, and support routes with [`GET`](#begin-text-get-).
+Begin text routes respond with HTTP `Content-Type: text/plain`, and support routes with [`GET`](#get-routes).
 
 Each text route (example: `GET /robots.txt`) in your app is assigned a folder in your project under `src/text/` (i.e. `src/text/get-000param/`).
 
@@ -10,6 +10,8 @@ Within your project, each route can contain and utilize an arbitrary quantity of
 > Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 
 ---
+
+## `GET` routes
 
 Let's look at the default code for new text `GET` routes:
 

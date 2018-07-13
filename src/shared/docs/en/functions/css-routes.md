@@ -1,6 +1,6 @@
 ## Overview
 
-Begin CSS routes respond with HTTP `Content-Type: text/css`, and support routes with [`GET`](#begin-css-get-).
+Begin CSS routes respond with HTTP `Content-Type: text/css`, and support routes with [`GET`](#get-routes).
 
 Each CSS route (example: `GET /views/css`) in your app is assigned a folder in your project under `src/css/` (i.e. `src/css/get-views-css/`).
 
@@ -12,6 +12,8 @@ CSS routes work well as an origin for your app's pre-compiled styles, but they'r
 > Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 
 ---
+
+## `GET` routes
 
 Let's look at the default code for new CSS `GET` routes:
 

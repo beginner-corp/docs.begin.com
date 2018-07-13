@@ -1,6 +1,6 @@
 ## Overview
 
-Begin JavaScript routes respond with HTTP `Content-Type: text/javascript`, and support routes with [`GET`](#begin-js-get-).
+Begin JavaScript routes respond with HTTP `Content-Type: text/javascript`, and support routes with [`GET`](#get-routes).
 
 Each JavaScript route (example: `GET /appjs`) in your app is assigned a folder in your project under `src/js/` (i.e. `src/js/get-appjs/`).
 
@@ -12,6 +12,8 @@ JavaScript routes work well for delivering ES modules, or as an origin for your 
 > Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 
 ---
+
+## `GET` routes
 
 Let's look at the default code for new JavaScript `GET` routes:
 
