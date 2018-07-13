@@ -17,13 +17,13 @@
   },
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "dependencies": {
-    "@architect/workflows": "^3.2.3",
+    "@architect/workflows": "^3.2.11",
     "eslint": "^4.19.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "tiny-json-http": "^7.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.18.2"
   }
 }
