@@ -162,4 +162,4 @@ git push origin 1.0.1
 ```
   - Or also by cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
 
-> 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating production releases!
+> 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!

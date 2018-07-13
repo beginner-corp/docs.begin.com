@@ -21,7 +21,7 @@ Some key properties of apps built with Begin:
 - **Super fast CI, instantaneous deployment**: go from commit to green build to running code in seconds
 - **Nearly infinitely scalable**: native AWS Lambda-based compute means never having to pre-provision infra or spend time on capacity planning
 - **Highly debuggable**: per route isolation reduces the time required to find problems and ship fixes
-- **Staging isolation**: baked-in fully isolated staging environment is automatically set up right alongside production
+- **Staging isolation**: baked-in fully isolated `staging` environment is automatically set up right alongside `production`
 - **Cost-effective**: pay for what you use – not for what you think you may need
 
 
@@ -30,7 +30,7 @@ Some key properties of apps built with Begin:
 ### What Begin does
 
 - Provision and orchestrate the next-gen cloud infrastructure needed to stand up a nearly infinitely scalable web application or API
-- Provide fully isolated staging and production environments
+- Provide fully isolated `staging` and `production` environments
 - Manage CI for multiple environments
 - Distribute static assets
 - Deploy builds to `staging` (automatically, if green) and `production` (on-demand)

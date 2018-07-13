@@ -12,7 +12,7 @@ Begin offers three hosted environments out of the box: `testing`, `staging`, and
 Within these environments, Begin follows a fairly traditional CI/CD build pipline:
 - `testing` - Commits to `master` kick off CI; green builds deploy to `staging`
 - `staging` - Runs latest green build from `master`; clicking the `Deploy to Production` button in the left nav in Begin (or cutting a git tag) deploys to `production`
-- `production` - Runs the latest production release
+- `production` - Runs the latest `production` release
 
 
 ## Environment variables

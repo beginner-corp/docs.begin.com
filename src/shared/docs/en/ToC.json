@@ -312,8 +312,8 @@
         "title": "Text Routes",
         "description": "Building text routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/text-routes.md",
-        "//nextDoc": "",
-        "//nextTitle": "",
+        "nextDoc": "/en/building-deploying/builds",
+        "nextTitle": "Builds",
         "sections": [
           {
             "anchor": "#overview",
@@ -362,8 +362,8 @@
         "title": "Build steps",
         "description": "Detailed information about Begin CI build steps",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
-        "//nextDoc": "/en/building-deploying/tk",
-        "//nextTitle": "tk",
+        "nextDoc": "/en/building-deploying/deploying",
+        "nextTitle": "Deploying",
         "sections": [
           {
             "anchor": "#overview",
@@ -392,6 +392,28 @@
           {
             "anchor": "#deploy",
             "name": "Deploy"
+          }
+        ]
+      },
+      {
+        "doc": "deploying",
+        "title": "Deploying",
+        "description": "How to deploy your app to Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/deploying.md",
+        "nextDoc": "/en/support/issues",
+        "nextTitle": "Issues & feature requests",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#deploying-to-staging",
+            "name": "Deploying to staging"
+          },
+          {
+            "anchor": "#deploying-to-production",
+            "name": "Deploying to production"
           }
         ]
       }
