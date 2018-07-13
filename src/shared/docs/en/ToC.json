@@ -30,8 +30,8 @@
         "title": "Quickstart",
         "description": "Get started building your first app with Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/quickstart.md",
-        "nextDoc": "/en/routes-functions/creating-new-routes/",
-        "nextTitle": "Creating new routes",
+        "nextDoc": "/en/getting-started/working-locally/",
+        "nextTitle": "Working locally",
         "sections": [
           {
             "anchor": "#prerequisites",
@@ -64,6 +64,32 @@
           {
             "anchor": "#keep-it-going",
             "name": "Keep it going"
+          }
+        ]
+      },
+      {
+        "doc": "working-locally",
+        "title": "Working locally",
+        "description": "Guide to working locally and writing tests with Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/working-locally.md",
+        "nextDoc": "/en/routes-functions/creating-new-routes/",
+        "nextTitle": "Creating new routes",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#getting-set-up",
+            "name": "Getting set up"
+          },
+          {
+            "anchor": "#working-with-routes",
+            "name": "Working with routes"
+          },
+          {
+            "anchor": "#writing-tests",
+            "name": "Writing tests"
           }
         ]
       }

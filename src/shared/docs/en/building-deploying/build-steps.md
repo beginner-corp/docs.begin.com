@@ -77,7 +77,7 @@ Defines your test procedures. Like `lint`, it's defined in your Begin app's defa
 
 Ah, the step we've been waiting for!
 
-Provided all other build steps `exit(0)`, Begin takes over again to orechestrate deployment, which primarily includes:
+Provided all other build steps `exit(0)`, Begin takes over again to orchestrate deployment, which primarily includes:
 - Deploying all routes to their corresponding Lambda cloud functions
 - Deploying static assets (`.static/*`) to your app's S3 bucket
 
