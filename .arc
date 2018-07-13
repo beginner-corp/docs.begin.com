@@ -10,9 +10,9 @@ get /:lang/:cat/:doc
 @css
 /css/:page
 
-# @static
-# staging begin-docs-staging
-# production begin-docs
+@static
+staging begin-docs-staging
+production begin-docs
 
 @aws
 region us-west-1
