@@ -72,8 +72,8 @@
         "title": "Working locally",
         "description": "Guide to working locally and writing tests with Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/working-locally.md",
-        "nextDoc": "/en/routes-functions/creating-new-routes/",
-        "nextTitle": "Creating new routes",
+        "nextDoc": "/en/getting-started/builds-deploys/",
+        "nextTitle": "Building & deploying",
         "sections": [
           {
             "anchor": "#overview",
@@ -90,6 +90,110 @@
           {
             "anchor": "#writing-tests",
             "name": "Writing tests"
+          }
+        ]
+      },
+      {
+        "doc": "builds-deploys",
+        "title": "Building & deploying",
+        "description": "Guide to creating new builds and deploying them to Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/tktk/tktk.md",
+        "nextDoc": "/en/getting-started/environments/",
+        "nextTitle": "Environment variables",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#build-pipeline",
+            "name": "Build pipeline"
+          },
+          {
+            "anchor": "#deploying-to-staging",
+            "name": "Deploying to staging"
+          },
+          {
+            "anchor": "#deploying-to-production",
+            "name": "Deploying to production"
+          },
+          {
+            "anchor": "#configuring-build-steps",
+            "name": "Configuring build steps"
+          }
+        ]
+      },
+      {
+        "doc": "environments",
+        "title": "Environment variables",
+        "description": "Configuring your Begin app's environment variables",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/environments.md",
+        "nextDoc": "/en/getting-started/domains/",
+        "nextTitle": "Domain names",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#adding-variables",
+            "name": "Adding variables"
+          },
+          {
+            "anchor": "#editing variables",
+            "name": "Editing variables"
+          }
+        ]
+      },
+      {
+        "doc": "domains",
+        "title": "Domain names",
+        "description": "Configuring your Begin app's domain",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/domains.md",
+        "nextDoc": "/en/getting-started/settings/",
+        "nextTitle": "Settings",
+        "//sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          }
+        ]
+      },
+      {
+        "doc": "settings",
+        "title": "Settings",
+        "description": "Configuring your Begin app's settings",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/settings.md",
+        "nextDoc": "/en/routes-functions/creating-new-routes/",
+        "nextTitle": "Creating new routes",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#app-name",
+            "name": "App name"
+          },
+          {
+            "anchor": "#notifications",
+            "name": "Notifications"
+          },
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#aws-resources-inventory",
+            "name": "AWS resources inventory"
+          },
+          {
+            "anchor": "#deleting-your-app",
+            "name": "Deleting your app"
+          },
+          {
+            "anchor": "#ejecting-your-app",
+            "name": "Ejecting your app"
           }
         ]
       }
@@ -352,94 +456,6 @@
           {
             "anchor": "#get-examples",
             "name": "GET examples"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "cat": "building-deploying",
-    "catTitle": "Building & deploying",
-    "docs": [
-      {
-        "doc": "builds",
-        "title": "Builds",
-        "description": "Basic overview of the Begin CI/CD build pipeline",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
-        "nextDoc": "/en/building-deploying/build-steps",
-        "nextTitle": "Build steps",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#build-pipeline",
-            "name": "Build pipeline"
-          },
-          {
-            "anchor": "#environment-variables",
-            "name": "Environment variables"
-          }
-        ]
-      },
-      {
-        "doc": "build-steps",
-        "title": "Build steps",
-        "description": "Detailed information about Begin CI build steps",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/builds.md",
-        "nextDoc": "/en/building-deploying/deploying",
-        "nextTitle": "Deploying",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#verify",
-            "name": "Verify"
-          },
-          {
-            "anchor": "#install",
-            "name": "Install"
-          },
-          {
-            "anchor": "#build",
-            "name": "Build"
-          },
-          {
-            "anchor": "#lint",
-            "name": "Lint"
-          },
-          {
-            "anchor": "#test",
-            "name": "Test"
-          },
-          {
-            "anchor": "#deploy",
-            "name": "Deploy"
-          }
-        ]
-      },
-      {
-        "doc": "deploying",
-        "title": "Deploying",
-        "description": "How to deploy your app to Begin",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/building-deploying/deploying.md",
-        "nextDoc": "/en/support/issues",
-        "nextTitle": "Issues & feature requests",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#deploying-to-staging",
-            "name": "Deploying to staging"
-          },
-          {
-            "anchor": "#deploying-to-production",
-            "name": "Deploying to production"
           }
         ]
       }
