@@ -5,7 +5,7 @@ Find something wrong with Begin that could impact all Begin users? Have a burnin
 
 ## Sending a support ticket
 
-If you have an issue that may pertain to sensitive data or code, something isn't right with your account, or you just aren't sure where to get support, [head here to file a (completely private) support ticket](https://help.begin.com/hc/en-us/requests/new) with our team.
+If you have an issue that may pertain to sensitive data or code, something isn't right with your account, or you just aren't sure where to get support, [head here to file a (completely private) support ticket](https://begin-help.zendesk.com/hc/en-us/requests/new) with our team.
 
 
 ## Join the Begin Slack
