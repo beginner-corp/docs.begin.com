@@ -33,7 +33,11 @@ Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM
 
 ### Version control: GitHub
 
-Begin relies on GitHub as both the host of your project's git repository (as well as your Begin login). [Sign up for GitHub here](https://github.com/join).
+Begin relies on GitHub as the host of your project repo (as well as your Begin login). [Sign up for GitHub here](https://github.com/join).
+
+When you create a new app, Begin will also provision a new single route (`GET /`) repo, pre-wired with webhooks to CI.
+
+> Free-tier Begin app repos are public; switching them to private or changing the repo name may result in broken builds and CI.
 
 
 ## Create a Begin account
