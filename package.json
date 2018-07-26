@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "dependencies": {
-    "@architect/workflows": "^3.2.15",
+    "@architect/workflows": "latest",
     "eslint": "^4.19.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
