@@ -134,24 +134,6 @@ npm install
 npx hydrate
 ```
 
-> If you haven't previously worked with [Architect](https://arc.codes), you may encounter a small [configuration bug](https://github.com/smallwins/begin-issues/issues/1) at this step. We'll have a fix out soon, but in the mean time, the workaround is as follows:
-> First, add the following to `~/.aws/credentials` (you don't need to replace `foo` and `bar`):
-```bash
-[begin]
-aws_access_key_id=foo
-aws_secret_access_key=bar
-```
-> Second, add the following to your `~/.bashrc`, then restart your terminal:
-```bash
-export AWS_PROFILE=begin
-export AWS_REGION=us-west-1
-```
-> Then try hydrating again:
-```bash
-npx hydrate
-```
-
-
 - Start the app locally:
 ```bash
 npm start
