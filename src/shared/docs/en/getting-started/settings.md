@@ -37,7 +37,7 @@ If you're digging this whole serverless thing but want to run everything under y
 
 Just follow the following steps:
 
-0. Download any application data, settings, env vars, etc. you may need.
+0. Download any application data, settings, env vars, etc. stored in Begin that you may need.
 
 1. Clone your Begin app
 
