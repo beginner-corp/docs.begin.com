@@ -37,6 +37,8 @@ If you're digging this whole serverless thing but want to run everything under y
 
 Just follow the following steps:
 
+0. Download any application data, settings, env vars, etc. you may need.
+
 1. Clone your Begin app
 
 ```bash
@@ -55,7 +57,9 @@ get /
 
 3. Update your `package.json` and `package-lock.json` as appropriate
 
-4. Run `npx create`
+4. If you haven't already, make sure to go [set up your AWS credentials and env vars (as necessary)](https://arc.codes/quickstart).
+
+5. Run `npx create`
 
 That should get you going! Of course, you'll probably want to keep going by adding a domain, setting up a database, and more.
 
