@@ -21,8 +21,8 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
 
   // If the document is active, append the active class to highlight it
   var styles = active
-  ? classes + ' active'
-  : classes
+    ? classes + ' active'
+    : classes
 
   // Loops through a doc's sections
   function Sections () {

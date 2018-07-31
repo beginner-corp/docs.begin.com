@@ -1,6 +1,8 @@
-module.exports = function head (meta) {
+module.exports = function head(meta) {
   meta = meta || {}
-  var title = meta.title || 'Begin documentation'
+  var title = (meta.title)
+    ? meta.title + ' - Begin documentation'
+    : 'Begin documentation'
   var description = meta.description || 'Begin documentation'
   return `
 <head>
@@ -34,7 +36,7 @@ module.exports = function head (meta) {
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Begin documentation - ${title}</title>
+  <title>${title}</title>
   <meta name="description" content="${description}"/>
   <link rel="stylesheet" href="https://fonts.begin.com/fonts.css">
   <link rel="stylesheet" href="/css/app.css">
