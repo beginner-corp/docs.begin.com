@@ -504,8 +504,36 @@
         "title": "Issues & feature requests",
         "description": "How and where to file issues and feature requests for Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/issues.md",
+        "nextDoc": "/en/meta/about",
+        "nextTitle": "About Begin"
+      }
+    ]
+  },
+  {
+    "cat": "meta",
+    "catTitle": "Meta",
+    "docs": [
+      {
+        "doc": "about",
+        "title": "About Begin",
+        "description": "About Begin: who we are, what we believe, how Begin works",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/meta/support.md",
         "//nextDoc": "",
-        "//nextTitle": ""
+        "//nextTitle": "",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Who we are"
+          },
+          {
+            "anchor": "#begin-text-get-",
+            "name": "What we believe"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "Our business model"
+          }
+        ]
       }
     ]
   }
