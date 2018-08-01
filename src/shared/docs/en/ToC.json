@@ -150,12 +150,38 @@
         "title": "Domain names",
         "description": "Configuring your Begin app's domain",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/domains.md",
-        "nextDoc": "/en/getting-started/settings/",
+        "nextDoc": "/en/getting-started/static-assets/",
         "nextTitle": "Settings",
         "//sections": [
           {
             "anchor": "#overview",
             "name": "Overview"
+          }
+        ]
+      },
+      {
+        "doc": "static-assets",
+        "title": "Static assets",
+        "description": "Building, deploying, and accessing static assets from Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/static-assets.md",
+        "nextDoc": "/en/getting-started/settings/",
+        "nextTitle": "Settings",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#the-static-directory",
+            "name": "The .static directory"
+          },
+          {
+            "anchor": "#building-and-deploying-assets",
+            "name": "Building and deploying assets"
+          },
+          {
+            "anchor": "#accessing-static-assets",
+            "name": "Accessing static assets"
           }
         ]
       },
@@ -478,8 +504,36 @@
         "title": "Issues & feature requests",
         "description": "How and where to file issues and feature requests for Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/support/issues.md",
+        "nextDoc": "/en/meta/about",
+        "nextTitle": "About Begin"
+      }
+    ]
+  },
+  {
+    "cat": "meta",
+    "catTitle": "Meta",
+    "docs": [
+      {
+        "doc": "about",
+        "title": "About Begin",
+        "description": "About Begin: who we are, what we believe, how Begin works",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/meta/support.md",
         "//nextDoc": "",
-        "//nextTitle": ""
+        "//nextTitle": "",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Who we are"
+          },
+          {
+            "anchor": "#begin-text-get-",
+            "name": "What we believe"
+          },
+          {
+            "anchor": "#get-examples",
+            "name": "Our business model"
+          }
+        ]
       }
     ]
   }
