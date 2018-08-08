@@ -22,9 +22,9 @@ After clicking `Add Route`, the following things happen automatically:
 It's possible to build dynamic paths using Express-style URL parameters, like: `GET /shop/:item`
 <!-- @todo - add link: learn more about routes with parameters in our project doc(s) -->
 
-URL parameters are passed to your route via the Architect API's `req.params` object.
+URL parameters are passed to your route via the `req.params` object.
 
-For example, the route used to serve this page is `GET /:lang/:cat/:doc`. When a client requests the path `/en/routes-functions/creating-new-routes/`, the route handling this route receives a `req` object containing:
+For example, the route used to serve this page is `GET /:lang/:cat/:doc`. When a client requests the path `/en/routes-functions/creating-new-routes/`, the function handling this route receives a `req` object containing:
 
 ```js
 {

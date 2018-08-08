@@ -31,7 +31,7 @@ ${Symbols}
             ${Logo({id: 'menu-close'})}
             <div class="d-flex fg-1 jc-e ai-c mr0">
               <a href="https://begin.com" class="fw-book c-p3">Sign up</a>
-              <a href="https://github.com/login/oauth/authorize?scope=user:email,repo&amp;client_id=6b14f59e1d015e75badb&amp;redirect_uri=https://begin.com/login" class="cu-pointer pt-4 pr-2 pl-2 pb-3 ml-1 fs0 fw-medium bg-p2 bg-h2 bg-a1 br1 c-p5">Login</a>
+              <a href="https://github.com/login/oauth/authorize?scope=user:email,public_repo&amp;client_id=6b14f59e1d015e75badb&amp;redirect_uri=https://begin.com/login" class="cu-pointer pt-4 pr-2 pl-2 pb-3 ml-1 fs0 fw-medium bg-p2 bg-h2 bg-a1 br1 c-p5">Login</a>
             </div>
           </div>
         </header>
