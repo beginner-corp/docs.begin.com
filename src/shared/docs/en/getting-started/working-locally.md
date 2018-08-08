@@ -15,7 +15,7 @@ Get started working locally on your app in five easy steps:
 
 1. Clone your app's repo to your local machine:
 ```bash
-git clone git@github.com:{your GH username}/begin-functions-app.git
+git clone https://github.com/{your GH username}/begin-functions-app.git
 ```
 
 - cd to your Begin project directory:
