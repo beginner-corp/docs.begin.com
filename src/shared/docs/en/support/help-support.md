@@ -8,9 +8,9 @@ Find something wrong with Begin that could impact all Begin users? Have a burnin
 If you have an issue that may pertain to sensitive data or code, something isn't right with your account, or you just aren't sure where to get support, [head here to file a (completely private) support ticket](https://begin-help.zendesk.com/hc/en-us/requests/new) with our team.
 
 
-## Join the Begin Slack
+## Questions? Feedback? High fives?
 
-Who wouldn't want to hang out with the other intelligent, attractive Begin users in chat? Coming soon to your Slack app.
+Join the Begin community! Who wouldn't want to hang out with the other intelligent, attractive Begin users? [Head on over to the Begin Spectrum!](https://spectrum.chat/begin)
 
 
 ## Hit us up on Twitter
