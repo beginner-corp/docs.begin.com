@@ -6,11 +6,16 @@ module.exports = function Logo (state) {
 
   return `
 <div class="${styles}" id="${id}">
-  <img
-    src="https://static.begin.com/web/asset/begin-logo.svg"
-    alt="begin logo"
-    height="24.4"
+  <a
+    href="/"
+    id="logo"
   >
+    <img
+      src="https://static.begin.com/web/asset/begin-logo.svg"
+      alt="begin logo"
+      height="24.4"
+    >
+  </a>
 </div>
 `
 }
