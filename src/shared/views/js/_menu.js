@@ -6,6 +6,17 @@
     e.preventDefault()
     main.classList.toggle('slide-menu')
   }
+
+  function navSectionToggle() {
+    main.classList.toggle('slide-menu')
+  }
+  function navSections (links) {
+    for (i=0; links.length > i; i++) {
+      links[i].addEventListener('click', navSectionToggle, false)
+    }
+  }
+  navSections(document.querySelectorAll('#nav-section'))
+
   open.onclick = toggle
   close.onclick = toggle
 }())
