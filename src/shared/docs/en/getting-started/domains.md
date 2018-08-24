@@ -65,6 +65,7 @@ Specifically, your DNS provider requires the ability to add `ALIAS` records (als
 Here are a few DNS providers that we are aware of that support ALIAS records for mapping naked domains:
 
 - [AWS Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
+- [ClouDNS](https://www.cloudns.net/wiki/article/18/)
 - [DNS Made Easy](http://help.dnsmadeeasy.com/managed-dns/records/aname-records/)
 - [DNSimple](https://support.dnsimple.com/articles/alias-record/)
 - [Dyn](https://dyn.com/dns/managed-dns/alias/)
