@@ -152,10 +152,26 @@
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/domains.md",
         "nextDoc": "/en/getting-started/static-assets/",
         "nextTitle": "Settings",
-        "//sections": [
+        "sections": [
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#mapping-your-domain",
+            "name": "Mapping your domain"
+          },
+          {
+            "anchor": "#generating-ssl-certificates",
+            "name": "Generating SSL certificates"
+          },
+          {
+            "anchor": "#domain-mapping",
+            "name": "Domain mapping"
+          },
+          {
+            "anchor": "#mapping-naked-domains",
+            "name": "Mapping naked domains"
           }
         ]
       },
