@@ -41,26 +41,27 @@ By default, your app is also configured with `staging` and `production` CDN (Clo
 
 Begin supports accessing static assets locally before they've been promoted to S3. Depending on the stage and service you'd like to access asset from, just swap out the paths as necessary.
 
-Here's a simple environment-aware helper for accessing your static assets. (You may want to add additional customization to better take advantage of Begin's staging and production asset pipelines, too.)
+Here is an example environment-aware helper for accessing your static assets. (You may want to add additional customization to better take advantage of Begin's staging and production asset pipelines, too.)
 
 
 ```javascript
 function staticAsset(filename) {
-  var env = process.env.NODE_ENV
-  let app = process.env.ARC_APP_NAME + '/'
-  let S3Staging = 'https://s3-us-west-1.amazonaws.com/begin-functions-staging/'
-  // let S3Production = 'https://s3-us-west-1.amazonaws.com/begin-functions-production/'
-  // let CFStaging = 'https://static-staging.begin.app/'
-  let CFProduction = 'https://static.begin.app/'
 
+  // these variables are always available to all lambdas
+  let env = process.env.NODE_ENV
+  let app = process.env.ARC_APP_NAME
+  
+  // early exit (if we're testing then we can assume the sandbox mounted .static)
   if (env === 'testing') {
     return '/' + filename
   }
-  else if (env === 'staging') {
-    return S3Staging + app + filename
-  }
   else {
-    return CFProduction + app + filename
+    // otherwise use s3 for staging and cloudfront for production
+    let S3Staging = `https://s3-us-west-1.amazonaws.com/begin-functions-staging/${app}`
+    let CFProduction = `https://static.begin.app/${app}`
+    let origin = env === 'staging'? S3Staging : CFProduction
+
+    return `${origin}/${filename}`
   }
 }
 ```
