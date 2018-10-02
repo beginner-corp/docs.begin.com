@@ -2,7 +2,7 @@
 
 Pretty much every app requires access to hosted static assets of some kind or another. Images are probably the most obvious example.
 
-And while Begin can deliver your app's [JS](/en/routes-functions/css-routes/) and [CSS](/en/routes-functions/json-routes/) dynamically, it's still super common for workflows to generate build artifacts best delivered from cloud services optimized for static hosting.
+And while Begin can deliver your app's [JS](/en/routes-functions/javascript-routes/) and [CSS](/en/routes-functions/css-routes/) dynamically, it's still super common for workflows to generate build artifacts best delivered from cloud services optimized for static hosting.
 
 Fortunately, that's why Begin has the ability to build (if necessary) and deploy static assets to S3 (origin) and CloudFront (CDN) out of the box.
 
