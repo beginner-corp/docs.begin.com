@@ -43,7 +43,7 @@ Want to learn a little more about how routes in Begin are born?
 
 As it happens, the AWS infrastructure needed to marshal your app's requests and responses (API Gateway) is separate and different from the cloud compute that runs your code (Lambda).
 
-This architecture is capable of enormous scale, but can be quite complex to orchestrate. Fortunately, this is one of the many things Begin manages for you behind the scenes.
+This architecture is capable of enormous scale, but can be quite complex to manage. Fortunately, this is one of the many things Begin manages for you behind the scenes.
 
 Routes in Begin apps generally consist of the following parts:
 

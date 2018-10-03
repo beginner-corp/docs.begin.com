@@ -3,11 +3,11 @@ Hello, and welcome! We can't wait to share everything you need to know about Beg
 
 ## What is Begin?
 
-Begin is a **cloud function continuous deployment platform**.
+**Begin is a cloud function continuous deployment platform**.
 
 ![Begin screenshot](https://s3.us-west-1.amazonaws.com/begin-docs/begin-screenshot-home-1.png)
 
-More specifically: Begin orchestrates the provisioning and management of a wide range of next-generation cloud infrastructure on AWS.
+More specifically: Begin is a batteries-included system for provisioning and managing of a wide range of next-generation AWS cloud infrastructure.
 
 With Begin, you can create entire serverless apps and sites with full databases, sessions, CI, and local development tools all built right in.
 
@@ -31,7 +31,7 @@ Some key properties of apps built with Begin:
 
 ### What Begin does
 
-- Provision and orchestrate the next-gen cloud infrastructure needed to stand up a nearly infinitely scalable web application or API
+- Provision and manage the next-gen cloud infrastructure needed to stand up a nearly infinitely scalable web application or API
 - Provide fully isolated `staging` and `production` environments
 - Manage CI for multiple environments
 - Distribute static assets
@@ -71,7 +71,7 @@ If you can build it with Node and a database, you can build it with Begin. Here 
 
 ## Background & open source governance
 
-Begin started out as a cloud infrastructure framework built to help manage the immense complexities associated with orchestrating software releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
+Begin started out as a cloud infrastructure framework built to help manage the immense complexities associated with managing releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
 
 That project became known as [Architect](https://arc.codes), which we (Small Wins) partnered with and donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model and Apache 2 license.
 
