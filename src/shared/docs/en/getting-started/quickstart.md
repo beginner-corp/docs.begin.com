@@ -19,7 +19,7 @@ Begin supports local development on just about all modern computers, including: 
 
 ### Runtime: Node.js 8.10
 
-The AWS infrastructure that Begin orchestrates runs solely on Node.js 8.10. (We do indeed have plans to support additional runtimes in the future!)
+The AWS infrastructure that Begin manages runs solely on Node.js 8.10. (We do indeed have plans to support additional runtimes in the future!)
 
 You can work locally with versions of Node other than 8.10, but your app shouldn't depend on any features, functionality, or fixes delivered not available in 8.10.
 
