@@ -1,8 +1,8 @@
 {
   "name": "begin-docs-get-000lang-000cat-000doc",
   "dependencies": {
-    "@architect/data": "^2.0.3",
-    "@architect/functions": "^1.8.12",
-    "marked": "^0.3.19"
+    "@architect/data": "latest",
+    "@architect/functions": "latest",
+    "marked": "^0.5.1"
   }
 }
