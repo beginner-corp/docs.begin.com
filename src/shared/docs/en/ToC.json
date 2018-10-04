@@ -242,10 +242,10 @@
     "catTitle": "Functions",
     "docs": [
       {
-        "doc": "creating-new-routes",
-        "title": "Creating new routes",
-        "description": "Creating new routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-routes.md",
+        "doc": "creating-new-functions",
+        "title": "Creating new functions",
+        "description": "Creating new functions for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-http-functions.md",
         "nextDoc": "/en/routes-functions/sessions/",
         "nextTitle": "Sessions",
         "sections": [
