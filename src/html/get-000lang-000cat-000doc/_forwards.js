@@ -2,7 +2,7 @@
 //   - key is the *old path*, value is the *new path* you want to forward to
 //   - don't chain forwards; if a an old path forwards to a path that also forwards to a new path, update both to forward to the same path
 //   - note: must include root slash
-forwards = {
+let forwards = {
   // example
   // '/en/old/busted': '/en/new/hotness'
   '/en/routes-functions/creating-new-routes': '/en/functions/creating-new-functions',
