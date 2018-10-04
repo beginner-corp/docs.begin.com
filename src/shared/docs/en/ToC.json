@@ -206,8 +206,8 @@
         "title": "Settings",
         "description": "Configuring your Begin app's settings",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/settings.md",
-        "nextDoc": "/en/routes-functions/creating-new-routes/",
-        "nextTitle": "Creating new routes",
+        "nextDoc": "/en/functions/creating-new-functions/",
+        "nextTitle": "Creating new functions",
         "sections": [
           {
             "anchor": "#overview",
@@ -245,8 +245,8 @@
         "doc": "creating-new-functions",
         "title": "Creating new functions",
         "description": "Creating new functions for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/creating-new-http-functions.md",
-        "nextDoc": "/en/routes-functions/sessions/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/creating-new-http-functions.md",
+        "nextDoc": "/en/functions/sessions/",
         "nextTitle": "Sessions",
         "sections": [
           {
@@ -267,8 +267,8 @@
         "doc": "sessions",
         "title": "Sessions",
         "description": "Using Begin's built-in sessions support",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/sessions.md",
-        "nextDoc": "/en/routes-functions/html-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/sessions.md",
+        "nextDoc": "/en/functions/html-routes/",
         "nextTitle": "HTML Routes",
         "sections": [
           {
@@ -293,8 +293,8 @@
         "doc": "html-routes",
         "title": "HTML Routes",
         "description": "Building HTML routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/html-routes.md",
-        "nextDoc": "/en/routes-functions/json-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/html-routes.md",
+        "nextDoc": "/en/functions/json-routes/",
         "nextTitle": "JSON Routes",
         "sections": [
           {
@@ -327,8 +327,8 @@
         "doc": "json-routes",
         "title": "JSON Routes",
         "description": "Building JSON routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/json-routes.md",
-        "nextDoc": "/en/routes-functions/xml-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/json-routes.md",
+        "nextDoc": "/en/functions/xml-routes/",
         "nextTitle": "XML Routes",
         "sections": [
           {
@@ -381,8 +381,8 @@
         "doc": "xml-routes",
         "title": "XML Routes",
         "description": "Building XML routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/xml-routes.md",
-        "nextDoc": "/en/routes-functions/css-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/xml-routes.md",
+        "nextDoc": "/en/functions/css-routes/",
         "nextTitle": "CSS Routes",
         "sections": [
           {
@@ -435,8 +435,8 @@
         "doc": "css-routes",
         "title": "CSS Routes",
         "description": "Building CSS routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/css-routes.md",
-        "nextDoc": "/en/routes-functions/javascript-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/css-routes.md",
+        "nextDoc": "/en/functions/javascript-routes/",
         "nextTitle": "JavaScript Routes",
         "sections": [
           {
@@ -457,8 +457,8 @@
         "doc": "javascript-routes",
         "title": "JavaScript Routes",
         "description": "Building JavaScript routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/javascript-routes.md",
-        "nextDoc": "/en/routes-functions/text-routes/",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/javascript-routes.md",
+        "nextDoc": "/en/functions/text-routes/",
         "nextTitle": "Text Routes",
         "sections": [
           {
@@ -479,9 +479,9 @@
         "doc": "text-routes",
         "title": "Text Routes",
         "description": "Building text routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/routes-functions/text-routes.md",
-        "nextDoc": "/en/building-deploying/builds",
-        "nextTitle": "Builds",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/text-routes.md",
+        "nextDoc": "/en/functions/events/",
+        "nextTitle": "Events",
         "sections": [
           {
             "anchor": "#overview",
@@ -494,6 +494,48 @@
           {
             "anchor": "#get-examples",
             "name": "GET examples"
+          }
+        ]
+      },
+      {
+        "doc": "events",
+        "title": "Events",
+        "description": "Creating new events for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/events.md",
+        "nextDoc": "/en/functions/scheduled/",
+        "nextTitle": "Scheduled",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          }
+        ]
+      },
+      {
+        "doc": "scheduled",
+        "title": "Scheduled",
+        "description": "Creating new schedules for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/schedules.md",
+        "nextDoc": "/en/functions/queues/",
+        "nextTitle": "Queues",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          }
+        ]
+      },
+      {
+        "doc": "queues",
+        "title": "Queues",
+        "description": "Creating new queues for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/creating-new-queues.md",
+        "nextDoc": "/en/support/help-support",
+        "nextTitle": "Help & support",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
           }
         ]
       }
