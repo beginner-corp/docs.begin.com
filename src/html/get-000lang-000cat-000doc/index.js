@@ -1,5 +1,7 @@
 let arc = require('@architect/functions')
-var render = require('@architect/shared/render')
+let render = require('@architect/shared/render')
+let path = require('path')
+let forwards = require('./_forwards')
 
 function route(req, res) {
   (process.env.NODE_ENV == 'production') ? '' : console.log(req)
@@ -7,11 +9,18 @@ function route(req, res) {
   let doc = req.params.doc
   let cat = req.params.cat
   let state = {doc, cat, lang}
-  let {html, status} = render(state)
-  res({
-    status,
-    html
-  })
+  let _path = path.join('/', lang, cat, doc)
+
+  // check to see if the requested document has been forwarded to a new path
+  if (forwards[_path]) {
+    res({
+      location: forwards[_path]
+    })
+  }
+
+  else {
+    res(render(state))
+  }
 }
 
 exports.handler = arc.html.get(route)
