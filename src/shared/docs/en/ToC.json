@@ -238,8 +238,8 @@
     ]
   },
   {
-    "cat": "routes-functions",
-    "catTitle": "Routes & Functions",
+    "cat": "functions",
+    "catTitle": "Functions",
     "docs": [
       {
         "doc": "creating-new-routes",
