@@ -94,7 +94,7 @@ This is a great place to generate static assets (to be deployed via the `.static
 
 **Optional, but highly recommended!**
 
-Runs eslint by default (o the linter of your choice). Defined in your Begin app's default `package.json` (and for hopefully obvious reasons we strongly suggest not removing it):
+Runs eslint by default (or the linter of your choice). Defined in your Begin app's default `package.json` (and for hopefully obvious reasons we strongly suggest not removing it):
 
 ```js
 {
