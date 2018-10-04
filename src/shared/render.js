@@ -4,7 +4,7 @@ var exists = fs.existsSync
 var join = require('path').join
 var Layout = require('./views/layout')
 
-module.exports = function render (state) {
+module.exports = function render(state) {
   state = state || {}
   var doc = state.doc
   var cat = state.cat
@@ -35,11 +35,16 @@ module.exports = function render (state) {
     // Good to go! Get the metadata, content, and send to Layout
     var meta = getDocMetadata(ToC)
     var content = read(contentFile).toString()
-    return {html: Layout(state, meta, content, ToC)}
+    return {
+      html: Layout(state, meta, content, ToC)
+    }
   } else {
     // Return 404
     var notFound = '404, sorry!'
-    return {html: notFound, status: 404}
+    return {
+      html: notFound,
+      status: 404
+    }
   }
 
 }
