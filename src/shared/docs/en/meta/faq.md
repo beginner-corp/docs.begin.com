@@ -1,6 +1,6 @@
 ### When will Begin support [Azure, GCP, OpenWhisk, _____]?
 
-Multi-cloud vendor support is absolutely on our roadmap! The will be prioritized primarily based on three factors:
+Multi-cloud vendor support is absolutely on our roadmap! It'll be prioritized primarily based on three factors:
 
 - Customer feedback: we strive to build a company culture where our customers are the ones telling us what to do. So if multi-cloud serverless support is important, we'd love to [hear from you more about why that is, and how you'd like us to implement it](/en/support/issues/)!
 - Viability of alternative platforms: while Google, Microsoft, IBM, and other cloud vendors are doing excellent work, we do not yet feel they have serverless offerings that are quite as competitive as what's available in AWS's stack. As always, we will continue to closely monitor and evaluate the landscape!
