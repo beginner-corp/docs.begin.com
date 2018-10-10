@@ -19,8 +19,5 @@
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "tiny-json-http": "^7.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.3"
   }
 }
