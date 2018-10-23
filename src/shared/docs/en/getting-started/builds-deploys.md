@@ -62,7 +62,7 @@ This step is non-configurable and does not output logs.
 
 ### **Install**
 
-Responsible for installing dependencies via npm to all routes (`src/(css|html|js|json|text|xml)/*`) and `shared` (`src/shared`).
+Responsible for installing dependencies via NPM to all routes (`src/(css|html|js|json|text|xml)/*`) and `shared` (`src/shared`).
 
 This step is non-configurable and does output logs.
 

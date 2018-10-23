@@ -23,7 +23,7 @@ git clone https://github.com/{your GH username}/begin-functions-app.git
 cd begin-functions-app
 ```
 
-- Install npm packages:
+- Install NPM packages:
 ```bash
 npm install
 ```
@@ -41,7 +41,7 @@ npm start
 That's it, you're up and running locally!
 
 
-### Adding nodemon
+### Adding Nodemon
 
 Nodemon works well with Begin. To use it, simply install it to your project's root as a devdep, and update the start script in your `package.json`:
 

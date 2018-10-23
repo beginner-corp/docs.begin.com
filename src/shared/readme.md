@@ -78,10 +78,10 @@ Horizontal rules ↓
 
 ### ❌ Not supported
 
-# H1
-#### H4
-##### H5
-###### H6
+# `H1`
+#### `H4`
+##### `H5`
+###### `H6`
 
 Copy with _italic_, and **_bold italic_** text
 

@@ -3,7 +3,7 @@ Hello, and welcome! We can't wait to share everything you need to know about Beg
 
 ## What is Begin?
 
-**Begin is a cloud function continuous deployment platform**.
+**Begin is a serverless application platform**.
 
 ![Begin screenshot](https://s3.us-west-1.amazonaws.com/begin-docs/begin-screenshot-home-1.png)
 

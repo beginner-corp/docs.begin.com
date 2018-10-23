@@ -124,7 +124,7 @@ git clone https://github.com/{your GH username}/begin-functions-app.git
 cd begin-functions-app
 ```
 
-- Install npm packages:
+- Install NPM packages:
 ```bash
 npm install
 ```

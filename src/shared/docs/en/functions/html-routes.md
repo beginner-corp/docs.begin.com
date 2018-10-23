@@ -7,7 +7,7 @@ Each HTML route (example: `GET /about`) in your app is assigned a folder in your
 Within your project, each route can contain and utilize an arbitrary quantity of modules, packages, and other files (so long as the total uncompressed size of that route's folder is ≤5MB).
 <!-- @todo more about cloud function limits doc(s) -->
 
-By default, all Begin apps are provisioned a HTML `GET /` route that cannot be deleted.
+By default, all Begin apps are provisioned an HTML `GET /` route that cannot be deleted.
 
 > Note: Begin routes are plain AWS Lambda functions, and can function without requiring `@architect/functions`. However, we do not suggest removing that require, as you will lose middleware and session support.
 

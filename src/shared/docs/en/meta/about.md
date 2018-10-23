@@ -1,6 +1,6 @@
 ## Who we are
 
-We founded Begin in 2015 with the goal of building an advanced conversational tasking tool for Slack, which we built on a then-brand-new architecture being coloquially referred to as "serverless".
+We founded Begin in 2015 with the goal of building an advanced conversational tasking tool for Slack, which we built on a then-brand-new architecture being colloquially referred to as "serverless".
 
 As you've probably surmised, that product didn't work out – but we did learn a thing or two about what works (and doesn't) when it comes to building software serverlessly.
 
@@ -11,7 +11,7 @@ We also learned that serverless is absolutely the future, and the [serverless to
 
 We believe serverless cloud infra services represent a generational shift in how software is built, finally breaking the bond between runtime and infrastructure.
 
-The result is a leapfrog in architectural simplicity and authortime efficiency, enabling the next generation of software to be built faster and with more resiliance than ever before.
+The result is a leapfrog in architectural simplicity and authortime efficiency, enabling the next generation of software to be built faster and with more resilience than ever before.
 
 By not needing knowledge or expertise in ops and scaling infra to have full access to affordable, world class, globally scalable cloud hosting services, one of the most significant, oldest barriers to entry in building software is effectively eliminated.
 

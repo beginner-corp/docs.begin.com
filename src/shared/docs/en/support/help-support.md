@@ -1,6 +1,6 @@
 ## Issues & feature requests
 
-Find something wrong with Begin that could impact all Begin users? Have a burning feature request? We've got a [page to tell you more](/en/support/issues) about what to file and where, but tl;dr [you can file publicly tracked issues here](https://github.com/smallwins/begin-issues/issues/new/choose).
+Find something wrong with Begin that could impact all Begin users? Have a burning feature request? We've got a [page to tell you more](/en/support/issues) about what to file and where, but [you also just can file publicly tracked issues here](https://github.com/smallwins/begin-issues/issues/new/choose).
 
 
 ## Sending a support ticket
