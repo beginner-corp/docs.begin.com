@@ -17,7 +17,7 @@
     "@architect/workflows": "latest",
     "eslint": "^4.19.1",
     "nodemon": "^1.18.4",
-    "spellchecker-cli": "^4.0.0",
+    "spellchecker-cli": "^4.0.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "tiny-json-http": "^7.0.0"
