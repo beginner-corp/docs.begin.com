@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
-    "start": "npm run spellcheck && nodemon --watch .arc --watch package.json --watch src/ -e md,css,js,json,html --exec NODE_ENV=local arc-sandbox",
+    "start": "nodemon --exec npx sandbox",
+    "startOld": "npm run spellcheck && nodemon --watch .arc --watch package.json --watch src/ -e md,css,js,json,html --exec NODE_ENV=local arc-sandbox",
     "test": "NODE_ENV=testing PORT=4445 tape test/*-test.js | tap-spec"
   },
   "license": "Apache-2.0",
@@ -14,12 +15,27 @@
   },
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "devDependencies": {
-    "@architect/workflows": "latest",
+    "@architect/architect": "^4.3.13",
     "eslint": "^4.19.1",
     "nodemon": "^1.18.4",
     "spellchecker-cli": "^4.0.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "tiny-json-http": "^7.0.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      ".arc",
+      "package.json",
+      "src/shared",
+      "src/views"
+    ],
+    "ignore": [
+      "test",
+      "src/http"
+    ],
+    "events": {
+      "start": "npm run spellcheck && npm run lint"
+    }
   }
 }

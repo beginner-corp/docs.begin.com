@@ -4,7 +4,7 @@ let path = require('path')
 let forwards = require('./_forwards')
 
 function route(req, res) {
-  (process.env.NODE_ENV == 'production') ? '' : console.log(req)
+  if (process.env.NODE_ENV !== 'production') console.log(req)
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat
@@ -17,10 +17,9 @@ function route(req, res) {
       location: forwards[_path]
     })
   }
-
   else {
     res(render(state))
   }
 }
 
-exports.handler = arc.html.get(route)
+exports.handler = arc.http(route)

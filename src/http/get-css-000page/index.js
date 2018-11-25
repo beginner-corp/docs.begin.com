@@ -35,4 +35,4 @@ function route(req, res) {
   })
 }
 
-exports.handler = arc.css.get(route)
+exports.handler = arc.http(route)

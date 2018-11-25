@@ -1,9 +1,0 @@
-{
-  "name": "begin-docs-get-css-000page",
-  "dependencies": {
-    "@architect/data": "^2.0.3",
-    "@architect/functions": "^1.8.12",
-    "cssmitten": "^1.1.12",
-    "postcss-extend": "^1.0.5"
-  }
-}

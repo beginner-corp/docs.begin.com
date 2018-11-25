@@ -14,13 +14,15 @@ module.exports = function render(state) {
 
   function getDocMetadata(ToC) {
     // Find the active category by cat ID
-    var c = ToC.findIndex(data => data.cat == cat)
+    var c = ToC.findIndex(data => data.cat === cat)
     var activeCat = ToC[c].docs
+
     // Find the active doc by doc ID
-    var d = activeCat.findIndex(data => data.doc == doc)
+    var d = activeCat.findIndex(data => data.doc === doc)
     var activeDoc = ToC[c].docs[d]
+
     // If the active doc is present in the filesystem but not present in the ToC, consider it unpublished and in-progress
-    if (activeDoc == undefined) {
+    if (activeDoc === undefined) {
       return {title: 'Preview of ' + lang + '/' + cat + '/' + doc + '/'}
     } else {
       return activeDoc
@@ -30,9 +32,9 @@ module.exports = function render(state) {
   // Defines the file needed to render a doc
   var contentFile = join(__dirname, 'docs', lang, cat, doc) + '.md'
 
-  // Make sure each doc has the required meta and content files
+  // Make sure each doc exists
   if (exists(contentFile)) {
-    // Good to go! Get the metadata, content, and send to Layout
+    // Now get the metadata, content, and send to Layout
     var meta = getDocMetadata(ToC)
     var content = read(contentFile).toString()
     return {
