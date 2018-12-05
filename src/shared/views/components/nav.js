@@ -9,8 +9,7 @@ module.exports = function Nav (state, ToC) {
   // Loop through and snag all document categories specified in src/shared/docs/{language}/ToC.json
   function getCategories () {
     let categoryList = []
-    let c = 0
-    for (c = 0; c < ToC.length; c++) {
+    for (let c = 0; c < ToC.length; c++) {
       categoryList = categoryList + Categories(c)
     }
     return categoryList
@@ -29,8 +28,7 @@ module.exports = function Nav (state, ToC) {
   //   - assemble the doc link HTML
   function getDocs (categoryIndex) {
     let docsList = []
-    let d = 0
-    for (d = 0; d < ToC[categoryIndex].docs.length; d++) {
+    for (let d = 0; d < ToC[categoryIndex].docs.length; d++) {
       docsList = docsList + Doc(state, ToC, categoryIndex, d)
     }
     return `

@@ -13,7 +13,7 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
   var doc = ToC[categoryIndex].docs[docIndex].doc
 
   // Determine if the requested doc is active, to highlight it and display its sections if so
-  var active = cat == state.cat && doc == state.doc
+  var active = cat === state.cat && doc === state.doc
 
   // Link data
   var href = '/' + state.lang + '/' + cat + '/' + doc + '/'
@@ -30,11 +30,16 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
     // ... but if the doc is active because performance
     // and then check to make sure the doc actually has sections in the ToC tree
     // if so, execute getSections to assemble the doc section list HTML
-    if (active && (sections != undefined) && (sections.length != 0)) {
+    if (active && (sections !== undefined) && (sections.length != 0)) {
       return getSections(ToC, categoryIndex, docIndex)
     } else {
       return ''
     }
+  }
+
+  // Doc is hidden or deprecated
+  if (ToC[categoryIndex].docs[docIndex].hidden || ToC[categoryIndex].docs[docIndex].deprecated) {
+    return ''
   }
 
   return `
