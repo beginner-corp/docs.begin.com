@@ -4,6 +4,7 @@ module.exports = function head(meta) {
     ? meta.title + ' - Begin documentation'
     : 'Begin documentation'
   var description = meta.description || 'Begin documentation'
+
   return `
 <head>
   <meta charset="UTF-8">

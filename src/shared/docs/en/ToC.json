@@ -246,8 +246,8 @@
         "title": "Creating new functions",
         "description": "Creating new functions for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/creating-new-http-functions.md",
-        "nextDoc": "/en/functions/sessions/",
-        "nextTitle": "Sessions",
+        "nextDoc": "/en/functions/http/",
+        "nextTitle": "HTTP functions",
         "sections": [
           {
             "anchor": "#overview",
@@ -264,12 +264,26 @@
         ]
       },
       {
+        "doc": "http",
+        "title": "HTTP Functions",
+        "description": "Creating new HTTP Functions for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/http.md",
+        "nextDoc": "/en/functions/sessions/",
+        "nextTitle": "HTTP Sessions",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          }
+        ]
+      },
+      {
         "doc": "sessions",
-        "title": "Sessions",
-        "description": "Using Begin's built-in sessions support",
+        "title": "HTTP Sessions",
+        "description": "Using Begin's built-in sessions support for HTTP functions",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/sessions.md",
-        "nextDoc": "/en/functions/html-routes/",
-        "nextTitle": "HTML Routes",
+        "nextDoc": "/en/functions/events/",
+        "nextTitle": "Event Functions",
         "sections": [
           {
             "anchor": "#overview",
@@ -292,6 +306,8 @@
       {
         "doc": "html-routes",
         "title": "HTML Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building HTML routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/html-routes.md",
         "nextDoc": "/en/functions/json-routes/",
@@ -326,6 +342,8 @@
       {
         "doc": "json-routes",
         "title": "JSON Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building JSON routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/json-routes.md",
         "nextDoc": "/en/functions/xml-routes/",
@@ -380,6 +398,8 @@
       {
         "doc": "xml-routes",
         "title": "XML Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building XML routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/xml-routes.md",
         "nextDoc": "/en/functions/css-routes/",
@@ -434,6 +454,8 @@
       {
         "doc": "css-routes",
         "title": "CSS Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building CSS routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/css-routes.md",
         "nextDoc": "/en/functions/javascript-routes/",
@@ -456,6 +478,8 @@
       {
         "doc": "javascript-routes",
         "title": "JavaScript Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building JavaScript routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/javascript-routes.md",
         "nextDoc": "/en/functions/text-routes/",
@@ -478,6 +502,8 @@
       {
         "doc": "text-routes",
         "title": "Text Routes",
+        "deprecated": true,
+        "referTo": "/en/functions/http/",
         "description": "Building text routes for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/text-routes.md",
         "nextDoc": "/en/functions/events/",
@@ -499,11 +525,11 @@
       },
       {
         "doc": "events",
-        "title": "Events",
-        "description": "Creating new events for your Begin application",
+        "title": "Event Functions",
+        "description": "Creating new Event Functions for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/events.md",
         "nextDoc": "/en/functions/scheduled/",
-        "nextTitle": "Scheduled",
+        "nextTitle": "Scheduled Functions",
         "sections": [
           {
             "anchor": "#overview",
@@ -513,11 +539,11 @@
       },
       {
         "doc": "scheduled",
-        "title": "Scheduled",
-        "description": "Creating new schedules for your Begin application",
+        "title": "Scheduled Functions",
+        "description": "Creating new Scheduled Functions for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/schedules.md",
         "nextDoc": "/en/functions/queues/",
-        "nextTitle": "Queues",
+        "nextTitle": "Queue Functions",
         "sections": [
           {
             "anchor": "#overview",
@@ -527,9 +553,9 @@
       },
       {
         "doc": "queues",
-        "title": "Queues",
-        "description": "Creating new queues for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/creating-new-queues.md",
+        "title": "Queue Functions",
+        "description": "Creating new Queue Functions for your Begin application",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/queues.md",
         "nextDoc": "/en/support/help-support",
         "nextTitle": "Help & support",
         "sections": [

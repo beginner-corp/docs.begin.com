@@ -1,4 +1,5 @@
 var DocFooter = require('./components/doc-footer')
+var Deprecated = require('./components/deprecated')
 var Head = require('./components/head')
 var Hamburger = require('./components/button-hamburger')
 var Logo = require('./components/logo')
@@ -36,6 +37,7 @@ ${Symbols}
           </div>
         </header>
         <div class="p0" id="doc">
+          ${Deprecated(meta)}
           <h1 class="fs3 mb2 pt0-lg">${meta.title}</h1>
           ${md(content)}
           ${DocFooter(meta)}
