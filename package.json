@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
-    "start": "nodemon --exec npx sandbox",
+    "start": "nodemon --exec PORT=4445 SESSION_TABLE_NAME=jwe npx sandbox",
     "startOld": "npm run spellcheck && nodemon --watch .arc --watch package.json --watch src/ -e md,css,js,json,html --exec NODE_ENV=local arc-sandbox",
     "test": "NODE_ENV=testing PORT=4445 tape test/*-test.js | tap-spec"
   },
@@ -25,15 +25,11 @@
   },
   "nodemonConfig": {
     "watch": [
-      ".arc",
       "package.json",
-      "src/shared",
-      "src/views"
+      "src/"
     ],
-    "ignore": [
-      "test",
-      "src/http"
-    ],
+    "ignore": "src/http",
+    "ext": "css,js,json,md,mjs",
     "events": {
       "start": "npm run spellcheck && npm run lint"
     }
