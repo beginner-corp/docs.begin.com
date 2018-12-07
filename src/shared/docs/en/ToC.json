@@ -602,18 +602,28 @@
         "//nextTitle": "",
         "sections": [
           {
-            "anchor": "#overview",
+            "anchor": "#who-we-are",
             "name": "Who we are"
           },
           {
-            "anchor": "#begin-text-get-",
+            "anchor": "#what-we-believe",
             "name": "What we believe"
           },
           {
-            "anchor": "#get-examples",
+            "anchor": "#our-business-model",
             "name": "Our business model"
           }
         ]
+      },
+      {
+        "doc": "architect-4-migration",
+        "title": "Architect 4 migration",
+        "hidden": true,
+        "description": "Migrating early Architect 3.x-based alpha apps to Architect 4.x-based apps",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/meta/architect-4-migration.md",
+        "//nextDoc": "",
+        "//nextTitle": "",
+        "sections": []
       }
     ]
   }
