@@ -1,6 +1,13 @@
 @app
 begin-docs
 
+@aws
+region us-west-1
+profile smallwins
+
+@domain
+docs.begin.com
+
 @http
 get /
 get /css/:page
@@ -15,9 +22,3 @@ get /:lang/:cat/:doc
 staging begin-docs-staging
 production begin-docs
 
-@aws
-region us-west-1
-profile smallwins
-
-@domain
-docs.begin.com
