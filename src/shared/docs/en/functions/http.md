@@ -46,17 +46,17 @@ exports.handler = async function http(request) {
 
 The async `handler` function invoked by a client request receives a `request` object containing the following parameters:
 
-- `body` - `Object`
+- `body` - **Object**
  - Request body, including an object containing any `application/x-www-form-urlencoded` form variables
-- `path` - `string`
+- `path` - **String**
  - Absolute path of the request
-- `method` - `string`
+- `method` - **String**
  - One of `GET`, `POST`, `PATCH`, `PUT`, or `DELETE`
-- `params` - `Object`
+- `params` - **Object**
  - Any URL params, if defined in your function's path (i.e. `foo` in `get /:foo/bar`)
-- `query` - `Object`
+- `query` - **Object**
  - Any query params, if present
-- `headers` - `Object`
+- `headers` - **Object**
  - All client request headers
 
 Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /:greeting`:
@@ -87,20 +87,20 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 Responses are returned by your `handler` function in an object, and support the following parameters:
 
-- `status` - **number**
+- `status` - **Number**
   - Sets the HTTP status code
   - (Alternately, you can use `code`)
-- `type` - **string**
+- `type` - **String**
   - Sets the `Content-Type` response header
-- `body` - **string**
+- `body` - **String**
   - Sets the response body
-- `location` - **string**
+- `location` - **String**
   - Sets the Location response header
   - (Combine with `status: 302` to redirect)
-- `cookie` - **string**
+- `cookie` - **String**
   - Sets the `Set-Cookie` response header
   - (For cookies, you may just want to rely on Begin's [session helper](#http-function-helpers))
-- `cors` - **boolean**
+- `cors` - **Boolean**
   - Sets the various appropriate `CORS` response headers
 
 

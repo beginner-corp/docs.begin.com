@@ -167,6 +167,7 @@ module.exports = [
   'tiny-json-http',
   'transpiling',
   'tsx',
+  'TTL',
   'UI',
   'unauthenticated',
   'unformatted',

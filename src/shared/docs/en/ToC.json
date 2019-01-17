@@ -568,6 +568,28 @@
     ]
   },
   {
+    "cat": "data",
+    "catTitle": "Data",
+    "docs": [
+      {
+        "doc": "getting-started",
+        "title": "Getting started with data",
+        "description": "Getting started persisting data on Begin",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/data/getting-started.md",
+        "nextDoc": "/en/data/begin-data",
+        "nextTitle": "Begin data"
+      },
+      {
+        "doc": "begin-data",
+        "title": "Begin Data",
+        "description": "How to use Begin Data as your app's database",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/data/begin-data.md",
+        "nextDoc": "/en/support/help-support",
+        "nextTitle": "About Begin"
+      }
+    ]
+  },
+  {
     "cat": "support",
     "catTitle": "Support",
     "docs": [
