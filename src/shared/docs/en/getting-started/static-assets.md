@@ -57,7 +57,7 @@ function staticAsset(filename) {
   }
   else {
     // otherwise use s3 for staging and cloudfront for production
-    let S3Staging = `https://s3-us-west-1.amazonaws.com/begin-functions-staging/${app}`
+    let S3Staging = `https://s3-us-west-1.amazonaws.com/begin-app-staging/${app}`
     let CFProduction = `https://static.begin.app/${app}`
     let origin = env === 'staging'? S3Staging : CFProduction
 
