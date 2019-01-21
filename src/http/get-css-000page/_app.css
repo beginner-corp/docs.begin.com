@@ -98,8 +98,8 @@ aside div#category {
     margin-right: 5%;
   }
   .sidebar {
-    width:12.222rem;
     min-width:12.222rem;
+    max-width:16.666rem
   }
   .main {
     position: static;

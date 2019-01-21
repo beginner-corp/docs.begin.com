@@ -1,8 +1,6 @@
 module.exports = [
+  /[KMG]B/, // Data quantities, ostensibly
   '.vimrc',
-  '1MB',
-  '400KB',
-  '5MB',
   '`build`ing',
   'ACM',
   'Alexa',
@@ -22,6 +20,7 @@ module.exports = [
   'AZ',
   'backend',
   'Backends',
+  'base64',
   'bashrc',
   'birb',
   'blockchain',
@@ -60,6 +59,7 @@ module.exports = [
   'debuggable',
   'declaratively',
   'Declaratively',
+  'decrement',
   'deployable',
   'deps',
   'dev',
@@ -180,7 +180,4 @@ module.exports = [
   'XSS',
   'YAML',
   'ZoneEdit',
-  /\.\n/g,
-  /`?`[a-z]*[\s\S]*?`/g,
-  /```[a-z]*\n[\s\S]*?\n```/g,
 ]

@@ -274,6 +274,14 @@
           {
             "anchor": "#overview",
             "name": "Overview"
+          },
+          {
+            "anchor": "#getting-started",
+            "name": "Getting started"
+          },
+          {
+            "anchor": "#http-handler-api",
+            "name": "HTTP handler API"
           }
         ]
       },
@@ -585,7 +593,41 @@
         "description": "How to use Begin Data as your app's database",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/data/begin-data.md",
         "nextDoc": "/en/support/help-support",
-        "nextTitle": "About Begin"
+        "nextTitle": "Help & support",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#tables-keys",
+            "name": "Tables & keys"
+          },
+          {
+            "anchor": "#read-documents",
+            "name": "Read documents"
+          },
+          {
+            "anchor": "#create-update-documents",
+            "name": "Create & update documents"
+          },
+          {
+            "anchor": "#destroy-documents",
+            "name": "Destroy documents"
+          },
+          {
+            "anchor": "#helpers",
+            "name": "Helpers"
+          },
+          {
+            "anchor": "#ttl",
+            "name": "TTL"
+          },
+          {
+            "anchor": "#limits",
+            "name": "Limits"
+          }
+        ]
       }
     ]
   },
