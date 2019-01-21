@@ -255,8 +255,6 @@ Begin Data also surfaces a few handy helpers to make other common operations a b
 
 `data.count()` returns the count of a `table`'s documents.
 
-Tip: if the size of the result set is larger than 1MB, this result will represent only a partial count of the total items.
-
 ### Syntax
 
 `data.count(params[, callback])` &rarr; `[Promise]`
@@ -339,4 +337,3 @@ email = '' // Invalid
 await data.set({table, key, email})
 ```
 - `data.set()` has a maximum batch size of 25 documents and 10KB per call.
-- If the size of a `data.count()` result set is larger than 1MB, this result will represent only a partial count of the total items.
