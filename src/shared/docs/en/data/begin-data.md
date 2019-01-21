@@ -31,7 +31,8 @@ exports.handler = async function route(req) {
   let hello = await data.get({table, key})
 
   return {
-    html: `"Hello" in ${key} is: ${hello}!`
+    type: 'text/html; charset=utf8',
+    body: `"Hello" in ${key} is: ${hello}!`
   }
 }
 ```
