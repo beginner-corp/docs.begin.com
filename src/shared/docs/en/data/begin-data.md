@@ -2,7 +2,26 @@
 
 Begin Data is an easy to use, fast, durable, highly scalable, and fully managed key-value and document database that comes bundled with every Begin app.
 
-Begin Data is easy to learn and implement, and is designed to accommodate most general persistence use cases. Let's take a look!
+Begin Data is easy to learn and implement, and is designed to accommodate most general persistence use cases.
+
+Here's a simple example of a Function using Begin Data:
+
+```js
+let data = require('@begin/data')
+let begin = require('@architect/functions') // Reads & writes session data
+
+exports.handler = async function http(request) {
+  let session = await begin.http.session.read(request)
+  let account = await data.get({
+    table: 'accounts',
+    key: session.accountID
+  })
+  return {
+    type: 'text/html; charset=utf8',
+    body: `Hello ${account.name}!`
+  }
+}
+```
 
 
 ## Tables & keys
