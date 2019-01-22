@@ -1,6 +1,6 @@
 {
   "name": "docs.begin.com",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "https://docs.begin.com",
   "scripts": {
     "lint": "eslint src --ignore-pattern node_modules --fix",
