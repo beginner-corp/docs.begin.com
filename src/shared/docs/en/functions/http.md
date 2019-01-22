@@ -13,7 +13,7 @@ HTTP Functions are dependency-free, with a minimal but powerful low-level API th
 
 Each HTTP Function is assigned a folder in your project under `src/http/` (i.e. `src/http/post-api-submit/`, and `src/http/get-index/`).
 
-Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that Function's folder is ≤5MB, which helps keep your app super fast).
+Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that Function's folder is ≤5MB, which helps keep your Functions – and thus your app – super fast).
 
 
 ## HTTP handler
@@ -42,22 +42,25 @@ exports.handler = async function http(request) {
 
 ## HTTP handler API
 
+Begin's HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern.
+
+
 ### Requests
 
-The async `handler` function invoked by a client request receives a `request` object containing the following parameters:
+The async `handler` function invoked by a client request receives a `request` Object containing the following parameters:
 
 - `body` - **Object**
- - Request body, including an object containing any `application/x-www-form-urlencoded` form variables
+  - Contains the complete request body, including an object containing any `application/x-www-form-urlencoded` form variables
 - `path` - **String**
- - Absolute path of the request
+  - The absolute path of the request
 - `method` - **String**
- - One of `GET`, `POST`, `PATCH`, `PUT`, or `DELETE`
+  - One of `GET`, `POST`, `PATCH`, `PUT`, or `DELETE`
 - `params` - **Object**
- - Any URL params, if defined in your function's path (i.e. `foo` in `get /:foo/bar`)
+  - Any URL params, if defined in your function's path (e.g. `foo` in `get /:foo/bar`)
 - `query` - **Object**
- - Any query params, if present
+  - Any query params, if present
 - `headers` - **Object**
- - All client request headers
+  - All client request headers
 
 Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /:greeting`:
 
@@ -87,21 +90,21 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 Responses are returned by your `handler` function in an object, and support the following parameters:
 
+- `body` - **String**
+  - Sets the response body
+- `cookie` - **String**
+  - Sets the `Set-Cookie` response header
+  - (For cookies, you may just want to rely on Begin's [session helper](/en/functions/sessions/))
+- `cors` - **Boolean**
+  - Sets the various appropriate `CORS` response headers
+- `location` - **String**
+  - Sets the Location response header
+  - (Combine with `status: 302` to redirect)
 - `status` - **Number**
   - Sets the HTTP status code
   - (Alternately, you can use `code`)
 - `type` - **String**
   - Sets the `Content-Type` response header
-- `body` - **String**
-  - Sets the response body
-- `location` - **String**
-  - Sets the Location response header
-  - (Combine with `status: 302` to redirect)
-- `cookie` - **String**
-  - Sets the `Set-Cookie` response header
-  - (For cookies, you may just want to rely on Begin's [session helper](#http-function-helpers))
-- `cors` - **Boolean**
-  - Sets the various appropriate `CORS` response headers
 
 
 Here's a simple example response for an API endpoint:
@@ -116,9 +119,73 @@ Here's a simple example response for an API endpoint:
 }
 ```
 
----
+
+## Persisting data
+
+Every Begin app comes bundled with Begin Data, an easy to use, fast, durable, highly scalable, and fully managed key-value and document database.
+
+[Head here to learn more about integrating Begin Data](/en/data/begin-data/) in your app's Functions!
 
 
-## HTTP Function helpers
+## Examples
 
-Coming soon!
+### Basic web response
+
+```js
+let begin = require('@architect/functions')
+
+exports.handler = async function http(request) {
+  let session = await begin.http.session.read(request)
+  let name = session.name || 'there'
+  let body = `
+<!doctype html>
+<html lang=en>
+  <body>
+    <h1>Hello ${name}!</h1>
+  </body>
+</html>
+`
+  return {
+    type: 'text/html; charset=utf8',
+    body
+  }
+}
+```
+
+### Forward a request
+
+```js
+exports.handler = async function http(request) {
+  return {
+    status: 302,
+    location: '/new/path'
+  }
+}
+```
+
+### Write a request to [Begin Data](/en/data/begin-data/)
+
+```js
+let data = require('@begin/data')
+
+exports.handler = async function http(request) {
+  let type = 'application/json; charset=utf8'
+  if (!request.body.note) {
+    return {
+      status: 204,
+      type,
+      body: JSON.stringify({ ok: false })
+    }
+  }
+  else {
+    let table = 'notes'
+    let note = request.body.note
+    await data.set({table, note})
+    return {
+      status: 201,
+      type,
+      body: JSON.stringify({ ok: true })
+    }
+  }
+}
+```

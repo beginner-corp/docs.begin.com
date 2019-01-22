@@ -151,7 +151,7 @@
         "description": "Configuring your Begin app's domain",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs//en/getting-started/domains.md",
         "nextDoc": "/en/getting-started/static-assets/",
-        "nextTitle": "Settings",
+        "nextTitle": "Static assets",
         "sections": [
           {
             "anchor": "#overview",
@@ -282,6 +282,10 @@
           {
             "anchor": "#http-handler-api",
             "name": "HTTP handler API"
+          },
+          {
+            "anchor": "#examples",
+            "name": "Examples"
           }
         ]
       },
@@ -564,8 +568,8 @@
         "title": "Queue Functions",
         "description": "Creating new Queue Functions for your Begin application",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/queues.md",
-        "nextDoc": "/en/support/help-support",
-        "nextTitle": "Help & support",
+        "nextDoc": "/en/data/getting-started",
+        "nextTitle": "Getting started with data",
         "sections": [
           {
             "anchor": "#overview",
@@ -585,7 +589,7 @@
         "description": "Getting started persisting data on Begin",
         "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/data/getting-started.md",
         "nextDoc": "/en/data/begin-data",
-        "nextTitle": "Begin data"
+        "nextTitle": "Begin Data"
       },
       {
         "doc": "begin-data",

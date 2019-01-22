@@ -1,12 +1,12 @@
 ## Overview
 
-Fast, scalable cloud function-based apps need fast, scalable cloud function-capable persistence solutions.
+Fast, scalable cloud function-based apps need fast, scalable cloud function-capable persistence.
 
 ## Begin Data
 
-Every Begin app comes bundled with [Begin Data](/en/data/begin-data/), a durable, fully managed key-value and document database that's already in-network.
+Every Begin app comes bundled with [Begin Data](/en/data/begin-data/), a durable, easy to use, fully managed key-value and document database that's free and in-network.
 
-Learn more about using [Begin Data's super simple API here](/en/data/begin-data/).
+Learn more about using [Begin Data's simple API here](/en/data/begin-data/).
 
 ## Fauna
 
