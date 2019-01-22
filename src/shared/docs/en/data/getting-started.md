@@ -12,4 +12,4 @@ Learn more about using [Begin Data's super simple API here](/en/data/begin-data/
 
 Additionally, [Fauna](https://fauna.com) also offers a great, scalable, highly distributed cloud database solution as well.
 
-Learn morea bout integrating [Fauna with Begin here](https://fauna.com/blog/using-faunadb-with-begin-com).
+Learn more about integrating [Fauna with Begin here](https://fauna.com/blog/using-faunadb-with-begin-com).
