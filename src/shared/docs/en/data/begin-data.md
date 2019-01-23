@@ -45,8 +45,8 @@ let data = require('@begin/data')
 
 exports.handler = async function route(req) {
 
-  table = 'greetings'
-  key = 'Japanese'
+  let table = 'greetings'
+  let key = 'Japanese'
   let hello = await data.get({table, key})
 
   return {
@@ -94,9 +94,9 @@ Get a single document by passing an Object containing:
 
 ```js
 // Basic example of getting a single document
-table = 'greetings'
-key = 'Japanese'
-await data.get({table, key})
+let table = 'greetings'
+let key = 'Japanese'
+let doc = await data.get({table, key})
 ```
 
 ---
@@ -110,8 +110,8 @@ Get multiple documents by passing an Array containing:
 
 ```js
 // Basic example of getting multiple documents
-table = 'greetings'
-await data.get([
+let table = 'greetings'
+let greetings = await data.get([
   {table, key: 'Māori'},
   {table, key: 'Swahili'},
   {table, key: 'Japanese'},
@@ -131,21 +131,26 @@ Get an entire `table` by passing an Object containing:
 
 ```js
 // Basic example of getting an entire table
-table = 'greetings'
-await data.get({table})
+let table = await data.get({table:'greetings'})
 ```
 
 If your `table` contains many documents, it will paginate and return a `cursor`, on which you can key your next query. For example:
 
 ```js
-table = 'greetings'
-await data.get({table, limit: 3})
-/* Returns:
-[ { table, key: 'Māori', greeting: 'Kia ora' },
-  { table, key: 'Swahili', greeting: 'Hujambo' },
-  { table, key: 'Japanese', greeting: 'Kon'nichiwa' },
-  cursor: 'eyJziJzY29wZUlELCJkYX9jYWwidW50RhSUQiOdGFnaW5nI21vIjoibGYWlucyNsa3JMV21PVWsifQ==' ]
-*/
+let table = 'greetings'
+let result = await data.get({table, limit: 3})
+
+console.log(result, result.cursor)
+// Logs:
+//
+// [{ table, key: 'Māori', greeting: 'Kia ora' },
+//  { table, key: 'Swahili', greeting: 'Hujambo' },
+// { table, key: 'Japanese', greeting: 'Kon'nichiwa' }
+// ] 
+// 
+// and 
+// 'eyJziJzY29wZUlELCJkYX9jYWwidW50RhSUQiOdGFnaW5nI21vIjoibGYWlucyNsa3JMV21PVWsifQ==' 
+//
 ```
 
 
@@ -190,9 +195,9 @@ Set a single document by passing an Object containing:
 
 ```js
 // Basic example of getting a single document
-table = 'greetings'
-key = 'Japanese'
-greeting = `Kon'nichiwa`
+let table = 'greetings'
+let key = 'Japanese'
+let greeting = `Kon'nichiwa`
 await data.set({table, key, greeting})
 ```
 
@@ -208,8 +213,8 @@ Set one or more documents by passing an Array containing:
   - Your data
 
 ```js
-table = 'greetings'
-greetings = [ 
+let table = 'greetings'
+let greetings = [ 
   { table, key: 'Māori', greeting: 'Kia ora' },
   { table, key: 'Swahili', greeting: 'Hujambo' },
   { table, key: 'Japanese', greeting: `Kon'nichiwa` } ]
@@ -243,8 +248,8 @@ Destroy a single document by passing an Object containing:
 - `key` - **String** *(required)*
 
 ```js
-table = 'bad vibes'
-key = 'Negativity'
+let table = 'bad vibes'
+let key = 'Negativity'
 await data.destroy({table, key})
 ```
 
@@ -258,7 +263,7 @@ Destroy one or more documents by passing an Array containing
   - `key` - **String** *(required)*
 
 ```js
-table = 'bad vibes'
+let table = 'bad vibes'
 await data.destroy([
   { table, key: 'Pessimism' },
   { table, key: 'Anxiety' }
@@ -285,7 +290,7 @@ Begin Data also surfaces a few handy helpers to make other common operations a b
 An example:
 
 ```js
-table = 'greetings'
+let table = 'greetings'
 await data.get({table})
 /* Returns:
 42
@@ -310,9 +315,10 @@ await data.get({table})
 Examples:
 
 ```js
-table = 'rain'
-key = `Wai'ale'ale`
-averageInches = 450
+let table = 'rain'
+let key = `Wai'ale'ale`
+let averageInches = 450
+
 // Increment
 await data.incr({table, key, averageInches})
 /* Returns:
@@ -338,9 +344,9 @@ Documents will typically be automatically destroyed within 48 hours of the `ttl`
 Tip: during the intervening time between `ttl` expiry and actual expunging, the document will still be available; if its `ttl` is mutated or unset, the document's new `ttl` state will be respected.
 
 ```js
-table = 'mandalas'
-key = 'Tibetan'
-ttl = Date.now() - (60*60*24*7) // One week
+let table = 'mandalas'
+let key = 'Tibetan'
+let ttl = Date.now() - (60*60*24*7) // One week
 await data.set({table, key, ttl})
 ```
 
@@ -350,9 +356,9 @@ await data.set({table, key, ttl})
 - Empty attributes are invalid and will produce errors. For example:
   - 
 ```js
-table = 'accounts'
-key = 'dW50RhSUQiOdG'
-email = '' // Invalid
+let table = 'accounts'
+let key = 'dW50RhSUQiOdG'
+let email = '' // Invalid
 await data.set({table, key, email})
 ```
 - `data.set()` has a maximum batch size of 25 documents and 10KB per call.
