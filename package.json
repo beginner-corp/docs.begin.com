@@ -25,13 +25,12 @@
   },
   "nodemonConfig": {
     "watch": [
-      "package.json",
-      "src/"
+      "src/shared",
+      "src/views"
     ],
-    "ignore": "src/http",
     "ext": "css,js,json,md,mjs",
     "events": {
-      "start": "npm run spellcheck && npm run lint"
+      "start": "npm run spellcheck"
     }
   }
 }
