@@ -14,14 +14,14 @@ First, let's review what you need to start building with Begin.
 
 ### Platforms: macOS, Windows, and Linux
 
-Begin supports local development on just about all modern computers, including: macOS, Windows (10+), and Linux.
+Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
 
 
 ### Runtime: Node.js 8.10
 
-The AWS infrastructure that Begin manages runs solely on Node.js 8.10. (We do indeed have plans to support additional runtimes in the future!)
+Begin provisions and manages AWS infrastructure that runs solely on Node.js 8.10, with support additional runtimes coming in the near future.
 
-You can work locally with versions of Node other than 8.10, but your app shouldn't depend on any features, functionality, or fixes delivered not available in 8.10.
+You can work locally with versions of Node other than 8.10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 8.10.
 
 You can grab [Node latest](https://nodejs.org/en/download/) here, or [v8.10 here](https://nodejs.org/dist/v8.10.0/).
 
@@ -37,14 +37,16 @@ Begin relies on GitHub as the host of your project repo (as well as your Begin l
 
 When you create a new app, Begin will also provision a new single route (`GET /`) repo, pre-wired with webhooks to CI.
 
-> Free-tier Begin app repos are public; switching them to private or changing the repo name may result in broken builds and CI.
+Begin always and only requests the least-privileged set of permissions required to work with GitHub.
+
+> Free-tier Begin app repos can be set to private, but will require additional permissions. Make sure you adjust your private token settings in the `Settings` screen found in the left nav.
 
 
 ## Create a Begin account
 
 To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), and authorize it with GitHub. That's all!
 
-> Begin only requests the permissions it needs to work with GitHub, and does not access any of your other repositories.
+> Begin only requests the least-privileged set of permissions required to work with GitHub, and does not attempt to access any other repositories or personal data.
 
 
 ## Creating an app
@@ -73,41 +75,29 @@ Every new build to `staging` and `master` appears on Begin's home screen: **Buil
 
 Once deployed, your app will be immediately live and available on the internets.
 
-To access your `staging` Hello world app, click the `GET /` route in the left nav, and click the `View: Staging` link.
+To access your `staging` Hello world app, click `Staging` link in the build status module in the top of the left nav (or go click on `Functions`, go to `GET /` route, and click the `View: Staging` link).
 
 
 ## Project structure
 
-Let's take a closer look at the boilerplate Begin added to your project. Without all the standard Node and Git project files (like `package.json` and `.gitignore`) your project should look something like this:
+Begin applications are comprised of many small, fast, individually executing cloud Functions. Let's take a quick look at the source tree of a basic Begin app:
 
 ```bash
 .
+├── public/
 ├── src/
-│   ├── html/
+│   ├── http/
 │   │   └── get-index/
-│   │       └── index.js
-│   └── shared/
-│       └── readme.md
+│   ├── shared/
+|   └── views/
 └── test/
-    ├── 00-html-test.js
-    └── 01-data-test.js
 ```
 
-Begin projects are organized primarily around routes (and events, coming soon).
+Your app's many small, fast, isolated cloud functions (or Functions, for short) are organized in your project under `src/`.
 
-<!-- @todo - expand this section with references to "routes and events" when we add @events and @scheduled -->
+Each Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello world` services `GET /hello/world`).
 
-The handler for each route is grouped under `src` by the kind of `Content-Type` it delivers; each route maps to a separate, fully isolated, publicly accessible, and independently deployable Lambda cloud function.
-
-- `src/` - source root folder containing all your project's routes
-  - `html/` - organizing folders that group routes by their `Content-Type`; other route types include `json`, `css`, `js`, `text`, and `xml`
-    - `get-index/` - route folder, contains everything needed to respond to HTTP `GET` requests at `/`
-  - `shared/` - a utility folder that makes its contents available across all your routes; think: per-project globally installed modules
-- `test/` - test root for your app's tests (run locally via `npm run test`)
-
-> ⚠️ While we totally encourage you to add files, subfolders, node modules, etc. to your individual routes, moving or renaming the route folders themselves will break your application.
-
-<!-- @todo - link to upcoming project structure doc(s) -->
+[Learn more about Begin app project structure](/en/getting-started/project-structure/).
 
 
 ## Working locally
@@ -146,9 +136,9 @@ That's it, you're up and running! [Learn more about working locally](/en/getting
 
 ### Create new routes
 
-- Create new `HTML`, `JSON`, `XML`, `JS`, `CSS`, and `text` routes by opening Begin, clicking the `Add new route` buttons in the left nav, and following the prompt
+- Create new HTTP routes by opening Begin, clicking `Functions` in the left nav, and clicking the `Add a Fucntion` buttons
   - New routes will be automatically committed to your project
-  - Run `git pull && npx hydrate` to continue working locally with your new routes
+  - Run `git pull && npx hydrate` to set up your new routes locally
 
 
 ### Ship to `production`
