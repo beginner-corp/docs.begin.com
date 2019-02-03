@@ -62,15 +62,15 @@ This step is non-configurable and does not output logs.
 
 ### **Install**
 
-Responsible for installing dependencies via NPM to all routes (`src/(css|html|js|json|text|xml)/*`) and `shared` (`src/shared`).
+Responsible for installing dependencies via NPM to all routes (e.g. `src/http/**`) and shared code (`src/shared`, `src/views`).
 
 This step is non-configurable and does output logs.
 
 > Note: dependencies in your project's root `package.json` are not available to your routes.
 >
-> To install per-route deps, cd into the route's folder and install from there.
+> To ensure a dependency is available to a given Function, cd into that function's folder and install it there.
 >
-> To install global deps, install them to `shared` (`src/shared`) – but mind dependency bloat, routes must weigh in at under 5MB uncompressed!
+> To install global deps, install them to `shared` (`src/shared`) – but mind dependency bloat! **Routes must weigh in under 5MB uncompressed.**
 
 
 ### **Build**

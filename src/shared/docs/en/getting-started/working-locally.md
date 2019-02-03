@@ -73,7 +73,7 @@ To create new a new HTTP route: open Begin, click the `Functions` view in the le
 
 New routes will be automatically committed to your project; run `git pull && npx hydrate` to continue working locally with your new routes.
 
-> ✨ Tip: `npx hydrate` is a helpful Begin tool to learn; it traverses your routes (e.g. `src/http/**`) and shared code(`src/shared`, `src/views`), finds any `package.json` files, and (re)installs your modules.
+> ✨ Tip: `npx hydrate` is a helpful Begin tool to learn; it traverses your routes (e.g. `src/http/**`) and shared code (`src/shared`, `src/views`), finds any `package.json` files, and (re)installs your modules.
 
 
 ## Writing tests

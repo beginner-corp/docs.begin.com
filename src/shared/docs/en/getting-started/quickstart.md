@@ -136,7 +136,7 @@ That's it, you're up and running! [Learn more about working locally](/en/getting
 
 ### Create new routes
 
-- Create new HTTP routes by opening Begin, clicking `Functions` in the left nav, and clicking the `Add a Fucntion` buttons
+- Create new HTTP routes by opening Begin, clicking `Functions` in the left nav, and clicking the `Add a Function` buttons
   - New routes will be automatically committed to your project
   - Run `git pull && npx hydrate` to set up your new routes locally
 
