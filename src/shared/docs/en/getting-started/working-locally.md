@@ -1,10 +1,12 @@
 ## Overview
 
-Begin's open core, [Architect](https://arc.codes) kicks up a local server that emulates key serverless services (such as Lambda, API Gateway, DynamoDB, etc.) supporting full offline, local workflows.
+Begin has full support for local, offline development, including support for [Begin Data](/en/data/begin-data/).
+
+After you've initialized your project locally, Begin's open core, [Architect](https://arc.codes) kicks up a local server that emulates key serverless services (such as Lambda, API Gateway, DynamoDB, etc.).
 
 Those workflows enable you to locally:
-- **Preview** - code runs locally and can be opened in a web browser, curl, etc.
-- **Test** - code runs headlessly in a terminal
+- **Preview** - run your code locally, to be opened in a web browser, curl, etc.
+- **Test** - run your code headlessly in a terminal
 
 This guide is an expanded reference to much of what we covered in the [quickstart](/en/getting-started/quickstart) if you'd like to [skip ahead](/en/routes-functions/creating-new-routes/).
 
@@ -41,28 +43,37 @@ npm start
 That's it, you're up and running locally!
 
 
-### Adding Nodemon
+### Previewing changes
 
-Nodemon works well with Begin. To use it, simply install it to your project's root as a devdep, and update the start script in your `package.json`:
+All changes to your application's business logic within a Function directory (e.g. `src/http/get-hello-world`) will be immediately available without requiring a restart.
 
-```js
-{
-  "scripts": {
-    "start": "nodemon --watch src/ -e js,json --exec NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
-  }
+However, changes to shared code in `src/shared/` or `src/views/` do require a local server restart. For this, a tool like [`nodemon`](https://nodemon.io/) can be helpful.
+
+Here's an example nodemon config to add to your `package.json`:
+
+```json
+"scripts": {
+  "start": "nodemon --exec NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
+},
+"nodemonConfig": {
+  "watch": [
+    "src/shared",
+    "src/views"
+  ],
+  "ext": "css,js,json,md,mjs"
 }
 ```
 
 
 ## Working with routes
 
-The Begin web UI is (currently) responsible for creating new routes. (A command line interface is in the works, though!)
+The Begin web UI is (currently) responsible for creating new HTTP routes. (A command line interface is in the works, though!)
 
-To create new `HTML`, `JSON`, `XML`, `JS`, `CSS`, and `text` routes, open Begin, click the `Add new route` buttons in the left nav, and follow the prompt
+To create new a new HTTP route: open Begin, click the `Functions` view in the left nav, then click `Add a Function`, and select your HTTP method and path.
 
 New routes will be automatically committed to your project; run `git pull && npx hydrate` to continue working locally with your new routes.
 
-> ✨ Tip: `npx hydrate` is a helpful Begin tool to learn; it traverses your routes (`src/(css|html|js|json|text|xml)/*`) and `shared` (`src/shared`), finds any `package.json` files, and (re)installs your modules.
+> ✨ Tip: `npx hydrate` is a helpful Begin tool to learn; it traverses your routes (e.g. `src/http/**`) and shared code(`src/shared`, `src/views`), finds any `package.json` files, and (re)installs your modules.
 
 
 ## Writing tests
