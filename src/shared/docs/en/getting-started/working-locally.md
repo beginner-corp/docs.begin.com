@@ -11,16 +11,16 @@ This guide is an expanded reference to much of what we covered in the [quickstar
 
 ## Getting set up
 
-Get started working locally on your app in five easy steps:
+Get started working locally on your app in five easy steps. Assuming you used the default name of `Begin app`, open your terminal app, and:
 
 1. Clone your app's repo to your local machine:
 ```bash
-git clone https://github.com/{your GH username}/begin-functions-app.git
+git clone https://github.com/{your GH username}/begin-app.git
 ```
 
 - cd to your Begin project directory:
 ```bash
-cd begin-functions-app
+cd begin-app
 ```
 
 - Install NPM packages:

@@ -53,7 +53,7 @@ After authorizing Begin with GitHub, click the gigantic `Create App` button.
 
 <!-- @todo - update soon with expanded information on app creation -->
 
-This will spin up your new project repository under `github.com/{your GH username}/begin-functions-app`, populate it with a fully functional Hello World app, and associate it with Begin.
+This will spin up your new project repository under `github.com/{your GH username}/{your app name}`, populate it with a fully functional Hello World app, and associate it with Begin.
 
 > Since not all GitHub users have paid accounts with private repos, by default your new app is set up as a public GitHub repo. If you can and want to, feel free to make your Begin app repo private!
 
@@ -112,16 +112,16 @@ The handler for each route is grouped under `src` by the kind of `Content-Type` 
 
 ## Working locally
 
-Get started working locally on your app in five easy steps. Open your terminal app, and:
+Get started working locally on your app in five easy steps. Assuming you used the default name of `Begin app`, open your terminal app, and:
 
 1. Clone your app's repo to your local machine:
 ```bash
-git clone https://github.com/{your GH username}/begin-functions-app.git
+git clone https://github.com/{your GH username}/begin-app.git
 ```
 
 - cd to your Begin project directory:
 ```bash
-cd begin-functions-app
+cd begin-app
 ```
 
 - Install NPM packages:
@@ -139,7 +139,7 @@ npx hydrate
 npm start
 ```
 
-That's it, you're up and running locally!
+That's it, you're up and running! [Learn more about working locally](/en/getting-started/working-locally/).
 
 
 ## Keep it going
