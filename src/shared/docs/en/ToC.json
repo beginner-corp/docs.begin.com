@@ -97,9 +97,9 @@
         "doc": "builds-deploys",
         "title": "Building & deploying",
         "description": "Guide to creating new builds and deploying them to Begin",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/tktk/tktk.md",
-        "nextDoc": "/en/getting-started/environments/",
-        "nextTitle": "Environment variables",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/builds-deploys.md",
+        "nextDoc": "/en/getting-started/project-structure/",
+        "nextTitle": "Project structure",
         "sections": [
           {
             "anchor": "#overview",
@@ -120,6 +120,44 @@
           {
             "anchor": "#configuring-build-steps",
             "name": "Configuring build steps"
+          }
+        ]
+      },
+      {
+        "doc": "project-structure",
+        "title": "Project structure",
+        "description": "Learn more about the project structure of Begin apps",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/getting-started/project-structure.md",
+        "nextDoc": "/en/getting-started/environments/",
+        "nextTitle": "Environment variables",
+        "sections": [
+          {
+            "anchor": "#overview",
+            "name": "Overview"
+          },
+          {
+            "anchor": "#src-http",
+            "name": "src/http"
+          },
+          {
+            "anchor": "#src-shared",
+            "name": "src/shared"
+          },
+          {
+            "anchor": "#src-views",
+            "name": "src/views"
+          },
+          {
+            "anchor": "#public-",
+            "name": "public/"
+          },
+          {
+            "anchor": "#tests-",
+            "name": "tests/"
+          },
+          {
+            "anchor": "#caveats",
+            "name": "Caveats"
           }
         ]
       },
