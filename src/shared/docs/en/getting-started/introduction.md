@@ -71,10 +71,10 @@ If you can build it with Node and a database, you can build it with Begin. Here 
 
 ## Background & open source governance
 
-Begin started out as a cloud infrastructure framework built to help manage the immense complexities associated with managing releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
+Begin started out as a cloud infrastructure framework built to help tame the immense complexities associated with managing releases to hundreds of Lambdas, API Gateways, and other AWS serverless services.
 
-That project became known as [Architect](https://arc.codes), which we (Small Wins) partnered with and donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model and Apache 2 license.
+That project became known as [Architect](https://arc.codes), which we (Begin) donated to the [JS Foundation](https://js.foundation/) in 2017 under an open governance model and Apache 2 license.
 
-Architect and Small Wins are committed to building open, inclusive open source communities. If you like Begin, we'd love for you to participate in Architect! (We kindly ask you agree to the [CLA](https://js.foundation/cla), and [JSF](https://js.foundation/community/code-of-conduct) and [Small Wins](https://github.com/smallwins/policy/blob/master/begin-community-code-of-conduct.md) Codes of Conduct.)
+Architect and Begin are committed to building open, inclusive open source communities. If you like Begin, we'd love for you to participate in Architect! (We kindly ask you agree to the [CLA](https://js.foundation/cla), and [JSF](https://js.foundation/community/code-of-conduct) and [Small Wins, Inc.](https://github.com/smallwins/policy/blob/master/begin-community-code-of-conduct.md) Codes of Conduct.)
 
 Apps built with Begin are fully compatible with Architect. You can eject your apps from Begin at any time and run them on your own AWS infra, should you want to – and we're committed to making that easy to do.

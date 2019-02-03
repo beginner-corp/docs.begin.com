@@ -7,8 +7,6 @@ Open `Settings` in Begin to view and modify your app's settings and resources, a
 
 Your configured app name is displayed here.
 
-> Note: free-tier app names cannot currently be modified.
-
 
 ## Notifications
 
@@ -37,9 +35,9 @@ If you're digging this whole serverless thing but want to run everything under y
 
 Just follow the following steps:
 
-0. Download any application data, settings, env vars, etc. stored in Begin that you may need.
+1. Download any application data, settings, env vars, etc. stored in Begin that you may need.
 
-1. Clone your Begin app
+2. Clone your Begin app
 
 ```bash
 git clone https://github.com/{your GH username}/{your app name}.git
@@ -63,4 +61,4 @@ get /
 
 That should get you going! Of course, you'll probably want to keep going by adding a domain, setting up a database, and more.
 
-To learn more about expanding and configuring your exported Architect project, head to [arc.codes](https://arc.codes/).
+To learn more about [expanding and configuring your exported Architect project](https://arc.codes/).

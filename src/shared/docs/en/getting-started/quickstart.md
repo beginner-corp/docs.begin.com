@@ -68,6 +68,8 @@ By default, each commit to `master` initiates a build; if the build is green, th
 
 Every new build to `staging` and `master` appears on Begin's home screen: **Builds & Deploys**.
 
+Learn more about [building & deploying with Begin](/en/getting-started/builds-deploys/).
+
 <!-- @todo - link to upcoming environments + deploys doc(s) re. deploying to master -->
 
 
@@ -97,7 +99,7 @@ Your app's many small, fast, isolated cloud functions (or Functions, for short) 
 
 Each Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello world` services `GET /hello/world`).
 
-[Learn more about Begin app project structure](/en/getting-started/project-structure/).
+Learn more about [Begin app project structure](/en/getting-started/project-structure/).
 
 
 ## Working locally
@@ -129,7 +131,7 @@ npx hydrate
 npm start
 ```
 
-That's it, you're up and running! [Learn more about working locally](/en/getting-started/working-locally/).
+That's it, you're up and running! Learn more about [working locally](/en/getting-started/working-locally/).
 
 
 ## Keep it going

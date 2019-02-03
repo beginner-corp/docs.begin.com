@@ -124,7 +124,7 @@ Here's a simple example response for an API endpoint:
 
 Every Begin app comes bundled with Begin Data, an easy to use, fast, durable, highly scalable, and fully managed key-value and document database.
 
-[Head here to learn more about integrating Begin Data](/en/data/begin-data/) in your app's Functions!
+Learn more [about integrating Begin Data](/en/data/begin-data/) in your app's Functions!
 
 
 ## Examples
