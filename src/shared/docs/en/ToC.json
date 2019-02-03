@@ -358,220 +358,42 @@
         "title": "HTML Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building HTML routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/html-routes.md",
-        "nextDoc": "/en/functions/json-routes/",
-        "nextTitle": "JSON Routes",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          },
-          {
-            "anchor": "#post-routes",
-            "name": "POST routes"
-          },
-          {
-            "anchor": "#post-examples",
-            "name": "POST examples"
-          },
-          {
-            "anchor": "#custom-error-pages",
-            "name": "Custom error pages"
-          }
-        ]
+        "description": "[Deprecated] Building HTML routes for your Begin application"
       },
       {
         "doc": "json-routes",
         "title": "JSON Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building JSON routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/json-routes.md",
-        "nextDoc": "/en/functions/xml-routes/",
-        "nextTitle": "XML Routes",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          },
-          {
-            "anchor": "#post-routes",
-            "name": "POST routes"
-          },
-          {
-            "anchor": "#post-examples",
-            "name": "POST examples"
-          },
-          {
-            "anchor": "#put-routes",
-            "name": "PUT routes"
-          },
-          {
-            "anchor": "#put-examples",
-            "name": "PUT examples"
-          },
-          {
-            "anchor": "#patch-routes",
-            "name": "PATCH routes"
-          },
-          {
-            "anchor": "#patch-examples",
-            "name": "PATCH examples"
-          },
-          {
-            "anchor": "#delete-routes",
-            "name": "DELETE routes"
-          },
-          {
-            "anchor": "#delete-examples",
-            "name": "DELETE examples"
-          }
-        ]
+        "description": "[Deprecated] Building JSON routes for your Begin application"
       },
       {
         "doc": "xml-routes",
         "title": "XML Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building XML routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/xml-routes.md",
-        "nextDoc": "/en/functions/css-routes/",
-        "nextTitle": "CSS Routes",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          },
-          {
-            "anchor": "#post-routes",
-            "name": "POST routes"
-          },
-          {
-            "anchor": "#post-examples",
-            "name": "POST examples"
-          },
-          {
-            "anchor": "#put-routes",
-            "name": "PUT routes"
-          },
-          {
-            "anchor": "#put-examples",
-            "name": "PUT examples"
-          },
-          {
-            "anchor": "#patch-routes",
-            "name": "PATCH routes"
-          },
-          {
-            "anchor": "#patch-examples",
-            "name": "PATCH examples"
-          },
-          {
-            "anchor": "#delete-routes",
-            "name": "DELETE routes"
-          },
-          {
-            "anchor": "#delete-examples",
-            "name": "DELETE examples"
-          }
-        ]
+        "description": "[Deprecated] Building XML routes for your Begin application"
       },
       {
         "doc": "css-routes",
         "title": "CSS Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building CSS routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/css-routes.md",
-        "nextDoc": "/en/functions/javascript-routes/",
-        "nextTitle": "JavaScript Routes",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          }
-        ]
+        "description": "[Deprecated] Building CSS routes for your Begin application"
       },
       {
         "doc": "javascript-routes",
         "title": "JavaScript Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building JavaScript routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/javascript-routes.md",
-        "nextDoc": "/en/functions/text-routes/",
-        "nextTitle": "Text Routes",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          }
-        ]
+        "description": "[Deprecated] Building JavaScript routes for your Begin application"
       },
       {
         "doc": "text-routes",
         "title": "Text Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
-        "description": "Building text routes for your Begin application",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/functions/text-routes.md",
-        "nextDoc": "/en/functions/events/",
-        "nextTitle": "Events",
-        "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#get-routes",
-            "name": "GET routes"
-          },
-          {
-            "anchor": "#get-examples",
-            "name": "GET examples"
-          }
-        ]
+        "description": "[Deprecated] Building text routes for your Begin application"
       },
       {
         "doc": "events",
