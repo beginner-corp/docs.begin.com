@@ -132,7 +132,9 @@ exports.handler = async function http(request) {
 
 Contents of the `public` directory are deployed to an S3 bucket for hosting or CDN distribution (URLs for both of which can be found in your app's `Settings` screen).
 
-This is a great place to place build artifacts!
+This is a great place to place images and build artifacts!
+
+[Learn more about working with `public/` and static assets](/en/getting-started/static-assets/).
 
 > Note: assume the S3 bucket will sync with your `public/` in your source control; anything not found there may be deleted from the S3 bucket during deployments.
 
