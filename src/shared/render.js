@@ -14,33 +14,41 @@ module.exports = function render(state) {
 
   function getDocMetadata(ToC) {
     // Find the active category by cat ID
-    var c = ToC.findIndex(data => data.cat === cat)
+    var c = ToC.findIndex(c => c.cat === cat)
     var activeCat = ToC[c].docs
 
     // Find the active doc by doc ID
-    var d = activeCat.findIndex(data => data.doc === doc)
+    var d = activeCat.findIndex(d => d.doc === doc)
     var activeDoc = ToC[c].docs[d]
 
-    // If the active doc is present in the filesystem but not present in the ToC, consider it unpublished and in-progress
+    // Active doc may be present in the filesystem but not present in the ToC
+    // If so, consider it unpublished / WIP
     if (activeDoc === undefined) {
       return {title: 'Preview of ' + lang + '/' + cat + '/' + doc + '/'}
-    } else {
+    }
+    else {
       return activeDoc
     }
   }
 
+  var meta = getDocMetadata(ToC)
+
   // Defines the file needed to render a doc
   var contentFile = join(__dirname, 'docs', lang, cat, doc) + '.md'
+
+  // Keep active docs dirs clean
+  //   Deprecated docs live on in {lang}/_deprecated/
+  if (meta.deprecated) contentFile = join(__dirname, 'docs', lang, '_deprecated', doc) + '.md'
 
   // Make sure each doc exists
   if (exists(contentFile)) {
     // Now get the metadata, content, and send to Layout
-    var meta = getDocMetadata(ToC)
     var content = read(contentFile).toString()
     return {
       html: Layout(state, meta, content, ToC)
     }
-  } else {
+  }
+  else {
     // Return 404
     var notFound = '404, sorry!'
     return {
