@@ -9,7 +9,7 @@ module.exports = function getSections(ToC, categoryIndex, docIndex) {
   ToC[c].docs[d].sections.forEach(s => {
     sectionList.push(Section(s))
   })
-  
+
   // Marked's slugger method
   //   https://github.com/markedjs/marked/blob/master/lib/marked.js
   function slug(value) {
@@ -17,7 +17,7 @@ module.exports = function getSections(ToC, categoryIndex, docIndex) {
       .toLowerCase()
       .trim()
       .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, '')
-      .replace(/\s/g, '-');
+      .replace(/\s/g, '-')
     return '#' + slug
   }
 
