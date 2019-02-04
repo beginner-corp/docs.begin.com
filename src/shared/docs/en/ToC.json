@@ -8,18 +8,9 @@
         "title": "Introduction",
         "description": "Introduction to Begin",
         "sections": [
-          {
-            "anchor": "#what-is-begin-",
-            "name": "What is Begin?"
-          },
-          {
-            "anchor": "#what-begin-does-doesn-t-do",
-            "name": "What Begin does & doesn't do"
-          },
-          {
-            "anchor": "#background-open-source-governance",
-            "name": "Background & open source governance"
-          }
+          "What is Begin?",
+          "What Begin does & doesn't do",
+          "Background & open source governance"
         ]
       },
       {
@@ -27,38 +18,14 @@
         "title": "Quickstart",
         "description": "Get started building your first app with Begin",
         "sections": [
-          {
-            "anchor": "#prerequisites",
-            "name": "Prerequisites"
-          },
-          {
-            "anchor": "#create-a-begin-account",
-            "name": "Create a Begin account"
-          },
-          {
-            "anchor": "#creating-an-app",
-            "name": "Creating an app"
-          },
-          {
-            "anchor": "#your-first-deploy",
-            "name": "Your first deploy"
-          },
-          {
-            "anchor": "#accessing-your-live-app",
-            "name": "Accessing your live app"
-          },
-          {
-            "anchor": "#project-structure",
-            "name": "Project structure"
-          },
-          {
-            "anchor": "#working-locally",
-            "name": "Working locally"
-          },
-          {
-            "anchor": "#keep-it-going",
-            "name": "Keep it going"
-          }
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
         ]
       },
       {
@@ -66,22 +33,10 @@
         "title": "Working locally",
         "description": "Guide to working locally and writing tests with Begin",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#getting-set-up",
-            "name": "Getting set up"
-          },
-          {
-            "anchor": "#working-with-routes",
-            "name": "Working with routes"
-          },
-          {
-            "anchor": "#writing-tests",
-            "name": "Writing tests"
-          }
+          "Overview",
+          "Getting set up",
+          "Working with routes",
+          "Writing tests"
         ]
       },
       {
@@ -89,26 +44,11 @@
         "title": "Building & deploying",
         "description": "Guide to creating new builds and deploying them to Begin",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#build-pipeline",
-            "name": "Build pipeline"
-          },
-          {
-            "anchor": "#deploying-to-staging",
-            "name": "Deploying to staging"
-          },
-          {
-            "anchor": "#deploying-to-production",
-            "name": "Deploying to production"
-          },
-          {
-            "anchor": "#configuring-build-steps",
-            "name": "Configuring build steps"
-          }
+          "Overview",
+          "Build pipeline",
+          "Deploying to staging",
+          "Deploying to production",
+          "Configuring build steps"
         ]
       },
       {
@@ -116,34 +56,13 @@
         "title": "Project structure",
         "description": "Learn more about the project structure of Begin apps",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#src-http",
-            "name": "src/http"
-          },
-          {
-            "anchor": "#src-shared",
-            "name": "src/shared"
-          },
-          {
-            "anchor": "#src-views",
-            "name": "src/views"
-          },
-          {
-            "anchor": "#public-",
-            "name": "public/"
-          },
-          {
-            "anchor": "#tests-",
-            "name": "tests/"
-          },
-          {
-            "anchor": "#caveats",
-            "name": "Caveats"
-          }
+          "Overview",
+          "src/http",
+          "src/shared",
+          "src/views",
+          "public/",
+          "tests/",
+          "Caveats"
         ]
       },
       {
@@ -151,18 +70,9 @@
         "title": "Environment variables",
         "description": "Configuring your Begin app's environment variables",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#adding-variables",
-            "name": "Adding variables"
-          },
-          {
-            "anchor": "#editing variables",
-            "name": "Editing variables"
-          }
+          "Overview",
+          "Adding variables",
+          "Editing variables"
         ]
       },
       {
@@ -170,26 +80,11 @@
         "title": "Domain names",
         "description": "Configuring your Begin app's domain",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#mapping-your-domain",
-            "name": "Mapping your domain"
-          },
-          {
-            "anchor": "#generating-ssl-certificates",
-            "name": "Generating SSL certificates"
-          },
-          {
-            "anchor": "#domain-mapping",
-            "name": "Domain mapping"
-          },
-          {
-            "anchor": "#mapping-naked-domains",
-            "name": "Mapping naked domains"
-          }
+          "Overview",
+          "Mapping your domain",
+          "Generating SSL certificates",
+          "Domain mapping",
+          "Mapping naked domains"
         ]
       },
       {
@@ -197,22 +92,10 @@
         "title": "Static assets",
         "description": "Building, deploying, and accessing static assets from Begin",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#the-static-directory",
-            "name": "The .static directory"
-          },
-          {
-            "anchor": "#building-and-deploying-assets",
-            "name": "Building and deploying assets"
-          },
-          {
-            "anchor": "#accessing-static-assets",
-            "name": "Accessing static assets"
-          }
+          "Overview",
+          "The public/ directory",
+          "Building and deploying assets",
+          "Accessing static assets"
         ]
       },
       {
@@ -220,30 +103,12 @@
         "title": "Settings",
         "description": "Configuring your Begin app's settings",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#app-name",
-            "name": "App name"
-          },
-          {
-            "anchor": "#notifications",
-            "name": "Notifications"
-          },
-          {
-            "anchor": "#aws-resources-inventory",
-            "name": "AWS resources inventory"
-          },
-          {
-            "anchor": "#deleting-your-app",
-            "name": "Deleting your app"
-          },
-          {
-            "anchor": "#ejecting-your-app",
-            "name": "Ejecting your app"
-          }
+          "Overview",
+          "App name",
+          "Notifications",
+          "AWS resources inventory",
+          "Deleting your app",
+          "Ejecting your app"
         ]
       }
     ]
@@ -257,18 +122,9 @@
         "title": "Creating new functions",
         "description": "Creating new functions for your Begin application",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#using-url-parameters-to-create-dynamic-paths",
-            "name": "Using URL parameters to create dynamic paths"
-          },
-          {
-            "anchor": "#more-about-routes-in-begin",
-            "name": "More about routes in Begin"
-          }
+          "Overview",
+          "Using URL parameters to create dynamic paths",
+          "More about routes in Begin"
         ]
       },
       {
@@ -276,22 +132,10 @@
         "title": "HTTP Functions",
         "description": "Creating new HTTP Functions for your Begin application",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#getting-started",
-            "name": "Getting started"
-          },
-          {
-            "anchor": "#http-handler-api",
-            "name": "HTTP handler API"
-          },
-          {
-            "anchor": "#examples",
-            "name": "Examples"
-          }
+          "Overview",
+          "Getting started",
+          "HTTP handler API",
+          "Examples"
         ]
       },
       {
@@ -299,22 +143,10 @@
         "title": "HTTP Sessions",
         "description": "Using Begin's built-in sessions support for HTTP functions",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#writing-to-sessions",
-            "name": "Writing to sessions"
-          },
-          {
-            "anchor": "#more-about-sessions",
-            "name": "More about sessions"
-          },
-          {
-            "anchor": "#examples",
-            "name": "Examples"
-          }
+          "Overview",
+          "Writing to sessions",
+          "More about sessions",
+          "Examples"
         ]
       },
       {
@@ -364,10 +196,7 @@
         "title": "Event Functions",
         "description": "Creating new Event Functions for your Begin application",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          }
+          "Overview"
         ]
       },
       {
@@ -375,10 +204,7 @@
         "title": "Scheduled Functions",
         "description": "Creating new Scheduled Functions for your Begin application",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          }
+          "Overview"
         ]
       },
       {
@@ -386,10 +212,7 @@
         "title": "Queue Functions",
         "description": "Creating new Queue Functions for your Begin application",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          }
+          "Overview"
         ]
       }
     ]
@@ -408,38 +231,14 @@
         "title": "Begin Data",
         "description": "How to use Begin Data as your app's database",
         "sections": [
-          {
-            "anchor": "#overview",
-            "name": "Overview"
-          },
-          {
-            "anchor": "#tables-keys",
-            "name": "Tables & keys"
-          },
-          {
-            "anchor": "#read-documents",
-            "name": "Read documents"
-          },
-          {
-            "anchor": "#create-update-documents",
-            "name": "Create & update documents"
-          },
-          {
-            "anchor": "#destroy-documents",
-            "name": "Destroy documents"
-          },
-          {
-            "anchor": "#helpers",
-            "name": "Helpers"
-          },
-          {
-            "anchor": "#ttl",
-            "name": "TTL"
-          },
-          {
-            "anchor": "#limits",
-            "name": "Limits"
-          }
+          "Overview",
+          "Tables & keys",
+          "Read documents",
+          "Create & update documents",
+          "Destroy documents",
+          "Helpers",
+          "TTL",
+          "Limits"
         ]
       }
     ]
@@ -469,18 +268,9 @@
         "title": "About Begin",
         "description": "About Begin: who we are, what we believe, how Begin works",
         "sections": [
-          {
-            "anchor": "#who-we-are",
-            "name": "Who we are"
-          },
-          {
-            "anchor": "#what-we-believe",
-            "name": "What we believe"
-          },
-          {
-            "anchor": "#our-business-model",
-            "name": "Our business model"
-          }
+          "Who we are",
+          "What we believe",
+          "Our business model"
         ]
       },
       {
