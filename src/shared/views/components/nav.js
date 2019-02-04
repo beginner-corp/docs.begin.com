@@ -6,34 +6,33 @@ module.exports = function Nav (state, ToC) {
   ToC = ToC || {}
 
   // Traverse the Table of Contents tree!
-  // Loop through and snag all document categories specified in src/shared/docs/{language}/ToC.json
+  // Loop through and render all document categories specified in src/shared/docs/{language}/ToC.json
   function getCategories () {
     let categoryList = []
-    for (let c = 0; c < ToC.length; c++) {
-      categoryList = categoryList + Categories(c)
-    }
-    return categoryList
+    ToC.map((c,i) => {
+      categoryList.push(renderCategory(i))
+    })
+    return categoryList.join('')
   }
 
-  // Next, at each category node:
-  //   - Category() → assemble the category container HTML, and
-  //   - getDocs() → request its child docs
-  function Categories (categoryIndex) {
+  // At each category node:
+  // - Category() → assemble the category container markup
+  // - getDocs() → request its child docs
+  function renderCategory(categoryIndex) {
     return Category(ToC, categoryIndex) + getDocs(categoryIndex)
   }
 
-  // Now loop through each category's docs, executing Doc() to:
-  //   - Check to see if the document is active, and
-  //     - if so, assemble the doc section list HTML
-  //   - assemble the doc link HTML
-  function getDocs (categoryIndex) {
+  // Loop through and render each category's docs
+  // - If the document is active: render doc section list markup
+  // - Assemble the final doc list markup
+  function getDocs(categoryIndex) {
     let docsList = []
-    for (let d = 0; d < ToC[categoryIndex].docs.length; d++) {
-      docsList = docsList + Doc(state, ToC, categoryIndex, d)
-    }
+    ToC[categoryIndex].docs.map((d,i) => {
+      docsList.push(Doc(state, ToC, categoryIndex, i))
+    })
     return `
 <div id="docs">
-  ${docsList}
+  ${docsList.join('')}
 </div>
 `
   }
