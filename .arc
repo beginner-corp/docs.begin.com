@@ -11,6 +11,7 @@ docs.begin.com
 @http
 get /
 get /css/:page
+get /robots.txt
 get /:lang/:cat/:doc
 
 # these used to be here to forward home if any path parts were missing
