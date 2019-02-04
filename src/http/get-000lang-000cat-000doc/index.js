@@ -4,7 +4,7 @@ let path = require('path')
 let forwards = require('./_forwards')
 
 function route(req, res) {
-  if (process.env.NODE_ENV !== 'production') console.log(req)
+  // if (process.env.NODE_ENV !== 'production') console.log(req)
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat

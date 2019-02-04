@@ -40,7 +40,7 @@ ${Symbols}
           ${Deprecated(meta)}
           <h1 class="fs3 mb2 pt0-lg">${meta.title}</h1>
           ${md(content)}
-          ${DocFooter(meta)}
+          ${DocFooter(state, ToC)}
         </div>
       </div>
     </div>
