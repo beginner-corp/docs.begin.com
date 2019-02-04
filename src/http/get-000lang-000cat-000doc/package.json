@@ -3,6 +3,6 @@
   "dependencies": {
     "@architect/data": "latest",
     "@architect/functions": "latest",
-    "marked": "^0.5.2"
+    "marked": "^0.6.0"
   }
 }
