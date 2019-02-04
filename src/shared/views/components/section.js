@@ -1,8 +1,5 @@
-module.exports = function getSections(ToC, categoryIndex, docIndex) {
+module.exports = function getSections(ToC, c, d) {
   ToC = ToC || {}
-
-  var c = categoryIndex
-  var d = docIndex
 
   // Loop through the doc's sections array, executing Section() to assemble the section list HTML
   let sectionList = []
