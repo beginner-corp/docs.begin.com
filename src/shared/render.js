@@ -14,11 +14,11 @@ module.exports = function render(state) {
 
   function getDocMetadata(ToC) {
     // Find the active category by cat ID
-    var c = ToC.findIndex(c => c.cat === cat)
+    var c = ToC.findIndex(c => c.catID === cat)
     var activeCat = ToC[c].docs
 
     // Find the active doc by doc ID
-    var d = activeCat.findIndex(d => d.doc === doc)
+    var d = activeCat.findIndex(d => d.docID === doc)
     var activeDoc = ToC[c].docs[d]
 
     // Active doc may be present in the filesystem but not present in the ToC

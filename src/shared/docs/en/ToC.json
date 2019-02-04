@@ -1,11 +1,11 @@
 [
   {
-    "cat": "getting-started",
+    "catID": "getting-started",
     "catTitle": "Getting Started",
     "docs": [
       {
-        "doc": "introduction",
-        "title": "Introduction",
+        "docID": "introduction",
+        "docTitle": "Introduction",
         "description": "Introduction to Begin",
         "sections": [
           "What is Begin?",
@@ -14,8 +14,8 @@
         ]
       },
       {
-        "doc": "quickstart",
-        "title": "Quickstart",
+        "docID": "quickstart",
+        "docTitle": "Quickstart",
         "description": "Get started building your first app with Begin",
         "sections": [
           "Prerequisites",
@@ -29,8 +29,8 @@
         ]
       },
       {
-        "doc": "working-locally",
-        "title": "Working locally",
+        "docID": "working-locally",
+        "docTitle": "Working locally",
         "description": "Guide to working locally and writing tests with Begin",
         "sections": [
           "Overview",
@@ -40,8 +40,8 @@
         ]
       },
       {
-        "doc": "builds-deploys",
-        "title": "Building & deploying",
+        "docID": "builds-deploys",
+        "docTitle": "Building & deploying",
         "description": "Guide to creating new builds and deploying them to Begin",
         "sections": [
           "Overview",
@@ -52,8 +52,8 @@
         ]
       },
       {
-        "doc": "project-structure",
-        "title": "Project structure",
+        "docID": "project-structure",
+        "docTitle": "Project structure",
         "description": "Learn more about the project structure of Begin apps",
         "sections": [
           "Overview",
@@ -66,8 +66,8 @@
         ]
       },
       {
-        "doc": "environments",
-        "title": "Environment variables",
+        "docID": "environments",
+        "docTitle": "Environment variables",
         "description": "Configuring your Begin app's environment variables",
         "sections": [
           "Overview",
@@ -76,8 +76,8 @@
         ]
       },
       {
-        "doc": "domains",
-        "title": "Domain names",
+        "docID": "domains",
+        "docTitle": "Domain names",
         "description": "Configuring your Begin app's domain",
         "sections": [
           "Overview",
@@ -88,8 +88,8 @@
         ]
       },
       {
-        "doc": "static-assets",
-        "title": "Static assets",
+        "docID": "static-assets",
+        "docTitle": "Static assets",
         "description": "Building, deploying, and accessing static assets from Begin",
         "sections": [
           "Overview",
@@ -99,8 +99,8 @@
         ]
       },
       {
-        "doc": "settings",
-        "title": "Settings",
+        "docID": "settings",
+        "docTitle": "Settings",
         "description": "Configuring your Begin app's settings",
         "sections": [
           "Overview",
@@ -114,12 +114,12 @@
     ]
   },
   {
-    "cat": "functions",
+    "catID": "functions",
     "catTitle": "Functions",
     "docs": [
       {
-        "doc": "creating-new-functions",
-        "title": "Creating new functions",
+        "docID": "creating-new-functions",
+        "docTitle": "Creating new functions",
         "description": "Creating new functions for your Begin application",
         "sections": [
           "Overview",
@@ -128,8 +128,8 @@
         ]
       },
       {
-        "doc": "http",
-        "title": "HTTP Functions",
+        "docID": "http",
+        "docTitle": "HTTP Functions",
         "description": "Creating new HTTP Functions for your Begin application",
         "sections": [
           "Overview",
@@ -139,8 +139,8 @@
         ]
       },
       {
-        "doc": "sessions",
-        "title": "HTTP Sessions",
+        "docID": "sessions",
+        "docTitle": "HTTP Sessions",
         "description": "Using Begin's built-in sessions support for HTTP functions",
         "sections": [
           "Overview",
@@ -150,66 +150,66 @@
         ]
       },
       {
-        "doc": "html-routes",
-        "title": "HTML Routes",
+        "docID": "html-routes",
+        "docTitle": "HTML Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building HTML routes for your Begin application"
       },
       {
-        "doc": "json-routes",
-        "title": "JSON Routes",
+        "docID": "json-routes",
+        "docTitle": "JSON Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building JSON routes for your Begin application"
       },
       {
-        "doc": "xml-routes",
-        "title": "XML Routes",
+        "docID": "xml-routes",
+        "docTitle": "XML Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building XML routes for your Begin application"
       },
       {
-        "doc": "css-routes",
-        "title": "CSS Routes",
+        "docID": "css-routes",
+        "docTitle": "CSS Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building CSS routes for your Begin application"
       },
       {
-        "doc": "javascript-routes",
-        "title": "JavaScript Routes",
+        "docID": "javascript-routes",
+        "docTitle": "JavaScript Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building JavaScript routes for your Begin application"
       },
       {
-        "doc": "text-routes",
-        "title": "Text Routes",
+        "docID": "text-routes",
+        "docTitle": "Text Routes",
         "deprecated": true,
         "referTo": "/en/functions/http/",
         "description": "[Deprecated] Building text routes for your Begin application"
       },
       {
-        "doc": "events",
-        "title": "Event Functions",
+        "docID": "events",
+        "docTitle": "Event Functions",
         "description": "Creating new Event Functions for your Begin application",
         "sections": [
           "Overview"
         ]
       },
       {
-        "doc": "scheduled",
-        "title": "Scheduled Functions",
+        "docID": "scheduled",
+        "docTitle": "Scheduled Functions",
         "description": "Creating new Scheduled Functions for your Begin application",
         "sections": [
           "Overview"
         ]
       },
       {
-        "doc": "queues",
-        "title": "Queue Functions",
+        "docID": "queues",
+        "docTitle": "Queue Functions",
         "description": "Creating new Queue Functions for your Begin application",
         "sections": [
           "Overview"
@@ -218,17 +218,17 @@
     ]
   },
   {
-    "cat": "data",
+    "catID": "data",
     "catTitle": "Data",
     "docs": [
       {
-        "doc": "getting-started",
-        "title": "Getting started with data",
+        "docID": "getting-started",
+        "docTitle": "Getting started with data",
         "description": "Getting started persisting data on Begin"
       },
       {
-        "doc": "begin-data",
-        "title": "Begin Data",
+        "docID": "begin-data",
+        "docTitle": "Begin Data",
         "description": "How to use Begin Data as your app's database",
         "sections": [
           "Overview",
@@ -244,28 +244,28 @@
     ]
   },
   {
-    "cat": "support",
+    "catID": "support",
     "catTitle": "Support",
     "docs": [
       {
-        "doc": "help-support",
-        "title": "Help & support",
+        "docID": "help-support",
+        "docTitle": "Help & support",
         "description": "Help & support channels for Begin"
       },
       {
-        "doc": "issues",
-        "title": "Issues & feature requests",
+        "docID": "issues",
+        "docTitle": "Issues & feature requests",
         "description": "How and where to file issues and feature requests for Begin"
       }
     ]
   },
   {
-    "cat": "meta",
+    "catID": "meta",
     "catTitle": "Meta",
     "docs": [
       {
-        "doc": "about",
-        "title": "About Begin",
+        "docID": "about",
+        "docTitle": "About Begin",
         "description": "About Begin: who we are, what we believe, how Begin works",
         "sections": [
           "Who we are",
@@ -274,8 +274,8 @@
         ]
       },
       {
-        "doc": "architect-4-migration",
-        "title": "Architect 4 migration",
+        "docID": "architect-4-migration",
+        "docTitle": "Architect 4 migration",
         "hidden": true,
         "description": "Migrating early Architect 3.x-based alpha apps to Architect 4.x-based apps",
         "sections": []

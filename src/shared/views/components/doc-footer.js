@@ -2,8 +2,8 @@ module.exports = function DocFooter (state, ToC) {
   let {lang, cat, doc} = state
 
   // Get current position in tree
-  let c = ToC.findIndex(c => c.cat === cat)
-  let d = ToC[c].docs.findIndex(d => d.doc === doc)
+  let c = ToC.findIndex(c => c.catID === cat)
+  let d = ToC[c].docs.findIndex(d => d.docID === doc)
 
   // If page is deprecated or hidden, bail early
   if (ToC[c].docs[d].deprecated || ToC[c].docs[d].hidden) {
@@ -18,8 +18,8 @@ module.exports = function DocFooter (state, ToC) {
 
   // Check for Next
   function Next() {
-    let nextDoc = (c,d) => `/${lang}/${ToC[c].cat}/${ToC[c].docs[d].doc}/`
-    let nextTitle = (c,d) => ToC[c].docs[d].title
+    let nextDoc = (c,d) => `/${lang}/${ToC[c].catID}/${ToC[c].docs[d].docID}/`
+    let nextTitle = (c,d) => ToC[c].docs[d].docTitle
 
     // Find the next viable doc's index (if any)
     let n = ToC[c].docs.findIndex((doc, docIndex) => {

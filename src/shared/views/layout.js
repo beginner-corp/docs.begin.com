@@ -38,7 +38,7 @@ ${Symbols}
         </header>
         <div class="p0" id="doc">
           ${Deprecated(meta)}
-          <h1 class="fs3 mb2 pt0-lg">${meta.title}</h1>
+          <h1 class="fs3 mb2 pt0-lg">${meta.docTitle}</h1>
           ${md(content)}
           ${DocFooter(state, ToC)}
         </div>

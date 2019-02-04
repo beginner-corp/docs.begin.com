@@ -1,7 +1,7 @@
 module.exports = function head(meta) {
   meta = meta || {}
-  var title = (meta.title)
-    ? meta.title + ' - Begin documentation'
+  var title = (meta.docTitle)
+    ? meta.docTitle + ' - Begin documentation'
     : 'Begin documentation'
   var description = meta.description || 'Begin documentation'
 

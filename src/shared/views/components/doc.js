@@ -9,15 +9,15 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
   var docIndex = docIndex
 
   // Indexes identify
-  var cat = ToC[categoryIndex].cat
-  var doc = ToC[categoryIndex].docs[docIndex].doc
+  var cat = ToC[categoryIndex].catID
+  var doc = ToC[categoryIndex].docs[docIndex].docID
 
   // Determine if the requested doc is active, to highlight it and display its sections if so
-  var active = cat === state.cat && doc === state.doc
+  var active = cat === state.catID && doc === state.docID
 
   // Link data
   var href = '/' + state.lang + '/' + cat + '/' + doc + '/'
-  var title = ToC[categoryIndex].docs[docIndex].title
+  var title = ToC[categoryIndex].docs[docIndex].docTitle
 
   // If the document is active, append the active class to highlight it
   var styles = active
