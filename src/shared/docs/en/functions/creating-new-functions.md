@@ -1,6 +1,6 @@
 ## Overview
 
-Begin apps are composed of many (relatively) small, fast cloud functions – and new ones is easy!
+Begin apps are composed of many (relatively) small, fast cloud functions – and creating new ones is easy!
 
 Simply [open your app in Begin](https://begin.com) and open the Functions view.
 
