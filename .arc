@@ -23,3 +23,5 @@ get /:lang/:cat/:doc
 staging begin-docs-staging
 production begin-docs
 
+@plugins
+architect/arc-plugin-node-prune

@@ -15,13 +15,14 @@
   },
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "devDependencies": {
-    "@architect/architect": "^5.0.7",
-    "eslint": "^5.13.0",
-    "nodemon": "^1.18.9",
+    "@architect/arc-plugin-node-prune": "^1.0.1",
+    "@architect/architect": "^5.8.4",
+    "eslint": "^5.16.0",
+    "nodemon": "^1.19.0",
     "spellchecker-cli": "^4.0.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.2",
-    "tiny-json-http": "^7.0.2"
+    "tape": "^4.10.1",
+    "tiny-json-http": "^7.1.2"
   },
   "nodemonConfig": {
     "watch": [
