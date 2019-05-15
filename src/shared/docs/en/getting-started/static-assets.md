@@ -45,22 +45,16 @@ Here is an example environment-aware helper for accessing your static assets. (Y
 
 ```javascript
 function staticAsset(filename) {
-
+  let origin
   // these variables are always available to all lambdas
   let env = process.env.NODE_ENV
-  let app = process.env.ARC_APP_NAME
-  
-  // early exit (if we're testing then we can assume the sandbox mounted public/)
-  if (env === 'testing') {
-    return '/' + filename
+  if (env === 'production') {
+    origin = process.env.BEGIN_STATIC_EDGE // CDN
+  } else if (env === 'staging') {
+    origin = process.env.BEGIN_STATIC_ORIGIN // Preview
+  } else {
+    origin = '/_static' // Handles local use cases
   }
-  else {
-    // otherwise use s3 for staging and cloudfront for production
-    let S3Staging = `https://s3-us-west-1.amazonaws.com/begin-app-staging/${app}`
-    let CFProduction = `https://static.begin.app/${app}`
-    let origin = env === 'staging'? S3Staging : CFProduction
-
-    return `${origin}/${filename}`
-  }
+  return `${origin}/${filename}`
 }
 ```
