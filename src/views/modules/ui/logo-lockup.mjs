@@ -5,7 +5,7 @@ export default function LockupLogo (props) {
   return html`
 <div class="logo d-flex ai-c">
   <img
-    src="${staticAsset('web/begin-logo.svg')}"
+    src="${staticAsset('begin-logo.svg')}"
     alt="begin logo"
     style="min-width:4.777rem;min-height:1.333rem;"
     width="86"

@@ -5,9 +5,12 @@ import Heading from '../ui/heading-l.mjs'
 
 export default function Docs (props) {
   props = props || {}
-  let content = props.content || ''
   let state = props.state || {}
   let toc = props.toc || {}
+  let content = props.content || ''
+  let innerHTML = {
+    __html: content
+  }
   return html`
 <${LayoutSidebar} state="${state}" toc="${toc}">
   <div class="d-flex fd-c h-100">
@@ -23,8 +26,8 @@ export default function Docs (props) {
     >
       <div
         class="m-auto mw-content pb0"
+        dangerouslySetInnerHTML="${innerHTML}"
       >
-        ${content}
       </div>
     </div>
   </div>
