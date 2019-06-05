@@ -31,7 +31,7 @@ class SidebarLayout extends Component {
 <div class="d-flex fd-c vh-100">
   <${PageHeader} ...${props} toggle="${this.toggle}"><//>
   <div class="p-relative d-flex-lg h-100 o-hidden">
-    <aside class="sidebar p-absolute p-static-lg trbl fg-0 b-r b-p18">
+    <aside class="sidebar p-absolute p-static-lg trbl fg-0">
       <${Sidebar} ...${props}><//>
     </aside>
     <section
