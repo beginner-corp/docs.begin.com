@@ -1,13 +1,9 @@
 var getSections = require('./section')
 var classes = 'd-table fw-book fg-0 bg-a5 c-p8 c-h0 c-a0 mb-5'
 
-module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
+module.exports = function Doc (state, ToC, categoryIndex, docIndex) {
   state = state || {}
   ToC = ToC || {}
-
-  var categoryIndex = categoryIndex
-  var docIndex = docIndex
-
   // Indexes identify
   var cat = ToC[categoryIndex].catID
   var doc = ToC[categoryIndex].docs[docIndex].docID
@@ -31,11 +27,10 @@ module.exports = function Doc(state, ToC, categoryIndex, docIndex) {
     // and then check to make sure the doc actually has sections in the ToC tree
     // if so, execute getSections to assemble the doc section list HTML
     if (active &&
-        sections !== undefined &&
-        sections.length != 0) {
+        sections &&
+        sections.length !== 0) {
       return getSections(ToC, categoryIndex, docIndex)
-    }
-    else {
+    } else {
       return ''
     }
   }
