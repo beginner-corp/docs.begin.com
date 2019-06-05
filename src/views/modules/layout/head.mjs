@@ -3,7 +3,7 @@ export default function Head (props) {
   let title = props.title
     ? props.title + ' - Begin documentation'
     : 'Begin documentation'
-  let description = props.description || 'Begin ocumentation'
+  let description = props.description || 'Begin documentation'
 
   return `
 <head>
