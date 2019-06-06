@@ -1,11 +1,11 @@
 import { html } from '../vendor/preact.mjs'
 import joinClasses from '../util/join-classes.mjs'
-const defaultClass = 'fw-book fs1 c-p8'
+const defaultClass = 'fw-book fs4 c-p8'
 
 export default function HeadingLarge (props) {
   props = props || {}
   let mergedClass = joinClasses(defaultClass, props.class)
   return html`
-<h3 ...${props} class="${mergedClass}"></h3>
+<h1 ...${props} class="${mergedClass}"></h1>
   `
 }

@@ -12,7 +12,7 @@
 #doc h1 {
   @extend .lh3;
   @extend .mb0;
-  @extend .fw-medium;
+  @extend .fw-book;
 }
 
 #doc h2:first-of-type {
@@ -24,18 +24,18 @@
   @extend .mb-3;
   @extend .mt4;
   @extend .lh3;
-  @extend .fw-medium;
-  /*@extend .c-p5;*/
+  @extend .fw-book;
 }
 
 #doc h3 {
   @extend .mt3;
   @extend .mb-3;
-  /*@extend .fw-medium;*/
+  @extend .fw-book;
 }
 
 #doc p {
   @extend .mb-1;
+  @extend .fw-book;
 }
 
 #doc a {
@@ -234,7 +234,7 @@
 /*
 
 #doc img {
-  
+
 }
 
 

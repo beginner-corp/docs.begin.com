@@ -1,34 +1,33 @@
 import { html } from '../vendor/preact.mjs'
+import Heading from '../ui/heading-xl.mjs'
 import LayoutSidebar from '../layout/layout-sidebar.mjs'
-import Header from '../ui/header.mjs'
-import Heading from '../ui/heading-l.mjs'
 
 export default function Docs (props) {
   props = props || {}
+  let content = props.content || ''
+  let meta = props.meta || {}
+  let docTitle = meta.docTitle || ''
   let state = props.state || {}
   let toc = props.toc || {}
-  let content = props.content || ''
   let innerHTML = {
     __html: content
   }
   return html`
-<${LayoutSidebar} state="${state}" toc="${toc}">
+<${LayoutSidebar} meta="${meta}" state="${state}" toc="${toc}">
   <div class="d-flex fd-c h-100">
-    <${Header}
-      class='d-flex jc-b'
-    >
-      <${Heading}>
-        Documentation
-      <//>
-    <//>
     <div
       class="w-100 h-100 p0 p2-lg o-auto o-hidden-x"
     >
       <div
         id="doc"
         class="m-auto mw-content pb0"
-        dangerouslySetInnerHTML="${innerHTML}"
       >
+        <${Heading}
+          class="fs3 mb2 pt0-lg"
+        >
+          ${docTitle}
+        <//>
+        <div dangerouslySetInnerHTML="${innerHTML}"></div>
       </div>
     </div>
   </div>

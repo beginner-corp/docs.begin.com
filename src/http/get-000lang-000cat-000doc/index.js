@@ -1,6 +1,6 @@
 const imports = require('esm')(module)
 const arc = require('@architect/functions')
-const docParser = require('@architect/shared/contents')
+const docsParser = require('@architect/shared/docs-parser')
 const path = require('path')
 const forwards = require('./_forwards')
 const renderToString = require('preact-render-to-string')
@@ -23,7 +23,7 @@ function route (req, res) {
     })
   } else {
     try {
-      let props = docParser(state)
+      let props = docsParser(state)
       let meta = props.meta || {}
       let content = props.content
       let body = HTMLDocument({
@@ -32,9 +32,10 @@ function route (req, res) {
         children: renderToString(
           html`
           <${Docs}
+            meta="${meta}"
+            content="${content}"
             state="${props.state}"
             toc="${props.toc}"
-            content="${content}"
           ><//>
           `
         )
