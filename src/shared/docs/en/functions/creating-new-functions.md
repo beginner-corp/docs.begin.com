@@ -21,8 +21,7 @@ After clicking `Add new route`, the following things happen automatically:
 
 ## Using URL parameters to create dynamic paths
 
-It's possible to build dynamic paths using Express-style URL parameters, like: `GET /shop/:item`
-<!-- @todo - add link: learn more about routes with parameters in our project doc(s) -->
+It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `GET /shop/:item`
 
 URL parameters are passed to your route via the `req.params` object. ([Head here for more information about HTTP requests.](/en/functions/http/#requests))
 

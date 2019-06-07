@@ -5,7 +5,7 @@ Begin apps are composed of many (relatively) small, fast cloud functions – inc
 
 ## Getting started
 
-In a Begin app, each unique route is serviced by its own HTTP Function. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`) 
+In a Begin app, each unique route is serviced by its own HTTP Function. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`)
 
 By default, every Begin app starts with a single HTTP Function: `GET /`.
 
@@ -47,7 +47,7 @@ Begin's HTTP handler API follows a simple [request](#requests) / [response](#res
 
 ### Requests
 
-The async `handler` function invoked by a client request receives a `request` Object containing the following parameters:
+The async `handler` function invoked by a client request receives a `request` Object containing the following properties:
 
 - `body` - **Object**
   - Contains the complete request body, including an object containing any `application/x-www-form-urlencoded` form variables
