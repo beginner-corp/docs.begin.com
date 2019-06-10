@@ -1,9 +1,3 @@
-:root {
-  --header-height: 3.444rem;
-}
-.nowrap {
-  white-space: nowrap;
-}
 html,
 body {
   width: 100%;
@@ -15,13 +9,12 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+.nowrap {
+  white-space: nowrap;
+}
 .container {
   margin-top: 6.111rem;
   max-width: 30rem;
-}
-.header {
-  height: var(--header-height);
-  min-height: var(--header-height);
 }
 .icon-sm {
   width: 0.888rem;
@@ -30,11 +23,6 @@ body {
 }
 .divider {
   border-width: 0.5px;
-}
-.nav-link:active,
-.nav-link.active {
-  color: var(--p3);
-  border-radius: 4px;
 }
 .avatar {
   width: 1.333rem;
@@ -54,7 +42,7 @@ body {
 .main {
   background-image: none;
   transition: transform 0.15s ease-out;
-  min-width: 17.777rem;
+  min-width: 0;
 }
 .slide-menu {
   transform: translateX(100%);
@@ -69,7 +57,10 @@ body {
 .d-table {
   display: table;
 }
-.heading-sm {
+.mh-none {
+  max-height: 0;
+}
+.uppercase {
   text-transform: uppercase;
 }
 input::placeholder {
@@ -98,8 +89,7 @@ aside div#category {
     margin-right: 5%;
   }
   .sidebar {
-    min-width:12.222rem;
-    max-width:16.666rem
+    width:19.444rem
   }
   .main {
     position: static;

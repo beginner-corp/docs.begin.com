@@ -21,7 +21,7 @@ const defaultClass = `
   z0-lg
 `
 const defaultStyle = `
-top:3rem;
+top:2.8rem;
 right:0;
 left:0;
 border-bottom-right-radius:6px;

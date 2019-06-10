@@ -23,7 +23,7 @@ class PageHeader extends Component {
     let account = props.account || {}
     let active = props.active || ''
     return html`
-  <header class="p-relative d-flex ai-c jc-b p0 bg-p25">
+  <header class="p-relative d-flex ai-c jc-b p-1 bg-p25">
     <div class="d-flex ai-c w-100">
       <div
         class="d-none-lg mr-1"

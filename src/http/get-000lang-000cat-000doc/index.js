@@ -13,7 +13,7 @@ function route (req, res) {
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat
-  let state = {doc, cat, lang}
+  let docsProps = {doc, cat, lang}
   let _path = path.join('/', lang, cat, doc)
 
   // check to see if the requested document has been forwarded to a new path
@@ -23,9 +23,11 @@ function route (req, res) {
     })
   } else {
     try {
-      let props = docsParser(state)
+      let props = docsParser(docsProps)
       let meta = props.meta || {}
       let content = props.content
+      let state = props.state
+      let toc = props.toc
       let body = HTMLDocument({
         title: meta.docTitle,
         description: meta.description,
@@ -34,11 +36,20 @@ function route (req, res) {
           <${Docs}
             meta="${meta}"
             content="${content}"
-            state="${props.state}"
-            toc="${props.toc}"
+            state="${state}"
+            toc="${toc}"
           ><//>
           `
-        )
+        ),
+        scripts: [
+          '/modules/entry/docs.mjs'
+        ],
+        state: {
+          meta,
+          content,
+          state,
+          toc
+        }
       })
       res({
         html: body

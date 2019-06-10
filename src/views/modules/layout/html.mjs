@@ -9,8 +9,8 @@ export default function HTML (props) {
     Array.isArray(props.scripts) &&
     props.scripts.map(src => Script({src}))
   scripts = scripts || ''
-  let state = props.state &&
-      State(props.state)
+  let state = (props.state &&
+      State(props.state)) || ''
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,6 @@ ${Head()}
   <div id="begin-content" class="d-flex fd-c vh-100">
     ${props.children}
   </div>
-  <div id="begin-modals"></div>
   ${state}
   ${scripts}
 </body>
