@@ -14,6 +14,7 @@ export default function SidebarLayout (props) {
     p0
     bg-p1
     transition-transform
+    transition-none-lg
     o-auto
   `
   let mergedMainClass = joinClass(
@@ -23,7 +24,6 @@ export default function SidebarLayout (props) {
       : ''
   )
 
-  console.log('PROPS: ', props)
   return html`
 <div class="vh-100 d-flex fd-c o-hidden">
   <${PageHeader} ...${props}><//>
@@ -44,7 +44,7 @@ export default function SidebarLayout (props) {
     Documentation
   </h1>
   <hr class="d-none-lg b-b b-p18"/>
-  <div class="p-relative fg-1 d-flex-lg o-hidden">
+  <div class="p-relative p-sticky-lg top-0 fg-1 d-flex-lg o-hidden">
     <aside class="p-absolute p-static-lg trbl fg-0 o-auto">
       <${Sidebar} ...${props}><//>
     </aside>

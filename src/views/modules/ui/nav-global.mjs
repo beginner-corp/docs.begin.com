@@ -6,7 +6,8 @@ import UpgradeLink from './link-global-upgrade.mjs'
 const linkClass = 'mb-2 mb-none-lg mr1-lg'
 const defaultClass = `
   w-100
-  max-h-c-lg
+  max-h-infinity-lg
+  max-h-0
   p-absolute
   p-static-lg
   d-flex-lg
@@ -51,8 +52,8 @@ export default function GlobalNav (props) {
   let mergedClass = joinClass(
     defaultClass,
     props.disclosed
-      ? 'max-h-c'
-      : 'max-h-0'
+      ? 'max-h-infinity'
+      : ''
   )
 
   return html`

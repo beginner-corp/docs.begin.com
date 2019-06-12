@@ -1,21 +1,30 @@
 import { html } from '../vendor/preact.mjs'
 import SidebarLink from './link-sidebar.mjs'
-const linkClasses = 'nav-link c-p3 c-h0 c-a0 fw-book'
+import SidebarCategoryItem from './item-sidebar-category.mjs'
 
 export default function Sidebar (props) {
+  props = props || {}
+  let categories = getCategories(props)
+
+  return html`
+<ul class="pt2 pr5 pb2 pl5 o-auto">
+  ${categories}
+</ul>
+  `
+}
+
+function getCategories (props) {
   props = props || {}
   let active = props.active || {}
   let activeCategory = active.cat || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
-  let categories = toc.map(c => {
+  return toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
-    // let href = `/${lang}/${category}`
     let title = c.catTitle || ''
     let docs = c.docs
     let links = getLinks({category, docs, lang})
-
     let sections = links && links.length
       ? html`
     <ul>
@@ -25,27 +34,13 @@ export default function Sidebar (props) {
     : ''
 
     return html`
-<li
+<${SidebarCategoryItem}
   active="${active}"
-  class="${linkClasses}"
->
-  <h6
-    class="fs-1 fw-medium c-p8 uppercase"
-    onclick="${e => {
-      console.log('OPEN')
-    }}"
-  >
-    ${title}
-  </h6>
-  ${sections}
-</li>
-  `
+  sections="${sections}"
+  title="${title}"
+><//>
+    `
   })
-  return html`
-<ul class="pt2 pr5 pb2 pl5 o-auto">
-  ${categories}
-</ul>
-  `
 }
 
 function getLinks (props) {

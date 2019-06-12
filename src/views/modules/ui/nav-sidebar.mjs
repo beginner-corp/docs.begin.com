@@ -11,26 +11,9 @@ export default function SidebarNav (props) {
   let categories = toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
-    // let href = `/${lang}/${category}`
     let title = c.catTitle || ''
     let docs = c.docs
     let links = getLinks({category, docs, lang})
-
-    /*
-    let links = docs.map(d => {
-      let href = `/${lang}/${category}/${d.docID}`
-      return html`
-
-<li>
-  <${SidebarLink}
-    href="${href}"
-  >
-    ${d.docTitle}
-  <//>
-</li>
-    `
-    })
-    */
     let sections = links && links.length
       ? html`
     <ul>

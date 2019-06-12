@@ -1,5 +1,4 @@
 import { html } from '../vendor/preact.mjs'
-import Heading from '../ui/heading-xl.mjs'
 import LayoutSidebar from '../layout/layout-sidebar.mjs'
 
 export default function Docs (props) {
@@ -32,11 +31,9 @@ export default function Docs (props) {
       id="doc"
       class="fg-1 m-auto max-w-60 pb2"
     >
-      <${Heading}
-        class="fs3 mb2 pt0-lg"
-      >
+      <h1>
         ${docTitle}
-      <//>
+      </h1>
       <div dangerouslySetInnerHTML="${innerHTML}"></div>
     </div>
   </div>

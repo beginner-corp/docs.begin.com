@@ -15,6 +15,10 @@
   @extend .fw-book;
 }
 
+#doc h1:first-of-type {
+  @extend .fs3;
+}
+
 #doc h2:first-of-type {
   @extend .mt2;
 }
