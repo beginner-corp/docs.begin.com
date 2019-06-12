@@ -3,11 +3,11 @@ const read = fs.readFileSync
 const join = require('path').join
 const md = require('marked')
 
-module.exports = function contents (state) {
-  state = state || {}
-  let doc = state.doc
-  let cat = state.cat
-  let lang = state.lang
+module.exports = function contents (active) {
+  active = active || {}
+  let doc = active.doc
+  let cat = active.cat
+  let lang = active.lang
   let path = join(__dirname, '/docs/', lang, '/ToC.json')
   let toc = JSON.parse(read(path).toString())
   let meta = getDocMetadata(toc, lang, cat, doc)
@@ -22,7 +22,7 @@ module.exports = function contents (state) {
   return {
     content,
     meta,
-    state,
+    active,
     toc
   }
 }

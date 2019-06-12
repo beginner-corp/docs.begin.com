@@ -6,10 +6,11 @@ const forwards = require('./_forwards')
 const renderToString = require('preact-render-to-string')
 const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Docs = imports('@architect/views/modules/pages/docs.mjs').default
-const HTMLDocument = imports('@architect/views/modules/layout/html.mjs').default
+const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
 
 function route (req, res) {
   // if (process.env.NODE_ENV !== 'production') console.log(req)
+  let account = req.session.account
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat
@@ -26,7 +27,7 @@ function route (req, res) {
       let props = docsParser(docsProps)
       let meta = props.meta || {}
       let content = props.content
-      let state = props.state
+      let active = props.active
       let toc = props.toc
       let body = HTMLDocument({
         title: meta.docTitle,
@@ -34,9 +35,10 @@ function route (req, res) {
         children: renderToString(
           html`
           <${Docs}
-            meta="${meta}"
+            account="${account}"
+            active="${active}"
             content="${content}"
-            state="${state}"
+            meta="${meta}"
             toc="${toc}"
           ><//>
           `
@@ -45,9 +47,9 @@ function route (req, res) {
           '/modules/entry/docs.mjs'
         ],
         state: {
-          meta,
+          active,
           content,
-          state,
+          meta,
           toc
         }
       })

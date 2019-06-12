@@ -1,61 +1,59 @@
-import { Component, html } from '../vendor/preact.mjs'
+import { html } from '../vendor/preact.mjs'
 import joinClass from '../util/join-classes.mjs'
 import PageHeader from '../ui/header-page.mjs'
-import Header from '../ui/header.mjs'
 import Sidebar from '../ui/sidebar.mjs'
 
-class SidebarLayout extends Component {
-  constructor (props) {
-    super()
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      open: false
-    }
-  }
+export default function SidebarLayout (props) {
+  props = props || {}
+  let defaultMainClass = `
+    p-absolute
+    p-static-lg
+    trbl
+    min-w0
+    fg-1
+    p0
+    bg-p1
+    transition-transform
+    o-auto
+  `
+  let mergedMainClass = joinClass(
+    defaultMainClass,
+    props.open
+      ? 'slide-menu'
+      : ''
+  )
 
-  toggle (e) {
-    e && e.preventDefault()
-    console.log('YOLO')
-    this.setState({open: !this.state.open})
-  }
-
-  render (props, state) {
-    props = props || {}
-    let defaultMainClass = 'main fg-1 bg-p1'
-    let mergedMainClass = joinClass(
-      defaultMainClass,
-      state.open
-        ? 'slide-menu'
-        : ''
-    )
-
-    return html`
-<div class="d-flex fd-c vh-100">
-  <${PageHeader} ...${props} toggle="${this.toggle}"><//>
-  <div class="p-relative h-100 o-hidden">
-    <${Header}
-      class='d-flex jc-b mt1 mb1 mt5-lg mb3-lg'
+  console.log('PROPS: ', props)
+  return html`
+<div class="vh-100 d-flex fd-c o-hidden">
+  <${PageHeader} ...${props}><//>
+  <h1
+    class="
+      fs2
+      fs5-lg
+      fw-book
+      pt0
+      pt2-lg
+      pr0
+      pr5-lg
+      pb0
+      pl5-lg
+      pl0
+      c-p8
+    ">
+    Documentation
+  </h1>
+  <hr class="d-none-lg b-b b-p18"/>
+  <div class="p-relative fg-1 d-flex-lg o-hidden">
+    <aside class="p-absolute p-static-lg trbl fg-0 o-auto">
+      <${Sidebar} ...${props}><//>
+    </aside>
+    <section
+      class="${mergedMainClass}"
     >
-      <h1
-        class="fs2 fs5-lg fw-book c-p8"
-      >
-        Documentation
-      </h1>
-    <//>
-    <div class="d-flex-lg">
-      <aside class="sidebar p-absolute p-static-lg trbl fg-0">
-        <${Sidebar} ...${props}><//>
-      </aside>
-      <section
-        class="${mergedMainClass}"
-      >
-        ${props.children}
-      </section>
-    </div>
+      ${props.children}
+    </section>
   </div>
 </div>
       `
-  }
 }
-
-export default SidebarLayout

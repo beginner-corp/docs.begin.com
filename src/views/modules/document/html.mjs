@@ -15,9 +15,9 @@ export default function HTML (props) {
 <!DOCTYPE html>
 <html lang="en">
 ${Head()}
-<body style="opacity: 0;">
+<body class="o-hidden" style="opacity: 0;">
   ${Symbols}
-  <div id="begin-content" class="d-flex fd-c vh-100">
+  <div id="begin-content">
     ${props.children}
   </div>
   ${state}

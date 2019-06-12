@@ -4,10 +4,9 @@ const linkClasses = 'nav-link c-p3 c-h0 c-a0 fw-book'
 
 export default function SidebarNav (props) {
   props = props || {}
-  let state = props.state || {}
-  console.log('STATE: ', state)
-  let activeCategory = state.cat || ''
-  let lang = state.lang || 'en'
+  let active = props.active || {}
+  let activeCategory = active.cat || ''
+  let lang = active.lang || 'en'
   let toc = props.toc || {}
   let categories = toc.map(c => {
     let category = c.catID || ''
@@ -58,11 +57,9 @@ export default function SidebarNav (props) {
   `
   })
   return html`
-<div class="pt2 pr5 pb2 pl5">
-  <ul>
-    ${categories}
-  </ul>
-</div>
+<ul class="pt2 pr5 pb2 pl5 o-auto">
+  ${categories}
+</ul>
   `
 }
 

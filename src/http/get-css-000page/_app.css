@@ -9,6 +9,25 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+.trbl,
+.top-0 {
+  top: 0;
+}
+.trbl,
+.right-0 {
+  right: 0;
+}
+.trbl,
+.bottom-0 {
+  bottom: 0;
+}
+.trbl,
+.left-0 {
+  left: 0;
+}
+.p-sticky {
+  position: sticky;
+}
 .nowrap {
   white-space: nowrap;
 }
@@ -30,15 +49,6 @@ body {
   height: 1.333rem;
   min-height: 1.333rem;
 }
-.main,
-.layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
-}
 .main {
   background-image: none;
   transition: transform 0.15s ease-out;
@@ -46,6 +56,9 @@ body {
 }
 .slide-menu {
   transform: translateX(100%);
+}
+.menu-transition {
+  transition: max-height 0.25s cubic-bezier(0.79, 0.14, 0.15, 0.86);
 }
 .icon {
   width: 1rem;
@@ -57,7 +70,7 @@ body {
 .d-table {
   display: table;
 }
-.mh-none {
+.max-h-0 {
   max-height: 0;
 }
 .uppercase {
@@ -73,20 +86,31 @@ aside div#category:first-child {
 aside div#category {
   margin-top: 1.777rem;
 }
+.rotate180 {
+  transform: rotate(180deg);
+}
+.z-1 {
+  z-index: -1;
+}
+.z1 {
+  z-index: 1;
+}
+.max-h-c {
+  max-height: fit-content;
+}
+.max-w-60 {
+  max-width: 60rem;
+}
+.min-w0 {
+  min-width: 0;
+}
+.transition-transform {
+  transition: transform 0.15s ease-out
+}
 
 @media only screen and (min-width:48em) {
   .d-flex-lg {
     display: flex;
-  }
-  #menu-open {
-    display: none;
-  }
-  #menu-close {
-    display: none;
-  }
-  #doc {
-    margin-left: 5%;
-    margin-right: 5%;
   }
   .sidebar {
     width:19.444rem
@@ -100,5 +124,11 @@ aside div#category {
   }
   .fd-row-lg {
     flex-direction: row;
+  }
+  .z0-lg {
+    z-index: 0;
+  }
+  .max-h-c-lg {
+    max-height: fit-content;
   }
 }

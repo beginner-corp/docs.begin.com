@@ -7,28 +7,37 @@ export default function Docs (props) {
   let content = props.content || ''
   let meta = props.meta || {}
   let docTitle = meta.docTitle || ''
-  let state = props.state || {}
+  let active = props.active || {}
+  let open = props.open || false
   let toc = props.toc || {}
+  let toggle = props.toggle || function () {}
+  let disclose = props.disclose || function () {}
+  let disclosed = props.disclosed || false
   let innerHTML = {
     __html: content
   }
+
   return html`
-<${LayoutSidebar} meta="${meta}" state="${state}" toc="${toc}">
-  <div class="d-flex fd-c h-100">
+<${LayoutSidebar}
+  active="${active}"
+  disclose="${disclose}"
+  disclosed="${disclosed}"
+  meta="${meta}"
+  open="${open}"
+  toc="${toc}"
+  toggle="${toggle}"
+>
+  <div class="d-flex fd-c">
     <div
-      class="w-100 h-100 p0 p2-lg o-auto o-hidden-x"
+      id="doc"
+      class="fg-1 m-auto max-w-60 pb2"
     >
-      <div
-        id="doc"
-        class="m-auto mw-content pb0"
+      <${Heading}
+        class="fs3 mb2 pt0-lg"
       >
-        <${Heading}
-          class="fs3 mb2 pt0-lg"
-        >
-          ${docTitle}
-        <//>
-        <div dangerouslySetInnerHTML="${innerHTML}"></div>
-      </div>
+        ${docTitle}
+      <//>
+      <div dangerouslySetInnerHTML="${innerHTML}"></div>
     </div>
   </div>
 <//>
