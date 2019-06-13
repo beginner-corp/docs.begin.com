@@ -15,7 +15,7 @@ export default function Docs (props) {
   props = props || {}
 
   return html`
-<${Layout}>
+<${Layout} ...${props}>
   <ul
     class="
       max-w-60

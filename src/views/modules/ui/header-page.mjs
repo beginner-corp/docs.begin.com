@@ -8,7 +8,7 @@ export default function PageHeader (props) {
   props = props || {}
   let account = props.account || {}
   let active = props.active || ''
-  let toggle = props.toggle || function () {}
+  let toggle = props.toggle
   let disclose = props.disclose || function () {}
   let disclosed = props.disclosed
   let open = props.open
@@ -23,9 +23,14 @@ export default function PageHeader (props) {
       class="d-none-lg mr-1"
       style="margin-top:-0.111rem;"
     >
+    ${typeof toggle === 'undefined'
+      ? ''
+      : html`
       <${MenuButton}
         onclick="${toggle}"
       ><//>
+      `
+    }
     </div>
     <a class="mr4" href="/apps">
       <${Lockup}><//>

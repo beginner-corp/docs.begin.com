@@ -6,11 +6,18 @@ class LearnContainer extends Component {
   constructor (props) {
     super(props)
     this.update = this.update.bind(this)
+    this.disclose = this.disclose.bind(this)
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
-      account: Object.assign({}, props.account)
+      account: Object.assign({}, props.account),
+      disclosed: false
     }
+  }
+
+  disclose (e) {
+    e.preventDefault()
+    this.setState({disclosed: !this.state.disclosed})
   }
 
   componentDidMount () {
@@ -26,6 +33,8 @@ class LearnContainer extends Component {
     return html`
 <${Learn}
   ...${state}
+  disclose="${this.disclose}"
+  disclosed="${state.disclosed}"
 ><//>
     `
   }
