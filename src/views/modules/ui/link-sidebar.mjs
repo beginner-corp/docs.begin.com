@@ -1,6 +1,7 @@
 import { html } from '../vendor/preact.mjs'
 import joinClasses from '../util/join-classes.mjs'
-const defaultClass = 'd-block fw-book c-p20 c-h0 c-a6'
+import Icon from './icon.mjs'
+const defaultClass = 'd-block fw-book c-p20 c-h0 c-a4'
 
 export default function SidebarLink (props) {
   props = props || {}
@@ -18,11 +19,15 @@ export default function SidebarLink (props) {
 
   return html`
 <a ...${props} class="${mergedClass}" rel="${rel}">
-  <span class="d-block pt-4 pr0 pb-4 pl0">
+  <span class="d-inline-flex ai-c pt-4 pr0 pb-4 pl0">
     ${active
         ? html`
       <span style="margin-left:-5px;" class="mr-1">
-        →
+        <${Icon}
+          href="left-arrow"
+          class="f-p3"
+          style="width:0.6111rem;height:0.666rem;"
+        ><//>
       </span>
         `
       : ''

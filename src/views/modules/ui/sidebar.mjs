@@ -20,7 +20,6 @@ function getCategories (props) {
   let activeDoc = active.doc || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
-  console.log('ACTIVE: ', active)
   return toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
@@ -52,10 +51,7 @@ function getLinks (props) {
   let lang = props.lang || ''
   return docs.map(d => {
     let href = `/${lang}/${category}/${d.docID}`
-    let active = props.activeDoc === d.docTitle
-      .split(' ')
-      .join('-')
-      .toLowerCase()
+    let active = props.activeDoc === d.docID
     return html`
 <li>
   <${SidebarLink}
