@@ -8,6 +8,7 @@ const itemClass = `
   b
   b-p18
   ta-c
+  shadow-card
 `
 
 export default function Docs (props) {
@@ -17,26 +18,23 @@ export default function Docs (props) {
 <${Layout}>
   <ul
     class="
+      max-w-60
       m-auto
+      pt4-lg
+      pb1
       d-static
       d-grid-lg
-    "
-    style="
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 4.111rem;
-      grid-auto-rows: 22.222rem;
+      grid-learn
     "
   >
     <li
-      class="${itemClass}"
-      style="
-        grid-column: 1;
-        grid-row: 1;
-      "
+      class="${itemClass + ' grid-1-1'}"
     >
       <a
         class="
           d-block
+          w-100
+          h-100
           pt2
           pr0
           pb2
@@ -47,37 +45,38 @@ export default function Docs (props) {
         "
         href="/guides/quickstart"
       >
-        <img
-          alt="Quickstart"
-          class="d-block m-auto mb-2"
-          src="${staticAsset('quickstart.svg')}"
-          style="min-width:6.388rem;min-height:6.333rem;"
-          width="115"
-          height="114"
-        />
-        <h2
-          class="
-            fs2
-            fw-book
-          "
+        <div
+          class="m-auto item-learn-max-w-lg"
         >
-          Quickstart
-        </h2>
-        <p>
-          Here are some words that say things about quickstart.
-        </p>
+          <img
+            alt="Quickstart"
+            class="d-block m-auto mb-2"
+            src="${staticAsset('quickstart.svg')}"
+          />
+          <h2
+            class="
+              fs2
+              fw-book
+            "
+          >
+            Quickstart
+          </h2>
+          <p>
+            Here are some words that say things about quickstart.
+          </p>
+        </div>
       </a>
     </li>
     <li
-      class="${itemClass}"
+      class="${itemClass + ' grid-2-1'}"
       style="
-        grid-column: 2;
-        grid-row: 1;
       "
     >
       <a
         class="
           d-block
+          w-100
+          h-100
           pt2
           pr0
           pb2
@@ -88,66 +87,69 @@ export default function Docs (props) {
         "
         href="/guides"
       >
-        <img
-          alt="Guides"
-          class="d-block m-auto mb-2"
-          src="${staticAsset('guides.svg')}"
-          style="min-width:6.388rem;min-height:6.333rem;"
-          width="115"
-          height="114"
-        />
-        <h2
-          class="
-            fs2
-            fw-book
-          "
+        <div
+          class="m-auto item-learn-max-w-lg"
         >
-          Guides
-        </h2>
-        <p>
-          Here are some words that say things about guides.
-        </p>
+          <img
+            alt="Guides"
+            class="d-block m-auto mb-2"
+            src="${staticAsset('guides.svg')}"
+          />
+          <h2
+            class="
+              fs2
+              fw-book
+            "
+          >
+            Guides
+          </h2>
+          <p>
+            Here are some words that say things about guides.
+          </p>
+        </div>
       </a>
     </li>
     <li
-      class="${itemClass}"
-      style="
-        grid-column: 1 / 3;
-        grid-row: 2;
-      "
+      class="${itemClass + ' item-docs-h-lg grid-1_3-2'}"
     >
       <a
         class="
-          d-block
+          d-flex
+          fd-column
+          fd-row-lg
+          jc-s-lg
+          w-100
+          h-100
           pt2
           pr0
+          pr1-lg
           pb2
           pl0
+          pl1-lg
           fw-book
           c-p8
           cu-pointer
         "
         href="/en/getting-started/introduction"
       >
-        <img
-          alt="Documentation"
-          class="d-block m-auto mb-2"
-          src="${staticAsset('documentation.svg')}"
-          style="min-width:6.388rem;min-height:6.333rem;"
-          width="115"
-          height="114"
-        />
-        <h2
-          class="
-            fs2
-            fw-book
-          "
-        >
-          Documentation
-        </h2>
-        <p>
-          Here are some words that say things about documentation.
-        </p>
+          <img
+            alt="Documentation"
+            class="d-block m-auto mb-2 ml-none-lg mr1-lg"
+            src="${staticAsset('documentation.svg')}"
+          />
+          <div class="ta-l-lg mt0-lg">
+            <h2
+              class="
+                fs2
+                fw-book
+              "
+            >
+              Documentation
+            </h2>
+            <p>
+              Here are some words that say things about documentation.
+            </p>
+          </div>
       </a>
     </li>
   </ul>

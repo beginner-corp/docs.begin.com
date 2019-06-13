@@ -23,7 +23,7 @@ export default function Layout (props) {
     ">
     Learn more about Begin
   </h1>
-  <hr class="d-none-lg b-b b-p18"/>
+  <hr class="b-b b-p18"/>
   <section
     class="
       fg-1
