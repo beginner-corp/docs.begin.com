@@ -35,9 +35,9 @@ export default function SidebarLayout (props) {
       pt0
       pt2-lg
       pr0
-      pr5-lg
+      pr3-lg
       pb0
-      pl5-lg
+      pl3-lg
       pl0
       c-p8
     ">

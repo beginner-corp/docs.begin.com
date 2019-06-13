@@ -10,6 +10,8 @@ docs.begin.com
 
 @http
 get /
+get /guides
+get /guides/:guide
 get /css/:page
 get /modules/:type/:module
 get /robots.txt

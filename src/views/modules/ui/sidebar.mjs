@@ -7,7 +7,7 @@ export default function Sidebar (props) {
   let categories = getCategories(props)
 
   return html`
-<ul class="pt2 pr3 pb2 pl3 o-auto">
+<ul class="pt2 pr0 pr3-lg pb2 pl0 pl3-lg o-auto">
   ${categories}
 </ul>
   `

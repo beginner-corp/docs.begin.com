@@ -25,6 +25,9 @@ body {
 .left-0 {
   left: 0;
 }
+.d-grid {
+  display: grid;
+}
 .p-sticky {
   position: sticky;
 }
@@ -109,8 +112,8 @@ aside div#category {
   .d-flex-lg {
     display: flex;
   }
-  .sidebar {
-    width:19.444rem
+  .d-grid-lg {
+    display: grid;
   }
   .transition-none-lg {
     transition: none;
