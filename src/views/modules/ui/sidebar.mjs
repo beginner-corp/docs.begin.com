@@ -7,7 +7,7 @@ export default function Sidebar (props) {
   let categories = getCategories(props)
 
   return html`
-<ul class="pt2 pr5 pb2 pl5 o-auto">
+<ul class="pt2 pr3 pb2 pl3 o-auto">
   ${categories}
 </ul>
   `
@@ -28,7 +28,7 @@ function getCategories (props) {
     let links = getLinks({activeDoc, category, docs, lang})
     let sections = links && links.length
       ? html`
-    <ul>
+    <ul class="pt-4">
       ${links}
     </ul>
     `

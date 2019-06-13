@@ -19,7 +19,7 @@ export default function SidebarLink (props) {
 
   return html`
 <a ...${props} class="${mergedClass}" rel="${rel}">
-  <span class="d-inline-flex ai-c pt-4 pr0 pb-4 pl0">
+  <span class="d-inline-flex ai-c pt-3 pr0 pb-3 pl0">
     ${active
         ? html`
       <span style="margin-left:-5px;" class="mr-1">

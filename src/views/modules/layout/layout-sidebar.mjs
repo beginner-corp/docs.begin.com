@@ -30,7 +30,7 @@ export default function SidebarLayout (props) {
   <h1
     class="
       fs2
-      fs5-lg
+      fs4-lg
       fw-book
       pt0
       pt2-lg
@@ -45,7 +45,7 @@ export default function SidebarLayout (props) {
   </h1>
   <hr class="d-none-lg b-b b-p18"/>
   <div class="p-relative p-sticky-lg top-0 fg-1 d-flex-lg o-hidden">
-    <aside class="p-absolute p-static-lg trbl fg-0 o-auto">
+    <aside style="min-width:16.666rem;" class="p-absolute p-static-lg trbl fg-0 o-auto">
       <${Sidebar} ...${props}><//>
     </aside>
     <section

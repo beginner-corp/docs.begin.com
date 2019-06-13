@@ -3,6 +3,7 @@ import joinClass from '../util/join-classes.mjs'
 import Constants from '../resource/constants.mjs'
 import GlobalNavLink from './link-global-nav.mjs'
 import UpgradeLink from './link-global-upgrade.mjs'
+import LoginLink from './link-global-login.mjs'
 const linkClass = 'mb-2 mb-none-lg mr1-lg'
 const defaultClass = `
   w-100
@@ -39,15 +40,19 @@ function AccountLabel () {
 export default function GlobalNav (props) {
   props = props || {}
   let account = props.account || {}
+  let authed = typeof account.accountID !== 'undefined'
   let username = account.username
     ? '/' + account.username
     : '/username'
   let avatar = account.avatar
   let appsActive = props.active === 'apps'
   let plansActive = props.active === 'plans'
-  let upgrade = !account.paidAccount
+  let upgrade = authed && !account.paidAccount
     ? html`<${UpgradeLink} active="${plansActive}"><//>`
     : ''
+  let login = authed
+    ? ''
+    : html`<${LoginLink}><//>`
   let accountLabel = html`<${AccountLabel}><//>`
   let mergedClass = joinClass(
     defaultClass,
@@ -64,13 +69,16 @@ export default function GlobalNav (props) {
   <span
     class="d-flex-lg"
   >
-    <${GlobalNavLink}
+  ${authed
+    ? html`<${GlobalNavLink}
       href="/apps"
       class="${linkClass}"
       icon="apps"
       label="Apps"
       active="${appsActive}"
-    ><//>
+    ><//>`
+    : ''
+  }
     <${GlobalNavLink}
       href="${Constants.links.docs.site}"
       class="${linkClass}"
@@ -97,7 +105,9 @@ export default function GlobalNav (props) {
     class="mb0 mb-none-lg d-flex fd-c fd-r-lg"
   >
     ${upgrade}
-    <${GlobalNavLink}
+    ${login}
+    ${authed
+      ? html`<${GlobalNavLink}
       href="/account"
       class="mb-2 mb-none-lg"
       icon="settings"
@@ -123,7 +133,9 @@ export default function GlobalNav (props) {
       <span class="d-none-lg">
         Your profile
       </span>
-    </a>
+    </a>`
+      : ''
+    }
   </span>
 </nav>
   `
