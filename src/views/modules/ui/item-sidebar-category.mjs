@@ -36,7 +36,7 @@ class SidebarCategoryItem extends Component {
   class="${linkClasses}"
 >
   <h6
-    class="fs-1 fw-medium c-p8 uppercase nowrap"
+    class="fs-1 fw-medium c-p8 uppercase nowrap cu-pointer"
     onclick="${this.toggle}"
   >
     ${title}

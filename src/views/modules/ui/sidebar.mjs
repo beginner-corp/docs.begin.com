@@ -17,14 +17,16 @@ function getCategories (props) {
   props = props || {}
   let active = props.active || {}
   let activeCategory = active.cat || ''
+  let activeDoc = active.doc || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
+  console.log('ACTIVE: ', active)
   return toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
     let title = c.catTitle || ''
     let docs = c.docs
-    let links = getLinks({category, docs, lang})
+    let links = getLinks({activeDoc, category, docs, lang})
     let sections = links && links.length
       ? html`
     <ul>
@@ -50,10 +52,15 @@ function getLinks (props) {
   let lang = props.lang || ''
   return docs.map(d => {
     let href = `/${lang}/${category}/${d.docID}`
+    let active = props.activeDoc === d.docTitle
+      .split(' ')
+      .join('-')
+      .toLowerCase()
     return html`
 <li>
   <${SidebarLink}
     href="${href}"
+    active="${active}"
   >
     ${d.docTitle}
   <//>
