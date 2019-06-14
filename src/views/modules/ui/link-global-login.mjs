@@ -43,7 +43,7 @@ export default function GlobalLoginLink (props) {
     ? window.location.host
     : 'doc.begin.com'
   let isStaging = /staging|localhost/.test(host)
-  let href = `https://${isStaging ? 'staging.' : ''}begin.com/login?state=${location}`
+  let href = `https://${isStaging ? 'staging.' : ''}begin.com/login?state=docs:${location}`
   return html`
 <a
   href="${href}"
