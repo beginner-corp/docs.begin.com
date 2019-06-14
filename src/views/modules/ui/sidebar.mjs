@@ -1,6 +1,7 @@
 import { html } from '../vendor/preact.mjs'
 import SidebarLink from './link-sidebar.mjs'
 import SidebarCategoryItem from './item-sidebar-category.mjs'
+import SidebarDocItem from './item-sidebar-doc.mjs'
 
 export default function Sidebar (props) {
   props = props || {}
@@ -17,50 +18,54 @@ function getCategories (props) {
   props = props || {}
   let active = props.active || {}
   let activeCategory = active.cat || ''
-  let activeDoc = active.doc || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
-  return toc.map(c => {
+  // Don't show guides
+  let categories = toc.filter(c => c.catID !== 'guides')
+  return categories.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
     let title = c.catTitle || ''
     let docs = c.docs
-    let links = getLinks({activeDoc, category, docs, lang})
-    let sections = links && links.length
-      ? html`
-    <ul class="pt-4">
-      ${links}
-    </ul>
-    `
-    : ''
-
+    let documents = getDocs({active: props.active, category, docs, lang})
     return html`
 <${SidebarCategoryItem}
   active="${active}"
-  sections="${sections}"
+  documents="${documents}"
   title="${title}"
 ><//>
     `
   })
 }
 
-function getLinks (props) {
+function getDocs (props) {
   props = props || {}
   let category = props.category || ''
   let docs = props.docs || []
   let lang = props.lang || ''
   return docs.map(d => {
-    let href = `/${lang}/${category}/${d.docID}`
-    let active = props.activeDoc === d.docID
+    let doc = d.docID
+    let href = `/${lang}/${category}/${doc}`
+    let active = props.active.doc === doc
+    let sections = (d.sections || []).map(s => {
+      return html`
+        <li class="ml0">
+          <${SidebarLink}
+            href="${href}"
+          >
+            ${s}
+          <//>
+        </li>
+      `
+    })
+
     return html`
-<li>
-  <${SidebarLink}
-    href="${href}"
+<${SidebarDocItem}
     active="${active}"
-  >
-    ${d.docTitle}
-  <//>
-</li>
+    href="${href}"
+    sections="${sections}"
+    title="${d.docTitle}"
+><//>
   `
   })
 }
