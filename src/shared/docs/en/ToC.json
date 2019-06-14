@@ -14,21 +14,6 @@
         ]
       },
       {
-        "docID": "quickstart",
-        "docTitle": "Quickstart",
-        "description": "Get started building your first app with Begin",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
         "docID": "working-locally",
         "docTitle": "Working locally",
         "description": "Guide to working locally and writing tests with Begin",
@@ -279,6 +264,27 @@
         "hidden": true,
         "description": "Migrating early Architect 3.x-based alpha apps to Architect 4.x-based apps",
         "sections": []
+      }
+    ]
+  },
+  {
+    "catID": "guides",
+    "catTitle": "Guides",
+    "docs": [
+      {
+        "docID": "quickstart",
+        "docTitle": "Quickstart",
+        "description": "Get started building your first app with Begin",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
       }
     ]
   }
