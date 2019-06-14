@@ -1,6 +1,6 @@
 const localStatic = '/_static'
-const S3Staging = 'https://s3.us-west-1.amazonaws.com/begin-staging'
-const CFProduction = 'https://static.begin.com'
+const S3Staging = 'https://begin-docs-staging.s3.us-west-1.amazonaws.com'
+const CFProduction = 'https://static.docs.begin.com'
 
 export default function staticAsset (filename) {
   let inWindow = typeof window !== 'undefined'
