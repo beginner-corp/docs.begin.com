@@ -16,7 +16,7 @@ export default function staticAsset (filename) {
 function getOriginBrowser () {
   let host = window.location.host
   let local = /localhost/.test(host)
-  let staging = /staging.begin.com/.test(host)
+  let staging = /staging.docs.begin.com/.test(host)
   return local
     ? localStatic
     : staging
