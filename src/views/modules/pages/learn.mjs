@@ -11,7 +11,7 @@ const itemClass = `
   shadow-card
 `
 
-export default function Docs (props) {
+export default function Learn (props) {
   props = props || {}
 
   return html`

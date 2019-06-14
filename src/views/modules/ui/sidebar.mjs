@@ -47,16 +47,11 @@ function getDocs (props) {
     let doc = d.docID
     let href = `/${lang}/${category}/${doc}`
     let active = props.active.doc === doc
-    let sections = (d.sections || []).map(s => {
-      return html`
-        <li class="ml0">
-          <${SidebarLink}
-            href="${href}"
-          >
-            ${s}
-          <//>
-        </li>
-      `
+    let sections = getSections({
+      category,
+      doc,
+      lang,
+      sections: d.sections
     })
 
     return html`
@@ -67,5 +62,25 @@ function getDocs (props) {
     title="${d.docTitle}"
 ><//>
   `
+  })
+}
+
+function getSections (props) {
+  props = props || {}
+  let category = props.category || ''
+  let doc = props.doc || ''
+  let lang = props.lang || ''
+  let sections = props.sections || []
+  return sections.map(section => {
+    let href = `/${lang}/${category}/${doc}`
+    return html`
+<li class="ml0">
+  <${SidebarLink}
+    href="${href}"
+  >
+    ${section}
+  <//>
+</li>
+    `
   })
 }
