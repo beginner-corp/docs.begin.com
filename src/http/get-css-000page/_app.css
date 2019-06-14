@@ -113,7 +113,7 @@ aside div#category {
 }
 .shadow-card {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 100ms;
+  transition: box-shadow 0.5s;
 }
 .shadow-card:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);

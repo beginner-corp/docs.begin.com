@@ -26,12 +26,27 @@ c-a5
 bg-a7
 transition-all
 `
+let inWindow = typeof window !== 'undefined'
 export default function GlobalLoginLink (props) {
   props = props || {}
-  let mergedClass = joinClasses(defaultClass, props.class, props.active ? 'active' : '')
+  let mergedClass = joinClasses(
+    defaultClass,
+    props.class,
+    props.active
+      ? 'active'
+      : ''
+  )
+  let location = inWindow
+    ? window.location
+    : 'https://docs.begin.com'
+  let host = inWindow
+    ? window.location.host
+    : 'doc.begin.com'
+  let isStaging = /staging|localhost/.test(host)
+  let href = `https://${isStaging ? 'staging.' : ''}begin.com/login?state=${location}`
   return html`
 <a
-  href="/login"
+  href="${href}"
   class="${mergedClass}"
   style="max-width: 6rem;"
 >
