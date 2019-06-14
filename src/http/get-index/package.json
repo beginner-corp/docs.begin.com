@@ -2,7 +2,7 @@
   "name": "begin-docs-get-index",
   "dependencies": {
     "@architect/data": "latest",
-    "@architect/functions": "^1.13.7",
+    "@architect/functions": "latest",
     "esm": "^3.2.25",
     "preact-render-to-string": "^4.1.0"
   }
