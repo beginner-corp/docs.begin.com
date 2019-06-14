@@ -7,7 +7,6 @@ const HTMLDocument = imports('@architect/views/modules/document/html.mjs').defau
 
 function route (req, res) {
   let account = req.session.account || {}
-  if (process.env.NODE_ENV !== 'production') console.log(req)
   try {
     let body = HTMLDocument({
       title: 'Learn',

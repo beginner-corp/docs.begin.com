@@ -9,8 +9,15 @@ const Docs = imports('@architect/views/modules/pages/docs.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
 
 function route (req, res) {
-  // if (process.env.NODE_ENV !== 'production') console.log(req)
   let account = req.session.account
+  if (account) account = {
+    accountID: account.accountID,
+    name: account.name,
+    avatar: account.avatar,
+    login: account.login,
+    email: account.email,
+    username: account.username
+  }
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat
@@ -47,6 +54,7 @@ function route (req, res) {
           '/modules/entry/docs.mjs'
         ],
         state: {
+          account,
           active,
           content,
           meta,
