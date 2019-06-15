@@ -1,4 +1,5 @@
 import { html } from '../vendor/preact.mjs'
+import BeginURI from '../util/begin-uri.mjs'
 import joinClass from '../util/join-classes.mjs'
 import Constants from '../resource/constants.mjs'
 import GlobalNavLink from './link-global-nav.mjs'
@@ -42,8 +43,8 @@ export default function GlobalNav (props) {
   let account = props.account || {}
   let authed = typeof account.accountID !== 'undefined'
   let username = account.username
-    ? '/' + account.username
-    : '/username'
+    ? BeginURI(account.username)
+    : BeginURI('username')
   let avatar = account.avatar
   let appsActive = props.active === 'apps'
   let plansActive = props.active === 'plans'
@@ -71,7 +72,7 @@ export default function GlobalNav (props) {
   >
   ${authed
     ? html`<${GlobalNavLink}
-      href="/apps"
+      href="${BeginURI('apps')}"
       class="${linkClass}"
       icon="apps"
       label="Apps"
@@ -107,7 +108,7 @@ export default function GlobalNav (props) {
     ${login}
     ${authed
       ? html`<${GlobalNavLink}
-      href="/account"
+      href="${BeginURI('account')}"
       class="mb-2 mb-none-lg"
       icon="settings"
       label="${accountLabel}"

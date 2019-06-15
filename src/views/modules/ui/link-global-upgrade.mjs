@@ -1,4 +1,5 @@
 import { html } from '../vendor/preact.mjs'
+import BeginURI from '../util/begin-uri.mjs'
 import joinClasses from '../util/join-classes.mjs'
 const defaultClass = `
 pt-4
@@ -31,7 +32,7 @@ export default function GlobalUpgradeLink (props) {
   let mergedClass = joinClasses(defaultClass, props.class, props.active ? 'active' : '')
   return html`
 <a
-  href="/plans"
+  href="${BeginURI('plans')}"
   class="${mergedClass}"
   style="max-width: 6rem;"
 >
