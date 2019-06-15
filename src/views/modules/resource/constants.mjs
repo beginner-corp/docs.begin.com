@@ -24,12 +24,12 @@ export default {
       site: 'https://docs.begin.com'
     },
     community: 'https://spectrum.chat/begin',
-    help: 'https://begin-help.zendesk.com',
+    help: 'https://begin.com/support',
     issues: 'https://github.com/smallwins/begin-issues',
     policies: {
       codeOfConduct: 'https://github.com/smallwins/policy/blob/master/begin-community-code-of-conduct.md',
       privacy: 'https://github.com/smallwins/policy/blob/master/begin-privacy-policy.md'
     },
-    support: 'https://begin-help.zendesk.com'
+    support: 'https://begin.com/support'
   }
 }

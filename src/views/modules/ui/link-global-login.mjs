@@ -1,5 +1,4 @@
 import { html } from '../vendor/preact.mjs'
-import BeginDocsURI from '../util/begin-docs-uri.mjs'
 import BeginURI from '../util/begin-uri.mjs'
 import joinClasses from '../util/join-classes.mjs'
 const defaultClass = `
@@ -40,7 +39,7 @@ export default function GlobalLoginLink (props) {
   )
   let location = inWindow
     ? window.location
-    : BeginDocsURI()
+    : BeginURI('docs','')
   let href = BeginURI(`login?state=docs:${location}`)
   return html`
 <a

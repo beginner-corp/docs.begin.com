@@ -3,6 +3,7 @@ import Lockup from '../ui/logo-lockup.mjs'
 import GlobalNav from '../ui/nav-global.mjs'
 import MenuButton from '../ui/button-menu.mjs'
 import DisclosureLink from '../ui/link-disclose.mjs'
+import BeginURI from '../util/begin-uri.mjs'
 
 export default function PageHeader (props) {
   props = props || {}
@@ -32,7 +33,7 @@ export default function PageHeader (props) {
       `
     }
     </div>
-    <a class="mr4" href="/apps">
+    <a class="mr4" href="${BeginURI()}">
       <${Lockup}><//>
     </a>
    <${GlobalNav}
