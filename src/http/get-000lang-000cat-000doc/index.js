@@ -18,6 +18,7 @@ function route (req, res) {
     email: account.email,
     username: account.username
   }
+  else account = {}
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat

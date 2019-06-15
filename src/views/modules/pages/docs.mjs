@@ -3,6 +3,7 @@ import LayoutSidebar from '../layout/layout-sidebar.mjs'
 
 export default function Docs (props) {
   props = props || {}
+  let account = props.account || {}
   let content = props.content || ''
   let meta = props.meta || {}
   let docTitle = meta.docTitle || ''
@@ -18,6 +19,7 @@ export default function Docs (props) {
 
   return html`
 <${LayoutSidebar}
+  account="${account}"
   active="${active}"
   disclose="${disclose}"
   disclosed="${disclosed}"

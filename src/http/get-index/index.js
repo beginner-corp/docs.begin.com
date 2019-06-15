@@ -6,7 +6,16 @@ const Learn = imports('@architect/views/modules/pages/learn.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
 
 function route (req, res) {
-  let account = req.session.account || {}
+  let account = req.session.account
+  if (account) account = {
+    accountID: account.accountID,
+    name: account.name,
+    avatar: account.avatar,
+    login: account.login,
+    email: account.email,
+    username: account.username
+  }
+  else account = {}
   try {
     let body = HTMLDocument({
       title: 'Learn',
