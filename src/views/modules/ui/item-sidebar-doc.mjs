@@ -1,6 +1,6 @@
 import { Component, html } from '../vendor/preact.mjs'
 import joinClass from '../util/join-classes.mjs'
-import SidebarLink from './link-sidebar.mjs'
+import SidebarDocLink from './link-sidebar-doc.mjs'
 const linkClasses = 'c-p3 c-h0 c-a0 fw-book'
 
 class SidebarDocItem extends Component {
@@ -29,7 +29,7 @@ class SidebarDocItem extends Component {
   active="${active}"
   class="${linkClasses}"
 >
-  <${SidebarLink}
+  <${SidebarDocLink}
     href="${href}"
     active="${active}"
   >

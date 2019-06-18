@@ -1,7 +1,9 @@
 import { html } from '../vendor/preact.mjs'
-import SidebarLink from './link-sidebar.mjs'
+import getSlug from '../util/slug.mjs'
 import SidebarCategoryItem from './item-sidebar-category.mjs'
 import SidebarDocItem from './item-sidebar-doc.mjs'
+import SidebarSectionItem from './item-sidebar-section.mjs'
+// const inWindow = typeof window !== 'undefined'
 
 export default function Sidebar (props) {
   props = props || {}
@@ -72,15 +74,22 @@ function getSections (props) {
   let lang = props.lang || ''
   let sections = props.sections || []
   return sections.map(section => {
-    let href = `/${lang}/${category}/${doc}`
+    let slug = getSlug(section)
+    let href = `/${lang}/${category}/${doc}/${slug}`
+    // TODO: once router in place fix this
+    let active = false
+    /*
+    inWindow
+      ? slug === window.location.hash
+      : false
+    */
+
     return html`
-<li class="ml0">
-  <${SidebarLink}
+<${SidebarSectionItem}
+    active="${active}"
     href="${href}"
-  >
-    ${section}
-  <//>
-</li>
+    title="${section}"
+><//>
     `
   })
 }
