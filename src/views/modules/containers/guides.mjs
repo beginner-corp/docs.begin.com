@@ -1,14 +1,15 @@
 import { Component, html } from '../vendor/preact.mjs'
 import store from '../data/store.mjs'
-import Docs from '../pages/docs.mjs'
+import Guides from '../pages/guides.mjs'
 
-class DocsContainer extends Component {
+class GuidesContainer extends Component {
   constructor (props) {
     super(props)
+    let toc = (props.toc || []).concat()
+    let guides = toc.filter(category => category.catID === 'guides')
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
-    this.docsFilter = this.docsFilter.bind(this)
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
@@ -18,7 +19,7 @@ class DocsContainer extends Component {
       disclosed: false,
       meta: Object.assign({}, props.meta),
       open: false,
-      toc: (props.toc || []).concat()
+      guides
     }
   }
 
@@ -44,22 +45,16 @@ class DocsContainer extends Component {
     this.setState(state)
   }
 
-  docsFilter (category) {
-    return category
-      ? category.catID !== 'guides'
-      : false
-  }
-
   render (props, state) {
     return html`
-<${Docs}
+<${Guides}
   ...${state}
   disclose="${this.disclose}"
   toggle="${this.toggle}"
-  filter="${this.docsFilter}"
+  guides="${state.guides}"
 ><//>
     `
   }
 }
 
-export default DocsContainer
+export default GuidesContainer

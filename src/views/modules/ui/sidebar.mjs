@@ -22,8 +22,8 @@ function getCategories (props) {
   let activeCategory = active.cat || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
-  // Don't show guides
-  let categories = toc.filter(c => c.catID !== 'guides')
+  let filter = props.filter
+  let categories = toc.filter(filter)
   return categories.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category

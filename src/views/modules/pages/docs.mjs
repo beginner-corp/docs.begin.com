@@ -13,6 +13,7 @@ export default function Docs (props) {
   let toggle = props.toggle || function () {}
   let disclose = props.disclose || function () {}
   let disclosed = props.disclosed || false
+  let filter = props.filter || function () {}
   let innerHTML = {
     __html: content
   }
@@ -27,6 +28,7 @@ export default function Docs (props) {
   open="${open}"
   toc="${toc}"
   toggle="${toggle}"
+  filter="${filter}"
 >
   <div class="d-flex fd-c">
     <div

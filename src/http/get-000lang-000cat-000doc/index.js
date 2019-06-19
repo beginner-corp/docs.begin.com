@@ -10,15 +10,18 @@ const HTMLDocument = imports('@architect/views/modules/document/html.mjs').defau
 
 function route (req, res) {
   let account = req.session.account
-  if (account) account = {
-    accountID: account.accountID,
-    name: account.name,
-    avatar: account.avatar,
-    login: account.login,
-    email: account.email,
-    username: account.username
+  if (account) {
+    account = {
+      accountID: account.accountID,
+      name: account.name,
+      avatar: account.avatar,
+      login: account.login,
+      email: account.email,
+      username: account.username
+    }
+  } else {
+    account = {}
   }
-  else account = {}
   let lang = req.params.lang
   let doc = req.params.doc
   let cat = req.params.cat
