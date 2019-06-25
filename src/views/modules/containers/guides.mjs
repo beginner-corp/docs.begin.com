@@ -14,11 +14,9 @@ class GuidesContainer extends Component {
     // subsequent api responses replace the initial values from props
     this.state = {
       account: Object.assign({}, props.account),
-      active: Object.assign({}, props.active),
-      content: props.content,
       disclosed: false,
-      meta: Object.assign({}, props.meta),
       open: false,
+      lang: props.lang,
       guides
     }
   }

@@ -8,7 +8,8 @@ class DocsContainer extends Component {
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
-    this.docsFilter = this.docsFilter.bind(this)
+    let docs = (props.toc || []).concat()
+    let toc = docs.filter(category => category.catID !== 'guides')
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
@@ -18,7 +19,7 @@ class DocsContainer extends Component {
       disclosed: false,
       meta: Object.assign({}, props.meta),
       open: false,
-      toc: (props.toc || []).concat()
+      toc
     }
   }
 
@@ -56,7 +57,6 @@ class DocsContainer extends Component {
   ...${state}
   disclose="${this.disclose}"
   toggle="${this.toggle}"
-  filter="${this.docsFilter}"
 ><//>
     `
   }

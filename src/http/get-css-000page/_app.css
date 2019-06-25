@@ -124,7 +124,19 @@ aside div#category {
 .grid-learn {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem 4rem;
-  grid-auto-rows: 22.222rem 16.777rem;
+  grid-auto-rows: minmax(16.777rem, auto)
+}
+.grid-guides {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.333rem;
+  grid-auto-rows: minmax(11.777rem, auto);
+}
+
+.g-col-1 {
+  grid-template-columns: 1fr;
+}
+.g-gap1 {
+  grid-gap: 1.333rem;
 }
 .grid-1-1 {
   grid-column: 1;
@@ -138,7 +150,12 @@ aside div#category {
   grid-column: 1 / 3;
   grid-row: 2;
 }
-
+.grid-auto-rows-4 {
+  grid-auto-rows: minmax(4rem, auto);
+}
+.background-size-cover {
+  background-size:cover;
+}
 
 @media only screen and (min-width:48em) {
   .d-flex-lg {
@@ -146,6 +163,9 @@ aside div#category {
   }
   .d-grid-lg {
     display: grid;
+  }
+  .g-col-3-lg {
+    grid-template-columns: repeat(3, 1fr);
   }
   .transition-none-lg {
     transition: none;

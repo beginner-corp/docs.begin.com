@@ -32,6 +32,7 @@ function route (req, res) {
       children: renderToString(
         html`
         <${Guides}
+          lang="${lang}"
           account="${account}"
           toc="${toc}"
         ><//>
@@ -42,6 +43,7 @@ function route (req, res) {
       ],
       state: {
         account,
+        lang,
         toc
       }
     })

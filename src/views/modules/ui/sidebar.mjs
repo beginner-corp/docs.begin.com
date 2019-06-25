@@ -22,9 +22,7 @@ function getCategories (props) {
   let activeCategory = active.cat || ''
   let lang = active.lang || 'en'
   let toc = props.toc || {}
-  let filter = props.filter
-  let categories = toc.filter(filter)
-  return categories.map(c => {
+  return toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
     let title = c.catTitle || ''
