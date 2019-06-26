@@ -108,6 +108,23 @@ aside div#category {
 .transition-transform {
   transition: transform 0.15s ease-out
 }
+.transition-background-x {
+  transition: background-position-x 0.5s cubic-bezier(.16,.7,.19,1.04);
+}
+.transform-scale-hover:hover {
+  transform: scale(1.005);
+  transition: transform 0.5s cubic-bezier(.16,.7,.19,1.04);
+}
+.transform-scale-active:active {
+  transform: scale(1);
+  transition: transform 0.15s cubic-bezier(.16,.7,.19,1.04);
+}
+ .guide-link:hover > .h-gradient {
+  background-position-x: -5.5rem;
+}
+.guide-link:active > .h-gradient {
+  background-position-x: 0;
+}
 .z1 {
   z-index: 1;
 }
@@ -127,13 +144,14 @@ aside div#category {
   grid-auto-rows: minmax(16.777rem, auto)
 }
 .grid-guides {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.333rem;
+  grid-gap: 0.666rem 1.333rem;
   grid-auto-rows: minmax(11.777rem, auto);
 }
-
 .g-col-1 {
   grid-template-columns: 1fr;
+}
+.g-col-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 .g-gap1 {
   grid-gap: 1.333rem;
@@ -156,8 +174,11 @@ aside div#category {
 .background-size-cover {
   background-size:cover;
 }
+.guides-item-bg-h {
+  height: 7.777rem;
+}
 
-@media only screen and (min-width:48em) {
+@media only screen and (min-width:38em) {
   .d-flex-lg {
     display: flex;
   }
@@ -166,6 +187,9 @@ aside div#category {
   }
   .g-col-3-lg {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-4-lg {
+    grid-template-columns: repeat(4, 1fr);
   }
   .transition-none-lg {
     transition: none;

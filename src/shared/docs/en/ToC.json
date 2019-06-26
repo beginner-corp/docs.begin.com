@@ -374,5 +374,123 @@
         ]
       }
     ]
+  },
+  {
+    "catID": "static-guides",
+    "catTitle": "Static guides",
+    "docs": [
+      {
+        "docID": "ember",
+        "docTitle": "Ember starter app guide",
+        "description": "Learn how to use Ember to build a static web app",
+        "icon": "ember.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "gatsby",
+        "docTitle": "Gatsby starter app guide",
+        "description": "Learn how to use Gatsby to build a static web app",
+        "icon": "gatsby.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "ionic",
+        "docTitle": "Ionic starter app guide",
+        "description": "Learn how to use Ionic to build a static web app",
+        "icon": "ionic.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "preact",
+        "docTitle": "Preact starter app guide",
+        "description": "Learn how to use Preact to build a static web app",
+        "icon": "preact.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "react",
+        "docTitle": "React starter app guide",
+        "description": "Learn how to use React to build a static web app",
+        "icon": "react.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "svelte",
+        "docTitle": "Svelte starter app guide",
+        "description": "Learn how to use Svelte to build a static web app",
+        "icon": "svelte.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "vue",
+        "docTitle": "vue starter app guide",
+        "description": "Learn how to use Vue to build a static web app",
+        "icon": "vue.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      }
+    ]
   }
 ]

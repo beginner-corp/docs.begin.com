@@ -1,16 +1,36 @@
 import { html } from '../vendor/preact.mjs'
-import Layout from '../layout/layout.mjs'
 import staticAsset from '../util/static-asset.mjs'
+import Layout from '../layout/layout.mjs'
+import Link from '../ui/link.mjs'
 const itemClass = `
   mb0
   bg-p1
-  br1
   b
   b-p18
-  ta-c
+  br1
   shadow-card
   o-hidden
+  transform-scale-hover
+  transform-scale-active
+  transition-transform
 `
+const staticItemClass = `
+  mb0
+  pt0
+  pr1
+  pb0
+  pl1
+  bg-p1
+  b
+  b-p18
+  br1
+  shadow-card
+  o-hidden
+  transform-scale-hover
+  transform-scale-active
+  transition-transform
+`
+const maxWidth = 'max-width:48.666rem;'
 export default function Guides (props) {
   props = props || {}
   let lang = props.lang || 'en'
@@ -28,12 +48,11 @@ export default function Guides (props) {
             class="${itemClass}"
           >
             <a
-              class="h-100 d-flex fd-c ta-l fw-book"
+              class="guide-link h-100 d-flex fd-c fw-book"
               href="${href}"
             >
               <div
                 class="
-                  fg-1
                   d-flex
                   fd-c
                   jc-e
@@ -43,6 +62,10 @@ export default function Guides (props) {
                   fw-book
                   c-p1
                   background-size-cover
+                  transition-transform
+                  transition-background-x
+                  h-gradient
+                  guides-item-bg-h
                 "
                 style="${background}"
               >
@@ -67,10 +90,36 @@ export default function Guides (props) {
                   pl-1
                   c-p8
                 "
-                style="height:4rem;min-height:4rem;"
               >
                 ${d.description}
               </p>
+            </a>
+          </li>
+          `
+        })
+    })
+
+  let staticGuides = (props.staticGuides || [])
+    .map(g => {
+      let category = g.catID
+      return g.docs
+        .map(d => {
+          let doc = d.docID
+          let href = `/${lang}/${category}/${doc}`
+          let icon = staticAsset(d.icon)
+          return html`
+          <li
+            class="${staticItemClass}"
+          >
+            <a
+              class="h-100 d-flex jc-c ai-c fw-book"
+              href="${href}"
+            >
+              <img
+                class="mr-2"
+                src="${icon}"
+                style="width:4.944rem;height:1.888;"
+              />
             </a>
           </li>
           `
@@ -92,6 +141,10 @@ export default function Guides (props) {
       fw-book
     "
   >
+    <div
+      class="m-auto"
+      style="${maxWidth}"
+    >
       <h1
         class="
           mb-1
@@ -102,9 +155,10 @@ export default function Guides (props) {
       >
         Begin Guides
       </h1>
-    <p>
-      While happily ignoring when being called small kitty warm kitty little balls of fur. Cats woo check cat door for ambush 10 times before coming in but spend all night ensuring people don't sleep sleep all day
-    </p>
+      <p>
+        While happily ignoring when being called small kitty warm kitty little balls of fur. Cats woo check cat door for ambush 10 times before coming in but spend all night ensuring people don't sleep sleep all day
+      </p>
+    </div>
   </div>
   <hr class="b-b b-p18"/>
   <section
@@ -122,31 +176,54 @@ export default function Guides (props) {
       o-auto
     "
   >
-    <ul
-      class="
-        d-grid
-        grid-guides
-      "
+    <div
+      class="m-auto mb5"
+      style="${maxWidth}"
     >
-      ${guides}
-    </ul>
+      <ul
+        class="
+          d-grid
+          g-col-1
+          g-col-3-lg
+          grid-guides
+          mb2
+        "
+      >
+        ${guides}
+      </ul>
 
-    <h3>
-      Framework specific static website guides
-    </h3>
+      <h3 class="mb0 fs1 fw-book">
+        Static website guides
+      </h3>
 
-    <ul
-      class="
-        d-grid
-        g-col-1
-        g-col-3-lg
-        g-auto-rows-4
-        g-gap1
-        m-auto
-        mb5
-      "
-    >
-    </ul>
+      <ul
+        class="
+          d-grid-lg
+          g-col-1
+          g-col-4-lg
+          g-auto-rows-4
+          g-gap1
+          m-auto
+          mb3
+        "
+      >
+        ${staticGuides}
+      </ul>
+
+      <div class="d-flex fw-w ai-c">
+        <h3 class="mr-2 nowrap fs1 fw-book c-p8">
+          Want to learn more?
+        </h3>
+        <${Link}
+          class="nowrap fs1"
+          href="${lang + '/getting-started/introduction'}"
+        >
+          Check out our documentation →
+        <//>
+      </div>
+
+    </div>
+
   </section>
 <//>
   `

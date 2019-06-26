@@ -7,6 +7,7 @@ class GuidesContainer extends Component {
     super(props)
     let toc = (props.toc || []).concat()
     let guides = toc.filter(category => category.catID === 'guides')
+    let staticGuides = toc.filter(category => category.catID === 'static-guides')
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
@@ -17,7 +18,8 @@ class GuidesContainer extends Component {
       disclosed: false,
       open: false,
       lang: props.lang,
-      guides
+      guides,
+      staticGuides
     }
   }
 
@@ -49,7 +51,6 @@ class GuidesContainer extends Component {
   ...${state}
   disclose="${this.disclose}"
   toggle="${this.toggle}"
-  guides="${state.guides}"
 ><//>
     `
   }
