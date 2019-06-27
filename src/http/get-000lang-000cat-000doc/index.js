@@ -6,6 +6,7 @@ const forwards = require('./_forwards')
 const renderToString = require('preact-render-to-string')
 const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Docs = imports('@architect/views/modules/pages/docs.mjs').default
+const Guide = imports('@architect/views/modules/pages/guide.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
 
 function route (req, res) {
@@ -22,11 +23,15 @@ function route (req, res) {
   } else {
     account = {}
   }
-  let lang = req.params.lang
-  let doc = req.params.doc
-  let cat = req.params.cat
+  let lang = req.params.lang || ''
+  let doc = req.params.doc || ''
+  let cat = req.params.cat || ''
   let docsProps = {doc, cat, lang}
   let _path = path.join('/', lang, cat, doc)
+  let isGuide = cat === 'guides' || cat === 'static-guides'
+  let entry = isGuide
+    ? '/modules/entry/guide.mjs'
+    : '/modules/entry/docs.mjs'
 
   // check to see if the requested document has been forwarded to a new path
   if (forwards[_path]) {
@@ -40,12 +45,15 @@ function route (req, res) {
       let content = props.content
       let active = props.active
       let toc = props.toc
+      let Page = isGuide
+        ? Guide
+        : Docs
       let body = HTMLDocument({
         title: meta.docTitle,
         description: meta.description,
         children: renderToString(
           html`
-          <${Docs}
+          <${Page}
             account="${account}"
             active="${active}"
             content="${content}"
@@ -55,7 +63,7 @@ function route (req, res) {
           `
         ),
         scripts: [
-          '/modules/entry/docs.mjs'
+          entry
         ],
         state: {
           account,

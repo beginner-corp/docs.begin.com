@@ -8,7 +8,9 @@ module.exports = function contents (active) {
   let doc = active.doc
   let cat = active.cat
   let lang = active.lang
-  let path = join(__dirname, '/docs/', lang, '/ToC.json')
+  let path = (doc && cat && lang)
+    ? join(__dirname, '/docs/', lang, '/ToC.json')
+    : ''
   let toc = JSON.parse(read(path).toString())
   let meta = getDocMetadata(toc, lang, cat, doc)
   // Defines the file needed to render a doc

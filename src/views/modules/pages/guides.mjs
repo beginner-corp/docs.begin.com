@@ -30,7 +30,6 @@ const staticItemClass = `
   transform-scale-active
   transition-transform
 `
-const maxWidth = 'max-width:48.666rem;'
 export default function Guides (props) {
   props = props || {}
   let lang = props.lang || 'en'
@@ -142,8 +141,7 @@ export default function Guides (props) {
     "
   >
     <div
-      class="m-auto"
-      style="${maxWidth}"
+      class="max-w-48 m-auto"
     >
       <h1
         class="
@@ -177,8 +175,7 @@ export default function Guides (props) {
     "
   >
     <div
-      class="m-auto mb5"
-      style="${maxWidth}"
+      class="max-w-48 m-auto mb5"
     >
       <ul
         class="

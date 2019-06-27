@@ -3,7 +3,6 @@ import getSlug from '../util/slug.mjs'
 import SidebarCategoryItem from './item-sidebar-category.mjs'
 import SidebarDocItem from './item-sidebar-doc.mjs'
 import SidebarSectionItem from './item-sidebar-section.mjs'
-// const inWindow = typeof window !== 'undefined'
 
 export default function Sidebar (props) {
   props = props || {}
@@ -76,11 +75,6 @@ function getSections (props) {
     let href = `/${lang}/${category}/${doc}/${slug}`
     // TODO: once router in place fix this
     let active = false
-    /*
-    inWindow
-      ? slug === window.location.hash
-      : false
-    */
 
     return html`
 <${SidebarSectionItem}

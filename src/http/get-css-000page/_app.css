@@ -99,6 +99,9 @@ aside div#category {
 .rotate180 {
   transform: rotate(180deg);
 }
+.max-w-48 {
+  max-width: 48.666rem;
+}
 .max-w-60 {
   max-width: 60rem;
 }
