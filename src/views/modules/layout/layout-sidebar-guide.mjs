@@ -2,7 +2,7 @@ import { html } from '../vendor/preact.mjs'
 import joinClass from '../util/join-classes.mjs'
 import staticAsset from '../util/static-asset.mjs'
 import PageHeader from '../ui/header-page.mjs'
-import Sidebar from '../ui/sidebar.mjs'
+import Sidebar from '../ui/sidebar-guide.mjs'
 
 export default function GuideSidebarLayout (props) {
   props = props || {}
@@ -12,6 +12,7 @@ export default function GuideSidebarLayout (props) {
     trbl
     min-w0
     fg-1
+    mt2-lg
     p0
     bg-p1
     transition-transform
@@ -25,7 +26,9 @@ export default function GuideSidebarLayout (props) {
       : ''
   )
   let title = props.title || ''
-  let background = `background-image:url(${staticAsset(props.background)});`
+  let background = `
+    background-image:url(${staticAsset(props.background)});
+  `
   let icon = staticAsset(props.icon)
 
   return html`
@@ -33,13 +36,17 @@ export default function GuideSidebarLayout (props) {
   <${PageHeader} ...${props}><//>
   <div
     class="
+      header-guide-min-height-lg
       d-flex
       fd-c
       jc-e
-      pb0
+      p0
+      pr4-lg
+      pl4-lg
       fw-book
       c-p1
       background-size-cover
+      background-repeat-none
     "
     style="${background}"
   >
@@ -56,13 +63,6 @@ export default function GuideSidebarLayout (props) {
           fs2
           fs4-lg
           fw-book
-          pt0
-          pt2-lg
-          pr0
-          pr3-lg
-          pb0
-          pl3-lg
-          pl0
         "
       >
         ${title}

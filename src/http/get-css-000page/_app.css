@@ -122,12 +122,6 @@ aside div#category {
   transform: scale(1);
   transition: transform 0.15s cubic-bezier(.16,.7,.19,1.04);
 }
- .guide-link:hover > .h-gradient {
-  background-position-x: -5.5rem;
-}
-.guide-link:active > .h-gradient {
-  background-position-x: 0;
-}
 .z1 {
   z-index: 1;
 }
@@ -177,11 +171,17 @@ aside div#category {
 .background-size-cover {
   background-size:cover;
 }
+.background-repeat-none {
+  background-repeat:none;
+}
 .guides-item-bg-h {
   height: 7.777rem;
 }
 
-@media only screen and (min-width:38em) {
+@media only screen and (min-width:48em) {
+  .header-guide-min-height-lg {
+    min-height: 12rem;
+  }
   .d-flex-lg {
     display: flex;
   }
@@ -218,5 +218,11 @@ aside div#category {
   }
   .item-learn-max-w-lg {
     max-width: 16.388rem;
-    }
+  }
+   .guide-link:hover > .h-gradient {
+    background-position-x: -5.5rem;
+  }
+  .guide-link:active > .h-gradient {
+    background-position-x: 0;
+  }
 }

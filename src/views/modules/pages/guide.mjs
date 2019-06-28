@@ -9,7 +9,7 @@ export default function Guide (props) {
   let background = props.background || ''
   let icon = props.icon || ''
   let meta = props.meta || {}
-  let docTitle = meta.docTitle || ''
+  let title = props.title || ''
   let open = props.open || false
   let toc = props.toc || {}
   let toggle = props.toggle || function () {}
@@ -29,17 +29,15 @@ export default function Guide (props) {
   icon="${icon}"
   meta="${meta}"
   open="${open}"
+  title="${title}"
   toc="${toc}"
   toggle="${toggle}"
 >
   <div class="d-flex fd-c">
     <div
       id="doc"
-      class="fg-1 m-auto max-w-60 pb2"
+      class="fg-1 m-auto-lg max-w-60 pb2"
     >
-      <h1>
-        ${docTitle}
-      </h1>
       <div dangerouslySetInnerHTML="${innerHTML}"></div>
     </div>
   </div>

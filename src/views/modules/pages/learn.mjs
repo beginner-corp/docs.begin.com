@@ -38,9 +38,8 @@ export default function Learn (props) {
   <section
     class="
       fg-1
-      pr0
+      p0
       pr4-lg
-      pl0
       pl4-lg
       bg-p14
       o-auto

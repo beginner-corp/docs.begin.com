@@ -8,12 +8,11 @@ class GuideContainer extends Component {
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
-    let docs = (props.toc || []).concat()
-    let toc = docs.filter(category => category.catID !== 'guides' &&
-      category.catID !== 'static-guides')
     let meta = Object.assign({}, props.meta)
     let background = meta.background || ''
     let icon = meta.icon || ''
+    let title = meta.docTitle || ''
+    let toc = meta.sections || []
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
@@ -23,8 +22,8 @@ class GuideContainer extends Component {
       background,
       disclosed: false,
       icon,
-      meta,
       open: false,
+      title,
       toc
     }
   }
@@ -43,7 +42,7 @@ class GuideContainer extends Component {
   }
 
   componentDidMount () {
-    store.subscribe(this.update)
+    // store.subscribe(this.update)
     this.setState(store(window.__STATE__))
   }
 

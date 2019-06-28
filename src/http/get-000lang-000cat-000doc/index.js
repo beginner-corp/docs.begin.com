@@ -44,7 +44,9 @@ function route (req, res) {
       let meta = props.meta || {}
       let content = props.content
       let active = props.active
-      let toc = props.toc
+      let toc = isGuide
+        ? meta.sections
+        : props.toc
       let Page = isGuide
         ? Guide
         : Docs

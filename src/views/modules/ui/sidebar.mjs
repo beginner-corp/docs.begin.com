@@ -1,32 +1,62 @@
-import { html } from '../vendor/preact.mjs'
+import { Component, html } from '../vendor/preact.mjs'
 import getSlug from '../util/slug.mjs'
 import SidebarCategoryItem from './item-sidebar-category.mjs'
 import SidebarDocItem from './item-sidebar-doc.mjs'
 import SidebarSectionItem from './item-sidebar-section.mjs'
+const inWindow = typeof window !== 'undefined'
 
-export default function Sidebar (props) {
-  props = props || {}
-  let categories = getCategories(props)
+class Sidebar extends Component {
+  constructor (props) {
+    super(props)
+    this.hashChange = this.hashChange.bind(this)
+    this.state = {
+      active: ''
+    }
+  }
 
-  return html`
+  componentDidMount () {
+    if (inWindow) {
+      window.onhashchange = this.hashChange
+      this.setState({
+        active: window.history.state
+      })
+    }
+  }
+
+  hashChange (e) {
+    this.setState({
+      active: window.history.state
+    })
+  }
+
+  render (props, state) {
+    let categories = getCategories(props, state)
+
+    return html`
 <ul class="pt2 pr0 pr3-lg pb2 pl0 pl3-lg o-auto">
   ${categories}
 </ul>
-  `
+    `
+  }
 }
 
-function getCategories (props) {
+function getCategories (props, state) {
   props = props || {}
   let active = props.active || {}
   let activeCategory = active.cat || ''
   let lang = active.lang || 'en'
-  let toc = props.toc || {}
+  let toc = props.toc || []
   return toc.map(c => {
     let category = c.catID || ''
     let active = activeCategory === category
     let title = c.catTitle || ''
     let docs = c.docs
-    let documents = getDocs({active: props.active, category, docs, lang})
+    let documents = getDocs({
+      active: props.active,
+      category,
+      docs,
+      lang
+    }, state)
     return html`
 <${SidebarCategoryItem}
   active="${active}"
@@ -37,7 +67,7 @@ function getCategories (props) {
   })
 }
 
-function getDocs (props) {
+function getDocs (props, state) {
   props = props || {}
   let category = props.category || ''
   let docs = props.docs || []
@@ -51,7 +81,7 @@ function getDocs (props) {
       doc,
       lang,
       sections: d.sections
-    })
+    }, state)
 
     return html`
 <${SidebarDocItem}
@@ -64,7 +94,7 @@ function getDocs (props) {
   })
 }
 
-function getSections (props) {
+function getSections (props, state) {
   props = props || {}
   let category = props.category || ''
   let doc = props.doc || ''
@@ -73,8 +103,9 @@ function getSections (props) {
   return sections.map(section => {
     let slug = getSlug(section)
     let href = `/${lang}/${category}/${doc}/${slug}`
-    // TODO: once router in place fix this
-    let active = false
+    let active = inWindow
+      ? (href === state.active) || (slug === window.location.hash)
+      : false
 
     return html`
 <${SidebarSectionItem}
@@ -85,3 +116,5 @@ function getSections (props) {
     `
   })
 }
+
+export default Sidebar
