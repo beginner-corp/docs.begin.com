@@ -6,7 +6,7 @@ class MenuButton extends Component {
     super()
     this.click = this.click.bind(this)
     this.state = {
-      open: false
+      open: props.open
     }
   }
 

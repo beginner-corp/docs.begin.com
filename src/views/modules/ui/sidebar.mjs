@@ -24,6 +24,9 @@ class Sidebar extends Component {
   }
 
   hashChange (e) {
+    if (this.props.open) {
+      this.props.toggle && this.props.toggle()
+    }
     this.setState({
       active: window.history.state
     })

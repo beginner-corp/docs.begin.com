@@ -13,9 +13,11 @@ class SidebarCategoryItem extends Component {
 
   toggle (e) {
     e.preventDefault()
-    this.setState({
-      open: !this.state.open
-    })
+    if (!this.props.active) {
+      this.setState({
+        open: !this.state.open
+      })
+    }
   }
 
   render (props, state) {

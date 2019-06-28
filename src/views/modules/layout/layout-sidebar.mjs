@@ -11,6 +11,7 @@ export default function SidebarLayout (props) {
     trbl
     min-w0
     fg-1
+    mt0-lg
     p0
     bg-p1
     transition-transform

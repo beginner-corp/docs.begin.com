@@ -30,7 +30,7 @@ class DocsContainer extends Component {
   }
 
   toggle (e) {
-    e.preventDefault()
+    e && e.preventDefault()
     this.setState({
       open: !this.state.open,
       disclosed: false

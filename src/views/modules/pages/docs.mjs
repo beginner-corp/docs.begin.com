@@ -31,7 +31,7 @@ export default function Docs (props) {
   <div class="d-flex fd-c">
     <div
       id="doc"
-      class="fg-1 m-auto max-w-60 pb2"
+      class="fg-1 m-auto-lg max-w-60 pb2"
     >
       <h1>
         ${docTitle}

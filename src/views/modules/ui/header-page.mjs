@@ -24,13 +24,14 @@ export default function PageHeader (props) {
       class="d-none-lg mr-1"
       style="margin-top:-0.111rem;"
     >
-    ${typeof toggle === 'undefined'
-      ? ''
-      : html`
+    ${toggle
+      ? html`
       <${MenuButton}
         onclick="${toggle}"
+        open="${open}"
       ><//>
       `
+      : ''
     }
     </div>
     <a class="mr4" href="${BeginURI()}">
