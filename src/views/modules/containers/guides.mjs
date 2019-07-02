@@ -9,7 +9,6 @@ class GuidesContainer extends Component {
     let guides = toc.filter(category => category.catID === 'guides')
     let staticGuides = toc.filter(category => category.catID === 'static-guides')
     this.update = this.update.bind(this)
-    this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
@@ -28,14 +27,6 @@ class GuidesContainer extends Component {
     this.setState({disclosed: !this.state.disclosed})
   }
 
-  toggle (e) {
-    e.preventDefault()
-    this.setState({
-      open: !this.state.open,
-      disclosed: false
-    })
-  }
-
   componentDidMount () {
     store.subscribe(this.update)
     this.setState(store(window.__STATE__))
@@ -50,7 +41,6 @@ class GuidesContainer extends Component {
 <${Guides}
   ...${state}
   disclose="${this.disclose}"
-  toggle="${this.toggle}"
 ><//>
     `
   }

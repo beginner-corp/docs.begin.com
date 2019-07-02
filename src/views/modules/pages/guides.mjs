@@ -16,10 +16,6 @@ const itemClass = `
 `
 const staticItemClass = `
   mb0
-  pt0
-  pr1
-  pb0
-  pl1
   bg-p1
   b
   b-p18
@@ -111,7 +107,17 @@ export default function Guides (props) {
             class="${staticItemClass}"
           >
             <a
-              class="h-100 d-flex jc-c ai-c fw-book"
+              class="
+                h-100
+                d-flex
+                jc-c
+                ai-c
+                pt0
+                pr1
+                pb0
+                pl1
+                fw-book
+              "
               href="${href}"
             >
               <img
@@ -127,6 +133,7 @@ export default function Guides (props) {
 
   return html`
 <${Layout} ...${props}>
+  <div class="fg-1 o-auto">
   <div class="
       pt0
       pt5-lg
@@ -173,55 +180,56 @@ export default function Guides (props) {
       bg-p14
       o-auto
     "
-  >
-    <div
-      class="max-w-48 m-auto mb5"
     >
-      <ul
-        class="
-          d-grid
-          g-col-1
-          g-col-3-lg
-          grid-guides
-          mb2
-        "
+      <div
+        class="max-w-48 m-auto mb5"
       >
-        ${guides}
-      </ul>
-
-      <h3 class="mb0 fs1 fw-book">
-        Static website guides
-      </h3>
-
-      <ul
-        class="
-          d-grid-lg
-          g-col-1
-          g-col-4-lg
-          g-auto-rows-4
-          g-gap1
-          m-auto
-          mb3
-        "
-      >
-        ${staticGuides}
-      </ul>
-
-      <div class="d-flex fw-w ai-c">
-        <h3 class="mr-2 nowrap fs1 fw-book c-p8">
-          Want to learn more?
-        </h3>
-        <${Link}
-          class="nowrap fs1"
-          href="${lang + '/getting-started/introduction'}"
+        <ul
+          class="
+            d-grid
+            g-col-1
+            g-col-3-lg
+            grid-guides
+            mb2
+          "
         >
-          Check out our documentation →
-        <//>
+          ${guides}
+        </ul>
+
+        <h3 class="mb0 fs1 fw-book">
+          Static website guides
+        </h3>
+
+        <ul
+          class="
+            d-grid-lg
+            g-col-1
+            g-col-4-lg
+            g-auto-rows-4
+            g-gap1
+            m-auto
+            mb3
+          "
+        >
+          ${staticGuides}
+        </ul>
+
+        <div class="d-flex fw-w ai-c">
+          <h3 class="mr-2 nowrap fs1 fw-book c-p8">
+            Want to learn more?
+          </h3>
+          <${Link}
+            class="nowrap fs1"
+            href="${lang + '/getting-started/introduction'}"
+          >
+            Check out our documentation →
+          <//>
+        </div>
+
       </div>
 
-    </div>
-
-  </section>
+    </section>
+  </div>
 <//>
   `
 }
