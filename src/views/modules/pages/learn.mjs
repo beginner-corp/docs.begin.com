@@ -18,7 +18,7 @@ export default function Learn (props) {
 
   return html`
 <${Layout} ...${props}>
-  <div class="fg-1 o-auto">
+  <div class="h-100 d-flex fd-c o-auto">
     <h1
       class="
         fs2
