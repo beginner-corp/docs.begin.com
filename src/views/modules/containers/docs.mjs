@@ -7,6 +7,7 @@ class DocsContainer extends Component {
     super(props)
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
+    this.scroll = this.scroll.bind(this)
     this.disclose = this.disclose.bind(this)
     let toc = (props.toc || []).concat()
     // We only use props as initial values ( from hydration )
@@ -18,6 +19,7 @@ class DocsContainer extends Component {
       disclosed: false,
       meta: Object.assign({}, props.meta),
       open: false,
+      overflow: false,
       toc
     }
   }
@@ -25,6 +27,20 @@ class DocsContainer extends Component {
   disclose (e) {
     e.preventDefault()
     this.setState({disclosed: !this.state.disclosed})
+  }
+
+  scroll (e) {
+    let scrollTop = e.target.scrollTop
+    // Header height is 126
+    if (scrollTop >= 126) {
+      this.setState({
+        overflow: true
+      })
+    } else {
+      this.setState({
+        overflow: false
+      })
+    }
   }
 
   toggle (e) {
@@ -56,6 +72,7 @@ class DocsContainer extends Component {
   ...${state}
   disclose="${this.disclose}"
   toggle="${this.toggle}"
+  scroll="${this.scroll}"
 ><//>
     `
   }

@@ -19,6 +19,10 @@ export default function GuideSidebarLayout (props) {
     transition-transform
     transition-none-lg
     o-auto
+    ${props.overflow
+      ? 'o-auto-lg'
+      : 'o-hidden-lg'
+    }
   `
   let mergedMainClass = joinClass(
     defaultMainClass,
@@ -26,6 +30,17 @@ export default function GuideSidebarLayout (props) {
       ? 'slide-menu'
       : ''
   )
+  let asideClass = `
+    p-absolute
+    p-static-lg
+    trbl
+    fg-0
+    o-auto
+    ${props.overflow
+      ? 'o-auto-lg'
+      : 'o-hidden-lg'
+    }
+  `
   let title = props.title || ''
   let background = `
     background-image:url(${staticAsset(props.background)});
@@ -35,7 +50,10 @@ export default function GuideSidebarLayout (props) {
   return html`
 <div class="vh-100 d-flex fd-c o-hidden">
   <${PageHeader} ...${props}><//>
-  <div class="h-100 o-auto-lg">
+  <div
+    class="h-100 o-auto-lg"
+    onscroll="${props.scroll}"
+  >
     <div
       class="
         header-guide-min-height-lg
@@ -72,8 +90,10 @@ export default function GuideSidebarLayout (props) {
       </div>
     </div>
     <hr class="d-none-lg b-b b-p18"/>
-    <div class="h-100 top-0 p-relative p-sticky-lg fg-1 d-flex-lg o-hidden o-auto-lg">
-      <aside style="min-width:16.666rem;" class="p-absolute p-static-lg trbl fg-0 o-auto">
+    <div class="h-100 top-0 p-relative p-sticky-lg fg-1 d-flex-lg o-hidden">
+      <aside
+        style="min-width:16.666rem;max-width:19.999rem;"
+        class="${asideClass}">
         <${Sidebar} ...${props}><//>
       </aside>
       <section

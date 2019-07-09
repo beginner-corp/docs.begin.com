@@ -7,6 +7,7 @@ class GuideContainer extends Component {
     super(props)
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
+    this.scroll = this.scroll.bind(this)
     this.disclose = this.disclose.bind(this)
     let meta = Object.assign({}, props.meta)
     let background = meta.background || ''
@@ -23,6 +24,7 @@ class GuideContainer extends Component {
       disclosed: false,
       icon,
       open: false,
+      overflow: false,
       title,
       toc
     }
@@ -31,6 +33,20 @@ class GuideContainer extends Component {
   disclose (e) {
     e.preventDefault()
     this.setState({disclosed: !this.state.disclosed})
+  }
+
+  scroll (e) {
+    let scrollTop = e.target.scrollTop
+    // Header height is 216
+    if (scrollTop >= 216) {
+      this.setState({
+        overflow: true
+      })
+    } else {
+      this.setState({
+        overflow: false
+      })
+    }
   }
 
   toggle (e) {
@@ -61,6 +77,7 @@ class GuideContainer extends Component {
 <${Guide}
   ...${state}
   disclose="${this.disclose}"
+  scroll="${this.scroll}"
   toggle="${this.toggle}"
 ><//>
     `
