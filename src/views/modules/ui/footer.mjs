@@ -9,11 +9,10 @@ export default function Footer (props) {
 <div
   class="
     pr0
-    pr3-lg
     pb5
-    pl3-lg
     pl0
   "
+  style="max-width:44.444rem;"
  >
   <hr class="mt0 mb4 b-b b-p18"/>
   <h3
