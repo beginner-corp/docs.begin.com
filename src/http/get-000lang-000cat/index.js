@@ -6,6 +6,7 @@ const renderToString = require('preact-render-to-string')
 const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Guides = imports('@architect/views/modules/pages/guides.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
+const ThirdParty = require('@architect/shared/views/js/scripts')
 
 function route (req, res) {
   let account = req.session.account
@@ -45,7 +46,8 @@ function route (req, res) {
         account,
         lang,
         toc
-      }
+      },
+      thirdparty: ThirdParty()
     })
     res({
       html: body

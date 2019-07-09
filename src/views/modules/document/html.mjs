@@ -11,6 +11,7 @@ export default function HTML (props) {
   scripts = scripts || ''
   let state = (props.state &&
       State(props.state)) || ''
+  let thirdparty = props.thirdparty || ''
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +23,7 @@ ${Head()}
   </div>
   ${state}
   ${scripts}
+  ${thirdparty}
 </body>
 </html>
 `

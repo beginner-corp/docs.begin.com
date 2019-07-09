@@ -8,6 +8,7 @@ const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Docs = imports('@architect/views/modules/pages/docs.mjs').default
 const Guide = imports('@architect/views/modules/pages/guide.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
+const ThirdParty = require('@architect/shared/views/js/scripts')
 
 function route (req, res) {
   let account = req.session.account
@@ -73,7 +74,8 @@ function route (req, res) {
           content,
           meta,
           toc
-        }
+        },
+        thirdparty: ThirdParty()
       })
       res({
         html: body
