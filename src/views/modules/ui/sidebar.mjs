@@ -86,12 +86,12 @@ function getDocs (props, state) {
       sections: d.sections
     }, state)
 
-    return html`
+    if (!d.deprecated && !d.hidden) return html`
 <${SidebarDocItem}
-    active="${active}"
-    href="${href}"
-    sections="${sections}"
-    title="${d.docTitle}"
+  active="${active}"
+  href="${href}"
+  sections="${sections}"
+  title="${d.docTitle}"
 ><//>
   `
   })
@@ -112,9 +112,9 @@ function getSections (props, state) {
 
     return html`
 <${SidebarSectionItem}
-    active="${active}"
-    href="${href}"
-    title="${section}"
+  active="${active}"
+  href="${href}"
+  title="${section}"
 ><//>
     `
   })

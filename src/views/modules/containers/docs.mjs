@@ -8,9 +8,7 @@ class DocsContainer extends Component {
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
-    let docs = (props.toc || []).concat()
-    let toc = docs.filter(category => category.catID !== 'guides' &&
-      category.catID !== 'static-guides')
+    let toc = (props.toc || []).concat()
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
