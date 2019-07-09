@@ -86,7 +86,8 @@ function getDocs (props, state) {
       sections: d.sections
     }, state)
 
-    if (!d.deprecated && !d.hidden) return html`
+    return (!d.deprecated && !d.hidden)
+    ? html`
 <${SidebarDocItem}
   active="${active}"
   href="${href}"
@@ -94,6 +95,7 @@ function getDocs (props, state) {
   title="${d.docTitle}"
 ><//>
   `
+  : ''
   })
 }
 
@@ -106,9 +108,7 @@ function getSections (props, state) {
   return sections.map(section => {
     let slug = getSlug(section)
     let href = `/${lang}/${category}/${doc}/${slug}`
-    let active = inWindow
-      ? (href === state.active) || (slug === window.location.hash)
-      : false
+    let active = false
 
     return html`
 <${SidebarSectionItem}

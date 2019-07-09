@@ -39,9 +39,7 @@ class Sidebar extends Component {
     let categories = sections.map(section => {
       let slug = getSlug(section)
       let href = `/${lang}/${category}/${doc}/${slug}`
-      let active = inWindow
-        ? (href === state.active) || (slug === window.location.hash)
-        : false
+      let active = false
 
       return html`
 <${SidebarGuideItem}
