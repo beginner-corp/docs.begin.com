@@ -1,8 +1,7 @@
-var test = require('tape')
-var tiny = require('tiny-json-http')
-var arc = require('@architect/architect')
-// TODO hrm, why isn't arc passing .arc-env vars to test runner?
-var port = (process.env.PORT) ? process.env.PORT : 3333
+let test = require('tape')
+let tiny = require('tiny-json-http')
+let arc = require('@architect/architect')
+process.env.PORT = 4445
 
 test('env', t=> {
   t.plan(1)
@@ -19,16 +18,15 @@ test('arc.sandbox.start', async t=> {
 test('get /en/getting-started/introduction', t=> {
   t.plan(1)
   tiny.get({
-    url: `http://localhost:${port}/en/getting-started/introduction`
+    url: `http://localhost:4445/en/getting-started/introduction`
   },
-  function win(err, result) {
+  function win(err) {
     if (err) {
       t.fail(err, err)
     }
     else {
       t.ok(true, 'got result')
     }
-    console.log(err)
   })
 })
 
