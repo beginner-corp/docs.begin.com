@@ -107,7 +107,7 @@ function getSections (props, state) {
   let sections = props.sections || []
   return sections.map(section => {
     let slug = getSlug(section)
-    let href = `/${lang}/${category}/${doc}/${slug}`
+    let href = `/${lang}/${category}/${doc}${slug}`
     let active = false
 
     return html`

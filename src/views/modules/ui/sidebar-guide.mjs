@@ -38,7 +38,7 @@ class Sidebar extends Component {
     let sections = props.toc || []
     let categories = sections.map(section => {
       let slug = getSlug(section)
-      let href = `/${lang}/${category}/${doc}/${slug}`
+      let href = `/${lang}/${category}/${doc}${slug}`
       let active = false
 
       return html`
