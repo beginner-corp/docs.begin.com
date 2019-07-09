@@ -133,7 +133,7 @@ export default function Guides (props) {
 
   return html`
 <${Layout} ...${props}>
-  <div class="fg-1 o-auto">
+  <div class="h-100 fg-1 o-auto">
   <div class="
       pt0
       pt5-lg
