@@ -5,9 +5,10 @@
   "scripts": {
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
-    "start": "nodemon --exec PORT=4445 SESSION_TABLE_NAME=jwe npx sandbox",
-    "startOld": "npm run spellcheck && nodemon --watch .arc --watch package.json --watch src/ -e md,css,js,json,html --exec NODE_ENV=local arc-sandbox",
-    "test": "NODE_ENV=testing PORT=4445 tape test/*-test.js | tap-spec"
+    "dev": "NODE_ENV=testing PORT=4445 ARC_LOCAL=1 npx sandbox",
+    "start": "NODE_ENV=staging PORT=4445 ARC_LOCAL=1 npx sandbox",
+    "push-test": "npm run spellcheck && NODE_ENV=testing ARC_CONTRIB=yas ARC_LOCAL=yas tape 'test/**/*-test.js' | tap-spec",
+    "test": "npm run lint && npm run spellcheck && NODE_ENV=testing SESSION_TABLE_NAME=jwe tape test/*-test.js | tap-spec"
   },
   "license": "Apache-2.0",
   "bugs": {
@@ -16,22 +17,25 @@
   "homepage": "https://github.com/smallwins/docs.begin.com#readme",
   "devDependencies": {
     "@architect/arc-plugin-node-prune": "^1.0.1",
-    "@architect/architect": "^5.8.4",
+    "@architect/architect": "^5.9.18",
     "eslint": "^5.16.0",
-    "nodemon": "^1.19.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
     "spellchecker-cli": "^4.0.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.10.1",
+    "tape": "^4.10.2",
     "tiny-json-http": "^7.1.2"
   },
-  "nodemonConfig": {
-    "watch": [
-      "src/shared",
-      "src/views"
-    ],
-    "ext": "css,js,json,md,mjs",
-    "events": {
-      "start": "npm run spellcheck"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run push-test"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

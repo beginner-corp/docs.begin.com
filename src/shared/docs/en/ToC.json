@@ -14,21 +14,6 @@
         ]
       },
       {
-        "docID": "quickstart",
-        "docTitle": "Quickstart",
-        "description": "Get started building your first app with Begin",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
         "docID": "working-locally",
         "docTitle": "Working locally",
         "description": "Guide to working locally and writing tests with Begin",
@@ -279,6 +264,232 @@
         "hidden": true,
         "description": "Migrating early Architect 3.x-based alpha apps to Architect 4.x-based apps",
         "sections": []
+      }
+    ]
+  },
+  {
+    "catID": "guides",
+    "catTitle": "Guides",
+    "docs": [
+      {
+        "docID": "quickstart",
+        "docTitle": "Quickstart",
+        "description": "Get started building your first app with Begin",
+        "icon": "circle-begin.svg",
+        "background": "item-gradient-pink-blue.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "css-styleguide",
+        "docTitle": "CSS Styleguide",
+        "description": "Learn how to create a dynamic CSS styleguide",
+        "icon": "circle-css.svg",
+        "background": "item-gradient-green-blue.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "restful-api",
+        "docTitle": "Restful API",
+        "description": "Create a restful api for your app",
+        "icon": "circle-rest.svg",
+        "background": "item-gradient-purple-green.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "graph-ql",
+        "docTitle": "Graph QL",
+        "description": "Create a Graph QL api for your app",
+        "icon": "circle-graphql.svg",
+        "background": "item-gradient-pink-purple.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "slack-app",
+        "docTitle": "Slack app",
+        "description": "Make your first Slack app with Begin",
+        "icon": "circle-slack.svg",
+        "background": "item-gradient-purple-green.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "ssr-esmodules",
+        "docTitle": "SSR with ES Modules",
+        "description": "Set up a modern web app with ES Module powered server side rendering",
+        "icon": "circle-modules.svg",
+        "background": "item-gradient-green-blue.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      }
+    ]
+  },
+  {
+    "catID": "static-guides",
+    "catTitle": "Static guides",
+    "docs": [
+      {
+        "docID": "ember",
+        "docTitle": "Ember starter app guide",
+        "description": "Learn how to use Ember to build a static web app",
+        "icon": "ember.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "gatsby",
+        "docTitle": "Gatsby starter app guide",
+        "description": "Learn how to use Gatsby to build a static web app",
+        "icon": "gatsby.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "ionic",
+        "docTitle": "Ionic starter app guide",
+        "description": "Learn how to use Ionic to build a static web app",
+        "icon": "ionic.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "preact",
+        "docTitle": "Preact starter app guide",
+        "description": "Learn how to use Preact to build a static web app",
+        "icon": "preact.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "react",
+        "docTitle": "React starter app guide",
+        "description": "Learn how to use React to build a static web app",
+        "icon": "react.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "svelte",
+        "docTitle": "Svelte starter app guide",
+        "description": "Learn how to use Svelte to build a static web app",
+        "icon": "svelte.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
+        "docID": "vue",
+        "docTitle": "vue starter app guide",
+        "description": "Learn how to use Vue to build a static web app",
+        "icon": "vue.svg",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
       }
     ]
   }

@@ -11,13 +11,12 @@ docs.begin.com
 @http
 get /
 get /css/:page
+get /modules/:type/:module
 get /robots.txt
 get /:lang/:cat/:doc
+get /:lang/:cat
 
-# these used to be here to forward home if any path parts were missing
-# TODO just handle this in the renderer
 # get /:lang
-# get /:lang/:cat
 
 @static
 staging begin-docs-staging

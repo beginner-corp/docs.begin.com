@@ -3,6 +3,8 @@
   "dependencies": {
     "@architect/data": "latest",
     "@architect/functions": "latest",
-    "marked": "^0.6.0"
+    "esm": "^3.2.25",
+    "marked": "^0.6.0",
+    "preact-render-to-string": "^4.1.0"
   }
 }

@@ -95,12 +95,28 @@
         "value": "#ffe8f0"
       },
       {
-        "label": "bright-blue",
+        "label": "baby-blue",
         "value": "#9ed7ff"
       },
       {
         "label": "ocean-blue",
         "value": "#0057b8"
+      },
+      {
+        "label": "off-white",
+        "value": "#fff6e3"
+      },
+      {
+        "label": "navy",
+        "value": "#002d4d"
+      },
+      {
+        "label": "azure",
+        "value": "#0094ff"
+      },
+      {
+        "label": "good green",
+        "value": "#25A78B"
       }
     ],
     "hover": [
@@ -115,6 +131,10 @@
       {
         "label": "white-3",
         "value": "#f0f0f0"
+      },
+      {
+        "label": "white",
+        "value": "#ffffff"
       }
     ],
     "active": [
@@ -139,8 +159,20 @@
         "value": "#434346"
       },
       {
-        "label": "pale-blue",
-        "value": "#e6f4ff"
+        "label": "white",
+        "value": "#ffffff"
+      },
+      {
+        "label": "cerulean",
+        "value": "#0077cc"
+      },
+      {
+        "label": "dark-navy",
+        "value": "#001F36"
+      },
+      {
+        "label": "light-blue",
+        "value": "#E6F4FF"
       }
     ],
     "disabled": [

@@ -1,27 +1,43 @@
-:root {
-  --header-height: 3.444rem;
-}
-.nowrap {
-  white-space: nowrap;
-}
 html,
 body {
   width: 100%;
   height: 100%;
-  opacity: 1.0 !important;
-  transition: opacity .15s ease-in-out;
 }
 body {
   height: 100vh;
+  font-family: sans-serif;
   overflow-x: hidden;
+  opacity: 1.0 !important;
+  transition: opacity .15s ease-in-out;
+}
+.trbl,
+.top-0 {
+  top: 0;
+}
+.trbl,
+.right-0 {
+  right: 0;
+}
+.trbl,
+.bottom-0 {
+  bottom: 0;
+}
+.trbl,
+.left-0 {
+  left: 0;
+}
+.d-grid {
+  display: grid;
+}
+.p-sticky {
+  position: sticky;
+}
+.nowrap {
+  white-space: nowrap;
 }
 .container {
   margin-top: 6.111rem;
   max-width: 30rem;
-}
-.header {
-  height: var(--header-height);
-  min-height: var(--header-height);
 }
 .icon-sm {
   width: 0.888rem;
@@ -31,37 +47,29 @@ body {
 .divider {
   border-width: 0.5px;
 }
-.nav-link:active,
-.nav-link.active {
-  color: var(--p3);
-  border-radius: 4px;
-}
 .avatar {
   width: 1.333rem;
   min-width: 1.333rem;
   height: 1.333rem;
   min-height: 1.333rem;
 }
-.main,
-.layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
-}
 .main {
   background-image: none;
   transition: transform 0.15s ease-out;
-  min-width: 17.777rem;
+  min-width: 0;
 }
 .slide-menu {
   transform: translateX(100%);
 }
+.menu-transition {
+  transition: max-height 0.25s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+}
 .icon {
   width: 1rem;
   height: 0.666rem;
+}
+.fd-column {
+  flex-direction: column;
 }
 .f-wrap {
   flex-wrap: wrap;
@@ -69,7 +77,13 @@ body {
 .d-table {
   display: table;
 }
-.heading-sm {
+.max-h-0 {
+  max-height: 0;
+}
+.max-h-infinity {
+  max-height: 900px;
+}
+.uppercase {
   text-transform: uppercase;
 }
 input::placeholder {
@@ -82,27 +96,105 @@ aside div#category:first-child {
 aside div#category {
   margin-top: 1.777rem;
 }
+.rotate180 {
+  transform: rotate(180deg);
+}
+.max-w-48 {
+  max-width: 48.666rem;
+}
+.max-w-60 {
+  max-width: 60rem;
+}
+.min-w0 {
+  min-width: 0;
+}
+.transition-transform {
+  transition: transform 0.15s ease-out
+}
+.transition-background-x {
+  transition: background-position-x 0.5s cubic-bezier(.16,.7,.19,1.04);
+}
+.transform-scale-hover:hover {
+  transform: scale(1.005);
+  transition: transform 0.5s cubic-bezier(.16,.7,.19,1.04);
+}
+.transform-scale-active:active {
+  transform: scale(1);
+  transition: transform 0.15s cubic-bezier(.16,.7,.19,1.04);
+}
+.z1 {
+  z-index: 1;
+}
+.shadow-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s;
+}
+.shadow-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.shadow-card:active {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.4);
+}
+.grid-learn {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem 4rem;
+  grid-auto-rows: minmax(auto, auto)
+}
+.grid-guides {
+  grid-gap: 0.666rem 1.333rem;
+  grid-auto-rows: minmax(11.777rem, auto);
+}
+.g-col-1 {
+  grid-template-columns: 1fr;
+}
+.g-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.g-gap1 {
+  grid-gap: 1.333rem;
+}
+.grid-1-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.grid-2-1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.grid-1_3-2 {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+.grid-auto-rows-4 {
+  grid-auto-rows: minmax(4rem, auto);
+}
+.background-size-cover {
+  background-size:cover;
+}
+.background-repeat-none {
+  background-repeat:none;
+}
+.guides-item-bg-h {
+  height: 7.777rem;
+}
 
 @media only screen and (min-width:48em) {
+  .header-guide-min-height-lg {
+    min-height: 12rem;
+  }
   .d-flex-lg {
     display: flex;
   }
-  #menu-open {
-    display: none;
+  .d-grid-lg {
+    display: grid;
   }
-  #menu-close {
-    display: none;
+  .g-col-3-lg {
+    grid-template-columns: repeat(3, 1fr);
   }
-  #doc {
-    margin-left: 5%;
-    margin-right: 5%;
+  .g-col-4-lg {
+    grid-template-columns: repeat(4, 1fr);
   }
-  .sidebar {
-    min-width:12.222rem;
-    max-width:16.666rem
-  }
-  .main {
-    position: static;
+  .transition-none-lg {
     transition: none;
   }
   .slide-menu {
@@ -110,5 +202,27 @@ aside div#category {
   }
   .fd-row-lg {
     flex-direction: row;
+  }
+  .max-h-infinity-lg {
+    max-height: 900px;
+  }
+  .p-sticky-lg {
+    position: sticky;
+  }
+  .z0-lg {
+    z-index: 0;
+  }
+  .item-docs-h-lg {
+    height: 11.777rem;
+    min-height: 11.777rem;
+  }
+  .item-learn-max-w-lg {
+    max-width: 16.388rem;
+  }
+   .guide-link:hover > .h-gradient {
+    background-position-x: -5.5rem;
+  }
+  .guide-link:active > .h-gradient {
+    background-position-x: 0;
   }
 }
