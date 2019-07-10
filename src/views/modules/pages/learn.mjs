@@ -173,7 +173,7 @@ export default function Learn (props) {
                     fw-book
                   "
                 >
-                  Documentation
+                  Reference documentation
                 </h2>
                 <p>
                   Here are some words that say things about documentation.

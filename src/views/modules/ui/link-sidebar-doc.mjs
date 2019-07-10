@@ -19,7 +19,7 @@ export default function SidebarDocLink (props) {
   let spanClass = joinClasses(
     `d-inline-flex ai-c pt-3 pr0 pb-3`,
     active
-      ? ''
+      ? 'c-p23'
       : 'pl0'
   )
 

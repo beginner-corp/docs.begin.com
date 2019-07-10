@@ -123,7 +123,7 @@ export default function Footer (props) {
             fw-book
           "
         >
-          Documentation
+          Reference documentation
         </h2>
         <p>
           Here are some words that say things about documentation.

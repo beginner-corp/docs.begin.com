@@ -83,8 +83,8 @@ export default function GlobalNav (props) {
     <${GlobalNavLink}
       href="/"
       class="${linkClass}"
-      icon="learn"
-      label="Learn"
+      icon="docs"
+      label="Docs"
     ><//>
     <${GlobalNavLink}
       href="${Constants.links.community}"
