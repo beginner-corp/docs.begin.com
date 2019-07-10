@@ -138,7 +138,7 @@ aside div#category {
 .grid-learn {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem 4rem;
-  grid-auto-rows: minmax(16.777rem, auto)
+  grid-auto-rows: minmax(auto, auto)
 }
 .grid-guides {
   grid-gap: 0.666rem 1.333rem;

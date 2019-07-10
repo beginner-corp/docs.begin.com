@@ -73,7 +73,7 @@ export default function Footer (props) {
           Guides
         </h2>
         <p>
-          Here are some words that say things about guides.
+          In-depth tutorials using example apps.
         </p>
       </div>
     </a>
@@ -112,11 +112,11 @@ export default function Footer (props) {
     >
       <img
         alt="Documentation"
-        class="m-auto mb-2 ml-none-lg mr1-lg"
+        class="m-auto mb-2 ml-none-lg mr0-lg"
         src="${staticAsset('documentation.svg')}"
         style="max-width:6.166rem;"
       />
-      <div class="ta-l-lg mt0-lg">
+      <div class="ta-l-lg mt0-lg mb0-lg">
         <h2
           class="
             fs2
@@ -126,7 +126,7 @@ export default function Footer (props) {
           Reference documentation
         </h2>
         <p>
-          Here are some words that say things about documentation.
+          Complete reference docs for application architecture, APIs, and more.
         </p>
       </div>
     </a>
@@ -179,7 +179,7 @@ export default function Footer (props) {
           Quickstart
         </h2>
         <p>
-          Here are some words that say things about quickstart.
+          Get up and running in no time flat!
         </p>
       </div>
     </a>

@@ -37,7 +37,7 @@ export default function Learn (props) {
             fw-book
           "
         >
-          Learn more about Begin
+          Learn more about building with Begin
         </h1>
       </div>
     </div>
@@ -97,7 +97,7 @@ export default function Learn (props) {
                 Quickstart
               </h2>
               <p>
-                Here are some words that say things about quickstart.
+                Get up and running in no time flat!
               </p>
             </div>
           </a>
@@ -137,7 +137,7 @@ export default function Learn (props) {
                 Guides
               </h2>
               <p>
-                Here are some words that say things about guides.
+                In-depth tutorials using example apps.
               </p>
             </div>
           </a>
@@ -167,10 +167,10 @@ export default function Learn (props) {
           >
               <img
                 alt="Documentation"
-                class="d-block m-auto mb-2 ml-none-lg mr1-lg"
+                class="d-block m-auto mb-2 ml-none-lg mr1-lg mb-none-lg"
                 src="${staticAsset('documentation.svg')}"
               />
-              <div class="ta-l-lg mt0-lg">
+              <div class="ta-l-lg mt2-lg">
                 <h2
                   class="
                     fs2
@@ -180,7 +180,7 @@ export default function Learn (props) {
                   Reference documentation
                 </h2>
                 <p>
-                  Here are some words that say things about documentation.
+                  Complete reference docs for application architecture, APIs, and more.
                 </p>
               </div>
           </a>
