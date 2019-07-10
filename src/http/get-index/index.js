@@ -21,8 +21,7 @@ function route (req, res) {
   }
   try {
     let body = HTMLDocument({
-      title: 'Learn',
-      description: 'Landing page for Begin learning content.',
+      description: 'Learn more about building applications with Begin',
       children: renderToString(
         html`
         <${Learn}

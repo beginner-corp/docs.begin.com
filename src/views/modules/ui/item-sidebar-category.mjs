@@ -1,6 +1,6 @@
 import { Component, html } from '../vendor/preact.mjs'
 import joinClass from '../util/join-classes.mjs'
-const linkClasses = 'mb3 c-p3 c-h0 c-a0 fw-book'
+const linkClasses = 'mb0 c-p3 c-h0 c-a0 fw-book'
 
 class SidebarCategoryItem extends Component {
   constructor (props) {
@@ -25,7 +25,6 @@ class SidebarCategoryItem extends Component {
     let title = props.title
     let documents = props.documents
     let documentsClass = joinClass(
-      'pt-4',
       'o-hidden',
       'menu-transition',
       'max-h-0',
@@ -39,7 +38,7 @@ class SidebarCategoryItem extends Component {
   class="${linkClasses}"
 >
   <h6
-    class="fs-1 fw-medium c-p8 uppercase nowrap cu-pointer"
+    class="pt-3 pb-3 fs-1 fw-medium c-p8 uppercase nowrap cu-pointer"
     onclick="${this.toggle}"
   >
     ${title}

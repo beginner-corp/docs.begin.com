@@ -100,7 +100,7 @@
   },
   {
     "catID": "functions",
-    "catTitle": "Functions",
+    "catTitle": "HTTP Functions",
     "docs": [
       {
         "docID": "creating-new-functions",
