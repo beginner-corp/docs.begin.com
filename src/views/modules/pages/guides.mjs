@@ -152,7 +152,7 @@ export default function Guides (props) {
           fw-book
         "
       >
-        Begin Guides
+        Guides
       </h1>
     </div>
   </div>
