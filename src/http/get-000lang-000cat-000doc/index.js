@@ -1,7 +1,6 @@
 const imports = require('esm')(module)
 const arc = require('@architect/functions')
 const docsParser = require('@architect/shared/docs-parser')
-const path = require('path')
 const forwards = require('./_forwards')
 const renderToString = require('preact-render-to-string')
 const { html } = imports('@architect/views/modules/vendor/preact.mjs')
@@ -28,16 +27,16 @@ function route (req, res) {
   let doc = req.params.doc || ''
   let cat = req.params.cat || ''
   let docsProps = {doc, cat, lang}
-  let _path = path.join('/', lang, cat, doc)
+  let path = `/${lang}/${cat}/${doc}`
   let isGuide = cat === 'guides' || cat === 'static-guides'
   let entry = isGuide
     ? '/modules/entry/guide.mjs'
     : '/modules/entry/docs.mjs'
 
   // check to see if the requested document has been forwarded to a new path
-  if (forwards[_path]) {
+  if (forwards[path]) {
     res({
-      location: forwards[_path]
+      location: forwards[path]
     })
   } else {
     try {
