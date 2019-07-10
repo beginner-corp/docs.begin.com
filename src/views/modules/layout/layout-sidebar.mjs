@@ -65,7 +65,7 @@ export default function SidebarLayout (props) {
           fw-book
         "
       >
-        Documentation
+        Reference docs
       </h1>
     </div>
   </div>
