@@ -18,7 +18,10 @@ export default function SidebarGuideLink (props) {
     : ''
 
   return html`
-<a ...${props} class="${mergedClass}" rel="${rel}">
+<a ...${props}
+  class="${mergedClass}"
+  rel="${rel}"
+>
   <span class="d-inline-flex ai-c pt-3 pr0 pb-3 pl0">
     ${active
         ? html`

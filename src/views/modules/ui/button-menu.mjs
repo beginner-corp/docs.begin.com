@@ -1,30 +1,18 @@
-import { Component, html } from '../vendor/preact.mjs'
+import { html } from '../vendor/preact.mjs'
 import Icon from './icon.mjs'
 
-class MenuButton extends Component {
-  constructor (props) {
-    super()
-    this.click = this.click.bind(this)
-    this.state = {
-      open: props.open
-    }
-  }
+export default function MenuButton (props) {
+  props = props || {}
+  let click = props.onclick || function () {}
+  let icon = props.open
+    ? 'close'
+    : 'menu'
 
-  click (e) {
-    e.preventDefault()
-    this.props.onclick && this.props.onclick(e)
-    this.setState({open: !this.state.open})
-  }
-
-  render (props, state) {
-    let icon = state.open
-      ? 'close'
-      : 'menu'
-    return html`
+  return html`
 <a
   class="f-p1 bg-p0"
   href="/menu"
-  onclick="${this.click}"
+  onclick="${click}"
 >
   <${Icon}
     href="${icon}"
@@ -32,7 +20,4 @@ class MenuButton extends Component {
   ><//>
 </a>
     `
-  }
 }
-
-export default MenuButton

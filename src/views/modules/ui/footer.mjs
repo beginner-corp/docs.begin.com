@@ -174,9 +174,7 @@ export default function Footer (props) {
   return html`
 <div
   class="
-    pr0
     pb5
-    pl0
   "
   style="max-width:44.444rem;"
  >
