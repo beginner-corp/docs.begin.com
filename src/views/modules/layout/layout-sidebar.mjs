@@ -3,6 +3,7 @@ import joinClass from '../util/join-classes.mjs'
 import PageHeader from '../ui/header-page.mjs'
 import Sidebar from '../ui/sidebar.mjs'
 import Footer from '../ui/footer.mjs'
+import staticAsset from '../util/static-asset.mjs'
 
 export default function SidebarLayout (props) {
   props = props || {}
@@ -18,10 +19,6 @@ export default function SidebarLayout (props) {
     transition-transform
     transition-none-lg
     o-auto
-    ${props.overflow
-      ? 'o-auto-lg'
-      : 'o-hidden-lg'
-    }
   `
   let mergedMainClass = joinClass(
     sectionClass,
@@ -35,51 +32,58 @@ export default function SidebarLayout (props) {
     trbl
     fg-0
     o-auto
-    ${props.overflow
-      ? 'o-auto-lg'
-      : 'o-hidden-lg'
-    }
+  `
+  let backgroundImage = `
+    background-image:url(${staticAsset('item-gradient-green-blue.png')});
   `
 
   return html`
 <div class="vh-100 d-flex fd-c o-hidden">
   <${PageHeader} ...${props}><//>
   <div
-    class="h-100 o-auto-lg"
-    onscroll="${props.scroll}"
+    class="
+      d-flex
+      fd-c
+      jc-e
+      p0
+      pr3-lg
+      pl3-lg
+      fw-book
+      c-p1
+      background-size-cover
+      background-repeat-none
+    "
+    style="${backgroundImage}"
   >
-    <h1
-      class="
-        fs2
-        fs4-lg
-        fw-book
-        pt0
-        pt2-lg
-        pr0
-        pr3-lg
-        pb0
-        pl3-lg
-        pl0
-        c-p8
-      ">
-      Documentation
-    </h1>
-    <hr class="d-none-lg b-b b-p18"/>
     <div
-      class="h-100 top-0 p-relative p-sticky-lg fg-1 d-flex-lg o-hidden"
+      class="d-flex ai-c"
     >
-      <aside
-        style="min-width:16.666rem;max-width:19.999rem;"
-        class="${asideClass}">
-        <${Sidebar} ...${props}><//>
-      </aside>
-      <section
-        class="${mergedMainClass}"
+      <h1
+        class="
+          fs2
+          fs3-lg
+          fw-book
+        "
       >
-        ${props.children}
-        <${Footer} ...${props}><//>
-      </section>
+        Documentation
+      </h1>
     </div>
+  </div>
+  <hr class="d-none-lg b-b b-p18"/>
+  <div
+    class="h-100 top-0 p-relative p-static-lg fg-1 d-flex-lg o-hidden"
+  >
+    <aside
+      style="min-width:16.666rem;max-width:19.999rem;"
+      class="${asideClass}">
+      <${Sidebar} ...${props}><//>
+    </aside>
+    <section
+      class="${mergedMainClass}"
+    >
+      ${props.children}
+      <${Footer} ...${props}><//>
+    </section>
   </div>
 </div>
   `

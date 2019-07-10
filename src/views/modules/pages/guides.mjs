@@ -133,16 +133,11 @@ export default function Guides (props) {
 
   return html`
 <${Layout} ...${props}>
-  <div class="h-100 fg-1 o-auto">
+  <div class="h-100 d-flex fd-c fg-1 o-auto">
   <div class="
-      pt0
-      pt5-lg
-      pr0
+      p0
       pr4-lg
-      pb0
-      pb4-lg
       pl4-lg
-      pl0
       c-p8
       fw-book
     "
@@ -152,17 +147,13 @@ export default function Guides (props) {
     >
       <h1
         class="
-          mb-1
           fs2
-          fs4-lg
+          fs3-lg
           fw-book
         "
       >
         Begin Guides
       </h1>
-      <p>
-        While happily ignoring when being called small kitty warm kitty little balls of fur. Cats woo check cat door for ambush 10 times before coming in but spend all night ensuring people don't sleep sleep all day
-      </p>
     </div>
   </div>
   <hr class="b-b b-p18"/>

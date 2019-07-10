@@ -18,25 +18,29 @@ export default function Learn (props) {
 
   return html`
 <${Layout} ...${props}>
-  <div class="h-100 d-flex fd-c o-auto">
-    <h1
-      class="
-        fs2
-        fs4-lg
-        fw-book
-        pt0
-        pt5-lg
-        pr0
+  <div class="h-100 d-flex fd-c fg-1 o-auto">
+    <div class="
+        p0
         pr4-lg
-        pb0
-        pb4-lg
         pl4-lg
-        pl0
         c-p8
+        fw-book
       "
     >
-      Learn more about Begin
-    </h1>
+      <div
+        class="max-w-60 m-auto"
+      >
+        <h1
+          class="
+            fs2
+            fs3-lg
+            fw-book
+          "
+        >
+          Learn more about Begin
+        </h1>
+      </div>
+    </div>
     <hr class="b-b b-p18"/>
     <section
       class="

@@ -15,7 +15,6 @@ export default function Docs (props) {
   let referTo = props.meta.referTo || ''
   let toc = props.toc.filter(category => category.catID !== 'guides' && category.catID !== 'static-guides') || {}
   let toggle = props.toggle || function () {}
-  let scroll = props.scroll || function () {}
   let disclose = props.disclose || function () {}
   let disclosed = props.disclosed || false
   let innerHTML = {
@@ -33,7 +32,6 @@ export default function Docs (props) {
   overflow="${overflow}"
   toc="${toc}"
   toggle="${toggle}"
-  scroll="${scroll}"
 >
   <div class="d-flex fd-c">
     <div

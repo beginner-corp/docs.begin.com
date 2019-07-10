@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
+    "dev": "NODE_ENV=testing PORT=4445 ARC_LOCAL=1 npx sandbox",
     "start": "NODE_ENV=staging PORT=4445 ARC_LOCAL=1 npx sandbox",
     "push-test": "npm run spellcheck && NODE_ENV=testing ARC_CONTRIB=yas ARC_LOCAL=yas tape 'test/**/*-test.js' | tap-spec",
     "test": "npm run lint && npm run spellcheck && NODE_ENV=testing PORT=4445 SESSION_TABLE_NAME=jwe tape test/*-test.js | tap-spec"
