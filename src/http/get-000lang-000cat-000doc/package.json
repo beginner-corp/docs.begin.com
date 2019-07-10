@@ -4,7 +4,7 @@
     "@architect/data": "latest",
     "@architect/functions": "latest",
     "esm": "^3.2.25",
-    "marked": "^0.6.0",
+    "marked": "^0.7.0",
     "preact-render-to-string": "^4.1.0"
   }
 }
