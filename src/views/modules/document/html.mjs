@@ -15,7 +15,7 @@ export default function HTML (props) {
   return `
 <!DOCTYPE html>
 <html lang="en">
-${Head()}
+${Head(props)}
 <body class="o-hidden" style="opacity: 0;">
   ${Symbols}
   <div id="begin-content">
