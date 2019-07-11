@@ -1,7 +1,7 @@
 {
   "name": "begin-docs-get-modules-000type-000module",
   "dependencies": {
-    "@architect/data": "^2.1.0",
-    "@architect/functions": "^3.1.0"
+    "@architect/data": "latest",
+    "@architect/functions": "latest"
   }
 }

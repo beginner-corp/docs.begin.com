@@ -1,7 +1,7 @@
 {
   "name": "begin-docs-get-robots_txt",
   "dependencies": {
-    "@architect/data": "^2.0.13",
-    "@architect/functions": "^1.13.7"
+    "@architect/data": "latest",
+    "@architect/functions": "latest"
   }
 }
