@@ -217,13 +217,13 @@ export default function Guides (props) {
 
         <div class="d-flex fw-w ai-c">
           <h3 class="mr-2 nowrap fs1 fw-book c-p8">
-            Want to learn more?
+            Ready to dig deeper?
           </h3>
           <${Link}
             class="nowrap fs1"
             href="${lang + '/getting-started/introduction'}"
           >
-            Check out our documentation →
+            Check out our reference docs →
           <//>
         </div>
 
