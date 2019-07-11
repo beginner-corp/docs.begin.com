@@ -12,7 +12,8 @@ exports.handler = async function http (req) {
     js = js.toString()
     return {
       type: 'text/javascript; charset=utf8',
-      body: js
+      body: js,
+      cacheControl: 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
   } catch (err) {
     return {
