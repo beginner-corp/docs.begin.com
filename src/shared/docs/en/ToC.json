@@ -289,207 +289,112 @@
         ]
       },
       {
-        "docID": "css-styleguide",
-        "docTitle": "CSS Styleguide",
-        "description": "Learn how to create a dynamic CSS styleguide",
-        "icon": "circle-css.svg",
-        "background": "item-gradient-green-blue.png",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
         "docID": "restful-api",
         "docTitle": "Restful API",
+        "hidden": true,
         "description": "Create a restful api for your app",
         "icon": "circle-rest.svg",
         "background": "item-gradient-purple-green.png",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "sections": []
       },
       {
-        "docID": "graph-ql",
-        "docTitle": "Graph QL",
+        "docID": "graphql",
+        "docTitle": "GraphQL",
+        "hidden": true,
         "description": "Create a Graph QL api for your app",
         "icon": "circle-graphql.svg",
         "background": "item-gradient-pink-purple.png",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "sections": []
+      },
+      {
+        "docID": "css-styleguide",
+        "docTitle": "CSS Styleguide",
+        "hidden": true,
+        "description": "Learn how to create a dynamic CSS styleguide",
+        "icon": "circle-css.svg",
+        "background": "item-gradient-green-blue.png",
+        "sections": []
       },
       {
         "docID": "slack-app",
         "docTitle": "Slack app",
+        "hidden": true,
         "description": "Make your first Slack app with Begin",
         "icon": "circle-slack.svg",
         "background": "item-gradient-purple-green.png",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "sections": []
       },
       {
         "docID": "ssr-esmodules",
         "docTitle": "SSR with ES Modules",
+        "hidden": true,
         "description": "Set up a modern web app with ES Module powered server side rendering",
         "icon": "circle-modules.svg",
         "background": "item-gradient-green-blue.png",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      }
-    ]
-  },
-  {
-    "catID": "static-guides",
-    "catTitle": "Static guides",
-    "docs": [
-      {
-        "docID": "ember",
-        "docTitle": "Ember starter app guide",
-        "description": "Learn how to use Ember to build a static web app",
-        "icon": "ember.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
-        "docID": "gatsby",
-        "docTitle": "Gatsby starter app guide",
-        "description": "Learn how to use Gatsby to build a static web app",
-        "icon": "gatsby.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
-        "docID": "ionic",
-        "docTitle": "Ionic starter app guide",
-        "description": "Learn how to use Ionic to build a static web app",
-        "icon": "ionic.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
-        "docID": "preact",
-        "docTitle": "Preact starter app guide",
-        "description": "Learn how to use Preact to build a static web app",
-        "icon": "preact.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "sections": []
       },
       {
         "docID": "react",
         "docTitle": "React starter app guide",
+        "hidden": true,
         "description": "Learn how to use React to build a static web app",
         "icon": "react.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
-      },
-      {
-        "docID": "svelte",
-        "docTitle": "Svelte starter app guide",
-        "description": "Learn how to use Svelte to build a static web app",
-        "icon": "svelte.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "type": "framework",
+        "sections": []
       },
       {
         "docID": "vue",
         "docTitle": "vue starter app guide",
+        "hidden": true,
         "description": "Learn how to use Vue to build a static web app",
         "icon": "vue.svg",
-        "sections": [
-          "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
-          "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
-          "Working locally",
-          "Keep it going"
-        ]
+        "type": "framework",
+        "sections": []
+      },
+      {
+        "docID": "gatsby",
+        "docTitle": "Gatsby starter app guide",
+        "hidden": true,
+        "description": "Learn how to use Gatsby to build a static web app",
+        "icon": "gatsby.svg",
+        "type": "framework",
+        "sections": []
+      },
+      {
+        "docID": "ionic",
+        "docTitle": "Ionic starter app guide",
+        "hidden": true,
+        "description": "Learn how to use Ionic to build a static web app",
+        "icon": "ionic.svg",
+        "type": "framework",
+        "sections": []
+      },
+      {
+        "docID": "preact",
+        "docTitle": "Preact starter app guide",
+        "hidden": true,
+        "description": "Learn how to use Preact to build a static web app",
+        "icon": "preact.svg",
+        "type": "framework",
+        "sections": []
+      },
+      {
+        "docID": "svelte",
+        "docTitle": "Svelte starter app guide",
+        "hidden": true,
+        "description": "Learn how to use Svelte to build a static web app",
+        "icon": "svelte.svg",
+        "type": "framework",
+        "sections": []
+      },
+      {
+        "docID": "ember",
+        "docTitle": "Ember starter app guide",
+        "hidden": true,
+        "description": "Learn how to use Ember to build a static web app",
+        "icon": "ember.svg",
+        "type": "framework",
+        "sections": []
       }
     ]
   }
