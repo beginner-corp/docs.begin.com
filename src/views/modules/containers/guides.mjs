@@ -6,8 +6,6 @@ class GuidesContainer extends Component {
   constructor (props) {
     super(props)
     let toc = (props.toc || []).concat()
-    let guides = toc.filter(category => category.catID === 'guides')
-    let staticGuides = toc.filter(category => category.catID === 'static-guides')
     this.update = this.update.bind(this)
     this.disclose = this.disclose.bind(this)
     // We only use props as initial values ( from hydration )
@@ -17,8 +15,7 @@ class GuidesContainer extends Component {
       disclosed: false,
       open: false,
       lang: props.lang,
-      guides,
-      staticGuides
+      toc
     }
   }
 

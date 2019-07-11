@@ -13,7 +13,7 @@ export default function Docs (props) {
   let open = props.open || false
   let overflow = props.overflow || false
   let referTo = props.meta.referTo || ''
-  let toc = props.toc.filter(category => category.catID !== 'guides' && category.catID !== 'static-guides') || {}
+  let toc = props.toc.filter(category => category.catID !== 'guides') || {}
   let toggle = props.toggle || function () {}
   let disclose = props.disclose || function () {}
   let disclosed = props.disclosed || false

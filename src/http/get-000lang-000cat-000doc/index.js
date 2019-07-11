@@ -28,7 +28,7 @@ function route (req, res) {
   let cat = req.params.cat || ''
   let docsProps = {doc, cat, lang}
   let path = `/${lang}/${cat}/${doc}`
-  let isGuide = cat === 'guides' || cat === 'static-guides'
+  let isGuide = cat === 'guides'
   let entry = isGuide
     ? '/modules/entry/guide.mjs'
     : '/modules/entry/docs.mjs'
