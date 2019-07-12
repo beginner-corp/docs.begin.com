@@ -27,7 +27,7 @@ c-a5
 bg-a7
 transition-all
 `
-let inWindow = typeof window !== 'undefined'
+// let inWindow = typeof window !== 'undefined'
 export default function GlobalLoginLink (props) {
   props = props || {}
   let mergedClass = joinClasses(
@@ -37,10 +37,10 @@ export default function GlobalLoginLink (props) {
       ? 'active'
       : ''
   )
-  let location = inWindow
-    ? window.location
-    : BeginURI('docs','')
-  let href = BeginURI(`login?state=docs:${location}`)
+  // let location = inWindow
+  //   ? window.location
+  //   : BeginURI('docs','')
+  let href = BeginURI(`login`)
   return html`
 <a
   href="${href}"
