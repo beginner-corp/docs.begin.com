@@ -39,9 +39,9 @@ export default function GuideSidebarLayout (props) {
     o-auto
   `
   let backgroundImage = `
-    background-image:url(${staticAsset(background)});
+    background-image:url(${staticAsset(`backgrounds/${background}`)});
   `
-  let iconImage = staticAsset(icon)
+  let iconImage = staticAsset(`guides/${icon}`)
 
   return html`
 <div class="vh-100 d-flex fd-c o-hidden">

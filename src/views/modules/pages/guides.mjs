@@ -36,8 +36,9 @@ export default function Guides (props) {
   guides = guides.map(d => {
     let doc = d.docID
     let href = `/${lang}/${cat}/${doc}`
-    let icon = staticAsset(d.icon)
-    let background = `background-image:url(${staticAsset(d.background)});`
+    let icon = staticAsset(`guides/${d.icon}`)
+    let bgsmall = `backgrounds/${d.background.replace('.png', '-sm.png')}`
+    let background = `background-image:url(${staticAsset(bgsmall)});`
     return html`
     <li
       class="${itemClass}"
@@ -116,7 +117,7 @@ export default function Guides (props) {
   frameworks = frameworks.map(d => {
     let doc = d.docID
     let href = `/${lang}/${cat}/${doc}`
-    let icon = staticAsset(d.icon)
+    let icon = staticAsset(`guides/${d.icon}`)
     return html`
       <li
         class="${frameworkItemClass}"

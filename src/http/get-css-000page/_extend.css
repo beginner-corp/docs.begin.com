@@ -230,20 +230,14 @@
   @extend .mt3;
 }
 
+#doc img {
+  @extend .b;
+  @extend .b-p13;
+}
+
 #footer-hr {
   @extend .mt3;
 }
-
-
-/*
-
-#doc img {
-
-}
-
-
-
-*/
 
 /*
 

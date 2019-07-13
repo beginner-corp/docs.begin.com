@@ -276,7 +276,7 @@
         "docTitle": "Quickstart",
         "description": "Get started building your first app with Begin",
         "icon": "circle-begin.svg",
-        "background": "item-gradient-pink-blue.png",
+        "background": "gradient-pink-blue.png",
         "sections": [
           "Prerequisites",
           "Create a Begin account",
@@ -294,7 +294,7 @@
         "hidden": true,
         "description": "Create a restful api for your app",
         "icon": "circle-rest.svg",
-        "background": "item-gradient-purple-green.png",
+        "background": "gradient-purple-green.png",
         "sections": []
       },
       {
@@ -303,7 +303,7 @@
         "hidden": true,
         "description": "Create a Graph QL api for your app",
         "icon": "circle-graphql.svg",
-        "background": "item-gradient-pink-purple.png",
+        "background": "gradient-pink-purple.png",
         "sections": []
       },
       {
@@ -312,7 +312,7 @@
         "hidden": true,
         "description": "Learn how to create a dynamic CSS styleguide",
         "icon": "circle-css.svg",
-        "background": "item-gradient-green-blue.png",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -321,7 +321,7 @@
         "hidden": true,
         "description": "Make your first Slack app with Begin",
         "icon": "circle-slack.svg",
-        "background": "item-gradient-purple-green.png",
+        "background": "gradient-purple-green.png",
         "sections": []
       },
       {
@@ -330,7 +330,7 @@
         "hidden": true,
         "description": "Set up a modern web app with ES Module powered server side rendering",
         "icon": "circle-modules.svg",
-        "background": "item-gradient-green-blue.png",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -338,8 +338,9 @@
         "docTitle": "React starter app guide",
         "hidden": true,
         "description": "Learn how to use React to build a static web app",
-        "icon": "react.svg",
+        "icon": "logo-react.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -347,17 +348,18 @@
         "docTitle": "vue starter app guide",
         "hidden": true,
         "description": "Learn how to use Vue to build a static web app",
-        "icon": "vue.svg",
+        "icon": "logo-vue.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
         "docID": "gatsby",
         "docTitle": "Gatsby starter app guide",
-        "hidden": true,
         "description": "Learn how to use Gatsby to build a static web app",
-        "icon": "gatsby.svg",
+        "icon": "logo-gatsby.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -365,8 +367,9 @@
         "docTitle": "Ionic starter app guide",
         "hidden": true,
         "description": "Learn how to use Ionic to build a static web app",
-        "icon": "ionic.svg",
+        "icon": "logo-ionic.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -374,8 +377,9 @@
         "docTitle": "Preact starter app guide",
         "hidden": true,
         "description": "Learn how to use Preact to build a static web app",
-        "icon": "preact.svg",
+        "icon": "logo-preact.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -383,8 +387,9 @@
         "docTitle": "Svelte starter app guide",
         "hidden": true,
         "description": "Learn how to use Svelte to build a static web app",
-        "icon": "svelte.svg",
+        "icon": "logo-svelte.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       },
       {
@@ -392,8 +397,9 @@
         "docTitle": "Ember starter app guide",
         "hidden": true,
         "description": "Learn how to use Ember to build a static web app",
-        "icon": "ember.svg",
+        "icon": "logo-ember.svg",
         "type": "framework",
+        "background": "gradient-green-blue.png",
         "sections": []
       }
     ]

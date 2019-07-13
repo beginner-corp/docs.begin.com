@@ -34,7 +34,7 @@ export default function SidebarLayout (props) {
     o-auto
   `
   let backgroundImage = `
-    background-image:url(${staticAsset('item-gradient-green-blue.png')});
+    background-image:url(${staticAsset('backgrounds/gradient-green-blue.png')});
   `
 
   return html`
