@@ -5,7 +5,7 @@ Hello, and welcome! We can't wait to share everything you need to know about Beg
 
 **Begin is a serverless application platform**.
 
-![Begin screenshot](https://s3.us-west-1.amazonaws.com/begin-docs/begin-screenshot-home-1.png)
+![Begin screenshot](/_static/screens/begin-activity.png)
 
 More specifically: Begin is a batteries-included system for provisioning and managing of a wide range of next-generation AWS cloud infrastructure.
 

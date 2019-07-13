@@ -97,7 +97,7 @@ export default function Learn (props) {
                 Quickstart
               </h2>
               <p>
-                Get up and running in no time flat!
+                Get started with Begin in no time flat!
               </p>
             </div>
           </a>
@@ -137,7 +137,7 @@ export default function Learn (props) {
                 Guides
               </h2>
               <p>
-                In-depth tutorials using example apps.
+                In-depth tutorials using example apps
               </p>
             </div>
           </a>
@@ -180,7 +180,7 @@ export default function Learn (props) {
                   Reference documentation
                 </h2>
                 <p>
-                  Complete reference docs for application architecture, APIs, and more.
+                  Complete reference for Begin APIs, infrastructure, app architecture, and more
                 </p>
               </div>
           </a>

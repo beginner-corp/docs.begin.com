@@ -6,7 +6,7 @@ Begin builds run entirely in cloud functions, so they spin up fast and run in pa
 
 The `Builds & Deploys` view – your default view in Begin - shows all your app's builds, deploy status, and corresponding log data.
 
-![Begin screenshot](https://s3.us-west-1.amazonaws.com/begin-docs/begin-screenshot-home-1.png)
+![Begin screenshot](/_static/screens/begin-activity.png)
 
 Deploying to Begin is as simple as pushing to `master` or cutting a git tag.
 

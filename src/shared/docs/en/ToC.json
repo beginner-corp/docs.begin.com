@@ -356,6 +356,7 @@
       {
         "docID": "gatsby",
         "docTitle": "Gatsby starter app guide",
+        "hidden": true,
         "description": "Learn how to use Gatsby to build a static web app",
         "icon": "logo-gatsby.svg",
         "type": "framework",
