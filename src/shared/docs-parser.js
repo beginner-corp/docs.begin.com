@@ -20,7 +20,13 @@ module.exports = function contents (active) {
   if (meta.deprecated) {
     contentFile = join(__dirname, 'docs', lang, '_deprecated', doc) + '.md'
   }
-  let content = md(read(contentFile).toString())
+  let renderer = new md.Renderer()
+  renderer.image = function (href, title, text) {
+    // TODO add fingerprinting here
+    let alt = text ? `alt="${text}"` : ''
+    return `<img src="${href}"${alt}>`
+  }
+  let content = md(read(contentFile).toString(), {renderer: renderer})
   return {
     content,
     meta,
