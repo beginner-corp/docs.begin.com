@@ -167,6 +167,8 @@ export default function Guides (props) {
     `
     : ''
 
+    let intro = `/${lang}/getting-started/introduction`
+
   return html`
 <${Layout} ...${props}>
   <div class="h-100 d-flex fd-c fg-1 o-auto">
@@ -222,7 +224,7 @@ export default function Guides (props) {
           </h3>
           <${Link}
             class="nowrap fs1"
-            href="${lang + '/getting-started/introduction'}"
+            href="${intro}"
           >
             Check out our reference docs →
           <//>

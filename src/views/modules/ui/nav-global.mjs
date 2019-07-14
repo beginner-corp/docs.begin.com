@@ -46,7 +46,7 @@ export default function GlobalNav (props) {
     ? BeginURI(account.username)
     : BeginURI('username')
   let avatar = account.avatar
-  let appsActive = props.active === 'apps'
+  let docsActive = true // hack the planeeeeettttt
   let plansActive = props.active === 'plans'
   let upgrade = authed && !account.paidAccount
     ? html`<${UpgradeLink} active="${plansActive}"><//>`
@@ -76,7 +76,6 @@ export default function GlobalNav (props) {
       class="${linkClass}"
       icon="apps"
       label="Apps"
-      active="${appsActive}"
     ><//>`
     : ''
   }
@@ -85,6 +84,7 @@ export default function GlobalNav (props) {
       class="${linkClass}"
       icon="docs"
       label="Docs"
+      active="${docsActive}"
     ><//>
     <${GlobalNavLink}
       href="${Constants.links.community}"
