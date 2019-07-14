@@ -52,8 +52,8 @@ export default function GuideSidebarLayout (props) {
       fd-c
       jc-e
       p0
-      pr4-lg
-      pl4-lg
+      pr3-lg
+      pl3-lg
       fw-book
       c-p1
       background-size-cover
@@ -81,7 +81,9 @@ export default function GuideSidebarLayout (props) {
     </div>
   </div>
   <hr class="d-none-lg b-b b-p18"/>
-  <div class="h-100 top-0 p-relative p-static-lg fg-1 d-flex-lg o-hidden">
+  <div
+    class="h-100 top-0 p-relative p-static-lg fg-1 d-flex-lg o-hidden"
+  >
     <aside
       style="min-width:16.666rem;max-width:19.999rem;"
       class="${asideClass}">
@@ -95,5 +97,5 @@ export default function GuideSidebarLayout (props) {
     </section>
   </div>
 </div>
-      `
+  `
 }

@@ -52,6 +52,11 @@ class Sidebar extends Component {
 
     return html`
 <ul class="pt2 pr0 pr3-lg pb2 pl0 pl3-lg o-auto">
+  <h6
+    class="pt-3 pb-3 fs-1 fw-medium c-p8 uppercase nowrap cu-pointer"
+  >
+    Sections
+  </h6>
   ${categories}
 </ul>
   `

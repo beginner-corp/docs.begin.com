@@ -1,7 +1,7 @@
 import { html } from '../vendor/preact.mjs'
 import joinClasses from '../util/join-classes.mjs'
 import Icon from './icon.mjs'
-const defaultClass = 'd-block fs-1 fw-medium c-p8 c-h0 c-a6 uppercase'
+const defaultClass = 'd-block fw-book c-p8 c-h0 c-a4'
 
 export default function SidebarGuideLink (props) {
   props = props || {}
