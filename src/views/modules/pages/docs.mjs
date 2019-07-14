@@ -1,6 +1,7 @@
 import { html } from '../vendor/preact.mjs'
 import Deprecated from '../ui/deprecated.mjs'
 import LayoutSidebar from '../layout/layout-sidebar.mjs'
+import Next from '../ui/next.mjs'
 
 export default function Docs (props) {
   props = props || {}
@@ -46,6 +47,11 @@ export default function Docs (props) {
         ${docTitle}
       </h1>
       <div dangerouslySetInnerHTML="${innerHTML}"></div>
+      <${Next}
+        active="${active}"
+        toc="${toc}"
+      >
+      <//>
     </div>
   </div>
 <//>

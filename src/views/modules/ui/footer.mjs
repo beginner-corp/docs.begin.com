@@ -1,9 +1,11 @@
 import { html } from '../vendor/preact.mjs'
+import EditPage from './edit-page.mjs'
 import staticAsset from '../util/static-asset.mjs'
 
 export default function Footer (props) {
   props = props || {}
   let lang = props.lang || 'en'
+  let {active} = props
 
   let guides = () => html`<div
     class="
@@ -192,6 +194,10 @@ export default function Footer (props) {
   ${guides()}
   ${reference()}
   ${quickstart()}
+  <${EditPage}
+    active="${active}"
+  >
+  <//>
 </div>
   `
 }
