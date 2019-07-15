@@ -1,15 +1,24 @@
-Alright, let's dive in! Getting started with Begin only takes a few minutes.
+# Welcome!
 
-First, let's review what you need to start building with Begin.
+> ⏱ This guide should require less than 5 minutes
+
+Getting started building with Begin is remarkably fast and simple.
+
+Once you're finished with this guide, you'll be ready to build and scale just about any kind of web application, API, or site with speed, ease, and grace.
+
+First let's review what you need to get going.
 
 
 ## Prerequisites
 
-### tl;dr
-- macOS, Windows, or Linux
-- Node.js 8.10(+)
-- NPM 6.x
-- GitHub account
+While guide assumes general familiarity with such things as text editors, terminal interfaces, git, and basic software development in JS with Node.js, you do not need to be a CTO to use Begin (or this guide)!
+
+
+### tl;dr, you'll need:
+- A (free) GitHub account
+- Any computer running macOS, Windows, or Linux, with:
+  - Node.js 10
+  - NPM 6.x
 
 
 ### Platforms: macOS, Windows, and Linux
@@ -17,56 +26,54 @@ First, let's review what you need to start building with Begin.
 Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
 
 
-### Runtime: Node.js 8.10
+### Runtimes: Node.js 10
 
-Begin provisions and manages AWS infrastructure that runs solely on Node.js 8.10, with support additional runtimes coming in the near future.
+Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support additional runtimes coming soon).
 
-You can work locally with versions of Node other than 8.10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 8.10.
+You can work locally with versions of Node other than 10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 10.
 
-You can grab [Node latest](https://nodejs.org/en/download/) here, or [v8.10 here](https://nodejs.org/dist/v8.10.0/).
+You can grab [Node latest](https://nodejs.org/en/download/) here, or [v10.15 here](https://nodejs.org/dist/v10.15.3/).
 
 
 ### Package management: NPM 6.x
 
-Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM 5.6.0, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
+Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
 
 
 ### Version control: GitHub
 
-Begin relies on GitHub as the host of your project repo (as well as your Begin login). [Sign up for GitHub here](https://github.com/join).
+Begin hosts project repos on GitHub; if you don't have one already, [sign up for a free GitHub account here](https://github.com/join).
 
-When you create a new app, Begin will also provision a new single route (`GET /`) repo, pre-wired with webhooks to CI.
-
-Begin always and only requests the least-privileged set of permissions required to work with GitHub.
-
-> Free-tier Begin app repos can be set to private, but will require additional permissions. Make sure you adjust your private token settings in the `Settings` screen found in the left nav.
-
-
-## Create a Begin account
-
-To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), and authorize it with GitHub. That's all!
+When you create a new app, Begin will provision your GitHub repo pre-wired with the integrations it needs, such as webhooks to Begin's CI.
 
 > Begin only requests the least-privileged set of permissions required to work with GitHub, and does not attempt to access any other repositories or personal data.
 
 
-## Creating an app
+## Create a Begin account
 
-After authorizing Begin with GitHub, click the gigantic `Create App` button.
+To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), authorize it with GitHub, and pick a username. That's it!
 
-<!-- @todo - update soon with expanded information on app creation -->
 
-This will spin up your new project repository under `github.com/{your GH username}/{your app name}`, populate it with a fully functional Hello World app, and associate it with Begin.
+## Create an app
 
-> Since not all GitHub users have paid accounts with private repos, by default your new app is set up as a public GitHub repo. If you can and want to, feel free to make your Begin app repo private!
+![Begin new app selector](/_static/screens/begin-app-create-selection.jpg)
+
+After creating your Begin account, select an app from the list of starter apps to build from. (We think the `Personal website` is a great place to start, but this guide applies to all Begin apps.)
+
+Then name your app and repo, and Begin will spin up your new project repository under `github.com/{your GH username}/{your repo name}`, and populate it with a fully functional Begin app.
+
+> By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions via in the `Settings` screen found in the left nav of your Begin app.
 
 
 ## Your first deploy
+
+![Begin activity](/_static/screens/begin-activity.jpg)
 
 Immediately after Begin is finished setting up your project repo, it will kick off its first deploy to your app's `staging` environment.
 
 By default, each commit to `master` initiates a build; if the build is green, that build is immediately deployed to your app's `staging` environment. No fuss, no muss!
 
-Every new build to `staging` and `master` appears on Begin's home screen: **Builds & Deploys**.
+Every new build to `staging` and `master` appears on in your **Activity** feed.
 
 Learn more about [building & deploying with Begin](/en/getting-started/builds-deploys/).
 
@@ -75,14 +82,16 @@ Learn more about [building & deploying with Begin](/en/getting-started/builds-de
 
 ## Accessing your live app
 
-Once deployed, your app will be immediately live and available on the internets.
+Once deployed, your app will be immediately live and available on the internets. Nice! 🎉
 
-To access your `staging` Hello world app, click `Staging` link in the build status module in the top of the left nav (or go click on `Functions`, go to `GET /` route, and click the `View: Staging` link).
+To access your `staging` environment, click `Staging` link in the build status module in the top of the left nav bar.
 
 
 ## Project structure
 
-Begin applications are comprised of many small, fast, individually executing cloud Functions. Let's take a quick look at the source tree of a basic Begin app:
+Now that your apps is live in `staging`, a brief word about how Begin apps are structured so you'll know your way around.
+
+Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). Let's take a quick look at the source tree of a basic Begin app:
 
 ```bash
 .
@@ -95,11 +104,13 @@ Begin applications are comprised of many small, fast, individually executing clo
 └── test/
 ```
 
-Your app's many small, fast, isolated cloud functions (or Functions, for short) are organized in your project under `src/`.
+Your app's many small, fast, isolated Functions are organized in your project under `src/`.
 
-Each Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello world` services `GET /hello/world`).
+Each HTTP Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
 
-Learn more about [Begin app project structure](/en/getting-started/project-structure/).
+So if you want to make a change to your app's root view, you'll want to modify its `src/http/get-index/index.js` file.
+
+> Learn more about [Begin app project structure](/en/getting-started/project-structure/).
 
 
 ## Working locally
@@ -121,26 +132,31 @@ cd begin-app
 npm install
 ```
 
-- Hydrate your app's dependencies:
-```bash
-npx hydrate
-```
-
 - Start the app locally:
 ```bash
 npm start
 ```
 
-That's it, you're up and running! Learn more about [working locally](/en/getting-started/working-locally/).
+Learn more about [working locally](/en/getting-started/working-locally/).
+
+
+## That's it!
+
+In just a few minutes, you now have a fresh app with dedicated `staging` and `production` environments, a fast local, offline dev environment, pre-wired CI/CD, and everything you need to rapidly iterate.
+
+Happy building!
 
 
 ## Keep it going
 
+So, what's next? Well, here are a few ideas:
+
+
 ### Create new routes
 
-- Create new HTTP routes by opening Begin, clicking `Functions` in the left nav, and clicking the `Add a Function` buttons
+- Create new HTTP routes by clicking `Functions` in the left nav, and clicking the `Add a Function` button
   - New routes will be automatically committed to your project
-  - Run `git pull && npx hydrate` to set up your new routes locally
+  - Make sure to run `git pull` to start working locally with new routes
 
 
 ### Ship to `production`
@@ -159,3 +175,8 @@ git push origin 1.0.1
   - Or also by cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
 
 > 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!
+
+
+### Keep learning
+
+There are many fun things to learn about building Begin apps, [check out the rest of our docs here!](/en/getting-started/introduction)
