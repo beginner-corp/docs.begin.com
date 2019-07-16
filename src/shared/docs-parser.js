@@ -13,16 +13,25 @@ module.exports = function contents (active) {
     : ''
   let toc = JSON.parse(read(path).toString())
   let meta = getDocMetadata(toc, lang, cat, doc)
+
   // Defines the file needed to render a doc
   let contentFile = join(__dirname, 'docs', lang, cat, doc) + '.md'
+
   // Keep active docs dirs clean
   //   Deprecated docs live on in {lang}/_deprecated/
   if (meta.deprecated) {
     contentFile = join(__dirname, 'docs', lang, '_deprecated', doc) + '.md'
   }
+
+  // Handle static assets
+  let env = process.env.NODE_ENV
+  let local = process.env.ARC_LOCAL || env === 'testing'
+  let staticAssets = JSON.parse(process.env.STATIC_ASSETS)
   let renderer = new md.Renderer()
   renderer.image = function (href, title, text) {
-    // TODO add fingerprinting here
+    let staticDir = '/_static/'
+    if (!local && href.startsWith(staticDir)) href = `${staticDir}${staticAssets[href.replace(staticDir,'')]}`
+
     let alt = text ? `alt="${text}"` : ''
     return `<img src="${href}"${alt}>`
   }
