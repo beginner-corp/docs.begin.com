@@ -5,9 +5,10 @@ import Guides from '../pages/guides.mjs'
 class GuidesContainer extends Component {
   constructor (props) {
     super(props)
-    let toc = (props.toc || []).concat()
     this.update = this.update.bind(this)
     this.disclose = this.disclose.bind(this)
+    let staticAssets = props.staticAssets || {}
+    let toc = (props.toc || []).concat()
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
     this.state = {
@@ -15,6 +16,7 @@ class GuidesContainer extends Component {
       disclosed: false,
       open: false,
       lang: props.lang,
+      staticAssets,
       toc
     }
   }

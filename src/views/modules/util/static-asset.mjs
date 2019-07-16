@@ -1,33 +1,45 @@
+import store from '../data/store.mjs'
 const localStatic = '/_static'
 const S3Staging = 'https://begin-docs-staging.s3.us-west-1.amazonaws.com'
 const CFProduction = 'https://static.docs.begin.com'
-let local
-let staging
 
 /**
  * Determines asset paths for:
  *   browser || server && `staging` || `production`
  */
 export default function staticAsset (filename) {
-  let inWindow = typeof window !== 'undefined'
-  if (inWindow) {
-    let host = window.location.host
-    local = /localhost/.test(host)
-    staging = /staging.docs.begin.com/.test(host)
-  } else {
-    let env = process.env.NODE_ENV
-    local = process.env.ARC_LOCAL || env === 'testing'
-    staging = env === 'staging'
-  }
-
+  let {inWindow} = getEnv()
   let origin
   origin = inWindow
     ? getOriginBrowser()
     : getOriginServer()
+  filename = inWindow
+    ? getFilenameBrowser(filename)
+    : getFilenameServer(filename)
   return `${origin}/${filename}`
 }
 
+function getEnv () {
+  const inWindow = typeof window !== 'undefined'
+  if (inWindow) {
+    let host = window.location.host
+    return {
+      inWindow,
+      local: /localhost/.test(host),
+      staging: /staging.docs.begin.com/.test(host)
+    }
+  } else {
+    let env = process.env.NODE_ENV
+    return {
+      inWindow,
+      local: process.env.ARC_LOCAL || env === 'testing',
+      staging: env === 'staging'
+    }
+  }
+}
+
 function getOriginBrowser () {
+  let {local, staging} = getEnv()
   return local
     ? localStatic
     : staging
@@ -36,6 +48,7 @@ function getOriginBrowser () {
 }
 
 function getOriginServer () {
+  let {local, staging} = getEnv()
   return local
     ? localStatic
     : staging
@@ -43,10 +56,21 @@ function getOriginServer () {
       : CFProduction
 }
 
-// function getFilenameBrowser () {
-//   // TODO
-// }
+function getFilenameBrowser (filename) {
+  const staticAssets = store().staticAssets
+  let {local} = getEnv()
+  let hashed = staticAssets[filename]
+  return local
+    ? filename
+    : hashed
+}
 
-// function getFilenameServer () {
-//   // TODO
-// }
+function getFilenameServer (filename) {
+  // eslint-disable-next-line
+  const staticAssets = require('@architect/shared/static.json')
+  let {local} = getEnv()
+  let hashed = staticAssets[filename]
+  return local
+    ? filename
+    : hashed
+}

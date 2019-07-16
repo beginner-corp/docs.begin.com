@@ -9,6 +9,7 @@ class GuideContainer extends Component {
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
     let meta = Object.assign({}, props.meta)
+    let staticAssets = props.staticAssets || {}
     let toc = meta.sections || []
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
@@ -19,6 +20,7 @@ class GuideContainer extends Component {
       disclosed: false,
       meta,
       open: false,
+      staticAssets,
       toc
     }
   }

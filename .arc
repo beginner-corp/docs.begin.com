@@ -21,6 +21,7 @@ get /:lang/:cat
 @static
 staging begin-docs-staging
 production begin-docs
+fingerprint true
 
 @plugins
 architect/arc-plugin-node-prune
