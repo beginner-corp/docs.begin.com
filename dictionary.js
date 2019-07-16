@@ -1,5 +1,4 @@
-module.exports = [
-  /[KMG]B/, // Data quantities, ostensibly
+let dictionary = [
   '.vimrc',
   '`build`ing',
   'ACM',
@@ -10,8 +9,8 @@ module.exports = [
   'ARN',
   'ARNs',
   'async',
-  'Auth',
   'auth',
+  'Auth',
   'authortime',
   'aws-sdk',
   'AWS',
@@ -33,6 +32,7 @@ module.exports = [
   'CA',
   'cd',
   'CDN',
+  'CDNs',
   'cheatsheet',
   'CLA',
   'CLI',
@@ -56,6 +56,7 @@ module.exports = [
   'CSR',
   'CSRF',
   'CSS',
+  'CTO',
   'debuggable',
   'Declaratively',
   'declaratively',
@@ -113,6 +114,7 @@ module.exports = [
   'namespace',
   'namespaces',
   'nav',
+  'neé',
   'NewOps',
   'Node',
   'NodeJS',
@@ -124,6 +126,7 @@ module.exports = [
   'OAuth',
   'ok',
   'Ok',
+  'OpenJS',
   'param',
   'params',
   'ParcelJS',
@@ -137,8 +140,8 @@ module.exports = [
   'Protip',
   'protip',
   'PRs',
-  'quickstart',
   'Quickstart',
+  'quickstart',
   'readme',
   'Reference',
   'renderer',
@@ -165,6 +168,7 @@ module.exports = [
   'SHA',
   'SNS',
   'SQS',
+  'SSD-backed',
   'SSL',
   'subdirectories',
   'subdomain',
@@ -187,3 +191,7 @@ module.exports = [
   'YAML',
   'ZoneEdit',
 ]
+
+dictionary.unshift(/[KMG]B/) // Data quantities, ostensibly
+
+module.exports = dictionary

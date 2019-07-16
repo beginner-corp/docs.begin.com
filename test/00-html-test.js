@@ -22,7 +22,7 @@ test('get /en/getting-started/introduction', t=> {
   },
   function win(err) {
     if (err) {
-      t.fail(err, err)
+      t.fail(err)
     }
     else {
       t.ok(true, 'got result')
