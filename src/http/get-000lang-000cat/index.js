@@ -6,7 +6,9 @@ const renderToString = require('preact-render-to-string')
 const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Guides = imports('@architect/views/modules/pages/guides.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
+const staticAssets = require('@architect/shared/static.json')
 const ThirdParty = require('@architect/views/scripts')
+process.env.STATIC_ASSETS = JSON.stringify(staticAssets)
 
 function route (req, res) {
   let account = req.session.account
@@ -35,6 +37,7 @@ function route (req, res) {
         <${Guides}
           lang="${lang}"
           account="${account}"
+          staticAssets="${staticAssets}"
           toc="${toc}"
         ><//>
         `
@@ -45,6 +48,7 @@ function route (req, res) {
       state: {
         account,
         lang,
+        staticAssets,
         toc
       },
       thirdparty: ThirdParty()

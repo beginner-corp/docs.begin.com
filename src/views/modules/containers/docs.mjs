@@ -8,6 +8,7 @@ class DocsContainer extends Component {
     this.update = this.update.bind(this)
     this.toggle = this.toggle.bind(this)
     this.disclose = this.disclose.bind(this)
+    let staticAssets = props.staticAssets || {}
     let toc = (props.toc || []).concat()
     // We only use props as initial values ( from hydration )
     // subsequent api responses replace the initial values from props
@@ -19,6 +20,7 @@ class DocsContainer extends Component {
       meta: Object.assign({}, props.meta),
       open: false,
       overflow: false,
+      staticAssets,
       toc
     }
   }
