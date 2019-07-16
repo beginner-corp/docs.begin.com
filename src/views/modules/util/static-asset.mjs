@@ -66,8 +66,7 @@ function getFilenameBrowser (filename) {
 }
 
 function getFilenameServer (filename) {
-  // eslint-disable-next-line
-  const staticAssets = require('@architect/shared/static.json')
+  const staticAssets = JSON.parse(process.env.STATIC_ASSETS)
   let {local} = getEnv()
   let hashed = staticAssets[filename]
   return local

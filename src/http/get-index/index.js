@@ -5,6 +5,7 @@ const { html } = imports('@architect/views/modules/vendor/preact.mjs')
 const Learn = imports('@architect/views/modules/pages/learn.mjs').default
 const HTMLDocument = imports('@architect/views/modules/document/html.mjs').default
 const staticAssets = require('@architect/shared/static.json')
+process.env.STATIC_ASSETS = JSON.stringify(staticAssets)
 
 function route (req, res) {
   let account = req.session.account
