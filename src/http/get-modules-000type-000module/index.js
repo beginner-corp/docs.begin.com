@@ -1,14 +1,12 @@
 const { promisify } = require('util')
 const bundler = require('./_bundler')
 const crypto = require('crypto')
+const data = require('@architect/data')
 const fs = require('fs')
 const readFile = promisify(fs.readFile)
 const join = require('path').join
 const fingerprint = require('@architect/shared/_fingerprint')
 let fingerprintEnabled
-// TODO: move index (and possibly cache) into more persistent store for faster forwards
-let index = {}
-let cache = {}
 
 exports.handler = async function http (req) {
   let type = req.params.type
@@ -26,10 +24,12 @@ exports.handler = async function http (req) {
        * Kicks off entry file bundling in staging and production
        */
       if (type === 'entry') {
+        let key = module
+        let cachedModule = await data.assets.get({key})
         // If the cache is warm, immediately forward to the bundle
-        if (index[module]) {
+        if (cachedModule) {
           return {
-            location: `/modules/bundle/${index[module]}`,
+            location: `/modules/bundle/${cachedModule.hash}`,
             code: 302
           }
         }
@@ -47,10 +47,16 @@ exports.handler = async function http (req) {
           dest = dest.join('.mjs')
 
           // Index + cache result for future requests
-          index[module] = dest
-          cache[module] = js
+          cachedModule = {
+            key: module,
+            hash: dest,
+            data: js,
+            created: new Date().toISOString()
+          }
+          let maxSize = 399 * 1000 // Respect Dynamo's 400KB record limit
+          if (cachedModule.data.length < maxSize) cachedModule = await data.assets.put(cachedModule)
           return {
-            location: `/modules/bundle/${dest}`,
+            location: `/modules/bundle/${cachedModule.hash}`,
             code: 302
           }
         }
@@ -68,7 +74,9 @@ exports.handler = async function http (req) {
 
         requested = join(process.cwd(), 'node_modules', '@architect', 'views', 'modules', 'entry', module)
         if (fs.existsSync(requested)) {
-          js = cache[module] || await bundler(requested)
+          js = await data.assets.get({key:module})
+          js = js.data
+          if (!js) js = await bundler(requested)
         }
         else throw Error
       }

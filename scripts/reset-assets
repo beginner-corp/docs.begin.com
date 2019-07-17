@@ -1,0 +1,21 @@
+#! /usr/bin/env node
+process.env.NODE_ENV = 'staging'
+process.env.AWS_REGION = 'us-west-1'
+let data = require('@architect/data')
+
+try {
+  (async function resetAssets () {
+    let assets = await data.assets.scan({})
+    if (assets.Count) {
+      assets.Items.forEach(async asset => {
+        let key = asset.key
+        await data.assets.delete({key})
+        console.log(`Reset bundle:`, key)
+      })
+    }
+    else console.log('No assets found to reset!')
+  })()
+}
+catch (err) {
+  console.log('Error!', err)
+}

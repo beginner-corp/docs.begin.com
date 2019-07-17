@@ -23,5 +23,12 @@ staging begin-docs-staging
 production begin-docs
 fingerprint true
 
+@tables
+assets
+  key *String
+  #hash
+  #data
+  #created
+
 @plugins
 architect/arc-plugin-node-prune
