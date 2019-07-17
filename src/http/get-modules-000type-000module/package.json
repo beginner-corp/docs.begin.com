@@ -2,6 +2,7 @@
   "name": "begin-docs-get-modules-000type-000module",
   "dependencies": {
     "@architect/data": "latest",
-    "@architect/functions": "latest"
+    "@architect/functions": "latest",
+    "rollup": "^1.17.0"
   }
 }
