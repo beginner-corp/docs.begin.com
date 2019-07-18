@@ -32,7 +32,8 @@ var css = postcss()
 
 function route(req, res) {
   res({
-    css: css
+    css,
+    cacheControl: 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
   })
 }
 
