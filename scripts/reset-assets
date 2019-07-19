@@ -1,10 +1,12 @@
 #! /usr/bin/env node
-process.env.NODE_ENV = 'staging'
 process.env.AWS_REGION = 'us-west-1'
+process.env.NODE_ENV = process.env.NODE_ENV || 'staging'
+let env = process.env.NODE_ENV
 let data = require('@architect/data')
 
 try {
   (async function resetAssets () {
+    console.log(`Resetting assets for ${env}`)
     let assets = await data.assets.scan({})
     if (assets.Count) {
       assets.Items.forEach(async asset => {

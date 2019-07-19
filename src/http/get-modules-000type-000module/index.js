@@ -1,99 +1,119 @@
 const { promisify } = require('util')
 const bundler = require('./_bundler')
-const crypto = require('crypto')
 const data = require('@architect/data')
+const fingerprint = require('./_fingerprint')
 const fs = require('fs')
 const readFile = promisify(fs.readFile)
 const join = require('path').join
-const fingerprint = require('@architect/shared/_fingerprint')
-let fingerprintEnabled
+const replacer = require('./_replacer')
+const sha = require('./_sha')
+let staticAssets
 
+/**
+ * AWS env:
+ * Entry module reqs:   bundle/sha (if necessary) and 302 to bundle
+ * Bundle module reqs:  deliver bundle (or create bundle if not already found) with long-lived cache headers
+ * Single module reqs:  serve fingerprinted versions with long-lived cache headers
+ *
+ * Local env:
+ * Entry + module files: serve as is, with anti-caching headers
+ * Do not bundle anything
+ */
 exports.handler = async function http (req) {
   let type = req.params.type
   let module = req.params.module
-  if (fingerprintEnabled == undefined) fingerprintEnabled = fingerprint.enabled() // Ideally only check it once
   let local = process.env.ARC_LOCAL || process.env.NODE_ENV === 'testing'
-  let requested = join(__dirname, 'node_modules', '@architect', 'views', 'modules', type, module)
+  let modulesPath = join(process.cwd(), 'node_modules', '@architect', 'views', 'modules')
+  let requested = join(modulesPath, type, module)
+
+  // Declare all local modules imported as classes (e.g. `new Bar('/modules/foo/bar.mjs')`) here:
+  let globals = []
+
   try {
     let response = {
       type: 'text/javascript; charset=utf8'
     }
     let js
-    if (fingerprintEnabled && !local) {
+    // Be super careful disabling this, if you're using the remote db you can accidentally cache a development version of an asset!
+    if (!local) {
       /**
        * Kicks off entry file bundling in staging and production
        */
       if (type === 'entry') {
+        // Weed out bad requests
+        if (!fs.existsSync(requested)) throw Error('file not found')
+
+        // Check the cache first
         let key = module
         let cachedModule = await data.assets.get({key})
-        // If the cache is warm, immediately forward to the bundle
+
+        // If warm, immediately forward to the bundle
         if (cachedModule) {
           return {
             location: `/modules/bundle/${cachedModule.hash}`,
             code: 302
           }
         }
-        // Warm it up
+
+        // Otherwise, warm the cache and forward to the bundle path
         else {
-          // Weed out bad requests
-          if (!fs.existsSync(requested)) throw Error
-
+          staticAssets = fingerprint(globals)
           js = await bundler(requested)
-          let dest = module.split('.mjs')
-          let hash = crypto.createHash('sha1')
-          hash.update(new Buffer.from(js))
-          let sha = hash.digest('hex').substr(0,10)
-          dest[dest.length - 2] = `${dest[dest.length - 2]}-${sha}`
-          dest = dest.join('.mjs')
+          js = replacer(js, staticAssets)
 
-          // Index + cache result for future requests
+          // Cache result for future requests
           cachedModule = {
             key: module,
-            hash: dest,
+            hash: sha(module, js),
             data: js,
             created: new Date().toISOString()
           }
           let maxSize = 399 * 1000 // Respect Dynamo's 400KB record limit
-          if (cachedModule.data.length < maxSize) cachedModule = await data.assets.put(cachedModule)
+          if (js.length < maxSize) cachedModule = await data.assets.put(cachedModule)
           return {
             location: `/modules/bundle/${cachedModule.hash}`,
             code: 302
           }
         }
       }
+
       /**
        * Bundle request handler
        */
       else if (type === 'bundle') {
-        module = module.split('.mjs')
-        module[0] = module[0].slice(0, module[0].length - 11)
-        module = module.join('.mjs')
-
-        // Weed out bad requests
-        if (module === '.mjs' || !module.includes('.mjs')) throw Error
-
-        requested = join(process.cwd(), 'node_modules', '@architect', 'views', 'modules', 'entry', module)
+        requested = join(modulesPath, 'entry', sha.remove(module))
         if (fs.existsSync(requested)) {
           js = await data.assets.get({key:module})
-          js = js.data
-          if (!js) js = await bundler(requested)
+          if (!js) {
+            staticAssets = fingerprint(globals)
+            js = await bundler(requested)
+            js = replacer(js, staticAssets)
+          }
+          else js = js.data
         }
-        else throw Error
+        else throw Error('file not found')
       }
       /**
        * Calls individual fingerprinted modules
        */
       else {
-        // Caveat / FIXME(?): non-entry do not (yet) call other fingerprinted files
-        // Prob just needs to be run through replacer (with some testing)
-        let file = await readFile(requested)
-        js = file.toString()
+        requested = join(modulesPath, type, sha.remove(module))
+        if (fs.existsSync(requested)) {
+          js = await readFile(requested)
+          if (js) {
+            staticAssets = fingerprint(globals)
+            js = replacer(js.toString(), staticAssets)
+          }
+          else throw Error('file not found')
+        }
+        else throw Error('file not found')
       }
       response.body = js
       response.cacheControl = 'max-age=315360000'
     }
+
     /**
-     * Deliver unbundled modules
+     * Deliver unbundled, uncached, bare modules for local development
      */
     else {
       js = await readFile(requested)
@@ -105,7 +125,8 @@ exports.handler = async function http (req) {
     return {
       type: 'text/plain; charset=utf8',
       status: 404,
-      body: `File not found`
+      body: `File not found`,
+      cacheControl: 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
   }
 }
