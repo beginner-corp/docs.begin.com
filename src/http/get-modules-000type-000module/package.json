@@ -3,6 +3,8 @@
   "dependencies": {
     "@architect/data": "latest",
     "@architect/functions": "latest",
-    "rollup": "^1.17.0"
+    "escodegen": "^1.11.1",
+    "esprima": "^4.0.1",
+    "rollup": "^1.16.7"
   }
 }
