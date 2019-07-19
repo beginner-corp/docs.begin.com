@@ -4,24 +4,33 @@ Your `begin.app` URL is pretty nice, but it's probably not as good as that great
 
 Begin allows you to add your domain to your Begin app through a simple process called domain mapping (also sometimes called host mapping).
 
-Once mapped, you can always swap out your app's domains at any time, or get rid of them entirely – your old `begin.app` URLs will continue to work.
+Once mapped, you can always swap out your app's domains at any time, or get rid of them entirely – your old `begin.app` URLs will always continue to work.
 
 
 ## Mapping your domain
+
+Domain mapping follows a simple process, and should only take a few minutes to get set up:
+1. Enter your `production` and `staging`
+2. Verify your ownership of the domain(s) by creating some CNAME challenge records to your DNS provider
+3. Map the domain to your Begin app in your DNS provider
+
+It's a lot faster and easier than it sounds, let's get started!
 
 
 ## Enter `production` and `staging` domains
 
 The first step in domain mapping is to enter the domains you'll be using.
 
-Begin's first-class support for `staging` environments means you'll need to add a `staging` domain too. If the domain you'd like to use is, say, `www.zombo.com`, we'd suggest keeping it simple and setting your `staging` domain to `staging.zombo.com` – but really it can be whatever you want – including another domain entirely (like `zombostaging.net`).
+Begin's first-class support for `staging` environments means you'll need to add a `staging` domain (or subdomain), too.
+
+Say your domain is `www.zombo.com`. We'd suggest keeping it simple and setting your `staging` domain to `staging.zombo.com` – but you can also opt to configure it to be `zombostaging.net`, if you prefer.
 
 In the next step, you'll enter the first two values in your DNS provider's interface, which will prove you own your domains and generate your SSL certificates.
 
 
 ## Generating SSL certificates
 
-In this step, you'll need to add two CNAME values to your DNS provider in order to generate your SSL certificates.
+In this step, you'll need to add two CNAME values to your DNS provider in order to verify your ownership of the domain(s), and generate your SSL certificates for HTTPS.
 
 During the SSL verification step, the first part of `name` gets entered as your CNAME subdomain, and the value is inputted as the value. For instance, when you're provided the following CNAME entry:
 
@@ -30,16 +39,16 @@ During the SSL verification step, the first part of `name` gets entered as your 
 
 You'll add a CNAME subdomain of `_2f9b34277e4b159e0beaa859e8802a93` within your `example.com` zone, and set its value to `_58cb94c5d71976edd03e8303fc1a126b.acm-validations.aws.`.
 
-Due to the eventually consistent nature of DNS-based verification, it may take a few minutes for your changes to get picked up. Check back after a few minutes, and your values should be green, and you should be able to advance to the next and final step.
+Due to the eventually consistent nature of DNS-based verification, it may take a few minutes for your changes to get picked up. Check back after a few minutes, and your values should be green, and you should be able to complete the next and final step.
 
 If for some reason after more than a few minutes your domains haven't verified, make sure that you've correctly entered the settings into your DNS.
 
-Should you continue to have trouble, please don't hesitate to [reach out to support](https://begin-help.zendesk.com/hc/en-us/requests/new).
+Should you continue to have trouble, please don't hesitate to [reach out to support](https://begin.com/support).
 
 
 ## Domain mapping
 
-In the final step, you'll add the final two CNAME (or [ALIAS](#mapping-naked-domains), if using naked domains) values to your DNS provider. This points your domain at your new Begin domain distribution.
+In the final step, you'll add the final two CNAME (or [ALIAS](#mapping-naked-domains), if you're using naked domains) values to your DNS provider. This points your domain at your Begin app.
 
 For instance, when you're provided the following CNAME entry:
 
@@ -48,7 +57,7 @@ For instance, when you're provided the following CNAME entry:
 
 You'll add a CNAME subdomain of `www` within your `example.com` zone, and set its value to `pi1f6fddqd0dje.cloudfront.net`.
 
-Please note: Begin does not presently verify you have correctly completed this step, so you may want to use a service like [DNS Checker](https://dnschecker.org/) to validate your changes.
+> Note: Begin does not presently verify you have correctly completed this step, so you may want to use a service like [DNS Checker](https://dnschecker.org/) to validate your changes.
 
 
 ## Mapping naked domains

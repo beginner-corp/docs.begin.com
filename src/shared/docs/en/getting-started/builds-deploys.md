@@ -1,23 +1,21 @@
 ## Overview
 
-Begin isn't just responsible for provisioning and managing your app's serverless infrastructure, it's also a fully integrated CI/CD build pipeline optimized for serverless architecture.
+In addition to provisioning and managing your app's infrastructure, Begin is also a fully integrated CI/CD build pipeline optimized for incredibly rapid deployments.
 
-Begin builds run entirely in cloud functions, so they spin up fast and run in parallel as quickly as you can push changes.
+Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to `master`.
 
-The `Builds & Deploys` view – your default view in Begin - shows all your app's builds, deploy status, and corresponding log data.
+Deployments to `staging` and `production` take only seconds and are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
 
-![Begin screenshot](/_static/screens/begin-activity.png)
+![Begin screenshot](/_static/screens/begin-activity.jpg)
 
-Deploying to Begin is as simple as pushing to `master` or cutting a git tag.
-
-Deployments to `staging` and `production` take only seconds are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
+The `Activity` view – your default view in Begin - shows all your app's builds, its current deploy status, and corresponding build log data.
 
 
 ## Build pipeline
 
-Begin offers three hosted environments out of the box: `testing`, `staging`, and `production`. (Of course, Begin also supports full [local development](/en/getting-started/quickstart/#working-locally).)
+Begin offers three hosted environments out of the box: `testing`, `staging`, and `production`. Begin also supports full [local development](./working-locally), of course.
 
-Within these environments, Begin follows a fairly traditional CI/CD build pipeline:
+Within these hosted environments, Begin follows a fairly traditional CI/CD build pipeline:
 - `testing` - Commits to `master` kick off CI; green builds deploy to `staging`
 - `staging` - Runs latest green build from `master`; clicking the `Deploy to Production` button in the left nav in Begin (or cutting a git tag) deploys to `production`
 - `production` - Runs the latest `production` release
@@ -29,21 +27,23 @@ Each push to `master` kicks off Begin CI.
 
 The last step for each green build is a `staging` deploy.
 
-The current running version on `staging` is represented by the commit SHA, and can be found in the upper left corner of Begin.
+The version of your app currently running on `staging` is represented by the commit SHA, and can be found in the upper left corner of Begin.
 
 
 ## Deploying to `production`
 
-Deploys to `production` can only occur when the latest `staging` build is green. Cut a `production` release by:
-  - Using the `Deploy to Production` button in the left nav in Begin, or
-  - Creating a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging), i.e.:
+Deploys to `production` can only occur when the latest `staging` build is green (i.e. all build steps passed without error).
+
+Assuming your current build is green, cut a `production` release by:
+- Using the `Deploy to Production` button in the left nav in Begin, or
+- Creating a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging), i.e.:
 ```bash
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
-  - Or also by cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
+- Or also by creating a [Release in GitHub](https://help.github.com/articles/creating-releases/)
 
-The current running version on `production` is represented by the version you specified in your tag, and can be found in the upper left corner of Begin.
+The current running version on `production` is represented by the version you specified in your git tag (and is also found in the upper left corner of Begin).
 
 > 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!
 
@@ -62,15 +62,18 @@ This step is non-configurable and does not output logs.
 
 ### **Install**
 
-Responsible for installing dependencies via NPM to all routes (e.g. `src/http/**`) and shared code (`src/shared`, `src/views`).
+Responsible for installing dependencies to:
+- The project root (`./`)E
+- Your project's cloud function directories (i.e. `src/http/**`)
+- Your project's shared code, if any (i.e. `src/shared/`, `src/views/`)
 
 This step is non-configurable and does output logs.
 
-> Note: dependencies in your project's root `package.json` are not available to your routes.
+> Note: dependencies in your project's root `package.json` are not available to your individual Functions; you should treat deps in the root as developer dependencies only.
 >
-> To ensure a dependency is available to a given Function, cd into that function's folder and install it there.
+> To ensure a dependency is available to a given Function, `cd` into that function's folder and install it there.
 >
-> To install global deps, install them to `shared` (`src/shared`) – but mind dependency bloat! **Routes must weigh in under 5MB uncompressed.**
+> To install global deps, install them to `src/shared` – but mind dependency bloat! **Function dirs must weigh in under 5MB uncompressed.**
 
 
 ### **Build**
@@ -87,7 +90,7 @@ Runs an arbitrary build script defined in your project's root `package.json` lik
 }
 ```
 
-This is a great place to generate static assets (to be deployed via the `.static` folder) or implement a bundler such as Webpack or Parcel.
+This is a great place to generate static assets (to be deployed via the `public/` folder) or implement a bundler such as Webpack or Parcel.
 
 
 ### **Lint**
@@ -126,7 +129,7 @@ Defines your test procedures. Like `lint`, it's defined in your Begin app's defa
 Ah, the step we've been waiting for!
 
 Provided all other build steps `exit(0)`, Begin takes over again to manage deployment, which primarily includes:
-- Deploying all routes to their corresponding Lambda cloud functions
-- Deploying static assets (`.static/*`) to your app's S3 bucket
+- Deploying all Function folders to their corresponding cloud functions
+- Deploying static assets (`public/*`) to your app's built-in blob store (S3) and CDN
 
-The deploy step is non-configurable and does not currently output logs (but will in the future).
+The deploy step is non-configurable and does not currently output logs.

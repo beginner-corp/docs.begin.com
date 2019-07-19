@@ -1,6 +1,6 @@
 ## Overview
 
-Open `Settings` in Begin to view and modify your app's settings and resources, and eject or delete your app.
+Open `Settings` in Begin to view and modify your app's settings and resources, download your data, and eject or delete your app.
 
 
 ## App name
@@ -12,7 +12,7 @@ Your configured app name is displayed here.
 
 Begin can fire notifications to the Slack channel of your choosing, notifying members of new builds.
 
-Click the `Add to Slack` button to set up your integration.
+Click the `Add to Slack` button to set up your notification integration.
 
 
 ## AWS resources inventory
@@ -26,12 +26,12 @@ The AWS resources inventory details the serverless infra your app is using (incl
 
 In the event you want to start over or, sadly, just pack it in, Begin allows you to destroy your app (and all related infra) with the `Delete app` button.
 
-> Note: this is an irreversible action, but Begin does not touch your git repo. If you wish to destroy that as well, please delete your repo from GitHub.
+> Note: this is an irreversible action. However, Begin does not destroy your git repo, which you can delete from GitHub.
 
 
 ## Ejecting your app
 
-If you're digging this whole serverless thing but want to run everything under your own AWS account, no worries, we've got you covered.
+If you're digging this whole serverless app thing but want to run everything under your own AWS account, no worries, we've got you covered.
 
 Just follow the following steps:
 
@@ -40,10 +40,10 @@ Just follow the following steps:
 2. Clone your Begin app
 
 ```bash
-git clone https://github.com/{your GH username}/{your app name}.git
+git clone https://github.com/{your GH org/username}/{your app name}.git
 ```
 
-2. Open the `.arc` file, and add a `@app` namespace (<25 chars) to the top; for example, add lines 1-2:
+2. Open the `.arc` file, and add a `@app` namespace (=<10 chars) to the top; for example, add lines 1-2:
 
 ```bash
 @app
@@ -59,6 +59,6 @@ get /
 
 5. Run `npx create`
 
-That should get you going! Of course, you'll probably want to keep going by adding a domain, setting up a database, and more.
+That should get you going on AWS without Begin! Of course, you'll probably want to keep going by adding a domain, setting up a database, and more.
 
 To learn more about [expanding and configuring your exported Architect project](https://arc.codes/).
