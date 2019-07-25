@@ -54,20 +54,8 @@
         "docTitle": "Introduction",
         "description": "Introduction to Begin",
         "sections": [
-          "What is Begin?",
-          "What Begin does & doesn't do",
-          "Background & open source governance"
-        ]
-      },
-      {
-        "docID": "working-locally",
-        "docTitle": "Working locally",
-        "description": "Guide to working locally and writing tests with Begin",
-        "sections": [
-          "Overview",
           "Getting set up",
-          "Working with routes",
-          "Writing tests"
+          "Previewing your changes"
         ]
       },
       {

@@ -5,6 +5,8 @@
 module.exports = {
   // example
   // '/en/old/busted': '/en/new/hotness'
+  '/en/meta/about': '/en/background/about',
+  '/en/getting-started/working-locally': '/en/guides/introduction',
   '/en/getting-started/quickstart': '/en/guides/quickstart',
   '/en/routes-functions/creating-new-routes': '/en/functions/creating-new-functions',
   '/en/routes-functions/sessions': '/en/functions/sessions',

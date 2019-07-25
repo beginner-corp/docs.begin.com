@@ -5,7 +5,7 @@ That project became known as [Architect](https://arc.codes), which we (Begin) do
 
 ## Philosophy
 
-At Begin, we are believers in the power and original promise of the web, and we are deeply commited to open source and open standards.
+At Begin, we are believers in the power and original promise of the web, and we are deeply committed to open source and open standards.
 
 We endeavor to publish as much of our code as possible (always `Apache 2.0`), in addition to our knowledge and learnings.
 

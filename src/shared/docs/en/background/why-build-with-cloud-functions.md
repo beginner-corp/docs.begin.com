@@ -22,7 +22,7 @@ Unlike server-metaphor based technologies (servers, VMs, instances, Docker / Kub
 - **Scale and grow automatically** - time spent capacity planning is time wasted
 - **Are more secure** - cloud functions adhere to least privilege at the lowest levels, each being locked down and secured from the filesystem all the way up through the other cloud services it can communicate with
 - **Do not keep ports or processes open** - with nothing to scan and attack, say goodbye to one of your app's chief security vectors
-- **Recycle instantly** – no more lag to do do simple things like modify environment variables, cloud functions are easily reconfigured, and changes go live in milliseconds
+- **Recycle instantly** – no more lag to do simple things like modify environment variables, cloud functions are easily reconfigured, and changes go live in milliseconds
 - **Never require patching** - the latest under-the-hood security updates are baked into every invocation in real-time, without maintainer intervention
 - **Never require maintenance** - planned downtime to tidy up your server cluster is simply a thing of the past
 - **Only pay for what you for what you use, and at affordable rates** - not having to keep servers running means not having to pay for servers sitting idle; and even when in heavy use, cloud functions are highly affordable

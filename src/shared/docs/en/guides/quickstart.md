@@ -137,7 +137,7 @@ npm install
 npm start
 ```
 
-Learn more about [working locally](/en/getting-started/working-locally/).
+Learn more about [getting set up in our Introduction](/en/getting-started/introduction/).
 
 
 ## That's it!
