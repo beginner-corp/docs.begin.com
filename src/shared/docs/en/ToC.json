@@ -1,5 +1,21 @@
 [
   {
+    "catID": "background",
+    "catTitle": "Background",
+    "docs": [
+      {
+        "docID": "about",
+        "docTitle": "About Begin",
+        "description": "About Begin: what it is, how it works, who we are, and what we believe",
+        "sections": [
+          "Who we are",
+          "What we believe",
+          "Our business model"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "getting-started",
     "catTitle": "Getting Started",
     "docs": [
@@ -248,16 +264,6 @@
     "catID": "meta",
     "catTitle": "Meta",
     "docs": [
-      {
-        "docID": "about",
-        "docTitle": "About Begin",
-        "description": "About Begin: who we are, what we believe, how Begin works",
-        "sections": [
-          "Who we are",
-          "What we believe",
-          "Our business model"
-        ]
-      },
       {
         "docID": "architect-4-migration",
         "docTitle": "Architect 4 migration",
