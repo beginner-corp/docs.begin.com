@@ -13,6 +13,35 @@
           "What we believe",
           "Our business model"
         ]
+      },
+      {
+        "docID": "why-build-with-cloud-functions",
+        "docTitle": "Why build with cloud functions?",
+        "description": "Reasons and considerations related to building cloud function-based applications (CFAs) on Begin",
+        "sections": [
+          "So, here's why build with cloud functions",
+          "Cloud function considerations"
+        ]
+      },
+      {
+        "docID": "what-begin-does-and-doesnt-do",
+        "docTitle": "What Begin does and doesn't do",
+        "description": "Considerations and limitations related to building with Begin.",
+        "sections": [
+          "What Begin does",
+          "What can you build with Begin?",
+          "What Begin doesn't do",
+          "What shouldn't you build with Begin?"
+        ]
+      },
+      {
+        "docID": "open-source",
+        "docTitle": "Open source & governance",
+        "description": "Begin's policies and approaches to open source & open source governance",
+        "sections": [
+          "Philosophy",
+          "Run your Begin apps yourself"
+        ]
       }
     ]
   },
