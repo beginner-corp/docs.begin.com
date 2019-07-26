@@ -5,20 +5,20 @@ Begin apps are composed of many (relatively) small, fast cloud functions – inc
 
 ## Getting started
 
-In a Begin app, each unique route is serviced by its own HTTP Function. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`) 
+In a Begin app, each unique route is serviced by its own HTTP Function. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`)
 
 By default, every Begin app starts with a single HTTP Function: `GET /`.
 
 HTTP Functions are dependency-free, with a minimal but powerful low-level API that we'll explore in the [HTTP handler](#http-handler) section.
 
-Each HTTP Function is assigned a folder in your project under `src/http/` (i.e. `src/http/post-api-submit/`, and `src/http/get-index/`).
+Each HTTP Function is assigned a folder in your project under `src/http/` (e.g. `src/http/post-api-submit/` for `POST /api/submit`, and `src/http/get-index/` for `GET /`).
 
-Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that Function's folder is ≤5MB, which helps keep your Functions – and thus your app – super fast).
+Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that Function's folder is ≤5MB; this helps keep your Functions – and thus your app – super fast).
 
 
 ## HTTP handler
 
-Let's look at an example of an HTTP Function:
+Let's look at an example of a basic HTTP Function:
 
 ```javascript
 // src/http/get-*/index.js
@@ -38,6 +38,8 @@ exports.handler = async function http(request) {
   }
 }
 ```
+
+No sweat, right?
 
 
 ## HTTP handler API

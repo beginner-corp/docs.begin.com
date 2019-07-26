@@ -114,7 +114,6 @@ Runs eslint by default (or the linter of your choice). Defined in your Begin app
 
 Defines your test procedures. Like `lint`, it's defined in your Begin app's default `package.json` (and we strongly recommend expanding your app's tests):
 
-
 ```js
 {
   "scripts": {
@@ -122,6 +121,8 @@ Defines your test procedures. Like `lint`, it's defined in your Begin app's defa
   }
 }
 ```
+
+Head here to [learn more about writing tests](/en/getting-started/writing-tests).
 
 
 ### **Deploy**

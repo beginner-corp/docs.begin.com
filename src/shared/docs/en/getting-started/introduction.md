@@ -2,7 +2,7 @@ Hello there! **Begin is the ridiculously quick platform for building modern web 
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
 
-Begin leverages next-gen cloud platform technologies – like globally available serverless infra, SSD-backed databases, and CDNs – and manages all your app's needs, from git integration, to CI/CD, and everything in between.
+Begin leverages next-gen cloud platform technologies – like globally available serverless infra, SSD-backed databases, and integrated CDNs – and manages all your app's needs, from git integration, to CI/CD, and everything in between.
 
 We can't wait to share everything you need to know about go deeper with Begin.
 
@@ -44,7 +44,7 @@ That's it, you're ready to build!
 
 Changes to your app in your local environment are immediately available without requiring a dev server restart.
 
-Your application's business logic exists within your HTTP Function directories (e.g. `src/http/get-index`), or your shared code folders (e.g. files in `src/shared/` or `src/views/`).
+Your application's business logic exists within your HTTP Function directories (e.g. `src/http/get-index`), and your shared code folders (e.g. files in `src/shared/` or `src/views/`).
 
 Any new HTTP Functions (i.e. routes) that you create in Begin will be automatically committed to your project; run `git pull` to start working locally with them.
 

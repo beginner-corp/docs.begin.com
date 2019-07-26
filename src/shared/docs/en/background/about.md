@@ -1,6 +1,6 @@
 ### **Begin is the ridiculously quick platform for building modern web apps and APIs.**
 
-Begin leverages next-gen cloud platform technologies – like globally available serverless infra, SSD-backed databases, and CDNs – to make your building durable, scalable software massively faster.
+Begin leverages next-gen cloud platform technologies – like globally available serverless infra, SSD-backed databases, and integrated CDNs – to make your building durable, scalable software massively faster.
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
 

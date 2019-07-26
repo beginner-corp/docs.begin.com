@@ -4,7 +4,7 @@ Begin is the ridiculously quick platform for building modern web apps and APIs. 
 ## What Begin does
 
 - Provide the basis for cloud function-based applications, and optional open source framework tooling
-- Provision and manage the cloud infrastructure (including compute, SSD-backed databases, and CDNs) needed to stand up a nearly infinitely scalable web application or API
+- Provision and manage the cloud infrastructure (including compute, SSD-backed databases, and integrated CDNs) needed to stand up a nearly infinitely scalable web application or API
 - Provide fully isolated `staging` and `production` environments
 - Manage CI for multiple environments
 - Manage the distribution of static assets via CDN

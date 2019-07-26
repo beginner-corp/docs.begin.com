@@ -81,8 +81,13 @@
           "src/views",
           "public/",
           "tests/",
-          "Caveats"
+          "Considerations"
         ]
+      },
+      {
+        "docID": "writing-tests",
+        "docTitle": "Writing tests",
+        "description": "Guide to writing tests for your Begin app"
       },
       {
         "docID": "environments",
