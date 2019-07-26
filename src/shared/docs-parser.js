@@ -58,6 +58,8 @@ function getDocMetadata (toc, lang, cat, doc) {
       title: `Preview of ${lang}/${cat}/${doc}/`
     }
   } else {
+    activeDoc.catID = toc[c].catID
+    activeDoc.catTitle = toc[c].catTitle
     return activeDoc
   }
 }

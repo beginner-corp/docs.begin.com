@@ -9,6 +9,7 @@ export default function Docs (props) {
   let content = props.content || ''
   let deprecated = props.meta.deprecated || false
   let meta = props.meta || {}
+  let catTitle = meta.catTitle || ''
   let docTitle = meta.docTitle || ''
   let active = props.active || {}
   let open = props.open || false
@@ -43,6 +44,9 @@ export default function Docs (props) {
         deprecated="${deprecated}"
         referTo="${referTo}"
       ><//>
+      <h4>
+        ${catTitle}
+      </h4>
       <h1>
         ${docTitle}
       </h1>
