@@ -138,13 +138,13 @@
     ]
   },
   {
-    "catID": "functions",
+    "catID": "http-functions",
     "catTitle": "HTTP Functions",
     "docs": [
       {
-        "docID": "creating-new-functions",
-        "docTitle": "Creating new functions",
-        "description": "Creating new functions for your Begin application",
+        "docID": "provisioning",
+        "docTitle": "Provisioning",
+        "description": "Provisioning new HTTP Functions / routes for your Begin application",
         "sections": [
           "Overview",
           "Using URL parameters to create dynamic paths",
@@ -152,9 +152,9 @@
         ]
       },
       {
-        "docID": "http",
-        "docTitle": "HTTP Functions",
-        "description": "Creating new HTTP Functions for your Begin application",
+        "docID": "api",
+        "docTitle": "API",
+        "description": "API reference for Begin HTTP Functions",
         "sections": [
           "Overview",
           "Getting started",
@@ -164,79 +164,13 @@
       },
       {
         "docID": "sessions",
-        "docTitle": "HTTP Sessions",
-        "description": "Using Begin's built-in sessions support for HTTP functions",
+        "docTitle": "Sessions",
+        "description": "Using Begin's built-in sessions support for HTTP Functions",
         "sections": [
           "Overview",
           "Writing to sessions",
           "More about sessions",
           "Examples"
-        ]
-      },
-      {
-        "docID": "html-routes",
-        "docTitle": "HTML Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building HTML routes for your Begin application"
-      },
-      {
-        "docID": "json-routes",
-        "docTitle": "JSON Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building JSON routes for your Begin application"
-      },
-      {
-        "docID": "xml-routes",
-        "docTitle": "XML Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building XML routes for your Begin application"
-      },
-      {
-        "docID": "css-routes",
-        "docTitle": "CSS Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building CSS routes for your Begin application"
-      },
-      {
-        "docID": "javascript-routes",
-        "docTitle": "JavaScript Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building JavaScript routes for your Begin application"
-      },
-      {
-        "docID": "text-routes",
-        "docTitle": "Text Routes",
-        "deprecated": true,
-        "referTo": "/en/functions/http/",
-        "description": "[Deprecated] Building text routes for your Begin application"
-      },
-      {
-        "docID": "events",
-        "docTitle": "Event Functions",
-        "description": "Creating new Event Functions for your Begin application",
-        "sections": [
-          "Overview"
-        ]
-      },
-      {
-        "docID": "scheduled",
-        "docTitle": "Scheduled Functions",
-        "description": "Creating new Scheduled Functions for your Begin application",
-        "sections": [
-          "Overview"
-        ]
-      },
-      {
-        "docID": "queues",
-        "docTitle": "Queue Functions",
-        "description": "Creating new Queue Functions for your Begin application",
-        "sections": [
-          "Overview"
         ]
       }
     ]
