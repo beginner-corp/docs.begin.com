@@ -1,55 +1,78 @@
 ## Overview
 
-Begin apps are composed of many (relatively) small, fast cloud functions – and creating new ones is easy!
+What used to be web servers, web frameworks, routers, and tons of config is now quite simply **Begin HTTP Functions**.
 
-Simply [open your app in Begin](https://begin.com) and open the Functions view.
+Begin HTTP Functions are fast, lightweight, simple, highly durable, and require no configuration.
 
-Once there, select the HTTP method for your new route, enter the path for the route you wish to create, then click `Add new route`.
+Oh, and provisioning new HTTP Functions is a cinch!
 
-<!-- @todo - expand this section with references to "routes and events" when we add @events and @scheduled -->
 
-All routes begin with `/`, and can include letters, numbers, and slashes, up to 35 characters.
+## Provisioning new HTTP Functions
 
-After clicking `Add new route`, the following things happen automatically:
-- The new route is saved to your Begin app's configuration
-- Infrastructure is provisioned to make the route publicly available
-- A basic route handler is committed to your project in the `src/http/` folder
-- A build is kicked off, and, if green, is deployed to `staging` (but not `production`)
+Each new HTTP Function is assigned a folder in your project under `src/http/`, and this code is eventually deployed to its corresponding cloud function.
 
-> ✨ Tip: It's possible to have multiple HTTP methods respond from the same path! For example: `GET /contact-us` and `POST /contact-us` is totally valid.
+To provision a new HTTP Function [open your Begin App](https://begin.com) and open the Functions view in the left nav. Once there, simply:
+1. Select the HTTP method for your new route (e.g. `POST`)
+2. Enter the path for the route you wish to create (e.g. `/api/:item`)
+3. Click `Add Function`
+
+That's it. Now let's take a closer look at the capabilities of HTTP Functions, and how they work.
+
+
+## The basics
+
+Each HTTP Function maps to a logical HTTP route. For example:
+- `GET /` is serviced by the HTTP Function in your project at `src/http/get-index`
+- `GET /about` is serviced by `src/http/get-about`
+- `POST /form` is serviced by `src/http/post-form`
+- And so on...
+
+All HTTP Functions begin with `/`, and can include letters, numbers, and slashes, underscores, dashes, and periods, up to 35 characters.
+
+Importantly and uniquely, you can also use URL parameters to build dynamic paths – [more on that below](#using-url-parameters-to-create-dynamic-paths).
+
+After clicking `Add Function`, the following things happen automatically:
+- Your new HTTP Function is saved to your Begin app configuration
+- New infrastructure is provisioned to make the route publicly available (this may take a moment)
+- A basic handler for this route is committed to your project in the `src/http/` folder
+- A build is kicked off, and, if green, is deployed to `staging` (but not `production`, of course)
+
+> ✨ Tip: It's possible to have multiple HTTP methods respond from the same path! For example: `GET /contact-us` and `POST /contact-us` is totally valid, as you'd expect.
 
 
 ## Using URL parameters to create dynamic paths
 
-It's possible to build dynamic paths using Express-style URL parameters, like: `GET /shop/:item`
-<!-- @todo - add link: learn more about routes with parameters in our project doc(s) -->
+It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `GET /shop/:product`
 
-URL parameters are passed to your route via the `req.params` object. ([Head here for more information about HTTP requests.](/en/functions/http/#requests))
+URL parameters are passed to your route via the `req.params` object. ([Learn more more about HTTP requests here.](/en/http-functions/api/#requests))
 
-For example, the route used to serve this page is `GET /:lang/:cat/:doc` ([view source here!](https://github.com/smallwins/docs.begin.com/blob/master/src/http/get-000lang-000cat-000doc/index.js)). When a client requests the path `/en/routes-functions/creating-new-routes/`, the function handling this route receives a `req` object containing:
+For example, the route used to serve this page is `GET /:lang/:cat/:doc` ([view source](https://github.com/smallwins/docs.begin.com/blob/master/src/http/get-000lang-000cat-000doc/index.js)).
+
+When a client requests the path `/en/functions/creating-new-functions/`, the HTTP Function handling this route receives a `req` object containing:
 
 ```js
 {
   params: {
     lang: 'en',
-    cat: 'functions',
-    doc: 'creating-new-routes'
+    cat: 'http-functions',
+    doc: 'provisioning'
   }
 }
 ```
-<!-- @todo - expand this section more -->
 
+If we were to navigate to the [Quickstart doc](/en/guides/quickstart), the same HTTP Function would receive a `req` object containing:
 
-## More about routes in Begin
+```js
+{
+  params: {
+    lang: 'en',
+    cat: 'guides',
+    doc: 'quickstart'
+  }
+}
+```
 
-Want to learn a little more about how routes in Begin are born?
+You can do a lot with this!
 
-As it happens, the AWS infrastructure needed to marshal your app's requests and responses (API Gateway) is separate and different from the cloud compute that runs your code (Lambda).
-
-This architecture is capable of enormous scale, but can be quite complex to manage. Fortunately, this is one of the many things Begin manages for you behind the scenes.
-
-Routes in Begin apps generally consist of the following parts:
-
-- A publicly available URL route (represented by a path and HTTP method) in two separate, fully isolated AWS API Gateways – one for `staging`, one for `production` – that call to...
-- Your route handler code, which runs in two separate, fully isolated AWS Lambdas – again, one for `staging`, one for `production` – which support sessions out of the box via...
-- Your app's [sessions](/en/functions/sessions/) and [data](/en/functions/sessions/).
+> Note: Slashes still function as path part delimiters within URL params, so `GET /api/:foo` will service `GET /api/hello`, but will not service `GET /api/hello/there`.
+> To handle `GET /api/hello/there`, create a second HTTP Function for `GET /api/:foo/:bar`

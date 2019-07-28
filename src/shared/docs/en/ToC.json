@@ -147,8 +147,9 @@
         "description": "Provisioning new HTTP Functions / routes for your Begin application",
         "sections": [
           "Overview",
-          "Using URL parameters to create dynamic paths",
-          "More about routes in Begin"
+          "Provisioning new HTTP Functions",
+          "The basics",
+          "Using URL parameters to create dynamic paths"
         ]
       },
       {
@@ -158,7 +159,9 @@
         "sections": [
           "Overview",
           "Getting started",
-          "HTTP handler API",
+          "Requests",
+          "Responses",
+          "Anti-caching headers",
           "Examples"
         ]
       },

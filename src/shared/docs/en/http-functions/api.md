@@ -1,27 +1,26 @@
 ## Overview
 
-Begin apps are composed of many (relatively) small, fast cloud functions – including one for every HTTP route. Say hello to Begin HTTP Functions!
+Say goodbye to web servers, web frameworks, routers, and tons of config – and say hello to **Begin HTTP Functions**.
+
+This doc assumes familiarity with the basics of [how Begin HTTP Functions are provisioned](/en/http-functions/provisioning).
 
 
 ## Getting started
 
-In a Begin app, each unique route is serviced by its own HTTP Function. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`)
+In a Begin app, each HTTP Function maps to a logical HTTP route. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`)
 
-By default, every Begin app starts with a single HTTP Function: `GET /`.
+HTTP Functions are dependency-free, with a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library](https://github.com/architect/functions).
+<!-- TODO: add link to Begin Arc Fns docs-->
 
-HTTP Functions are dependency-free, with a minimal but powerful low-level API that we'll explore in the [HTTP handler](#http-handler) section.
-
-Each HTTP Function is assigned a folder in your project under `src/http/` (e.g. `src/http/post-api-submit/` for `POST /api/submit`, and `src/http/get-index/` for `GET /`).
-
-Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that Function's folder is ≤5MB; this helps keep your Functions – and thus your app – super fast).
+Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files (so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP Functions – and thus your app – super fast).
 
 
-## HTTP handler
+## HTTP handler API
 
-Let's look at an example of a basic HTTP Function:
+The HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern. Let's look at an example of a basic HTTP Function:
 
 ```javascript
-// src/http/get-*/index.js
+// src/http/get-index/index.js
 let body = `
 <!doctype html>
 <html lang=en>
@@ -42,14 +41,9 @@ exports.handler = async function http(request) {
 No sweat, right?
 
 
-## HTTP handler API
+## Requests
 
-Begin's HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern.
-
-
-### Requests
-
-The async `handler` function invoked by a client request receives a `request` Object containing the following parameters:
+The `handler` function invoked by a client request receives a `request` object containing the following parameters:
 
 - `body` - **Object**
   - Contains the complete request body, including an object containing any `application/x-www-form-urlencoded` form variables
@@ -64,12 +58,16 @@ The async `handler` function invoked by a client request receives a `request` Ob
 - `headers` - **Object**
   - All client request headers
 
-Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /:greeting`:
+
+### Example
+
+Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /salutations/:greeting`:
 
 ```javascript
 // Client requested https://begin.com/hello-world?testing=123
-{ method: 'get',
-  path: '/hello-world',
+{
+  method: 'get',
+  path: '/salutations/hello-world',
   headers: {
     host: 'begin.com',
     connection: 'keep-alive',
@@ -82,9 +80,10 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
     'accept-language': 'en-US,en;q=0.9',
     Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8'
   },
-  query: { testing: '123' },
+  query: {testing: '123'},
   body: {},
-  params: { greeting: 'hello-world' } }
+  params: {greeting: 'hello-world'}
+}
 ```
 
 
@@ -109,6 +108,8 @@ Responses are returned by your `handler` function in an object, and support the 
   - Sets the `Content-Type` response header
 
 
+### Example
+
 Here's a simple example response for an API endpoint:
 
 ```javascript
@@ -116,7 +117,7 @@ Here's a simple example response for an API endpoint:
 {
   status: 201,
   type: 'application/json; charset=utf8',
-  body: JSON.stringify({ ok: true }),
+  body: JSON.stringify({ok: true}),
   cors: true
 }
 ```
@@ -176,7 +177,7 @@ exports.handler = async function http(request) {
     return {
       status: 204,
       type,
-      body: JSON.stringify({ ok: false })
+      body: JSON.stringify({ok: false})
     }
   }
   else {
@@ -186,7 +187,7 @@ exports.handler = async function http(request) {
     return {
       status: 201,
       type,
-      body: JSON.stringify({ ok: true })
+      body: JSON.stringify({ok: true})
     }
   }
 }
