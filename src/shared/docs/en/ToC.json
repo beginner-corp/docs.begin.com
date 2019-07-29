@@ -184,8 +184,14 @@
     "docs": [
       {
         "docID": "getting-started",
-        "docTitle": "Getting started with data",
-        "description": "Getting started persisting data on Begin"
+        "docTitle": "Getting started",
+        "description": "Getting started persisting data on Begin",
+        "sections": [
+          "Overview",
+          "Begin Data",
+          "AWS databases",
+          "FaunaDB"
+        ]
       },
       {
         "docID": "begin-data",

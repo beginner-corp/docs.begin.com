@@ -1,10 +1,10 @@
 ## Overview
 
-Begin Data is an easy to use, fast, durable, highly scalable, and fully managed key-value and document database that comes bundled with every Begin app.
+Begin Data is an easy to use, fast, durable, highly scalable, fully managed, SSD-based key-value and document database that comes bundled with every Begin app.
 
-Begin Data is easy to learn and implement, and is designed to accommodate most general persistence use cases.
+Begin Data is easy to learn and simple to implement, and is designed to accommodate most general persistence use cases.
 
-Here's a simple example of a Function using Begin Data:
+Here's a simple example of an HTTP Function using Begin Data:
 
 ```js
 let data = require('@begin/data')
@@ -61,9 +61,9 @@ Now let's take a closer look at the Begin Data API.
 
 ## Begin Data API
 
-The Begin Data API consists of three primary methods: [`get`](#data-get-), [`set`](#data-set-), and [`destroy`](#data-destroy-); and three helper methods: [`incr`](#data-incr-data-decr-), [`decr`](#data-incr-data-decr-), and [`count`](#data-count-).
+The Begin Data API consists of three primary methods: [`get`](#dataget), [`set`](#dataset), and [`destroy`](#datadestroy); and three helper methods: [`incr`](#dataincr--datadecr), [`decr`](#dataincr--datadecr), and [`count`](#datacount).
 
-Each Begin Data method operates asynchronously, accepting an optional callback and returning a Promise.
+Each Begin Data method operates asynchronously, accepting an optional callback or returning a Promise.
 
 
 ## Read documents
@@ -88,7 +88,7 @@ As you'd imagine, `data.get()` is responsible for getting documents.
 
 ### Get a single document
 
-Get a single document by passing an Object containing:
+Get a single document by passing an object containing:
 - `table` - **String** *(required)*
 - `key` - **String** *(required)*
 
@@ -103,8 +103,8 @@ let doc = await data.get({table, key})
 
 ### Get multiple documents
 
-Get multiple documents by passing an Array containing:
-- One or more Objects, each containing:
+Get multiple documents by passing an array containing:
+- One or more objects, each containing:
   - `table` - **String** *(required)*
   - `key` - **String** *(required)*
 
@@ -122,7 +122,7 @@ let greetings = await data.get([
 
 ### Get an entire `table`
 
-Get an entire `table` by passing an Object containing:
+Get an entire `table` by passing an object containing:
 - `table` - **String** *(required)*
 - `limit` - **Number**
   - Limit the number of documents to be returned
@@ -134,23 +134,15 @@ Get an entire `table` by passing an Object containing:
 let table = await data.get({table:'greetings'})
 ```
 
-If your `table` contains many documents, it will paginate and return a `cursor`, on which you can key your next query. For example:
+If your `table` contains many documents, it will paginate and return a `cursor` for use in your next query. For example:
 
 ```js
 let table = 'greetings'
-let result = await data.get({table, limit: 3})
-
-console.log(result, result.cursor)
-// Logs:
-//
+let result = await data.get({table, limit: 3}) // Returns:
 // [{ table, key: 'Māori', greeting: 'Kia ora' },
 //  { table, key: 'Swahili', greeting: 'Hujambo' },
-// { table, key: 'Japanese', greeting: 'Kon'nichiwa' }
-// ] 
-// 
-// and 
-// 'eyJziJzY29wZUlELCJkYX9jYWwidW50RhSUQiOdGFnaW5nI21vIjoibGYWlucyNsa3JMV21PVWsifQ==' 
-//
+//  { table, key: 'Japanese', greeting: 'Kon'nichiwa' },
+//  cursor: 'eyJziJzY29wZUlELCJkYX9jYWwidW50RhSUQiOdGFnaW5nI21vIjoibGYWlucyNsa3JMV21PVWsifQ==']
 ```
 
 
@@ -187,7 +179,7 @@ Your supplied data can be any quantity of the following supported types:
 
 ### Set a single document
 
-Set a single document by passing an Object containing:
+Set a single document by passing an object containing:
 - `table` - **String** *(required)*
 - `key` - **String**
   - If no `key` is supplied, Begin Data will automatically supply a pseudo-random, unique, immutable `key`
@@ -206,7 +198,7 @@ await data.set({table, key, greeting})
 ### Set multiple documents
 
 Set one or more documents by passing an Array containing:
-- One or more Objects, each containing:
+- One or more objects, each containing:
   - `table` - **String** *(required)*
   - `key` - **String**
     - If no `key` is supplied, Begin Data will automatically supply a pseudo-random, unique, immutable `key`
@@ -214,7 +206,7 @@ Set one or more documents by passing an Array containing:
 
 ```js
 let table = 'greetings'
-let greetings = [ 
+let greetings = [
   { table, key: 'Māori', greeting: 'Kia ora' },
   { table, key: 'Swahili', greeting: 'Hujambo' },
   { table, key: 'Japanese', greeting: `Kon'nichiwa` } ]
@@ -228,7 +220,7 @@ await data.set(greetings)
 
 `data.destroy()` is responsible for destroying documents.
 
-Valid `data.destroy()` calls require passing a one or more Objects containing a `table` and `key`; there is no limit to the number of documents a single call can destroy.
+Valid `data.destroy()` calls require passing a one or more objects containing a `table` and `key`; there is no limit to the number of documents a single call can destroy.
 
 ### Syntax
 
@@ -243,7 +235,7 @@ Valid `data.destroy()` calls require passing a one or more Objects containing a 
 
 ### Destroy a single document
 
-Destroy a single document by passing an Object containing:
+Destroy a single document by passing an object containing:
 - `table` - **String** *(required)*
 - `key` - **String** *(required)*
 
@@ -258,7 +250,7 @@ await data.destroy({table, key})
 ### Destroy multiple documents
 
 Destroy one or more documents by passing an Array containing
-- One or more Objects, each containing:
+- One or more objects, each containing:
   - `table` - **String** *(required)*
   - `key` - **String** *(required)*
 
@@ -273,7 +265,7 @@ await data.destroy([
 
 ## Helpers
 
-Begin Data also surfaces a few handy helpers to make other common operations a bit easier, such as [counting rows](#data-count-), and [incrementing & decrementing Numbers](#data-incr-data-decr-).
+Begin Data also surfaces a few handy helpers to make other common operations a bit easier, such as [counting rows](#datacount), and [incrementing & decrementing Numbers](#dataincr--datadecr).
 
 ### `data.count()`
 
@@ -291,10 +283,7 @@ An example:
 
 ```js
 let table = 'greetings'
-await data.get({table})
-/* Returns:
-42
-*/
+await data.get({table}) // Returns: 42
 ```
 
 
@@ -309,7 +298,7 @@ await data.get({table})
 - `params` - **Object** *(required)*
   - `table` - **String** *(required)*
   - `key` - **String** *(required)*
-  - Property to increment or decrement, must be a Number *(required)*
+  - Property to increment or decrement, must be a number *(required)*
 - `callback` - **Function**
 
 Examples:
@@ -321,15 +310,11 @@ let averageInches = 450
 
 // Increment
 await data.incr({table, key, averageInches})
-/* Returns:
-{ averageInches: 451 }
-*/
+// Returns: { averageInches: 451 }
 
 // Decrement
 await data.decr({table, key, averageInches})
-/* Returns:
-{ averageInches: 450 }
-*/
+// Returns: { averageInches: 450 }
 ```
 
 
@@ -353,12 +338,11 @@ await data.set({table, key, ttl})
 
 ## Limits
 
+- `data.set()` has a maximum batch size of 25 documents and 10KB per call.
 - Empty attributes are invalid and will produce errors. For example:
-  - 
 ```js
 let table = 'accounts'
 let key = 'dW50RhSUQiOdG'
 let email = '' // Invalid
 await data.set({table, key, email})
 ```
-- `data.set()` has a maximum batch size of 25 documents and 10KB per call.
