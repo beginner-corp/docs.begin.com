@@ -60,13 +60,16 @@ function getCategories (props, state) {
       docs,
       lang
     }, state)
-    return html`
+
+    return documents.length
+      ? html`
 <${SidebarCategoryItem}
   active="${active}"
   documents="${documents}"
   title="${title}"
 ><//>
     `
+      : ''
   })
 }
 
@@ -75,7 +78,9 @@ function getDocs (props, state) {
   let category = props.category || ''
   let docs = props.docs || []
   let lang = props.lang || ''
-  return docs.map(d => {
+  return docs
+    .filter(d => !d.deprecated && !d.hidden)
+    .map(d => {
     let doc = d.docID
     let href = `/${lang}/${category}/${doc}`
     let active = props.active.doc === doc
@@ -86,8 +91,7 @@ function getDocs (props, state) {
       sections: d.sections
     }, state)
 
-    return (!d.deprecated && !d.hidden)
-    ? html`
+    return html`
 <${SidebarDocItem}
   active="${active}"
   href="${href}"
@@ -95,7 +99,6 @@ function getDocs (props, state) {
   title="${d.docTitle}"
 ><//>
   `
-  : ''
   })
 }
 
