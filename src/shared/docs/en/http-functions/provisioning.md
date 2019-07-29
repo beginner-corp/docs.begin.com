@@ -44,7 +44,7 @@ After clicking `Add Function`, the following things happen automatically:
 
 It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `GET /shop/:product`
 
-URL parameters are passed to your route via the `req.params` object. ([Learn more more about HTTP requests here.](/en/http-functions/api/#requests))
+URL parameters are passed to your route via the `req.params` object. ([Learn more about HTTP requests here.](/en/http-functions/api/#requests))
 
 For example, the route used to serve this page is `GET /:lang/:cat/:doc` ([view source](https://github.com/smallwins/docs.begin.com/blob/master/src/http/get-000lang-000cat-000doc/index.js)).
 
