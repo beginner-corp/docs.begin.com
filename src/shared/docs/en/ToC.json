@@ -153,8 +153,8 @@
         ]
       },
       {
-        "docID": "api",
-        "docTitle": "API",
+        "docID": "api-reference",
+        "docTitle": "API reference",
         "description": "API reference for Begin HTTP Functions",
         "sections": [
           "Overview",
