@@ -145,7 +145,7 @@ return {
 
 ## Anti-caching headers
 
-Many remote networks rely on overly aggressive reverse-proxy caches to conserve bandwidth; the absence of `Cache-Control` headers is often (mis)construed as tacit permission to aggressively cache responses that often should not be cached. **This network-level behavior, which is external to your app, can have serious ramifications.**
+Many remote networks rely on overly aggressive reverse-proxy caches to conserve bandwidth; the absence of the `Cache-Control` header is often (mis)construed by such networks as tacit permission to aggressively cache responses that often should not be cached. **This external, network-level behavior can have serious ramifications for your app.**
 
 Because of the highly adverse effects network-level caching can on your application, we strongly suggest that most HTTP Function responses include anti-caching headers – especially when returning `HTML` and `JSON` responses. For example:
 
@@ -159,7 +159,7 @@ return {
 }
 ```
 
-> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions) is automatic, customizeable, content-type aware generation of `Cache-Control` headers.
+> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions), is automatic, customizeable, content-type aware generation of `Cache-Control` headers.
 <!-- TODO: add link to Begin Arc Fns docs-->
 
 
