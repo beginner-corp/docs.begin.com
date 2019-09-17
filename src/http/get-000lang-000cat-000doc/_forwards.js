@@ -7,7 +7,7 @@
 module.exports = {
 /* -- Old route --                             -- New route -- */
   '/en/meta/about':                           '/en/background/about',
-  '/en/getting-started/working-locally':      '/en/guides/introduction',
+  '/en/getting-started/working-locally':      '/en/guides/quickstart',
   '/en/getting-started/quickstart':           '/en/guides/quickstart',
   '/en/functions/creating-new-functions':     '/en/http-functions/provisioning',
   '/en/functions/sessions':                   '/en/http-functions/sessions',
