@@ -5,26 +5,25 @@
  *   - note: must include root slash
  */
 module.exports = {
-  /**
-   * Example:
-   *   '/en/old/busted': '/en/new/hotness'
-   */
+/* -- Old route --                             -- New route -- */
   '/en/meta/about':                           '/en/background/about',
   '/en/getting-started/working-locally':      '/en/guides/introduction',
   '/en/getting-started/quickstart':           '/en/guides/quickstart',
+  '/en/functions/creating-new-functions':     '/en/http-functions/provisioning',
+  '/en/functions/sessions':                   '/en/http-functions/sessions',
+  '/en/functions/http':                       '/en/http-functions/api-reference',
+  '/en/functions/html-routes':                '/en/http-functions/api-reference',
+  '/en/functions/json-routes':                '/en/http-functions/api-reference',
+  '/en/functions/xml-routes':                 '/en/http-functions/api-reference',
+  '/en/functions/css-routes':                 '/en/http-functions/api-reference',
+  '/en/functions/javascript-routes':          '/en/http-functions/api-reference',
+  '/en/functions/text-routes':                '/en/http-functions/api-reference',
   '/en/routes-functions/creating-new-routes': '/en/http-functions/provisioning',
   '/en/routes-functions/sessions':            '/en/http-functions/sessions',
-  // Legacy docs
-  '/en/functions/html-routes':                '/en/http-functions/provisioning',
-  '/en/functions/json-routes':                '/en/http-functions/provisioning',
-  '/en/functions/xml-routes':                 '/en/http-functions/provisioning',
-  '/en/functions/css-routes':                 '/en/http-functions/provisioning',
-  '/en/functions/javascript-routes':          '/en/http-functions/provisioning',
-  '/en/functions/text-routes':                '/en/http-functions/provisioning',
-  '/en/routes-functions/html-routes':         '/en/http-functions/provisioning',
-  '/en/routes-functions/json-routes':         '/en/http-functions/provisioning',
-  '/en/routes-functions/xml-routes':          '/en/http-functions/provisioning',
-  '/en/routes-functions/css-routes':          '/en/http-functions/provisioning',
-  '/en/routes-functions/javascript-routes':   '/en/http-functions/provisioning',
-  '/en/routes-functions/text-routes':         '/en/http-functions/provisioning',
+  '/en/routes-functions/html-routes':         '/en/http-functions/api-reference',
+  '/en/routes-functions/json-routes':         '/en/http-functions/api-reference',
+  '/en/routes-functions/xml-routes':          '/en/http-functions/api-reference',
+  '/en/routes-functions/css-routes':          '/en/http-functions/api-reference',
+  '/en/routes-functions/javascript-routes':   '/en/http-functions/api-reference',
+  '/en/routes-functions/text-routes':         '/en/http-functions/api-reference',
 }
