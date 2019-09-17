@@ -1,7 +1,7 @@
 export default function Head (props) {
   props = props || {}
-  let title = props.title
-    ? props.title + ' - Begin documentation'
+  let title = props.category && props.title
+    ? `${props.category} > ${props.title} - Begin documentation`
     : 'Begin documentation'
   let description = props.description || 'Begin documentation'
 

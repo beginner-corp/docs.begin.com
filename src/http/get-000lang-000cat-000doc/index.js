@@ -53,6 +53,7 @@ function route (req, res) {
         ? Guide
         : Docs
       let body = HTMLDocument({
+        category: meta.catTitle,
         title: meta.docTitle,
         description: meta.description,
         children: renderToString(
