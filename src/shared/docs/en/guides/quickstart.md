@@ -1,10 +1,10 @@
-# Welcome!
+# Welcome to Begin!
 
 > ⏱ This guide should require less than 5 minutes
 
 Getting started building with Begin is remarkably fast and simple.
 
-Once you're finished with this guide, you'll be ready to build and scale just about any kind of web application, API, or site with speed, ease, and grace.
+**Once you're finished with this guide, you'll be ready to build and scale just about any kind of web application, API, or site with speed, ease, and grace.**
 
 First let's review what you need to get going.
 
