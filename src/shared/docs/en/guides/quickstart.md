@@ -11,7 +11,7 @@ First let's review what you need to get going.
 
 ## Prerequisites
 
-While guide assumes general familiarity with such things as text editors, terminal interfaces, git, and basic software development in JS with Node.js, you do not need to be a CTO to use Begin (or this guide)!
+While this guide assumes general familiarity with such things as text editors, terminal interfaces, git, and basic software development in JS with Node.js, you do not need to be a CTO to use Begin (or this guide)!
 
 
 ### tl;dr, you'll need:
