@@ -6,13 +6,12 @@ Let's take a look at the source tree of a basic Begin app:
 
 ```bash
 .
-├── public/             # … Static assets
+├── public/             # … (optional) Static assets (can be renamed)
 ├── src/
-│   ├── http/           # … All Functions delivering HTTP responses
-│   │   └── get-index/  # … HTTP route: `GET /`
-│   ├── shared/         # … Shared code
-|   └── views/          # … Shared frontend code
-├── test/               # … Tests
+│   ├── http/           # … (optional) All HTTP functions
+│   │   └── get-foo/    # … (optional) HTTP route: `GET /foo`
+│   ├── shared/         # … (optional) Shared code
+|   └── views/          # … (optional) Shared frontend code
 └── .arc                # … Project manifest (read-only)
 ```
 
@@ -23,7 +22,7 @@ Your app's many individually isolated Functions are organized in your project un
 
 ## Business logic
 
-### `src/http`
+### `src/http` (optional)
 
 Contains Function directories representing [HTTP routes](/en/functions/http/).
 
@@ -52,7 +51,7 @@ Here's an example project tree for a Function that handles the HTTP path `POST /
 
 ## Shared code
 
-### `src/shared`
+### `src/shared` (optional)
 
 This is a handy folder that makes its contents available across all your Functions under the `@architect/shared` namespace. Think: per-project globally installed modules.
 
@@ -88,7 +87,7 @@ exports.handler = async function http(request) {
 > You can install global dependencies to `src/shared` – but mind dependency bloat! **Routes must weigh in under 5MB uncompressed.**
 
 
-### `src/views`
+### `src/views` (optional)
 
 Similar to `src/shared`, the `src/views` directory is another shared code utility folder. However this folder's contents are available only to your app's HTTP `GET` Functions.
 
@@ -127,24 +126,24 @@ exports.handler = async function http(request) {
 
 ## Static assets
 
-### `public/`
+### `public/` (optional)
 
 Contents of the `public` directory are deployed to a secure blob store (S3) for hosting and distribution to your CDN (URLs for both of which can be found in your app's `Settings` screen).
 
-This is a great place to place images and build artifacts!
+This is a great place to place images and build artifacts, or to aim your static site generator at. The folder name is also configurable from the `Static assets` screen, too.
 
 [Learn more about working with `public/` and static assets](/en/getting-started/static-assets/).
 
-> Note: assume the S3 bucket will sync with your `public/` in your source control; anything not found there may be deleted from the S3 bucket during subsequent deployments.
+> Note: assume the S3 bucket may fully sync with your `public/` (or configured folder name) in your source control; anything not found there may be deleted from the S3 bucket during subsequent deployments.
 
 
 ## Tests
 
-### `tests/`
+### `tests/` (optional)
 
 Test root for your app's tests (run locally via `npm test`)
 
-Begin apps come provisioned with some basic tests in this directory.
+Most Begin apps come provisioned with some basic tests in this directory.
 
 Head here to [learn more about writing tests in Begin](/en/getting-started/writing-tests).
 
