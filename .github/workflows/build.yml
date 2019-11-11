@@ -1,0 +1,72 @@
+name: Node CI
+
+# Push tests commits; pull_request tests PR merges
+on: [push, pull_request]
+
+jobs:
+
+  # Test the build
+  build:
+    # Setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    # Go
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Version
+        run: node --version
+
+      - name: Install
+        run: npm install
+
+      - name: Hydrate
+        run: npx hydrate
+        env:
+          CI: true
+          ARC_MAX_NPM: 10
+
+      - name: Test
+        run: npm test
+
+  # Assuming all that went fine (and it's master): deploy!
+  deploy:
+    # Setup
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    # Go
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Create ~/.aws/credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: mkdir $HOME/.aws && printf "[smallwins]\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY\nregion=us-west-1\n" > $HOME/.aws/credentials && cat $HOME/.aws/credentials
+
+      - name: Install
+        run: npm ci
+
+      - name: Deploy
+        run: npm run deploy
+        env:
+          CI: true
+          ARC_MAX_NPM: 10
+          AWS_PROFILE: smallwins
