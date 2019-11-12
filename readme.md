@@ -1,4 +1,7 @@
-# Begin documentation!
+# Begin documentation
+
+[![GitHub CI status](https://github.com/smallwins/docs.begin.com/workflows/Node%20CI/badge.svg)](https://github.com/smallwins/docs.begin.com/actions?query=workflow%3A%22Node+CI%22)
+
 
 ## Getting started
 
