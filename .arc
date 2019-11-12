@@ -15,7 +15,6 @@ get /modules/:type/:module
 get /robots.txt
 get /:lang/:cat/:doc
 get /:lang/:cat
-
 # get /:lang
 
 @static
