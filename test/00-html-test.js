@@ -1,7 +1,7 @@
 let test = require('tape')
 let tiny = require('tiny-json-http')
 let arc = require('@architect/architect')
-process.env.PORT = 4446
+process.env.PORT = 6666
 
 test('env', t=> {
   t.plan(1)
@@ -18,7 +18,7 @@ test('arc.sandbox.start', async t=> {
 test('get /en/getting-started/introduction', t=> {
   t.plan(1)
   tiny.get({
-    url: `http://localhost:4446/en/getting-started/introduction`
+    url: `http://localhost:6666/en/getting-started/introduction`
   },
   function win(err) {
     if (err) {

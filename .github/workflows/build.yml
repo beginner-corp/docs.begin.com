@@ -35,6 +35,10 @@ jobs:
           CI: true
           ARC_MAX_NPM: 10
 
+      # Can be deleted soon (pending Arc creds refactor)
+      - name: Create ~/.aws/credentials
+        run: mkdir $HOME/.aws && printf "[smallwins]\naws_access_key_id=foo\naws_secret_access_key=bar\nregion=us-west-1\n" > $HOME/.aws/credentials && cat $HOME/.aws/credentials
+
       - name: Test
         run: npm test
 
