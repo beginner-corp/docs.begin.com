@@ -15,13 +15,6 @@ jobs:
 
     # Go
     steps:
-      - name: Env
-        run: |
-          echo "Event name: ${{ github.event_name }}"
-          echo "Git ref:    ${{ github.ref }}"
-          echo "GH actor:   ${{ github.actor }}"
-          echo "SHA:        ${{ github.sha }}"
-
       - name: Check out repo
         uses: actions/checkout@v1
 
@@ -30,8 +23,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Version
-        run: node --version
+      - name: Env
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Git ref:    ${{ github.ref }}"
+          echo "GH actor:   ${{ github.actor }}"
+          echo "SHA:        ${{ github.sha }}"
+          node --version
+          npm --version
 
       - name: Install
         run: npm install
