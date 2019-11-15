@@ -15,6 +15,13 @@ jobs:
 
     # Go
     steps:
+      - name: Env
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Git ref:    ${{ github.ref }}"
+          echo "GH actor:   ${{ github.actor }}"
+          echo "SHA:        ${{ github.sha }}"
+
       - name: Check out repo
         uses: actions/checkout@v1
 
@@ -41,6 +48,15 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Notify
+        uses: homoluctus/slatify@master
+        # Only fire alert once; may need `&& matrix.node-version == '10.x' && matrix.os == 'ubuntu-latest'` later
+        if: github.ref == 'refs/heads/master' && failure()
+        with:
+          type: ${{ job.status }}
+          job_name: '*Build*'
+          url: ${{ secrets.SLACK_WEBHOOK }}
 
   # Assuming all that went fine (and it's master): deploy!
   deploy:
@@ -74,3 +90,11 @@ jobs:
           CI: true
           ARC_MAX_NPM: 10
           AWS_PROFILE: smallwins
+
+      - name: Notify
+        uses: homoluctus/slatify@master
+        if: always()
+        with:
+          type: ${{ job.status }}
+          job_name: '*Deploy*'
+          url: ${{ secrets.SLACK_WEBHOOK }}
