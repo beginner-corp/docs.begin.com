@@ -2,7 +2,7 @@
 
 Begin provides first-class, zero configuration sessions support for all HTTP routes. Begin sessions are fast, cryptographically signed, and you get them for free. How convenient!
 
-Every request to an HTTP route in automatically tagged to a session, with state available via `req.session`. Here's an example:
+Every request to an HTTP route is automatically tagged to a session, with state available via `req.session`. Here's an example:
 
 ```js
 let begin = require('@architect/functions')
