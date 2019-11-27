@@ -1,16 +1,12 @@
 #!/bin/bash
 # Checks if last commit message was semver
-#   If so, deploys to production & staging
-#   Otherwise deploys to staging
-#   Kinda like a Begin app
+# - If so, deploy to production
+# - And always deploy to staging
+# - (Kinda like a Begin app)
 TAG=`git log -1 --pretty=%B`
 if echo "$TAG" | grep '^\([0-9]\{1,\}\.\?\)\{3\}'; then
-  npx deploy --production;
-  NODE_ENV=production scripts/reset-assets;
-  npx deploy --staging;
-  NODE_ENV=staging scripts/reset-assets;
-else
-  npx deploy --staging;
-  NODE_ENV=staging scripts/reset-assets;
+  npx deploy --production
+  NODE_ENV=production scripts/reset-assets
 fi
-echo "Exit:" $?
+npx deploy --staging
+NODE_ENV=staging scripts/reset-assets
