@@ -63,7 +63,7 @@ This step is non-configurable and does not output logs.
 ### **Install**
 
 Responsible for installing dependencies to:
-- The project root (`./`)E
+- The project root (`./`)
 - Your project's cloud function directories (i.e. `src/http/**`)
 - Your project's shared code, if any (i.e. `src/shared/`, `src/views/`)
 
