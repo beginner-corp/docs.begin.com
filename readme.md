@@ -9,6 +9,20 @@ Intialize the repo with: `npm i && npx hydrate`
 
 From there: `npm start` should get you going!
 
+Note: You might run into this error after running `npm start`: `"Warning: missing or invalid AWS credentials file"`. If so, it's because the Begin docs are checking for AWS credentials.
+
+To correct that error, follow these steps:
+
+1. Create a `.aws` directory.
+`mkdir /Users/YOUR_USERNAME/.aws`
+2. Create a file for the credentials.
+`touch /Users/YOUR_USERNAME/.aws/credentials`
+3. Open your text editor the following to your credentials file:
+```
+[smallwins]
+aws_access_key_id=xxx
+aws_secret_access_key=xxx
+```
 
 ## Authoring documents
 
