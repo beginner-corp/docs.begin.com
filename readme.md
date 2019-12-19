@@ -13,11 +13,11 @@ Note: You might run into this error after running `npm start`: `"Warning: missin
 
 To correct that error, follow these steps:
 
-1. Create a `.aws` directory.
+1. Create a `.aws` directory:
 `mkdir /Users/YOUR_USERNAME/.aws`
-2. Create a file for the credentials.
+2. Create a file for the credentials:
 `touch /Users/YOUR_USERNAME/.aws/credentials`
-3. Open your text editor the following to your credentials file:
+3. Open your text editor, and add the following to your credentials file:
 ```
 [smallwins]
 aws_access_key_id=xxx
