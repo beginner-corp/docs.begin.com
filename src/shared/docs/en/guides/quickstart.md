@@ -89,7 +89,7 @@ To access your `staging` environment, click `Staging` link in the build status m
 
 ## Project structure
 
-Now that your apps is live in `staging`, a brief word about how Begin apps are structured so you'll know your way around.
+Now that your app is live in `staging`, a brief word about how Begin apps are structured so you'll know your way around.
 
 Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). Let's take a quick look at the source tree of a basic Begin app:
 
