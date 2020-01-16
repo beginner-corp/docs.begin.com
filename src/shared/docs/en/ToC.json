@@ -328,12 +328,20 @@
       {
         "docID": "gatsby",
         "docTitle": "Gatsby starter app guide",
-        "hidden": true,
+        "hidden": false,
         "description": "Learn how to use Gatsby to build a static web app",
         "icon": "logo-gatsby.svg",
         "type": "framework",
         "background": "gradient-green-blue.png",
-        "sections": []
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Getting started",
+          "What's inside?",
+          "Learning Gatsby",
+          "Begin Reference"
+        ]
       },
       {
         "docID": "ionic",
