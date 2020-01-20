@@ -133,7 +133,7 @@ let dictionary = [
   'Nodemon',
   'nodemon',
   'non-serverless',
-  'NPM',
+  'npm',
   'NS1',
   'OAuth',
   'Ok',

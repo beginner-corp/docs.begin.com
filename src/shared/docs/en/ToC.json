@@ -261,6 +261,24 @@
         ]
       },
       {
+        "docID": "personal-website",
+        "docTitle": "Personal Website",
+        "description": "Fast, beautiful, customizable personal site. Demonstrates server(less)-side rendering.",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-blue.png",
+        "sections": [
+          "Prerequisites",
+          "Deploy your own",
+          "Create a Begin account",
+          "Getting started",
+          "Begin Activity",
+          "Project setup",
+          "Project structure",
+          "Deploying your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docID": "restful-api",
         "docTitle": "Restful API",
         "hidden": true,
