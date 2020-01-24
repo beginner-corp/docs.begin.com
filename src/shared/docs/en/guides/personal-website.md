@@ -1,10 +1,13 @@
-# Begin Personal Site
+![Begin Personal Site](/_static/screens/begin-personal-site.png)
 
 **Hello there BEGINNERS!**
 
-You're here because you want to make a fast, beautiful, custom personal site running on Begin. This guide demonstrates server(less)-side rendering, shared components, and static assets. 
+You're here because you want to make a fast, beautiful, custom personal site running on Begin. This guide demonstrates server(less)-side rendering, shared components, and static assets.
 
 **Let's get Started!**
+
+![Begin Personal Example](/_static/screens/begin-personal.gif)
+*****
 
 ## Deploy your own
 
@@ -12,28 +15,34 @@ You're here because you want to make a fast, beautiful, custom personal site run
 
 Deploy your own clone of this app to Begin!
 
-
 ## Create a Begin account
 
 To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), authorize it with GitHub, and pick a username. That's it!
 
-**Clicking the `Deploy to Begin` button above will do the same.**
+Clicking the `Deploy to Begin` button above will do the same.
 
+![Begin create new app](/_static/screens/begin-authenticate.png)
+*****
 ## Getting started
-
+### Create New App
 Once authenticated, you will then be taken to the screen below. Click the `Create New App` button on the top right to proceed.
 
 ![Begin create new app](/_static/screens/begin-create-new-app.png)
 
+*****
+### Choose Your Starter
 Now all we have to do is choose the `Personal Website` option displayed in the image below.
 
 ![Begin new app selector](/_static/screens/begin-app-selection-2.png)
 
-Then name your app and repo, and Begin will spin up your new project repository under `github.com/{your GH username}/{your repo name}`, and populate it with a fully functional Begin app.
+*****
+### Name your app and repo
+Begin will spin up your new project repository under `github.com/{your GH username}/{your repo name}`, and populate it with a fully functional Begin app.
 
 > By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions via in the `Settings` screen found in the left nav of your Begin app.
 
 ![Begin name repo](/_static/screens/begin-repo-name.png)
+*****
 
 ## Begin Activity
 
@@ -41,7 +50,7 @@ Then name your app and repo, and Begin will spin up your new project repository 
 
 Here you'll be able to view your app build & deploy in real-time. 
 
-![Begin activity](/_static/screens/begin-activity.png)
+![Begin activity](/_static/screens/begin-activity.jpg)
 
 ## Project setup
 
