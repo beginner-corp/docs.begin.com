@@ -102,7 +102,7 @@ Each HTTP Function directory services a handler for a publicly available HTTP ro
 
 ### **Host static assets with `public/`**
 
-The `public` directory is a great place to add (compiled) JS and CSS, images, gifs, or any other files you want to to make publicly accessible in your app.
+The `public` directory is a great place to add (compiled) JS and CSS, images, gifs, or any other files you want to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
 
