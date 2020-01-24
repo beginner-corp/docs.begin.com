@@ -265,7 +265,7 @@
         "docTitle": "Personal Website",
         "description": "Fast, beautiful, customizable personal site. Demonstrates server(less)-side rendering.",
         "icon": "circle-begin.svg",
-        "background": "gradient-pink-blue.png",
+        "background": "gradient-purple-green.png",
         "sections": [
           "Prerequisites",
           "Deploy your own",
