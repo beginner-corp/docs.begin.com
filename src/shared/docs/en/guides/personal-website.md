@@ -8,6 +8,46 @@ You're here because you want to make a fast, beautiful, custom personal site run
 
 ![Begin Personal Example](/_static/screens/begin-personal.gif)
 *****
+## Prerequisites
+
+While this guide assumes general familiarity with such things as text editors, terminal interfaces, git, and basic software development in JS with Node.js, you do not need to be a CTO to use Begin (or this guide)!
+
+
+### tl;dr, you'll need:
+- A (free) GitHub account
+- Any computer running macOS, Windows, or Linux, with:
+  - Node.js 10
+  - npm 6.x
+
+
+### Platforms: macOS, Windows, and Linux
+
+Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
+
+
+### Runtimes: Node.js 10
+
+Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support additional runtimes coming soon).
+
+You can work locally with versions of Node other than 10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 10.
+
+You can grab [Node latest](https://nodejs.org/en/download/) here, or [v10.15 here](https://nodejs.org/dist/v10.15.3/).
+
+
+### Package management: NPM 6.x
+
+Begin requires npm 6.x for local development. Recent releases of Node bundle npm 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
+
+
+### Version control: GitHub
+
+Begin hosts project repos on GitHub; if you don't have one already, [sign up for a free GitHub account here](https://github.com/join).
+
+When you create a new app, Begin will provision your GitHub repo pre-wired with the integrations it needs, such as webhooks to Begin's CI.
+
+> Begin only requests the least-privileged set of permissions required to work with GitHub, and does not attempt to access any other repositories or personal data.
+
+*****
 
 ## **Deploy your own**
 
