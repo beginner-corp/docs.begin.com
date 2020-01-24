@@ -27,7 +27,7 @@ git clone https://github.com/{your GH username}/begin-app.git
 cd begin-app
 ```
 
-- Install NPM packages:
+- Install npm packages:
 ```bash
 npm install
 ```

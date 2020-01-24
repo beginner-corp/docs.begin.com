@@ -6,7 +6,6 @@ You're here because you want to make a fast, beautiful, custom personal site run
 
 **Let's get Started!**
 
-
 ## Deploy your own
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-personal-website)
