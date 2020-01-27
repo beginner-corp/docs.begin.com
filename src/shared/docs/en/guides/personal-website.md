@@ -91,11 +91,13 @@ Welcome to the backend user interface of your Begin app! Here you'll be able to 
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
 
-## **Project setup**
+## **Project Setup**
 
-We should get this project setup in our local environments. Begin Activity provides links to your new repo right here on your dashboard. Head on over and `git clone` your project to your local machine.
+We should get this project set up in our local environments. Begin Activity provides links to your new repo right here on your dashboard. Head on over to GitHub and `git clone` your project to your local machine.
 
 ![Begin activity](/_static/screens/begin-activity-2.png)
+
+Once you've got your project working on your local machine, follow these directions to initialize it and spin up a development server.
 
 Install dependencies: 
 
@@ -177,6 +179,9 @@ Remember: you want to keep your functions sub-5MB for optimal performance.
 
 > Learn more about [Begin app project structure](/en/getting-started/project-structure/).
 
+## **Write an HTTP Function**
+
+## **Begin Data**
 
 ## **Deploying your site**
 
