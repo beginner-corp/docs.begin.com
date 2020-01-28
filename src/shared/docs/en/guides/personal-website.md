@@ -39,28 +39,25 @@ Begin will spin up your new project repository under `github.com/{your GH userna
 ![Begin Personal Example](/_static/screens/begin-repo-name.jpg)
 
 
+## **Deploying your app**
 
-
-
-
-
-
-
-## **Your app behind the scenes**
-
-Welcome to the backend user interface of your Begin app! Here you'll be able to watch your app build & deploy in real-time. 
+Welcome to the backend user interface of your Begin app! We call this `Begin Activity`. Here you'll be able to watch your app build & deploy in real-time. For an overview of your Begin backend, we suggest reading the [Reference docs](https://docs.begin.com/en/getting-started/introduction) to get a more thorough understanding.
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
 
 ## **Project Setup**
 
-We should get this project set up in our local environments. Begin Activity provides links to your new repo right here on your dashboard. Head on over to GitHub and `git clone` your project to your local machine.
+We should get this project set up in our local environments. Begin Activity provides links to your new GitHub repo right here on your dashboard. 
 
-![Begin activity](/_static/screens/begin-activity-2.png)
+If you'd like, click the `Edit on GitHub` button to push some new code to your project and watch it build in `Begin Activity`.
 
-Once you've got your project working on your local machine, follow these directions to initialize it and spin up a development server.
+To get this project up & running on your local machine, head on over to GitHub and `git clone` your project to your computer.
 
-Install dependencies: 
+![Begin activity](/_static/screens/begin-activity-2.jpg)
+
+Once you've got your project cloned on your local machine, follow these directions to initialize it and spin up a development server.
+
+**Install dependencies:**
 
 ```
 npm install
@@ -71,20 +68,12 @@ Start the local dev server:
 npm start
 
 ```
+Now you can view your project at the localhost provided in your terminal!
 
-Lint your code: 
+![Begin activity](/_static/screens/begin-sandbox.jpg)
 
-```
-npm run lint 
+*****
 
-```
-
-Run your tests: 
-
-```
-npm t
-
-```
 ## **Project Structure**
 
 Now that your app is live in staging, a brief word about how the `Begin Personal  Website` starter is structured so you'll know your way around.
