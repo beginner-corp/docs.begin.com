@@ -68,7 +68,7 @@ Start the local dev server:
 npm start
 
 ```
-Now you can view your project at the localhost provided in your terminal!
+Now you can view your project at the local-host provided in your terminal!
 
 ![Begin activity](/_static/screens/begin-sandbox.jpg)
 
