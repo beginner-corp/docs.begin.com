@@ -22,9 +22,9 @@ Your app's many individually isolated Functions are organized in your project un
 
 ## Business logic
 
-### `src/http` (optional)
+### `src/http`
 
-Contains Function directories representing [HTTP routes](/en/functions/http/).
+**[Optional]** Contains Function directories representing [HTTP routes](/en/functions/http/).
 
 Each directory maps to its own individual, fully isolated, and independently deployable cloud function.
 
@@ -51,9 +51,9 @@ Here's an example project tree for a Function that handles the HTTP path `POST /
 
 ## Shared code
 
-### `src/shared` (optional)
+### `src/shared`
 
-This is a handy folder that makes its contents available across all your Functions under the `@architect/shared` namespace. Think: per-project globally installed modules.
+**[Optional]** This is a handy folder that makes its contents available across all your Functions under the `@architect/shared` namespace. Think: per-project globally installed modules.
 
 Here's an example of how a file in `src/shared` would be available to a Function:
 
@@ -87,9 +87,9 @@ exports.handler = async function http(request) {
 > You can install global dependencies to `src/shared` – but mind dependency bloat! **Routes must weigh in under 5MB uncompressed.**
 
 
-### `src/views` (optional)
+### `src/views`
 
-Similar to `src/shared`, the `src/views` directory is another shared code utility folder. However this folder's contents are available only to your app's HTTP `GET` Functions.
+**[Optional]** Similar to `src/shared`, the `src/views` directory is another shared code utility folder. However this folder's contents are available only to your app's HTTP `GET` Functions.
 
 This allows for more efficient front-end code sharing, preventing the unnecessary bloat of your front-end getting copied to your non-`GET` and/or non-HTTP Functions.
 
@@ -126,9 +126,9 @@ exports.handler = async function http(request) {
 
 ## Static assets
 
-### `public/` (optional)
+### `public/`
 
-Contents of the `public` directory are deployed to a secure blob store (S3) for hosting and distribution to your CDN (URLs for both of which can be found in your app's `Settings` screen).
+**[Optional]** Contents of the `public` directory are deployed to a secure blob store (S3) for hosting and distribution to your CDN (URLs for both of which can be found in your app's `Settings` screen).
 
 This is a great place to place images and build artifacts, or to aim your static site generator at. The folder name is also configurable from the `Static assets` screen, too.
 
@@ -139,9 +139,9 @@ This is a great place to place images and build artifacts, or to aim your static
 
 ## Tests
 
-### `tests/` (optional)
+### `tests/`
 
-Test root for your app's tests (run locally via `npm test`)
+**[Optional]** Test root for your app's tests (run locally via `npm test`)
 
 Most Begin apps come provisioned with some basic tests in this directory.
 
