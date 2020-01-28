@@ -267,14 +267,12 @@
         "icon": "circle-begin.svg",
         "background": "gradient-purple-green.png",
         "sections": [
-          "Prerequisites",
-          "Deploy your own",
-          "Create a Begin account",
-          "Getting started",
+          "Introduction",
+          "Getting Started",
           "Begin Activity",
           "Project Setup",
           "Project Structure",
-          "Write an HTTP Function",
+          "How to customize",
           "Begin Data",
           "Deploying your site",
           "Additional resources"

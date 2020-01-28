@@ -26,16 +26,11 @@
   "guides/logo-react.svg": "guides/logo-react-8b49b25ea1.svg",
   "guides/logo-svelte.svg": "guides/logo-svelte-ebb7c72e8f.svg",
   "guides/logo-vue.svg": "guides/logo-vue-7c81550779.svg",
-  "screens/begin-activity-2.png": "screens/begin-activity-2-da139c7e86.png",
   "screens/begin-activity.jpg": "screens/begin-activity-29d77f4186.jpg",
   "screens/begin-app-create-selection.jpg": "screens/begin-app-create-selection-cd88cfe08e.jpg",
-  "screens/begin-app-selection-2.png": "screens/begin-app-selection-2-8e542a3aaf.png",
-  "screens/begin-authenticate.png": "screens/begin-authenticate-e64d1b9883.png",
-  "screens/begin-create-new-app.gif": "screens/begin-create-new-app-e9d50fbe75.gif",
-  "screens/begin-create-new-app.png": "screens/begin-create-new-app-6afc208efd.png",
+  "screens/begin-personal-example.jpg": "screens/begin-personal-example-61572d9a51.jpg",
   "screens/Begin-personal-site.png": "screens/Begin-personal-site-ed49665349.png",
-  "screens/begin-personal.gif": "screens/begin-personal-febaa64eb3.gif",
-  "screens/begin-repo-name.png": "screens/begin-repo-name-ccd4d19417.png",
+  "screens/begin-repo-name.jpg": "screens/begin-repo-name-f0e2f75d5d.jpg",
   "screens/masters/begin-activity.png": "screens/masters/begin-activity-1b3b10f209.png",
   "screens/masters/begin-app-create-selection.png": "screens/masters/begin-app-create-selection-ea180d921a.png"
 }

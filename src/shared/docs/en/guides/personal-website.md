@@ -1,91 +1,52 @@
 ![Begin Personal Site](/_static/screens/begin-personal-site.png)
 
-**Hello there BEGINNERS!**
+> ⏱ This guide should require less than 5 minutes
 
-You're here because you want to make a fast, beautiful, custom personal site running on Begin. This guide demonstrates server(less)-side rendering, shared components, and static assets.
+**Hello there Beginners!**
 
-**Let's get Started!**
+We created this tutorial specifically for people who want to make a fast, beautiful, custom personal site running on Begin. This guide demonstrates server(less)-side rendering, shared components, and static assets.
 
-![Begin Personal Example](/_static/screens/begin-personal.gif)
-*****
-## Prerequisites
+### **Prerequisites**
 
-While this guide assumes general familiarity with such things as text editors, terminal interfaces, git, and basic software development in JS with Node.js, you do not need to be a CTO to use Begin (or this guide)!
+You will need a Begin account to follow along with this tutorial. To get started creating your own Begin account, please checkout our [Begin Quickstart Guide](http://begin.com).
 
+**This guide also assumes general familiarity with such things as:**
+ - text editors
+ - terminal interfaces
+ - git
+ - basic software development in JS with Node.js 
+ 
+Don't fret if you are not familiar with those things. We have a guide for that too! If you need more information on getting started with basic web development, please checkout out our [Beginner web development guide](http://begin.com).
 
-### tl;dr, you'll need:
-- A (free) GitHub account
-- Any computer running macOS, Windows, or Linux, with:
-  - Node.js 10
-  - npm 6.x
+**Let's get started!**
 
-
-### Platforms: macOS, Windows, and Linux
-
-Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
-
-
-### Runtimes: Node.js 10
-
-Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support additional runtimes coming soon).
-
-You can work locally with versions of Node other than 10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 10.
-
-You can grab [Node latest](https://nodejs.org/en/download/) here, or [v10.15 here](https://nodejs.org/dist/v10.15.3/).
-
-
-### Package management: NPM 6.x
-
-Begin requires npm 6.x for local development. Recent releases of Node bundle npm 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
-
-
-### Version control: GitHub
-
-Begin hosts project repos on GitHub; if you don't have one already, [sign up for a free GitHub account here](https://github.com/join).
-
-When you create a new app, Begin will provision your GitHub repo pre-wired with the integrations it needs, such as webhooks to Begin's CI.
-
-> Begin only requests the least-privileged set of permissions required to work with GitHub, and does not attempt to access any other repositories or personal data.
+![Begin Personal Example](/_static/screens/begin-personal-example.jpg)
 
 *****
+# **Getting Started**
 
-## **Deploy your own**
+## Deploy your own
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-personal-website)
 
-Deploy your own clone of this app to Begin!
+To get started, simply click the button above to provision your new app. You will land on the screen below. **Remember**, if you don't already have a Begin account, you will have to create one by following our [Begin Quickstart Guide](http://begin.com).
 
-## **Create a Begin account**
-
-To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), authorize it with GitHub, and pick a username. That's it!
-
-Clicking the `Deploy to Begin` button above will do the same.
-
-![Begin Authenticate](/_static/screens/begin-authenticate.png)
-*****
-## **Getting started**
-
-### **Create New App**
-Once authenticated, you will then be taken to the screen below. Click the `Create New App` button on the top right to proceed.
-
-![Begin create new app](/_static/screens/begin-create-new-app.gif)
-
-*****
-### **Choose Your Starter**
-Now all we have to do is choose the `Personal Website` option displayed in the image below.
-
-![Begin new app selector](/_static/screens/begin-app-selection-2.png)
-
-*****
 ### **Name your app and repo**
 Begin will spin up your new project repository under `github.com/{your GH username}/{your repo name}`, and populate it with a fully functional Begin app.
 
 > By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions via in the `Settings` screen found in the left nav of your Begin app.
 
-![Begin name repo](/_static/screens/begin-repo-name.png)
-*****
+![Begin Personal Example](/_static/screens/begin-repo-name.jpg)
 
-## **Begin Activity**
+
+
+
+
+
+
+
+
+## **Your app behind the scenes**
 
 Welcome to the backend user interface of your Begin app! Here you'll be able to watch your app build & deploy in real-time. 
 
@@ -131,12 +92,11 @@ Now that your app is live in staging, a brief word about how the `Begin Personal
 Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). Let's take a quick look at the source tree of a basic Begin app:
 
 ```bash
-.
 ├── public/
-├── src/
-│   ├── http/
-│   │   └── get-index/
-│   └── views/
+└── src/
+    ├── http/
+    │   └── get-index/
+    └── views/
 ```
 Your app's many small, fast, isolated Functions are organized in your project under `src/`.
 
