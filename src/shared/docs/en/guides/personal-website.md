@@ -22,7 +22,7 @@ Don't fret if you are not familiar with those things. We have a guide for that t
 
 **Let's get started!**
 
-![Begin Personal Example](/_static/screens/begin-personal-example.jpg)
+![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
 *****
 # **Getting Started**
@@ -148,6 +148,27 @@ Remember: you want to keep your functions sub-5MB for optimal performance.
 *****
 
 ## **Customize your site**
+
+Now for the fun part! Let's show you how to customize your personal website and make it your own.
+
+First let's do something simple and change the `H1` that read "Personal Website" to our own names.
+
+![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
+
+Head to the `/src/http/get-index/index.js` directory inside of your project folder. 
+
+This is where we'll be able to change all of the content on this page. Simply change the string in the `key:value` pair to whatever you'd like. BOOM! Super easy. Super fast. 
+
+![Begin Personal Example](/_static/screens/personal-website-code.jpg)
+[View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
+
+Now let's update the social media links and change the background image. You may notice that the image is being imported from another module name `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
+
+Grab a new image from wherever you'd like and place it inside of the `public/` folder. 
+
+Go back to `/src/http/get-index/index.js` and simply replace the current image with your new one that you placed inside of your `public/` directory.
+
+![Begin Personal Example](/_static/screens/personal-website-code-1.jpg)
 
 *****
 
