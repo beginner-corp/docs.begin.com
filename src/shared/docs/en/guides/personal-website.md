@@ -40,12 +40,14 @@ Begin will spin up your new project repository under `github.com/{your GH userna
 
 ![Begin Personal Example](/_static/screens/begin-repo-name.jpg)
 
+*****
 
 ## **Deploying your app**
 
 Welcome to the backend user interface of your Begin app! We call this `Begin Activity`. Here you'll be able to watch your app build & deploy in real-time. For an overview of your Begin backend, we suggest reading the [Reference docs](https://docs.begin.com/en/getting-started/introduction) to get a more thorough understanding.
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
+*****
 
 ## **Project Setup**
 
@@ -81,7 +83,7 @@ Now you can view your project at the local-host provided in your terminal!
 
 Now that your app is live in staging, a brief word about how the `Begin Personal  Website` starter is structured so you'll know your way around.
 
-Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). Let's take a quick look at the source tree of a basic Begin app:
+**A quick look at the source tree of a basic Begin app:**
 
 ```bash
 ├── public/
@@ -90,13 +92,14 @@ Begin applications are comprised of many small, fast, individually executing clo
     │   └── get-index/
     └── views/
 ```
-Your app's many small, fast, isolated Functions are organized in your project under `src/`.
+You will mainly be working inside of these directories shown above.
+Let's go over each of these directories and explain how you may use them:
 
-Each HTTP Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
+## `public/`
 
 ### **Host static assets with `public/`**
 
-The `public` directory is a great place to add (compiled) JS and CSS, images, gifs, or any other files you want to make publicly accessible in your app.
+The `public` directory is a great place to add (compiled) JS and CSS, images, gifs, or any other files you want to to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
 
@@ -104,7 +107,18 @@ Each time your app deploys, the contents of this folder will automatically be pu
 
 The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
 
-## **Share frontend code with `src/views`**
+## `src/http`
+
+Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). 
+
+Your app's many small, fast, isolated Functions are organized in your project under `src/http`.
+
+Each HTTP Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
+
+
+## `src/views`
+
+### **Share frontend code with `src/views`**
 
 By default, the contents of `src/views` gets copied into each of your project's `@http` `GET` functions (at `node_modules/@architect/views` for Node, or `vendor/views` for Ruby and Python) whenever you run `npx sandbox`.
 
@@ -131,9 +145,15 @@ Remember: you want to keep your functions sub-5MB for optimal performance.
 
 > Learn more about [Begin app project structure](/en/getting-started/project-structure/).
 
+*****
+
 ## **Customize your site**
 
+*****
+
 ## **Begin Data**
+
+*****
 
 ## **Deploying your site**
 
