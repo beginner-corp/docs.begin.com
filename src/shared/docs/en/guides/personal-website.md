@@ -1,115 +1,161 @@
-![Begin Personal Site](/_static/screens/begin-personal-site.png)
+> ⏱ This tutorial is an introductory walkthrough of creating a personal website on Begin. It should take fewer than 5 minutes.
 
-> ⏱ This guide should require less than 5 minutes
+## Introduction
 
-## **Introduction**
+**Hello there, Beginner!**
 
-**Hello there Beginners!**
+This tutorial walk through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates server-side rendering, shared components, and static assets.
 
-We created this tutorial specifically for people who want to make a fast, beautiful, custom personal site running on Begin. This guide demonstrates server(less)-side rendering, shared components, and static assets.
 
-### **Prerequisites**
+### Prerequisites
 
-You will need a Begin account to follow along with this tutorial. To get started creating your own Begin account, please checkout our [Begin Quickstart Guide](http://begin.com).
+You will need a GitHub account to follow along with this tutorial. (Head here to [learn more about signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
 
-**This guide also assumes general familiarity with such things as:**
- - text editors
- - terminal interfaces
- - git
- - basic software development in JS with Node.js 
- 
-Don't fret if you are not familiar with those things. We have a guide for that too! If you need more information on getting started with basic web development, please checkout out our [Beginner web development guide](http://begin.com).
+This tutorial also assumes some familiarity with such things as:
+- Text editors
+- Terminal / CLI
+- Git and version control
+- General software development principles using JavaScript and Node.js
+
+You do not need to be an expert in any of these things in order to follow along.
 
 **Let's get started!**
 
+Get stoked, here's a little preview of your new site:
+
 ![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
-*****
-# **Getting Started**
+---
 
-## Deploy your own
+## Getting started
+
+### Create your new personal website
+
+First, click the **Deploy to Begin** button below. This starts the process of authorizing Begin with your GitHub account. (You may be prompted to log into GitHub, and/or be asked to create a Begin username.)
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-personal-website)
 
-To get started, simply click the button above to provision your new app. You will land on the screen below. **Remember**, if you don't already have a Begin account, you will have to create one by following our [Begin Quickstart Guide](http://begin.com).
 
-### **Name your app and repo**
-Begin will spin up your new project repository under `github.com/{your GH username}/{your repo name}`, and populate it with a fully functional Begin app.
+### Name your app & repo
 
-> By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions via in the `Settings` screen found in the left nav of your Begin app.
+You'll then be prompted to name your new app and repository – this is optional, feel free to use the default app and repo name if you like!
+
+> Note: the your Begin app name and repository name cannot be changed later.
 
 ![Begin Personal Example](/_static/screens/begin-repo-name.jpg)
 
-*****
+Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
 
-## **Deploying your app**
+> By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions from this screen (or later from the `Settings` screen found in the left nav of your Begin app).
 
-Welcome to the backend user interface of your Begin app! We call this `Begin Activity`. Here you'll be able to watch your app build & deploy in real-time. For an overview of your Begin backend, we suggest reading the [Reference docs](https://docs.begin.com/en/getting-started/introduction) to get a more thorough understanding.
+---
+
+## Your first deploy
+
+After creating your app, you'll be taken to its `Activity` stream. Welcome to the main backend interface of your Begin app!
 
 ![Begin activity](/_static/screens/begin-activity.jpg)
-*****
 
-## **Project Setup**
+From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you commit to `master`, you'll see a new build get kicked off in Begin.
 
-We should get this project set up in our local environments. Begin Activity provides links to your new GitHub repo right here on your dashboard. 
+Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
-If you'd like, click the `Edit on GitHub` button to push some new code to your project and watch it build in `Begin Activity`.
+If no build steps fail, then the build containing your latest commit is automatically deployed to your `staging` environment.
 
+Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your personal site:
+
+![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
+
+> 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
+
+---
+
+## Make your first commit
+
+If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
 
 ![Begin activity](/_static/screens/begin-activity-2.jpg)
 
-To get this project up & running on your local machine, head on over to GitHub and `git clone` your project to your computer.
-
-Once you've got your project cloned on your local machine, follow these directions to initialize it and spin up a development server.
-
-**Install dependencies:**
-
+Look for this code, and try editing your basic bio (like your name or location):
+```js
+// Customize your site by changing the data below
+exports.handler = async function Index () {
+  let body = Main({
+    /**
+     * Basic bio
+     */
+    fullname: 'Your Name', // ←  Start by adding your name!
+    title: 'My personal site!',
+    occupation: 'Artist & Photographer',
+    location: 'West Glacier, MT',
+    bio: 'Lorem ipsum dolor sit amet...',
 ```
+
+Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
+
+When it's done, don't forget to see your changes live in your `staging` environment!
+
+---
+
+## Get set up locally
+
+Next let's get your new site running in your local environment (i.e. the computer you work on).
+
+First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download** button and copy the git URL.
+
+Then head to your terminal and clone your repo to your local filesystem.
+
+```bash
+git clone https://github.com/yourname/your-new-project.git
+```
+
+Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
+```bash
+cd your-new-project
 npm install
-
-```
-Start the local dev server:
-```
 npm start
-
 ```
-Now you can view your project at the local-host provided in your terminal!
 
-![Begin activity](/_static/screens/begin-sandbox.jpg)
+You should see a `localhost` link in your terminal – go ahead and visit that in your browser.
 
-*****
+That's all you need to do preview your changes locally before pushing them to `staging`!
 
-## **Project Structure**
+---
 
-Now that your app is live in staging, a brief word about how the `Begin Personal  Website` starter is structured so you'll know your way around.
+## Project structure
+
+Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around.
 
 **A quick look at the source tree of a basic Begin app:**
 
 ```bash
+.
 ├── public/
 └── src/
     ├── http/
     │   └── get-index/
     └── views/
 ```
+
 You will mainly be working inside of these directories shown above.
-Let's go over each of these directories and explain how you may use them:
 
-## `public/`
+Let's go over each of these directories and you may use them:
 
-### **Host static assets with `public/`**
+### `public/`
 
-The `public` directory is a great place to add (compiled) JS and CSS, images, gifs, or any other files you want to make publicly accessible in your app.
+#### Host static assets with `public/`
+
+The `public` directory is a great place to add images (like the background image for your site), JS and CSS, or any other files you want to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
 
-### **Use caution!**
+### Use caution!
 
 The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
 
-## `src/http`
+### `src/http`
 
-Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short). 
+Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short).
 
 Your app's many small, fast, isolated Functions are organized in your project under `src/http`.
 
@@ -118,7 +164,7 @@ Each HTTP Function directory services a handler for a publicly available HTTP ro
 
 ## `src/views`
 
-### **Share frontend code with `src/views`**
+### Share frontend code with `src/views`
 
 By default, the contents of `src/views` gets copied into each of your project's `@http` `GET` functions (at `node_modules/@architect/views` for Node, or `vendor/views` for Ruby and Python) whenever you run `npx sandbox`.
 
@@ -127,27 +173,14 @@ This means the modules in this folder can be used by any `@http` `GET` function 
 For example, here's how you'd require `src/views/layout.js`:
 
 ```javascript
-var layout = require('@architect/views/layout')
+let layout = require('@architect/views/layout')
 ```
 
+> > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
-### **How is this different from `src/shared`?**
+---
 
-When we looked at how people were using `src/shared`, we saw that people realized it was an easy way to share frontend components. Which is true! But we felt we could make it more explicit while also not bloating every function when the workflow desired was specifically for `@http` `GET`s.
-
-
-### **Use caution!**
-
-Everything in `src/views` will be copied into all of your project's `@http` `GET` HTTP functions, which has the potential to bloat your application.
-
-Remember: you want to keep your functions sub-5MB for optimal performance.
-
-
-> Learn more about [Begin app project structure](/en/getting-started/project-structure/).
-
-*****
-
-## **Customize your site**
+## Customize your site
 
 Now for the fun part! Let's show you how to customize your personal website and make it your own.
 
@@ -155,28 +188,28 @@ First let's do something simple and change the `H1` that read "Personal Website"
 
 ![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
-Head to the `/src/http/get-index/index.js` directory inside of your project folder. 
+Head to the `/src/http/get-index/index.js` directory inside of your project folder.
 
-This is where we'll be able to change all of the content on this page. Simply change the string in the `key:value` pair to whatever you'd like. BOOM! Super easy. Super fast. 
+This is where we'll be able to change all of the content on this page. Simply change the string in the `key:value` pair to whatever you'd like. BOOM! Super easy. Super fast.
 
 ![Begin Personal Example](/_static/screens/personal-website-code.jpg)
 [View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
 Now let's update the social media links and change the background image. You may notice that the image is being imported from another module name `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
 
-Grab a new image from wherever you'd like and place it inside of the `public/` folder. 
+Grab a new image from wherever you'd like and place it inside of the `public/` folder.
 
 Go back to `/src/http/get-index/index.js` and simply replace the current image with your new one that you placed inside of your `public/` directory.
 
 ![Begin Personal Example](/_static/screens/personal-website-code-1.jpg)
 
-*****
+---
 
-## **Begin Data**
+## Begin Data
 
-*****
+---
 
-## **Deploying your site**
+## Deploying your site
 
 - Run Begin's build steps locally:
   - Lint your code: `npm run lint`
@@ -189,7 +222,7 @@ Go back to `/src/http/get-index/index.js` and simply replace the current image w
   - Cut your own git tag: `git tag -a 1.0.0 -m "1.0, here we come" && git push origin 1.0.0`
 
 
-## **Additional resources**
+## Additional resources
 
 - [Begin reference docs](https://docs.begin.com)
 - [Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
