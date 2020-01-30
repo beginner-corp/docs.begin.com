@@ -198,6 +198,7 @@ unauthenticated
 unformatted
 Unordered
 unparsed
+Unsplash
 vars
 vimrc
 VPC

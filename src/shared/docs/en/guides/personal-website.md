@@ -4,7 +4,7 @@
 
 **Hello there, Beginner!**
 
-This tutorial walk through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates server-side rendering, shared components, and static assets.
+This tutorial walks through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates server-side rendering, shared components, and static assets.
 
 
 ### Prerequisites
@@ -139,7 +139,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 You will mainly be working inside of these directories shown above.
 
-Let's go over each of these directories and you may use them:
+Let's go over each of these directories and how you may use them:
 
 ### `public/`
 
@@ -149,9 +149,8 @@ The `public` directory is a great place to add images (like the background image
 
 Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
 
-### Use caution!
-
-The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
+> **Use caution!**
+> The full contents of this folder will be copied with each deploy,  overwriting any existing files with the same name.
 
 ### `src/http`
 
@@ -162,9 +161,9 @@ Your app's many small, fast, isolated Functions are organized in your project un
 Each HTTP Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
 
 
-## `src/views`
+### `src/views`
 
-### Share frontend code with `src/views`
+#### Share frontend code with `src/views`
 
 By default, the contents of `src/views` gets copied into each of your project's `@http` `GET` functions (at `node_modules/@architect/views` for Node, or `vendor/views` for Ruby and Python) whenever you run `npx sandbox`.
 
@@ -176,7 +175,7 @@ For example, here's how you'd require `src/views/layout.js`:
 let layout = require('@architect/views/layout')
 ```
 
-> > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
+> 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
 ---
 
@@ -184,24 +183,64 @@ let layout = require('@architect/views/layout')
 
 Now for the fun part! Let's show you how to customize your personal website and make it your own.
 
-First let's do something simple and change the `H1` that read "Personal Website" to our own names.
+You've already changed the name on your personal site. Let's add your social media links and change the background image.
 
 ![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
 Head to the `/src/http/get-index/index.js` directory inside of your project folder.
 
-This is where we'll be able to change all of the content on this page. Simply change the string in the `key:value` pair to whatever you'd like. BOOM! Super easy. Super fast.
+This is where we'll be able to change all of the content on this page. Change the string in the `key:value` pair to your own information.
 
-![Begin Personal Example](/_static/screens/personal-website-code.jpg)
+```javascript
+///src/http/get-index/index.js
+
+
+// Customize your site by changing the data below
+exports.handler = async function Index () {
+  let body = Main({
+    /**
+     * Basic bio
+     */
+    fullname: 'Personal website', // ←  Start by adding your name!
+    title: 'My personal site!',
+    occupation: 'Artist & Programmer',
+    location: 'West Glacier, MT',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+
+    /**
+```
 [View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
-Now let's update the social media links and change the background image. You may notice that the image is being imported from another module name `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
+Now let's update the social media links and change the background image. You may notice that the image is being imported from another module named `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
 
-Grab a new image from wherever you'd like and place it inside of the `public/` folder.
+Grab a new image from [Unsplash](https://unsplash.com/@von_co) and place it inside of the `public/` folder.
 
-Go back to `/src/http/get-index/index.js` and simply replace the current image with your new one that you placed inside of your `public/` directory.
+Go back to `/src/http/get-index/index.js` and replace the current image with your new one that you placed inside of your `public/` directory.
 
-![Begin Personal Example](/_static/screens/personal-website-code-1.jpg)
+```javascript
+///src/http/get-index/index.js
+
+  /**
+     * Contact / social
+     * - Comment out any item below to remove it from your page
+     */
+    email: 'your@email.com',
+    twitter: 'yourTwitter',
+    linkedin: 'your-linkedin-name',
+    instagram: 'yourInsta',
+    facebook: 'your-facebook-name',
+
+    /**
+     * Layout
+     */
+    photographer: 'Ivana Cajina',
+    service: 'Unsplash',
+    credit: 'https://unsplash.com/@von_co',
+    image: staticAssetsHelper('background.jpg')
+    // or link to an external image URL such as ↓
+    // image: 'https://images.unsplash.com/photo-1506535772317-9fdb71c959c6'
+```
+[View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
 ---
 
