@@ -183,13 +183,13 @@ let layout = require('@architect/views/layout')
 
 Now for the fun part! Let's show you how to customize your personal website and make it your own.
 
-You've already changed the name on your personal site. Let's add your social media links and change the background image.
+You've already changed the name on your personal site. Now let's add your social media links and change the background image.
 
 ![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
 Head to the `/src/http/get-index/index.js` directory inside of your project folder.
 
-This is where we'll be able to change all of the content on this page. Change the string in the `key:value` pair to your own information.
+This is where we'll be able to change all of the content on this page.
 
 ```javascript
 ///src/http/get-index/index.js
@@ -211,14 +211,16 @@ exports.handler = async function Index () {
 ```
 [View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
-Now let's update the social media links and change the background image. You may notice that the image is being imported from another module named `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
+Now let's update the social media links and change the background image. Input your social media handles in place of the dummy data. 
 
-Grab a new image from [Unsplash](https://unsplash.com/@von_co) and place it inside of the `public/` folder.
+You may notice that the `background.jpg` image is being imported from another module named `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
+
+Grab a new image from [Unsplash](https://unsplash.com/@von_co) and place it inside of the `public/` folder with the original image. Let's name this new image `background-2.jpg`.
 
 Go back to `/src/http/get-index/index.js` and replace the current image with your new one that you placed inside of your `public/` directory.
 
 ```javascript
-///src/http/get-index/index.js
+//src/http/get-index/index.js
 
   /**
      * Contact / social
@@ -236,26 +238,36 @@ Go back to `/src/http/get-index/index.js` and replace the current image with you
     photographer: 'Ivana Cajina',
     service: 'Unsplash',
     credit: 'https://unsplash.com/@von_co',
-    image: staticAssetsHelper('background.jpg')
+    image: staticAssetsHelper('background.jpg') // <-- Replace image
     // or link to an external image URL such as ↓
     // image: 'https://images.unsplash.com/photo-1506535772317-9fdb71c959c6'
 ```
 [View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
+
+Now let's take a look at the finished product. One beautiful personal website that's customized to your liking! Time to deploy and show the world what we've just created.
+
+![Begin Personal Example](/_static/screens/begin-personal-site-2.jpg)
+
 ---
 
-## Begin Data
+<!-- ## Begin Data
 
----
+--- -->
 
 ## Deploying your site
 
-- Run Begin's build steps locally:
-  - Lint your code: `npm run lint`
-  - Run your tests: `npm t`
-- Deploy to `staging`
-  - Just commit and `git push` to `master`!
-- Deploy to `production`:
+Run Begin's build steps locally:
+```javascript
+  npm run lint // Lint your code
+  npm t  // Run your tests
+```
+Deploy to `staging`
+```javascript
+  Just commit and `git push` to `master`!
+```
+
+Deploy to `production`:
   - Use the `Deploy to production` button in Begin, or
   - Bump your [npm version](https://docs.npmjs.com/cli/version): `npm version [patch|minor|major] && git push origin`
   - Cut your own git tag: `git tag -a 1.0.0 -m "1.0, here we come" && git push origin 1.0.0`
