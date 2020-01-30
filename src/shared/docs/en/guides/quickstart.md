@@ -100,7 +100,7 @@ Begin applications are comprised of many small, fast, individually executing clo
 │   ├── http/
 │   │   └── get-index/
 │   ├── shared/
-|   └── views/
+│   └── views/
 └── test/
 ```
 

@@ -124,9 +124,7 @@ That's all you need to do preview your changes locally before pushing them to `s
 
 ## Project structure
 
-Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around.
-
-**A quick look at the source tree of a basic Begin app:**
+Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders in the source tree of your personal website:
 
 ```bash
 .
@@ -137,42 +135,36 @@ Now that your app is live on `staging` and running locally, let's take a quick l
     └── views/
 ```
 
-You will mainly be working inside of these directories shown above.
-
 Let's go over each of these directories and how you may use them:
 
 ### `public/`
 
-#### Host static assets with `public/`
-
-The `public` directory is a great place to add images (like the background image for your site), JS and CSS, or any other files you want to make publicly accessible in your app.
+The `public` directory where you'll add images (like the background image for your site) and any other static assets or files you want to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
 
-> **Use caution!**
-> The full contents of this folder will be copied with each deploy,  overwriting any existing files with the same name.
-
-### `src/http`
-
-Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions, for short).
-
-Your app's many small, fast, isolated Functions are organized in your project under `src/http`.
-
-Each HTTP Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
+> **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
 
 
-### `src/views`
+### `src/http/get-index/`
 
-#### Share frontend code with `src/views`
+The cloud function that handles requests to your site is found at `src/http/get-index/`.
 
-By default, the contents of `src/views` gets copied into each of your project's `@http` `GET` functions (at `node_modules/@architect/views` for Node, or `vendor/views` for Ruby and Python) whenever you run `npx sandbox`.
+Some Begin apps are inert static web sites – but not this one. Your personal website is built on a small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
 
-This means the modules in this folder can be used by any `@http` `GET` function in your app.
+The HTTP function that handles requests to the root of your app (`GET /`) is found in `src/http/`.
 
-For example, here's how you'd require `src/views/layout.js`:
+
+### `src/views/`
+
+By default, the contents of `src/views/` gets copied into each of your project's `GET` HTTP functions (at `node_modules/@architect/views` for Node, or `vendor/views` for Ruby and Python) whenever you start the local dev server (or deploy your app).
+
+This means the modules in this folder can be used by any `GET` HTTP function in your app.
+
+For example, here's how you'd `require` `src/views/main.js`:
 
 ```javascript
-let layout = require('@architect/views/layout')
+let layout = require('@architect/views/main')
 ```
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
@@ -181,19 +173,21 @@ let layout = require('@architect/views/layout')
 
 ## Customize your site
 
-Now for the fun part! Let's show you how to customize your personal website and make it your own.
+Now for the fun part! Let's customize your personal website and really make it your own.
 
-You've already changed the name on your personal site. Now let's add your social media links and change the background image.
+You've already changed default name. Now let's add your social media links and change the background image.
 
 ![Begin Personal Example](/_static/screens/begin-personal-site.jpg)
 
-Head to the `/src/http/get-index/index.js` directory inside of your project folder.
+As you saw earlier, `/src/http/get-index/index.js` is a great place to get started updating the content of your site. Open that file in your editor:
 
-This is where we'll be able to change all of the content on this page.
+Now let's input your social media handles in place of the dummy data. Go ahead and change the values of the `email`, `twitter`, `linkedin`, `instagram`, and `facebook` keys – or remove any you don't want to keep.
 
 ```javascript
-///src/http/get-index/index.js
+// src/http/get-index/index.js
 
+const Main = require('@architect/views/main.js')
+const staticAssetsHelper = require('./static-assets-helper')
 
 // Customize your site by changing the data below
 exports.handler = async function Index () {
@@ -201,28 +195,13 @@ exports.handler = async function Index () {
     /**
      * Basic bio
      */
-    fullname: 'Personal website', // ←  Start by adding your name!
+    fullname: 'Your Name', // ←  Start by adding your name!
     title: 'My personal site!',
-    occupation: 'Artist & Programmer',
+    occupation: 'Artist & Photographer',
     location: 'West Glacier, MT',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
 
     /**
-```
-[View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
-
-Now let's update the social media links and change the background image. Input your social media handles in place of the dummy data. 
-
-You may notice that the `background.jpg` image is being imported from another module named `staticAssetHelper`. This helper demonstrates how to use your Begin CDN as well as local development and staging previews of static assets.
-
-Grab a new image from [Unsplash](https://unsplash.com/@von_co) and place it inside of the `public/` folder with the original image. Let's name this new image `background-2.jpg`.
-
-Go back to `/src/http/get-index/index.js` and replace the current image with your new one that you placed inside of your `public/` directory.
-
-```javascript
-//src/http/get-index/index.js
-
-  /**
      * Contact / social
      * - Comment out any item below to remove it from your page
      */
@@ -238,52 +217,80 @@ Go back to `/src/http/get-index/index.js` and replace the current image with you
     photographer: 'Ivana Cajina',
     service: 'Unsplash',
     credit: 'https://unsplash.com/@von_co',
-    image: staticAssetsHelper('background.jpg') // <-- Replace image
+    image: staticAssetsHelper('background.jpg')
     // or link to an external image URL such as ↓
     // image: 'https://images.unsplash.com/photo-1506535772317-9fdb71c959c6'
+  })
+
+  return {
+    headers: {
+      'content-type': 'text/html; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body
+  }
+}
 ```
-[View Source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
+[View source](https://github.com/begin-examples/node-personal-website/blob/master/src/http/get-index/index.js)
 
 
-Now let's take a look at the finished product. One beautiful personal website that's customized to your liking! Time to deploy and show the world what we've just created.
+Now we'll update your background image. Grab a new one [Unsplash](https://unsplash.com) (or wherever you please) and place it in the `public/`. Let's name this new image `background-2.jpg`.
+
+Go back to `/src/http/get-index/index.js` and replace the current reference to `background.jpg` with `background-2.jpg`.
+
+> You may notice that your background image is being returned by a module named `staticAssetHelper`. This helper demonstrates how to load static assets with the correct URLs locally, in staging, and via the Begin CDN in production.
+
+Ok, let's see the finished product. With your local dev server running (`npm start`), preview your site.
 
 ![Begin Personal Example](/_static/screens/begin-personal-site-2.jpg)
 
+That's one beautiful personal website you've got there – customized to your liking! Time to deploy and show the world what you've just created.
+
 ---
 
-<!-- ## Begin Data
+## Deploy your site
 
---- -->
+While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
 
-## Deploying your site
-
-Run Begin's build steps locally:
-```javascript
-  npm run lint // Lint your code
-  npm t  // Run your tests
-```
-Deploy to `staging`
-```javascript
-  Just commit and `git push` to `master`!
+```bash
+npm run lint
+npm t
 ```
 
-Deploy to `production`:
-  - Use the `Deploy to production` button in Begin, or
-  - Bump your [npm version](https://docs.npmjs.com/cli/version): `npm version [patch|minor|major] && git push origin`
-  - Cut your own git tag: `git tag -a 1.0.0 -m "1.0, here we come" && git push origin 1.0.0`
+Everything set? Now let's push this commit (and deploy the build to `staging`):
 
+```bash
+git add -A
+git commit -am 'Just customizing my Begin site!'
+git push origin master
+```
+
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
+
+Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
+
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
+
+> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
+
+---
+
+## Congratulations!
+
+You've now got a shiny new personal website hosted on Begin – nice work.
+
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20new%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+
+---
+
+<!-- TODO add domains directions -->
 
 ## Additional resources
 
-- [Begin reference docs](https://docs.begin.com)
-- [Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
 - Expand the capabilities of your app:
   - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
   - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
+- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
 - Get help:
-- [Begin community](https://spectrum.chat/begin)
-- [Issue tracker](https://github.com/smallwins/begin-issues/issues)
-
----
-
-> _We all can't wait to see what you build with [Begin](https://begin.com)!_
+  - [Begin community](https://spectrum.chat/begin)
+  - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
