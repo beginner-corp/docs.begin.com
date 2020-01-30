@@ -23,7 +23,7 @@ You do not need to be an expert in any of these things in order to follow along.
 
 Get stoked, here's a little preview of your new site:
 
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
 
 ---
 
@@ -42,7 +42,7 @@ You'll then be prompted to name your new app and repository – this is optional
 
 > Note: the your Begin app name and repository name cannot be changed later.
 
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-repo-name.jpg)
+![Name your Begin app and repo](/_static/screens/guides/personal-website/begin-repo-name.jpg)
 
 Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
 
@@ -54,7 +54,7 @@ Once you've clicked the `Create...` button, Begin will spin up your new project 
 
 After creating your app, you'll be taken to its `Activity` stream. Welcome to the main backend interface of your Begin app!
 
-![Begin activity](/_static/screens/shared/begin-activity.jpg)
+![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
 
 From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you commit to `master`, you'll see a new build get kicked off in Begin.
 
@@ -64,7 +64,7 @@ If no build steps fail, then the build containing your latest commit is automati
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your personal site:
 
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
 
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
@@ -119,8 +119,6 @@ npm start
 You should see a `localhost` link in your terminal – go ahead and visit that in your browser.
 
 That's all you need to do preview your changes locally before pushing them to `staging`!
-
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-sandbox.jpg)
 
 ---
 
@@ -179,7 +177,7 @@ Now for the fun part! Let's customize your personal website and really make it y
 
 You've already changed default name. Now let's add your social media links and change the background image.
 
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
 
 As you saw earlier, `/src/http/get-index/index.js` is a great place to get started updating the content of your site. Open that file in your editor:
 
@@ -244,7 +242,7 @@ Go back to `/src/http/get-index/index.js` and replace the current reference to `
 
 Ok, let's see the finished product. With your local dev server running (`npm start`), preview your site.
 
-![Begin Personal Example](/_static/screens/guides/personal-website/begin-personal-site-2.jpg)
+![Updated personal website](/_static/screens/guides/personal-website/begin-personal-site-2.jpg)
 
 That's one beautiful personal website you've got there – customized to your liking! Time to deploy and show the world what you've just created.
 
