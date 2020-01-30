@@ -18,7 +18,7 @@ While this guide assumes general familiarity with such things as text editors, t
 - A (free) GitHub account
 - Any computer running macOS, Windows, or Linux, with:
   - Node.js 10
-  - NPM 6.x
+  - npm 6.x
 
 
 ### Platforms: macOS, Windows, and Linux
@@ -37,7 +37,7 @@ You can grab [Node latest](https://nodejs.org/en/download/) here, or [v10.15 her
 
 ### Package management: NPM 6.x
 
-Begin requires NPM 6.x for local development. Recent releases of Node bundle NPM 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
+Begin requires npm 6.x for local development. Recent releases of Node bundle npm 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
 
 
 ### Version control: GitHub
@@ -100,7 +100,7 @@ Begin applications are comprised of many small, fast, individually executing clo
 │   ├── http/
 │   │   └── get-index/
 │   ├── shared/
-|   └── views/
+│   └── views/
 └── test/
 ```
 
@@ -127,7 +127,7 @@ git clone https://github.com/{your GH username}/begin-app.git
 cd begin-app
 ```
 
-- Install NPM packages:
+- Install npm packages:
 ```bash
 npm install
 ```

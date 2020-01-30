@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "./scripts/deploy",
     "lint": "eslint src --ignore-pattern node_modules --fix",
-    "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
+    "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./scripts/dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
     "dev": "NODE_ENV=testing PORT=4445 ARC_LOCAL=1 npx sandbox",
     "start": "NODE_ENV=staging PORT=4445 ARC_LOCAL=1 npx sandbox",
     "push-test": "npm run spellcheck && NODE_ENV=testing ARC_CONTRIB=yas ARC_LOCAL=yas tape 'test/**/*-test.js' | tap-spec",

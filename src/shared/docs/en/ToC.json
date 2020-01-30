@@ -261,6 +261,24 @@
         ]
       },
       {
+        "docID": "personal-website",
+        "docTitle": "Personal website",
+        "description": "Fast, beautiful, customizable personal site. Demonstrates server-side rendering.",
+        "icon": "circle-begin.svg",
+        "background": "gradient-purple-green.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "Customize your site",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docID": "restful-api",
         "docTitle": "Restful API",
         "hidden": true,
