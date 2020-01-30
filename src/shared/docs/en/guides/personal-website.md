@@ -60,7 +60,7 @@ From the `Activity` view, you'll be able to watch your app build & deploy in rea
 
 Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
-If no build steps fail, then the build containing your latest commit is automatically deployed to your `staging` environment.
+If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your personal site:
 
@@ -141,7 +141,7 @@ Let's go over each of these directories and how you may use them:
 
 The `public` directory where you'll add images (like the background image for your site) and any other static assets or files you want to make publicly accessible in your app.
 
-Each time your app deploys, the contents of this folder will automatically be published to S3 and Begin's CDN.
+Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
 
 > **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
 
@@ -152,7 +152,7 @@ The cloud function that handles requests to your site is found at `src/http/get-
 
 Some Begin apps are inert static web sites – but not this one. Your personal website is built on a small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
 
-The HTTP function that handles requests to the root of your app (`GET /`) is found in `src/http/`.
+The HTTP function that handles requests to the root of your app (`GET /`) is found in `src/http/get-index/`.
 
 
 ### `src/views/`
