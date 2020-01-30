@@ -31,9 +31,9 @@ module.exports = function contents (active) {
   renderer.image = function (href, title, text) {
     let staticDir = '/_static/'
     if (!local && href.startsWith(staticDir)) href = `${staticDir}${staticAssets[href.replace(staticDir,'')]}`
-
-    let alt = text ? `alt="${text}"` : ''
-    return `<img src="${href}"${alt}>`
+    let alt = text ? ` alt="${text}"` : ''
+    let id = text ? ` id=${text.toLowerCase().replace(/\s/g, '-')}` : ''
+    return `<img src="${href}"${alt}${id}>`
   }
   renderer.link = function (href, title, text) {
     let isDeployButton = href.includes('/apps/create?template=')

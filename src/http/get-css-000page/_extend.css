@@ -235,6 +235,12 @@
   @extend .b-p13;
 }
 
+#doc #deploy-to-begin {
+  width: 13rem;
+  height: 3rem;
+  border: none;
+}
+
 #footer-hr {
   @extend .mt3;
 }
