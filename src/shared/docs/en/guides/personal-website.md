@@ -9,15 +9,17 @@ This tutorial walks through setting up a fast, beautiful, custom personal site r
 
 ### Prerequisites
 
-You will need a GitHub account to follow along with this tutorial. (Head here to [learn more about signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
+You will need to have **git** and **Node.js** installed to your local computer to follow along with this tutorial. (Learn more about [installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [installing Node.js](https://nodejs.org/en/download/).)
+
+You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
 
 This tutorial also assumes some familiarity with such things as:
 - Text editors
 - Terminal / CLI
 - Git and version control
-- General software development principles using JavaScript and Node.js
+- General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along.
+You do not need to be an expert in any of these things in order to follow along and make a new personal website with Begin!
 
 **Let's get started!**
 
