@@ -40,7 +40,7 @@ First, click the **Deploy to Begin** button below. This starts the process of au
 
 You'll then be prompted to name your new app and repository – this is optional, feel free to use the default app and repo name if you like!
 
-> Note: the your Begin app name and repository name cannot be changed later.
+> Note: your Begin app name and repository name cannot be changed later.
 
 ![Name your Begin app and repo](/_static/screens/guides/personal-website/begin-repo-name.jpg)
 
@@ -56,7 +56,7 @@ After creating your app, you'll be taken to its `Activity` stream. Welcome to th
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
 
-From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you commit to `master`, you'll see a new build get kicked off in Begin.
+From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
 
 Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
@@ -106,12 +106,12 @@ First, head to your GitHub repo (from the first card in your `Activity`, or from
 Then head to your terminal and clone your repo to your local filesystem.
 
 ```bash
-git clone https://github.com/yourname/your-new-project.git
+git clone https://github.com/your-github-username/your-new-begin-app.git
 ```
 
 Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
 ```bash
-cd your-new-project
+cd your-new-begin-app
 npm install
 npm start
 ```
