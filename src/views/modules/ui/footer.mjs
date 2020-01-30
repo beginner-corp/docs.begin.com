@@ -54,7 +54,7 @@ export default function Footer (props) {
           Guides
         </h2>
         <p>
-          In-depth tutorials using example apps
+          Guides & tutorials for building modern apps
         </p>
       </div>
     </a>
