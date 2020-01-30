@@ -35,6 +35,12 @@ module.exports = function contents (active) {
     let alt = text ? `alt="${text}"` : ''
     return `<img src="${href}"${alt}>`
   }
+  renderer.link = function (href, title, text) {
+    let isDeployButton = href.includes('/apps/create?template=')
+    let isExternalLink = !href.includes('localhost') && !href.includes('begin.com')
+    let targetBlank = isDeployButton || isExternalLink ? ' target="_blank"' : ''
+    return `<a href="${href}"${targetBlank}>${text}</a>`
+  }
   let content = md(read(contentFile).toString(), {renderer: renderer})
   return {
     content,
