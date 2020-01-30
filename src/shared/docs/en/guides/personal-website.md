@@ -120,6 +120,8 @@ You should see a `localhost` link in your terminal – go ahead and visit that i
 
 That's all you need to do preview your changes locally before pushing them to `staging`!
 
+![Begin Personal Example](/_static/screens/guides/personal-website/begin-sandbox.jpg)
+
 ---
 
 ## Project structure
