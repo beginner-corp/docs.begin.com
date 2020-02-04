@@ -59,10 +59,76 @@ Each build undergoes a number of predefined build steps (learn more about [build
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
-Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your personal site:
+Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your react app:
 
-![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+![Personal website](/_static/screens/guides/personal-website/react-intro.jpg)
 
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
 ---
+
+## Make your first commit
+
+If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
+
+![Begin activity](/_static/screens/guides/personal-website/begin-activity-2.jpg)
+
+Look for this code, and try editing your basic app. Let's edit the `<p>` that says "Change me!" to "My App!":
+
+```javascript
+// Customize your site by changing the data below
+return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{message}</p>
+        <p>My App!</p>
+```
+
+Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
+
+When it's done, don't forget to see your changes live in your `staging` environment!
+
+---
+
+## Get set up locally
+
+Next let's get your new site running in your local environment (i.e. the computer you work on).
+
+First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download** button and copy the git URL.
+
+Then head to your terminal and clone your repo to your local filesystem.
+
+```bash
+git clone https://github.com/your-github-username/your-new-begin-app.git
+```
+
+Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
+```bash
+cd your-new-begin-app
+npm install
+npm start
+```
+
+You should see a `localhost` link in your terminal – go ahead and visit that in your browser.
+
+That's all you need to do preview your changes locally before pushing them to `staging`!
+
+---
+
+## Project structure
+
+Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your personal website:
+
+```bash
+.
+├── public/
+├── src/
+│    ├── http/
+│    │   └── get-api/
+│    └── App.js/
+│
+└── test/
+```
+
+Let's go over each of these directories and how you may use them:
