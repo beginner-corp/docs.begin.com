@@ -82,7 +82,7 @@ return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{message}</p>
-        <p>My App!</p>
+        <p>Change Me!</p> // <-- Edit Line
 ```
 
 Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
@@ -104,6 +104,7 @@ git clone https://github.com/your-github-username/your-new-begin-app.git
 ```
 
 Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
+
 ```bash
 cd your-new-begin-app
 npm install
@@ -132,3 +133,52 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 ```
 
 Let's go over each of these directories and how you may use them:
+
+### `public/`
+
+The `public` directory where you'll add images (like the background image for your site) and any other static assets or files you want to make publicly accessible in your app.
+
+Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
+
+> **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
+
+
+### `src/http/get-api/`
+
+The cloud function that handles requests to your site is found at `src/http/get-api/`.
+
+Some Begin apps are inert static web sites – but not this one. Your React app has built-in small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
+
+The HTTP function that handles requests to the root of your app (`GET /`) is found in `src/http/get-api/`.
+
+In the next section we will go more in depth about how to provision HTTP functions in your React app.
+
+> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
+### `src/test/`
+
+Your React project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for `web integration` & `Begin data` in the `src/test/example/` directory.
+
+A solid platform is the foundation of a durable application, but tests are essential!
+
+You can find the test script specified in package.json:
+
+```javascript
+// package.jscon
+{
+  "scripts": {
+    "test": "NODE_ENV=testing tape test/*-test.js | tap-spec"
+  }
+}
+```
+
+Tests run via `npm test` or `npm t`.
+
+While you can use any test runner and reporter combo you want, we recommend the TAP family for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
+
+> ⚠️ Begin requires NODE_ENV=testing to be present in your npm test scripts, regardless of the test framework you're using.
+
+
+> 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
+
+---

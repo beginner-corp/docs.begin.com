@@ -131,6 +131,7 @@ Node
 NodeJS
 nodemon
 Nodemon
+NODE_ENV=testing
 non-serverless
 npm
 NS1
