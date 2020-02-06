@@ -157,7 +157,7 @@ In the next section we will go more in depth about how to provision HTTP functio
 
 ### `src/test/`
 
-Your React project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for `web integration` & `Begin data` in the `src/test/example/` directory.
+Your React project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
 
 A solid platform is the foundation of a durable application, but tests are essential!
 
