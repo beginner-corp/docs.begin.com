@@ -61,7 +61,7 @@ If no build steps fail, then the build containing your latest commit to `master`
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your react app:
 
-![Personal website](/_static/screens/guides/personal-website/react-intro.jpg)
+![react intro](/_static/screens/guides/create-react-app/react-intro.jpg)
 
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
@@ -136,7 +136,7 @@ Let's go over each of these directories and how you may use them:
 
 ### `public/`
 
-The `public` directory where you'll add images (like the background image for your site) and any other static assets or files you want to make publicly accessible in your app.
+The `public` directory is where you'll add images (like your logo) and any other static assets or files you want to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
 
@@ -171,14 +171,135 @@ You can find the test script specified in package.json:
   }
 }
 ```
+> ⚠️ Begin requires NODE_ENV=testing to be present in your npm test scripts, regardless of the test framework you're using.
 
 Tests run via `npm test` or `npm t`.
 
-While you can use any test runner and reporter combo you want, we recommend the TAP family for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
+While you can use any test runner and reporter combo you want, we recommend the [TAP family](https://testanything.org/) for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
 
-> ⚠️ Begin requires NODE_ENV=testing to be present in your npm test scripts, regardless of the test framework you're using.
-
+With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [React Testing Library](https://github.com/testing-library/react-testing-library), etc. are all options that you can still use.
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
 ---
+
+## Using Endpoints
+
+Now for the fun part! Let's go over how HTTP functions in Begin work.
+
+The text in the red box below is actually being fetched from your Begin API inside of `src/http/get-api/index.js`
+
+![React API](/_static/screens/guides/create-react-app/react-api.jpg)
+
+This function can be exported and used inside of different components within your React app. 
+
+
+```javascript
+// src/http/get-api/index.js
+
+
+exports.handler = async function http (req) {
+  console.log('Begin API called')
+  return {
+    headers: {
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body: JSON.stringify({
+      message: 'Hello from your Begin API!'
+    })
+  }
+}
+```
+
+Navigate to `src/App.js` to see how your HTTP function is being implemented into your app so that it displays on the frontend. It gets fetched via async function wrapped in a React hook.
+
+```javascript
+// src/App.js
+
+
+const App = () => {
+  const [message, setMessage] = useState('...loading')
+
+  useEffect(() => {
+    async function fetchData () {
+      try {
+        let data = await (await fetch('/api')).json()
+        setMessage(data.message)
+      } catch (err) {
+        setMessage(err.message)
+      }
+    }
+    fetchData()
+  })
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{message}</p>
+        <p>Change me!</p>
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+```
+This is just one small example of many different ways to use HTTP functions in React. 
+---
+
+## Deploy your site
+
+While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
+
+```bash
+npm run lint
+npm t
+```
+
+Everything set? Now let's push this commit (and deploy the build to `staging`):
+
+```bash
+git add -A
+git commit -am 'Just customizing my Begin site!'
+git push origin master
+```
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
+
+Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
+
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
+
+> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
+
+---
+
+## Congratulations!
+
+You've now got a shiny new React app hosted on Begin – nice work.
+
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20new%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+
+---
+
+<!-- TODO add domains directions -->
+
+## Additional resources
+
+- Expand the capabilities of your app:
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+  - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
+- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
+- Get help:
+  - [Begin community](https://spectrum.chat/begin)
+  - [Issue tracker](https://github.com/smallwins/begin-issues/issues)

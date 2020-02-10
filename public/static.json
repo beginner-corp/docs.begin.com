@@ -30,10 +30,11 @@
   "screens/masters/begin-activity.png": "screens/masters/begin-activity-1b3b10f209.png",
   "screens/masters/begin-app-create-selection.png": "screens/masters/begin-app-create-selection-ea180d921a.png",
   "screens/shared/begin-activity.jpg": "screens/shared/begin-activity-29d77f4186.jpg",
+  "screens/guides/create-react-app/react-api.jpg": "screens/guides/create-react-app/react-api-2b304fd466.jpg",
+  "screens/guides/create-react-app/react-intro.jpg": "screens/guides/create-react-app/react-intro-5d4a641e3a.jpg",
   "screens/guides/personal-website/begin-activity-2.jpg": "screens/guides/personal-website/begin-activity-2-9dd21f0f9c.jpg",
   "screens/guides/personal-website/begin-app-create-selection.jpg": "screens/guides/personal-website/begin-app-create-selection-cd88cfe08e.jpg",
   "screens/guides/personal-website/begin-personal-site-2.jpg": "screens/guides/personal-website/begin-personal-site-2-db980fc1e6.jpg",
   "screens/guides/personal-website/begin-personal-site.jpg": "screens/guides/personal-website/begin-personal-site-bfbdc9b27f.jpg",
-  "screens/guides/personal-website/begin-repo-name.jpg": "screens/guides/personal-website/begin-repo-name-f2d76af2aa.jpg",
-  "screens/guides/personal-website/react-intro.jpg": "screens/guides/personal-website/react-intro-5d4a641e3a.jpg"
+  "screens/guides/personal-website/begin-repo-name.jpg": "screens/guides/personal-website/begin-repo-name-f2d76af2aa.jpg"
 }
