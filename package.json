@@ -20,7 +20,7 @@
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.36",
     "eslint": "^6.8.0",
-    "husky": "^4.2.1",
+    "husky": "^4.2.2",
     "lint-staged": "^10.0.7",
     "spellchecker-cli": "^4.1.0",
     "tap-spec": "^5.0.0",
