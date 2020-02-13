@@ -76,7 +76,7 @@ Go ahead and click the **Staging** link in the upper left corner of your left na
 
 If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
 
-![Begin activity](/_static/screens/guides/personal-website/begin-activity-2.jpg)
+![Begin activity](/_static/screens/shared/begin-activity-2.jpg)
 
 Look for this code, and try editing your basic bio (like your name or location):
 ```js

@@ -277,6 +277,24 @@
           "Deploy your site",
           "Additional resources"
         ]
+      },
+      {
+        "docID": "svelte",
+        "docTitle": "Svelte",
+        "description": "Svelte's starter app, extended by Begin-based API endpoints",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-yellow.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "Customize your site",
+          "Deploy your site",
+          "Additional resources"
+        ]
       }
     ]
   }
