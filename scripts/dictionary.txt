@@ -4,6 +4,7 @@ ACM
 af
 Alexa
 APIs
+API
 arc-repos
 arcana
 ARN
@@ -131,6 +132,7 @@ Node
 NodeJS
 nodemon
 Nodemon
+NODE_ENV=testing
 non-serverless
 npm
 NS1

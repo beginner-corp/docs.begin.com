@@ -14,4 +14,4 @@ Tests run via `npm test`.
 
 While **you can use any test runner and reporter combo you want**, we recommend the TAP family for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
 
-> ⚠️ Begin requires `NODE_ENV=testing` to be present in your `npm test` scripts, regardless of the test framework you're using.
+While also not strictly required, we recommend setting your `NODE_ENV` to `testing` in your test script.
