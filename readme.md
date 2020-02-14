@@ -45,6 +45,7 @@ The following keys are required (unless stated otherwise):
     - `anchor` - Named anchor from the generated markdown; example: `#what-is-begin-` (note: trailing punctuation in the doc may result in trailing dashes in the anchor, i.e. `## Hi!` produces an `anchor` of `#hi-`)
     - `name` - Name of the document section; should match what's in the markdown document
 
+
 ### Example ToC
 
 ```javascript
