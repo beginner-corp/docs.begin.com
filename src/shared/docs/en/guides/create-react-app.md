@@ -194,7 +194,7 @@ With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/),
 
 ---
 
-## Using endpoints
+## Using API endpoints
 
 Now for the fun part! Let's go over how HTTP functions work.
 
