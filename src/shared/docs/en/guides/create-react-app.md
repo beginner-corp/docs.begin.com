@@ -4,7 +4,8 @@
 
 **Hello there, Beginner!**
 
-This tutorial uses the [Create-React-App](https://github.com/facebook/create-react-app) starter app, extended by Begin-based API endpoints. This means that you have the power of React for building beautiful user interfaces combined with the magic of cloud functions and data storage.
+This tutorial uses the [Create React App](https://github.com/facebook/create-react-app) starter app, extended by an example API endpoint. You'll have all the capabilities of React for building beautiful user interfaces, combined with the power, speed, and security of cloud functions and serverless data storage.
+
 
 ### Prerequisites
 
@@ -12,7 +13,7 @@ You will need to have **git** and **Node.js** installed to your local computer t
 
 You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
 
-Although it would be helpful to have some experience with React, it is not required knowledge to follow along with this tutorial. The [React Docs](https://reactjs.org/) are a great resource for learning everything about React as well.
+Although it would be helpful to have some experience with React, it's not required to follow along with this tutorial. (Related, the [React docs](https://reactjs.org/) are a great reference.)
 
 This tutorial also assumes some familiarity with such things as:
 - Text editors
@@ -22,7 +23,7 @@ This tutorial also assumes some familiarity with such things as:
 
 You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
 
-**Let's get started!**
+---
 
 ## Getting started
 
@@ -39,7 +40,7 @@ You'll then be prompted to name your new app and repository – this is optional
 
 > Note: your Begin app name and repository name cannot be changed later.
 
-![Name your Begin app and repo](/_static/screens/guides/personal-website/begin-repo-name.jpg)
+![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
 
 Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
 
@@ -73,16 +74,16 @@ If you'd like to jump right into making your first commit and running your first
 
 ![Begin activity](/_static/screens/guides/personal-website/begin-activity-2.jpg)
 
-Look for this code, and try editing your basic app. Let's edit the `<p>` that says "Change me!" to "My App!":
+Look for this code, and try editing your basic app. Let's edit the `<p>` tag that says "Change me!" to "My app!":
 
-```javascript
+```js
 // Customize your site by changing the data below
 return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{message}</p>
-        <p>Change Me!</p> // <-- Edit Line
+  <div className="App">
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <p>{message}</p>
+      <p>Change Me!</p> // ← Start by editing this!
 ```
 
 Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
@@ -123,37 +124,48 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ```bash
 .
+├── build/
 ├── public/
 ├── src/
 │    ├── http/
 │    │   └── get-api/
-│    └── App.js/
-│
+│    └── App.js
 └── test/
 ```
 
-Let's go over each of these directories and how you may use them:
+Let's go over each of these directories and files and how you may use them:
+
+### `build/`
+
+The `build` folder is where your React app will build into (and be served from locally). Since this folder contains build artifacts, it isn't checked into git and shouldn't be directly modified. Instead, let your app re-build its contents.
+
+Each time your app is deployed by Begin, the build artifacts in `build` will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
+
 
 ### `public/`
 
-The `public` directory is where you'll add images (like your logo) and any other static assets or files you want to make publicly accessible in your app.
+Per Create React App convention, files placed into `public` are not processed, and will instead be copied into `build` when your app is built.
 
-Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
-
-> **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
+you'll add images (like your logo) and any other static assets or files you want to make publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
 
 
 ### `src/http/get-api/`
 
-The cloud function that handles requests to your site is found at `src/http/get-api/`.
+The cloud function that handles example API requests is found at `src/http/get-api/`.
 
-Some Begin apps are inert static web sites – but not this one. Your React app has built-in small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
+Some Begin apps are inert static web sites – but not this one. Your React app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
 
-The HTTP function that handles requests to the root of your app (`GET /`) is found in `src/http/get-api/`.
+The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
 
 In the next section we will go more in depth about how to provision HTTP functions in your React app.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
+
+### `src/App.js`
+
+Along with the other boilerplate React app files (`src/App.css`, `src/App-test.js`, etc.), `src/App.js` serves as the primary entry point for your React app. This is a great place to start tinkering with your app.
+
 
 ### `src/test/`
 
@@ -171,32 +183,29 @@ You can find the test script specified in package.json:
   }
 }
 ```
-> ⚠️ Begin requires NODE_ENV=testing to be present in your npm test scripts, regardless of the test framework you're using.
 
 Tests run via `npm test` or `npm t`.
 
 While you can use any test runner and reporter combo you want, we recommend the [TAP family](https://testanything.org/) for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
 
-With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [React Testing Library](https://github.com/testing-library/react-testing-library), etc. are all options that you can still use.
+With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [React Testing Library](https://github.com/testing-library/react-testing-library), etc. are all options available to you!
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
 ---
 
-## Using Endpoints
+## Using endpoints
 
-Now for the fun part! Let's go over how HTTP functions in Begin work.
+Now for the fun part! Let's go over how HTTP functions work.
 
-The text in the red box below is actually being fetched from your Begin API inside of `src/http/get-api/index.js`
+The text in the red box below is actually being fetched an example API endpoint, handled by `src/http/get-api/index.js`.
 
 ![React API](/_static/screens/guides/create-react-app/react-api.jpg)
 
-This function can be exported and used inside of different components within your React app. 
-
+The output of this HTTP function can be called by fetching `GET /api`, and subsequently used by any component within your React app:
 
 ```javascript
 // src/http/get-api/index.js
-
 
 exports.handler = async function http (req) {
   console.log('Begin API called')
@@ -212,11 +221,10 @@ exports.handler = async function http (req) {
 }
 ```
 
-Navigate to `src/App.js` to see how your HTTP function is being implemented into your app so that it displays on the frontend. It gets fetched via async function wrapped in a React hook.
+Now let's navigate to `src/App.js` to see how this HTTP function was being implemented into your app. As you can see below, `GET /api/` is fetched via async function wrapped in a React hook (`useEffect`).
 
 ```javascript
 // src/App.js
-
 
 const App = () => {
   const [message, setMessage] = useState('...loading')
@@ -255,7 +263,9 @@ const App = () => {
   );
 }
 ```
-This is just one small example of many different ways to use HTTP functions in React. 
+
+This is just one small example of how using a live API endpoint powered by an HTTP function can make your React app dynamic. Just think of all the things you can build this way!
+
 ---
 
 ## Deploy your site
@@ -274,11 +284,11 @@ git add -A
 git commit -am 'Just customizing my Begin site!'
 git push origin master
 ```
-Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
 
 Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
 
-When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app.
 
 > **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
 
@@ -288,7 +298,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 You've now got a shiny new React app hosted on Begin – nice work.
 
-Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20new%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20React%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 ---
 

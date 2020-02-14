@@ -280,9 +280,9 @@
       },
       {
         "docID": "create-react-app",
-        "docTitle": "Create-React-App",
-        "description": "Create React App's starter app, extended by Begin-based API endpoints.",
-        "icon": "circle-begin.svg",
+        "docTitle": "Create React App",
+        "description": "Build a React app starting with Create React App and an added example API endpoint",
+        "icon": "circle-react.svg",
         "background": "gradient-pink-yellow.png",
         "sections": [
           "Introduction",

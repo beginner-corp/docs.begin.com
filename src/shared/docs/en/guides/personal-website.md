@@ -44,7 +44,7 @@ You'll then be prompted to name your new app and repository – this is optional
 
 > Note: your Begin app name and repository name cannot be changed later.
 
-![Name your Begin app and repo](/_static/screens/guides/personal-website/begin-repo-name.jpg)
+![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
 
 Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
 
@@ -86,7 +86,7 @@ exports.handler = async function Index () {
     /**
      * Basic bio
      */
-    fullname: 'Your Name', // ←  Start by adding your name!
+    fullname: 'Your Name', // ← Start by adding your name!
     title: 'My personal site!',
     occupation: 'Artist & Photographer',
     location: 'West Glacier, MT',
@@ -267,11 +267,11 @@ git commit -am 'Just customizing my Begin site!'
 git push origin master
 ```
 
-Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
 
 Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
 
-When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app.
 
 > **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
 
