@@ -174,6 +174,38 @@ This is the root of your app that displays your frontend. The script tag in this
 
 ---
 
+## Customize your app
+
+We can customize our Svelte app in the root file `src/App.svelte`. Let's take a look at the code below:
+
+```js
+// JS goes here
+<script>
+  import { onMount } from "svelte";
+  export let message;
+  onMount(async () => {
+    let data = await (await fetch("/api")).json();
+    message = data.msg;
+    console.log("MESSAGE: ", message);
+  });
+</script>
+
+// CSS styling goes here
+<style>
+  h1 {
+    color: red;
+  }
+</style>
+
+// HTML elements and components go here
+<h1>{message}</h1>
+<h2>Change me!</h2>
+
+```
+
+
+---
+
 ## Deploy your site
 
 While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
