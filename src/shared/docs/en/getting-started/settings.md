@@ -49,7 +49,7 @@ git clone https://github.com/{your GH org/username}/{your app name}.git
 @app
 puppyfinder
 
-@html
+@http
 get /
 ```
 
