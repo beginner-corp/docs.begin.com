@@ -279,6 +279,24 @@
         ]
       },
       {
+        "docID": "svelte",
+        "docTitle": "Svelte",
+        "description": "Build a Svelte app starting with an added example API endpoint",
+        "icon": "circle-react.svg",
+        "background": "gradient-green-blue.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "Using API endpoints",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docID": "create-react-app",
         "docTitle": "Create React App",
         "description": "Build a React app starting with Create React App and an added example API endpoint",
