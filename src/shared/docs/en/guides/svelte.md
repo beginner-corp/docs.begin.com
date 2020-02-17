@@ -262,6 +262,12 @@ We can customize our Svelte app in the root file `src/App.svelte`. Let's take a 
 <h2>Change me!</h2>
 ```
 Let's create a new Svelte component that utilizes a fresh Begin endpoint.
+This HTTP function will be an about page that displays some HTML. First navigate to the functions tab which you will find on the left hand sidebar. Type `/about` and click Add Function. This will provision a new route inside of your app.
+
+![Svelte Functions](/_static/screens/guides/svelte/svelte-functions.jpg)
+
+ Check Begin Activity to make sure this process has finished and then head back to your terminal and do a `git pull`.
+ 
 ---
 
 ## Deploy your site
