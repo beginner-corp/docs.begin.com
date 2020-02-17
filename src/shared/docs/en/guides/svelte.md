@@ -236,7 +236,9 @@ This is the root of your app that displays your frontend. The script tag in this
 
 ## Using API endpoints
 
-We can customize our Svelte app in the root file `src/App.svelte`. Let's take a look at the code below:
+Extending your Svelte app with HTTP functions is why you're here right? Right. So let's go over how this is made possible. 
+
+Take a look at the code in between the script tag below. We're fetching data from `src/http/get-api/` and then loading that data in the variable named `message`. We're now able to pass this variable into our HTML as props so that it displays the data from our HTTP function. Pretty cool!
 
 ```js
 // JS goes here
@@ -261,13 +263,8 @@ We can customize our Svelte app in the root file `src/App.svelte`. Let's take a 
 <h1>{message}</h1>
 <h2>Change me!</h2>
 ```
-Let's create a new Svelte component that utilizes a fresh Begin endpoint.
-This HTTP function will be an about page that displays some HTML. First navigate to the functions tab which you will find on the left hand sidebar. Type `/about` and click Add Function. This will provision a new route inside of your app.
 
-![Svelte Functions](/_static/screens/guides/svelte/svelte-functions.jpg)
 
- Check Begin Activity to make sure this process has finished and then head back to your terminal and do a `git pull`.
- 
 ---
 
 ## Deploy your site
