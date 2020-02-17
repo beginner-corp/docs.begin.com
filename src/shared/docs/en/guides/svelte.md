@@ -145,11 +145,19 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 ```
 Let's go over each of these directories and how you may use them:
 
+### `rollup.config.js`
+
+[Rollup](https://rollupjs.org/guide/en/) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It allows us to use the `import` syntax so that we may create component based applications. This config file bundles all of your component level CSS and JS into the `public` directory.
+
+> 💡 **Learn more!** Head here to dig deeper into [Rollup.js](https://rollupjs.org/guide/en/)
+
 ### `public/`
 
 The `public` directory is where you'll add images and any other static assets or files you want to make publicly accessible in your app.
 
 Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
+
+This is also where your component level CSS & JS are bundled. Your apps global CSS which affects the entirety of your apps styling can be found in this directory as well.
 
 > **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
 
@@ -159,22 +167,74 @@ The cloud function that handles requests to your site is found at `src/http/get-
 
 Some Begin apps are inert static web sites – but not this one. Your Svelte app is built on a small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
 
-### `src/App.svelte`
-This is the root of your app that displays your frontend. The script tag in this example is taking in the props from `/main.js`. Right below we have the style tag for CSS styling. Then we have a section for our HTML.
+```js
+exports.handler = async function http (req) {
+  console.log('Begin API called')
+  return {
+    headers: {
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body: JSON.stringify({
+      msg: 'Hello from Svelte + your Begin API!'
+    })
+  }
+}
+
+```
 
 ### `src/main.mjs`
-`/main.js` brings in the `./App.svelte` file. In this example we initialize your app to `document.body` and pass it a prop just to show you that props can be passed along to different components inside of your app.
 
+`/main.js` imports in your `./App.svelte` file which is your root app component. In this example we initialize your app to `document.body` and pass it a prop just to show you that props can be passed along to different components inside of your app.
 
-### `rollup.config.js`
+```js
+import App from './App.svelte'
+let message = '...loading'
 
-[Rollup](https://rollupjs.org/guide/en/) is a module bundler that's similar to Webpack. It allows us to use the `import` syntax so that we may create component based applications. This config file bundles your CSS and JS into the `public` directory.
+const app = new App({
+  target: document.body,
+  props: {
+    message
+  }
+})
+
+export default app
+
+```
+
+### `src/App.svelte`
+
+This is the root of your app that displays your frontend. The script tag in this example is taking in props from `/main.js`. Right below the script tag we have the style tag for styling this particular components CSS. Lastly at the bottom we have a section for our HTML which can take in JS variables.
+
+```js
+// Javascript
+<script>
+  import { onMount } from "svelte";
+  export let message;
+  onMount(async () => {
+    let data = await (await fetch("/api")).json();
+    message = data.msg;
+    console.log("MESSAGE: ", message);
+  });
+</script>
+
+// CSS
+<style>
+  h1 {
+    color: red;
+  }
+</style>
+
+// HTML
+<h1>{message}</h1>
+<h2>Change me!</h2>
+```
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
 ---
 
-## Customize your app
+## Using API endpoints
 
 We can customize our Svelte app in the root file `src/App.svelte`. Let's take a look at the code below:
 
@@ -200,10 +260,8 @@ We can customize our Svelte app in the root file `src/App.svelte`. Let's take a 
 // HTML elements and components go here
 <h1>{message}</h1>
 <h2>Change me!</h2>
-
 ```
-
-
+Let's create a new Svelte component that utilizes a fresh Begin endpoint.
 ---
 
 ## Deploy your site
