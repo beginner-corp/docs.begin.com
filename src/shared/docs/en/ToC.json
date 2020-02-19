@@ -295,6 +295,24 @@
           "Deploy your site",
           "Additional resources"
         ]
+      },
+      {
+        "docID": "vue",
+        "docTitle": "Vue",
+        "description": "Build a Vue starter app with an added example API endpoint",
+        "icon": "circle-vue.svg",
+        "background": "gradient-green-blue.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "Using API endpoints",
+          "Deploy your site",
+          "Additional resources"
+        ]
       }
     ]
   }
