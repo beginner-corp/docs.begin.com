@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 > ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
+=======
+> ⏱ This tutorial is an introductory walkthrough of creating a React app on Begin. It should take fewer than 15 minutes.
+>>>>>>> Vue init
 
 ## Introduction
 
@@ -6,11 +10,14 @@
 
 This tutorial uses the [Vue](https://vuejs.org/) starter app, extended by an example API endpoint. You'll have all the capabilities of Vue for building beautiful user interfaces, combined with the power, speed, and security of cloud functions and serverless data storage.
 
+<<<<<<< HEAD
 ### What is Vue.js?
 
 Vue (pronounced like view) is a progressive framework for building user interfaces. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
 
 If you’d like to learn more about Vue before diving in, here is a [video](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/) walking through the core principles of Vue and a sample project.
+=======
+>>>>>>> Vue init
 
 ### Prerequisites
 
@@ -28,6 +35,7 @@ This tutorial also assumes some familiarity with such things as:
 
 You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
 
+<<<<<<< HEAD
 ---
 
 ## Getting started
@@ -196,3 +204,6 @@ It's being output into our `main.js` file found inside of the `src` folder which
 We create a new Vue instance and we render the app component inside of an element with the id of `app`.
 
 ## ./App.vue
+=======
+---
+>>>>>>> Vue init
