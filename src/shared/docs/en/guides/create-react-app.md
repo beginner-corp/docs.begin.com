@@ -313,3 +313,6 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about React:
+  - [React docs](https://reactjs.org/)
+  - [Create React App](https://github.com/facebook/create-react-app)
