@@ -377,3 +377,8 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about Svelte
+  - [Svelte docs](https://svelte.dev/)
+  - [Svelte Quickstart](https://svelte.dev/blog/the-easiest-way-to-get-started)
+  - [Rich Harris - Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao&feature=emb_title)
+  
