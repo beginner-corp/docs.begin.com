@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 > ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
 =======
 > ⏱ This tutorial is an introductory walkthrough of creating a React app on Begin. It should take fewer than 15 minutes.
 >>>>>>> Vue init
+=======
+> ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
+>>>>>>> added more sections up to project strructure
 
 ## Introduction
 
@@ -36,6 +40,9 @@ This tutorial also assumes some familiarity with such things as:
 You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> added more sections up to project strructure
 ---
 
 ## Getting started
@@ -134,6 +141,7 @@ That's all you need to do preview your changes locally before pushing them to `s
 
 ---
 
+<<<<<<< HEAD
 ## Vue CLI
 
 [Vue CLI](https://cli.vuejs.org/) is a command line interface that acts as standard tooling for Vue.js development. It's feature rich with out-of-the-box support for Babel, Typescript, ESLint, Unit Testing & End-to-end Testing. You create, develop and manage your projects through an accompanying graphical user interface. It's really cool and you might want to set it up in your project for future use. We'll show you how to do that.
@@ -170,13 +178,19 @@ Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI 
 
 ---
 
+=======
+>>>>>>> added more sections up to project strructure
 ## Project structure
 
 Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your Vue app:
 
 ```bash
 .
+<<<<<<< HEAD
 ├── public/ 
+=======
+├── public/
+>>>>>>> added more sections up to project strructure
 ├── src/ 
 │    ├── assets/
 │    ├── components/
@@ -187,6 +201,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 └── test/
 ```
 
+<<<<<<< HEAD
 Let's go over each of these directories & files and learn how you may use them:
 
 ### `public/index.html` & `main.js`
@@ -207,3 +222,6 @@ We create a new Vue instance and we render the app component inside of an elemen
 =======
 ---
 >>>>>>> Vue init
+=======
+Let's go over each of these directories and files and how you may use them:
+>>>>>>> added more sections up to project strructure
