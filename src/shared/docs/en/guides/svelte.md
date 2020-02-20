@@ -18,7 +18,7 @@ This tutorial also assumes some familiarity with such things as:
 - Git and version control
 - General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along and make a new personal website with Begin!
+You do not need to be an expert in any of these things in order to follow along though.
 
 **Let's get started!**
 
@@ -55,7 +55,7 @@ After creating your app, you'll be taken to its `Activity` stream. Welcome to th
 
 From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
 
-Each build undergoes a number of predefined build steps (learn more about [build steps here](https://docs.begin.com/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
+Each build undergoes a number of predefined build steps (learn more about [build steps here](https://docs.begin.com/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), check your code's syntax for issues (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
@@ -79,6 +79,7 @@ Look for this code, and try changing the color of the `h1` tag and the text of t
 // Customize your site by changing the color of the h1
 <script>
   import { onMount } from 'svelte'
+  export let name;
   export let message;
   onMount(async () => {
     let data = await (await fetch('/api')).json()
@@ -87,15 +88,34 @@ Look for this code, and try changing the color of the `h1` tag and the text of t
   })
 </script>
 
+<main>
+  <h1>Hello {name}!</h1>
+  <h2>{message}</h2>
+  <h3>Change me!</h3> // <-- Change text!
+  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+</main>
+
 <style>
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
   h1 {
-    color: purple; // <-- Change color!
+    color: #ff3e00; // <-- change color!
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
   }
 </style>
-
-<h1>{message}</h1>
-<h2>Change me!</h2> // <--Change text!
-
 ```
 
 Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
@@ -141,7 +161,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 │   │       └── index.js
 │   ├── App.svelte
 │   └── main.mjs
-└── rollup.config.js  
+└── rollup.config.js
 ```
 Let's go over each of these directories and how you may use them:
 
@@ -155,7 +175,7 @@ Let's go over each of these directories and how you may use them:
 
 The `public` directory is where you'll add images and any other static assets or files you want to make publicly accessible in your app.
 
-Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket (on [S3](https://aws.amazon.com/s3/)) as well as Begin's CDN.
+Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket on [S3](https://aws.amazon.com/s3/) which is the CDN Begin uses.
 
 This is also where your component level CSS & JS are bundled. Your apps global CSS which affects the entirety of your apps styling can be found in this directory as well.
 
@@ -185,7 +205,7 @@ exports.handler = async function http (req) {
 
 ### `src/main.mjs`
 
-`/main.js` imports in your `./App.svelte` file which is your root app component. In this example we initialize your app to `document.body` and pass it a prop just to show you that props can be passed along to different components inside of your app.
+`/main.js` imports your `./App.svelte` file which is your root app component. In this example we initialize your app to `document.body` and pass it a prop just to show you that props can be passed along to different components inside of your app.
 
 ```js
 import App from './App.svelte'
@@ -194,6 +214,7 @@ let message = '...loading'
 const app = new App({
   target: document.body,
   props: {
+    name: 'world',
     message
   }
 })
@@ -204,30 +225,52 @@ export default app
 
 ### `src/App.svelte`
 
-This is the root of your app that displays your frontend. The script tag in this example is taking in props from `/main.js`. Right below the script tag we have the style tag for styling this particular components CSS. Lastly at the bottom we have a section for our HTML which can take in JS variables.
+This is what is referred to as a single file component that contains all of the code needed to display your frontend. The script tag contains JavaScript and in this example is taking in props from `/main.js`. Right below the script tag we have a section for our HTML which can render variables inside {brackets} from your script tag. Lastly at the bottom we have the style tag that contains all the CSS for this specific component.
 
 ```js
-// Javascript
+// JavaScript
 <script>
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte'
+  export let name;
   export let message;
   onMount(async () => {
-    let data = await (await fetch("/api")).json();
-    message = data.msg;
-    console.log("MESSAGE: ", message);
-  });
+    let data = await (await fetch('/api')).json()
+    message = data.msg
+    console.log('MESSAGE: ', message)
+  })
 </script>
+
+// HTML
+<main>
+  <h1>Hello {name}!</h1>
+  <h2>{message}</h2>
+  <h3>Change me!</h3>
+  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+</main>
 
 // CSS
 <style>
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
   h1 {
-    color: red;
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
   }
 </style>
 
-// HTML
-<h1>{message}</h1>
-<h2>Change me!</h2>
 ```
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
@@ -236,32 +279,53 @@ This is the root of your app that displays your frontend. The script tag in this
 
 ## Using API endpoints
 
-Extending your Svelte app with HTTP functions is why you're here right? Right. So let's go over how this is made possible. 
+Extending your Svelte app with HTTP functions is why you're here right? Right. So let's go over how this is made possible.
 
-Take a look at the code in between the script tag below. We're fetching data from `src/http/get-api/` and then loading that data in the variable named `message`. We're now able to pass this variable into our HTML as props so that it displays the data from our HTTP function. Pretty cool!
+Take a look at the code in between the script tag below. When the component renders initially into a page or "mounts", we are able to use what is called a lifecycle method called `onMount` which is provided by the Svelte framework. Inside this `onMount` handler we fetch data from `src/http/get-api/` and then set the variable named `message` with the returned data. We're now able to pass this variable into our HTML as props so that it displays a message from our HTTP function. Pretty cool!
 
 ```js
-// JS goes here
+// JavaScript
 <script>
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte'
+  export let name;
   export let message;
   onMount(async () => {
-    let data = await (await fetch("/api")).json();
-    message = data.msg;
-    console.log("MESSAGE: ", message);
-  });
+    let data = await (await fetch('/api')).json()
+    message = data.msg
+    console.log('MESSAGE: ', message)
+  })
 </script>
 
-// CSS styling goes here
+// HTML
+<main>
+  <h1>Hello {name}!</h1>
+  <h2>{message}</h2>
+  <h3>Change me!</h3>
+  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+</main>
+
+// CSS
 <style>
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
   h1 {
-    color: red;
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
   }
 </style>
-
-// HTML elements and components go here
-<h1>{message}</h1>
-<h2>Change me!</h2>
 ```
 
 
