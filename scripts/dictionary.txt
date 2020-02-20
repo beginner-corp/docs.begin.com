@@ -116,6 +116,7 @@ LEANX
 learnable
 learnings
 linter
+lifecycle
 macOS
 Microservices
 microservices-based
