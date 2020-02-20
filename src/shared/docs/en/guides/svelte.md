@@ -175,7 +175,7 @@ Let's go over each of these directories and how you may use them:
 
 The `public` directory is where you'll add images and any other static assets or files you want to make publicly accessible in your app.
 
-Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket on [S3](https://aws.amazon.com/s3/) which is the CDN Begin uses.
+Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket on [S3](https://aws.amazon.com/s3/) and Begin's CDN.
 
 This is also where your component level CSS & JS are bundled. Your apps global CSS which affects the entirety of your apps styling can be found in this directory as well.
 
@@ -381,4 +381,4 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Svelte docs](https://svelte.dev/)
   - [Svelte Quickstart](https://svelte.dev/blog/the-easiest-way-to-get-started)
   - [Rich Harris - Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao&feature=emb_title)
-  
+
