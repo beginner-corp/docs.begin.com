@@ -6,6 +6,11 @@
 
 This tutorial uses the [Vue](https://vuejs.org/) starter app, extended by an example API endpoint. You'll have all the capabilities of Vue for building beautiful user interfaces, combined with the power, speed, and security of cloud functions and serverless data storage.
 
+### What is Vue.js?
+
+Vue (pronounced like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
+
+If you’d like to learn more about Vue before diving in, here is a [video](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/) walking through the core principles of Vue and a sample project.
 
 ### Prerequisites
 
@@ -121,13 +126,45 @@ That's all you need to do preview your changes locally before pushing them to `s
 
 ---
 
+## Vue CLI
+
+[Vue CLI](https://cli.vuejs.org/) is a command line interface that acts as standard tooling for Vue.js development. It's feature rich with out-of-the-box support for Babel, Typescript, ESLint, Unit Testing & End-to-end Testing. You create, develop and manage your projects through an accompanying graphical user interface. It's really cool and you might want to have it set up in your project for future viewing. We'll show you how to do that.
+
+### Getting Started
+Since we've already created our project and have it set up locally on our machine, all we have to do is install the CLI globally and run the command to start the GUI(graphical user interface)
+
+**Install globally:**
+```bash
+npm install -g @vue/cli
+
+```
+
+**Start GUI:**
+```bash
+vue ui
+
+```
+Once you start the GUI, you will see this screen load up in your browser on `http://localhost:8000`
+Our project is already on our local machine so let's click the import button to sync our project and the GUI.
+
+![vue-cli](/_static/screens/guides/vue/vue-cli-1.jpg)
+
+Look for your begin-vue-app project folder and click `import this folder` as shown in the screen below.
+
+![vue-cli](/_static/screens/guides/vue/vue-cli-2.jpg)
+
+Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI tool give you tremendous insight and analytics into your Vue app. For more information, be sure to go over the [Vue CLI docs](https://cli.vuejs.org/guide/) to learn everything that you can do with these Vue development tools.
+
+![vue-cli](/_static/screens/guides/vue/vue-cli-3.jpg)
+
+---
+
 ## Project structure
 
 Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your Vue app:
 
 ```bash
 .
-├── public/
 ├── src/ 
 │    ├── assets/
 │    ├── components/

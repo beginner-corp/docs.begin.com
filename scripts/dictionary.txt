@@ -2,6 +2,7 @@
 `build`ing
 ACM
 af
+analytics
 Alexa
 APIs
 API
@@ -23,6 +24,7 @@ Backends
 base64
 base64-encoded
 bashrc
+begin-vue-app
 birb
 blockchain
 Blockquoted
@@ -205,6 +207,7 @@ vars
 vimrc
 VPC
 Vue
+vue-cli
 vs
 walkthrough
 webhooks
