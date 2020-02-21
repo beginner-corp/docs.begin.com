@@ -19,7 +19,7 @@ This tutorial also assumes some familiarity with such things as:
 - Git and version control
 - General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along though.
+You do not need to be an expert in any of these things in order to follow along and make a Svelte app in Begin!.
 
 ---
 
