@@ -116,6 +116,7 @@ LEANX
 learnable
 learnings
 linter
+lifecycle
 macOS
 Microservices
 microservices-based
@@ -166,6 +167,7 @@ repos
 resiliance
 roadmap
 Roadmap
+Rollup
 Route53
 RSA
 Running
@@ -205,6 +207,7 @@ vars
 vimrc
 VPC
 vs
+Vue
 walkthrough
 webhooks
 Webpack
