@@ -146,7 +146,7 @@ Each time your app is deployed by Begin, the build artifacts in `build` will aut
 
 Per Create React App convention, files placed into `public` are not processed, and will instead be copied into `build` when your app is built.
 
-you'll add images (like your logo) and any other static assets or files you want to make publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
+Add images (like your logo) and any other static assets or files to `public` to make them publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
 
 
 ### `src/http/get-api/`
@@ -284,6 +284,7 @@ git add -A
 git commit -am 'Just customizing my Begin site!'
 git push origin master
 ```
+
 Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
 
 Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
@@ -307,7 +308,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 ## Additional resources
 
 - Expand the capabilities of your app:
-  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
   - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
 - [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
 - Get help:

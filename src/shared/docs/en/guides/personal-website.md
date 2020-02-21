@@ -290,7 +290,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 ## Additional resources
 
 - Expand the capabilities of your app:
-  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
   - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
 - [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
 - Get help:

@@ -4,7 +4,8 @@
 
 **Hello there, Beginner!**
 
-This tutorial walks through setting up a Svelte app running on Begin. [Svelte](https://svelte.dev/) is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app. Today you will learn how to create a Svelte app powered by Begin HTTP functions.
+This tutorial walks through setting up a Svelte app running on Begin. [Svelte](https://svelte.dev/) is a new approach to building user interfaces; unlike many frontend frameworks that do the bulk of their work in the browser (like React and Vue), Svelte shifts that work into a compile step that happens when you build your app. Today you'll learn how to create a Svelte app powered by Begin HTTP functions.
+
 
 ### Prerequisites
 
@@ -19,8 +20,6 @@ This tutorial also assumes some familiarity with such things as:
 - General software development using JavaScript
 
 You do not need to be an expert in any of these things in order to follow along though.
-
-**Let's get started!**
 
 ---
 
@@ -73,7 +72,7 @@ If you'd like to jump right into making your first commit and running your first
 
 ![Begin activity](/_static/screens/shared/begin-activity-2.jpg)
 
-Look for this code, and try changing the color of the `h1` tag and the text of the `h2`:
+Look for this code, and try changing the text of the `h3` tag and the color of the `h1` tag:
 
 ```js
 // Customize your site by changing the color of the h1
@@ -135,7 +134,9 @@ Then head to your terminal and clone your repo to your local filesystem.
 ```bash
 git clone https://github.com/your-github-username/your-new-begin-app.git
 ```
+
 Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
+
 ```bash
 cd your-new-begin-app
 npm install
@@ -158,18 +159,12 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 ├── src/
 │   ├── http/
 │   │   └── get-api/
-│   │       └── index.js
 │   ├── App.svelte
 │   └── main.mjs
 └── rollup.config.js
 ```
+
 Let's go over each of these directories and how you may use them:
-
-### `rollup.config.js`
-
-[Rollup](https://rollupjs.org/guide/en/) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It allows us to use the `import` syntax so that we may create component based applications. This config file bundles all of your component level CSS and JS into the `public` directory.
-
-> 💡 **Learn more!** Head here to dig deeper into [Rollup.js](https://rollupjs.org/guide/en/)
 
 ### `public/`
 
@@ -177,9 +172,10 @@ The `public` directory is where you'll add images and any other static assets or
 
 Each time your app deploys, the contents of this folder will automatically be published to your app's static asset bucket on [S3](https://aws.amazon.com/s3/) and Begin's CDN.
 
-This is also where your component level CSS & JS are bundled. Your apps global CSS which affects the entirety of your apps styling can be found in this directory as well.
+This is also where your component-level CSS & JS are bundled, as well as your app's global CSS, which affects the entirety of your app's styling.
 
 > **Exercise caution!** The full contents of this folder will be copied with each deploy, overwriting any existing files with the same name.
+
 
 ### `src/http/get-api/`
 
@@ -187,48 +183,23 @@ The cloud function that handles requests to your site is found at `src/http/get-
 
 Some Begin apps are inert static web sites – but not this one. Your Svelte app is built on a small, fast, individually executing cloud function that handles your HTTP requests and responses. (We call those HTTP functions, for short.)
 
-```js
-exports.handler = async function http (req) {
-  console.log('Begin API called')
-  return {
-    headers: {
-      'content-type': 'application/json; charset=utf8',
-      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
-    },
-    body: JSON.stringify({
-      msg: 'Hello from Svelte + your Begin API!'
-    })
-  }
-}
+The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
 
-```
+In the next section we will go more in depth about how to provision HTTP functions in your Svelte app.
+
+> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
 
 ### `src/main.mjs`
 
-`/main.js` imports your `./App.svelte` file which is your root app component. In this example we initialize your app to `document.body` and pass it a prop just to show you that props can be passed along to different components inside of your app.
+The main entry point for your Svelte app, `src/main.js` imports your `App.svelte` file (your root app component). In this example, we initialize your app to `document.body` and pass it a prop to demonstrate how props can be passed along to different components inside of your app.
 
-```js
-import App from './App.svelte'
-let message = '...loading'
-
-const app = new App({
-  target: document.body,
-  props: {
-    name: 'world',
-    message
-  }
-})
-
-export default app
-
-```
 
 ### `src/App.svelte`
 
-This is what is referred to as a single file component that contains all of the code needed to display your frontend. The script tag contains JavaScript and in this example is taking in props from `/main.js`. Right below the script tag we have a section for our HTML which can render variables inside `{`curly brackets`}` from your script tag. Lastly at the bottom we have the style tag that contains all the CSS for this specific component.
+`src/App.svelte` is what's referred to as a single file component – it contains all of the code needed to display your frontend. The opening `<script>` tag contains JavaScript, and in this example it receives in props from `src/main.js`:
 
 ```js
-// JavaScript
 <script>
   import { onMount } from 'svelte'
   export let name;
@@ -239,51 +210,37 @@ This is what is referred to as a single file component that contains all of the 
     console.log('MESSAGE: ', message)
   })
 </script>
+```
 
-// HTML
+Right below the `<script>` tag we have a section for our HTML – `<main>` – which can render variables from your script tag inside `{curly brackets}`:
+
+```js
 <main>
   <h1>Hello {name}!</h1>
   <h2>{message}</h2>
   <h3>Change me!</h3>
   <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-
-// CSS
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-</style>
-
 ```
 
-> 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
+Lastly, at the bottom of `src/App.svelte` we have a `<style>` tag, which contains all the CSS for this specific component.
+
+
+### `rollup.config.js`
+
+[Rollup](https://rollupjs.org/guide/en/) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It allows us to use ES modules `import` syntax so that we may create component based applications. This config file bundles all of your component-level CSS and JS into the `public` directory.
 
 ---
 
 ## Using API endpoints
 
-Extending your Svelte app with HTTP functions is why you're here right? Right. So let's go over how this is made possible.
+Extending your Svelte app with HTTP functions may be why you're here, right? Let's take a look at how all this works.
 
-Take a look at the code in between the script tag below. When the component renders initially into a page or "mounts", we are able to use what is called a lifecycle method called `onMount` which is provided by the Svelte framework. Inside this `onMount` handler we fetch data from `src/http/get-api/` and then set the variable named `message` with the returned data. We're now able to pass this variable into our HTML as props so that it displays a message from our HTTP function. Pretty cool!
+Let's start with the `src/App.svelte` code inside `<script>` tag found below. When the component renders initially into a page or "mounts", we're able to use what's called a lifecycle method called `onMount`, which is provided by the Svelte framework. Inside this `onMount` handler we fetch data from `src/http/get-api/` and then set the variable named `message` with the returned data. We're now able to pass this variable into our HTML as props so that it displays a message from our HTTP function. Not bad, right?
 
 ```js
+// src/App.svelte
+
 // JavaScript
 <script>
   import { onMount } from 'svelte'
@@ -303,31 +260,9 @@ Take a look at the code in between the script tag below. When the component rend
   <h3>Change me!</h3>
   <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-
-// CSS
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-</style>
 ```
 
+This is just one small example of how using a live API endpoint powered by an HTTP function can make your Svelte app dynamic. Just think of all the things you can build this way!
 
 ---
 
@@ -362,7 +297,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 You've now got a shiny new Svelte app hosted on Begin – nice work.
 
-Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20new%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Svelte%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 ---
 
@@ -371,7 +306,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 ## Additional resources
 
 - Expand the capabilities of your app:
-  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
   - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
 - [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
 - Get help:
@@ -381,4 +316,3 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Svelte docs](https://svelte.dev/)
   - [Svelte Quickstart](https://svelte.dev/blog/the-easiest-way-to-get-started)
   - [Rich Harris - Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao&feature=emb_title)
-
