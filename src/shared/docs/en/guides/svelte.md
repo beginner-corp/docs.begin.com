@@ -225,7 +225,7 @@ export default app
 
 ### `src/App.svelte`
 
-This is what is referred to as a single file component that contains all of the code needed to display your frontend. The script tag contains JavaScript and in this example is taking in props from `/main.js`. Right below the script tag we have a section for our HTML which can render variables inside {brackets} from your script tag. Lastly at the bottom we have the style tag that contains all the CSS for this specific component.
+This is what is referred to as a single file component that contains all of the code needed to display your frontend. The script tag contains JavaScript and in this example is taking in props from `/main.js`. Right below the script tag we have a section for our HTML which can render variables inside `{`curly brackets`}` from your script tag. Lastly at the bottom we have the style tag that contains all the CSS for this specific component.
 
 ```js
 // JavaScript
