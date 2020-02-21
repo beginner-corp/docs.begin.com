@@ -21,7 +21,7 @@ This tutorial also assumes some familiarity with such things as:
 - Git and version control
 - General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
+You do not need to be an expert in any of these things in order to follow along and make a React app in Begin!
 
 ---
 
@@ -56,7 +56,7 @@ After creating your app, you'll be taken to its `Activity` stream. Welcome to th
 
 From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
 
-Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
+Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), check your code's syntax for issues (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
@@ -146,7 +146,7 @@ Each time your app is deployed by Begin, the build artifacts in `build` will aut
 
 Per Create React App convention, files placed into `public` are not processed, and will instead be copied into `build` when your app is built.
 
-you'll add images (like your logo) and any other static assets or files you want to make publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
+Add images (like your logo) and any other static assets or files to `public` to make them publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
 
 
 ### `src/http/get-api/`
@@ -284,6 +284,7 @@ git add -A
 git commit -am 'Just customizing my Begin site!'
 git push origin master
 ```
+
 Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
 
 Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
@@ -307,7 +308,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 ## Additional resources
 
 - Expand the capabilities of your app:
-  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
   - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
 - [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
 - Get help:
