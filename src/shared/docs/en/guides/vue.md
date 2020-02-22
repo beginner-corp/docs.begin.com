@@ -29,7 +29,6 @@ This tutorial also assumes some familiarity with such things as:
 You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
 
 ---
-
 ## Getting started
 
 ### Create your new Vue app
@@ -51,7 +50,6 @@ Once you've clicked the `Create...` button, Begin will spin up your new project 
 > By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions from this screen (or later from the `Settings` screen found in the left nav of your Begin app).
 
 ---
-
 ## Your first deploy
 
 After creating your app, you'll be taken to its `Activity` stream. Welcome to the main backend interface of your Begin app!
@@ -71,7 +69,6 @@ Go ahead and click the **Staging** link in the upper left corner of your left na
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
 ---
-
 ## Make your first commit
 
 If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
@@ -99,7 +96,6 @@ Click the **commit changes** button on GitHub, and head back to your `Activity` 
 When it's done, don't forget to see your changes live in your `staging` environment!
 
 ---
-
 ## Get set up locally
 
 Next let's get your new site running in your local environment (i.e. the computer you work on).
@@ -125,7 +121,6 @@ You should see a `localhost` link in your terminal – go ahead and visit that i
 That's all you need to do preview your changes locally before pushing them to `staging`!
 
 ---
-
 ## Vue CLI
 
 [Vue CLI](https://cli.vuejs.org/) is a command line interface that acts as standard tooling for Vue.js development. It's feature rich with out-of-the-box support for Babel, Typescript, ESLint, Unit Testing & End-to-end Testing. You create, develop and manage your projects through an accompanying graphical user interface. It's really cool and you might want to set it up in your project for future use. We'll show you how to do that.
@@ -244,9 +239,73 @@ With that said, [Vue CLI](https://cli.vuejs.org/) has built-in options for unit 
 ---
 
 ## Using API endpoints
+Now for the fun part! Let's go over how HTTP functions work.
 
+The text in the red box below is actually being fetched from an example API endpoint, handled by `src/http/get-api/index.js`.
+
+![Vue API](/_static/screens/guides/vue/vue-api.jpg)
+
+The output of this HTTP function can be called by fetching `GET /api`, and subsequently used by any component within your Vue app:
+
+```javascript
+// src/http/get-api/index.js
+
+exports.handler = async function http (req) {
+  console.log('Begin API called')
+  return {
+    headers: {
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body: JSON.stringify({
+      message: 'Hello from your Begin API!'
+    })
+  }
+}
+```
+Now let's navigate to `src/App.vue` to see how this HTTP function was being implemented into your app. `./App.vue` is our apps root component. Inside of the script tag you find an import of our HelloWorld component. This component actually holds and displays the data from our Begin endpoint. As you can see below, `GET /api/` is fetched via async function.
+
+```javascript
+// src/App.vue
+
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'app',
+  data: function () {
+    return {
+      message: 'Loading...'
+    }
+  },
+  components: {
+    HelloWorld
+  },
+  methods:  {
+    getData: async function () {
+      try {
+        let data = await (await fetch('api')).json()
+        this.message = data.message
+      } catch (err) {
+        this.message = err.message
+      }
+    }
+  },
+  mounted: function () {
+    this.getData()
+  }
+}
+</script>
+```
+Then if we head over to our `/components/HelloWorld.vue` we'll find the `h1` receiving the message prop being passed down from our apps root component `./App.vue`
+
+```js
+<template>
+  <div class="hello">
+    <h1>{{ message }}</h1> // data passed in.
+    <h2>Change me</h2>
+```
 ---
-
 ## Deploy your site
 
 While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
@@ -293,3 +352,9 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about Vue
+    - [Vue docs](https://vuejs.org/)
+    - [Vue CLI](https://cli.vuejs.org/)
+    - [Vue forum](https://forum.vuejs.org/)
+    - [What Is Vue JS?](https://www.youtube.com/watch?v=FtXd_qQJgfI)
+    - [Vue JS Crash Course](https://www.youtube.com/watch?v=Wy9q22isx3U)
