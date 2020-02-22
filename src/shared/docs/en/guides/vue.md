@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 > ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
-=======
-> ⏱ This tutorial is an introductory walkthrough of creating a React app on Begin. It should take fewer than 15 minutes.
->>>>>>> Vue init
-=======
-> ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
->>>>>>> added more sections up to project strructure
 
 ## Introduction
 
@@ -14,22 +6,11 @@
 
 This tutorial uses the [Vue](https://vuejs.org/) starter app, extended by an example API endpoint. You'll have all the capabilities of Vue for building beautiful user interfaces, combined with the power, speed, and security of cloud functions and serverless data storage.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### What is Vue.js?
 
 Vue (pronounced like view) is a progressive framework for building user interfaces. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
 
 If you’d like to learn more about Vue before diving in, here is a [video](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/) walking through the core principles of Vue and a sample project.
-=======
->>>>>>> Vue init
-=======
-### What is Vue.js?
-
-Vue (pronounced like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
-
-If you’d like to learn more about Vue before diving in, here is a [video](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/) walking through the core principles of Vue and a sample project.
->>>>>>> vue cli
 
 ### Prerequisites
 
@@ -47,10 +28,6 @@ This tutorial also assumes some familiarity with such things as:
 
 You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> added more sections up to project strructure
 ---
 
 ## Getting started
@@ -149,16 +126,9 @@ That's all you need to do preview your changes locally before pushing them to `s
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Vue CLI
 
 [Vue CLI](https://cli.vuejs.org/) is a command line interface that acts as standard tooling for Vue.js development. It's feature rich with out-of-the-box support for Babel, Typescript, ESLint, Unit Testing & End-to-end Testing. You create, develop and manage your projects through an accompanying graphical user interface. It's really cool and you might want to set it up in your project for future use. We'll show you how to do that.
-=======
-## Vue CLI
-
-[Vue CLI](https://cli.vuejs.org/) is a command line interface that acts as standard tooling for Vue.js development. It's feature rich with out-of-the-box support for Babel, Typescript, ESLint, Unit Testing & End-to-end Testing. You create, develop and manage your projects through an accompanying graphical user interface. It's really cool and you might want to have it set up in your project for future viewing. We'll show you how to do that.
->>>>>>> vue cli
 
 ### Getting Started
 Since we've already created our project and have it set up locally on our machine, all we have to do is install the CLI globally and run the command to start the GUI(graphical user interface)
@@ -166,12 +136,8 @@ Since we've already created our project and have it set up locally on our machin
 **Install globally:**
 ```bash
 npm install -g @vue/cli
-<<<<<<< HEAD
 # OR
 yarn global add @vue/cli
-=======
-
->>>>>>> vue cli
 ```
 
 **Start GUI:**
@@ -188,7 +154,6 @@ Look for your begin-vue-app project folder and click `import this folder` as sho
 
 ![vue-cli](/_static/screens/guides/vue/vue-cli-2.jpg)
 
-<<<<<<< HEAD
 Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI tool give you tremendous insight and analytics into your Vue app. 
 
 ![vue-cli](/_static/screens/guides/vue/vue-cli-3.jpg)
@@ -197,30 +162,13 @@ Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI 
 
 ---
 
-=======
->>>>>>> added more sections up to project strructure
-=======
-Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI tool give you tremendous insight and analytics into your Vue app. For more information, be sure to go over the [Vue CLI docs](https://cli.vuejs.org/guide/) to learn everything that you can do with these Vue development tools.
-
-![vue-cli](/_static/screens/guides/vue/vue-cli-3.jpg)
-
----
-
->>>>>>> vue cli
 ## Project structure
 
 Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your Vue app:
 
 ```bash
 .
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── public/ 
-=======
-├── public/
->>>>>>> added more sections up to project strructure
-=======
->>>>>>> vue cli
 ├── src/ 
 │    ├── assets/
 │    ├── components/
@@ -231,7 +179,6 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 └── test/
 ```
 
-<<<<<<< HEAD
 Let's go over each of these directories & files and learn how you may use them:
 
 ### `public/index.html` & `main.js`
@@ -249,9 +196,3 @@ It's being output into our `main.js` file found inside of the `src` folder which
 We create a new Vue instance and we render the app component inside of an element with the id of `app`.
 
 ## ./App.vue
-=======
----
->>>>>>> Vue init
-=======
-Let's go over each of these directories and files and how you may use them:
->>>>>>> added more sections up to project strructure
