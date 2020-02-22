@@ -100,7 +100,9 @@ hardcode
 hardcoding
 headless
 headlessly
+HelloWorld
 hostname
+html-webpack-plugin
 HTTPS
 IAM
 incrementing
@@ -205,6 +207,7 @@ unformatted
 Unordered
 unparsed
 Unsplash
+Utils
 vars
 vimrc
 VPC

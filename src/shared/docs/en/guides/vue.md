@@ -181,7 +181,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 Let's go over each of these directories & files and learn how you may use them:
 
-### `public/index.html` & `main.js`
+### `public/index.html` 
 
 `public/index.html` is the page served in the browser. Vue is a single page application framework. It's used to create single page applications(SPA). It loads just one file which is the `index.html` file. The div with an id of app (as seen in the code below) is a placeholder for our Vue application.
 
@@ -190,9 +190,106 @@ Let's go over each of these directories & files and learn how you may use them:
 
   <div id="app"></div>
 ```
+The file `public/index.html` is a template that will be processed with html-webpack-plugin. During build, asset links will be injected automatically. 
 
-It's being output into our `main.js` file found inside of the `src` folder which is the entry point into Vue. Here we import Vue and our main app component which is a file called `./App.vue`.
+### `src/assets/`
+All of our apps static assets(images) can be exported from this folder and imported into our components via relative paths.
+When you reference a static asset using relative paths (must start with .) inside JavaScript, CSS or *.vue files, the asset will be included into your Webpack dependency graph. 
 
-We create a new Vue instance and we render the app component inside of an element with the id of `app`.
+### `src/components/`
+You guessed it. This directory is where we keep our apps components.
 
-## ./App.vue
+Components are one of the most powerful features of Vue.js and can be reused as many times as you want. They help you extend basic HTML elements to encapsulate reusable code. At a high level, Components are custom elements that Vue.js’ compiler would attach specified behavior to. Think of them as reusable Vue instances with a name!
+
+> 💡 **Learn more!** [Go here to learn more about using components in Vue](https://v1.vuejs.org/guide/components.html).
+
+
+### `src/http/get-api/`
+The cloud function that handles example API requests is found at `src/http/get-api/`.
+
+Some Begin apps are inert static web sites – but not this one. Your Vue app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
+
+The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
+
+In the next section we will go more in depth about how to provision HTTP functions in your Vue app.
+
+> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
+### `./App.vue`
+This `./App.vue` file is a component that is structured like any other component you would build inside of a Vue application. It has a template tag for our markup that is loading an image from our `src/assets` folder and another component called `HelloWorld.vue` from our `src/components` folder. 
+
+The script tag is for our JS and where we import in our HelloWorld component.
+
+The style tag is for our CSS styling. In this particular component the styles affect our app globally. Whenever you see a `<style scoped>` tag inside of a component, just know that those particular styles are scoped only to that particular component.
+
+### `main.js`
+In our `src` folder you will find a `main.js` file which is the entry point into Vue. Here we import Vue and our main app component which is a file called `./App.vue`.
+
+We create a new Vue instance and we render the app component inside of an element with the id of `app`. This would be the div in `public/index.html` that has an id of 'app'.
+
+### `src/test/`
+
+Your Vue project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `/test/example/` directory.
+
+A solid platform is the foundation of a durable application, but tests are essential!
+
+Tests run via `npm test` or `npm t`.
+
+While you can use any test runner and reporter combo you want, we recommend the [TAP family](https://testanything.org/) for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
+
+With that said, [Vue CLI](https://cli.vuejs.org/) has built-in options for unit testing with [Jest](https://jestjs.io/) or [Mocha](https://mochajs.org/) that works out of the box. There is also the official [Vue Test Utils](https://vue-test-utils.vuejs.org/) which provides more detailed guidance for custom setups.
+
+> 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
+
+---
+
+## Using API endpoints
+
+---
+
+## Deploy your site
+
+While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
+
+```bash
+npm run lint
+npm t
+```
+
+Everything set? Now let's push this commit (and deploy the build to `staging`):
+
+```bash
+git add -A
+git commit -am 'Just customizing my Begin site!'
+git push origin master
+```
+
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
+
+Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
+
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app.
+
+> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
+
+---
+
+## Congratulations!
+
+You've now got a shiny new Vue app hosted on Begin – nice work.
+
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Vue%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+
+---
+
+<!-- TODO add domains directions -->
+
+## Additional resources
+
+- Expand the capabilities of your app:
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
+  - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
+- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
+- Get help:
+  - [Begin community](https://spectrum.chat/begin)
+  - [Issue tracker](https://github.com/smallwins/begin-issues/issues)

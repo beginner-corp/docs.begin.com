@@ -283,7 +283,7 @@
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
         "icon": "circle-svelte.svg",
-        "background": "gradient-green-blue.png",
+        "background": "gradient-pink-purple.png",
         "sections": [
           "Introduction",
           "Getting started",
