@@ -153,7 +153,7 @@ Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI 
 
 ![vue-cli](/_static/screens/guides/vue/vue-cli-3.jpg)
 
-> 💡 **Learn more!** Be sure to head over to the [Vue CLI docs](https://cli.vuejs.org/guide/) to learn everything there is to know about these Vue development tools.
+> 💡 **Learn more!** Be sure to head over to the [Vue CLI docs](https://cli.vuejs.org/guide/) to learn everything that you can do with these Vue development tools.
 
 ---
 
@@ -194,7 +194,7 @@ When you reference a static asset using relative paths (must start with .) insid
 ### `src/components/`
 You guessed it. This directory is where we keep our apps components.
 
-Components are one of the most powerful features of Vue.js and can be reused as many times as you want. They help you extend basic HTML elements to encapsulate reusable code. At a high level, Components are custom elements that Vue.js’ compiler would attach specified behavior to. Think of them as reusable Vue instances with a name!
+Components are one of the most powerful features of Vue.js and can be reused as many times as you want. They help you extend basic HTML elements to encapsulate reusable code. At a high level, components are custom elements that Vue.js’ compiler would attach specified behavior to. Think of them as reusable Vue instances with a name!
 
 > 💡 **Learn more!** [Go here to learn more about using components in Vue](https://v1.vuejs.org/guide/components.html).
 
@@ -263,7 +263,7 @@ exports.handler = async function http (req) {
   }
 }
 ```
-Now let's navigate to `src/App.vue` to see how this HTTP function was being implemented into your app. `./App.vue` is our apps root component. Inside of the script tag you find an import of our HelloWorld component. This component actually holds and displays the data from our Begin endpoint. As you can see below, `GET /api/` is fetched via async function.
+Now let's navigate to `src/App.vue` to see how this HTTP function is being implemented into your app. `./App.vue` is our apps root component. Inside of the script tag you will find an import of our HelloWorld component. This component actually holds and displays the data from our Begin endpoint. As you can see below, `GET /api/` is fetched via async function.
 
 ```javascript
 // src/App.vue
@@ -305,6 +305,8 @@ Then if we head over to our `/components/HelloWorld.vue` we'll find the `h1` rec
     <h1>{{ message }}</h1> // data passed in.
     <h2>Change me</h2>
 ```
+As you can probably see by now, being able to fetch and display data within your app serverlessly is an awesome way to extend the capabilities of your Vue app.
+
 ---
 ## Deploy your site
 
