@@ -53,7 +53,7 @@ The `handler` function invoked by a client request receives a `request` object c
   - The absolute path of the request
 - `pathParameters` - **Object**
   - Any URL params, if defined in your HTTP Function's path (e.g. `foo` in `GET /:foo/bar`)
-- `queryStringParameters` - **Object**
+- `queryStringParameters` - **undefined** or **Object**
   - Any query params if present in the client request
 - `headers` - **Object**
   - All client request headers
