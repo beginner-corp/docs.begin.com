@@ -94,6 +94,7 @@ FQDN
 frontend
 Frontend
 globals
+GraphQL
 hardcode
 hardcoding
 headless
