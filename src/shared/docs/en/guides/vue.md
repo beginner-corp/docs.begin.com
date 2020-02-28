@@ -26,7 +26,7 @@ This tutorial also assumes some familiarity with such things as:
 - Git and version control
 - General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along and make your first React app in Begin!
+You do not need to be an expert in any of these things in order to follow along and make your first Vue app in Begin!
 
 ---
 ## Getting started
