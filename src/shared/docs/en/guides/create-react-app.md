@@ -176,7 +176,7 @@ A solid platform is the foundation of a durable application, but tests are essen
 You can find the test script specified in package.json:
 
 ```javascript
-// package.jscon
+// package.json
 {
   "scripts": {
     "test": "NODE_ENV=testing tape test/*-test.js | tap-spec"

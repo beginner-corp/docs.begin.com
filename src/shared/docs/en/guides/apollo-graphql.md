@@ -70,7 +70,7 @@ Each build undergoes a number of predefined build steps (learn more about [build
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
-Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your basic Apollo app:
+Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your basic Apollo GraphQL app:
 
 ![Apollo](/_static/screens/guides/apollo-graphql/apollo-screen.jpg)
 
@@ -139,11 +139,103 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 .
 ├── public/
 ├── src/
-│   ├── http/
-│   │   └── get-api/
-│   ├── App.svelte
-│   └── main.mjs
-└── rollup.config.js
+│   └── http/
+│       └── post-graphql/ 
+└── test/
 ```
 
 Let's go over each of these directories and how you may use them:
+
+### `public/`
+
+The `public` directory is where we host our homepage `index.html`. Inside we have an example GraphQL query that pulls in data from our HTTP function using an async function that fetches our GraphQL data graph from `src/http/post-graphql/index.js`. We then append our query to a DOM element using `getElementById`.
+
+### `src/http/post-graphql/`
+
+The `POST /graphql` function constructs a schema, using GraphQL schema language and then sets up a GraphQL server that will enforce our schema's structure. Afterwards we provide resolver functions for your schema fields that will output our `Hello World` string! To learn more about GraphQL schemas, check out this section of the Apollo docs: [Build a schema](https://www.apollographql.com/docs/tutorial/schema/).
+
+In the next section we will go more in depth about how to provision HTTP functions in your Apollo GraphQL app by setting up a function that displays the GraphQL playground.
+
+> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
+### `src/test/`
+
+Your Apollo GraphQL project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
+
+A solid platform is the foundation of a durable application, but tests are essential!
+
+You can find the test script specified in package.json:
+
+```javascript
+// package.json
+{
+  "scripts": {
+    "test": "NODE_ENV=testing tape test/*-test.js | tap-spec"
+  }
+}
+```
+
+Tests run via `npm test` or `npm t`.
+
+While you can use any test runner and reporter combo you want, we recommend the [TAP family](https://testanything.org/) for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
+
+With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [React Testing Library](https://github.com/testing-library/react-testing-library), etc. are all options available to you!
+
+> 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
+
+---
+
+## GraphQL Playground
+
+---
+
+## Deploy your site
+
+While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
+
+```bash
+npm run lint
+npm t
+```
+
+Everything set? Now let's push this commit (and deploy the build to `staging`):
+
+```bash
+git add -A
+git commit -am 'Just customizing my Begin site!'
+git push origin master
+```
+
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
+
+Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
+
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
+
+> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
+
+---
+
+## Congratulations!
+
+You've now got a shiny new Apollo GraphQL app hosted on Begin – nice work.
+
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Apollo-GraphQL%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+
+---
+
+<!-- TODO add domains directions -->
+
+## Additional resources
+
+- Expand the capabilities of your app:
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
+  - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
+- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
+- Get help:
+  - [Begin community](https://spectrum.chat/begin)
+  - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about Svelte
+  - [Svelte docs](https://svelte.dev/)
+  - [Svelte Quickstart](https://svelte.dev/blog/the-easiest-way-to-get-started)
+  - [Rich Harris - Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao&feature=emb_title)
