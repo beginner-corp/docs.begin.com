@@ -3,7 +3,6 @@ import BeginURI from '../util/begin-uri.mjs'
 import joinClass from '../util/join-classes.mjs'
 import Constants from '../resource/constants.mjs'
 import GlobalNavLink from './link-global-nav.mjs'
-import UpgradeLink from './link-global-upgrade.mjs'
 import LoginLink from './link-global-login.mjs'
 const linkClass = 'mb-2 mb-none-lg mr1-lg'
 const defaultClass = `
@@ -47,10 +46,6 @@ export default function GlobalNav (props) {
     : BeginURI('username')
   let avatar = account.avatar
   let docsActive = true // hack the planeeeeettttt
-  let plansActive = props.active === 'plans'
-  let upgrade = authed && !account.paidAccount
-    ? html`<${UpgradeLink} active="${plansActive}"><//>`
-    : ''
   let login = authed
     ? ''
     : html`<${LoginLink}><//>`
@@ -87,6 +82,13 @@ export default function GlobalNav (props) {
       active="${docsActive}"
     ><//>
     <${GlobalNavLink}
+      href="${Constants.links.learn}"
+      class="${linkClass}"
+      icon="learn"
+      label="Learn"
+      target"_blank"
+    ><//>
+    <${GlobalNavLink}
       href="${Constants.links.community}"
       class="${linkClass}"
       icon="heart"
@@ -104,7 +106,6 @@ export default function GlobalNav (props) {
   <span
     class="mb0 mb-none-lg d-flex fd-c fd-r-lg"
   >
-    ${upgrade}
     ${login}
     ${authed
       ? html`<${GlobalNavLink}

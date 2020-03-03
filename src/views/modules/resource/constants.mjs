@@ -23,6 +23,7 @@ export default {
       },
       site: 'https://docs.begin.com'
     },
+    learn: 'https://learn.begin.com',
     community: 'https://spectrum.chat/begin',
     help: 'https://begin.com/support',
     issues: 'https://github.com/smallwins/begin-issues',
