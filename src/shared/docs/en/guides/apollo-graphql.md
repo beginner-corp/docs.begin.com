@@ -255,7 +255,7 @@ Let's make a new route that displays our GraphQL playground on it's own page. He
 
 ![Playground](/_static/screens/guides/apollo-graphql/get-playground.jpg)
 
-This [repo here](https://github.com/prisma-labs/graphql-playground/blob/master/packages/graphql-playground-html/minimal.html) provides the code that will display our playground. The code is also written below.
+Inside of your project folder, navigate to the `src/http/get-playground/index.js` file. This [repo here](https://github.com/prisma-labs/graphql-playground/blob/master/packages/graphql-playground-html/minimal.html) provides the code that will display our playground. The code is also written below. Copy and paste this code inside of the `index.js` file.
 
 ```js
 <!DOCTYPE html>
@@ -317,7 +317,40 @@ This [repo here](https://github.com/prisma-labs/graphql-playground/blob/master/p
 
 </html>
 ```
+Now let's add a button that will take us to our new playground route. Head to the `public` directory and open the `index.html` file. Add this block of code in between the `<style>` tag.
 
+```CSS
+// public/index.html
+
+ .button {
+      margin: 2rem 0 0 0;
+    }
+
+    .btn {
+      background-color: #e6870b;
+      padding: 1rem;
+      border-radius: .5rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn:hover {
+      background-color: #e6870bc2;
+    }
+```
+Add this block of code after the `<section>` tag inside of the `<body>`.
+
+```html
+// public/index.html
+
+  <div class="button"></div>
+  <a href="/playground" class="btn">GraphQL Playground</a>
+  </div>
+```
+
+
+This is how our new button will look down below. This will easily takes us to our new GraphQL playground.
+![Apollo-Screen](/_static/screens/guides/apollo-graphql/apollo-screen-2.jpg)
 ---
 
 ## Deploy your site
