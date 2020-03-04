@@ -15,8 +15,9 @@ To provision a new HTTP Function, in the root of your project, open your app's A
    - If you don't already have one, just add `@http`
 2. On a new line, enter the route (an HTTP method followed by a path) you wish to create
    - For example: `get /foo`, or `put /bar`
-1. Start the local dev environment to generate some boilerplate HTTP Function handlers: `npm start`
-2. Commit and push your changes to your repo
+3. Start the local dev environment to generate some boilerplate HTTP Function handlers: `npm start`
+   - New function handlers will now appear in `src/http/` (e.g. `src/http/get-foo` & `src/http/put-bar`)
+4. Commit and push your changes to your repo
 
 Here's what a basic Architect project manifest looks like with the above two HTTP Functions specified:
 
