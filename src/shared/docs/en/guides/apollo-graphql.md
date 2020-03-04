@@ -235,7 +235,7 @@ Tests run via `npm test` or `npm t`.
 
 While you can use any test runner and reporter combo you want, we recommend the [TAP family](https://testanything.org/) for testing. Test suites that require their runners to inject globals can create some very difficult to debug situations.
 
-With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [React Testing Library](https://github.com/testing-library/react-testing-library), etc. are all options available to you!
+With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/), [Mocha](https://mochajs.org/), etc. are all options available to you!
 
 > 💡 **Learn more!** Head here to dig deeper into [the project structure of Begin apps](/en/getting-started/project-structure/).
 
@@ -351,6 +351,9 @@ Add this block of code after the `<section>` tag inside of the `<body>`.
 
 This is how our new button will look down below. This will easily takes us to our new GraphQL playground.
 ![Apollo-Screen](/_static/screens/guides/apollo-graphql/apollo-screen-2.jpg)
+
+Your new GraphQL playground is set up and connected to your data graph. Test out some new queries grow your database!
+
 ---
 
 ## Deploy your site
