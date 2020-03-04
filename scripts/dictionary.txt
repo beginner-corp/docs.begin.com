@@ -4,8 +4,8 @@ ACM
 af
 analytics
 Alexa
-APIs
 API
+APIs
 arc-repos
 arcana
 ARN
@@ -119,6 +119,7 @@ Kubernetes
 LEANX
 learnable
 learnings
+lifecycle
 linter
 lifecycle
 macOS
@@ -133,11 +134,6 @@ namespaces
 nav
 neé
 NewOps
-Node
-NodeJS
-nodemon
-Nodemon
-NODE_ENV=testing
 non-serverless
 npm
 NS1
@@ -152,6 +148,7 @@ payload
 payloads
 PEM
 plaintext
+pragma
 pre-built
 pre-compiled
 pre-provision

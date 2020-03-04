@@ -149,7 +149,9 @@
           "Overview",
           "Provisioning new HTTP Functions",
           "The basics",
-          "Using URL parameters to create dynamic paths"
+          "Greedy root",
+          "Using URL parameters to create dynamic paths",
+          "Removing HTTP Functions"
         ]
       },
       {
