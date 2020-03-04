@@ -1,0 +1,7 @@
+#!/bin/sh
+svgo=./node_modules/svgo/bin/svgo
+svgsymbols=./node_modules/svg-symbols/index.js
+rm ./src/views/modules/document/symbols.mjs
+$svgo -f ./src/svgs -o ./src/svgs --disable removeViewBox --enable removeDimensions --enable removeUselessStrokeAndFill
+SVG=$($svgsymbols ./src/svgs)
+echo "export default \`$SVG\`" > ./src/views/modules/document/symbols.mjs
