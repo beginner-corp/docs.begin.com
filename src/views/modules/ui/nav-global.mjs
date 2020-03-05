@@ -71,6 +71,7 @@ export default function GlobalNav (props) {
       class="${linkClass}"
       icon="apps"
       label="Apps"
+      target="_blank"
     ><//>`
     : ''
   }
@@ -86,7 +87,7 @@ export default function GlobalNav (props) {
       class="${linkClass}"
       icon="sprout"
       label="Learn"
-      target"_blank"
+      target="_blank"
     ><//>
     <${GlobalNavLink}
       href="${Constants.links.community}"
@@ -113,6 +114,7 @@ export default function GlobalNav (props) {
       class="mb-2 mb-none-lg"
       icon="settings"
       label="${accountLabel}"
+      target="_blank"
     ><//>
     <a
       href="${username}"
