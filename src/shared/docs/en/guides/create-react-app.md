@@ -72,7 +72,7 @@ Go ahead and click the **Staging** link in the upper left corner of your left na
 
 If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
 
-![Begin activity](/_static/screens/guides/personal-website/begin-activity-2.jpg)
+![Begin activity](/_static/screens/shared/begin-activity-2.jpg)
 
 Look for this code, and try editing your basic app. Let's edit the `<p>` tag that says "Change me!" to "My app!":
 
@@ -314,3 +314,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about React:
+  - [React homepage](https://reactjs.org/)
+  - [React docs](https://reactjs.org/docs/getting-started.html)
+  - [CRA Getting Started](https://create-react-app.dev/docs/getting-started/)
