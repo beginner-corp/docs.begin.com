@@ -285,7 +285,7 @@
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
         "icon": "circle-svelte.svg",
-        "background": "gradient-green-blue.png",
+        "background": "gradient-pink-purple.png",
         "sections": [
           "Introduction",
           "Getting started",
@@ -310,6 +310,25 @@
           "Your first deploy",
           "Make your first commit",
           "Get set up locally",
+          "Project structure",
+          "Using API endpoints",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
+        "docID": "vue",
+        "docTitle": "Vue",
+        "description": "Build a Vue starter app with an added example API endpoint",
+        "icon": "circle-vue.svg",
+        "background": "gradient-green-blue.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Vue CLI",
           "Project structure",
           "Using API endpoints",
           "Deploy your site",

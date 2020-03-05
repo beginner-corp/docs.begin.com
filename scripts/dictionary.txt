@@ -2,6 +2,7 @@
 `build`ing
 ACM
 af
+analytics
 Alexa
 API
 APIs
@@ -23,6 +24,7 @@ Backends
 base64
 base64-encoded
 bashrc
+begin-vue-app
 birb
 blockchain
 Blockquoted
@@ -98,7 +100,9 @@ hardcode
 hardcoding
 headless
 headlessly
+HelloWorld
 hostname
+html-webpack-plugin
 HTTPS
 IAM
 incrementing
@@ -117,6 +121,7 @@ learnable
 learnings
 lifecycle
 linter
+lifecycle
 macOS
 Microservices
 microservices-based
@@ -199,9 +204,19 @@ unformatted
 Unordered
 unparsed
 Unsplash
+Utils
 vars
 vimrc
 VPC
+Vue
+<<<<<<< HEAD
+<<<<<<< HEAD
+vue-cli
+=======
+>>>>>>> Vue init
+=======
+vue-cli
+>>>>>>> vue cli
 vs
 Vue
 walkthrough
