@@ -57,7 +57,7 @@ get /
 
 4. If you haven't already, make sure to go [set up your AWS credentials and env vars (as necessary)](https://arc.codes/quickstart).
 
-5. Run `npx create`
+5. Run `npx arc-create` to install [Architect]((https://arc.codes/))
 
 That should get you going on AWS without Begin! Of course, you'll probably want to keep going by adding a domain, setting up a database, and more.
 
