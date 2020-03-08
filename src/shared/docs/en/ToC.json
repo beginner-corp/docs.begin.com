@@ -149,7 +149,9 @@
           "Overview",
           "Provisioning new HTTP Functions",
           "The basics",
-          "Using URL parameters to create dynamic paths"
+          "Greedy root",
+          "Using URL parameters to create dynamic paths",
+          "Removing HTTP Functions"
         ]
       },
       {
@@ -283,7 +285,7 @@
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
         "icon": "circle-svelte.svg",
-        "background": "gradient-green-blue.png",
+        "background": "gradient-pink-purple.png",
         "sections": [
           "Introduction",
           "Getting started",

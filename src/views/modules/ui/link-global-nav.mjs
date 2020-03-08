@@ -1,7 +1,22 @@
 import { html } from '../vendor/preact.mjs'
 import joinClasses from '../util/join-classes.mjs'
 import Icon from './icon.mjs'
-const defaultClass = 'd-flex ai-c fs-off-scale fw-medium upper lh2 pr0 pl-1 c-p26 c-h3 c-a5 bg-a7 br-pill transition-all'
+const defaultClass = `
+d-flex
+ai-c
+fs-off-scale
+fw-medium
+uppercase
+lh2
+pr0
+pl-1
+c-p26
+c-h3
+c-a5
+bg-a7
+br-pill
+transition-all
+`
 
 export default function GlobalNavLink (props) {
   props = props || {}

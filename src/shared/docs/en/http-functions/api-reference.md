@@ -51,13 +51,13 @@ The `handler` function invoked by a client request receives a `request` object c
   - One of `GET`, `POST`, `PATCH`, `PUT`, or `DELETE`
 - `path` - **String**
   - The absolute path of the request
-- `pathParameters` - **Object**
+- `pathParameters` - **null** or **Object**
   - Any URL params, if defined in your HTTP Function's path (e.g. `foo` in `GET /:foo/bar`)
-- `queryStringParameters` - **Object**
+- `queryStringParameters` - **null** or **Object**
   - Any query params if present in the client request
 - `headers` - **Object**
   - All client request headers
-- `body` - **String (base64-encoded)**
+- `body` - **null** or **String (base64-encoded)**
   - Contains unparsed, base64-encoded request body
   - We suggest parsing with our [body parser helper](#parsing-bodies)
 - `isBase64Encoded` - **Boolean**

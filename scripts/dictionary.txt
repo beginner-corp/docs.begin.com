@@ -2,9 +2,10 @@
 `build`ing
 ACM
 af
+analytics
 Alexa
-APIs
 API
+APIs
 arc-repos
 arcana
 ARN
@@ -23,6 +24,7 @@ Backends
 base64
 base64-encoded
 bashrc
+begin-vue-app
 birb
 blockchain
 Blockquoted
@@ -54,6 +56,7 @@ configs
 congrats
 Congrats
 CORS
+CRA
 cross-env
 cruft
 cryptographically
@@ -100,7 +103,9 @@ hardcode
 hardcoding
 headless
 headlessly
+HelloWorld
 hostname
+html-webpack-plugin
 HTTPS
 IAM
 incrementing
@@ -117,6 +122,7 @@ Kubernetes
 LEANX
 learnable
 learnings
+lifecycle
 linter
 lifecycle
 macOS
@@ -131,11 +137,6 @@ namespaces
 nav
 neé
 NewOps
-Node
-NodeJS
-nodemon
-Nodemon
-NODE_ENV=testing
 non-serverless
 npm
 NS1
@@ -207,9 +208,19 @@ unformatted
 Unordered
 unparsed
 Unsplash
+Utils
 vars
 vimrc
 VPC
+Vue
+<<<<<<< HEAD
+<<<<<<< HEAD
+vue-cli
+=======
+>>>>>>> Vue init
+=======
+vue-cli
+>>>>>>> vue cli
 vs
 Vue
 walkthrough

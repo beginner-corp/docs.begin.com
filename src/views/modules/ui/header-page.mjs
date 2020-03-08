@@ -34,7 +34,11 @@ export default function PageHeader (props) {
       : ''
     }
     </div>
-    <a class="mr4" href="${BeginURI()}">
+    <a
+      class="mr4"
+      href="${BeginURI()}"
+      target="_blank"
+    >
       <${Lockup}><//>
     </a>
    <${GlobalNav}
