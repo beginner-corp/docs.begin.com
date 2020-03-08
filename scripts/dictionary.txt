@@ -150,6 +150,7 @@ payload
 payloads
 PEM
 plaintext
+pragma
 pre-built
 pre-compiled
 pre-provision
