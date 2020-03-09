@@ -65,6 +65,7 @@ export default function Guides (props) {
           "
           style="${background}"
         >
+        <p>${d.docType}</p>
           <div
             class="d-flex ai-c"
           >
@@ -122,6 +123,7 @@ export default function Guides (props) {
       <li
         class="${frameworkItemClass}"
       >
+      
         <a
           class="
             h-100
