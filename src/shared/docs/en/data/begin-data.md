@@ -331,7 +331,7 @@ Tip: during the intervening time between `ttl` expiry and actual expunging, the 
 ```js
 let table = 'mandalas'
 let key = 'Tibetan'
-let ttl = Date.now() - (60*60*24*7) // One week
+let ttl = (Date.now() / 1000) + (60 * 60 * 24 * 7) // One week from now in seconds
 await data.set({table, key, ttl})
 ```
 
