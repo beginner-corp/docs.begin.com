@@ -15,6 +15,8 @@ Under the environment you want to add a variable to (i.e. `staging`), add your k
 
 This variable is now available to all your Functions in `staging` – no deploy necessary!
 
+![Begin activity](/_static/screens/shared/begin-env-console.jpg)
+
 > Note: keys can only contain upper case alphanumeric characters and underscores (`[A-Z0-9_]`), and must start with a letter. Values are limited to 255 characters.
 
 
