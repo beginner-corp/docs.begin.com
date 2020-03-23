@@ -317,6 +317,25 @@
         ]
       },
       {
+        "docID": "vue",
+        "docTitle": "Vue",
+        "description": "Build a Vue starter app with an added example API endpoint",
+        "icon": "circle-vue.svg",
+        "background": "gradient-green-blue.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Vue CLI",
+          "Project structure",
+          "Using API endpoints",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docID": "apollo-graphQL",
         "docTitle": "Apollo GraphQL",
         "description": "Fully serverless Apollo GraphQL API, ready to be wired up to your data.",
