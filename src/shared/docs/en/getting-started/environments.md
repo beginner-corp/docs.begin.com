@@ -25,3 +25,17 @@ This variable is now available to all your Functions in `staging` – no deploy 
 To modify an existing environment variable, overwrite it with a new variable with the key you want to overwrite.
 
 To delete a variable, simply click the red delete icon.
+
+## Using Variables While Developing
+
+When working in your development environment, you may need to provide different environment variables. Begin uses [Architect](https://arc.codes/) to run your functions, and the same applies for local development. You can see the environment variables documentation for Architect [here](https://arc.codes/reference/cli/env#the-arc-env-file).
+
+To add an environment variable, first add a `.arc-env` file to your project. This file should also be included in your `.gitignore` file. The `.arc-env` file is automatically read by `arc sandbox` and populates `process.env`
+
+For your development environment, you should use the `@testing` environment. Your `.arc-env` file may look like this:
+
+```
+# example .arc-env
+@testing 
+SOME_VAR some-value
+```
