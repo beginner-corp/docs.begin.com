@@ -317,7 +317,7 @@ Inside of your project folder, navigate to the `src/http/get-playground/index.js
   </div>
   <script>window.addEventListener('load', function (event) {
       GraphQLPlayground.init(document.getElementById('root'), {
-        // options as 'endpoint' belong here
+        endpoint: '/graphql'
       })
     })</script>
 </body>
