@@ -80,6 +80,7 @@ DNS
 DNS-based
 DNSimple
 DocumentClient
+DOM
 dr
 Dyn
 DynamoDB
@@ -97,6 +98,7 @@ FQDN
 frontend
 Frontend
 globals
+GraphQL
 hardcode
 hardcoding
 headless
@@ -178,6 +180,7 @@ runtime
 runtimes
 S3
 scalable
+schemas
 SDK
 SemVer
 serverless
