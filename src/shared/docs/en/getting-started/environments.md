@@ -37,5 +37,5 @@ For your development environment, you should use the `@testing` environment. You
 ```
 # example .arc-env
 @testing 
-SOME_VSR some-value
+SOME_VAR some-value
 ```
