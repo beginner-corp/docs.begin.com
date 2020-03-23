@@ -4,7 +4,7 @@
 
 **Hello there, Beginner!**
 
-This tutorial uses the [Apollo GraphQL Begin starter example](https://github.com/begin-examples/node-apollo), extended by an example API endpoint. 
+This tutorial uses the [Apollo GraphQL Begin starter example](https://github.com/begin-examples/node-apollo), extended by an example API endpoint.
 
 ### What is GraphQL?
 Created by Facebook in parallel with React, GraphQL is a query language that defines a set of constraints for APIs. It has a built-in server-side runtime for fulfilling those queries with your existing data. Basically, it is used to load data from a server to a client **-- it’s a way to get data from an API into your application.** The principles of GraphQL are extremely useful building blocks for web applications.
@@ -24,7 +24,6 @@ You will need to have **git** and **Node.js** installed to your local computer t
 
 You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
 
-Although it would be helpful to have some experience with Vue, it's not required to follow along with this tutorial. (Related, the [Vue docs](https://vuejs.org/v2/guide/) are a great reference.)
 
 This tutorial also assumes some familiarity with such things as:
 - Text editors
@@ -140,7 +139,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 ├── public/
 ├── src/
 │   └── http/
-│       └── post-graphql/ 
+│       └── post-graphql/
 └── test/
 ```
 
@@ -249,7 +248,7 @@ The GraphQL Playground is an IDE (Integrated development environment) for better
 
 ### Provision new route for GraphQL Playground
 
-Let's make a new route that displays our GraphQL playground on it's own page. 
+Let's make a new route that displays our GraphQL playground on it's own page.
 
 **Ready to give it a go?**
 
