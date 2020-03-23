@@ -80,6 +80,7 @@ DNS
 DNS-based
 DNSimple
 DocumentClient
+DOM
 dr
 Dyn
 DynamoDB
@@ -129,6 +130,7 @@ microservices-based
 middleware
 Middleware
 MMO
+myData
 NameCheap
 namespace
 namespaces
