@@ -65,18 +65,22 @@ export default function Guides (props) {
           "
           style="${background}"
         >
-        <p>${d.docType}</p>
           <div
-            class="d-flex ai-c"
+            class="d-flex ai-e"
           >
             <img
               class="mr-2"
               src="${icon}"
               style="width:1.777rem;height:1.777rem;"
             />
-            <h3 class="fs1 fw-book">
-              ${d.docTitle}
-            </h3>
+            <div>
+              <h6 class="fs-1 fw-book">
+                ${d.docType}
+              </h6>
+              <h3 class="fs1 fw-book">
+                ${d.docTitle}
+              </h3>
+            </div>
           </div>
         </div>
         <p
@@ -123,7 +127,7 @@ export default function Guides (props) {
       <li
         class="${frameworkItemClass}"
       >
-      
+
         <a
           class="
             h-100
