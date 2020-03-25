@@ -264,6 +264,24 @@
         ]
       },
       {
+        "docType": "Guide",
+        "docID": "begin-data",
+        "docTitle": "Begin Data",
+        "description": "Get started building databasses with Begin Data",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-blue.png",
+        "sections": [
+          "Prerequisites",
+          "Create a Begin account",
+          "Creating an app",
+          "Your first deploy",
+          "Accessing your live app",
+          "Project structure",
+          "Working locally",
+          "Keep it going"
+        ]
+      },
+      {
         "docType": "Tutorial",
         "docID": "personal-website",
         "docTitle": "Personal website",
