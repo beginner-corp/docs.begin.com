@@ -246,6 +246,7 @@
     "catTitle": "Guides",
     "docs": [
       {
+        "docType": "Guide",
         "docID": "quickstart",
         "docTitle": "Quickstart",
         "description": "Get started building your first app with Begin",
@@ -263,6 +264,7 @@
         ]
       },
       {
+        "docType": "Guide",
         "docID": "http-functions",
         "docTitle": "HTTP Functions",
         "description": "Begin HTTP Functions: Getting started.",
@@ -281,6 +283,7 @@
         ]
       },
       {
+        "docType": "Tutorial",
         "docID": "personal-website",
         "docTitle": "Personal website",
         "description": "Build a fast, beautiful, customizable personal website with Begin",
@@ -299,6 +302,7 @@
         ]
       },
       {
+        "docType": "Tutorial",
         "docID": "svelte",
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
@@ -317,6 +321,7 @@
         ]
       },
       {
+        "docType": "Tutorial",
         "docID": "create-react-app",
         "docTitle": "Create React App",
         "description": "Build a React app starting with Create React App and an added example API endpoint",
@@ -335,6 +340,7 @@
         ]
       },
       {
+        "docType": "Tutorial",
         "docID": "vue",
         "docTitle": "Vue",
         "description": "Build a Vue starter app with an added example API endpoint",
@@ -349,6 +355,25 @@
           "Vue CLI",
           "Project structure",
           "Using API endpoints",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
+        "docType": "Tutorial",
+        "docID": "apollo-graphQL",
+        "docTitle": "Apollo GraphQL",
+        "description": "Fully serverless Apollo GraphQL API, ready to be wired up to your data.",
+        "icon": "circle-apollo.svg",
+        "background": "gradient-pink-blue.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "GraphQL Playground",
           "Deploy your site",
           "Additional resources"
         ]

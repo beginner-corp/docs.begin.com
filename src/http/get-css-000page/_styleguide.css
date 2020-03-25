@@ -123,7 +123,7 @@ body {
 .c-d1:disabled{color:var(--d1);}/* greyish */
 
 /* BACKGROUND */
-.bg-none{background-color:none;}
+.bg-none{background-color:transparent;}
 .bg-p0{background-color:var(--p0);}
 .bg-p1{background-color:var(--p1);}
 .bg-p2{background-color:var(--p2);}
