@@ -264,6 +264,25 @@
         ]
       },
       {
+        "docType": "Guide",
+        "docID": "http-functions",
+        "docTitle": "HTTP Functions",
+        "description": "Begin HTTP Functions: Getting started.",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-purple.png",
+        "sections": [
+          "Prerequisites",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Writing HTTP Functions",
+          "Project structure",
+          "Fetching data between functions",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docType": "Tutorial",
         "docID": "personal-website",
         "docTitle": "Personal website",
