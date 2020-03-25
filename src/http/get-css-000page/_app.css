@@ -172,7 +172,7 @@ aside div#category {
   background-size:cover;
 }
 .background-repeat-none {
-  background-repeat:none;
+  background-repeat:no-repeat;
 }
 .guides-item-bg-h {
   height: 7.777rem;
