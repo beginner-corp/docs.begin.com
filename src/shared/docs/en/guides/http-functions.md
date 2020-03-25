@@ -54,7 +54,7 @@ If no build steps fail, then the build containing your latest commit to `master`
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your new app:
 
-![Hello World Starter](/_static/screens/shared/begin-minimal.jpg)
+![Hello World Starter](/_static/screens/shared/begin-hello-world.jpg)
 
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
