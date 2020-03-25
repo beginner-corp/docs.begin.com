@@ -2,7 +2,7 @@
 
 ## Begin HTTP Functions
 
-Getting started with Begin HTTP Functions will be quick and useful.  In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction into learning the anatomy of a Lambda function and how to use them inside of your apps.
+Getting started with Begin HTTP Functions should take just a few minutes, but lay the groundwork for creating your own APIs.  In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction to what goes in an HTTP function and how to use them to deliver data to your apps.
 
 ### Prerequisites
 
@@ -82,7 +82,6 @@ npm install
 Now you are all set to work on your app locally!
 
 ---
----
 
 ## Add an HTTP function
 
@@ -104,7 +103,7 @@ If you are happy with `staging` you can click the "Deploy to Production" button 
 
 ## Writing HTTP Functions
 
-We must first understand the anatomy of a Lambda function to be able to write them for our specific use cases. All basic Lambda functions consist of one handler function.
+We must first understand the anatomy of an HTTP function to be able to write them for our specific use cases. All basic HTTP functions consist of one handler function.
 
 ```js
   exports.handler = async function(req) {
@@ -135,7 +134,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ### `public/index.html` & `public/index.js`
 
-`public/index.html` is the page served in the browser. This is where our JSON data will be appended to a DOM element of our choosing. `public/index.js` is where we will write our function that fetches the JSON data from `get /api` and creates the element to append to the DOM
+`public/index.html` is the page served in the browser. This is where our JSON data will be appended to a DOM element of our choosing. `public/index.js` is where we will write our function that fetches the JSON data from `get /api` and displays it in our HTML page.
 
 ### `src/http/get-api/`
 Your app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
