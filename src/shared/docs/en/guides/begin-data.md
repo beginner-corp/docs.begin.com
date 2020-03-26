@@ -187,10 +187,10 @@ Now that your app is live on staging and running locally, let's take a quick loo
 ```
 ### `public/index.html`
 
-`public/index.html` is the page served in the browser. This is also where our apps CSS styles and JavaScript live. Here, we will fetch our todos from our HTTP functions and append them to elements on the DOM while manipulating the state of our app.
+This directory hold the page that is served in the browser. This is also where our apps CSS styles and JavaScript live. Here, we will fetch our todos from our HTTP functions and append them to elements on the DOM while manipulating the state of our app.
 
 ### `src/http/get-todos/`
-This function allows you to read the `todos` from your `todos` database table that were created with the HTML form on the home page.
+This function allows you to read the current `todos` from your `todos` database table that were created with the HTML form on the home page.
 
 ```js
 // `src/http/get-todos`
@@ -267,10 +267,74 @@ exports.handler = async function destroy (req) {
   }
 }
 ```
+---
 
+## Begin Data in Action
 
+So how do all of these functions come together to create the Todo functionality of the app? This happens inside of the `public/index.html` file. In between the `<script>` tag we can find the code doing the heavy lifting. Let's explain what's going on here.
 
+First, be aware that we have wrapped all of our business logic in an **IIFE(Immediately-invoked Function Expression)**. This is to make sure that this function is always ran when the page is loaded.
 
+The app is kicked off with the function `init()` below. Then we fetch all the todos that have been input into the form and reside on our database.
+
+```js
+// Kick off the app
+      init()
+
+      // GET all todos
+      function init() {
+        fetch('/todos', {
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(res => res)
+          .then(body => body.json())
+          // Call update with fetched todos
+          .then(json => update(json.todos))
+      }
+```
+Now we define a set of variables that will append the correct state and data view to our DOM.
+
+```js
+ // Update the DOM with data
+      function update(todos) {
+        let list = document.getElementById('js-todos')
+        let completed = document.getElementById('js-completed')
+        let message = document.getElementById('js-message')
+        let current = todos.filter(t => !t.completed)
+        let complete = todos.filter(t => t.completed)
+        let doneTitle = document.getElementById('js-done-title')
+        let done = complete.length && !current.length
+        let none = !complete.length && !current.length
+        if (none) {
+          message.innerHTML = Message({
+            src: '/_static/rocket.svg',
+            text: 'Let\'s get started!',
+            alt: 'Rocket'
+          })
+        } else if (done) {
+          message.innerHTML = Message({
+            src: '/_static/astronaut.svg',
+            text: 'You did it!',
+            alt: 'Astronaut'
+          })
+        }
+
+        if (complete.length) {
+          doneTitle.classList.toggle('display-none')
+        }
+
+        list && current.length
+          ? list.innerHTML = current.map(t => Todo(t)).join('')
+          : ''
+
+        completed && complete.length
+          ? completed.innerHTML = complete.map(t => Todo(t)).join('')
+          : ''
+      }
+```
 ---
 ## Deploy your site
 
@@ -303,7 +367,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 You now have a good idea on how Begin Data works within your app. 
 
-Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20HTTP-Functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Begin-Crud%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 <!-- TODO add domains directions -->
 
@@ -317,6 +381,6 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
 - More about Begin Data
-  - [HTTP Functions](https://docs.begin.com/en/http-functions/provisioning)
-  - [Architect project layout](https://arc.codes/quickstart/layout)
-  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)
+  - [Begin Data Official docs](https://docs.begin.com/en/data/begin-data/)
+  - [Begin-Data GitHub](https://github.com/smallwins/begin-data)
+  - [Arc.codes/tables](https://arc.codes/primitives/tables)
