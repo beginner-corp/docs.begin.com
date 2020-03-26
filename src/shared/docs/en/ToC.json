@@ -271,12 +271,12 @@
         "icon": "circle-begin.svg",
         "background": "gradient-pink-blue.png",
         "sections": [
+          "Introduction",
           "Prerequisites",
-          "Create a Begin account",
-          "Creating an app",
+          "Getting started",
           "Your first deploy",
-          "Accessing your live app",
-          "Project structure",
+          "Make your first commit",
+          "Add Begin Data",
           "Working locally",
           "Keep it going"
         ]
