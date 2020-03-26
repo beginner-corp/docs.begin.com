@@ -68,7 +68,7 @@ Go ahead and click the **Staging** link in the upper left corner of your left na
 
 ## Make your first commit
 
-Click the `Edit on Github` button to push your first commit. This will take you to Github where you can edit the `public/index.html` file of your project.
+Click the `Edit on GitHub` button to push your first commit. This will take you to GitHub where you can edit the `public/index.html` file of your project.
 
 ![Name your Begin app and repo](/_static/screens/shared/begin-activity-2.jpg)
 
@@ -79,7 +79,7 @@ Let's simply change the word "Beginner" to your own name. Click the commit chang
         Howdy, Beginner!  <!--Edit this line  -->
  </h1>
 ```
-Now git clone the Repo to your local machine. Navigate into the project and open it in your favorite text editor. In the next section we will go over how to add Begin Data.
+Now git clone the repo to your local machine. Navigate into the project and open it in your favorite text editor. In the next section we will go over how to add Begin Data.
 
 ---
 
