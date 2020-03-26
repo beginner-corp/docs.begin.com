@@ -227,7 +227,7 @@ exports.handler = async function http(request) {
     let note = request.body.note
     await data.set({table, note})
     return {
-      status: 201,
+      statusCode: 201,
       headers,
       body: JSON.stringify({ok: true})
     }
