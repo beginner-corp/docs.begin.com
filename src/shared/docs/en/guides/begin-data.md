@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[Begin Data](https://docs.begin.com/en/data/begin-data/) is an easy to use, fast, durable, highly scalable, fully managed, SSD-based key-value and document database built on top of DynamoDB. Think of it as syntactic sugar for making DynamoDB easier to work with. Begin Data comes bundled with every Begin app and is designed to accommodate most general persistence use cases. It's core API has three simple methods: `get`, `set`, and `destroy`. In this tutorial, we will how to setup and start using Begin Data in your Begin app.
+[Begin Data](https://docs.begin.com/en/data/begin-data/) is an easy to use, fast, durable, highly scalable, fully managed, SSD-based key-value and document database built on top of DynamoDB. Think of it as syntactic sugar for making DynamoDB easier to work with. Begin Data comes bundled with every Begin app and is designed to accommodate most general persistence use cases. It's core API has three simple methods: `get`, `set`, and `destroy`. In this tutorial, we will show you how to setup and start using Begin Data in your Begin app.
 
 [DynamoDB](https://aws.amazon.com/dynamodb/) is a non relational(noSQL) key-value and document database for applications that need performance at any scale. Read the official AWS docs on [DynamoDB here.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
 
@@ -81,97 +81,6 @@ git clone https://github.com/your-github-username/your-new-begin-app.git
 ```
 ---
 
-## Add Begin Data
-
-First things first. We must always require Begin Data at the top of our functions. The `arc` variable here is used for parsing request bodies in our functions. Follow the link to learn more about [parsing request bodies](https://arc.codes/primitives/http#parsing-request-bodies).
-
-```js
-let arc = require('@architect/functions')
-let data = require('@begin/data')
-```
-
-### API
-
-**The core API is three methods:**
-
-- `data.get(params[, callback])` → [Promise] for retrieving data
-- `data.set(params[, callback])` → [Promise] for writing data
-- `data.destroy(params[, callback])` → [Promise] for removing data
-
-**Additional helper methods are also made available:**
-
-- `data.incr(params[, callback])` → [Promise] increment an attribute on a document
-- `data.decr(params[, callback])` → [Promise] decrement an attribute on a document
-- `data.count(params[, callback])` → [Promise] get the number of documents for a given table
-
-All methods accept a params object and, optionally, a Node-style errback. If no errback is supplied, a Promise is returned. All methods support async/await.
-
-### Writes
-Save a document in a table by key. Remember: `table` is required; `key` is optional.
-
-```js
-let taco = await data.set({
-  table: 'tacos',
-  key: 'al-pastor'
-})
-```
-All documents have a key. If no key is given, set will generate a unique key.
-
-```js
-let token = await data.set({
-  table: 'tokens',
-})
-// {table:'tokens', key:'LCJkYX9jYWwidW50RhSU'}
-```
-Batch save multiple documents at once by passing an Array of Objects.
-
-```js
-let collection = await data.set([
-  {table: 'ppl', name:'brian', email:'b@brian.io'},
-  {table: 'ppl', name:'sutr0', email:'sutr0@brian.io'},
-  {table: 'tacos', key:'pollo'},
-  {table: 'tacos', key:'carnitas'},
-])
-```
-
-### Reads
-
-Read a document by key:
-
-```js
-let yum = await data.get({
-  table: 'tacos',
-  key: 'baja'
-})
-```
-Batch read by passing an Array of Objects. With these building blocks you can construct secondary indexes and joins, like one-to-many and many-to-many.
-
-```js
-await data.get([
-  {table:'tacos', key:'carnitas'},
-  {table:'tacos', key:'al-pastor'},
-])
-```
-
-### Destroy
-
-Delete a document by key.
-
-```js
-await data.destroy({
-  table: 'tacos',
-  key: 'pollo'
-})
-```
-
-Batch delete documents by passing an Array of Objects.
-
-```js
-await data.destroy([
-  {table:'tacos', key:'carnitas'},
-  {table:'tacos', key:'al-pastor'},
-])
-```
 ## Project structure
 
 Now that your app is live on staging and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your new app:
@@ -268,6 +177,98 @@ exports.handler = async function destroy (req) {
 }
 ```
 ---
+
+## Add Begin Data
+
+First things first. We must always require Begin Data at the top of our functions. The `arc` variable here is used for parsing request bodies in our functions. Follow the link to learn more about [parsing request bodies](https://arc.codes/primitives/http#parsing-request-bodies).
+
+```js
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+```
+
+### API
+
+**The core API is three methods:**
+
+- `data.get(params[, callback])` → [Promise] for retrieving data
+- `data.set(params[, callback])` → [Promise] for writing data
+- `data.destroy(params[, callback])` → [Promise] for removing data
+
+**Additional helper methods are also made available:**
+
+- `data.incr(params[, callback])` → [Promise] increment an attribute on a document
+- `data.decr(params[, callback])` → [Promise] decrement an attribute on a document
+- `data.count(params[, callback])` → [Promise] get the number of documents for a given table
+
+All methods accept a params object and, optionally, a Node-style errback. If no errback is supplied, a Promise is returned. All methods support async/await.
+
+### Writes
+Save a document in a table by key. Remember: `table` is required; `key` is optional.
+
+```js
+let taco = await data.set({
+  table: 'tacos',
+  key: 'al-pastor'
+})
+```
+All documents have a key. If no key is given, set will generate a unique key.
+
+```js
+let token = await data.set({
+  table: 'tokens',
+})
+// {table:'tokens', key:'LCJkYX9jYWwidW50RhSU'}
+```
+Batch save multiple documents at once by passing an Array of Objects.
+
+```js
+let collection = await data.set([
+  {table: 'ppl', name:'brian', email:'b@brian.io'},
+  {table: 'ppl', name:'sutr0', email:'sutr0@brian.io'},
+  {table: 'tacos', key:'pollo'},
+  {table: 'tacos', key:'carnitas'},
+])
+```
+
+### Reads
+
+Read a document by key:
+
+```js
+let yum = await data.get({
+  table: 'tacos',
+  key: 'baja'
+})
+```
+Batch read by passing an Array of Objects. With these building blocks you can construct secondary indexes and joins, like one-to-many and many-to-many.
+
+```js
+await data.get([
+  {table:'tacos', key:'carnitas'},
+  {table:'tacos', key:'al-pastor'},
+])
+```
+
+### Destroy
+
+Delete a document by key.
+
+```js
+await data.destroy({
+  table: 'tacos',
+  key: 'pollo'
+})
+```
+
+Batch delete documents by passing an Array of Objects.
+
+```js
+await data.destroy([
+  {table:'tacos', key:'carnitas'},
+  {table:'tacos', key:'al-pastor'},
+])
+```
 
 ## Begin Data in Action
 
