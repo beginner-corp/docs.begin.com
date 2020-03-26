@@ -2,11 +2,7 @@
 
 ## Introduction
 
-[Begin Data](https://docs.begin.com/en/data/begin-data/) is a DynamoDB client for creating a special table schema that is generic. 
-
-Begin Data is an easy to use, fast, and durable key/value and document store built on top of DynamoDB. Originally built for Begin serverless apps, 
-
-Think of it as syntactic sugar for making DynamoDB easier to work with in your Begin app. It is an easy to use, fast, durable, highly scalable, fully managed, SSD-based key-value and document database that comes bundled with every Begin app. Begin Data is easy to learn and simple to implement, and is designed to accommodate most general persistence use cases. Begin Data’s core API has three simple methods: get, set, and destroy. In this tutorial, we will how to setup a persistent database in your Begin app.
+[Begin Data](https://docs.begin.com/en/data/begin-data/) is an easy to use, fast, durable, highly scalable, fully managed, SSD-based key-value and document database built on top of DynamoDB. Think of it as syntactic sugar for making DynamoDB easier to work with. Begin Data comes bundled with every Begin app and is designed to accommodate most general persistence use cases. It's core API has three simple methods: `get`, `set`, and `destroy`. In this tutorial, we will how to setup and start using Begin Data in your Begin app.
 
 [DynamoDB](https://aws.amazon.com/dynamodb/) is a non relational(noSQL) key-value and document database for applications that need performance at any scale. Read the official AWS docs on [DynamoDB here.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
 
@@ -22,7 +18,7 @@ This tutorial also assumes some familiarity with such things as:
 - Git and version control
 - General software development using JavaScript
 
-You do not need to be an expert in any of these things in order to follow along and make your first Vue app in Begin!
+You do not need to be an expert in any of these things in order to follow along and make your first crud app in Begin!
 
 ---
 
@@ -30,7 +26,7 @@ You do not need to be an expert in any of these things in order to follow along 
 
 First, click the **Deploy to Begin** button below. This starts the process of authorizing Begin with your GitHub account. (You may be prompted to log into GitHub, and/or be asked to create a Begin username.)
 
-[![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-hello-world)
+[![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-crud)
 
 ### Name your app & repo
 
@@ -60,44 +56,222 @@ If no build steps fail, then the build containing your latest commit to `master`
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your new app:
 
-![Hello World Starter](/_static/screens/shared/begin-hello-world.jpg)
+![CRUD Starter](/_static/screens/shared/begin-crud.jpg)
 
 > 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
 
 ---
 
-## Make your first commit
+## Get set up locally
 
-Click the `Edit on GitHub` button to push your first commit. This will take you to GitHub where you can edit the `public/index.html` file of your project.
+Next let's get your new site running in your local environment (i.e. the computer you work on).
 
-![Name your Begin app and repo](/_static/screens/shared/begin-activity-2.jpg)
+First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the clone or download button and copy the git URL.
 
-Let's simply change the word "Beginner" to your own name. Click the commit changes button and now you've made your first commit!
+Then head to your terminal and clone your repo to your local filesystem.
 
-```html
- <h1 style="margin-bottom: 24px" class="center-text">
-        Howdy, Beginner!  <!--Edit this line  -->
- </h1>
+```bash
+git clone https://github.com/your-github-username/your-new-begin-app.git
 ```
-Now git clone the repo to your local machine. Navigate into the project and open it in your favorite text editor. In the next section we will go over how to add Begin Data.
 
+Once you've got your project cloned on your local machine, `cd` into the project directory and install your dependencies:
+
+```bash
+git clone https://github.com/your-github-username/your-new-begin-app.git
+```
 ---
 
 ## Add Begin Data
 
-You're a natural! Now let's add Begin Data
+First things first. We must always require Begin Data at the top of our functions. The `arc` variable here is used for parsing request bodies in our functions. Follow the link to learn more about [parsing request bodies](https://arc.codes/primitives/http#parsing-request-bodies).
 
-**Create a new Table in five easy steps**
-1. Head to your app’s repo folder
-2. Open the `.arc` file in your root
-3. Find (or add) the `@table` pragma, and on a new line, add a route ( `get /foo` )
-4. Start the local dev environment (`npm start`) to generate any new HTTP Function handlers
-5. Push your changes!
+```js
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+```
 
-Your new route will instantly activate in `staging`. Then deploy to `production` to see them there, too.
+### API
+
+**The core API is three methods:**
+
+- `data.get(params[, callback])` → [Promise] for retrieving data
+- `data.set(params[, callback])` → [Promise] for writing data
+- `data.destroy(params[, callback])` → [Promise] for removing data
+
+**Additional helper methods are also made available:**
+
+- `data.incr(params[, callback])` → [Promise] increment an attribute on a document
+- `data.decr(params[, callback])` → [Promise] decrement an attribute on a document
+- `data.count(params[, callback])` → [Promise] get the number of documents for a given table
+
+All methods accept a params object and, optionally, a Node-style errback. If no errback is supplied, a Promise is returned. All methods support async/await.
+
+### Writes
+Save a document in a table by key. Remember: `table` is required; `key` is optional.
+
+```js
+let taco = await data.set({
+  table: 'tacos',
+  key: 'al-pastor'
+})
+```
+All documents have a key. If no key is given, set will generate a unique key.
+
+```js
+let token = await data.set({
+  table: 'tokens',
+})
+// {table:'tokens', key:'LCJkYX9jYWwidW50RhSU'}
+```
+Batch save multiple documents at once by passing an Array of Objects.
+
+```js
+let collection = await data.set([
+  {table: 'ppl', name:'brian', email:'b@brian.io'},
+  {table: 'ppl', name:'sutr0', email:'sutr0@brian.io'},
+  {table: 'tacos', key:'pollo'},
+  {table: 'tacos', key:'carnitas'},
+])
+```
+
+### Reads
+
+Read a document by key:
+
+```js
+let yum = await data.get({
+  table: 'tacos',
+  key: 'baja'
+})
+```
+Batch read by passing an Array of Objects. With these building blocks you can construct secondary indexes and joins, like one-to-many and many-to-many.
+
+```js
+await data.get([
+  {table:'tacos', key:'carnitas'},
+  {table:'tacos', key:'al-pastor'},
+])
+```
+
+### Destroy
+
+Delete a document by key.
+
+```js
+await data.destroy({
+  table: 'tacos',
+  key: 'pollo'
+})
+```
+
+Batch delete documents by passing an Array of Objects.
+
+```js
+await data.destroy([
+  {table:'tacos', key:'carnitas'},
+  {table:'tacos', key:'al-pastor'},
+])
+```
+## Project structure
+
+Now that your app is live on staging and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your new app:
+```bash
+.
+├── public/
+│   └── index.html
+└── src/
+    └── http/
+         ├── get-todos/
+         ├── post-todos/
+         └── post-todos-delete/
+```
+### `public/index.html`
+
+`public/index.html` is the page served in the browser. This is also where our apps CSS styles and JavaScript live. Here, we will fetch our todos from our HTTP functions and append them to elements on the DOM while manipulating the state of our app.
+
+### `src/http/get-todos/`
+This function allows you to read the `todos` from your `todos` database table that were created with the HTML form on the home page.
+
+```js
+// `src/http/get-todos`
+
+const data = require('@begin/data')
+
+exports.handler = async function todos (req) {
+  let todos = await data.get({
+    table: 'todos'
+  })
+  // Return oldest todo first
+  todos.sort((a, b) => a.created > b.created)
+  return {
+    statusCode: 201,
+    headers: {
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body: JSON.stringify({
+      todos
+    })
+  }
+}
+```
+
+### `src/http/post-todos/`
+This is the function that creates todos on your `todos` database table when text is entered on the HTML form. 
+
+```js
+// `src/http/post-todos`
+
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+
+exports.handler = async function post (req) {
+  let todo = arc.http.helpers.bodyParser(req) // Base64 decodes + parses body
+  todo.created = todo.created || Date.now()
+  todo.completed = !!todo.completed
+  await data.set({
+    table: 'todos',
+    ...todo
+  })
+  return {
+    statusCode: 302,
+    headers: {
+      'location': '/',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    }
+  }
+}
+```
+
+### `src/http/post-todos-delete/`
+This function simply deletes any of the todos from your database table.
+
+```js
+// `src/http/post-todos-delete`
+
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+
+exports.handler = async function destroy (req) {
+  let key = arc.http.helpers.bodyParser(req).key // Base64 decodes + parses body
+  await data.destroy({
+    table: 'todos',
+    key
+  })
+  return {
+    statusCode: 302,
+    headers: {
+      'location': '/',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    }
+  }
+}
+```
+
+
+
 
 ---
-
 ## Deploy your site
 
 While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
