@@ -283,7 +283,7 @@ An example:
 
 ```js
 let table = 'greetings'
-await data.get({table}) // Returns: 42
+await data.count({table}) // Returns: 42
 ```
 
 
