@@ -96,7 +96,7 @@ Now that your app is live on staging and running locally, let's take a quick loo
 ```
 ### `public/index.html`
 
-This directory hold the page that is served in the browser. This is also where our apps CSS styles and JavaScript live. Here, we will fetch our todos from our HTTP functions and append them to elements on the DOM while manipulating the state of our app.
+This directory holds the page that is served in the browser. This is also where our apps CSS styles and JavaScript live. Here, we will fetch our todos from our HTTP functions and append them to elements on the DOM while manipulating the state of our app.
 
 ### `src/http/get-todos/`
 This function allows you to read the current `todos` from your `todos` database table that were created with the HTML form on the home page.
@@ -383,5 +383,5 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
 - More about Begin Data
   - [Begin Data Official docs](https://docs.begin.com/en/data/begin-data/)
-  - [Begin-Data GitHub](https://github.com/smallwins/begin-data)
+  - [Begin Data GitHub](https://github.com/smallwins/begin-data)
   - [Arc.codes/tables](https://arc.codes/primitives/tables)
