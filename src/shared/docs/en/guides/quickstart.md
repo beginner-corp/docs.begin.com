@@ -28,7 +28,7 @@ Begin supports local, offline development on just about all modern computers, in
 
 ### Runtimes: Node.js 10
 
-Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support additional runtimes coming soon).
+Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support for additional runtimes coming soon).
 
 You can work locally with versions of Node other than 10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 10.
 
