@@ -181,6 +181,22 @@
     ]
   },
   {
+    "catID": "event-functions",
+    "catTitle": "Event Functions",
+    "docs": [
+      {
+        "docID": "provisioning",
+        "docTitle": "Provisioning",
+        "description": "Provisioning new Event Functions for your Begin application",
+        "sections": [
+          "Overview",
+          "Provisioning new Event Functions",
+          "The basics"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "data",
     "catTitle": "Data",
     "docs": [
