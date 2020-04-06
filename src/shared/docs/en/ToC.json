@@ -197,6 +197,22 @@
     ]
   },
   {
+    "catID": "scheduled-functions",
+    "catTitle": "Scheduled Functions",
+    "docs": [
+      {
+        "docID": "provisioning",
+        "docTitle": "Provisioning",
+        "description": "Provisioning new Scheduled Functions for your Begin application",
+        "sections": [
+          "Overview",
+          "Provisioning new Scheduled Functions",
+          "The basics"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "data",
     "catTitle": "Data",
     "docs": [
