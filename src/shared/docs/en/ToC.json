@@ -191,7 +191,8 @@
         "sections": [
           "Overview",
           "Provisioning new Event Functions",
-          "The basics"
+          "The basics",
+          "Common use-cases"
         ]
       }
     ]
