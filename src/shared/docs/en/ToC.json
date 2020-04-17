@@ -265,19 +265,20 @@
       },
       {
         "docType": "Guide",
-        "docID": "http-functions",
-        "docTitle": "HTTP Functions",
-        "description": "Begin HTTP Functions: Getting started.",
+        "docID": "begin-data",
+        "docTitle": "Begin Data",
+        "description": "Get started building databasses with Begin Data",
         "icon": "circle-begin.svg",
-        "background": "gradient-pink-purple.png",
+        "background": "gradient-pink-blue.png",
         "sections": [
+          "Introduction",
           "Prerequisites",
           "Getting started",
           "Your first deploy",
-          "Make your first commit",
-          "Writing HTTP Functions",
+          "Get set up locally",
           "Project structure",
-          "Fetching data between functions",
+          "Add Begin Data",
+          "Begin Data in Action",
           "Deploy your site",
           "Additional resources"
         ]

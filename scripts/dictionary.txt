@@ -108,6 +108,7 @@ hostname
 html-webpack-plugin
 HTTPS
 IAM
+IIFE
 incrementing
 ing
 instantiations
@@ -201,6 +202,8 @@ subdomains
 subfolder
 TestFlight
 tiny-json-http
+todos
+Todo
 transpiling
 tsx
 TTL
