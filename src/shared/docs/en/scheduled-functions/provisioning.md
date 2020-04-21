@@ -26,7 +26,7 @@ your-app-name
 cleanup rate(1 day)
 tweet rate(1 hour)
 ```
-Scheduled functions can be configured with either rate or cron.
+Scheduled functions can be configured with either `rate` or `cron`.
 
 > ⚠️ Rate expressions are simpler to define but don't offer the fine-grained schedule control that cron expressions support. For example, with a cron expression, you can define a rule that triggers at a specified time on a certain day of each week or month. In contrast, rate expressions trigger a rule at a regular rate, such as once every hour or once every day.
 
@@ -46,4 +46,4 @@ Each Scheduled Function (@scheduled pragma) can create rules that self-trigger o
 
 ### Scheduled handler
 
-Once this handler is created, we can trigger an HTTP Function with our business logic to execute on a schedule.
+Once this handler is created, we can use it to trigger an HTTP Function with our business logic to execute on a schedule.
