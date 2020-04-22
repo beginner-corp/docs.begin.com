@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough of creating an Apollo GraphQL app on Begin. It should take fewer than 15 minutes.
+> ⏱ This tutorial is an introductory walkthrough of creating an Apollo GraphQL app on Begin. It should take less than 15 minutes.
 
 ## Introduction
 
@@ -147,7 +147,7 @@ Let's go over each of these directories and how you may use them:
 
 ### `public/`
 
-The `public` directory is where we host our homepage `index.html`. Inside we have an example GraphQL query that pulls in data from our HTTP function using an async function that fetches our GraphQL data graph from `src/http/post-graphql/index.js`. We then append our query results to a DOM element using `getElementById`.
+The `public` directory is where we host our home page: `index.html`. Inside we have an example GraphQL query that pulls in data from our HTTP function using an async function that fetches our GraphQL data graph from `src/http/post-graphql/index.js`. We then append our query results to a DOM element using `getElementById`.
 
 ```js
 // public/index.html
@@ -155,7 +155,7 @@ The `public` directory is where we host our homepage `index.html`. Inside we hav
  <!-- Example GraphQL query -->
  // Fetch data graph layer
   <script type=module>
-      (async function() {
+    (async function() {
       let query = `{hello}`
       let result = await fetch('/graphql', {
         method: 'post',
@@ -171,8 +171,8 @@ The `public` directory is where we host our homepage `index.html`. Inside we hav
       // Append results to div element
       let code = document.getElementById('code')
       code.innerHTML = JSON.stringify(json, null, 2)
-      })()
-    </script>
+    })()
+  </script>
 ```
 
 ### `src/http/post-graphql/`
@@ -411,12 +411,12 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
 
 - More about Apollo
-  - [Apollo homepage](https://www.apollographql.com/)
+  - [Apollo home](https://www.apollographql.com/)
   - [Apollo docs](https://www.apollographql.com/docs/)
   - [LevelUpTuts - What Is Apollo?](https://www.youtube.com/watch?v=mSzUb7f47qk)
 
 - More about GraphQL
   - [GraphQL: The Documentary](https://www.youtube.com/watch?v=783ccP__No8&t=140s)
-  - [GraphQL homepage](https://graphql.org/)
+  - [GraphQL home](https://graphql.org/)
   - [GraphQL docs](https://graphql.org/learn/)
   - [GraphQL Playground](https://github.com/prisma-labs/graphql-playground)

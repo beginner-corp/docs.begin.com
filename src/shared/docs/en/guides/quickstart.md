@@ -17,7 +17,7 @@ While this guide assumes general familiarity with such things as text editors, t
 ### tl;dr, you'll need:
 - A (free) GitHub account
 - Any computer running macOS, Windows, or Linux, with:
-  - Node.js 10
+  - Node.js 12
   - npm 6.x
 
 
@@ -26,13 +26,13 @@ While this guide assumes general familiarity with such things as text editors, t
 Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
 
 
-### Runtimes: Node.js 10
+### Runtimes: Node.js 12
 
-Begin provisions and manages AWS infrastructure that runs solely on Node.js 10 (with support for additional runtimes coming soon).
+Begin provisions and manages AWS infrastructure that runs solely on Node.js 12 (with support additional runtimes coming soon).
 
-You can work locally with versions of Node other than 10, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 10.
+You can work locally with versions of Node other than 12, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 12.
 
-You can grab [Node latest](https://nodejs.org/en/download/) here, or [v10.15 here](https://nodejs.org/dist/v10.15.3/).
+You can grab [Node.js here](https://nodejs.org/en/download/).
 
 
 ### Package management: NPM 6.x

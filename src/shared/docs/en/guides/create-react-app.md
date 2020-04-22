@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough of creating a React app on Begin. It should take fewer than 15 minutes.
+> ⏱ This tutorial is an introductory walkthrough of creating a React app on Begin. It should take less than 15 minutes.
 
 ## Introduction
 
@@ -315,6 +315,6 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
 - More about React:
-  - [React homepage](https://reactjs.org/)
+  - [React home](https://reactjs.org/)
   - [React docs](https://reactjs.org/docs/getting-started.html)
   - [CRA Getting Started](https://create-react-app.dev/docs/getting-started/)
