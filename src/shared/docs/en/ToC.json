@@ -362,7 +362,7 @@
       },
       {
         "docType": "Tutorial",
-        "docID": "apollo-graphQL",
+        "docID": "apollo-graphql",
         "docTitle": "Apollo GraphQL",
         "description": "Fully serverless Apollo GraphQL API, ready to be wired up to your data.",
         "icon": "circle-apollo.svg",

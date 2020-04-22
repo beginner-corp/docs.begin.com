@@ -1,6 +1,6 @@
 {
   "name": "docs.begin.com",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "description": "https://docs.begin.com",
   "scripts": {
     "deploy": "./scripts/deploy",
@@ -21,9 +21,9 @@
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.37",
     "eslint": "^6.8.0",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.9",
-    "spellchecker-cli": "^4.1.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
+    "spellchecker-cli": "^4.2.0",
     "svg-symbols": "^1.0.5",
     "svgo": "^1.3.2",
     "tap-spec": "^5.0.0",
