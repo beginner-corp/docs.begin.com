@@ -264,12 +264,12 @@
         ]
       },
       {
-        "docType": "Guide",
-        "docID": "begin-data",
-        "docTitle": "Begin Data",
-        "description": "Get started building databasses with Begin Data",
+        "docType": "Tutorial",
+        "docID": "crud-app",
+        "docTitle": "CRUD app with data",
+        "description": "Build a simple yet powerful CRUD app that persists data with Begin Data",
         "icon": "circle-begin.svg",
-        "background": "gradient-pink-blue.png",
+        "background": "gradient-green-blue.png",
         "sections": [
           "Introduction",
           "Prerequisites",
