@@ -2,7 +2,7 @@
 
 ## Begin HTTP Functions
 
-Getting started with Begin HTTP Functions should take just a few minutes, but lay the groundwork for creating your own APIs.  In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction to what goes in an HTTP function and how to use them to deliver data to your apps.
+Getting started with Begin HTTP Functions should take just a few minutes, but lay the groundwork for creating your own APIs. In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction to what goes in an HTTP function and how to use them to deliver data to your apps.
 
 ### Prerequisites
 
@@ -151,6 +151,7 @@ Infrastructure-as-code is the practice of provisioning and maintaining cloud inf
 By checking in your Begin app’s project manifest (.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+
 ---
 
 ## Fetching data from HTTP Functions
@@ -217,6 +218,7 @@ Now open the `public/index.js` file and replace it's contents to use this functi
   }
 }())
 ```
+
 Now you can see the data from our `get /api` HTTP Function is being requested by our frontend code via fetch then displayed in our HTML page.
 
 ![Hello World Starter](/_static/screens/shared/begin-hello-world-api.jpg)

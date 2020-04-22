@@ -264,6 +264,25 @@
         ]
       },
       {
+        "docType": "Guide",
+        "docID": "http-functions",
+        "docTitle": "HTTP Functions",
+        "description": "Get started building with HTTP functions (aka Lambdas / cloud functions)",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-purple.png",
+        "sections": [
+          "Prerequisites",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Writing HTTP Functions",
+          "Project structure",
+          "Fetching data between functions",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docType": "Tutorial",
         "docID": "crud-app",
         "docTitle": "CRUD app with data",
