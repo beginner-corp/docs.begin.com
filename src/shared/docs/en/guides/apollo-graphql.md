@@ -14,7 +14,7 @@ Created by Facebook in parallel with React, GraphQL is a query language that def
 ### What is Apollo?
 Apollo is the industry-standard GraphQL implementation, providing the data graph layer that connects modern apps to the cloud.
 
-The Apollo platform is an implementation of GraphQL that can transfer data between the cloud (server) to the UI of your app. In fact, Apollo builds its environment in such a way that we can use it to handle GraphQL on the client as well as the server side of the application.
+The Apollo platform is an implementation of GraphQL that can transfer data between the cloud (server) to the UI of your app. In fact, Apollo builds its environment in such a way that we can use it to handle GraphQL on the client as well as the server-side of the application.
 
 > To learn more about Apollo click [here](https://www.apollographql.com/docs/) to checkout their docs!
 
@@ -108,7 +108,7 @@ When it's done, don't forget to see your changes live in your `staging` environm
 
 Next let's get your new site running in your local environment (i.e. the computer you work on).
 
-First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download** button and copy the git URL.
+First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download the** button and copy the git URL.
 
 Then head to your terminal and clone your repo to your local filesystem.
 
@@ -177,7 +177,7 @@ The `public` directory is where we host our home page: `index.html`. Inside we h
 
 ### `src/http/post-graphql/`
 
-The `POST /graphql` function constructs a schema, using GraphQL schema language and then sets up a GraphQL server that will enforce our schema's structure. Afterwards we provide resolver functions for your schema fields that will output our `Hello World` string! To learn more about GraphQL schemas, check out this section of the Apollo docs: [Build a schema](https://www.apollographql.com/docs/tutorial/schema/).
+The `POST /graphql` function constructs a schema, using GraphQL schema language and then sets up a GraphQL server that will enforce our schema's structure. Afterwards, we provide resolver functions for your schema fields that will output our `Hello World` string! To learn more about GraphQL schemas, check out this section of the Apollo docs: [Build a schema](https://www.apollographql.com/docs/tutorial/schema/).
 
 ```js
 // src/http/post-graphql/index.js
@@ -209,13 +209,13 @@ exports.handler = function(event, context, callback) {
 }
 ```
 
-In the next section we will go more in depth about how to provision HTTP functions in your Apollo GraphQL app by setting up a function that displays the GraphQL playground.
+In the next section we will go more in-depth about how to provision HTTP functions in your Apollo GraphQL app by setting up a function that displays the GraphQL playground.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
 
 ### `src/test/`
 
-Your Apollo GraphQL project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
+Your Apollo GraphQL project comes built-in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
 
 A solid platform is the foundation of a durable application, but tests are essential!
 

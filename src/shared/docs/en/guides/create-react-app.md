@@ -157,7 +157,7 @@ Some Begin apps are inert static web sites – but not this one. Your React app 
 
 The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
 
-In the next section we will go more in depth about how to provision HTTP functions in your React app.
+In the next section we will go more in-depth about how to provision HTTP functions in your React app.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
 
@@ -169,7 +169,7 @@ Along with the other boilerplate React app files (`src/App.css`, `src/App-test.j
 
 ### `src/test/`
 
-Your React project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
+Your React project comes built-in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `src/test/example/` directory.
 
 A solid platform is the foundation of a durable application, but tests are essential!
 

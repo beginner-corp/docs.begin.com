@@ -97,7 +97,7 @@ Create a new route in five easy steps
 Your new route will automatically deploy to `staging`.
 If you are happy with `staging` you can click the "Deploy to Production" button to see it live on your production environment.
 
-> For more in depth instructions on how to provision new HTTP Functions, you can [checkout our docs here](https://docs.begin.com/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
+> For more in-depth instructions on how to provision new HTTP Functions, you can [checkout our docs here](https://docs.begin.com/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
 
 ---
 
@@ -141,7 +141,7 @@ Your app utilizes this built-in small, fast, individually executing cloud functi
 
 The HTTP function that handles requests to `get /api` is found in `src/http/get-api/`.
 
-In the next section we will go more in depth about how to fetch data from an HTTP Function.
+In the next section we will go more in-depth about how to fetch data from an HTTP Function.
 
 ### `.arc`
 Your `.arc` file is where you will provision new routes and functions.

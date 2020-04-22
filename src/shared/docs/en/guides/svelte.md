@@ -185,7 +185,7 @@ Some Begin apps are inert static web sites – but not this one. Your Svelte app
 
 The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
 
-In the next section we will go more in depth about how to provision HTTP functions in your Svelte app.
+In the next section we will go more in-depth about how to provision HTTP functions in your Svelte app.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
 
@@ -228,7 +228,7 @@ Lastly, at the bottom of `src/App.svelte` we have a `<style>` tag, which contain
 
 ### `rollup.config.js`
 
-[Rollup](https://rollupjs.org/guide/en/) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It allows us to use ES modules `import` syntax so that we may create component based applications. This config file bundles all of your component-level CSS and JS into the `public` directory.
+[Rollup](https://rollupjs.org/guide/en/) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It allows us to use ES modules `import` syntax so that we may create component-based applications. This config file bundles all of your component-level CSS and JS into the `public` directory.
 
 ---
 

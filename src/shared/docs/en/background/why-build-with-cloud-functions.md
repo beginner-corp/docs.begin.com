@@ -16,7 +16,7 @@ It also means your app deploys instantly, you pay only for what you use, and you
 ## So, here's why build with cloud functions
 > ✨Let's learn your new superpowers
 
-Unlike server-metaphor based technologies (servers, VMs, instances, Docker / Kubernetes, etc. – which we'll just call "servers" here), CFAs:
+Unlike server-metaphor-based technologies (servers, VMs, instances, Docker / Kubernetes, etc. – which we'll just call "servers" here), CFAs:
 - **Deploy new code instantaneously** - a single function deploys globally in seconds, and a large app in minutes. This means orders of magnitude tighter iteration cycles and faster fixes, which in turn means far greater customer value.
 - **Scale up to meet increased demand instantly** - cloud functions are completely elastic, and instantly create additional instantiations of themselves as demand grows. Never worry about the app going down again.
 - **Scale and grow automatically** - time spent capacity planning is time wasted
@@ -40,7 +40,7 @@ Unlike servers, which can take seconds or minutes to spin up, cloud functions st
 
 ### **Statelessness can impact your choice of database**
 Because cloud functions are effectively stateless, older socket-based data persistence systems (example: most SQL databases) can become overwhelmed by their need to open and close connections so frequently.
-- For this reason, cloud functions work best with persistence systems that utilize fast, non-socket based methods of transaction (e.g. HTTP, API, etc.)
+- For this reason, cloud functions work best with persistence systems that utilize fast, non-socket-based methods of transaction (e.g. HTTP, API, etc.)
 - Examples include Begin Data / DynamoDB, Firebase, RethinkDB, FaunaDB, GraphQL, etc.
 - This is, of course, evolving! We understand there projects launching soon to enable cloud function-friendly accessing of socket-based databases like SQL, Postgres, MongoDB, etc.
 

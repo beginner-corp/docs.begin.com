@@ -177,7 +177,7 @@ let layout = require('@architect/views/main')
 
 Now for the fun part! Let's customize your personal website and really make it your own.
 
-You've already changed default name. Now let's add your social media links and change the background image.
+You've already changed the default name. Now let's add your social media links and change the background image.
 
 ![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
 
