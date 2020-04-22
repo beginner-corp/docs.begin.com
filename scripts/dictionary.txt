@@ -202,8 +202,9 @@ subdomains
 subfolder
 TestFlight
 tiny-json-http
-todos
+todo
 Todo
+todos
 transpiling
 tsx
 TTL
@@ -217,17 +218,9 @@ Utils
 vars
 vimrc
 VPC
-Vue
-<<<<<<< HEAD
-<<<<<<< HEAD
-vue-cli
-=======
->>>>>>> Vue init
-=======
-vue-cli
->>>>>>> vue cli
 vs
 Vue
+vue-cli
 walkthrough
 webhooks
 Webpack

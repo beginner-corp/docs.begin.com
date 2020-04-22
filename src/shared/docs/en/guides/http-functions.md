@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough on creating HTTP Functions with Begin. It should take fewer than 10 minutes.
+> ⏱ This tutorial is an introductory walkthrough on creating HTTP Functions with Begin. It should take less than 10 minutes.
 
 ## Begin HTTP Functions
 

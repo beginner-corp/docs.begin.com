@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough of creating a personal website on Begin. It should take fewer than 5 minutes.
+> ⏱ This tutorial is an introductory walkthrough of creating a personal website on Begin. It should take less than 5 minutes.
 
 ## Introduction
 
