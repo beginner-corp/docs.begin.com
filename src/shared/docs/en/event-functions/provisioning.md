@@ -48,6 +48,7 @@ The best way to think about event functions is to ask: "What sort of computation
 Event functions are an extremely useful and versatile feature to add to your application's architecture!
 
 
+
 ## Publishing an event
 
 The recommended (and easiest) way to publish an event is to use the `@architect/functions`. In the example below, assume an HTTP `post` endpoint is publishing an `account-verify-email` event:
