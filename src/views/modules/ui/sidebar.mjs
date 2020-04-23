@@ -23,10 +23,7 @@ class Sidebar extends Component {
     }
   }
 
-  hashChange (e) {
-    if (this.props.open) {
-      this.props.toggle && this.props.toggle()
-    }
+  hashChange () {
     this.setState({
       active: window.history.state
     })
@@ -102,7 +99,7 @@ function getDocs (props, state) {
   })
 }
 
-function getSections (props, state) {
+function getSections (props) {
   props = props || {}
   let category = props.category || ''
   let doc = props.doc || ''

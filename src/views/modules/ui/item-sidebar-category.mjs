@@ -1,37 +1,10 @@
-import { Component, html } from '../vendor/preact.mjs'
-import joinClass from '../util/join-classes.mjs'
+import { html } from '../vendor/preact.mjs'
 const linkClasses = 'mb0 c-p3 c-h0 c-a0 fw-book'
 
-class SidebarCategoryItem extends Component {
-  constructor (props) {
-    super(props)
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      open: props.active || false
-    }
-  }
-
-  toggle (e) {
-    e.preventDefault()
-    if (!this.props.active) {
-      this.setState({
-        open: !this.state.open
-      })
-    }
-  }
-
-  render (props, state) {
+export default function SidebarCategoryItem(props) {
     let active = props.active
     let title = props.title
     let documents = props.documents
-    let documentsClass = joinClass(
-      'o-hidden',
-      'menu-transition',
-      'max-h-0',
-      state.open
-        ? 'max-h-infinity'
-        : ''
-    )
     return html`
 <li
   active="${active}"
@@ -39,16 +12,12 @@ class SidebarCategoryItem extends Component {
 >
   <h6
     class="pt-3 pb-3 fs-1 fw-medium c-p8 uppercase nowrap cu-pointer"
-    onclick="${this.toggle}"
   >
     ${title}
   </h6>
-  <ul class="${documentsClass}">
+  <ul class="o-hidden">
     ${documents}
   </ul>
 </li>
   `
-  }
 }
-
-export default SidebarCategoryItem
