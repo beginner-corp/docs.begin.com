@@ -45,7 +45,8 @@ You can think of each event function as a named subscriber, which can be invoked
 
 The best way to think about event functions is to ask: "What sort of computational tasks can (or should) I be running in the background?" Some common examples may include: processing data and saving it to a data store (such as Begin Data), or saving files to S3.
 
-Event functions extremely useful and versatile feature to add to your application's architecture!
+Event functions are an extremely useful and versatile feature to add to your application's architecture!
+
 
 
 ## Publishing an event
