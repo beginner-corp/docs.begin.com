@@ -159,7 +159,7 @@ The HTTP function that handles requests to `GET /api` is found in `src/http/get-
 
 In the next section we will go more in-depth about how to provision HTTP functions in your React app.
 
-> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
 
 ### `src/App.js`

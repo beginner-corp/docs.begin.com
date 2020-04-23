@@ -211,7 +211,7 @@ exports.handler = function(event, context, callback) {
 
 In the next section we will go more in-depth about how to provision HTTP functions in your Apollo GraphQL app by setting up a function that displays the GraphQL playground.
 
-> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
 ### `src/test/`
 

@@ -60,6 +60,7 @@ CRA
 cross-env
 cruft
 cryptographically
+cron
 CSR
 CSRF
 CSS
@@ -92,6 +93,7 @@ env
 envs
 errback
 eslint
+Fanout
 FaunaDB
 filesystem
 FQDN
@@ -106,6 +108,7 @@ headlessly
 HelloWorld
 hostname
 html-webpack-plugin
+HTTP
 HTTPS
 IAM
 IIFE
@@ -190,8 +193,10 @@ serverless
 Serverless
 serverlessly
 SHA
+SMS
 SNS
 SQS
+src
 SSD-backed
 SSD-based
 SSL
