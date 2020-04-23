@@ -2,6 +2,8 @@
 
 What used to be web servers, web frameworks, routers, and tons of config is now **Begin HTTP functions**.
 
+When an HTTP request comes in, your HTTP functions are responsible for (synchronously) handling responses. (Longer-running async tasks can be farmed out to **[Begin event functions](/en/event-functions/provisioning)**.)
+
 Begin HTTP functions are fast, lightweight, stateless, isolated, highly durable, and require no configuration.
 
 Oh, and provisioning new HTTP functions is a cinch!

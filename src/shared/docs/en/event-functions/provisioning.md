@@ -1,6 +1,8 @@
 ## Overview
 
-Event functions give your app an asynchronous publish-subscribe (pub / sub) messaging bus, enabling you to farm out complex or less time-sensitive tasks.
+Asynchronously invoke background tasks in your application with **Begin event functions**.
+
+Event functions give your app a publish-subscribe (pub / sub) message bus, enabling you to farm out complex or less time-sensitive tasks to a dedicated asynchronous event function. (Synchronous HTTP requests are handled by **[Begin HTTP functions](/en/http-functions/provisioning)**.)
 
 Begin event functions are fast, lightweight, stateless, isolated, highly durable, and require no configuration.
 
@@ -16,7 +18,7 @@ To provision a new event function, in the root of your project, open your app's 
 2. On a new line, enter the event name you wish to create
   - For example: `account-verify-email`
 3. Start the local dev environment to generate some boilerplate event function handlers: `npm start`
-    - New function handlers will now appear in `src/events/` (e.g. `src/events/account-signup` & `src/events/account-verify-email`)
+  - New function handlers will now appear in `src/events/` (e.g. `src/events/account-signup` & `src/events/account-verify-email`)
 4. Commit and push your changes to your repo
 
 Here's what a basic Architect project manifest looks like with the above two **event functions** specified:
