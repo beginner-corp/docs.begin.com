@@ -111,6 +111,7 @@ html-webpack-plugin
 http
 HTTPS
 IAM
+IIFE
 incrementing
 ing
 instantiations
@@ -206,6 +207,9 @@ subdomains
 subfolder
 TestFlight
 tiny-json-http
+todo
+Todo
+todos
 transpiling
 tsx
 TTL
@@ -219,17 +223,9 @@ Utils
 vars
 vimrc
 VPC
-Vue
-<<<<<<< HEAD
-<<<<<<< HEAD
-vue-cli
-=======
->>>>>>> Vue init
-=======
-vue-cli
->>>>>>> vue cli
 vs
 Vue
+vue-cli
 walkthrough
 webhooks
 Webpack

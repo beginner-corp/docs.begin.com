@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take fewer than 15 minutes.
+> ⏱ This tutorial is an introductory walkthrough of creating a Vue app on Begin. It should take less than 15 minutes.
 
 ## Introduction
 
@@ -206,7 +206,7 @@ Some Begin apps are inert static web sites – but not this one. Your Vue app ut
 
 The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
 
-In the next section we will go more in depth about how to provision HTTP functions in your Vue app.
+In the next section we will go more in-depth about how to provision HTTP functions in your Vue app.
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
@@ -224,7 +224,7 @@ We create a new Vue instance and we render the app component inside of an elemen
 
 ### `src/test/`
 
-Your Vue project comes built in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `/test/example/` directory.
+Your Vue project comes built-in with a few boilerplate tests to ensure that things are running smoothly in your app. We've even loaded some example tests for **web integration** & **Begin data** in the `/test/example/` directory.
 
 A solid platform is the foundation of a durable application, but tests are essential!
 

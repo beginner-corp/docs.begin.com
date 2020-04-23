@@ -302,7 +302,7 @@
         "docType": "Guide",
         "docID": "http-functions",
         "docTitle": "HTTP functions",
-        "description": "Begin HTTP functions: Getting started.",
+        "description": "Get started building with HTTP functions",
         "icon": "circle-begin.svg",
         "background": "gradient-pink-purple.png",
         "sections": [
@@ -313,6 +313,26 @@
           "Writing HTTP functions",
           "Project structure",
           "Fetching data between functions",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
+        "docType": "Tutorial",
+        "docID": "crud-app",
+        "docTitle": "CRUD app with data",
+        "description": "Build a simple yet powerful CRUD app that persists data with Begin Data",
+        "icon": "circle-begin.svg",
+        "background": "gradient-green-blue.png",
+        "sections": [
+          "Introduction",
+          "Prerequisites",
+          "Getting started",
+          "Your first deploy",
+          "Get set up locally",
+          "Project structure",
+          "Add Begin Data",
+          "Begin Data in action",
           "Deploy your site",
           "Additional resources"
         ]
@@ -396,7 +416,7 @@
       },
       {
         "docType": "Tutorial",
-        "docID": "apollo-graphQL",
+        "docID": "apollo-graphql",
         "docTitle": "Apollo GraphQL",
         "description": "Fully serverless Apollo GraphQL API, ready to be wired up to your data.",
         "icon": "circle-apollo.svg",

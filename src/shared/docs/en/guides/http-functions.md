@@ -1,4 +1,4 @@
-> ⏱ This tutorial is an introductory walkthrough on creating HTTP functions with Begin. It should take fewer than 10 minutes.
+> ⏱ This tutorial is an introductory walkthrough on creating HTTP Functions with Begin. It should take less than 10 minutes.
 
 ## Begin HTTP functions
 
@@ -141,7 +141,7 @@ Your app utilizes this built-in small, fast, individually executing cloud functi
 
 The HTTP function that handles requests to `get /api` is found in `src/http/get-api/`.
 
-In the next section we will go more in depth about how to fetch data from an HTTP Function.
+In the next section we will go more in-depth about how to fetch data from an HTTP Function.
 
 ### `.arc`
 Your `.arc` file is where you will provision new routes and functions.
@@ -217,6 +217,7 @@ Now open the `public/index.js` file and replace it's contents to use this functi
   }
 }())
 ```
+
 Now you can see the data from our `get /api` HTTP Function is being requested by our frontend code via fetch then displayed in our HTML page.
 
 ![Hello World Starter](/_static/screens/shared/begin-hello-world-api.jpg)
