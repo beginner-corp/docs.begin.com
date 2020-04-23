@@ -281,7 +281,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 You've now got a shiny new personal website hosted on Begin – nice work.
 
-Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%personal%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20personal%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 ---
 
