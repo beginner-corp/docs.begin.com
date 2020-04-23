@@ -1,8 +1,8 @@
 ## Overview
 
-Say goodbye to web servers, web frameworks, routers, and tons of config – and say hello to **Begin HTTP Functions**.
+Say goodbye to web servers, web frameworks, routers, and tons of config – and say hello to **Begin HTTP functions**.
 
-This doc assumes familiarity with the basics of [how Begin HTTP Functions are provisioned](/en/http-functions/provisioning).
+This doc assumes familiarity with the basics of [how Begin HTTP functions are provisioned](/en/http-functions/provisioning).
 
 
 ## Getting started
@@ -11,10 +11,10 @@ In a Begin app, each HTTP Function maps to a logical HTTP route. (We define a ro
 
 You can think of HTTP Function as its own tiny app with a single responsibility: handling all business logic related to its corresponding HTTP route.
 
-HTTP Functions do not require dependencies, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library (`@architect/functions`)](https://github.com/architect/functions).
+HTTP functions do not require dependencies, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library (`@architect/functions`)](https://github.com/architect/functions).
 <!-- TODO: add link to Begin Arc Fns docs-->
 
-Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP Functions (and thus your app) super fast.
+Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP functions (and thus your app) super fast.
 
 
 ## HTTP handler API
@@ -159,7 +159,7 @@ return {
 }
 ```
 
-> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions), is automatic, customizeable, content-type aware generation of `Cache-Control` headers.
+> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions), is automatic, customizable, content-type aware generation of `Cache-Control` headers.
 <!-- TODO: add link to Begin Arc Fns docs-->
 
 

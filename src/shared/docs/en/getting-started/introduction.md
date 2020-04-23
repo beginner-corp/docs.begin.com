@@ -46,7 +46,7 @@ Changes to your app in your local environment are immediately available without 
 
 Your application's business logic exists within your HTTP Function directories (e.g. `src/http/get-index`), and your shared code folders (e.g. files in `src/shared/` or `src/views/`).
 
-Any new HTTP Functions (i.e. routes) that you create in Begin will be automatically committed to your project; run `git pull` to start working locally with them.
+Any new HTTP functions (i.e. routes) that you create in Begin will be automatically committed to your project; run `git pull` to start working locally with them.
 
 > ✨ Tip: if your local dev server is running when you pull down your new HTTP Function, it will automatically mount your new route and install its dependencies – no restart required!
 

@@ -91,7 +91,7 @@ exports.handler = async function http(request) {
 
 **[Optional]** Similar to `src/shared`, the `src/views` directory is another shared code utility folder. However this folder's contents are available only to your app's HTTP `GET` Functions.
 
-This allows for more efficient front-end code sharing, preventing the unnecessary bloat of your front-end getting copied to your non-`GET` and/or non-HTTP Functions.
+This allows for more efficient front-end code sharing, preventing the unnecessary bloat of your front-end getting copied to your non-`GET` and/or non-HTTP functions.
 
 Here's an example of how a file in `src/views` would be available to an HTTP `GET` Function after hydration:
 

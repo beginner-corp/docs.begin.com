@@ -14,7 +14,7 @@ We heard your feedback about things we needed to improve in first version of the
 
 We addressed all this feedback (and more) in our open core with [Architect 4 (Yeti)](https://blog.begin.com/introducing-architect-4-0-faster-lighter-simpler-serverless-59f6dc156bf2), and are now rolling it out to Begin! This includes:
 
-- Web routes are now built with generic, [zero-dependency HTTP Functions, capable of any Content-Type and status code](/en/functions/http/)
+- Web routes are now built with generic, [zero-dependency HTTP functions, capable of any Content-Type and status code](/en/functions/http/)
 - The new `public` folder easily syncs static assets and build artifacts
 - Frontend code can be [shared even more easily with `views`](https://blog.begin.com/architect-4-1-serverless-meet-frontend-workflows-3b3dd457de9)
 - [Adding CORS support to your Functions](https://blog.begin.com/enable-cors-on-your-serverless-application-with-a-single-boolean-e784fc061b22) is now simply a boolean
@@ -46,7 +46,7 @@ To upgrade your existing codebase to Architect 4 Begin apps, follow these steps:
   - Follow the steps to create a new free Begin app (enter an app name, etc.)
 3. Re-create any routes that you'd like to reuse in your new app
   - Click **Functions**
-  - Select the HTTP method and path and create your new HTTP Functions
+  - Select the HTTP method and path and create your new HTTP functions
 4. Move over the code you'd like to reuse from your old codebase to your new codebase
 5. If you're copying over your Function directories wholesale, make sure `@architect/functions` is updated in each route
   - `npx hydrate --update` from your project's root directory can help!

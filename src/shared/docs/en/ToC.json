@@ -139,25 +139,25 @@
   },
   {
     "catID": "http-functions",
-    "catTitle": "HTTP Functions",
+    "catTitle": "HTTP functions",
     "docs": [
       {
         "docID": "provisioning",
         "docTitle": "Provisioning",
-        "description": "Provisioning new HTTP Functions / routes for your Begin application",
+        "description": "Provisioning new HTTP functions / routes for your Begin application",
         "sections": [
           "Overview",
-          "Provisioning new HTTP Functions",
+          "Provisioning new HTTP functions",
           "The basics",
           "Greedy root",
           "Using URL parameters to create dynamic paths",
-          "Removing HTTP Functions"
+          "Removing HTTP functions"
         ]
       },
       {
         "docID": "api-reference",
         "docTitle": "API reference",
-        "description": "API reference for Begin HTTP Functions",
+        "description": "API reference for Begin HTTP functions",
         "sections": [
           "Overview",
           "Getting started",
@@ -170,7 +170,7 @@
       {
         "docID": "sessions",
         "docTitle": "Sessions",
-        "description": "Using Begin's built-in sessions support for HTTP Functions",
+        "description": "Using Begin's built-in sessions support for HTTP functions",
         "sections": [
           "Overview",
           "Writing to sessions",
@@ -187,12 +187,14 @@
       {
         "docID": "provisioning",
         "docTitle": "Provisioning",
-        "description": "Provisioning new Event Functions for your Begin application",
+        "description": "Provisioning new event functions for your Begin application",
         "sections": [
           "Overview",
-          "Provisioning new Event Functions",
+          "Provisioning new event functions",
           "The basics",
-          "Common use-cases"
+          "Publishing an event",
+          "Subscribing to an event",
+          "Removing event functions"
         ]
       }
     ]
@@ -299,8 +301,8 @@
       {
         "docType": "Guide",
         "docID": "http-functions",
-        "docTitle": "HTTP Functions",
-        "description": "Begin HTTP Functions: Getting started.",
+        "docTitle": "HTTP functions",
+        "description": "Begin HTTP functions: Getting started.",
         "icon": "circle-begin.svg",
         "background": "gradient-pink-purple.png",
         "sections": [
@@ -308,7 +310,7 @@
           "Getting started",
           "Your first deploy",
           "Make your first commit",
-          "Writing HTTP Functions",
+          "Writing HTTP functions",
           "Project structure",
           "Fetching data between functions",
           "Deploy your site",

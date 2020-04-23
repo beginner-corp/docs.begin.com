@@ -149,7 +149,7 @@ Look for your begin-vue-app project folder and click `import this folder` as sho
 
 ![vue-cli](/_static/screens/guides/vue/vue-cli-2.jpg)
 
-Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI tool give you tremendous insight and analytics into your Vue app. 
+Now we're synced. Welcome to your new project! Vue CLI and the accompanying GUI tool give you tremendous insight and analytics into your Vue app.
 
 ![vue-cli](/_static/screens/guides/vue/vue-cli-3.jpg)
 
@@ -163,8 +163,8 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ```bash
 .
-├── public/ 
-├── src/ 
+├── public/
+├── src/
 │    ├── assets/
 │    ├── components/
 │    ├── http/
@@ -176,7 +176,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 Let's go over each of these directories & files and learn how you may use them:
 
-### `public/index.html` 
+### `public/index.html`
 
 `public/index.html` is the page served in the browser. Vue is a single page application framework. It's used to create single page applications(SPA). It loads just one file which is the `index.html` file. The div with an id of app (as seen in the code below) is a placeholder for our Vue application.
 
@@ -185,11 +185,11 @@ Let's go over each of these directories & files and learn how you may use them:
 
   <div id="app"></div>
 ```
-The file `public/index.html` is a template that will be processed with html-webpack-plugin. During build, asset links will be injected automatically. 
+The file `public/index.html` is a template that will be processed with html-webpack-plugin. During build, asset links will be injected automatically.
 
 ### `src/assets/`
 All of our apps static assets(images) can be exported from this folder and imported into our components via relative paths.
-When you reference a static asset using relative paths (must start with .) inside JavaScript, CSS or *.vue files, the asset will be included into your Webpack dependency graph. 
+When you reference a static asset using relative paths (must start with .) inside JavaScript, CSS or *.vue files, the asset will be included into your Webpack dependency graph.
 
 ### `src/components/`
 You guessed it. This directory is where we keep our apps components.
@@ -208,10 +208,10 @@ The HTTP function that handles requests to `GET /api` is found in `src/http/get-
 
 In the next section we will go more in depth about how to provision HTTP functions in your Vue app.
 
-> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
 ### `./App.vue`
-This `./App.vue` file is a component that is structured like any other component you would build inside of a Vue application. It has a template tag for our markup that is loading an image from our `src/assets` folder and another component called `HelloWorld.vue` from our `src/components` folder. 
+This `./App.vue` file is a component that is structured like any other component you would build inside of a Vue application. It has a template tag for our markup that is loading an image from our `src/assets` folder and another component called `HelloWorld.vue` from our `src/components` folder.
 
 The script tag is for our JS and where we import in our HelloWorld component.
 

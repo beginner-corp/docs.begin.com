@@ -1,94 +1,106 @@
 ## Overview
 
-Events give your app a publish-subscribe (pub/sub) messaging system. Subscribe a Lambda function to an Event Topic and then asynchronously publish JSON payloads to it. It coordinates and manages the delivery or sending of messages to subscribing endpoints or clients.
+Event functions give your app an asynchronous publish-subscribe (pub / sub) messaging bus, enabling you to farm out complex or less time-sensitive tasks.
 
-Oh, and provisioning new Event Functions is a cinch!
+Begin event functions are fast, lightweight, stateless, isolated, highly durable, and require no configuration.
 
-## Provisioning new Event Functions
+Oh, and provisioning new event functions is a cinch!
 
-To provision a new Event Function, in the root of your project, open your app's Architect project manifest file (usually `.arc`):
+
+## Provisioning new event functions
+
+To provision a new event function, in the root of your project, open your app's Architect project manifest file (usually `.arc`):
 
 1. Find your project's `@events` pragma
-    - If you don't already have one, just add `@events`
+  - If you don't already have one, add to a new line: `@events`
 2. On a new line, enter the event name you wish to create
-For example: `account-signup`, or `account-check-email`
-3. Start the local dev environment to generate some boilerplate Event Function handlers: `npm start`
-    - New function handlers will now appear in `src/events/` (e.g. `src/events/account-signup` & `src/events/account-check-email`)
+  - For example: `account-verify-email`
+3. Start the local dev environment to generate some boilerplate event function handlers: `npm start`
+    - New function handlers will now appear in `src/events/` (e.g. `src/events/account-signup` & `src/events/account-verify-email`)
 4. Commit and push your changes to your repo
 
-Here's what a basic Architect project manifest looks like with the above two **Event Functions** specified:
+Here's what a basic Architect project manifest looks like with the above two **event functions** specified:
 
 ```
 @app
 your-app-name
 
 @events
-account-signup
-account-check-email
+account-verify-email
 ```
-> ⚠️ Event names are lowercase alphanumeric and can contain dashes. It is recommended to create a naming convention to group similar events and (ideally) keep them single purpose.
 
-After specifying new Event Functions in your Architect project manifest and pushing your changes to your repo, the following things happen automatically:
+> ⚠️ Event names are lowercase alphanumeric and can contain dashes. It is recommended to create a naming convention to group similar events.
+
+After specifying new event functions in your Architect project manifest and pushing your changes to your repo, the following things happen automatically:
 
 - New infrastructure is provisioned to make the event(s) publicly available – this may take a few moments to spin up
 - A build is kicked off, and, if green, is deployed to `staging` (but not `production`, of course)
 
-That's all there is to it! Now let's take a closer look at the capabilities of Event Functions, and how they work.
+That's all there is to it! Now let's take a closer look at the capabilities of event functions, and how they work.
+
 
 ## The basics
 
-Each **Event Function** (@event pragma) creates an event topic. Events are named channels that distribute messages to all of it's subscribers. Event handlers are subscribers that can hand off work to different services in your application. 
+You can think of each event function as a named subscriber, which can be invoked by publishing to it from any other function in your app (including HTTP functions).
 
-### Create event subscriber
+The best way to think about event functions is to ask: "What sort of computational tasks can (or should) I be running in the background?" Some common examples may include: processing data and saving it to a data store (such as Begin Data), or saving files to S3.
 
-The event handler is called the "subscriber". An event handler subscribes to messages on the named event topic. The handler function accepts an event object that can be processed further. 
+Event functions extremely useful and versatile feature to add to your application's architecture!
 
-```js
-// src/events/oh/index.js
 
-exports.handler = async function (event) {
-  console.log('got event', JSON.stringify(event, null, 2))
-  return true
-}
-```
-### Create event publisher
-Publishers communicate asynchronously with subscribers by producing and sending a message to a topic, which is a logical access point and communication channel. 
+### Publishing an event
+
+The recommended (and easiest) way to publish an event is to use the `@architect/functions`. In the example below, assume an HTTP `post` endpoint is publishing an `account-verify-email` event:
 
 ```js
-// src/http/post-oh/index.js
+// src/http/post-account-create/index.js
 
 let arc = require('@architect/functions')
 
-async function oh() {
+async function accountCreate(req) {
+  let { email } = req.body
   await arc.events.publish({
-    name: 'oh', 
-    payload: { 
-      message: 'hello oh',
-      timestamp: new Date(Date.now()).toISOString()
+    name: 'account-verify-email',
+    payload: {
+      email
     }
   })
   return { location: '/' }
 }
 
-exports.handler = arc.http.async(oh)
+exports.handler = arc.http.async(accountCreate)
 ```
 
-## Common use-cases
+In it, the `accountCreate` function assumes a user has posted an email address to verify in a form; it then publishes its payload (the `email` in question) to the `account-verify-email` event, and redirects the user to the root.
 
-### Fanout
 
-The "fanout" scenario is when an Event Function message is sent to a topic and then replicated and pushed to multiple subscribers. This is especially useful for sending the same bit of important information to multiple components of your app that need it.
+### Subscribing to an event
 
-### Application and system alerts
+On the other end of the published event is the subscriber – also known as our event function. This handler receives the incoming payload and executes its business logic.
 
-Application and system alerts are notifications that are triggered by predefined thresholds and sent to specified users by SMS and/or email. For example, you can receive immediate notification when an event occurs, such as a specific change to your apps background tasks.
+Again, the recommended (and easiest) way to subscribe to events within your event function is to use the `@architect/functions`:
 
-### Summary
+```js
+// src/events/account-verify-email/index.js
 
-The best way to think about Event Functions is to ask yourself "What sort of computational tasks can I run in the background?". Some common examples are: 
+let arc = require('@architect/functions')
 
-- saving files
-- compiling data and saving it to a data-store
-- creating backups of databases
+async function accountVerifyEmail (event) {
+  let { email } = event
+  // ... do some email-related things here
+  return
+}
 
-Event Functions run longer and only takes milliseconds to initiate. They are extremely useful and a powerful feature to use in your serverless architecture.
+exports.handler = arc.events.subscribe(accountVerifyEmail)
+```
+
+Because the event is operating out of band from the HTTP function that invoked it, it does not need to return anything when it reaches completion.
+
+
+## Removing event functions
+
+You can remove event functions from your app the same way you add them: by modifying your Architect project manifest (`.arc`) file.
+
+Once pushed to your repo, any events removed from your project's `@events` pragma will be removed from `staging`; your `production` events will not be changed until you deploy to production.
+
+> Note: Removing events from your project will not result in any changes to your git repo, so you will find the `src/events/` folder still retains your events code.

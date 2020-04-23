@@ -1,8 +1,8 @@
-> ⏱ This tutorial is an introductory walkthrough on creating HTTP Functions with Begin. It should take fewer than 10 minutes.
+> ⏱ This tutorial is an introductory walkthrough on creating HTTP functions with Begin. It should take fewer than 10 minutes.
 
-## Begin HTTP Functions
+## Begin HTTP functions
 
-Getting started with Begin HTTP Functions should take just a few minutes, but lay the groundwork for creating your own APIs.  In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction to what goes in an HTTP function and how to use them to deliver data to your apps.
+Getting started with Begin HTTP functions should take just a few minutes, but lay the groundwork for creating your own APIs.  In this article, you will learn how to provision a new function and then fetch JSON data from it to display in your app's frontend. This will be a great introduction to what goes in an HTTP function and how to use them to deliver data to your apps.
 
 ### Prerequisites
 
@@ -97,11 +97,11 @@ Create a new route in five easy steps
 Your new route will automatically deploy to `staging`.
 If you are happy with `staging` you can click the "Deploy to Production" button to see it live on your production environment.
 
-> For more in depth instructions on how to provision new HTTP Functions, you can [checkout our docs here](https://docs.begin.com/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
+> For more in depth instructions on how to provision new HTTP functions, you can [checkout our docs here](https://docs.begin.com/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
 
 ---
 
-## Writing HTTP Functions
+## Writing HTTP functions
 
 We must first understand the anatomy of an HTTP function to be able to write them for our specific use cases. All basic HTTP functions consist of one handler function.
 
@@ -150,10 +150,10 @@ Infrastructure-as-code is the practice of provisioning and maintaining cloud inf
 
 By checking in your Begin app’s project manifest (.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
 
-> 💡 **Learn more!** Head here to dig deeper into [HTTP Functions in Begin apps](/en/http-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 ---
 
-## Fetching data from HTTP Functions
+## Fetching data from HTTP functions
 
 Earlier we provisioned a new function called `get /api`. We will use this function to create an API that sends out a JSON object with a key:value pair of `message: Hello from your Begin API!`. Navigate to `src/http/get-api/index.js` and copy & paste the code below. Now you can fetch data from this function from anywhere inside of your app!
 
@@ -252,7 +252,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 ## Congratulations!
 
-You now have a good idea on how HTTP Functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
+You now have a good idea on how HTTP functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
 
 Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20HTTP-Functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
@@ -267,7 +267,7 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
-- More about HTTP Functions
-  - [HTTP Functions](https://docs.begin.com/en/http-functions/provisioning)
+- More about HTTP functions
+  - [HTTP functions](https://docs.begin.com/en/http-functions/provisioning)
   - [Architect project layout](https://arc.codes/quickstart/layout)
   - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)
