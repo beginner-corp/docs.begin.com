@@ -48,7 +48,7 @@ The best way to think about event functions is to ask: "What sort of computation
 Event functions extremely useful and versatile feature to add to your application's architecture!
 
 
-### Publishing an event
+## Publishing an event
 
 The recommended (and easiest) way to publish an event is to use the `@architect/functions`. In the example below, assume an HTTP `post` endpoint is publishing an `account-verify-email` event:
 
@@ -74,7 +74,7 @@ exports.handler = arc.http.async(accountCreate)
 In it, the `accountCreate` function assumes a user has posted an email address to verify in a form; it then publishes its payload (the `email` in question) to the `account-verify-email` event, and redirects the user to the root.
 
 
-### Subscribing to an event
+## Subscribing to an event
 
 On the other end of the published event is the subscriber – also known as our event function. This handler receives the incoming payload and executes its business logic.
 

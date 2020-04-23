@@ -108,7 +108,7 @@ headlessly
 HelloWorld
 hostname
 html-webpack-plugin
-http
+HTTP
 HTTPS
 IAM
 IIFE
