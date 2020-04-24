@@ -7,7 +7,7 @@ Every request to an HTTP route is automatically tagged to a session, with state 
 ```js
 let begin = require('@architect/functions')
 
-function route(req, res) {
+async function route(req, res) {
   // log session state
   console.log(req.session)
   // and render it in a browser
@@ -15,10 +15,12 @@ function route(req, res) {
     <h1>Session state</h1>
     <pre>${req.session}</pre>
   `
-  res({html})
+  return {
+    body: html
+  }
 }
 
-exports.handler = begin.html.get(route)
+exports.handler = begin.http.async(route)
 ```
 
 
@@ -29,14 +31,17 @@ Session state can only be written to in a response (usually during an HTTP redir
 ```js
 let begin = require('@architect/functions')
 
-function addOne(req, res) {
+async function addOne(req, res) {
   let count = (req.session.count || 0) + 1
-  let session = {count}
-  let location = req._url('/')
-  res({session, location})
+  let session = { count }
+  let location = '/'
+  return {
+    session,
+    location
+  }
 }
 
-exports.handler = begin.html.post(addOne)
+exports.handler = begin.http.async(addOne)
 ```
 
 Writing to a session clobbers its previous state. If you want to merge session data, you have to explicitly author that behavior in your route's code.
@@ -46,15 +51,18 @@ Keeping state mutations super explicit in your code makes it easier to reason ab
 ```js
 let begin = require('@architect/functions')
 
-function updateUserName(req, res) {
+async function updateUserName(req, res) {
   let account = req.session.account
   account.username = 'Alice'
-  let session = {account}
-  let location = req._url('/')
-  res({session, location})
+  let session = { account }
+  let location = '/'
+  return {
+    session,
+    location
+  }
 }
 
-exports.handler = begin.html.post(updateUserName)
+exports.handler = begin.http.async(updateUserName)
 ```
 
 
@@ -107,15 +115,17 @@ Session state is also useful for passing error messages from a failed `POST`.
 ```js
 let begin = require('@architect/functions')
 
-function login(req, res) {
-  var isLoggedIn = req.body.email === 'admin' && req.body.password === 'a-secure-password'
-  res({
-    session: {isLoggedIn},
-    location: req._url('/')
-  })
+async function login(req) {
+  var isLoggedIn = (req.body.email === 'admin') &&
+  (req.body.password === 'a-secure-password')
+
+  return {
+    session: { isLoggedIn },
+    location: '/'
+  }
 }
 
-exports.handler = begin.html.post(login)
+exports.handler = begin.http.async(login)
 ```
 
 
@@ -124,22 +134,22 @@ exports.handler = begin.html.post(login)
 ```js
 let begin = require('@architect/functions')
 
-function auth(req, res, next) {
+async function auth(req) {
   if (req.session.isLoggedIn) {
-    next()
+    return req
   }
   else {
-    res({
+    return {
       location: '/login'
-    })
+    }
   }
 }
 
-function index(req, res) {
-  res({
-    html: `Hi there, you're logged in! <a href="/logout">logout</a>`
-  })
+function index(req) {
+  return {
+    body: `Hi there, you're logged in! <a href="/logout">logout</a>`
+  }
 }
 
-exports.handler = begin.html.get(auth, index)
+exports.handler = begin.middleware(auth, index)
 ```
