@@ -2,25 +2,25 @@
 
 Begin provides first-class, zero configuration sessions support for all HTTP routes. Begin sessions are fast, cryptographically signed, and you get them for free. How convenient!
 
-Every request to an HTTP route is automatically tagged to a session, with state available via `req.session`. Here's an example:
+If you opt to use the `@architect/functions` helper library, every request to an HTTP route is automatically tagged to a session, with state available via `req.session`. Here's an example:
 
 ```js
 let begin = require('@architect/functions')
 
-async function route(req, res) {
-  // log session state
+async function handler (req) {
+  // Log session state
   console.log(req.session)
-  // and render it in a browser
-  let html = `
+  // ... and render it in a browser
+  let body = `
     <h1>Session state</h1>
-    <pre>${req.session}</pre>
+    <pre>${JSON.stringify(req.session, null, 2)}</pre>
   `
   return {
-    body: html
+    body
   }
 }
 
-exports.handler = begin.http.async(route)
+exports.handler = begin.http.async(handler)
 ```
 
 
@@ -31,7 +31,7 @@ Session state can only be written to in a response (usually during an HTTP redir
 ```js
 let begin = require('@architect/functions')
 
-async function addOne(req, res) {
+async function addOne (req) {
   let count = (req.session.count || 0) + 1
   let session = { count }
   let location = '/'
@@ -51,7 +51,7 @@ Keeping state mutations super explicit in your code makes it easier to reason ab
 ```js
 let begin = require('@architect/functions')
 
-async function updateUserName(req, res) {
+async function updateUserName (req) {
   let account = req.session.account
   account.username = 'Alice'
   let session = { account }
@@ -73,7 +73,7 @@ exports.handler = begin.http.async(updateUserName)
 - All sessions are automatically renewed indefinitely with continued use
 - Unused sessions are expunged after one week of inactivity
 
-> 🍪 Session state is maintained via a cookie identifier `_idx` which is cryptographically signed with a secret. Begin cookies are `HttpOnly`.
+> 🍪 Begin cookies are `HttpOnly` and are cryptographically signed.
 
 
 ## Examples
@@ -85,27 +85,28 @@ Session state is also useful for passing error messages from a failed `POST`.
 ### Example `GET` request
 
 ```js
-{ method: 'get',
+{
+  method: 'get',
   path: '/en/routes-functions/html-functions/',
   headers:
-   { host: 'docs.begin.com',
-     connection: 'keep-alive',
-     'cache-control': 'max-age=0',
-     'upgrade-insecure-requests': '1',
-     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
-     accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-     dnt: '1',
-     'accept-encoding': 'gzip, deflate, br',
-     'accept-language': 'en-US,en;q=0.9',
-     cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
-     Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8' },
+  {
+    host: 'docs.begin.com',
+    connection: 'keep-alive',
+    'cache-control': 'max-age=0',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Gojira/5.0',
+    accept: 'text/html',
+    dnt: '1',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9',
+    cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8',
+  },
   query: {},
-  body: { body: 'admin', password: 'a-secure-password' },
+  body: {},
   params: {},
-  _idx: 'LbyL0kPK2xOLfdm_WnESzlsG',
-  _secret: 'Sll0QZV2ouuvlOCSN3Msx1KP',
-  csrf: 'aGQxg6ye-G_U-IXvLioZbmak3kFBCB8286aQ',
-  session: { isLoggedIn: true }
+  session: {
+    isLoggedIn: true
+  }
 }
 ```
 
@@ -115,9 +116,9 @@ Session state is also useful for passing error messages from a failed `POST`.
 ```js
 let begin = require('@architect/functions')
 
-async function login(req) {
-  var isLoggedIn = (req.body.email === 'admin') &&
-  (req.body.password === 'a-secure-password')
+async function login (req) {
+  let { body } = req
+  let isLoggedIn = body.email === 'admin' && body.password === 'a-secure-password'
 
   return {
     session: { isLoggedIn },
@@ -129,14 +130,15 @@ exports.handler = begin.http.async(login)
 ```
 
 
-### Checks `session` for the logged in state (and forwards accordingly)
+### Checks `session` for the logged-in state (and forwards accordingly)
 
 ```js
 let begin = require('@architect/functions')
 
-async function auth(req) {
+async function auth (req) {
   if (req.session.isLoggedIn) {
-    return req
+    // Returning advances to the next middleware function
+    return
   }
   else {
     return {
@@ -145,11 +147,11 @@ async function auth(req) {
   }
 }
 
-function index(req) {
+function index (req) {
   return {
-    body: `Hi there, you're logged in! <a href="/logout">logout</a>`
+    body: `Hi there, you're logged in! <a href="/logout">Logout</a>`
   }
 }
 
-exports.handler = begin.middleware(auth, index)
+exports.handler = begin.http.async(auth, index)
 ```
