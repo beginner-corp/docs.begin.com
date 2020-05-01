@@ -121,7 +121,7 @@ Once you've got your project cloned on your local machine, `cd` into the project
 ```bash
 cd your-new-begin-app
 npm install
-npm run dev
+npm start
 ```
 
 You should see a `localhost` link in your terminal – go ahead and visit that in your browser.
