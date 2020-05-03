@@ -341,6 +341,25 @@
         ]
       },
       {
+        "docType": "Guide",
+        "docID": "events",
+        "docTitle": "Event functions",
+        "description": "Demonstrates publishing and subscribing to an event function.",
+        "icon": "circle-begin.svg",
+        "background": "gradient-purple-green.png",
+        "sections": [
+          "Introduction",
+          "Getting started",
+          "Your first deploy",
+          "Make your first commit",
+          "Get set up locally",
+          "Project structure",
+          "Customize your site",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docType": "Tutorial",
         "docID": "svelte",
         "docTitle": "Svelte",
