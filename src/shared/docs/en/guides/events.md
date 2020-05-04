@@ -147,3 +147,52 @@ If you are happy with `staging` you can click the "Deploy to Production" button 
 > For more in-depth instructions on how to provision new Event functions, you can [checkout our docs here](https://docs.begin.com/en/event-functions/provisioning) or this [article on our blog](https://blog.begin.com/a-brand-new-primitive-for-your-begin-apps-event-functions-9cdfd2bb3dcb).
 
 ---
+
+## Deploy your site
+
+While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
+
+```bash
+npm run lint
+npm t
+```
+
+Everything set? Now let's push this commit (and deploy the build to `staging`):
+
+```bash
+git add -A
+git commit -am 'Just customizing my Begin site!'
+git push origin master
+```
+
+Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
+
+Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
+
+When your next build is done, click the `production` link in the upper left corner to see the latest release of your app.
+
+> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
+
+---
+
+## Congratulations!
+
+You now have a good idea on how Event functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
+
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Event-Functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+
+<!-- TODO add domains directions -->
+
+## Additional resources
+
+- Expand the capabilities of your app:
+  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
+  - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
+- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
+- Get help:
+  - [Begin community](https://spectrum.chat/begin)
+  - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
+- More about HTTP functions
+  - [HTTP functions](https://docs.begin.com/en/http-functions/provisioning)
+  - [Architect project layout](https://arc.codes/quickstart/layout)
+  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)
