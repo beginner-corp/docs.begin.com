@@ -125,7 +125,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 .
 ├── public/
 │   ├── index.html
-│   └── index.js
+│   └── index.html
 ├── src/
 │   └── http/
 │        └── get-api/

@@ -348,14 +348,12 @@
         "icon": "circle-begin.svg",
         "background": "gradient-purple-green.png",
         "sections": [
-          "Introduction",
+          "Begin event functions",
           "Getting started",
           "Your first deploy",
-          "Make your first commit",
           "Get set up locally",
           "Project structure",
-          "Customize your site",
-          "Deploy your site",
+          "Provision event functions",
           "Additional resources"
         ]
       },
