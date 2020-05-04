@@ -74,7 +74,7 @@ Don't worry. You'll learn more about what these three buttons do after we've set
 
 Next, let's get your new site running in your local environment (i.e. the computer you work on).
 
-First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download** button and copy the git URL.
+First, head to your GitHub repo (from the first card in your `Activity`, or the left nav). Find the **clone or download** button and copy the git URL.
 
 Then head to your terminal and clone your repo to your local filesystem.
 
@@ -111,7 +111,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ### `public/index.html` 
 
-`public/index.html` is your apps homepage served in the browser. Your apps styling can be found inside of this file along with our button form elements taking in attributes from the HTTP function `post-my_event`.
+`public/index.html` is your app's homepage served in the browser. Your apps styling can be found inside of this file along with our button form elements taking in attributes from the HTTP function `post-my_event`.
 
 ### `src/events/my-event/`
 This directory holds our subscriber – also known as our event function. This handler receives the incoming payload and executes its business logic. To tidy up the incoming event payload, we suggest running your event functions through our runtime helper, Architect Functions: `cd src/events/newsletter-add && echo {} > package.json && npm i @architect/functions`
@@ -148,6 +148,62 @@ If you are happy with `staging` you can click the "Deploy to Production" button 
 
 ---
 
+## How events work in this app
+
+This app shows us both the power of event functions and Begin data! Each button is hooked up to our event publisher that then sends an incremented count of `+1` when they are clicked. Let's see what this looks like in code.
+
+![Event starter](/_static/screens/shared/begin-events.jpg)
+
+This is our event publisher:
+
+```js
+const arc = require('@architect/functions')
+
+exports.handler = async function http (req) {
+  const name = 'my-event'
+  const payload = { body: req.body }
+  await arc.events.publish({ name, payload })
+  return {
+    statusCode: 302,
+    headers: {
+      location: '/'
+    }
+  }
+}
+```
+
+Our event subscriber holds the business logic that updates the count (# of times a button was clicked). We have a table named `interactions` with a key that is equivalent to `clicks` that is incremented by `1` every time a button is clicked.
+
+![Event starter](/_static/screens/shared/begin-events-2.jpg)
+
+```js
+const queryString = require('querystring')
+const arc = require('@architect/functions')
+const data = require('@begin/data')
+const table = 'interactions'
+const key = 'clicks'
+
+async function myEvent(event) {
+  let raw = queryString.parse(
+    new Buffer.from(event.body, 'base64').toString()
+  )
+  let prop = raw.name
+  let count = await data.incr({
+    table,
+    key,
+    prop
+  })
+
+  return
+}
+
+exports.handler = arc.events.subscribe(myEvent)
+```
+
+
+
+---
+
 ## Deploy your site
 
 While not required, it's always a good idea to lint and run tests before pushing just to make sure you catch any errors:
@@ -177,7 +233,7 @@ When your next build is done, click the `production` link in the upper left corn
 
 ## Congratulations!
 
-You now have a good idea on how Event functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
+You now have a good idea of how Event functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
 
 Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20Event-Functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
