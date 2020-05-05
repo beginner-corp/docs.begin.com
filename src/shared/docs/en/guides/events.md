@@ -199,8 +199,9 @@ async function myEvent(event) {
 
 exports.handler = arc.events.subscribe(myEvent)
 ```
+That’s it, you’re done! Now you have an infinitely scalable pub / sub message bus at your disposal, meaning your application can respond quickly to user requests, and handle complex background tasks asynchronously.
 
-
+Our goal at Begin is to unlock the full power of modern application architectures with minimal effort and complexity. With Begin event functions, the potential capabilities of your apps just grew enormously — we can’t wait to see what you’ll build!
 
 ---
 
