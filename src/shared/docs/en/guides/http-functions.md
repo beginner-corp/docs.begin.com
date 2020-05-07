@@ -48,7 +48,7 @@ After creating your app, you'll be taken to its `Activity` stream. Welcome to th
 
 From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
 
-Each build undergoes a number of predefined build steps (learn more about [build steps here](http://localhost:4445/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
+Each build undergoes a number of predefined build steps (learn more about [build steps here](/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
@@ -56,7 +56,7 @@ Go ahead and click the **Staging** link in the upper left corner of your left na
 
 ![Hello World Starter](/_static/screens/shared/begin-hello-world.jpg)
 
-> 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](https://docs.begin.com/en/getting-started/builds-deploys).
+> 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](/en/getting-started/builds-deploys).
 
 ---
 
@@ -97,7 +97,7 @@ Create a new route in five easy steps
 Your new route will automatically deploy to `staging`.
 If you are happy with `staging` you can click the "Deploy to Production" button to see it live on your production environment.
 
-> For more in depth instructions on how to provision new HTTP functions, you can [checkout our docs here](https://docs.begin.com/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
+> For more in depth instructions on how to provision new HTTP functions, you can [checkout our docs here](/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
 
 ---
 
@@ -134,9 +134,10 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ### `public/index.html` & `public/index.js`
 
-`public/index.html` is the page served in the browser. This is where our JSON data will be appended to a DOM element of our choosing. `public/index.js` is where we will write our function that fetches the JSON data from `get /api` and displays it in our HTML page.
+`public/index.html` is the page served to the browser. This is where our JSON data will be appended to a DOM element of our choosing. `public/index.js` is where we will write our function that fetches the JSON data from `get /api` and displays it in our HTML page.
 
 ### `src/http/get-api/`
+
 Your app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
 
 The HTTP function that handles requests to `get /api` is found in `src/http/get-api/`.
@@ -144,13 +145,15 @@ The HTTP function that handles requests to `get /api` is found in `src/http/get-
 In the next section we will go more in-depth about how to fetch data from an HTTP Function.
 
 ### `.arc`
+
 Your `.arc` file is where you will provision new routes and functions.
 
 Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
 
 By checking in your Begin app’s project manifest (.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
 
-> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [provisioning and working with HTTP functions in Begin apps](/en/http-functions/provisioning/).
+
 ---
 
 ## Fetching data from HTTP functions
@@ -253,22 +256,22 @@ When your next build is done, click the `production` link in the upper left corn
 
 ## Congratulations!
 
-You now have a good idea on how HTTP functions work within Begin. Your next task is to learn [Begin Data!](https://docs.begin.com/en/http-functions/provisioning)
+You now have a good idea on how HTTP functions work within Begin. Your next task is to learn [Begin Data!](/en/data/begin-data)
 
-Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20HTTP-Functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
+Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20HTTP%20functions%20app%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 <!-- TODO add domains directions -->
 
 ## Additional resources
 
 - Expand the capabilities of your app:
-  - [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions)
-  - [Add Begin Data](https://docs.begin.com/en/data/begin-data/)
-- [Begin reference docs](http://localhost:4445/en/getting-started/introduction)
+  - [Creating new routes](/en/functions/creating-new-functions)
+  - [Add Begin Data](/en/data/begin-data/)
+- [Begin reference docs](/en/getting-started/introduction)
 - Get help:
   - [Begin community](https://spectrum.chat/begin)
   - [Issue tracker](https://github.com/smallwins/begin-issues/issues)
 - More about HTTP functions
-  - [HTTP functions](https://docs.begin.com/en/http-functions/provisioning)
+  - [HTTP functions](/en/http-functions/provisioning)
   - [Architect project layout](https://arc.codes/quickstart/layout)
   - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)

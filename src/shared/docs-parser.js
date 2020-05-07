@@ -37,7 +37,7 @@ module.exports = function contents (active) {
   }
   renderer.link = function (href, title, text) {
     let isDeployButton = href.includes('/apps/create?template=')
-    let isExternalLink = !href.includes('localhost') && !href.includes('begin.com') && !href.startsWith('#')
+    let isExternalLink = !href.includes('localhost') && !href.includes('begin.com') && !href.startsWith('#') && !href.startsWith('/')
     let targetBlank = isDeployButton || isExternalLink ? ' target="_blank"' : ''
     return `<a href="${href}"${targetBlank}>${text}</a>`
   }
