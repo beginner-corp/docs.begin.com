@@ -296,7 +296,24 @@
           "Make your first commit",
           "Writing HTTP functions",
           "Project structure",
-          "Fetching data between functions",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
+        "docType": "Guide",
+        "docID": "events",
+        "docTitle": "Event functions",
+        "description": "Get started building with event functions",
+        "icon": "circle-begin.svg",
+        "background": "gradient-purple-green.png",
+        "sections": [
+          "Begin event functions",
+          "Getting started",
+          "Your first deploy",
+          "Get set up locally",
+          "Project structure",
+          "How events work in this app",
           "Deploy your site",
           "Additional resources"
         ]
@@ -336,25 +353,6 @@
           "Get set up locally",
           "Project structure",
           "Customize your site",
-          "Deploy your site",
-          "Additional resources"
-        ]
-      },
-      {
-        "docType": "Guide",
-        "docID": "events",
-        "docTitle": "Event functions",
-        "description": "Demonstrates publishing and subscribing to an event function.",
-        "icon": "circle-begin.svg",
-        "background": "gradient-purple-green.png",
-        "sections": [
-          "Begin event functions",
-          "Getting started",
-          "Your first deploy",
-          "Get set up locally",
-          "Project structure",
-          "Provision event functions",
-          "How events work in this app",
           "Deploy your site",
           "Additional resources"
         ]
