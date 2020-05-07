@@ -26,7 +26,7 @@ A common pattern for generating frontend build artifacts is to compile JS and CS
 
 `public/` works great with [Webpack](https://webpack.js.org/comparison/), [Parcel](https://parceljs.org/), [Rollup](https://rollupjs.org/guide/en), and other modern bundlers.
 
-Simply create and specify a [build script or build command in your root `package.json`](https://docs.begin.com/en/getting-started/builds-deploys/#build), with your compilation target set to `public/`.
+Simply create and specify a [build script or build command in your root `package.json`](/en/getting-started/builds-deploys/#build), with your compilation target set to `public/`.
 
 Your build steps will run with each deploy, and anything present in `public/` will be pushed to your app's file bucket.
 

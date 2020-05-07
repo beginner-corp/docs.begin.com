@@ -5,7 +5,7 @@ const URIs = {
   },
   staging: {
     begin: 'https://staging.begin.com',
-    docs: 'https://staging.docs.begin.com'
+    docs: 'https://docs.staging.begin.com'
   },
   production: {
     begin: 'https://begin.com',
