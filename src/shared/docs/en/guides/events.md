@@ -150,11 +150,12 @@ This is our event publisher:
 
 ```js
 // src/http/post-my_event/index.js
+
 const arc = require('@architect/functions')
 
 exports.handler = async function http (req) {
   const name = 'my-event'
-  const payload = { body: req.body }
+  const payload = arc.http.helpers.bodyParser(req)
   await arc.events.publish({ name, payload })
   return {
     statusCode: 302,
@@ -174,21 +175,17 @@ Our subscriber holds updates an atomic counter whenever it receives a new event;
 ```js
 // src/events/my-event/index.js
 
-const queryString = require('querystring')
 const arc = require('@architect/functions')
 const data = require('@begin/data')
 const table = 'interactions'
 const key = 'clicks'
 
 async function myEvent(event) {
-  let raw = queryString.parse(
-    Buffer.from(event.body, 'base64').toString()
-  )
-  let prop = raw.name
-  let count = await data.incr({
+  let { name } = event
+  await data.incr({
     table,
     key,
-    prop
+    prop: name
   })
 
   return
