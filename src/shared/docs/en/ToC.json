@@ -336,6 +336,24 @@
         ]
       },
       {
+        "docType": "Guide",
+        "docID": "scheduled",
+        "docTitle": "Scheduled functions",
+        "description": "Get started building with scheduled functions",
+        "icon": "circle-begin.svg",
+        "background": "gradient-pink-purple.png",
+        "sections": [
+          "Begin scheduled functions",
+          "Getting started",
+          "Your first deploy",
+          "Get set up locally",
+          "Project structure",
+          "How scheduled functions work in this app",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
         "docType": "Tutorial",
         "docID": "crud-app",
         "docTitle": "CRUD app with data",
