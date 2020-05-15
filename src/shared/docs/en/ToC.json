@@ -200,6 +200,23 @@
     ]
   },
   {
+    "catID": "scheduled-functions",
+    "catTitle": "Scheduled Functions",
+    "docs": [
+      {
+        "docID": "provisioning",
+        "docTitle": "Provisioning",
+        "description": "Provisioning new scheduled functions for your Begin application",
+        "sections": [
+          "Overview",
+          "Provisioning new scheduled functions",
+          "Scheduled functions in action",
+          "Removing scheduled functions"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "data",
     "catTitle": "Data",
     "docs": [
