@@ -2,7 +2,7 @@
 
 ## Begin scheduled functions
 
-Begin scheduled functions are used to set up recurring tasks to run on an interval. Scheduled functions enable you to do things like back up your data once a week, or generate a weekly report based on user interactions. They are the serverless equivalent of a cron job. The functionality of scheduled functions can be paired with event functions to trigger events that are reoccurring inside of your app. 
+Begin scheduled functions are used to set up recurring tasks to run on an interval. Scheduled functions enable you to do things like back up your data once a week, or generate a weekly report based on user interactions. They are the serverless equivalent of a cron job. The functionality of scheduled functions can also be paired with event functions to trigger reoccurring events inside of your app. 
 
 ### Provisioning new scheduled functions
 
@@ -35,7 +35,7 @@ You do not need to be an expert in any of these things to follow along, however.
 
 ## Getting started
 
-First, click the **Deploy to Begin** button below. This starts the process of authorizing Begin with your GitHub account. (You may be prompted to log in to GitHub, and/or be asked to create a Begin username.)
+First, click the **Deploy to Begin** button below. This starts the process of authorizing Begin with your GitHub account. (You may be prompted to log in to GitHub, and be asked to create a Begin username.)
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-scheduled)
 
@@ -48,7 +48,7 @@ You'll then be prompted to name your new app and repository – this is optional
 
 ![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
 
-Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
+Once you've clicked the `Create...` button, Begin spins up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
 
 > By default, your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions from this screen (or later from the `Settings` screen found in the left nav of your Begin app).
 
@@ -56,13 +56,13 @@ Once you've clicked the `Create...` button, Begin will spin up your new project 
 
 ## Your first deploy
 
-After creating your app, you'll be taken to its `Activity` stream. Welcome to the main backend interface of your Begin app!
+After creating your app, you'll be taken to its `Activity` stream. Welcome to the central backend interface of your Begin app!
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
 
 From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
 
-Each build undergoes several predefined build steps (learn more about [build steps here](/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
+Each build undergoes several predefined build steps (learn more about [build steps here](/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and run an automated test suite (`test`).
 
 If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
 
@@ -80,7 +80,7 @@ Refresh the page and watch the counter go up!
 
 Next, let's get your new site running in your local environment (i.e., the computer you work on).
 
-First, head to your GitHub repo (from the first card in your `Activity`, or the left nav). Find the **clone or download** button and copy the git URL.
+First, head to your GitHub repo (from the first card in your `Activity`, or the left nav) and find the **clone or download** button and copy the git URL.
 
 Then head to your terminal and clone your repo to your local filesystem.
 
@@ -101,7 +101,7 @@ Now you are all set to work on your app locally!
 
 ## Project structure
 
-Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your new app:
+Now that your app is live on `staging` and running locally let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders and files in the source tree of your new app:
 
 ```bash
 .
@@ -125,29 +125,28 @@ This directory holds the crux of the functionality of our app. We use Begin data
 
 ### `src/views/doc.js`
 
-Our app's HTML and CSS styling can be found inside of this file along with our `visits` being displayed.
-
+You'll find your app's HTML and CSS styling are inside of this file, but most importantly, the `visits` are being displayed on the frontend showing off the cool functionality of HTTP functions.
 
 ### `.arc`
 
-Your `.arc` file is where you will provision new scheduled functions.
+Your `.arc` manifest file is where you provision new scheduled functions.
 
 Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It's like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
 
-By checking in your Begin app's project manifest (.arc) file with your code, you can ensure you have precisely the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
+By checking in your Begin app's project manifest (`.arc`) file with your code, you can ensure you have precisely the cloud resources your code depends on to function. This is crucial for ensuring reproducibility and improving iteration speed.
 
-> 💡 **Learn more!** Head here to dig deeper into [provisioning and working with event functions in Begin apps](/en/event-functions/provisioning/).
+> 💡 **Learn more!** Head here to dig deeper into [provisioning and how to work with event functions in Begin apps](/en/event-functions/provisioning/).
 
 ---
 
-## How scheduled functions work in this app
+## How scheduled functions work
 
-This app is designed to demonstrate the power of scheduled functions and Begin data. Every visit to this page is stored in a Begin data table that is then backed up every 6 hours using our scheduled function.
+This app is designed to demonstrate the power of scheduled functions and Begin data. Every visit to this page is stored in a Begin data table that is then backed up every 6 hours using our scheduled function. The count of every visit is incremented and displayed instantly on the frontend of our small app.
 
 ![Scheduled starter](/_static/screens/shared/begin-scheduled.jpg)
 
 
-This HTTP function is capturing the number of visits to the page and incrementing the database by 1 upon every new visit.
+This HTTP function is capturing the number of visits to the page and incrementing the count by 1 upon every new visit. It is also storing this data inside of our Begin data `table` simultaneously. 
 
 ```js
 // src/http/get-index/index.js
@@ -207,9 +206,9 @@ exports.handler = async function scheduled (event) {
 }
 ```
 
-Clicking the link where it says "Now go check out your app's
+Clicking the link where it says, "Now go check out your app's
 scheduled functions!" takes you to the Scheduled functions
-panel in the backend of your Begin app. This view is helpful because it gives you a tangible view and logs of how your functions are working within your app.
+panel in the backend of your Begin app. This view is helpful because it gives you an objective view and logs of how your functions are working within your app.
 
 ![Scheduled starter](/_static/screens/shared/begin-scheduled-2.jpg)
 
@@ -231,7 +230,7 @@ git commit -am 'Just customizing my Begin site!'
 git push origin master
 ```
 
-Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
+Head on back to Begin and open your `staging` URL once your build is complete. Are you looking good? Excellent.
 
 Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
 
