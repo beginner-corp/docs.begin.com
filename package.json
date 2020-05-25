@@ -20,7 +20,7 @@
   "devDependencies": {
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.37",
-    "eslint": "^6.8.0",
+    "eslint": "^7.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
     "spellchecker-cli": "^4.2.0",
