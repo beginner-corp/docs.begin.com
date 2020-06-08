@@ -144,6 +144,15 @@ let result = await data.get({table, limit: 3}) // Returns:
 //  { table, key: 'Japanese', greeting: 'Kon'nichiwa' },
 //  cursor: 'eyJziJzY29wZUlELCJkYX9jYWwidW50RhSUQiOdGFnaW5nI21vIjoibGYWlucyNsa3JMV21PVWsifQ==']
 ```
+The cursor is a string that indicates a position of the last document fetched. To use the cursor, pass it as the key in your next query. For example:
+
+```js
+let table = 'greetings'
+let result = await data.get({table, limit: 3}) // returns three documents, plus a cursor
+let cursor = result.cursor // a string to indicate the position of the previous query
+let nextPage = await data.get({table, cursor: cursor}) // returns the remaining documents
+// { table, key: 'Chinese', greeting: 'Ni hao'}
+```
 
 
 ## Create & update documents
@@ -301,19 +310,20 @@ await data.count({table}) // Returns: 42
   - Property to increment or decrement, must be a number *(required)*
 - `callback` - **Function**
 
-Examples:
+The following example assumes you have an attribute of 'averageInches' with a beginning value of 450 on the key of `Wai'ale'ale`. 
+If that attribute does not exist, incrementing will begin at 0, and that attribute will be created.
 
 ```js
+
 let table = 'rain'
 let key = `Wai'ale'ale`
-let averageInches = 450
 
 // Increment
-await data.incr({table, key, averageInches})
+await data.incr({table, key, prop: 'averageInches'})
 // Returns: { averageInches: 451 }
 
 // Decrement
-await data.decr({table, key, averageInches})
+await data.decr({table, key, prop: 'averageInches'})
 // Returns: { averageInches: 450 }
 ```
 
