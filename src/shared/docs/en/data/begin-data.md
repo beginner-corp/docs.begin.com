@@ -150,7 +150,7 @@ The cursor is a string that indicates a position of the last document fetched. T
 let table = 'greetings'
 let result = await data.get({table, limit: 3}) // returns three documents, plus a cursor
 let cursor = result.cursor // a string to indicate the position of the previous query
-let nextPage = await data.get({table, cursor: cursor}) // returns the remaining documents
+let nextPage = await data.get({table, cursor}) // returns the remaining documents
 // { table, key: 'Chinese', greeting: 'Ni hao'}
 ```
 
@@ -355,4 +355,22 @@ let table = 'accounts'
 let key = 'dW50RhSUQiOdG'
 let email = '' // Invalid
 await data.set({table, key, email})
+```
+
+## Working Locally
+Your local Sandbox instantiates an in-memory version of Begin Data. You can start Sandbox by running the command `arc sandbox` in the root of your project. You can also use a startup script to insert test data for development or for automated tests. Sandbox looks for a file `/scripts/sandbox-startup.js` with an exported function.
+
+Example:
+```js
+// /scripts/sandbox-startup.js
+let data = require('@begin/data')
+async function startUpScript() {
+  let table = 'greetings'
+  let greetings = [
+    { table, key: 'Māori', greeting: `Kia ora` },
+    { table, key: 'Swahili', greeting: `Hujambo` },
+    { table, key: 'Japanese', greeting: `Kon'nichiwa` } ]
+  await data.set(greetings)
+}
+module.exports = startUpScript
 ```
