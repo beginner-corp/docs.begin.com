@@ -31,18 +31,18 @@ Just remember to point your app at the correct path in your code. More below on 
 
 Begin supports a number of options for helping deliver your static assets. These include:
 
-- `fingerprint` - **`true`** or **`external`**; (disabled by default)
-  - `true` enables static asset fingerprinting; this is the most efficient way to deliver your assets to customers. Fingerprinting overwrites an existing filename with a fingerprinted filename based on its contents, and delivers said file with long-lived cache headers.
+- `fingerprint` - **true** or **external** (disabled by default)
+  - `true` enables static asset fingerprinting; this is the most efficient way to deliver your assets to users. Fingerprinting overwrites an existing filename with a fingerprinted filename based on its contents, and delivers said file with long-lived cache headers.
     - For example: `this-is-fine.gif` becomes `this-is-fine-e8ba2.gif`
-    - A map of all static assets is available to each of your functions automatically at `node_modules/@architect/shared/static.json` and on the web at `/_static/static.json`
+    - A map of all static assets is available to each of your functions automatically at `node_modules/@architect/shared/static.json` and from your app at `/_static/static.json`
   - `external` assumes you're using an external framework of some kind that handles its own fingerprinting; as such, it does not mutate the filename upon deploy or generate a `static.json` file, but it does ensure your files are delivered efficiently with long-lived cache headers
-- `folder` - `public` by default
-  - Configure the asset directory to deploy your project's static assets from
+- `folder` - **String** (`public` by default)
+  - Configure the asset directory to deploy your project's static assets from; do not include a leading or trailing slash
 - `ignore` - **One or more Strings** (indented two spaces on each line)
   - Each string provided will match against filenames in your asset folder, and any matches found will be ignored from deployment
-- `prune` - **`true`** (default) or **`false`**
+- `prune` - **Boolean** (`true` by default)
   - Removes any files not found in your deploy from your bucket; we strongly suggest leaving this enabled to ensure the assets available to your app are completely deterministic
-- `spa` - **`true`** (default) or **`false`**
+- `spa` - **Boolean** (`true` by default)
   - Enables or disables SPA (single-page app) mode for your root requests;
 
 Example:
