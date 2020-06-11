@@ -26,4 +26,5 @@ module.exports = {
   '/en/routes-functions/css-routes':          '/en/http-functions/api-reference',
   '/en/routes-functions/javascript-routes':   '/en/http-functions/api-reference',
   '/en/routes-functions/text-routes':         '/en/http-functions/api-reference',
+  '/en/getting-started/static-assets':        '/en/static-assets/working-with-static-assets',
 }

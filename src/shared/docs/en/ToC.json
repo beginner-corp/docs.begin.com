@@ -112,18 +112,6 @@
         ]
       },
       {
-        "docID": "static-assets",
-        "docTitle": "Static assets",
-        "description": "Building, deploying, and accessing static assets from Begin",
-        "sections": [
-          "Overview",
-          "The static asset directory",
-          "Other static asset options",
-          "Building and deploying assets",
-          "Accessing static assets"
-        ]
-      },
-      {
         "docID": "settings",
         "docTitle": "Settings",
         "description": "Configuring your Begin app's settings",
@@ -245,6 +233,24 @@
           "Helpers",
           "TTL",
           "Limits"
+        ]
+      }
+    ]
+  },
+  {
+    "catID": "static-assets",
+    "catTitle": "Static assets",
+    "docs": [
+      {
+        "docID": "working-with-static-assets",
+        "docTitle": "Working with static assets",
+        "description": "Building, deploying, and accessing static assets from Begin",
+        "sections": [
+          "Overview",
+          "The static asset directory",
+          "Other static asset options",
+          "Building and deploying assets",
+          "Accessing static assets"
         ]
       }
     ]
