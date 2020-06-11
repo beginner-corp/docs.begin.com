@@ -117,7 +117,8 @@
         "description": "Building, deploying, and accessing static assets from Begin",
         "sections": [
           "Overview",
-          "The public/ directory",
+          "The static asset directory",
+          "Other static asset options",
           "Building and deploying assets",
           "Accessing static assets"
         ]
