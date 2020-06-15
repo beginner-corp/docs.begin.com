@@ -64,6 +64,7 @@ cron
 CSR
 CSRF
 CSS
+css
 CTO
 debuggable
 declaratively
@@ -201,6 +202,7 @@ SSD-backed
 SSD-based
 SSL
 statefulness
+stylesheet
 subdirectories
 subdomain
 subdomains

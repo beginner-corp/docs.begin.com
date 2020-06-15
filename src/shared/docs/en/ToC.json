@@ -256,6 +256,22 @@
     ]
   },
   {
+    "catID": "share-code",
+    "catTitle": "Share code",
+    "docs": [
+      {
+        "docID": "sharing-common-code",
+        "docTitle": "Sharing Common Code",
+        "description": "Share modules, templates, and other files across cloud functions",
+        "sections": [
+          "Overview",
+          "The magical `src/shared` and `src/views` directories",
+          "Hydrate"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "support",
     "catTitle": "Support",
     "docs": [
