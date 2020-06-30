@@ -36,7 +36,7 @@ Sweet! However, what if a number of endpoints need to share the same layout file
 
 Create either or both `src/shared` and `src/views` directories. 
 
-- All files within the `src/shared` directory will automatically be available to each of the functions with your project. 
+- All files within the src/shared directory will automatically be available to each of your project's functions.
 - All files within the `src/views` directory will be automatically available to all of your `GET` functions.
 
 ```bash
@@ -55,7 +55,7 @@ Create either or both `src/shared` and `src/views` directories.
 
 In the above example, files found in `src/shared` will be copied into every function's `node_modules/@architect/shared` directory.
 
-Similarly, files found in `src/views` will be copied into just `GET /`, `GET /about`, and `GET /contact`'s `/node_modules/@architect/shared` directories, but not `POST /contact`.
+Similarly, files found in `src/views` will be copied into only `GET /`, `GET /about`, and `GET /contact`'s `/node_modules/@architect/shared` directories, but not `POST /contact`.
 
 You can also specify a list of `@http` functions you want `src/views` to target by specifying them in the `@views` section of your `.arc` file. An example of this would look like:
 
@@ -67,13 +67,24 @@ testapp
 get /
 get /about
 get /contact
+get /gallery
+get /css/:stylesheet
 post /contact
 
 @views
+get /
 get /about
 ```
 
-What we've done is added two new routes - /about and /css/:stylesheet, then declared that two of the routes / and /about should receive a copy of the modules in src/views.
+What we've done is added two new routes:
+- `/gallery` 
+- `/css/:stylesheet`
+
+We then declared that only two of the routes in this project should receive a copy of the modules in `src/views`.
+- `/`  
+- `/about` 
+
+
 
 ## Hydrate
 
