@@ -135,7 +135,7 @@ Provided all other build steps `exit(0)`, Begin takes over again to manage deplo
 
 The deploy step is non-configurable and does not currently output logs.
 
-### **Changing the default Github branch**
+### **Changing the default GitHub branch**
 
 Altering source control should be done with care and due diligence. Fortunately, the procedure is straightforward, but can become more complicated as you check for other downstream dependencies. Each service that depends on a git hook should be evaluated and your team needs to be informed of the migration procedure. 
 
@@ -148,12 +148,12 @@ git branch -m master main
 ```
 
 From the git docs: 
->With a -m or -M option, <oldbranch> will be renamed to <newbranch>. If <oldbranch> had a corresponding reflog, it is renamed to match <newbranch>, and a reflog entry is created to remember the branch renaming. If <newbranch> exists, -M must be used to force the rename to happen.
+>With a -m or -M option, <oldbranch> will be renamed to <newbranch>. If <oldbranch> had a corresponding `reflog`, it is renamed to match <newbranch>, and a `reflog` entry is created to remember the branch renaming. If <newbranch> exists, -M must be used to force the rename to happen.
 
-- Then, push this newly renamed branch to Github
+- Then, push this newly renamed branch to GitHub
 
 ```bash
 git push -u origin main
 ```
 
-- Finally, change the default branch in Github by navigating to your Github repo > _Settings_ > _branches_. Then choose your newly named branch. It should appear in the drop down list as a result from the earlier push. If you are importing an existing repo with a custom default branch, no further configuration is required. Begin is set to operate on pushes to your default branch automatically. For more information check out the Github documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
+- Finally, change the default branch in GitHub by navigating to your GitHub repo > _Settings_ > _branches_. Then choose your newly named branch. It should appear in the drop down list as a result from the earlier push. If you are importing an existing repo with a custom default branch, no further configuration is required. Begin is set to operate on pushes to your default branch automatically. For more information check out the GitHub documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
