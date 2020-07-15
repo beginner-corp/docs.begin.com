@@ -2,7 +2,7 @@
 
 ## Begin scheduled functions
 
-Begin scheduled functions enable you to set up recurring tasks to run on an interval.
+Begin scheduled functions are an integral part of automating background processes of your app. They enable you to set up recurring tasks to run on an interval.
 
 This gives you the ability to do things like back up your data once a week, or generate a monthly report based on user interactions. They are the serverless equivalent of a cron job.
 
@@ -107,7 +107,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ### `src/http/get-index/index.js`
 
-This is the root function of our app that serves the view. We must note that we are getting the actual `HTML` from our `views` directory which we will talk more about below. This function is also incrementing and storing each page view into a database supplied here by Begin data.
+This is the root function of our app that serves the view. We must note that we are getting the actual `HTML` from our `views` directory, which we will discuss below. This function is also incrementing and storing each page view into a database supplied here by Begin data.
 
 ```javascript
 // src/http/get-index/index.js
@@ -142,7 +142,7 @@ exports.handler = async function http (req) {
 
 ### `src/scheduled/backup/index.js`
 
-This is our scheduled function and it's the main star of the app. We use this function to backup the view counts collected in our database. Now we can save a copy wherever we'd like. S3 etc. We can find out the rate of which our function does a backup inside of our `app.arc` file.
+This is our scheduled function, and it's the main star of the app. We use this function to back up the view counts collected in our database. Now we can save a copy wherever we'd like. S3 etc. We can find out the rate of which our function does a backup inside of our `app.arc` file.
 
 ```javascript
 // src/scheduled/backup/index.js
@@ -171,7 +171,7 @@ exports.handler = async function scheduled (event) {
 
 ### `src/views/doc.js`
 
-This file is serving the HTML view of our app. Every module inside of our `views` folder is available to all of our `GET` functions. 
+This file is serving the HTML view of our app. Every module inside our `views` folder is available to all of our `GET` functions. 
 
 ```javascript
 // src/views/doc.js
@@ -254,9 +254,9 @@ module.exports = function Doc({ visits }) {
 
 Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
 
-By checking in your Begin app’s project manifest (app.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
+By checking in your Begin app’s project manifest (`app.arc`) file with your code, you can ensure you have the cloud resources your code depends on. This is crucial for guaranteeing reproducibility and improving iteration speed.
 
-Your `app.arc` file is where you will provision new scheduled functions. In this particular app you will see that we have provisioned a scheduled function named `backup` with a `rate` of every 6 hours.
+Your `app.arc` file is where you will provision new scheduled functions. In this particular app, you will see that we have provisioned a scheduled function named `backup` with a `rate` every 6 hours.
 
 > 💡 **Learn more!** Head here to dig deeper into [provisioning and working with scheduled functions in Begin apps](/en/scheduled-functions/provisioning/).
 
@@ -268,16 +268,17 @@ This app is designed to demonstrate the power of scheduled functions and Begin d
 
 ![Event starter](/_static/screens/shared/begin-scheduled.jpg)
 
-The `app.arc` file in the root of your project is where you define all of your app's infrastructure as code. We've added an entry to the `@scheduled` pragma to provision a new scheduled function named `backup`. This function runs on a 6 hour interval that backs up the number of page views collected inside of our database provisioned inside of our `get-index` function. You can save this backup wherever you'd like such as an S3 bucket.
-
-> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes.
+Inside the `app.arc` file in the root of your project, we've added an entry to the `@scheduled` pragma to provision a new scheduled function named `backup`. This function runs on a 6 hour interval that backs up the number of page views collected inside our database provisioned inside our `get-index` function. You can save this backup wherever you'd like, such as an S3 bucket.
 
 [Read more about the rate syntax here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html)
 
+> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes.
 
+You'll notice below the view count that there is a link to your scheduled functions logs inside the back-end of your Begin account. Clicking the link will take you this page to view these logs for your scheduled functions!
 
+![Event starter](/_static/screens/shared/begin-scheduled-2.jpg)
 
-
+Awesome! Now let's move on to deploying this app to production.
 
 ---
 
