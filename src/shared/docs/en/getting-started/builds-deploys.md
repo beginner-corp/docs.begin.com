@@ -2,7 +2,7 @@
 
 In addition to provisioning and managing your app's infrastructure, Begin is also a fully integrated CI/CD build pipeline optimized for incredibly rapid deployments.
 
-Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your default GitHub branch, usually `master`.
+Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your default GitHub branch (usually `master`).
 
 Deployments to `staging` and `production` take only seconds and are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
 
@@ -23,7 +23,7 @@ Within these hosted environments, Begin follows a fairly traditional CI/CD build
 
 ## Deploying to `staging`
 
-Each push to your default branch, usually `master`, kicks off Begin CI.
+Each push to your default branch kicks off Begin CI.
 
 The last step for each green build is a `staging` deploy.
 
@@ -135,25 +135,50 @@ Provided all other build steps `exit(0)`, Begin takes over again to manage deplo
 
 The deploy step is non-configurable and does not currently output logs.
 
+
 ### **Changing the default GitHub branch**
 
-Altering source control should be done with care and due diligence. Fortunately, the procedure is straightforward, but can become more complicated as you check for other downstream dependencies. Each service that depends on a git hook should be evaluated and your team needs to be informed of the migration procedure. 
+Git (and GitHub) default new repos to using a branch named `master`, a term [actively being phased](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1) out [by our industry](https://mysqlhighavailability.com/mysql-terminology-updates/). Fortunately, the procedure for changing your default branch is pretty straightforward (although it may surface some edges as you check for other downstream dependencies). Altering source control should be done with care and due diligence.
 
-- First, make sure you have a working backup of your existing default branch. 
+> 👓 Note: If you're associating a fresh Begin app with an existing GitHub repo, no configuration is required – Begin will use whatever you've already set the default branch to be, and will ship builds from pushes to that branch branch automatically.
 
-- Next, rename your existing default branch to another name, like `main`.
+These instructions will assume you'll be renaming your default branch to `main`, but you can name it whatever you like.
+
+-  First, check to ensure any apps or services you have connected to your repo don’t depend on `master`; if so, prepare to reconfigure them to use `main`
+- Make sure to let any collaborators on your repo know that you’ll be changing `master` to `main`, as they’ll have to make some (simple) local changes once it’s done
+- Optional, but it’s smart to clean up any outstanding pull requests to `master`; merge them if possible (or at least be prepared to set them to your new destination branch)
+- Always good hygiene: have a good backup of your repo and any work that’s not checked in, just in case
+
+Now let's rename your existing default branch to `main`:
 
 ```bash
 git branch -m master main
 ```
 
-From the git docs: 
->With a -m or -M option, <oldbranch> will be renamed to <newbranch>. If <oldbranch> had a corresponding `reflog`, it is renamed to match <newbranch>, and a `reflog` entry is created to remember the branch renaming. If <newbranch> exists, -M must be used to force the rename to happen.
+> **From the git docs**
+> With a -m or -M option, <oldbranch> will be renamed to <newbranch>. If <oldbranch> had a corresponding `reflog`, it is renamed to match <newbranch>, and a `reflog` entry is created to remember the branch renaming. If <newbranch> exists, -M must be used to force the rename to happen.
 
-- Then, push this newly renamed branch to GitHub
+Then, push this newly renamed branch to GitHub:
 
 ```bash
 git push -u origin main
 ```
 
-- Finally, change the default branch in GitHub by navigating to your GitHub repo > _Settings_ > _branches_. Then choose your newly named branch. It should appear in the drop down list as a result from the earlier push. If you are importing an existing repo with a custom default branch, no further configuration is required. Begin is set to operate on pushes to your default branch automatically. For more information check out the GitHub documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
+Finally, change the default branch in GitHub with the following steps:
+
+- Go to your repo on GitHub's web console
+- Go to _Settings_ > _Branches_
+- Change the default branch from `master` to `main` (it should appear in the drop down list as a result from the earlier push)
+- Click Update
+- That’s it!
+
+Future collaborators will automatically be on `main`; existing contributors may have a small amount of work to do to get set up, namely:
+
+- First: `git fetch`
+- Then: `git checkout -b main origin/main`
+- Optionally (to tidy up their local git): `git remote update origin — prune`
+- In some cases it may also be necessary to run: `git remote set-head origin main`
+
+Finally, only after you’ve migrated any dependent systems, your team has moved over locally, and you’re sure you’re ready to tidy up, delete the old master branch with: `git push -d origin master`
+
+For more information check out the GitHub's documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
