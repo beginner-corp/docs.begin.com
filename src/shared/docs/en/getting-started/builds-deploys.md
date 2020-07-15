@@ -2,7 +2,7 @@
 
 In addition to provisioning and managing your app's infrastructure, Begin is also a fully integrated CI/CD build pipeline optimized for incredibly rapid deployments.
 
-Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to `master`.
+Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your default GitHub branch, usually `master`.
 
 Deployments to `staging` and `production` take only seconds and are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
 
@@ -16,14 +16,14 @@ The `Activity` view – your default view in Begin - shows all your app's builds
 Begin offers three hosted environments out of the box: `testing`, `staging`, and `production`. Begin also supports full [local development](./working-locally), of course.
 
 Within these hosted environments, Begin follows a fairly traditional CI/CD build pipeline:
-- `testing` - Commits to `master` kick off CI; green builds deploy to `staging`
-- `staging` - Runs latest green build from `master`; clicking the `Deploy to Production` button in the left nav in Begin (or cutting a git tag) deploys to `production`
+- `testing` - Commits to the default branch kick off CI; green builds deploy to `staging`
+- `staging` - Runs latest green build from your default branch; clicking the `Deploy to Production` button in the left nav in Begin (or cutting a git tag) deploys to `production`
 - `production` - Runs the latest `production` release
 
 
 ## Deploying to `staging`
 
-Each push to `master` kicks off Begin CI.
+Each push to your default branch, usually `master`, kicks off Begin CI.
 
 The last step for each green build is a `staging` deploy.
 
@@ -134,3 +134,26 @@ Provided all other build steps `exit(0)`, Begin takes over again to manage deplo
 - Deploying static assets (`public/*`) to your app's built-in blob store (S3) and CDN
 
 The deploy step is non-configurable and does not currently output logs.
+
+### **Changing the default GitHub branch**
+
+Altering source control should be done with care and due diligence. Fortunately, the procedure is straightforward, but can become more complicated as you check for other downstream dependencies. Each service that depends on a git hook should be evaluated and your team needs to be informed of the migration procedure. 
+
+- First, make sure you have a working backup of your existing default branch. 
+
+- Next, rename your existing default branch to another name, like `main`.
+
+```bash
+git branch -m master main
+```
+
+From the git docs: 
+>With a -m or -M option, <oldbranch> will be renamed to <newbranch>. If <oldbranch> had a corresponding `reflog`, it is renamed to match <newbranch>, and a `reflog` entry is created to remember the branch renaming. If <newbranch> exists, -M must be used to force the rename to happen.
+
+- Then, push this newly renamed branch to GitHub
+
+```bash
+git push -u origin main
+```
+
+- Finally, change the default branch in GitHub by navigating to your GitHub repo > _Settings_ > _branches_. Then choose your newly named branch. It should appear in the drop down list as a result from the earlier push. If you are importing an existing repo with a custom default branch, no further configuration is required. Begin is set to operate on pushes to your default branch automatically. For more information check out the GitHub documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
