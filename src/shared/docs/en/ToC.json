@@ -67,7 +67,8 @@
           "Build pipeline",
           "Deploying to staging",
           "Deploying to production",
-          "Configuring build steps"
+          "Configuring build steps",
+          "Changing your default branch"
         ]
       },
       {
