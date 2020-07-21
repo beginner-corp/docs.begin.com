@@ -201,6 +201,7 @@
           "Overview",
           "Provisioning new scheduled functions",
           "Scheduled functions in action",
+          "Limits",
           "Removing scheduled functions"
         ]
       }
@@ -339,6 +340,24 @@
           "Get set up locally",
           "Project structure",
           "How events work in this app",
+          "Deploy your site",
+          "Additional resources"
+        ]
+      },
+      {
+        "docType": "Guide",
+        "docID": "scheduled",
+        "docTitle": "Scheduled functions",
+        "description": "Get started building with scheduled functions",
+        "icon": "circle-begin.svg",
+        "background": "gradient-purple-green.png",
+        "sections": [
+          "Begin scheduled functions",
+          "Getting started",
+          "Your first deploy",
+          "Get set up locally",
+          "Project structure",
+          "How scheduled functions work in this app",
           "Deploy your site",
           "Additional resources"
         ]
