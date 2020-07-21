@@ -11,7 +11,7 @@ Oh, and provisioning new event functions is a cinch!
 
 ## Provisioning new event functions
 
-To provision a new event function, in the root of your project, open your app's Architect project manifest file (usually `.arc`):
+To provision a new event function, in the root of your project, open your app's Architect project manifest file (usually `app.arc`):
 
 1. Find your project's `@events` pragma
   - If you don't already have one, add to a new line: `@events`
@@ -102,7 +102,7 @@ Because the event is operating out of band from the HTTP function that invoked i
 
 ## Removing event functions
 
-You can remove event functions from your app the same way you add them: by modifying your Architect project manifest (`.arc`) file.
+You can remove event functions from your app the same way you add them: by modifying your Architect project manifest (`app.arc`) file.
 
 Once pushed to your repo, any events removed from your project's `@events` pragma will be removed from `staging`; your `production` events will not be changed until you deploy to production.
 

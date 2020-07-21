@@ -128,9 +128,9 @@ After receiving an incoming payload published from another function, this event 
 As we just mentioned, the recommended (and easiest) way to work with events is the [Architect Functions](https://www.npmjs.com/package/@architect/functions). In this project, our HTTP `post /my-event` uses Architect Functions to publishing to the `my-event` event.
 
 
-### `.arc`
+### `app.arc`
 
-Your `.arc` file is where you will provision new events and functions.
+Your `app.arc` file is where you will provision new events and functions.
 
 Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
 

@@ -89,7 +89,7 @@ Now you are all set to work on your app locally!
 
 Create a new route in five easy steps
 1. Make sure you are in your project's folder on your computer
-2. Open the `.arc` file in the root of your project
+2. Open the `app.arc` file in the root of your project
 3. Find (or add) the `@http` pragma, and on a new line, add a route ( `get /api` )
 4. Start the local dev environment (`npm start`) to generate any new HTTP Function handlers
 5. Push your changes!
@@ -144,9 +144,9 @@ The HTTP function that handles requests to `get /api` is found in `src/http/get-
 
 In the next section we will go more in-depth about how to fetch data from an HTTP Function.
 
-### `.arc`
+### `app.arc`
 
-Your `.arc` file is where you will provision new routes and functions.
+Your `app.arc` file is where you will provision new routes and functions.
 
 Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
 

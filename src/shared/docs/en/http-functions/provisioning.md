@@ -11,7 +11,7 @@ Oh, and provisioning new HTTP functions is a cinch!
 
 ## Provisioning new HTTP functions
 
-To provision a new HTTP function, in the root of your project, open your app's Architect project manifest file (usually `.arc`):
+To provision a new HTTP function, in the root of your project, open your app's Architect project manifest file (usually `app.arc`):
 
 1. Find your project's `@http` pragma
   - If you don't already have one, add to a new line: `@http`
@@ -104,7 +104,7 @@ You can do a lot with this functionality!
 
 ## Removing HTTP functions
 
-You can remove HTTP functions from your app the same way you add them: by modifying your Architect project manifest (`.arc`) file.
+You can remove HTTP functions from your app the same way you add them: by modifying your Architect project manifest (`app.arc`) file.
 
 Once pushed to your repo, any routes removed from your project's `@http` pragma will be removed from `staging`; your `production` routes will not be changed until you deploy to production.
 
