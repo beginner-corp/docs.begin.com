@@ -34,11 +34,12 @@ Congratulations! You now know how to create scheduled functions.
 ## Scheduled functions in action
 
 Think of scheduled functions as a job you want to do every so often.
-One such job you might want to do is give yourself a daily affirmation. Let's walk through one way to implement this.
 
-Add a scheduled function named **affirm** with a rate of **1 day** to your `app.arc` file by adding: `affirm rate(1 day)`
-Generate a boilerplate handler with `npm start`.
-Edit the file `src/scheduled/affirm/index.js`.
+One such job you might want to do is give yourself a daily affirmation. Let's walk through one way to implement this:
+
+1. Add a scheduled function named **affirm** with a rate of **1 day** to your `app.arc` file by adding: `affirm rate(1 day)`
+2. Generate a boilerplate handler with `npm start`
+3. Edit the file `src/scheduled/affirm/index.js`
 
 ```js
 // Handler function
@@ -47,6 +48,18 @@ exports.handler = async function affirmation(event) {
   return
 }
 ```
+
+
+## Limits
+
+In the Begin free-tier, scheduled functions are limited in the following ways:
+
+- They can run no more frequently than once every 6 hours
+- 30 seconds of execution time
+
+Begin paid-tier apps are not limited in these ways.
+
+Another important thing to note: AWS does not guarantee the exact time of execution. So while you can request a scheduled function runs twice daily, you cannot specify that it run at noon and midnight – it may always run at 2:04PM & 2:04AM, for example.
 
 
 ## Removing scheduled functions
