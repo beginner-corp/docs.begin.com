@@ -129,7 +129,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 ├── src/
 │   └── http/
 │        └── get-api/
-└── .arc
+└── app.arc
 ```
 
 ### `public/index.html` & `public/index.js`

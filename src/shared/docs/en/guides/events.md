@@ -105,10 +105,10 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 │   └── index.html
 ├── src/
 │   ├── events/
-│   │    └── my-event/
+│   │   └── my-event/
 │   └── http/
-│        └── post-my_event/
-└── .arc
+│       └── post-my_event/
+└── app.arc
 ```
 
 ### `public/index.html`
