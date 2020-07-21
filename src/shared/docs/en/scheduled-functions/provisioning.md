@@ -15,7 +15,7 @@ data-backup rate(1 week)
 ```
 Above is an example of a scheduled function `data-backup` entry with a rate specified `rate(1 week)`.
 
-> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes. They must declare a `rate` with a number, and an time period with the appropriate singular / plural form, e.g. `rate(1 day)`, `rate(2 weeks)`
+> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes. They must declare a `rate` with a number, and a time period with the appropriate singular / plural form, e.g. `rate(1 day)`, `rate(2 weeks)`
 >
 > <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#RateExpressions" target="_blank" rel="noopener">Read more about the `rate` syntax here</a>
 
@@ -59,7 +59,7 @@ In the Begin free-tier, scheduled functions are limited in the following ways:
 
 Begin paid-tier apps are not limited in these ways.
 
-Another important thing to note: AWS does not guarantee the exact time of execution. So while you can request a scheduled function runs twice daily, you cannot specify that it run at noon and midnight – it may always run at 2:04PM & 2:04AM, for example.
+Another important thing to note: AWS does not guarantee the exact time of execution. So while you can request a scheduled function runs twice daily, you cannot specify that it run at noon and midnight – it may always run at 2:04 PM & 2:04 AM, for example.
 
 
 ## Removing scheduled functions

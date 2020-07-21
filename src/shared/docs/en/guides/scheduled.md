@@ -210,7 +210,7 @@ This app is designed to demonstrate the power of scheduled functions and Begin d
 
 Inside the `app.arc` file in the root of your project, we've added an entry to the `@scheduled` pragma to provision a new scheduled function named `backup`. This function runs on a 6 hour interval (`rate(6 hours)`) that backs up the current number of page views (which are written to the database by our `get-index` function). You can save this backup wherever you'd like, such as an S3 bucket.
 
-> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes. They must declare a `rate` with a number, and an time period with the appropriate singular / plural form, e.g. `rate(1 day)`, `rate(2 weeks)`
+> ⚠️ Scheduled function names are lowercase alphanumeric and can contain dashes. They must declare a `rate` with a number, and a time period with the appropriate singular / plural form, e.g. `rate(1 day)`, `rate(2 weeks)`
 >
 > <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#RateExpressions" target="_blank" rel="noopener">Read more about the `rate` syntax here</a>
 
