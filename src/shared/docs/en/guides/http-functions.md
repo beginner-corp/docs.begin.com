@@ -148,9 +148,9 @@ In the next section we will go more in-depth about how to fetch data from an HTT
 
 Your `app.arc` file is where you will provision new routes and functions.
 
-Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
+Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use).
 
-By checking in your Begin app’s project manifest (.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
+By checking in your Begin app’s project manifest (`app.arc`) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
 
 > 💡 **Learn more!** Head here to dig deeper into [provisioning and working with HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
