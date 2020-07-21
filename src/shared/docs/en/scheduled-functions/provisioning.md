@@ -2,7 +2,7 @@
 
 Set up recurring tasks to run on an interval with **Begin scheduled functions**.
 
-Scheduled functions enable you to do things like back up your data once a week, or generate a monthly report based on user interactions. They are the serverless equivalent of a cron job.
+Scheduled functions enable you to do things like regularly back up your application's database, or generate monthly reports based on user interactions. They are the serverless equivalent of a cron job.
 
 
 ## Provisioning new scheduled functions
