@@ -79,7 +79,8 @@ git clone https://github.com/your-github-username/your-new-begin-app.git
 Once you've got your project cloned on your local machine, `cd` into the project directory and install your dependencies:
 
 ```bash
-git clone https://github.com/your-github-username/your-new-begin-app.git
+cd your-new-begin-app
+npm install
 ```
 ---
 
