@@ -99,6 +99,7 @@ filesystem
 FQDN
 frontend
 Frontend
+function-config
 globals
 GraphQL
 hardcode
@@ -219,6 +220,7 @@ unformatted
 Unordered
 unparsed
 Unsplash
+unthrottled
 Utils
 vars
 vimrc
