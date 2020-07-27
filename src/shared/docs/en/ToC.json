@@ -208,6 +208,31 @@
     ]
   },
   {
+    "catID": "function-config",
+    "catTitle": "Function config",
+    "docs": [
+      {
+        "docID": "config",
+        "docTitle": "Config",
+        "description": "Configure individual Lambda function properties",
+        "sections": [
+          "Overview",
+          "Provisioning new function config",
+          "Limits"
+        ]
+      },
+      {
+        "docID": "layers",
+        "docTitle": "Layers",
+        "description": "Configure individual Lambda function properties",
+        "sections": [
+          "Overview",
+          "Provisioning new layer"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "data",
     "catTitle": "Data",
     "docs": [
