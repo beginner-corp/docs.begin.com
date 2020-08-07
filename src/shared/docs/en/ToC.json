@@ -55,7 +55,8 @@
         "description": "Introduction to Begin",
         "sections": [
           "Getting set up",
-          "Previewing your changes"
+          "Previewing your changes",
+          "Routes and logging"
         ]
       },
       {
@@ -76,11 +77,10 @@
         "description": "Learn more about the project structure of Begin apps",
         "sections": [
           "Overview",
-          "src/http",
-          "src/shared",
-          "src/views",
-          "public/",
-          "tests/",
+          "Business logic",
+          "Shared code",
+          "Static assets",
+          "Tests",
           "Considerations"
         ]
       },
@@ -96,7 +96,8 @@
         "sections": [
           "Overview",
           "Adding variables",
-          "Editing variables"
+          "Editing variables",
+          "Using Variables While Developing"
         ]
       },
       {

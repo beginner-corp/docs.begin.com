@@ -109,6 +109,7 @@ headlessly
 HelloWorld
 hostname
 html-webpack-plugin
+http
 HTTP
 HTTPS
 IAM
@@ -176,6 +177,7 @@ repo
 repos
 reproducibility
 resiliance
+RequestId
 roadmap
 Roadmap
 Rollup

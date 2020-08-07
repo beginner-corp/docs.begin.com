@@ -1,6 +1,6 @@
 ## Overview
 
-Begin applications are comprised of many small, fast, individually executing cloud functions (or Functions for short).
+Begin applications are comprised of many small, fast, individually executing cloud functions (or [HTTP Functions](/en/http-functions/provisioning) as we like to call them).
 
 Let's take a look at the source tree of a basic Begin app:
 

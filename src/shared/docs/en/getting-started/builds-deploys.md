@@ -2,13 +2,14 @@
 
 In addition to provisioning and managing your app's infrastructure, Begin is also a fully integrated CI/CD build pipeline optimized for incredibly rapid deployments.
 
-Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to `master`.
+Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your `main` branch.
 
 Deployments to `staging` and `production` take only seconds and are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
 
+The `Activity` view – your default view in Begin - shows all your app's builds, its current deploy status, and corresponding build log data.
+
 ![Begin screenshot](/_static/screens/begin-activity.jpg)
 
-The `Activity` view – your default view in Begin - shows all your app's builds, its current deploy status, and corresponding build log data.
 
 
 ## Build pipeline
@@ -16,14 +17,16 @@ The `Activity` view – your default view in Begin - shows all your app's builds
 Begin offers three hosted environments out of the box: `testing`, `staging`, and `production`. Begin also supports full [local development](./working-locally), of course.
 
 Within these hosted environments, Begin follows a fairly traditional CI/CD build pipeline:
-- `testing` - Commits to `master` kick off CI; green builds deploy to `staging`
-- `staging` - Runs latest green build from `master`; clicking the `Deploy to Production` button in the left nav in Begin (or cutting a git tag) deploys to `production`
+- `testing` - Commits to `main` branch and kicks off Begin CI
+  - green builds deploy to `staging`
+- `staging` - Runs latest green build from `main` Git branch.
+  - clicking the `Deploy to Production` button in the left nav in Begin activity (or cutting a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging)) deploys to `production`
 - `production` - Runs the latest `production` release
 
 
 ## Deploying to `staging`
 
-Each push to `master` kicks off Begin CI.
+Each push to your `main` Git branch kicks off Begin CI.
 
 The last step for each green build is a `staging` deploy.
 
@@ -32,32 +35,51 @@ The version of your app currently running on `staging` is represented by the com
 
 ## Deploying to `production`
 
+<img src="/_static/screens/shared/shipit.png" style="border:0; display:block; margin:auto; height:300px; textAlign: center;">
+
 Deploys to `production` can only occur when the latest `staging` build is green (i.e. all build steps passed without error).
 
-Assuming your current build is green, cut a `production` release by:
-- Using the `Deploy to Production` button in the left nav in Begin, or
+Assuming your current build is green, you can cut a `production` release by:
+
+- Using the `Deploy to Production` button in the left nav in Begin
 - Creating a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging), i.e.:
-```bash
-git tag -a 1.0.1 -m "This release includes 20% more cowbell"
-git push origin 1.0.1
-```
+
+  - ```bash
+  git tag -a 1.0.1 -m "This release includes 20% more cowbell"
+  git push origin 1.0.1
+  ```
 - Or also by creating a [Release in GitHub](https://help.github.com/articles/creating-releases/)
 
 The current running version on `production` is represented by the version you specified in your git tag (and is also found in the upper left corner of Begin).
 
 > 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!
 
+![Begin SemVer](/_static/screens/shared/begin-semver.jpg)
+
 
 ## Configuring build steps
 
-Begin CI executes three default, non-configurable steps: ([`verify`](#verify), [`install`](#install), and [`deploy`](#deploy)); and three optional, configurable steps: [`build`](#build), [`lint`](#lint), and [`test`](#test). In order of execution:
+Begin CI executes three default, non-configurable steps: 
 
+- [`verify`](#verify)
+- [`install`](#install) 
+- [`deploy`](#deploy); 
+
+and three optional, configurable steps: 
+
+- [`build`](#build)
+- [`lint`](#lint)
+- [`test`](#test)
+
+![Build Steps](/_static/screens/shared/build-steps.jpg)
+
+In order of execution:
 
 ### **Verify**
 
 Responsible for validating the repo payload from git and prepping Begin's infrastructure for a deployment.
 
-This step is non-configurable and does not output logs.
+*This step is non-configurable and does not output logs.*
 
 
 ### **Install**
@@ -67,7 +89,7 @@ Responsible for installing dependencies to:
 - Your project's cloud function directories (i.e. `src/http/**`)
 - Your project's shared code, if any (i.e. `src/shared/`, `src/views/`)
 
-This step is non-configurable and does output logs.
+*This step is non-configurable and does output logs.*
 
 > Note: dependencies in your project's root `package.json` are not available to your individual Functions; you should treat deps in the root as developer dependencies only.
 >
