@@ -105,10 +105,10 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 │   └── index.html
 ├── src/
 │   ├── events/
-│   │    └── my-event/
+│   │   └── my-event/
 │   └── http/
-│        └── post-my_event/
-└── .arc
+│       └── post-my_event/
+└── app.arc
 ```
 
 ### `public/index.html`
@@ -128,13 +128,13 @@ After receiving an incoming payload published from another function, this event 
 As we just mentioned, the recommended (and easiest) way to work with events is the [Architect Functions](https://www.npmjs.com/package/@architect/functions). In this project, our HTTP `post /my-event` uses Architect Functions to publishing to the `my-event` event.
 
 
-### `.arc`
+### `app.arc`
 
-Your `.arc` file is where you will provision new events and functions.
+Your `app.arc` file is where you will provision new events and functions.
 
-Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use)
+Infrastructure-as-code is the practice of provisioning and maintaining cloud infrastructure using a declarative manifest file. It’s like package.json, except for cloud resources like API Gateway, Lambda, and DynamoDB (all of which Begin apps use).
 
-By checking in your Begin app’s project manifest (.arc) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
+By checking in your Begin app’s project manifest (`app.arc`) file with your code, you can ensure you have exactly the cloud resources your code depends on. This is crucial for ensuring reproducibility and improving iteration speed.
 
 > 💡 **Learn more!** Head here to dig deeper into [provisioning and working with event functions in Begin apps](/en/event-functions/provisioning/).
 

@@ -253,14 +253,14 @@ Let's make a new route that displays our GraphQL playground on it's own page.
 **Ready to give it a go?**
 
 1. Head to your app’s repo folder
-2. Open the .arc file in your root
+2. Open the `app.arc` file in your root
 3. Find the @http pragma, and on a new line, add the route `get /playground`.
 4. Start the local dev environment (npm start) to generate any new HTTP Function handlers
 5. Push your changes!
 
 Your new route(s) will instantly activate in staging. Then deploy to production to see them there, too.
 
-> If your app’s existing .arc file has a commented warning about not editing it, go ahead and remove that – it's time to start editing that file!
+> If your app’s existing `app.arc` file has a commented warning about not editing it, go ahead and remove that – it's time to start editing that file!
 
 Inside of your project folder, navigate to the `src/http/get-playground/index.js` file. This [repo here](https://github.com/prisma-labs/graphql-playground/blob/master/packages/graphql-playground-html/minimal.html) provides the code that will display our playground. The code is also written below. Copy and paste this code inside of the `index.js` file.
 

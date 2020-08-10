@@ -13,7 +13,7 @@ Get started working with static assets by using the `public/` directory in your 
 
 By default, anything in your `public/` folder will be deployed to your app's file bucket, retaining its file name and any subdirectories you've specified.
 
-If you'd like to use a different folder name for delivering static assets, such as `assets`, add the following setting in your project manifest file (usually `.arc`):
+If you'd like to use a different folder name for delivering static assets, such as `assets`, add the following setting in your project manifest file (usually `app.arc`):
 
 ```arc
 @static

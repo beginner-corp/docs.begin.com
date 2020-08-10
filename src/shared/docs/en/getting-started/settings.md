@@ -45,7 +45,7 @@ Just follow the following steps:
 git clone https://github.com/{your GH org/username}/{your app name}.git
 ```
 
-2. Open the `.arc` file, and add a `@app` namespace (=<10 chars) to the top; for example, add lines 1-2:
+2. Open the `app.arc` file, and add a `@app` namespace (=<10 chars) to the top; for example, add lines 1-2:
 
 ```bash
 @app

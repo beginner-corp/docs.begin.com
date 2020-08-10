@@ -12,7 +12,7 @@ Let's take a look at the source tree of a basic Begin app:
 │   │   └── get-foo/    # … (optional) HTTP route: `GET /foo`
 │   ├── shared/         # … (optional) Shared code
 |   └── views/          # … (optional) Shared frontend code
-└── .arc                # … Project manifest (read-only)
+└── app.arc                # … Project manifest (read-only)
 ```
 
 Each Function directory services a handler for a publicly available HTTP route (e.g. `src/http/get-hello-world` services `GET /hello/world`).
