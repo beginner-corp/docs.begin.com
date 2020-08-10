@@ -1,5 +1,4 @@
-
-<img src="/_static/begin-logo.svg" style="border:0; display:block; margin:auto; height:70px; textAlign:center;">
+<img src="/_static/begin-logo.svg" style="border:0; display:block; margin:auto; margin-top:3rem; margin-bottom:3rem; height:70px; text-align:center;">
 
 Hello there! **Begin is the premier serverless development platform and one of the best ways create modern web-apps & APIs!**
 

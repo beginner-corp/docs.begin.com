@@ -123,6 +123,7 @@ exports.handler = async function http(request) {
 }
 ```
 
+> **🤖 Note:** [Click here to learn more about sharing code between functions!](/en/share-code/sharing-common-code)
 
 ## Static assets
 

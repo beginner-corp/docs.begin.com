@@ -52,7 +52,7 @@ Assuming your current build is green, you can cut a `production` release by:
 
 The current running version on `production` is represented by the version you specified in your git tag (and is also found in the upper left corner of Begin).
 
-> 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!
+> 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases and Begin gives you the ability to do that with each `production` deploy!
 
 ![Begin SemVer](/_static/screens/shared/begin-semver.jpg)
 
@@ -91,11 +91,12 @@ Responsible for installing dependencies to:
 
 *This step is non-configurable and does output logs.*
 
-> Note: dependencies in your project's root `package.json` are not available to your individual Functions; you should treat deps in the root as developer dependencies only.
+> **🤖 Note:**
+> - Dependencies in your project's root `package.json` are not available to your individual Functions; you should treat deps in the root as developer dependencies only.
 >
-> To ensure a dependency is available to a given Function, `cd` into that function's folder and install it there.
+>   - To ensure a dependency is available to a given Function, `cd` into that function's folder and install it there.
 >
-> To install global deps, install them to `src/shared` – but mind dependency bloat! **Function dirs must weigh in under 5MB uncompressed.**
+>   - To install global deps, install them to `src/shared` – but mind dependency bloat! **Function dirs must weigh in under 5MB uncompressed.**
 
 
 ### **Build**
@@ -155,4 +156,4 @@ Provided all other build steps `exit(0)`, Begin takes over again to manage deplo
 - Deploying all Function folders to their corresponding cloud functions
 - Deploying static assets (`public/*`) to your app's built-in blob store (S3) and CDN
 
-The deploy step is non-configurable and does not currently output logs.
+*The deploy step is non-configurable and does not currently output logs.*

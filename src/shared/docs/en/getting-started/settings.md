@@ -2,6 +2,8 @@
 
 Open `Settings` in Begin to view and modify your app's settings and resources, download your data, and eject or delete your app.
 
+![Begin-settings](/_static/screens/shared/begin-settings.jpg)
+
 
 ## App name
 
