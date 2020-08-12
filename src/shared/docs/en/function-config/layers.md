@@ -28,9 +28,9 @@ In this example we are going to load a Lambda Layer to dynamically resize an ima
 
 1. The first step is to create a new Begin project and install `GraphicsMagick` locally. You can choose to install from [these sources](http://www.graphicsmagick.org/README.html), but I chose to `brew install graphicsmagick`.
 
-  - Follow the [Begin QuickStart](/en/guides/quickstart) to create a new project.
+  - Follow the [Begin Quickstart](/en/guides/quickstart) to create a new project.
     - Use the minimal example app starter
-  - Install graphicmagick locally.
+  - Install graphicsmagick locally.
     - `brew install graphicsmagick`
 
 2. Now we can modify `app.arc` with 2 new routes.

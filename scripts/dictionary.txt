@@ -101,6 +101,7 @@ frontend
 Frontend
 function-config
 globals
+graphicsmagick
 GraphQL
 hardcode
 hardcoding
