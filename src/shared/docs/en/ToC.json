@@ -132,6 +132,18 @@
     "catTitle": "HTTP functions",
     "docs": [
       {
+        "docID": "background",
+        "docTitle": "Background",
+        "description": "Understanding HTTP protocol",
+        "sections": [
+          "Overview",
+          "History",
+          "Request/Response pattern",
+          "HTTP messages",
+          "Additional resources"
+        ]
+      },
+      {
         "docID": "provisioning",
         "docTitle": "Provisioning",
         "description": "Provisioning new HTTP functions / routes for your Begin application",
@@ -166,6 +178,15 @@
           "Writing to sessions",
           "More about sessions",
           "Examples"
+        ]
+      },
+      {
+        "docID": "http-apis",
+        "docTitle": "HTTP APIs",
+        "description": "Using Begin's built-in sessions support for HTTP functions",
+        "sections": [
+          "Overview",
+          "Upgrade"
         ]
       }
     ]
