@@ -186,7 +186,8 @@
         "description": "Using Begin's built-in sessions support for HTTP functions",
         "sections": [
           "Overview",
-          "Upgrade"
+          "Upgrade",
+          "Auth using JWT"
         ]
       }
     ]

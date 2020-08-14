@@ -124,6 +124,7 @@ JS
 JSF
 JSON
 jsx
+JWT
 Kubernetes
 LEANX
 learnable

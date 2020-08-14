@@ -23,7 +23,9 @@ To provision a new HTTP function, in the root of your project, open your app's A
 
 Here's what a basic Architect project manifest looks like with the above two HTTP functions specified:
 
-```arc
+```bash
+# /app.arc
+
 @app
 your-app-name
 

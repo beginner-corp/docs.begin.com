@@ -9,20 +9,22 @@ This doc assumes familiarity with the basics of [how Begin HTTP functions are pr
 
 In a Begin app, each HTTP Function maps to a logical HTTP route. (We define a route as a tuple of HTTP method and path, e.g. `POST /api/submit`.)
 
-You can think of HTTP Function as its own tiny app with a single responsibility: handling all business logic related to its corresponding HTTP route.
+- You can think of HTTP Function as its own tiny app with a single responsibility: handling all business logic related to its corresponding HTTP route.
 
-HTTP functions do not require dependencies, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library (`@architect/functions`)](https://github.com/architect/functions).
-<!-- TODO: add link to Begin Arc Fns docs-->
+- HTTP functions do not require dependencies, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library (`@architect/functions`)](https://github.com/architect/functions).
 
-Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP functions (and thus your app) super fast.
+- Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is less than 5MB; this helps keep your HTTP functions (and thus your app) super fast.
 
 
 ## HTTP handler API
 
-The HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern. Let's look at an example of a basic HTTP Function:
+The HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern. 
+
+Let's look at an example of a basic HTTP Function:
 
 ```javascript
 // src/http/get-index/index.js
+
 let body = `
 <!doctype html>
 <html lang=en>
@@ -72,6 +74,7 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 ```javascript
 // Client requested https://begin.com/hello-world?testing=123
+
 {
   httpMethod: 'GET',
   path: '/salutations/hello-world',
@@ -94,10 +97,11 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 ### Parsing bodies
 
-All bodes are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
+All bodies are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
 
 ```javascript
 // Request is form URL-encoded string: 'greeting=howdy'
+
 let arc = require('@architect/functions')
 let parseBody = arc.http.helpers.bodyParser
 
@@ -135,6 +139,7 @@ Here's a simple example response for an API endpoint:
 
 ```javascript
 // Responding to a successful POST
+
 return {
   statusCode: 201,
   headers: {'Content-Type': 'application/json; charset=utf8'},
