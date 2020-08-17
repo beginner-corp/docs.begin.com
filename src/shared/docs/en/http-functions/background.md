@@ -39,16 +39,16 @@ HTTP messages are human-readable, plain text information about the request or re
 - headers
 - body
 
-<!-- TODO Add image -->
+![Begin activity](/_static/screens/shared/http-message.jpg)
 
-The information in these three sections varies depending on whether the HTTP message is a request message or response message. 
+> The information in these three sections varies depending on whether the HTTP message is a **request message** or **response message**. 
 
 
 ### HTTP request message
 
 An example HTTP request:
 
-<!-- TODO Add image -->
+![Begin activity](/_static/screens/shared/request-message.jpg)
 
 Requests consists of the following elements:
 
@@ -62,7 +62,7 @@ Requests consists of the following elements:
 
 An example response:
 
-<!-- TODO Add image -->
+![Begin activity](/_static/screens/shared/response-message.jpg)
 
 Responses consist of the following elements:
 
