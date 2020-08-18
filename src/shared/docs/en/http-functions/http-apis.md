@@ -1,10 +1,10 @@
 ## Overview
 
-In early 2019, Amazon built a new service from the ground up that offers a better solution for building APIs. HTTP APIs enable you to create RESTful APIs with lower latency and lower cost than REST APIs. We quickly implemented this new service into Begin to help speed up your development time and pass lower costs on you.
+In early 2019, Amazon built a new service from the ground up that offers a better solution for building APIs. HTTP APIs enable you to create RESTful APIs with lower latency and lower cost than REST APIs. We quickly implemented this new service into Begin to help speed up your development time and pass lower costs on to you.
 
 **Faster**
 
-For the majority of use cases, HTTP APIs offer up to a 60% reduction in latency. Developers strive to build applications with minimal latency and maximum functionality. They understand that each service involved in the application process can introduce latency.
+For the majority of use cases, HTTP APIs offer up to a 60% reduction in latency. Developers strive to build applications with minimal latency and maximum functionality. 
 
 **Lower costs**
 
