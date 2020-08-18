@@ -208,6 +208,97 @@
     ]
   },
   {
+    "catID": "runtime-utilities",
+    "catTitle": "Runtime utilities",
+    "docs": [
+      {
+        "docID": "@architect-functions",
+        "docTitle": "@architect/functions",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview"
+        ]
+      },
+      {
+        "docID": "arc-events",
+        "docTitle": "arc.events",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-http",
+        "docTitle": "arc.http",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-http-async",
+        "docTitle": "arc.http.async",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-queues",
+        "docTitle": "arc.queues",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-static",
+        "docTitle": "arc.static",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-tables",
+        "docTitle": "arc.tables",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      },
+      {
+        "docID": "arc-ws",
+        "docTitle": "arc.ws",
+        "description": "Runtime helper library for serverless apps built with Architect",
+        "sections": [
+          "Overview",
+          "Install",
+          "Usage",
+          "Example"
+        ]
+      }
+    ]
+  },
+  {
     "catID": "data",
     "catTitle": "Data",
     "docs": [
