@@ -157,6 +157,7 @@ payloads
 PEM
 plaintext
 pragma
+prepends
 pre-built
 pre-compiled
 pre-provision
@@ -214,6 +215,7 @@ transpiling
 tsx
 TTL
 UI
+URI
 unauthenticated
 unformatted
 Unordered

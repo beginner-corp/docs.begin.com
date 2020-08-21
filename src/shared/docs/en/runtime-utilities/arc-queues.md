@@ -5,6 +5,7 @@
 Queue functions are special Lambda functions that enable a message queue using [AWS SQS](https://aws.amazon.com/sqs/). Architect has helpful methods for working with JSON payloads, service discovery, and make responses compatible with Lambda function signatures.
 
 Functions defined by `@queue` in the `app.arc` file correspond to an SQS queue and a Lambda function handler. There are two methods you can use: 
+
 - `publish()`  
 - `subscribe()`
 
@@ -47,6 +48,7 @@ let arc = require('@architect/functions')
 ### Publish
 
 `arc.queues.publish(params, callback)`
+
 Publishes `params.payload` to the SQS Queue (queue) with name `params.name`. The `params.name` parameter should match the queue defined under `@queues`. 
 
 This allows you to publish to queues from any function within your application (`@app` `app.arc` file namespace) to be handled by the queue handler.
