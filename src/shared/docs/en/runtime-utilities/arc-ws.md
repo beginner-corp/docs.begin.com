@@ -1,5 +1,7 @@
 ## Overview
 
+Invoke `@ws` connected clients any function defined under the `@app` namespace.
+
 ## Install
 
 ### Install runtime helpers for Node
@@ -35,3 +37,33 @@ let arc = require('@architect/functions')
 ## Usage
 
 ## Example
+
+### Publish JSON payload to a WebSocket client
+
+Node
+
+```javascript
+let arc = require('@achitect/functions')
+
+await arc.ws.send({
+  id: event.context.connectionId
+  payload: {action: 'ping'},
+})
+```
+
+Ruby
+
+```ruby
+require 'architect/functions'
+
+Arc::WS.send id: event.context.connectionId, payload: {action: 'ping'}
+```
+
+Python
+
+```python
+import arc.ws
+
+arc.ws.send(id=event.context.connectionId, payload={'action': 'ping'})
+```
+

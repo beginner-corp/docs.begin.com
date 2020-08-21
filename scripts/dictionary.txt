@@ -231,6 +231,7 @@ vue-cli
 walkthrough
 webhooks
 Webpack
+WebSocket
 XSS
 YAML
 ZoneEdit
