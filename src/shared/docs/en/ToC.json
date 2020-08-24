@@ -186,8 +186,10 @@
         "description": "Using Begin's built-in sessions support for HTTP functions",
         "sections": [
           "Overview",
-          "Upgrade",
-          "Auth using JWT"
+          "Features",
+          "Differences between HTTP APIs and REST APIs",
+          "How do HTTP APIs integrate with other AWS services?",
+          "Upgrade"
         ]
       }
     ]

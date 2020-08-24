@@ -6,6 +6,7 @@ analytics
 Alexa
 API
 APIs
+AppConfig
 arc-repos
 arcana
 ARN
@@ -13,6 +14,8 @@ ARNs
 async
 auth
 Auth
+authorizer
+authorizers
 authortime
 AWS
 aws-sdk
@@ -66,6 +69,7 @@ CSR
 CSRF
 CSS
 CTO
+customizable
 debuggable
 declaratively
 Declaratively
@@ -92,6 +96,7 @@ endpoint
 endpoints
 env
 envs
+EventBridge
 errback
 eslint
 Fanout
@@ -125,6 +130,7 @@ JSF
 JSON
 jsx
 JWT
+Kinesis
 Kubernetes
 LEANX
 learnable
@@ -150,8 +156,10 @@ non-serverless
 npm
 NS1
 OAuth
+OIDC
 ok
 Ok
+OpenID
 OpenJS
 param
 params
@@ -163,6 +171,7 @@ plaintext
 pragma
 pre-built
 pre-compiled
+pre-flight
 pre-provision
 pre-wired
 protip
