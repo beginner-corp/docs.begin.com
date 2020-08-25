@@ -17,6 +17,7 @@ exports.handler = async function http(request) {
     key: session.accountID
   })
   return {
+    statusCode: 200,
     type: 'text/html; charset=utf8',
     body: `Hello ${account.name}!`
   }
@@ -50,6 +51,7 @@ exports.handler = async function route(req) {
   let hello = await data.get({table, key})
 
   return {
+    statusCode: 200,
     type: 'text/html; charset=utf8',
     body: `"Hello" in ${key} is: ${hello}!`
   }

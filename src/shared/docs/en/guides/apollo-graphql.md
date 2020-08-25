@@ -159,6 +159,7 @@ The `public` directory is where we host our home page: `index.html`. Inside we h
       let query = `{hello}`
       let result = await fetch('/graphql', {
         method: 'post',
+        statusCode: 200,
         body: JSON.stringify({query}),
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
