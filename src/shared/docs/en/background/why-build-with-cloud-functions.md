@@ -25,7 +25,7 @@ Unlike server-metaphor-based technologies (servers, VMs, instances, Docker / Kub
 - **Recycle instantly** – no more lag to do simple things like modify environment variables, cloud functions are easily reconfigured, and changes go live in milliseconds
 - **Never require patching** - the latest under-the-hood security updates are baked into every invocation in real-time, without maintainer intervention
 - **Never require maintenance** - planned downtime to tidy up your server cluster is simply a thing of the past
-- **Only pay for what you for what you use, and at affordable rates** - not having to keep servers running means not having to pay for servers sitting idle; and even when in heavy use, cloud functions are highly affordable
+- **Only pay for what you use, and at affordable rates** - not having to keep servers running means not having to pay for servers sitting idle; and even when in heavy use, cloud functions are highly affordable
 
 Cloud function apps embody the dream we've been promised of the cloud for decades. With these new superpowers comes new considerations.
 
@@ -42,7 +42,7 @@ Unlike servers, which can take seconds or minutes to spin up, cloud functions st
 Because cloud functions are effectively stateless, older socket-based data persistence systems (example: most SQL databases) can become overwhelmed by their need to open and close connections so frequently.
 - For this reason, cloud functions work best with persistence systems that utilize fast, non-socket-based methods of transaction (e.g. HTTP, API, etc.)
 - Examples include Begin Data / DynamoDB, Firebase, RethinkDB, FaunaDB, GraphQL, etc.
-- This is, of course, evolving! We understand there projects launching soon to enable cloud function-friendly accessing of socket-based databases like SQL, Postgres, MongoDB, etc.
+- This is, of course, evolving! We understand there are projects launching soon to enable cloud function-friendly accessing of socket-based databases like SQL, Postgres, MongoDB, etc.
 
 
 ### **Smaller cloud functions run faster**
