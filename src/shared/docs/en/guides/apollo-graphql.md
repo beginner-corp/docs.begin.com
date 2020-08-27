@@ -159,7 +159,6 @@ The `public` directory is where we host our home page: `index.html`. Inside we h
       let query = `{hello}`
       let result = await fetch('/graphql', {
         method: 'post',
-        statusCode: 200,
         body: JSON.stringify({query}),
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
@@ -222,7 +221,7 @@ A solid platform is the foundation of a durable application, but tests are essen
 
 You can find the test script specified in package.json:
 
-```javascript
+```js
 // package.json
 {
   "scripts": {

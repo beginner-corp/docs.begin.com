@@ -38,7 +38,7 @@ Copy with `inline code`
 
 Copy with [`linked inline code`](#)
 
-```javascript
+```js
 function codeblock() {
   console.log('full code block')
 }

@@ -48,7 +48,7 @@ The following keys are required (unless stated otherwise):
 
 ### Example ToC
 
-```javascript
+```js
 [
   {
     "cat": "dog-rates",

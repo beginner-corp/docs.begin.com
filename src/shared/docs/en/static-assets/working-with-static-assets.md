@@ -85,7 +85,7 @@ Generally, the best way to access your static assets is through the `/_static` p
 
 Additionally, Begin's most commonly used Lambda runtime helper library, [Architect Functions](https://www.npmjs.com/package/@architect/functions), includes an `arc.static()` method for accessing your fingerprinted filenames automatically. Example:
 
-```javascript
+```js
 let arc = require('@architect/functions')
 let image = `<img src=${arc.static('this-is-fine.gif')}>`
 ```
@@ -103,7 +103,7 @@ Your app has the following environment variables available for accessing static 
 
 Here's an example of environment-aware helper for accessing your static assets:
 
-```javascript
+```js
 function staticAsset (filename) {
   if (process.env.NODE_ENV === 'production') {
     return `${process.env.BEGIN_STATIC_EDGE}/${filename}` // CDN

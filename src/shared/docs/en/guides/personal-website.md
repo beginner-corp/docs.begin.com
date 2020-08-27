@@ -165,7 +165,7 @@ This means the modules in this folder can be used by any `GET` HTTP function in 
 
 For example, here's how you'd `require` `src/views/main.js`:
 
-```javascript
+```js
 let layout = require('@architect/views/main')
 ```
 
@@ -185,7 +185,7 @@ As you saw earlier, `/src/http/get-index/index.js` is a great place to get start
 
 Now let's input your social media handles in place of the dummy data. Go ahead and change the values of the `email`, `twitter`, `linkedin`, `instagram`, and `facebook` keys – or remove any you don't want to keep.
 
-```javascript
+```js
 // src/http/get-index/index.js
 
 const Main = require('@architect/views/main.js')
