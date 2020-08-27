@@ -111,7 +111,7 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 This is the root function of our app that serves the view. We must note that we are getting the actual `HTML` from our shared `views` directory (`src/views`), which we'll discuss below. This function is also incrementing and storing each page view into your app's Begin Data database.
 
-```javascript
+```js
 // src/http/get-index/index.js
 
 let data = require('@begin/data')
@@ -131,8 +131,8 @@ exports.handler = async function http (req) {
     console.log('Stored a visit')
   }
 
-
   return {
+    statusCode: 200,
     headers: {
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0',
       'content-type': 'text/html; charset=utf8'
@@ -146,7 +146,7 @@ exports.handler = async function http (req) {
 
 This is our scheduled function – the star of the app! We use this function to back up the view counts collected in Begin Data. This backup function's rate is defined in our `app.arc` file.
 
-```javascript
+```js
 // src/scheduled/backup/index.js
 
 const data = require('@begin/data')
@@ -175,7 +175,7 @@ exports.handler = async function scheduled (event) {
 
 This file is serving the HTML view of our app. Every module inside our `views` folder is available to all of our `GET` functions. Note: for brevity, the actual HTML contents of this file are truncated.
 
-```javascript
+```js
 // src/views/doc.js
 
 module.exports = function Doc({ visits }) {

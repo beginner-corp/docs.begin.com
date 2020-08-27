@@ -21,7 +21,7 @@ Within your project, each HTTP Function can contain and utilize an arbitrary qua
 
 The HTTP handler API follows a simple [request](#requests) / [response](#responses) pattern. Let's look at an example of a basic HTTP Function:
 
-```javascript
+```js
 // src/http/get-index/index.js
 let body = `
 <!doctype html>
@@ -34,6 +34,7 @@ let body = `
 
 exports.handler = async function http(request) {
   return {
+    statusCode: 200,
     headers: {'Content-Type': 'text/html; charset=utf8'},
     body
   }
@@ -70,7 +71,7 @@ The `handler` function invoked by a client request receives a `request` object c
 
 Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /salutations/:greeting`:
 
-```javascript
+```js
 // Client requested https://begin.com/hello-world?testing=123
 {
   httpMethod: 'GET',
@@ -96,7 +97,7 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 All bodes are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
 
-```javascript
+```js
 // Request is form URL-encoded string: 'greeting=howdy'
 let arc = require('@architect/functions')
 let parseBody = arc.http.helpers.bodyParser
@@ -106,6 +107,7 @@ exports.handler = async function http(request) {
   let body = parseBody(request) // Pass the entire request object
   let greeting = body.greeting  // 'howdy'
   return {
+    statusCode: 200,
     headers: {'Content-Type': 'text/html; charset=utf8'},
     body: greeting
   }
@@ -133,7 +135,7 @@ Responses are returned by your `handler` function in an object, and use the foll
 
 Here's a simple example response for an API endpoint:
 
-```javascript
+```js
 // Responding to a successful POST
 return {
   statusCode: 201,
@@ -149,8 +151,9 @@ Many remote networks rely on overly aggressive reverse-proxy caches to conserve 
 
 Because of the highly adverse effects network-level caching can on your application, we strongly suggest that most HTTP Function responses include anti-caching headers – especially when returning `HTML` and `JSON` responses. For example:
 
-```javascript
+```js
 return {
+  statusCode: 200,
   headers: {
     'content-type': 'text/html; charset=utf8',
     'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
@@ -174,7 +177,7 @@ Learn more [about integrating Begin Data](/en/data/begin-data/) in your app's Fu
 
 ### Basic web response using sessions
 
-```javascript
+```js
 let begin = require('@architect/functions')
 
 exports.handler = async function http(request) {
@@ -189,6 +192,7 @@ exports.handler = async function http(request) {
 </html>
 `
   return {
+    statusCode: 200,
     headers: {'Content-Type': 'text/html; charset=utf8'},
     body
   }
@@ -198,7 +202,7 @@ exports.handler = async function http(request) {
 
 ### Forward a request
 
-```javascript
+```js
 exports.handler = async function http(request) {
   return {
     statusCode: 302,
@@ -210,7 +214,7 @@ exports.handler = async function http(request) {
 
 ### Write a request to [Begin Data](/en/data/begin-data/)
 
-```javascript
+```js
 let data = require('@begin/data')
 
 exports.handler = async function http(request) {

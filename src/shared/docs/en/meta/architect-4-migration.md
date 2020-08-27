@@ -51,11 +51,11 @@ To upgrade your existing codebase to Architect 4 Begin apps, follow these steps:
 5. If you're copying over your Function directories wholesale, make sure `@architect/functions` is updated in each route
   - `npx hydrate --update` from your project's root directory can help!
 6. If you don't want to switch to the new [dependency-free Function response signature](/en/functions/http/#http-handler-api), switch your statically bound function handler's `begin` method to `http`, and remove the HTTP verb, like so:
-```javascript
+```js
 // old
 exports.handler = begin.html.get(route)
 ```
-```javascript
+```js
 // new
 exports.handler = begin.http(route)
 ```

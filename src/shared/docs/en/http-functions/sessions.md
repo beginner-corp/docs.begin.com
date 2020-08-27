@@ -16,6 +16,7 @@ async function handler (req) {
     <pre>${JSON.stringify(req.session, null, 2)}</pre>
   `
   return {
+    statusCode: 200,
     body
   }
 }
@@ -36,6 +37,7 @@ async function addOne (req) {
   let session = { count }
   let location = '/'
   return {
+    statusCode: 200,
     session,
     location
   }
@@ -57,6 +59,7 @@ async function updateUserName (req) {
   let session = { account }
   let location = '/'
   return {
+    statusCode: 200,
     session,
     location
   }
@@ -88,6 +91,7 @@ Session state is also useful for passing error messages from a failed `POST`.
 {
   method: 'get',
   path: '/en/routes-functions/html-functions/',
+  statusCode: 200,
   headers:
   {
     host: 'docs.begin.com',
@@ -121,6 +125,7 @@ async function login (req) {
   let isLoggedIn = body.email === 'admin' && body.password === 'a-secure-password'
 
   return {
+    statusCode: 200,
     session: { isLoggedIn },
     location: '/'
   }
@@ -142,6 +147,7 @@ async function auth (req) {
   }
   else {
     return {
+      statusCode: 200,
       location: '/login'
     }
   }
@@ -149,6 +155,7 @@ async function auth (req) {
 
 function index (req) {
   return {
+    statusCode: 200,
     body: `Hi there, you're logged in! <a href="/logout">Logout</a>`
   }
 }

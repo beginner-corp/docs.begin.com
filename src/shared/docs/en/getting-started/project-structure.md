@@ -78,6 +78,7 @@ Here's what the `require` would look like for that file:
 const Constants = require('@architect/shared/constants')
 exports.handler = async function http(request) {
   return {
+    statusCode: 200,
     type: 'text/html; charset=utf8',
     body: Constants.helloWorld
   }
@@ -117,6 +118,7 @@ Here's what the `require` would look like for that file:
 const Layout = require('@architect/views/layout')
 exports.handler = async function http(request) {
   return {
+    statusCode: 200,
     type: 'text/html; charset=utf8',
     body: Layout('Hello world!')
   }

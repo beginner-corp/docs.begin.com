@@ -49,7 +49,7 @@ body {
 </div>
 ```
 
-```javascript
+```js
 function x() {
   return `gon give it to ya`
 }

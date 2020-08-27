@@ -247,12 +247,13 @@ The text in the red box below is actually being fetched from an example API endp
 
 The output of this HTTP function can be called by fetching `GET /api`, and subsequently used by any component within your Vue app:
 
-```javascript
+```js
 // src/http/get-api/index.js
 
 exports.handler = async function http (req) {
   console.log('Begin API called')
   return {
+    statusCode: 200,
     headers: {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
@@ -265,7 +266,7 @@ exports.handler = async function http (req) {
 ```
 Now let's navigate to `src/App.vue` to see how this HTTP function is being implemented into your app. `./App.vue` is our apps root component. Inside of the script tag you will find an import of our HelloWorld component. This component actually holds and displays the data from our Begin endpoint. As you can see below, `GET /api/` is fetched via async function.
 
-```javascript
+```js
 // src/App.vue
 
 <script>

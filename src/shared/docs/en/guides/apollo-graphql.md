@@ -221,7 +221,7 @@ A solid platform is the foundation of a durable application, but tests are essen
 
 You can find the test script specified in package.json:
 
-```javascript
+```js
 // package.json
 {
   "scripts": {

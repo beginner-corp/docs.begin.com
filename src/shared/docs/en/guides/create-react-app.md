@@ -175,7 +175,7 @@ A solid platform is the foundation of a durable application, but tests are essen
 
 You can find the test script specified in package.json:
 
-```javascript
+```js
 // package.json
 {
   "scripts": {
@@ -204,12 +204,13 @@ The text in the red box below is actually being fetched an example API endpoint,
 
 The output of this HTTP function can be called by fetching `GET /api`, and subsequently used by any component within your React app:
 
-```javascript
+```js
 // src/http/get-api/index.js
 
 exports.handler = async function http (req) {
   console.log('Begin API called')
   return {
+    statusCode: 200,
     headers: {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
@@ -223,7 +224,7 @@ exports.handler = async function http (req) {
 
 Now let's navigate to `src/App.js` to see how this HTTP function was being implemented into your app. As you can see below, `GET /api/` is fetched via async function wrapped in a React hook (`useEffect`).
 
-```javascript
+```js
 // src/App.js
 
 const App = () => {
