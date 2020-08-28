@@ -2,7 +2,7 @@
 
 Applications tend to share logic, templates, and other assets. Begin gives you a simple, seamless way to share modules, templates, and other files across your project's many functions.
 
-Given the following `.arc` file:
+Given the following `app.arc` file:
 
 ```bash
 @app
@@ -25,7 +25,7 @@ You would have the following file system layout:
 │       ├── get-about/
 │       ├── get-contact/
 │       └── post-contact/
-├── .arc
+├── app.arc
 └── package.json
 ```
 
@@ -49,15 +49,21 @@ Create either or both `src/shared` and `src/views` directories.
   │   │   └── post-contact/
 > │   ├── shared/
 > │   └── views/
-  ├── .arc
+  ├── app.arc
   └── package.json
 ```
 
 In the above example, files found in `src/shared` will be copied into every function's `node_modules/@architect/shared` directory.
 
-Similarly, files found in `src/views` will be copied into only `GET /`, `GET /about`, and `GET /contact`'s `/node_modules/@architect/shared` directories, but not `POST /contact`.
+Similarly, files found in `src/views` will be copied into `/node_modules/@architect/shared` directory as well, but only `GET` handlers and not `POST`:
 
-You can also specify a list of `@http` functions you want `src/views` to target by specifying them in the `@views` section of your `.arc` file. An example of this would look like:
+- `GET /`
+- `GET /about`
+- `GET /contact` 
+
+You can also specify a list of `@http` functions you want `src/views` to target by specifying them in the `@views` section of your `app.arc` file.
+
+An example of this would look like:
 
 ```bash
 @app
@@ -76,15 +82,15 @@ get /
 get /about
 ```
 
-What we've done is added two new routes:
+Here's an example of what we mean. What we've done is added two new routes:
+
 - `/gallery` 
 - `/css/:stylesheet`
 
-We then declared that only two of the routes in this project should receive a copy of the modules in `src/views`.
+We then declared that only two of the routes in this project should receive a copy of the modules in `src/views`:
+
 - `/`  
 - `/about` 
-
-
 
 ## Hydrate
 
@@ -94,7 +100,9 @@ Begin will refresh your functions' shared code whenever you:
 - Run `npx deploy`
 - Run `npx hydrate`
 
-Example: create `src/shared/layout.js`:
+## Example
+
+Create `src/shared/layout.js`:
 
 ```javascript
 module.exports = function layout(body) {

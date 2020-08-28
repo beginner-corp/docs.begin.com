@@ -266,7 +266,8 @@
         "sections": [
           "Overview",
           "The magical `src/shared` and `src/views` directories",
-          "Hydrate"
+          "Hydrate",
+          "Example"
         ]
       }
     ]
