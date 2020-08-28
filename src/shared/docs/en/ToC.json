@@ -132,6 +132,18 @@
     "catTitle": "HTTP functions",
     "docs": [
       {
+        "docID": "introduction",
+        "docTitle": "Introduction",
+        "description": "Introduction to HTTP, the request/response pattern, and HTTP functions",
+        "sections": [
+          "Overview",
+          "Origins",
+          "Request / response pattern",
+          "HTTP payloads",
+          "How HTTP functions work"
+        ]
+      },
+      {
         "docID": "provisioning",
         "docTitle": "Provisioning",
         "description": "Provisioning new HTTP functions / routes for your Begin application",
