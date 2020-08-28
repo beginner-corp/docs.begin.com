@@ -54,7 +54,7 @@ cd path/to/lambda
 pip install --target ./vendor architect-functions
 ```
 
-To use our runtime helpers inside of a module in your project, simply require as shown below.
+To use our runtime helpers inside of a module in your node environment, simply require as shown below.
 
 ```javascript
 let arc = require('@architect/functions')
@@ -75,7 +75,7 @@ Requests are run through each middleware function in the order they are passed t
 - `request` is an Object that has the following keys: 
 - `body` - any `application/x-www-form-urlencoded` form variables as a plain Object
 - `path` - absolute path of the request
-- `method` - one of GET, POST, PATCH, PUT and DELETE
+- `method` - one of `GET`, `POST`, `PATCH`, `PUT` and `DELETE`
 - `params` - any URL params defined
 - `query` - any query params defined
 - `headers` - a plain Object of request headers

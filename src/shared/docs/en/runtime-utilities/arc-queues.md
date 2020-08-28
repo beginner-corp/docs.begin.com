@@ -37,7 +37,7 @@ cd path/to/lambda
 pip install --target ./vendor architect-functions
 ```
 
-To use our runtime helpers inside of a module in your project, simply require as shown below.
+To use our runtime helpers inside of a module in your node environment, simply require as shown below.
 
 ```js
 let arc = require('@architect/functions')
