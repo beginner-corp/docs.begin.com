@@ -73,14 +73,14 @@ and three optional, configurable steps:
 
 In order of execution:
 
-### **Verify**
+### `Verify`
 
 Responsible for validating the repo payload from git and prepping Begin's infrastructure for a deployment.
 
 *This step is non-configurable and does not output logs.*
 
 
-### **Install**
+### `Install`
 
 Responsible for installing dependencies to:
 - The project root (`./`)
@@ -97,9 +97,9 @@ Responsible for installing dependencies to:
 >   - To install global deps, install them to `src/shared` – but mind dependency bloat! **Function dirs must weigh in under 5MB uncompressed.**
 
 
-### **Build**
+### `Build`
 
-**Optional**
+*(Optional)*
 
 Runs an arbitrary build script defined in your project's root `package.json` like so:
 
@@ -114,9 +114,9 @@ Runs an arbitrary build script defined in your project's root `package.json` lik
 This is a great place to generate static assets (to be deployed via the `public/` folder) or implement a bundler such as Webpack or Parcel.
 
 
-### **Lint**
+### `Lint`
 
-**Optional, but highly recommended!**
+*(Optional, but highly recommended!)*
 
 Runs eslint by default (or the linter of your choice). Defined in your Begin app's default `package.json` (and for hopefully obvious reasons we strongly suggest not removing it):
 
@@ -129,9 +129,9 @@ Runs eslint by default (or the linter of your choice). Defined in your Begin app
 ```
 
 
-### **Test**
+### `Test`
 
-**Optional, but highly recommended!**
+*(Optional, but highly recommended!)*
 
 Defines your test procedures. Like `lint`, it's defined in your Begin app's default `package.json` (and we strongly recommend expanding your app's tests):
 
@@ -146,7 +146,7 @@ Defines your test procedures. Like `lint`, it's defined in your Begin app's defa
 Head here to [learn more about writing tests](/en/getting-started/writing-tests).
 
 
-### **Deploy**
+### `Deploy`
 
 Ah, the step we've been waiting for!
 

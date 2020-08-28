@@ -15,7 +15,7 @@ and manages all your app's needs, like
 
 We can't wait to share everything you need to know about to go deeper with Begin.
 
-> (If you haven't already read the [Quickstart](/en/guides/quickstart), that's a very good place to start.)
+> (If you haven't already read the [Quickstart](/en/guides/quickstart), that's a very good place to start!)
 
 First thing's first: let's get set up to work locally.
 
@@ -54,8 +54,8 @@ Changes to your app in your local environment are immediately available without 
 
 Your application's business logic exists within 
 
-- [HTTP function directories](/http-functions/provisioning) (e.g. `src/http/get-index`)
-- [shared code directories](/share-code/sharing-common-code) `views` & `shared` (e.g. files in `src/shared/` or `src/views/`)
+- [HTTP function directories](/en/http-functions/provisioning) (e.g. `src/http/get-index`)
+- [shared code directories](/en/share-code/sharing-common-code) `views` & `shared` (e.g. files in `src/shared/` or `src/views/`)
 
 > ✨ Tip: if your local dev server is running when you pull down your new HTTP Function, it will automatically mount your new route and install its dependencies – no restart required!
 
