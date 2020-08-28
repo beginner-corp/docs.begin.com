@@ -170,6 +170,12 @@
         ]
       },
       {
+        "docID": "api-reference-legacy",
+        "docTitle": "API reference (legacy / v1 APIs)",
+        "description": "API reference for Begin HTTP functions using legacy payload format",
+        "hidden": true
+      },
+      {
         "docID": "sessions",
         "docTitle": "Sessions",
         "description": "Using Begin's built-in sessions support for HTTP functions",
