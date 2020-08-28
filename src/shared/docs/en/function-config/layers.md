@@ -2,7 +2,7 @@
 
 Layers contain additional code, libraries, and dependencies used to support an HTTP function at runtime. Layers eliminate the need to package external dependencies in your package.json for each HTTP function you create.
 
-> ⚠️ A function can use up to 5 layers at a time. The total unzipped size of the function and all layers can't exceed the unzipped deployment package size limit of 250 MB. For more information, see [AWS Lambda limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html).
+> ⚠️ One function can use up to 5 layers at a time. The total unzipped size of the function and all layers can't exceed the size limit of 250 MB. For more information, see [AWS Lambda limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html).
 
 
 ## Provisioning new layer
@@ -21,19 +21,18 @@ layers
 ```
 > ⚠️ Syntax for layers include either `layer arn` or `layer` followed by a newline and two spaces
 
-
 ## Example app
 
 In this example we are going to load a Lambda Layer to dynamically resize an image based on path parameters.
 
-1. The first step is to create a new Begin project and install `GraphicsMagick` locally. You can choose to install from [these sources](http://www.graphicsmagick.org/README.html), but I chose to `brew install graphicsmagick`.
+1.) The first step is to create a new Begin project and install `GraphicsMagick` locally. You can choose to install from [these sources](http://www.graphicsmagick.org/README.html), but I chose to `brew install graphicsmagick`.
 
   - Follow the [Begin Quickstart](/en/guides/quickstart) to create a new project.
     - Use the minimal example app starter
   - Install graphicsmagick locally.
     - `brew install graphicsmagick`
 
-2. Now we can modify `app.arc` with 2 new routes.
+2.) Now we can modify `app.arc` with 2 new routes.
 
   - `get /` will serve as the interface in our browser.
   - `get /resize/:size` is our app business logic that will let us take in the path parameter for the max-width of the image.
@@ -48,7 +47,7 @@ get /
 get /resize/:size
 ```
 
-3. Next let's write the `get-resize` function. Modify `get-resize-000size/index.js` file.
+3.) Next let's write the `get-resize` function. Modify `get-resize-000size/index.js` file.
 
 ```js
 // src/http/get-resize-000size/index.js
@@ -80,7 +79,7 @@ exports.handler = async function http(req) {
 }
 ```
 
-4. Open `.arc-config` in the `get-resize-000size` folder and add the following. This is a [published layer](https://github.com/rpidanny/gm-lambda-layer) that you can use which already includes the build artifact to access `graphicsmagick` from Node.
+4.) Open `.arc-config` in the `get-resize-000size` folder and add the following. This is a [published layer](https://github.com/rpidanny/gm-lambda-layer) that you can use which already includes the build artifact to access `graphicsmagick` from Node.
 
 ```bash
 # /src/http/get-resize-000size/.arc-config
@@ -92,7 +91,7 @@ layer arn:aws:lambda:us-east-1:175033217214:layer:graphicsmagick:2
 
 ```
 
-5. Let's modify `get-index` to give the user a browser to interact with. This will serve an HTML string with a link to an example path.
+5.) Let's modify `get-index` to give the user a browser to interact with. This will serve an HTML string with a link to an example path.
 
 ```js
 // src/http/get-index/index.js
@@ -117,4 +116,4 @@ let body = `
 }
 ```
 
-6. The final step is to place an image into the `get-resize-000size` folder named `your_image.jpg` and run `npm start` to see your layer in action!
+6.) The final step is to place an image into the `get-resize-000size` folder named `your_image.jpg` and run `npm start` to see your layer in action!

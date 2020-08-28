@@ -1,6 +1,6 @@
 ## Overview
 
-The function-config file (`.arc-config`) inside of an individual HTTP function directory allows you to change and modulate the settings of your function to fit your use case.
+The function-config file (`.arc-config`) is a file found inside an individual HTTP function directory that allows you to change and modulate your function's settings to fit your use case.
 
 ### Provisioning new function config
 
@@ -8,7 +8,7 @@ To provision a new function-config to an individual HTTP function, add a `.arc-c
 
 ### Configure individual Lambda function properties
 
-Below is a list of function properties that can be updated within an HTTP function and the appropriate syntax for each.
+Below is a list of function properties that can be updated within an HTTP function and the appropriate syntax.
 
 - `runtime` - Officially supported: one of `nodejs12.x` (default), `nodejs10.x`, `deno`, `python3.7`, `python3.6`, or `ruby2.5`
   - Also configurable, but not officially supported by Architect: `java8`, `go1.x`, `dotnetcore2.1`
@@ -32,4 +32,4 @@ policies {ARN}
 
 ## Limits
 
-Read more about the [Lambda limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) and [resource model](https://docs.aws.amazon.com/lambda/latest/dg/resource-model.html).
+Read more about the [Lambda limits here on Amazon](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) 
