@@ -360,7 +360,7 @@ await data.set({table, key, email})
 ```
 
 ## Working Locally
-Your local Sandbox instantiates an in-memory version of Begin Data. You can start Sandbox by running the command `arc sandbox` in the root of your project. You need to add the following to your `@tables` section to your `app.arc` file to create the local instance of Begin Data. 
+Your local Sandbox instantiates an in-memory version of Begin Data. You can start Sandbox by running the command `arc sandbox` in the root of your project. You need to add the following to `@tables` section to your `app.arc` file to create the local instance of Begin Data.
 
 `app.arc`:
 
