@@ -360,7 +360,19 @@ await data.set({table, key, email})
 ```
 
 ## Working Locally
-Your local Sandbox instantiates an in-memory version of Begin Data. You can start Sandbox by running the command `arc sandbox` in the root of your project. You can also use a startup script to insert test data for development or for automated tests. Sandbox looks for a file `/scripts/sandbox-startup.js` with an exported function.
+Your local Sandbox instantiates an in-memory version of Begin Data. You can start Sandbox by running the command `arc sandbox` in the root of your project. You need to add the following to `@tables` section to your `app.arc` file to create the local instance of Begin Data.
+
+`app.arc`:
+
+```
+@tables
+data
+  scopeID *String
+  dataID **String
+  ttl TTL
+```
+
+You can also use a startup script to insert test data for development or for automated tests. Sandbox looks for a file `/scripts/sandbox-startup.js` with an exported function.
 
 Example:
 ```js
