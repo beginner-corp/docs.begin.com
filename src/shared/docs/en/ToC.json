@@ -234,7 +234,8 @@
           "Destroy documents",
           "Helpers",
           "TTL",
-          "Limits"
+          "Limits",
+          "Working Locally"
         ]
       }
     ]
