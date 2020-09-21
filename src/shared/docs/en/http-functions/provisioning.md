@@ -70,28 +70,14 @@ It's possible to build dynamic paths using [Express-style URL parameters](http:/
 
 URL parameters are passed to your route via the `req.pathParameters` object. ([Learn more about HTTP requests here.](/en/http-functions/api-reference#requests))
 
-For example, the route used to serve this page is `get /:lang/:cat/:doc` ([view source](https://github.com/smallwins/docs.begin.com/blob/master/src/http/get-000lang-000cat-000doc/index.js)).
-
-When a client requests the path `/en/functions/provisioning/`, the HTTP function handling this route receives a `req` object containing:
+For example, when a client requests the path `/shop/chocolate-chip-cookies`, the HTTP function handling that route receives a `req` object containing:
 
 ```js
 {
+  routeKey: 'GET /shop/{product}',
+  rawPath: '/shop/chocolate-chip-cookies',
   pathParameters: {
-    lang: 'en',
-    cat: 'http-functions',
-    doc: 'provisioning'
-  }
-}
-```
-
-If we were to navigate to the [Quickstart doc](/en/guides/quickstart), the same HTTP function would receive a `req` object containing:
-
-```js
-{
-  pathParameters: {
-    lang: 'en',
-    cat: 'guides',
-    doc: 'quickstart'
+    product: 'chocolate-chip-cookies'
   }
 }
 ```
@@ -106,6 +92,6 @@ You can do a lot with this functionality!
 
 You can remove HTTP functions from your app the same way you add them: by modifying your Architect project manifest (`app.arc`) file.
 
-Once pushed to your repo, any routes removed from your project's `@http` pragma will be removed from `staging`; your `production` routes will not be changed until you deploy to production.
+Once pushed to your repo, any routes removed from your project's `@http` pragma will be removed from `staging` environment; your `production` routes will not be changed until you deploy to production.
 
-> Note: Removing routes from your project will not result in any changes to your git repo, so you will find the `src/http/` folder still retains your HTTP function code.
+> Note: Removing routes from your project will not result in any changes to your project's files, so you will find the `src/http/` folder still retains your HTTP function code (until you're ready to destroy it).

@@ -2,8 +2,8 @@
 `build`ing
 ACM
 af
-analytics
 Alexa
+analytics
 API
 APIs
 arc-repos
@@ -25,6 +25,7 @@ base64
 base64-encoded
 bashrc
 begin-vue-app
+Berners-Lee
 birb
 blockchain
 Blockquoted
@@ -37,6 +38,7 @@ CA
 cd
 CDN
 CDNs
+CERN
 CFA
 CFAs
 cheatsheet
@@ -57,14 +59,15 @@ congrats
 Congrats
 CORS
 CRA
+cron
 cross-env
 cruft
 cryptographically
-cron
 CSR
 CSRF
 CSS
 CTO
+de
 debuggable
 declaratively
 Declaratively
@@ -93,6 +96,7 @@ env
 envs
 errback
 eslint
+facto
 Fanout
 FaunaDB
 filesystem
@@ -127,8 +131,8 @@ LEANX
 learnable
 learnings
 lifecycle
-linter
 lifecycle
+linter
 macOS
 Microservices
 microservices-based
@@ -220,6 +224,8 @@ Unordered
 unparsed
 Unsplash
 Utils
+v1
+v2
 vars
 vimrc
 VPC

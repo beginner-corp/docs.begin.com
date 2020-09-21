@@ -2,7 +2,7 @@
 
 Say goodbye to web servers, web frameworks, routers, and tons of config – and say hello to **Begin HTTP functions**.
 
-This doc assumes familiarity with the basics of [how Begin HTTP functions are provisioned](/en/http-functions/provisioning).
+This doc assumes familiarity with the basics of [HTTP and request/response model](/en/http-functions/introduction), and [how Begin HTTP functions are provisioned](/en/http-functions/provisioning).
 
 
 ## Getting started
@@ -11,10 +11,15 @@ In a Begin app, each HTTP Function maps to a logical HTTP route. (We define a ro
 
 You can think of HTTP Function as its own tiny app with a single responsibility: handling all business logic related to its corresponding HTTP route.
 
-HTTP functions do not require dependencies, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with our [runtime library (`@architect/functions`)](https://github.com/architect/functions).
+HTTP functions do not require dependencies to run, and feature a minimal but [powerful low-level API](#http-handler-api) that can be optionally extended (and further simplified) with a purpose-built [runtime library: (`@architect/functions`)](https://github.com/architect/functions).
 <!-- TODO: add link to Begin Arc Fns docs-->
 
 Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP functions (and thus your app) super fast.
+
+> A note about request + response payload formats:
+> - Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default; see below for [request](#requests) and [response](#responses) payload documentation
+> - Begin apps created before September 2020 use legacy API Gateway `REST` APIs + Lambda payload format version 1.0; [legacy Begin docs are still available here](/en/http-functions/api-reference-legacy).
+> - Read more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ## HTTP handler API
@@ -32,10 +37,10 @@ let body = `
 </html>
 `
 
-exports.handler = async function http(request) {
+exports.handler = async function http (request) {
   return {
     statusCode: 200,
-    headers: {'Content-Type': 'text/html; charset=utf8'},
+    headers: { 'content-type': 'text/html; charset=utf8' },
     body
   }
 }
@@ -46,25 +51,43 @@ No sweat, right?
 
 ## Requests
 
+Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default. ([Head here for legacy `REST` API docs](/en/http-functions/api-reference-legacy).)
+
 The `handler` function invoked by a client request receives a `request` object containing the following parameters:
 
-- `httpMethod` - **String**
-  - One of `GET`, `POST`, `PATCH`, `PUT`, or `DELETE`
-- `path` - **String**
+- `version` - **String**
+  - Payload version (always `2.0`)
+- `routeKey` - **String**
+  - Tuple of HTTP method (`GET`, `POST`, `PATCH`, `PUT`, or `DELETE`) and path; URL params are surrounded in braces
+  - If path is not captured by a specific function, `routeKey` will be `$default` (and be handled by the `get /` function)
+  - Example: `GET /`, `GET /shop/{product}`
+- `rawPath` - **String**
   - The absolute path of the request
-- `pathParameters` - **null** or **Object**
-  - Any URL params, if defined in your HTTP Function's path (e.g. `foo` in `GET /:foo/bar`)
-- `queryStringParameters` - **null** or **Object**
+  - Example: `/`, `/shop/chocolate-chip-cookies`
+- `pathParameters` - **not present** or **Object**
+  - Any URL params, if defined in your HTTP function's path (e.g. `product` in `/shop/:product`)
+  - Example: `{ product: 'chocolate-chip-cookies' }`
+- `rawQueryString` - **String**
+  - String containing query string params of request, if any
+  - Example: `?someParam=someValue`, `''` (if none)
+- `queryStringParameters` - **not present** or **Object**
   - Any query params if present in the client request
+  - Example: `{ someParam: someValue }`
+- `cookies` - **not present** or **Array**
+  - Array containing all cookies, if present in client request
+  - Example: `[ 'some_cookie_name=some_cookie_value' ]`
 - `headers` - **Object**
   - All client request headers
-- `body` - **null** or **String (base64-encoded)**
+  - Example: `{ 'accept-encoding': 'gzip' }`
+- `requestContext` - **Object**
+  - Request metadata, including `http` object containing `method` and `path` (should you not want to parse the `routeKey`)
+- `body` - **not present** or **String (base64-encoded)**
   - Contains unparsed, base64-encoded request body
-  - We suggest parsing with our [body parser helper](#parsing-bodies)
+  - We suggest parsing with a [body parser helper](#parsing-bodies)
 - `isBase64Encoded` - **Boolean**
   - Indicates whether `body` is base64-encoded binary payload
 
-> Additional and extended versions of this and other data may be available in your `request`; for additional documentation, [please head here](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format).
+> Learn more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ### Example
@@ -72,24 +95,30 @@ The `handler` function invoked by a client request receives a `request` object c
 Here's an example of an incoming `request` object, being handled by the HTTP Function `GET /salutations/:greeting`:
 
 ```js
-// Client requested https://begin.com/hello-world?testing=123
+// Client requested https://your-domain/salutations/hello-world?testing=123
 {
-  httpMethod: 'GET',
-  path: '/salutations/hello-world',
+
+  version: '2.0',
+  routeKey: 'GET /salutations/{greeting}',
+  rawPath: '/salutations/hello-world',
+  pathParameters: { greeting: 'hello-world' },
+  rawQueryString: 'testing=123,
+  queryStringParameters: { testing: '123', },
+  cookies: [ 'some_cookie_name=some_cookie_value' ],
   headers: {
-    host: 'begin.com',
+    host: 'your-domain',
     connection: 'keep-alive',
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
-    accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-    dnt: '1',
-    'accept-encoding': 'gzip, deflate, br',
-    'accept-language': 'en-US,en;q=0.9',
-    Cookie: '_idx=LbyL0kPK2xOLfdm_WnESzlsG.8kStzevVXstnEkosp0k5PK2xOz3e820NtoEx1b3VXnEC8'
+    ...
   },
-  queryStringParameters: {testing: '123'},
-  pathParameters: {greeting: 'hello-world'},
-  body: null,
-  isBase64Encoded: false
+  requestContext: {
+    http: {
+      method: 'GET',
+      path: '/salutations/hello-world'
+    },
+    routeKey: 'GET /salutations/{greeting}'
+  },
+  isBase64Encoded: false,
+  // Node: no body is present, as this is a GET request
 }
 ```
 
@@ -98,17 +127,17 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 All bodes are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
 
 ```js
-// Request is form URL-encoded string: 'greeting=howdy'
+// POST body includes form URL-encoded string: 'greeting=howdy'
 let arc = require('@architect/functions')
 let parseBody = arc.http.helpers.bodyParser
 
-exports.handler = async function http(request) {
+exports.handler = async function http (request) {
   console.log(request.body)     // 'Z3JlZXRpbmc9aG93ZHk='
   let body = parseBody(request) // Pass the entire request object
   let greeting = body.greeting  // 'howdy'
   return {
     statusCode: 200,
-    headers: {'Content-Type': 'text/html; charset=utf8'},
+    headers: { 'content-type': 'text/html; charset=utf8' },
     body: greeting
   }
 }
@@ -117,18 +146,26 @@ exports.handler = async function http(request) {
 
 ## Responses
 
-Responses are returned by your `handler` function in an object, and use the following parameters:
+Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default. ([Head here for legacy `REST` API docs](/en/http-functions/api-reference-legacy).)
 
-- `statusCode` - **Number**
-  - Sets the HTTP status code; defaults to `200`
-- `headers` - **Object**
+Responses are returned by your `handler` function in an object.
+
+If you do not include the standard response parameters below, your response will be serialized to JSON, with a status code of `200` and a JSON `content-type` header (examples below).
+
+Instead of using that JSON inference convenience, most people structure their responses using the following standard response parameters:
+
+- `statusCode` - **Number** (required)
+  - Sets the HTTP status code; usually to `200`
+- `headers` - **Object** (optional)
   - All response headers
-- `body` - **String**
-  - Contains response body, either as a plain string (no encoding or serialization required) or, if binary, a base64-encoded buffer
+- `body` - **String** (optional)
+  - Contains response body, either as a plain string, or, if binary, a base64-encoded buffer
   - Note: The maximum `body` payload size is 6MB; files being delivered non-dynamically should use the [Begin CDN](/en/getting-started/static-assets)
-- `isBase64Encoded` - **Boolean**
+- `isBase64Encoded` - **Boolean** (optional)
   - Indicates whether `body` is base64-encoded binary payload; defaults to `false`
   - Required to be set to `true` if emitting a binary payload
+
+> Learn more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ### Example
@@ -139,15 +176,15 @@ Here's a simple example response for an API endpoint:
 // Responding to a successful POST
 return {
   statusCode: 201,
-  headers: {'Content-Type': 'application/json; charset=utf8'},
-  body: JSON.stringify({ok: true}),
+  headers: { 'content-type': 'application/json; charset=utf8' },
+  body: JSON.stringify({ ok: true }),
 }
 ```
 
 
 ## Anti-caching headers
 
-Many remote networks rely on overly aggressive reverse-proxy caches to conserve bandwidth; the absence of the `Cache-Control` header is often (mis)construed by such networks as tacit permission to aggressively cache responses that often should not be cached. **This external, network-level behavior can have serious ramifications for your app.**
+Many remote networks rely on overly aggressive reverse-proxy caches to conserve bandwidth; the absence of the `cache-control` header is often (mis)construed by such networks as tacit permission to aggressively cache responses that often should not be cached. **This external, network-level behavior can have serious ramifications for your app.**
 
 Because of the highly adverse effects network-level caching can on your application, we strongly suggest that most HTTP Function responses include anti-caching headers – especially when returning `HTML` and `JSON` responses. For example:
 
@@ -162,7 +199,7 @@ return {
 }
 ```
 
-> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions), is automatic, customizable, content-type aware generation of `Cache-Control` headers.
+> One of the many benefits of using Begin's runtime library, [Architect Functions](https://github.com/architect/functions), is automatic, customizable, content-type aware generation of `cache-control` headers.
 <!-- TODO: add link to Begin Arc Fns docs-->
 
 
@@ -180,7 +217,7 @@ Learn more [about integrating Begin Data](/en/data/begin-data/) in your app's Fu
 ```js
 let begin = require('@architect/functions')
 
-exports.handler = async function http(request) {
+exports.handler = async function http (request) {
   let session = await begin.http.session.read(request)
   let name = session.name || 'there'
   let body = `
@@ -193,7 +230,7 @@ exports.handler = async function http(request) {
 `
   return {
     statusCode: 200,
-    headers: {'Content-Type': 'text/html; charset=utf8'},
+    headers: { 'content-type': 'text/html; charset=utf8' },
     body
   }
 }
@@ -203,10 +240,10 @@ exports.handler = async function http(request) {
 ### Forward a request
 
 ```js
-exports.handler = async function http(request) {
+exports.handler = async function http (request) {
   return {
     statusCode: 302,
-    headers: {location: '/new/path'}
+    headers: { location: '/new/path' }
   }
 }
 ```
@@ -217,8 +254,8 @@ exports.handler = async function http(request) {
 ```js
 let data = require('@begin/data')
 
-exports.handler = async function http(request) {
-  let headers = {'Content-Type': 'application/json; charset=utf8'}
+exports.handler = async function http (request) {
+  let headers = { 'content-type': 'application/json; charset=utf8 '}
   if (!request.body.note) {
     return {
       statusCode: 204,
@@ -233,8 +270,19 @@ exports.handler = async function http(request) {
     return {
       statusCode: 201,
       headers,
-      body: JSON.stringify({ok: true})
+      body: JSON.stringify({ ok: true })
     }
   }
+}
+```
+
+### Return an inferred JSON response
+
+> Note: we do not advise using this approach, as you do not have control over the `cache-control` header, and your response may be cached by intermediary proxies, thus breaking your API
+
+```js
+exports.handler = async function http (request) {
+  let response = { ok: true }
+  return response
 }
 ```
