@@ -16,7 +16,10 @@ HTTP functions do not require dependencies to run, and feature a minimal but [po
 
 Within your project, each HTTP Function can contain and utilize an arbitrary quantity of modules, packages, shared code, and other files – so long as the total uncompressed size of that HTTP Function's folder is ≤5MB; this helps keep your HTTP functions (and thus your app) super fast.
 
-> Begin apps created after September 2020 use API Gateway v2 (aka "HTTP" APIs) payloads; Begin apps created before September 2020 use legacy API Gateway v1 (aka API Gateway "REST" APIs) docs [please head here](/en/http-functions/api-reference-legacy).
+> A note about request + response payload formats:
+> - Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default; see below for [request](#requests) and [response](#responses) payload documentation
+> - Begin apps created before September 2020 use legacy API Gateway `REST` APIs + Lambda payload format version 1.0; [legacy Begin docs are still available here](/en/http-functions/api-reference-legacy).
+> - Read more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ## HTTP handler API
@@ -48,7 +51,7 @@ No sweat, right?
 
 ## Requests
 
-Begin apps created after September 2020 use API Gateway v2 (aka "HTTP" APIs) payloads; Begin apps created before September 2020 use legacy API Gateway v1 (aka API Gateway "REST" APIs) docs [please head here](/en/http-functions/api-reference-legacy).
+Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default. ([Head here for legacy `REST` API docs](/en/http-functions/api-reference-legacy).)
 
 The `handler` function invoked by a client request receives a `request` object containing the following parameters:
 
@@ -84,7 +87,7 @@ The `handler` function invoked by a client request receives a `request` object c
 - `isBase64Encoded` - **Boolean**
   - Indicates whether `body` is base64-encoded binary payload
 
-> Additional and extended versions of this and other data may be available in your `request`; for additional documentation, [please head to AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
+> Learn more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ### Example
@@ -143,7 +146,7 @@ exports.handler = async function http (request) {
 
 ## Responses
 
-Begin apps created after September 2020 use API Gateway v2 (aka "HTTP" APIs) payloads; Begin apps created before September 2020 use legacy API Gateway v1 (aka API Gateway "REST" APIs) docs [please head here](/en/http-functions/api-reference-legacy).
+Begin apps created after September 2020 use API Gateway `HTTP` APIs + Lambda payload format version 2.0 by default. ([Head here for legacy `REST` API docs](/en/http-functions/api-reference-legacy).)
 
 Responses are returned by your `handler` function in an object.
 
@@ -161,6 +164,8 @@ Instead of using that JSON inference convenience, most people structure their re
 - `isBase64Encoded` - **Boolean** (optional)
   - Indicates whether `body` is base64-encoded binary payload; defaults to `false`
   - Required to be set to `true` if emitting a binary payload
+
+> Learn more about [API Gateway request/response payloads here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
 
 
 ### Example
