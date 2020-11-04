@@ -35,6 +35,16 @@
         ]
       },
       {
+        "docID": "migrating",
+        "docTitle": "Migrating",
+        "description": "Techniques for migrating to serverless",
+        "sections": [
+          "Proxy anything",
+          "Express apps",
+          "Static apps"
+        ]
+      },
+      {
         "docID": "open-source",
         "docTitle": "Open source & governance",
         "description": "Begin's policies and approaches to open source & open source governance",
