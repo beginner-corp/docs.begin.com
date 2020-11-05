@@ -1,6 +1,6 @@
 {
   "name": "docs.begin.com",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "https://docs.begin.com",
   "scripts": {
     "deploy": "./scripts/deploy",
