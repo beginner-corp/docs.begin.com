@@ -64,4 +64,4 @@ exports.handler = begin.http(route)
 
 ## Thank you!
 
-Thank you for your patience. We wouldn't have made this change if it wasn't for the impassioned, thoughtful feedback of early Begin users like yourself, and we [can't wait to hear what you think](https://spectrum.chat/begin) about the improvements we've made to your Begin app experience.
+Thank you for your patience. We wouldn't have made this change if it wasn't for the impassioned, thoughtful feedback of early Begin users like yourself, and we [can't wait to hear what you think](https://github.com/smallwins/begin-community/discussions) about the improvements we've made to your Begin app experience.
