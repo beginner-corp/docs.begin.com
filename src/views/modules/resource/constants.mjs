@@ -24,7 +24,7 @@ export default {
       site: 'https://docs.begin.com'
     },
     learn: 'https://learn.begin.com',
-    community: 'https://spectrum.chat/begin',
+    community: 'https://github.com/smallwins/begin-community/discussions',
     help: 'https://begin.com/support',
     issues: 'https://github.com/smallwins/begin-issues',
     policies: {

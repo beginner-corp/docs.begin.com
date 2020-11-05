@@ -185,6 +185,16 @@
           "More about sessions",
           "Examples"
         ]
+      },
+      {
+        "docID": "proxy",
+        "docTitle": "Proxy",
+        "description": "Proxy your Begin app to an existing site or API",
+        "sections": [
+          "Overview",
+          "Adding the Begin proxy",
+          "Example"
+        ]
       }
     ]
   },
