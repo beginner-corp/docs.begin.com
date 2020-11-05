@@ -35,16 +35,6 @@
         ]
       },
       {
-        "docID": "migrating",
-        "docTitle": "Migrating",
-        "description": "Techniques for migrating to serverless",
-        "sections": [
-          "Proxy anything",
-          "Express apps",
-          "Static apps"
-        ]
-      },
-      {
         "docID": "open-source",
         "docTitle": "Open source & governance",
         "description": "Begin's policies and approaches to open source & open source governance",
@@ -194,6 +184,16 @@
           "Writing to sessions",
           "More about sessions",
           "Examples"
+        ]
+      },
+      {
+        "docID": "proxy",
+        "docTitle": "Proxy",
+        "description": "Proxy your Begin app to an existing site or API",
+        "sections": [
+          "Overview",
+          "Adding the Begin proxy",
+          "Example"
         ]
       }
     ]
