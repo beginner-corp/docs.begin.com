@@ -147,19 +147,7 @@ In just a few minutes, you now have a fresh app with dedicated `staging` and `pr
 Happy building!
 
 
-## Keep it going
-
-So, what's next? Well, here are a few ideas:
-
-
-### Create new routes
-
-- Create new HTTP routes by clicking `Functions` in the left nav, and clicking the `Add a Function` button
-  - New routes will be automatically committed to your project
-  - Make sure to run `git pull` to start working locally with new routes
-
-
-### Ship to `production`
+## Ship to `production`
 
 - Lint and run tests, of course:
 ```bash
