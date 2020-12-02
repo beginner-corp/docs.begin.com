@@ -10,7 +10,7 @@ Once mapped, you can always swap out your app's domains at any time, or get rid 
 ## Mapping your domain
 
 Domain mapping follows a simple process, and should only take a few minutes to get set up:
-1. Enter your `production` and `staging`
+1. Enter your `production` and `staging` domains
 2. Verify your ownership of the domain(s) by creating some CNAME challenge records to your DNS provider
 3. Map the domain to your Begin app in your DNS provider
 
