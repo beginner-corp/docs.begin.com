@@ -85,7 +85,7 @@ Here's an example of an incoming `request` object, being handled by the HTTP Fun
 
 ### Parsing bodies
 
-All bodes are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
+All bodies are unparsed, base64-encoded strings; you can parse and process these however you please, but `@architect/functions` has a convenient method for doing so. Here's an example:
 
 ```js
 // POST body includes form URL-encoded string: 'greeting=howdy'
