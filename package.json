@@ -21,7 +21,7 @@
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.37",
     "eslint": "^7.15.0",
-    "husky": "^4.3.5",
+    "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "spellchecker-cli": "^4.4.0",
     "svg-symbols": "^1.0.5",
