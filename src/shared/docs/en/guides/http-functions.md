@@ -234,7 +234,7 @@ While not required, it's always a good idea to lint and run tests before pushing
 
 ```bash
 npm run lint
-npm t
+npm test
 ```
 
 Everything set? Now let's push this commit (and deploy the build to `staging`):
