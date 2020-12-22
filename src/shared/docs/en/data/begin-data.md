@@ -312,7 +312,7 @@ await data.count({table}) // Returns: 42
   - Property to increment or decrement, must be a number *(required)*
 - `callback` - **Function**
 
-The following example assumes you have an attribute of 'averageInches' with a beginning value of 450 on the key of `Wai'ale'ale`. 
+The following example assumes you have an attribute of 'averageInches' with a beginning value of 450 on the key of `Wai'ale'ale`.
 If that attribute does not exist, incrementing will begin at 0, and that attribute will be created.
 
 ```js
@@ -370,21 +370,4 @@ data
   scopeID *String
   dataID **String
   ttl TTL
-```
-
-You can also use a startup script to insert test data for development or for automated tests. Sandbox looks for a file `/scripts/sandbox-startup.js` with an exported function.
-
-Example:
-```js
-// /scripts/sandbox-startup.js
-let data = require('@begin/data')
-async function startUpScript() {
-  let table = 'greetings'
-  let greetings = [
-    { table, key: 'Māori', greeting: `Kia ora` },
-    { table, key: 'Swahili', greeting: `Hujambo` },
-    { table, key: 'Japanese', greeting: `Kon'nichiwa` } ]
-  await data.set(greetings)
-}
-module.exports = startUpScript
 ```
