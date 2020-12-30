@@ -190,7 +190,7 @@ In the next section we will go more in-depth about how to provision HTTP functio
 > 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
 
-### `src/main.mjs`
+### `src/main.js`
 
 The main entry point for your Svelte app, `src/main.js` imports your `App.svelte` file (your root app component). In this example, we initialize your app to `document.body` and pass it a prop to demonstrate how props can be passed along to different components inside of your app.
 
