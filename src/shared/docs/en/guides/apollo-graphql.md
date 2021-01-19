@@ -326,38 +326,16 @@ Inside of your project folder, navigate to the `src/http/get-playground/index.js
 ```
 Now let's add a button that will take us to our new playground route. Head to the `public` directory and open the `index.html` file. Add this block of code in between the `<style>` tag.
 
-```CSS
-// public/index.html
-
- .button {
-      margin: 2rem 0 0 0;
-    }
-
-    .btn {
-      background-color: #e6870b;
-      padding: 1rem;
-      border-radius: .5rem;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .btn:hover {
-      background-color: #e6870bc2;
-    }
-```
 Add this block of code after the `<section>` tag inside of the `<body>`.
 
 ```html
 // public/index.html
 
-  <div class="button"></div>
-  <a href="/playground" class="btn">GraphQL Playground</a>
-  </div>
+  <a href="/playground">GraphQL Playground</a>
 ```
 
 
-This is how our new button will look down below. This will easily takes us to our new GraphQL playground.
-![Apollo-Screen](/_static/screens/guides/apollo-graphql/apollo-screen-2.jpg)
+This link navigates to our new GraphQL playground.
 
 Your new GraphQL playground is set up and connected to your data graph. Test out some new queries grow your database!
 
