@@ -124,16 +124,27 @@ Now that your app is live on `staging` and running locally, let's take a quick l
 
 ```bash
 .
+├── api/
+│    └── index.js
 ├── build/
 ├── public/
 ├── src/
-│    ├── http/
-│    │   └── get-api/
 │    └── App.js
 └── test/
 ```
 
 Let's go over each of these directories and files and how you may use them:
+
+### `api/`
+
+The `api` folder is where the cloud function that handles `GET` requests to `/api` lives. When we call our `api` from our app it will execute the handler function in the `index.js` file.
+
+Some Begin apps are inert static web sites – but not this one. Your React app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
+
+In the next section we will go more in-depth about how to provision HTTP functions in your React app.
+
+> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
+
 
 ### `build/`
 
@@ -147,19 +158,6 @@ Each time your app is deployed by Begin, the build artifacts in `build` will aut
 Per Create React App convention, files placed into `public` are not processed, and will instead be copied into `build` when your app is built.
 
 Add images (like your logo) and any other static assets or files to `public` to make them publicly accessible in your app. [Learn more about the `public` folder](https://create-react-app.dev/docs/using-the-public-folder).
-
-
-### `src/http/get-api/`
-
-The cloud function that handles example API requests is found at `src/http/get-api/`.
-
-Some Begin apps are inert static web sites – but not this one. Your React app utilizes this built-in small, fast, individually executing cloud function that handles HTTP API requests and responses. (We call those HTTP functions, for short.)
-
-The HTTP function that handles requests to `GET /api` is found in `src/http/get-api/`.
-
-In the next section we will go more in-depth about how to provision HTTP functions in your React app.
-
-> 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
 
 ### `src/App.js`
@@ -198,14 +196,14 @@ With that said, [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/),
 
 Now for the fun part! Let's go over how HTTP functions work.
 
-The text in the red box below is actually being fetched an example API endpoint, handled by `src/http/get-api/index.js`.
+The text in the red box below is actually being fetched an example API endpoint, handled by `api/index.js`.
 
 ![React API](/_static/screens/guides/create-react-app/react-api.jpg)
 
 The output of this HTTP function can be called by fetching `GET /api`, and subsequently used by any component within your React app:
 
 ```js
-// src/http/get-api/index.js
+// api/index.js
 
 exports.handler = async function http (req) {
   console.log('Begin API called')
