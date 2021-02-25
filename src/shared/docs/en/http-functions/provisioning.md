@@ -15,7 +15,7 @@ To provision a new HTTP function edit your app's Architect project manifest file
 
 Begin example apps written for the `node.js` runtime use `JSON` added to the apps `package.json` file.
 
-> :warning: Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
+> Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
 
 Open the `package.json` file in the root of your project.
 
