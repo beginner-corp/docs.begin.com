@@ -24,19 +24,21 @@ This guide walks you through Begin's [Apollo example app](https://github.com/beg
 - Click the "Create..." button to have Begin create a new app and GitHub repo for it.
 
 
-- Check out your apps activity feed
+- Check out your apps' activity feed
 
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
 
 
-- Click the **Staging** link in the upper left corner to see your app
+- Click the **Staging** link in the upper left corner to see your app running in your staging environment.
 
 
 ![Apollo](/_static/screens/guides/apollo-graphql/apollo-screen.jpg)
 
 
 - Follow the prompts on the intro cards to get acquainted with Begin.
+
+> Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
 
 ---
 
@@ -54,7 +56,7 @@ This guide walks you through Begin's [Apollo example app](https://github.com/beg
 
 ### `graphql/`
 
-The `graphql` directory contains a handler function for the GraphQL API.
+This directory contains a handler function for the GraphQL API.
 
 - Take a peek at `/graphql/index.js`
 
@@ -88,12 +90,12 @@ exports.handler = function(event, context, callback) {
 }
 ```
 
-The handler show how to define the type definitions and query resolvers for a GraphQL API.
+The handler code above shows how to define type definitions and query resolvers for a GraphQL API.
 For more information check out: [How to build a schema with Apollo](https://www.apollographql.com/docs/tutorial/schema/)
 
 ### `public/`
 
-The `public` directory is where we store our apps [static assets](https://docs.begin.com/en/static-assets/working-with-static-assets).
+The `public` directory is for [static assets](https://docs.begin.com/en/static-assets/working-with-static-assets).
 
 - Give `public/index.html` a gander
 
@@ -122,7 +124,7 @@ The `public` directory is where we store our apps [static assets](https://docs.b
     })()
   </script>
 ```
-When the page loads we make a call to our GraphQL API then display the results.
+When the page loads the code above uses fetch to `post` to the GraphQL API then display the results.
 
 > 💡 **Learn more!** about [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
