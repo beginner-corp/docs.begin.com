@@ -15,19 +15,29 @@ To provision a new HTTP function edit your app's Architect project manifest file
 
 Begin example apps written for the `node.js` runtime use `JSON` added to the apps `package.json` file.
 
-> Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
-
 Open the `package.json` file in the root of your project.
 
 As shown below we specify HTTP Functions as an Array of two values, the HTTP verb and path.
 ```json
 {
   "arc": {
+    "app": "myapp",
     "http": [
       [ "get": "/api" ]
     ]
   }
 }
+```
+
+> Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
+
+Here is what the same configuration looks like if instead you used an `app.arc` file in the root of your project:
+```arc
+@app
+myapp
+
+@http
+get /api
 ```
 
 After specifying new HTTP functions in your Architect project manifest and pushing your changes to your repo, the following things happen automatically:
@@ -40,31 +50,30 @@ That's all there is to it! Now let's take a closer look at the capabilities of H
 
 ## The basics
 
-Each HTTP function maps to a logical HTTP route. For example:
-- `[ "get", "/" ]` is serviced by the HTTP function in your project at `src/http/get-index`
-- `[ "get", "/about" ]` is serviced by `src/http/get-about`
-- `[ "post", "/form" ]` is serviced by `src/http/post-form`
+By default each HTTP function maps to a logical HTTP route. For example:
+- `get /` is serviced by the HTTP function in your project at `src/http/get-index`
+- `get /about` is serviced by `src/http/get-about`
+- `post /form` is serviced by `src/http/post-form`
 - And so on...
 
 All HTTP functions begin with `/`, and can include letters, numbers, and slashes, underscores, dashes, and periods, up to 35 characters.
 
 Importantly and uniquely, you can also use URL parameters to build dynamic paths – [more on that below](#using-url-parameters-to-create-dynamic-paths).
 
-> ✨ Tip: It's possible to have multiple HTTP methods respond from the same path. For example: `[ "get", "/contact-us" ]` and `[ "post", "/contact-us" ]` is totally valid, as you'd expect.
-
+> ✨ Tip: It's possible to have multiple HTTP methods respond from the same path. For example: `get /contact-us` and `post /contact-us` is totally valid, as you'd expect.
 
 ## Greedy root
 
 By default, your app's root is greedy – which means that *unless specified, all paths and HTTP methods will invoke it*. Any HTTP functions you define manually will be prioritized over the root. For example:
-- With only `[ "get", "/" ]` specified: submitting a `POST` request to `/foo` will invoke `src/http/get-index`
-- With both `[ "get", "/" ]` and `[ "post", "/foo" ]` specified: submitting the same request will invoke `src/http/post-foo`
+- With only `get /` specified: submitting a `POST` request to `/foo` will invoke `src/http/get-index`
+- With both `get /` and `post /foo` specified: submitting the same request will invoke `src/http/post-foo`
 
-The greedy root also means you can run large amounts of your application's logic from a single `[ "get", "/" ]` HTTP function. However, we don't advise it! One of the key advantages to building with cloud functions is their inherent isolation: many smaller functions means greater ease in debugging and faster deploys.
+The greedy root also means you can run large amounts of your application's logic from a single `get /` HTTP function. However, we don't advise it! One of the key advantages to building with cloud functions is their inherent isolation: many smaller functions means greater ease in debugging and faster deploys.
 
 
 ## Using URL parameters to create dynamic paths
 
-It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `[ "get", "/shop/:product" ]`
+It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `get /shop/:product`
 
 URL parameters are passed to your route via the `req.pathParameters` object. ([Learn more about HTTP requests here.](/en/http-functions/api-reference#requests))
 
@@ -82,8 +91,8 @@ For example, when a client requests the path `/shop/chocolate-chip-cookies`, the
 
 You can do a lot with this functionality!
 
-> Note: Slashes still function as path part delimiters within URL params, so `[ "get", "/api/:foo" ]` will service `[ "get", "/api/hello" ]`, but will not service `[ "get", "/api/hello/there" ]`.
-> To handle `[ "get", "/api/hello/there" ]`, create a second HTTP function for `[ "get", "/api/:foo/:bar" ]`
+> Note: Slashes still function as path part delimiters within URL params, so `get /api/:foo` will service `get /api/hello`, but will not service `get /api/hello/there`.
+> To handle `get /api/hello/there`, create a second HTTP function for `get /api/:foo/:bar`
 
 
 ## Removing HTTP functions
