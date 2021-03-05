@@ -1,48 +1,59 @@
 > ⏱ This guide take less than 5 minutes.
 
-## Introduction
 
-**Hello there, Beginner!**
+## **Hello there, Beginner!**
 
-This guide walks you through Begin's [Apollo example app](https://github.com/begin-examples/node-apoll) which implements an [Apollo](https://www.apollographql.com/docs/) based [GraphQL](https://graphql.org/learn/) API.
+This guide walks you through getting started with Begin's [Apollo example app](https://github.com/begin-examples/node-apoll) which implements a minimal [Apollo](https://www.apollographql.com/docs/) based [GraphQL](https://graphql.org/learn/) API.
+
+> ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github) to follow along.
+
 
 ---
 
-### Create your Apollo app
+## Create your Apollo app
+<br/>
 
-- Click the **Deploy to Begin** button below.
+First click the **Deploy to Begin** button below
 
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-apollo)
+<br/>
+<br/>
 
-- Name your app
-
+Next name your app and click the "Create..." button to have Begin create a new app and GitHub repo for it.
 
 ![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
+<br/>
+<br/>
+<br/>
 
+Check out your apps' activity feed!
 
-- Click the "Create..." button to have Begin create a new app and GitHub repo for it.
-
-
-- Check out your apps' activity feed
-
+Now click the **Staging** link in the upper left corner to see your app running in your staging environment.
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
+<br/>
+<br/>
+<br/>
 
-
-- Click the **Staging** link in the upper left corner to see your app running in your staging environment.
-
+You should see something like the image below.
 
 ![Apollo](/_static/screens/guides/apollo-graphql/apollo-screen.jpg)
+<br/>
+<br/>
+<br/>
 
+**Way to go!**
 
-- Follow the prompts on the intro cards to get acquainted with Begin.
-
-> Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
+Now follow the prompts on the intro cards to get acquainted with Begin.
+> 💡 Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
 
 ---
 
 ## Project structure
+
+If you followed the intro cards in the activity view you are ready to review your project's structure on your local machine.
+<br/>
 
 ```bash
 .
@@ -58,7 +69,7 @@ This guide walks you through Begin's [Apollo example app](https://github.com/beg
 
 This directory contains a handler function for the GraphQL API.
 
-- Take a peek at `/graphql/index.js`
+Take a peek at `/graphql/index.js`.
 
 ```js
 // /graphql/index.js
@@ -97,7 +108,7 @@ For more information check out: [How to build a schema with Apollo](https://www.
 
 The `public` directory is for [static assets](https://docs.begin.com/en/static-assets/working-with-static-assets).
 
-- Give `public/index.html` a gander
+Give `public/index.html` a gander
 
 ```js
 // public/index.html
