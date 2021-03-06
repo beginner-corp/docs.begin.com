@@ -1,4 +1,4 @@
-> ⏱ This guide take less than 5 minutes.
+> ⏱ This guide takes less than 10 minutes.
 
 
 ## **Hello there, Beginner!**
@@ -27,7 +27,7 @@ Next name your app and click the "Create..." button to have Begin create a new a
 <br/>
 <br/>
 
-Check out your apps' activity feed!
+**Check out your apps' activity feed!**
 
 Now click the **Staging** link in the upper left corner to see your app running in your staging environment.
 
@@ -135,7 +135,7 @@ Give `public/index.html` a gander
     })()
   </script>
 ```
-When the page loads the code above uses fetch to `post` to the GraphQL API then display the results.
+When the page loads, the code above uses fetch to `post` to the GraphQL API then display the results.
 
 > 💡 **Learn more!** about [HTTP functions in Begin apps](/en/http-functions/provisioning/).
 
