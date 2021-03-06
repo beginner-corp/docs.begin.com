@@ -58,7 +58,7 @@ If you followed the intro cards in the activity view you are ready to review you
 ```bash
 .
 ├── graphql/
-│   └── index.js/
+│   └── index.js
 ├── public/
 │   ├── 404.html
 │   └── index.html
