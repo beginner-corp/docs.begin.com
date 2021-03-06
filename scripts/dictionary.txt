@@ -179,6 +179,7 @@ repo
 repos
 reproducibility
 resiliance
+resolvers
 roadmap
 Roadmap
 Rollup
