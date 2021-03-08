@@ -29,7 +29,7 @@ As shown below we specify HTTP Functions as an Array of two values, the HTTP ver
 }
 ```
 
-> Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
+> 💁🏽‍♀️ Info: For convenience Architect currently supports `app.arc`, `app.json`, `app.toml`, and `app.yaml` as well if you find that your app's manifest becomes too large to manage inside `package.json`.
 
 Here is what the same configuration looks like if instead you used an `app.arc` file in the root of your project:
 ```arc
@@ -46,6 +46,8 @@ After specifying new HTTP functions in your Architect project manifest and pushi
 - A build is kicked off, and, if green, is deployed to `staging` (but not `production`, of course)
 
 That's all there is to it! Now let's take a closer look at the capabilities of HTTP functions, and how they work.
+
+> 💡 Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
 
 
 ## The basics
@@ -75,7 +77,9 @@ The greedy root also means you can run large amounts of your application's logic
 
 It's possible to build dynamic paths using [Express-style URL parameters](http://expressjs.com/en/guide/routing.html#route-parameters), like: `get /shop/:product`
 
-URL parameters are passed to your route via the `req.pathParameters` object. ([Learn more about HTTP requests here.](/en/http-functions/api-reference#requests))
+URL parameters are passed to your route via the `req.pathParameters` object.
+
+> 💡 Learn more about [HTTP requests](/en/http-functions/api-reference#requests)
 
 For example, when a client requests the path `/shop/chocolate-chip-cookies`, the HTTP function handling that route receives a `req` object containing:
 
@@ -91,7 +95,7 @@ For example, when a client requests the path `/shop/chocolate-chip-cookies`, the
 
 You can do a lot with this functionality!
 
-> Note: Slashes still function as path part delimiters within URL params, so `get /api/:foo` will service `get /api/hello`, but will not service `get /api/hello/there`.
+> 📝 Note: Slashes still function as path part delimiters within URL params, so `get /api/:foo` will service `get /api/hello`, but will not service `get /api/hello/there`.
 > To handle `get /api/hello/there`, create a second HTTP function for `get /api/:foo/:bar`
 
 
@@ -101,4 +105,4 @@ You can remove HTTP functions from your app the same way you add them: by modify
 
 Once pushed to your repo, any routes removed from your project's `http` section will be removed from `staging` environment; your `production` routes will not be changed until you deploy to production.
 
-> Note: Removing routes from your project will not result in any changes to your project's files, so you will find the `src/http/` folder still retains your HTTP function code (until you're ready to destroy it).
+> 📝 Note: Removing routes from your project will not result in any changes to your project's files, so you will find the `src/http/` folder still retains your HTTP function code (until you're ready to destroy it).
