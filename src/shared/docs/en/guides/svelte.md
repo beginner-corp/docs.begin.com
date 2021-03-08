@@ -19,7 +19,7 @@ Click the **Deploy to Begin** button below.
 <br/>
 <br/>
 
-Name your app and click the `Create...` button to have Begin a new app and GitHub repo.
+Name your app and click the `Create...` button to have Begin create a new app and GitHub repo.
 
 ![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
 <br/>
