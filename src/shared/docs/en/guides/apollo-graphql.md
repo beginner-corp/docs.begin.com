@@ -36,8 +36,7 @@ Now click the **Staging** link in the upper left corner to see your app running 
 <br/>
 <br/>
 
-You should see something like the image below.
-
+You should see something like the image below:
 ![Apollo](/_static/screens/guides/apollo-graphql/apollo-screen.jpg)
 <br/>
 <br/>

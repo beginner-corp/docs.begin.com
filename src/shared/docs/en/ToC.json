@@ -431,7 +431,7 @@
         ]
       },
       {
-        "docType": "Tutorial",
+        "docType": "Guide",
         "docID": "svelte",
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
