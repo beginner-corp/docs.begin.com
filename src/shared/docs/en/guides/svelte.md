@@ -64,7 +64,7 @@ If you followed the intro cards in the activity view you are ready to review you
 └── rollup.config.js
 ```
 
-Let's go over each of these directories and how you may use them:
+Let's go over each of these directories to see how they are used.
 
 ### `api/`
 
