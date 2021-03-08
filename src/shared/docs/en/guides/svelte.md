@@ -132,7 +132,7 @@ Lastly, at the bottom of `src/App.svelte` we have a `<style>` tag, which contain
 
 Extending your Svelte app with HTTP functions may be why you're here, right? Let's take a look at how all this works.
 
-Let's start with the `src/App.svelte` code inside `<script>` tag found below. When the component renders initially into a page or "mounts", we're able to use what's called a lifecycle method called `onMount`, which is provided by the Svelte framework. Inside this `onMount` handler we fetch data from `src/http/get-api/` and then set the variable named `message` with the returned data. We're now able to pass this variable into our HTML as props so that it displays a message from our HTTP function. Not bad, right?
+Let's start with the `src/App.svelte` code inside `<script>` tag found below. When the component renders initially into a page or "mounts", we're able to use what's called a lifecycle method called `onMount`, which is provided by the Svelte framework. Inside this `onMount` handler we fetch data from `/api` and then set the variable named `message` with the returned data. We're now able to pass this variable into our HTML as props so that it displays a message from our HTTP function. Not bad, right?
 
 ```js
 // src/App.svelte
