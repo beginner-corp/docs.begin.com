@@ -43,7 +43,7 @@ You should see something like the image below:
 
 **Way to go!**
 
-Now follow the prompts on the intro cards to get acquainted with Begin.
+Now go back to Begin and follow the prompts on the intro cards to see the system in action.
 > 💡 Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
 
 ---
