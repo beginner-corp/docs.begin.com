@@ -469,7 +469,7 @@
         ]
       },
       {
-        "docType": "Tutorial",
+        "docType": "Guide",
         "docID": "vue",
         "docTitle": "Vue",
         "description": "Build a Vue starter app with an added example API endpoint",
