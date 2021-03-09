@@ -69,7 +69,7 @@ Let's go over each of these directories to see how they are used.
 ### `api/`
 
 This directory contains a handler function for the API.
-The handler function defined in `api/index.js` returns a response when HTTP requests are made to '/api'
+The handler function defined in `api/index.js` returns a response when HTTP requests are made to `/api`
 
 
 > 💡 **Learn more!** Head here to dig deeper into [HTTP functions in Begin apps](/en/http-functions/provisioning/).
