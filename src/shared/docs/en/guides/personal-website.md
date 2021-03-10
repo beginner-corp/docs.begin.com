@@ -1,132 +1,55 @@
-> ⏱ This tutorial is an introductory walkthrough of creating a personal website on Begin. It should take less than 5 minutes.
+> ⏱ This tutorial should take less than 5 minutes.
 
-## Introduction
+## **Hello there, Beginner!**
 
-**Hello there, Beginner!**
-
-This tutorial walks through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates server-side rendering, shared components, and static assets.
-
-
-### Prerequisites
-
-You will need to have **git** and **Node.js** installed to your local computer to follow along with this tutorial. (Learn more about [installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [installing Node.js](https://nodejs.org/en/download/).)
-
-You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
-
-This tutorial also assumes some familiarity with such things as:
-- Text editors
-- Terminal / CLI
-- Git and version control
-- General software development using JavaScript
-
-You do not need to be an expert in any of these things in order to follow along and make a new personal website with Begin!
-
-**Let's get started!**
-
-Get stoked, here's a little preview of your new site:
-
-![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+This tutorial walks through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates serverless-side rendering, shared components, and static assets.
 
 ---
 
-## Getting started
+## Create your new personal website
 
-### Create your new personal website
-
-First, click the **Deploy to Begin** button below. This starts the process of authorizing Begin with your GitHub account. (You may be prompted to log into GitHub, and/or be asked to create a Begin username.)
+Click the **Deploy to Begin** button below
 
 [![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/node-personal-website)
+<br/>
+<br/>
 
 
-### Name your app & repo
-
-You'll then be prompted to name your new app and repository – this is optional, feel free to use the default app and repo name if you like!
-
-> Note: your Begin app name and repository name cannot be changed later.
+Next name your app and click the "Create..." button to have Begin create a new app and GitHub repo for it.
 
 ![Name your Begin app and repo](/_static/screens/shared/begin-repo-name.jpg)
-
-Once you've clicked the `Create...` button, Begin will spin up your new project on GitHub (under `github.com/{your GH username}/{your repo name}`).
-
-> By default your Begin app repo is created as a public GitHub repo; it can be set to private by granting Begin additional permissions from this screen (or later from the `Settings` screen found in the left nav of your Begin app).
+<br/>
+<br/>
+<br/>
 
 ---
 
-## Your first deploy
+**Check out your apps' activity feed!**
 
-After creating your app, you'll be taken to its `Activity` stream. Welcome to the main backend interface of your Begin app!
+Now click the **Staging** link in the upper left corner to see your app running in your staging environment.
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
+<br/>
+<br/>
+<br/>
 
-From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
-
-Each build undergoes a number of predefined build steps (learn more about [build steps here](/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), check your code's syntax for issues (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
-
-If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
-
-Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your personal site:
-
+You should see something like the image below:
 ![Personal website](/_static/screens/guides/personal-website/begin-personal-site.jpg)
+<br/>
+<br/>
+<br/>
 
-> 💡 **Learn more!** Head here to dig deeper into [covers build pipelines, git tagging, and more](/en/getting-started/builds-deploys).
+**Nice job!**
 
----
-
-## Make your first commit
-
-If you'd like to jump right into making your first commit and running your first build, click the `Edit on GitHub` button. This will open your app's code in GitHub and allow you to make a quick change.
-
-![Begin activity](/_static/screens/guides/personal-website/begin-activity-2.jpg)
-
-Look for this code, and try editing your basic bio (like your name or location):
-```js
-// Customize your site by changing the data below
-exports.handler = async function Index () {
-  let body = Main({
-    /**
-     * Basic bio
-     */
-    fullname: 'Your Name', // ← Start by adding your name!
-    title: 'My personal site!',
-    occupation: 'Artist & Photographer',
-    location: 'West Glacier, MT',
-    bio: 'Lorem ipsum dolor sit amet...',
-```
-
-Click the **commit changes** button on GitHub, and head back to your `Activity` view to watch it build.
-
-When it's done, don't forget to see your changes live in your `staging` environment!
-
----
-
-## Get set up locally
-
-Next let's get your new site running in your local environment (i.e. the computer you work on).
-
-First, head to your GitHub repo (from the first card in your `Activity`, or from the left nav). Find the **clone or download** button and copy the git URL.
-
-Then head to your terminal and clone your repo to your local filesystem.
-
-```bash
-git clone https://github.com/your-github-username/your-new-begin-app.git
-```
-
-Once you've got your project cloned on your local machine, `cd` into the project directory, install your dependencies, and start the local dev server:
-```bash
-cd your-new-begin-app
-npm install
-npm start
-```
-
-You should see a `localhost` link in your terminal – go ahead and visit that in your browser.
-
-That's all you need to do preview your changes locally before pushing them to `staging`!
+Now go back to Begin and follow the prompts on the intro cards to see the system in action.
+> 💡 Learn more about [CI/CD environments](https://docs.begin.com/en/getting-started/builds-deploys)
 
 ---
 
 ## Project structure
 
-Now that your app is live on `staging` and running locally, let's take a quick look into how the project itself is structured so you'll know your way around. Here are the key folders in the source tree of your personal website:
+If you followed the intro cards in the activity view you are ready to review your project's structure on your local machine.
+<br/>
 
 ```bash
 .
@@ -285,8 +208,6 @@ You've now got a shiny new personal website hosted on Begin – nice work.
 Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%20my%20new%20personal%20site%21%20%28I%20made%20it%20with%20@Begin%29%20PASTE_YOUR_URL_HERE) – people need to see this thing!
 
 ---
-
-<!-- TODO add domains directions -->
 
 ## Additional resources
 

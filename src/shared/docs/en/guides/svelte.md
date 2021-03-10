@@ -1,8 +1,6 @@
 > ⏱ This guide should take less than 5 minutes.
 
-## Introduction
-
-**Hello there, Beginner!**
+## **Hello there, Beginner!**
 
 This guide will help you get acquainted with Begin's [Svelte example app](https://github.com/begin-examples/node-svelte) which uses [Svelte](https://svelte.dev/) as the front-end framework for an app that talk's to a cloud function-based API.
 
@@ -159,26 +157,6 @@ Let's start with the `src/App.svelte` code inside `<script>` tag found below. Wh
 ```
 
 This is just one small example of how using a live API endpoint powered by an HTTP function can make your Svelte app dynamic. Just think of all the things you can build this way!
-
----
-
-## Deploy your site
-
-Add and commit your files then push to master to kick off a build that will deploy to `staging`.
-
-```bash
-git add -A
-git commit -am 'Just customizing my Begin site!'
-git push origin master
-```
-
-Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!
-
-Now let's deploy to `production`: click the **Deploy to production** button in the upper left, pick a version, leave an optional message summarizing your changes, and **Ship it**!
-
-When your next build is done, click the `production` link in the upper left corner to see the latest release of your app!
-
-> **✨Tip:** You can also deploy to production from your terminal by bumping your [npm version](https://docs.npmjs.com/cli/version) (`npm version [patch|minor|major] && git push origin`) or by cutting a git tag (`git tag -a 1.0.0 -m "1.0, here we come" && git push origin --tags`)
 
 ---
 

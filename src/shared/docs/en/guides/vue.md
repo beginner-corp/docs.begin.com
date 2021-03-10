@@ -1,8 +1,6 @@
 > ⏱ This guide should take less than 5 minutes.
 
-## Introduction
-
-**Hello there, Beginner!**
+## **Hello there, Beginner!**
 
 This guide shows you how Begin's [Vue example app](https://github.com/begin-examples/vue) uses the [Vue](https://vuejs.org/) front-end framework to talk to a cloud function-based API.
 
