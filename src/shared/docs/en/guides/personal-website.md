@@ -2,7 +2,7 @@
 
 ## **Hello there, Beginner!**
 
-This tutorial walks through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates serverless-side rendering, shared components, and static assets.
+This tutorial walks through setting up a fast, beautiful, custom personal site running on Begin. It uses example code that demonstrates server-side rendering, shared components, and static assets.
 
 ---
 
