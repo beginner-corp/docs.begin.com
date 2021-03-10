@@ -1,9 +1,9 @@
-> ⏱ This guide takes less than 10 minutes.
+> ⏱ This tutorial takes less than 10 minutes.
 
 
 ## **Hello there, Beginner!**
 
-This guide walks you through getting started with Begin's [Apollo example app](https://github.com/begin-examples/node-apoll) which implements a minimal [Apollo](https://www.apollographql.com/docs/) based [GraphQL](https://graphql.org/learn/) API.
+This tutorial walks you through getting started with Begin's [Apollo example app](https://github.com/begin-examples/node-apoll) which implements a minimal [Apollo](https://www.apollographql.com/docs/) based [GraphQL](https://graphql.org/learn/) API.
 
 > ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github) to follow along.
 

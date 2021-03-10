@@ -320,7 +320,7 @@
     "catTitle": "Guides",
     "docs": [
       {
-        "docType": "Guide",
+        "docType": "Tutorial",
         "docID": "quickstart",
         "docTitle": "Quickstart",
         "description": "Get started building your first app with Begin",
@@ -428,7 +428,7 @@
         ]
       },
       {
-        "docType": "Guide",
+        "docType": "Tutorial",
         "docID": "svelte",
         "docTitle": "Svelte",
         "description": "Build a Svelte app starting with an added example API endpoint",
@@ -459,7 +459,7 @@
         ]
       },
       {
-        "docType": "",
+        "docType": "Tutorial",
         "docID": "vue",
         "docTitle": "Vue",
         "description": "Build a Vue starter app with an added example API endpoint",
@@ -473,7 +473,7 @@
         ]
       },
       {
-        "docType": "",
+        "docType": "Tutorial",
         "docID": "apollo-graphql",
         "docTitle": "Apollo GraphQL",
         "description": "Fully serverless Apollo GraphQL API, ready to be wired up to your data.",
