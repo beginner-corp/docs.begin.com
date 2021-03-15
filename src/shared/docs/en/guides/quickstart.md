@@ -149,10 +149,6 @@ Happy building!
 
 ## Ship to `production`
 
-- Lint and run tests, of course:
-```bash
-npm run lint && npm t
-```
 - Release to `production` by:
   - Using the `Deploy to Production` button in the left nav in Begin, or
   - Creating a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging), i.e.:
