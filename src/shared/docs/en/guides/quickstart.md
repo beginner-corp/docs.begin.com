@@ -96,12 +96,11 @@ Begin applications are comprised of many small, fast, individually executing clo
 ```bash
 .
 ├── public/
-├── src/
-│   ├── http/
-│   │   └── get-index/
-│   ├── shared/
-│   └── views/
-└── test/
+└── src/
+    ├── http/
+    │   └── get-index/
+    ├── shared/
+    └── views/
 ```
 
 Your app's many small, fast, isolated Functions are organized in your project under `src/`.
