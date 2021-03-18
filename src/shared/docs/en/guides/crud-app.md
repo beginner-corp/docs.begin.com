@@ -91,11 +91,12 @@ Now that your app is live on staging and running locally, let's take a quick loo
 ```bash
 .
 ├── public/
-└── src/
-    └── http/
-         ├── get-todos/
-         ├── post-todos/
-         └── post-todos-delete/
+└── todos/
+    ├── delete/
+    │   └── index.js
+    ├── save/
+    │   └── index.js
+    └── index.js
 ```
 
 Let's go over each of these directories and how you may use them:
@@ -104,12 +105,12 @@ Let's go over each of these directories and how you may use them:
 
 The `public` directory is where we host our home page: `index.html`. This is also where our app's CSS styles and JavaScript live. Here, we'll fetch our todos from our HTTP functions and append them to elements in the DOM while manipulating the state of our app.
 
-### `src/http/get-todos/`
+### `todos/`
 
 The `GET /todos` function allows you to read the current `todos` from your Begin Data `todos` table; these items are created by way of the HTML form on the home page.
 
 ```js
-// `src/http/get-todos/index.js`
+// `todos/index.js`
 
 let data = require('@begin/data')
 
@@ -132,12 +133,12 @@ exports.handler = async function todos (req) {
 }
 ```
 
-### `src/http/post-todos/`
+### `todos/save/`
 
 The `POST /todos` function creates or updates todos in your Begin Data `todos` table when input is posted from your app's HTML form.
 
 ```js
-// `src/http/post-todos/index.js`
+// `todos/save/index.js`
 
 let arc = require('@architect/functions')
 let data = require('@begin/data')
@@ -160,12 +161,12 @@ exports.handler = async function post (req) {
 }
 ```
 
-### `src/http/post-todos-delete/`
+### `todos/delete/`
 
 The `POST /todos/delete` function deletes any of the todos from your Begin Data `todos` table.
 
 ```js
-// `src/http/post-todos-delete/index.js`
+// `todos/delete/index.js`
 
 let arc = require('@architect/functions')
 let data = require('@begin/data')
