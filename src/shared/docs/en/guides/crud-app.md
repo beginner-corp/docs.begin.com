@@ -97,7 +97,7 @@ This handler gets all the stored todos from Begin Data.
 #### **U**pdate
 
 `POST` requests to the `/todos/:id` route are processed by the handler function inside `index.js` in this folder.
-This handler updates the todo with the same `id` as the one passed in from the url parameter.
+This handler updates the todo with the same `id` as the one passed in from the URL parameter.
 
 ### `todos/delete/`
 #### **D**elete
