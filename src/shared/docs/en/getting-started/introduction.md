@@ -4,16 +4,16 @@ Hello there! **Begin is the ridiculously quick platform for building modern web 
 
 Begin leverages next-gen cloud platform technologies – like globally available serverless infra, SSD-backed databases, and integrated CDNs – and manages all your app's needs, from git integration, to CI/CD, and everything in between.
 
-We can't wait to share everything you need to know about go deeper with Begin.
+We can't wait to share everything you need to know about going deeper with Begin.
 
 (If you haven't already read the [Quickstart](/en/guides/quickstart), that's a very good place to start.)
 
-First thing's first: let's get set up to work locally.
+First things first: let's get set up to work locally.
 
 
 ## Getting set up
 
-Begin works super fast from top to bottom, and you'll up and running locally in seconds.
+Begin works super fast from top to bottom, and you'll be up and running locally in seconds.
 
 Assuming you've already logged in and created your first Begin app (with the default name of `Begin app`), open your terminal and:
 
