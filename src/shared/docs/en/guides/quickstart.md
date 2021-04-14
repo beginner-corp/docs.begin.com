@@ -51,7 +51,7 @@ When you create a new app, Begin will provision your GitHub repo pre-wired with 
 
 ## Create a Begin account
 
-To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), authorize it with GitHub, and pick a username. That's it!
+To create a Begin account, simply click the `Login` button on the [Begin home page](https://begin.com), authorize it with GitHub. That's it!
 
 
 ## Creating an app
