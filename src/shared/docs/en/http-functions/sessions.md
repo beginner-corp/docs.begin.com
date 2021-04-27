@@ -37,7 +37,7 @@ async function addOne (req) {
   let session = { count }
   let location = '/'
   return {
-    statusCode: 200,
+    statusCode: 307,
     session,
     location
   }
@@ -59,7 +59,7 @@ async function updateUserName (req) {
   let session = { account }
   let location = '/'
   return {
-    statusCode: 200,
+    statusCode: 307,
     session,
     location
   }
@@ -125,7 +125,7 @@ async function login (req) {
   let isLoggedIn = body.email === 'admin' && body.password === 'a-secure-password'
 
   return {
-    statusCode: 200,
+    statusCode: 307,
     session: { isLoggedIn },
     location: '/'
   }
@@ -147,7 +147,7 @@ async function auth (req) {
   }
   else {
     return {
-      statusCode: 200,
+      statusCode: 307,
       location: '/login'
     }
   }
