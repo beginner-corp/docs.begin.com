@@ -23,7 +23,7 @@ As shown below we specify HTTP Functions as an Array of two values, the HTTP ver
   "arc": {
     "app": "myapp",
     "http": [
-      [ "get": "/api" ]
+      [ "get", "/api" ]
     ]
   }
 }
