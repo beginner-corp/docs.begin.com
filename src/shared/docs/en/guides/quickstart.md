@@ -56,7 +56,7 @@ To create a Begin account, simply click the `Login` button on the [Begin home pa
 
 ## Creating an app
 
-![Begin new app selector](/_static/screens/masters/begin-app-create-selection.jpg)
+![Begin new app selector](/_static/screens/masters/begin-app-create-selection-2.png)
 
 After creating your Begin account, select an app from the list of starter apps to build from. (We think the `Personal website` is a great place to start, but this guide applies to all Begin apps.)
 
