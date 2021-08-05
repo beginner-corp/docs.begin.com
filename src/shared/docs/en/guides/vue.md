@@ -2,7 +2,7 @@
 
 ## **Hello there, Beginner!**
 
-This tutorial shows you how Begin's [Vue example app](https://github.com/begin-examples/vue) uses the [Vue](https://vuejs.org/) front-end framework to talk to a cloud function-based API.
+This tutorial shows you how Begin's [Vue example app](https://github.com/begin-examples/node-vue) uses the [Vue](https://vuejs.org/) front-end framework to talk to a cloud function-based API.
 
 > ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github) to follow along.
 
