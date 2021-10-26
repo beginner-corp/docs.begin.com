@@ -185,6 +185,51 @@ export default function Learn (props) {
               </div>
           </a>
         </li>
+        <li
+          class="${itemClass + ' item-docs-h-lg grid-1_3-3'}"
+        >
+          <a
+            class="
+              d-flex
+              fd-column
+              fd-row-lg
+              jc-s-lg
+              w-100
+              h-100
+              pt2
+              pr0
+              pr1-lg
+              pb2
+              pl0
+              pl1-lg
+              fw-book
+              c-p8
+              cu-pointer
+            "
+            href="https://learn.begin.com/"
+          >
+          <div class="d-flex jc-c-lg m-auto mb-2 ml-none-lg mr1-lg mb-none-lg img-chalkboard">
+              <img
+                alt="Learn"
+                class="d-block "
+                src="${staticAsset('chalkboard.svg')}"
+              />
+          </div>
+              <div class="ta-l-lg mt2-lg">
+                <h2
+                  class="
+                    fs2
+                    fw-book
+                  "
+                >
+                  Learn Begin
+                </h2>
+                <p>
+                Learn how to build a fully serverless web application completely from scratch with OpenJS Architect
+                </p>
+              </div>
+          </a>
+        </li>
       </ul>
     </section>
   </div>
