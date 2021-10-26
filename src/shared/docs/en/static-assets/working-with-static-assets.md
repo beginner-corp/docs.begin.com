@@ -71,7 +71,7 @@ Simply create and specify a [build script or build command in your root `package
 
 Your build steps will run with each deploy, and anything present in `public/` will be pushed to your app's file bucket.
 
-As with the rest of your app, any push to `master` deploys assets to your `staging` file bucket, and `production` releases deploy assets to, you guessed it, your `production` file bucket.
+As with the rest of your app, any push to `main` deploys assets to your `staging` file bucket, and `production` releases deploy assets to, you guessed it, your `production` file bucket.
 
 By default, your app is also configured with `staging` and `production` CDN paths pointing to your respective file buckets as its origin. Thus, to access your assets via CDN, simply use your app's CDN path when appropriate.
 

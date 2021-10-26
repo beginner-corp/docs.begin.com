@@ -46,11 +46,11 @@ After creating your app, you'll be taken to its `Activity` stream. Welcome to th
 
 ![Begin Activity view](/_static/screens/shared/begin-activity.jpg)
 
-From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `master`, you'll see a new build get kicked off in Begin.
+From the `Activity` view, you'll be able to watch your app build & deploy in real-time. Any time you push to `main`, you'll see a new build get kicked off in Begin.
 
 Each build undergoes a number of predefined build steps (learn more about [build steps here](/en/getting-started/builds-deploys#configuring-build-steps)); these build steps may install your app's dependencies (`install`), test your code's syntax (`lint`), generate any files or assets needed to run your app (`build`), and/or run an automated test suite (`test`).
 
-If no build steps fail, then the build containing your latest commit to `master` is automatically deployed to your `staging` environment.
+If no build steps fail, then the build containing your latest commit to `main` is automatically deployed to your `staging` environment.
 
 Go ahead and click the **Staging** link in the upper left corner of your left nav to open your new app's `staging` URL. You should now see your new app:
 
@@ -242,7 +242,7 @@ Everything set? Now let's push this commit (and deploy the build to `staging`):
 ```bash
 git add -A
 git commit -am 'Just customizing my Begin site!'
-git push origin master
+git push origin main
 ```
 
 Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.

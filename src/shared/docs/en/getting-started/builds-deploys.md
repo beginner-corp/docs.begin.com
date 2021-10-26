@@ -2,7 +2,7 @@
 
 In addition to provisioning and managing your app's infrastructure, Begin is also a fully integrated CI/CD build pipeline optimized for incredibly rapid deployments.
 
-Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your default GitHub branch (usually `master`).
+Begin builds spin up instantly and run in parallel, so you can build and deploy as quickly as you can push changes to your default GitHub branch (usually `main`).
 
 Deployments to `staging` and `production` take only seconds and are instantly available at scale – enjoy the benefits of near-instant iteration with frequent pushes!
 

@@ -149,12 +149,12 @@ This is just one small example of how using a live API endpoint powered by an HT
 
 ## Deploy your site
 
-Add and commit your files then push to master to kick off a build that will deploy to `staging`.
+Add and commit your files then push to main to kick off a build that will deploy to `staging`.
 
 ```bash
 git add -A
 git commit -am 'Just customizing my Begin site!'
-git push origin master
+git push origin main
 ```
 
 Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent!

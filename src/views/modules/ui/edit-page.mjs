@@ -5,7 +5,7 @@ export default function EditPage (props) {
   props = props || {}
   let lang = props.lang || 'en'
   let {cat, doc} = props.active
-  let link = `https://github.com/smallwins/docs.begin.com/edit/master/src/shared/docs/${lang}/${cat}/${doc}.md`
+  let link = `https://github.com/smallwins/docs.begin.com/edit/main/src/shared/docs/${lang}/${cat}/${doc}.md`
 
   return html`
 <div>

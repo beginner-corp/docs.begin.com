@@ -58,7 +58,7 @@ The following keys are required (unless stated otherwise):
         "doc": "how-to-rate-dogs",
         "title": "How to rate dogs",
         "description": "An introduction to rating dogs",
-        "github": "https://github.com/smallwins/docs.begin.com/blob/master/src/shared/docs/en/dog-rates/how-to-rate-dogs.md",
+        "github": "https://github.com/smallwins/docs.begin.com/blob/main/src/shared/docs/en/dog-rates/how-to-rate-dogs.md",
         "nextDoc": "/en/dog-rates/dog-rating-scales/",
         "nextTitle": "Dog-rating scales",
         "sections": [

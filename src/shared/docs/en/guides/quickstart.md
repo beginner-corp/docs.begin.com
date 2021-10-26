@@ -56,7 +56,7 @@ To create a Begin account, simply click the `Login` button on the [Begin home pa
 
 ## Creating an app
 
-![Begin new app selector](/_static/screens/masters/begin-app-create-selection-2.png)
+![Begin new app selector](/_static/screens/originals/begin-app-create-selection-2.png)
 
 After creating your Begin account, select an app from the list of starter apps to build from. (We think the `Personal website` is a great place to start, but this guide applies to all Begin apps.)
 
@@ -71,13 +71,13 @@ Then name your app and repo, and Begin will spin up your new project repository 
 
 Immediately after Begin is finished setting up your project repo, it will kick off its first deploy to your app's `staging` environment.
 
-By default, each commit to `master` initiates a build; if the build is green, that build is immediately deployed to your app's `staging` environment. No fuss, no muss!
+By default, each commit to `main` initiates a build; if the build is green, that build is immediately deployed to your app's `staging` environment. No fuss, no muss!
 
-Every new build to `staging` and `master` appears on in your **Activity** feed.
+Every new build to `staging` and `main` appears on in your **Activity** feed.
 
 Learn more about [building & deploying with Begin](/en/getting-started/builds-deploys/).
 
-<!-- @todo - link to upcoming environments + deploys doc(s) re. deploying to master -->
+<!-- @todo - link to upcoming environments + deploys doc(s) re. deploying to main -->
 
 
 ## Accessing your live app

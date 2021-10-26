@@ -188,7 +188,7 @@ Everything set? Now let's push this commit (and deploy the build to `staging`):
 ```bash
 git add -A
 git commit -am 'Just customizing my Begin site!'
-git push origin master
+git push origin main
 ```
 
 Head on back to Begin and open your `staging` URL once your build is complete. Looking good? Excellent.
