@@ -47,6 +47,7 @@ export default function Learn (props) {
         fg-1
         p0
         pr4-lg
+        pb5-lg
         pl4-lg
         bg-p14
       "
