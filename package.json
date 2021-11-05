@@ -8,7 +8,7 @@
     "icons": "./scripts/icons",
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "push-test": "npm run spellcheck && NODE_ENV=testing ARC_CONTRIB=yas ARC_LOCAL=yas tape 'test/**/*-test.js' | tap-spec",
-    "spellcheck": "npx spellchecker ./src/shared/**/*.md --no-suggestions -q -d ./scripts/dictionary.js --plugins spell indefinite-article repeated-words syntax-mentions syntax-urls",
+    "spellcheck": "npx spellchecker --config ./scripts/spellcheckerrc.json",
     "start": "NODE_ENV=staging PORT=4445 ARC_LOCAL=1 npx sandbox",
     "test": "npm run lint && npm run spellcheck && PORT=6666 NODE_ENV=testing SESSION_TABLE_NAME=jwe tape test/*-test.js test/**/*-test.js | tap-spec"
   },
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.37",
+    "@architect/spellcheck-dictionary": "github:architect/spellcheck-dictionary",
     "eslint": "^7.32.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",
