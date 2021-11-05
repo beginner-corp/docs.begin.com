@@ -291,6 +291,11 @@
     "catTitle": "Support",
     "docs": [
       {
+        "docID": "faq",
+        "docTitle": "Frequently asked questions",
+        "description": "Frequently asked questions for Begin"
+      },
+      {
         "docID": "help-support",
         "docTitle": "Help & support",
         "description": "Help & support channels for Begin"
