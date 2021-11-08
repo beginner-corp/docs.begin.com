@@ -1,0 +1,23 @@
+{
+    "files": ["./src/shared/docs/en/**/*.md"],
+    "quiet": true,
+    "noSuggestions": true,
+    "dictionaries": [
+      "./scripts/dictionary.txt",
+      "./node_modules/@architect/spellcheck-dictionary/dictionary.txt"
+    ],
+    "plugins": [
+      "spell",
+      "indefinite-article",
+      "repeated-words",
+      "syntax-mentions",
+      "syntax-urls",
+      "frontmatter"
+    ],
+    "frontmatterKeys": [
+      "title",
+      "category",
+      "description",
+      "sections"
+    ]
+  }

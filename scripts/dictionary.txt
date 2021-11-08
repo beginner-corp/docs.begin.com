@@ -1,3 +1,4 @@
+512mb
 .vimrc
 `build`ing
 ACM
@@ -77,6 +78,7 @@ deployable
 deps
 dev
 devdep
+devDependencies
 dirs
 disambiguate
 disambiguates
@@ -212,6 +214,7 @@ subdomains
 subfolder
 TestFlight
 tiny-json-http
+tmp
 todo
 Todo
 todos
