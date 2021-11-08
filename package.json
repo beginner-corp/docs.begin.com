@@ -20,7 +20,7 @@
   "devDependencies": {
     "@architect/arc-plugin-node-prune": "^1.0.1",
     "@architect/architect": "^5.9.37",
-    "@architect/spellcheck-dictionary": "github:architect/spellcheck-dictionary",
+    "@architect/spellcheck-dictionary": "git+https://github.com/architect/spellcheck-dictionary.git",
     "eslint": "^7.32.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",
