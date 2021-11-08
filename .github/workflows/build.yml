@@ -16,7 +16,7 @@ jobs:
     # Go
     steps:
       - name: Check out repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
@@ -68,8 +68,15 @@ jobs:
 
     # Go
     steps:
-      - name: Check out repo
-        uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Reconfigure git to use HTTP authentication
+        run: >
+          git config --global url."https://github.com/".insteadOf
+          ssh://git@github.com/
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
