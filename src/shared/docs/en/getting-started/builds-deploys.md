@@ -138,7 +138,7 @@ The deploy step is non-configurable and does not currently output logs.
 
 ## Changing your default branch
 
-Git (and GitHub) default new repos to using a branch named `master`, a term [actively being phased](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1) out [by our industry](https://mysqlhighavailability.com/mysql-terminology-updates/). Fortunately, the procedure for changing your default branch is pretty straightforward (although it may surface some edges as you check for other downstream dependencies). Altering source control should be done with care and due diligence.
+Git (and GitHub) default new repos to using a branch named `master`, a term [actively being phased](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1) out [by our industry](https://github.com/github/renaming). Fortunately, the procedure for changing your default branch is pretty straightforward (although it may surface some edges as you check for other downstream dependencies). Altering source control should be done with care and due diligence.
 
 > 👓 Note: If you're associating a fresh Begin app with an existing GitHub repo, no configuration is required – Begin will use whatever you've already set the default branch to be, and will ship builds from pushes to that branch automatically.
 

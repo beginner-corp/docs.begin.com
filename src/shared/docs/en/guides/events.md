@@ -247,4 +247,4 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - More about event functions
   - [Event functions](/en/event-functions/provisioning)
   - [Architect project layout](https://arc.codes/quickstart/layout)
-  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)
+  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/posts/2020-03-05-new-at-begin-add-and-manage-routes-via-manifest-file)

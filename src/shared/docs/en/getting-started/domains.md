@@ -80,8 +80,10 @@ Here are a few DNS providers that we are aware of that support ALIAS records for
 - [Dyn](https://dyn.com/dns/managed-dns/alias/)
 - [easyDNS](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 - [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-can-i-set-up-a-cname-record-for-my-domain)
-- [NS1](https://ns1.com/knowledgebase/cname-alias-and-linked-records)
-- [ZoneEdit](https://support.zoneedit.com/Knowledgebase/Article/View/1/1/root-domain-aliases-root-aliases-zone-apex-aliases-implemeneted-as-anames)
+<!-- markdown-link-check-disable -->
+- [NS1](https://help.ns1.com/hc/en-us/articles/360020248973)
+<!-- markdown-link-check-enable -->
+- [ZoneEdit](https://support.zoneedit.com/en/knowledgebase/article/root-domain-aliases-root-aliases-zone-apex-aliases-implemeneted-as-anames)
 
 If you aren't using a provider that supports ALIAS records, or you aren't sure, we suggest using a subdomain (such as `www`) when mapping your Begin app's domain.
 

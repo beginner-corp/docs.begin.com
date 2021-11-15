@@ -1,0 +1,22 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": ".\/working-locally"
+        },
+        {
+            "pattern": "\/_static\/"
+        },
+        {
+            "pattern": "^https:\/\/begin-help.zendesk.com"
+        },
+        {
+            "pattern": "^http:\/\/www.placepuppy.net"
+        }
+    ],
+    "replacementPatterns": [
+        {
+            "pattern": "^/",
+            "replacement": "https://docs.begin.com/"
+        }
+    ]
+}

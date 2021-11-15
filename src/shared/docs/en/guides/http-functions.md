@@ -97,7 +97,7 @@ Create a new route in five easy steps
 Your new route will automatically deploy to `staging`.
 If you are happy with `staging` you can click the "Deploy to Production" button to see it live on your production environment.
 
-> For more in depth instructions on how to provision new HTTP functions, you can [checkout our docs here](/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36).
+> For more in depth instructions on how to provision new HTTP functions, you can [checkout our docs here](/en/http-functions/provisioning) or this [article on our blog](https://blog.begin.com/posts/2020-03-05-new-at-begin-add-and-manage-routes-via-manifest-file).
 
 ---
 
@@ -275,4 +275,4 @@ Now go [show it off](https://twitter.com/intent/tweet?text=Hey%2C%20check%20out%
 - More about HTTP functions
   - [HTTP functions](/en/http-functions/provisioning)
   - [Architect project layout](https://arc.codes/quickstart/layout)
-  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/new-at-begin-add-and-manage-routes-via-manifest-file-24ced2e65a36)
+  - [New at Begin: add and manage routes via manifest file](https://blog.begin.com/posts/2020-03-05-new-at-begin-add-and-manage-routes-via-manifest-file)

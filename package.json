@@ -6,6 +6,7 @@
     "deploy": "./scripts/deploy",
     "dev": "NODE_ENV=testing PORT=4445 ARC_LOCAL=1 npx sandbox",
     "icons": "./scripts/icons",
+    "linkcheck": "find ./src/shared/docs/en -name \\*.md -exec npx markdown-link-check -c ./config.json {}  \\;",
     "lint": "eslint src --ignore-pattern node_modules --fix",
     "push-test": "npm run spellcheck && NODE_ENV=testing ARC_CONTRIB=yas ARC_LOCAL=yas tape 'test/**/*-test.js' | tap-spec",
     "spellcheck": "npx spellchecker --config ./scripts/spellcheckerrc.json",
