@@ -80,7 +80,7 @@ function getDocs (props, state) {
     .map(d => {
     let doc = d.docID
     let href = `/${lang}/${category}/${doc}`
-    let active = props.active.doc === doc
+    let active = props.active.cat === category && props.active.doc === doc
     let sections = getSections({
       category,
       doc,
