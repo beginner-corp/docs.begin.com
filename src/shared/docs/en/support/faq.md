@@ -7,3 +7,13 @@ Anything in your project's package.json dependencies and devDependencies will be
 We have explored techniques that involve a sibling repo that builds into a main Begin/Architect project. Another option is two projects, one for the front end and one for the API server. This approach may not work for your project, depending on the bulk of where the dependencies are located.
 
 We wish we had better news. We know that this causes a problem for all kinds of projects, and we want to solve it ASAP for Begin users.
+
+## How do I fix the `Error: Port 5000 is already in use, cannot start Sandbox` error?
+
+Starting with MacOS Monterey, port 5000 is already in use. This is the port that the Sandbox uses to provide database emulation. If you are running into this issue, you just need to set the ARC_TABLES_PORT environment variable to a different port number. For example:
+
+```bash
+export ARC_TABLES_PORT=7001
+```
+
+We plan to address [this issue](https://github.com/architect/architect/issues/1261) in a future release.
