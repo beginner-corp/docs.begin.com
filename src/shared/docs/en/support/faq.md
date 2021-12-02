@@ -10,7 +10,7 @@ We wish we had better news. We know that this causes a problem for all kinds of 
 
 ## How do I fix the `Error: Port 5000 is already in use, cannot start Sandbox` error?
 
-Starting with MacOS Monterey, port 5000 is already in use. This is the port that the Sandbox uses to provide database emulation. If you are running into this issue, you just need to set the ARC_TABLES_PORT environment variable to a different port number. For example:
+Starting with macOS Monterey, port 5000 is already in use. This is the port that the Sandbox uses to provide database emulation. If you are running into this issue, you just need to set the ARC_TABLES_PORT environment variable to a different port number. For example:
 
 ```bash
 export ARC_TABLES_PORT=7001
