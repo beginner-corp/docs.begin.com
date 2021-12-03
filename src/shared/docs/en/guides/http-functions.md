@@ -8,7 +8,7 @@ Getting started with Begin HTTP functions should take just a few minutes, but la
 
 You will need to have **git** and **Node.js** installed to your local computer to follow along with this tutorial. (Learn more about [installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [installing Node.js](https://nodejs.org/en/download/).)
 
-You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github).)
+You'll also need a GitHub account. (Learn more about [signing up with GitHub](https://docs.github.com/en/get-started/signing-up-for-github).)
 
 This tutorial also assumes some familiarity with such things as:
 - Text editors

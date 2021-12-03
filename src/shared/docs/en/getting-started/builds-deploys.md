@@ -181,4 +181,4 @@ Future collaborators will automatically be on `main`; existing contributors may 
 
 Finally, only after you’ve migrated any dependent systems, your team has moved over locally, and you’re sure you’re ready to tidy up, delete the old master branch with: `git push -d origin master`
 
-For more information check out the GitHub's documentation: [Setting the default branch](https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch)
+For more information check out the GitHub's documentation: [Setting the default branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)

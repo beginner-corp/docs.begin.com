@@ -4,7 +4,7 @@
 
 This guide is meant to show you around Begin's [CRUD app](https://github.com/begin-examples/node-crud) which demonstrates how to build a simple todo app using Begin Data.
 
-> ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github) to follow along.
+> ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github) to follow along.
 
 ---
 

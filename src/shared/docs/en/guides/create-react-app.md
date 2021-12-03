@@ -4,7 +4,7 @@
 
 This tutorial uses the [Create React App](https://github.com/facebook/create-react-app) starter app, extended by an example API endpoint. You'll have all the capabilities of React for building beautiful user interfaces, combined with the power, speed, and security of cloud functions and serverless data storage.
 
-> ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-github) to follow along.
+> ✋🏽 You will need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [node.js](https://nodejs.org/en/download/) and a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github) to follow along.
 
 ## Create your new React app
 
