@@ -10,7 +10,7 @@ If you have an issue that may pertain to sensitive data or code, something isn't
 
 ## Questions? Feedback? High fives?
 
-Join the Begin community! Who wouldn't want to hang out with the other intelligent, attractive Begin users? [Head on over to the Begin Spectrum!](https://github.com/smallwins/begin-community/discussions)
+Join the Begin community! Who wouldn't want to hang out with the other intelligent, attractive Begin users? [Head on over to the Begin Community Discussion Forum!](https://github.com/smallwins/begin-community/discussions)
 
 
 ## Hit us up on Twitter
