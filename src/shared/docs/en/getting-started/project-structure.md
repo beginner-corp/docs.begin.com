@@ -85,7 +85,7 @@ exports.handler = async function http(request) {
 }
 ```
 
-> You can install global dependencies to `src/shared` – but mind dependency bloat! **Routes must weigh in under 5MB uncompressed.**
+> You can install global dependencies to `src/shared` – but mind dependency bloat! **Routes must weigh in under 250MB uncompressed.** We recommend that you keep your functions as small as possible. Please read our [blog post](https://blog.begin.com/posts/2021-12-01-fat-function-anti-pattern) on the effect of code size on cold start times.
 
 
 ### `src/views`
