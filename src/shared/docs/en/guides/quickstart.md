@@ -17,8 +17,8 @@ While this guide assumes general familiarity with such things as text editors, t
 ### tl;dr, you'll need:
 - A (free) GitHub account
 - Any computer running macOS, Windows, or Linux, with:
-  - Node.js 12
-  - npm 6.x
+  - Node.js 12, or later
+  - npm 6, or later
 
 
 ### Platforms: macOS, Windows, and Linux
@@ -26,18 +26,18 @@ While this guide assumes general familiarity with such things as text editors, t
 Begin supports local, offline development on just about all modern computers, including: macOS, Windows (10+), and Linux.
 
 
-### Runtimes: Node.js 12
+### Runtimes: Node.js
 
-Begin provisions and manages AWS infrastructure that runs solely on Node.js 12 (with support additional runtimes coming soon).
+Begin provisions and manages AWS infrastructure that runs on Node.js (with support for additional runtimes coming soon). Node.js 12.x is the default runtime, but you can [configure](https://arc.codes/docs/en/reference/project-manifest/aws#runtime) Node.js 14.x to be the runtime on a per-project or per-function level.
 
-You can work locally with versions of Node other than 12, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 12.
+You can work locally with Node versions other than 12, but your app shouldn't depend on any features, functionality, or fixes that are not available in Node 12. For example, if you are using [Optional chaining operator (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) or the [Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) you will want to [configure](https://arc.codes/docs/en/reference/project-manifest/aws#runtime) your application to use the Node.js 14.x runtime.
 
 You can grab [Node.js here](https://nodejs.org/en/download/).
 
 
-### Package management: NPM 6.x
+### Package management: NPM
 
-Begin requires npm 6.x for local development. Recent releases of Node bundle npm 5.x, so you'll want to make sure to upgrade with: `npm install npm@latest -g`
+Begin requires npm 6.x or later for local development. Check which version of npm you are running `npm version`. If you are not running npm 6.x or later, you'll want to make sure to upgrade with: `npm install npm@latest -g`
 
 
 ### Version control: GitHub
