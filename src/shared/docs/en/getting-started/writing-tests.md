@@ -5,10 +5,12 @@ Begin apps come with some boilerplate tests in the `test` directory, with the te
 ```js
 {
   "scripts": {
-    "test": "NODE_ENV=testing tape test/*-test.js | tap-spec"
+    "test": "cross-env NODE_ENV=testing tape 'test/*-test.js' | tap-spec"
   }
 }
 ```
+
+> We use the `cross-env` package and single quote (') around the [glob](https://en.wikipedia.org/wiki/Glob_(programming)) to ensure the test command works on Mac, Linux and Windows environments.
 
 Tests run via `npm test`.
 
