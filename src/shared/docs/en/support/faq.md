@@ -17,3 +17,18 @@ export ARC_TABLES_PORT=7001
 ```
 
 We plan to address [this issue](https://github.com/architect/architect/issues/1261) in a future release.
+
+## Why do I get `"SyntaxError: Unexpected token '.'"` when I use [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)?
+
+👇 Keep reading
+
+## Why do I get `"SyntaxError: Unexpected token '?'"` when I use [nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)?
+
+By default Begin uses the nodejs12.x runtime on AWS. Node.js 12 does not support optional chaining or nullish coalescing. You will want to specify in your projects `app.arc` file or your functions `config.arc` file that you want to use the Node.js 14 runtime.
+
+```arc
+@aws
+runtime nodejs14.x
+```
+
+An upcoming release of Begin will make Node.js 14 the default runtime.
