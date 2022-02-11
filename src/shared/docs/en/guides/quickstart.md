@@ -155,7 +155,7 @@ Happy building!
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
-  - Or also by cutting a [GitHub Release](https://help.github.com/articles/creating-releases/)
+  - Or also by cutting a [GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 
 > 👓 Note: We strongly encourage the use of [SemVer](https://semver.org/) when creating `production` releases!
 

@@ -41,7 +41,7 @@ Assuming your current build is green, cut a `production` release by:
 git tag -a 1.0.1 -m "This release includes 20% more cowbell"
 git push origin 1.0.1
 ```
-- Or also by creating a [Release in GitHub](https://help.github.com/articles/creating-releases/)
+- Or also by creating a [Release in GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 
 The current running version on `production` is represented by the version you specified in your git tag (and is also found in the upper left corner of Begin).
 
